@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6c1f45b4bd3da74ea150c05800eba7ec10568894
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339300"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
 
@@ -58,7 +58,7 @@ API хостинга UWP XAML предоставляет низкую инфра
 * **Установите пакет Microsoft. Toolkit. Win32. UI. SDK**. Если вы не хотите упаковывать приложение в пакет MSIX, можно установить [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0-preview7 или более поздней версии). Этот пакет предоставляет несколько ресурсов для сборки и времени выполнения, которые позволяют работать в приложении по работе с XAML. Убедитесь, что выбран параметр **включить предварительные выпуски** , чтобы можно было увидеть последние предварительные версии этого пакета.
 
 > [!NOTE]
-> Более ранние версии этих инструкций добавили `maxversiontested` элемент в манифест приложения в проекте. Пока вы используете один из перечисленных выше параметров, вам больше не нужно добавлять этот элемент в манифест.
+> В предыдущих версиях этих инструкций был добавлен элемент `maxversiontested` в манифест приложения в проекте. Пока вы используете один из перечисленных выше параметров, вам больше не нужно добавлять этот элемент в манифест.
 
 ### <a name="additional-requirements-for-custom-uwp-controls"></a>Дополнительные требования для пользовательских элементов управления UWP
 
@@ -146,7 +146,7 @@ API размещения платформы UWP XAML включает следу
 
     1. Создайте объект **десктопвиндовксамлсаурце** и приведите его к com-интерфейсу **идесктопвиндовксамлсаурценативе** или **IDesktopWindowXamlSourceNative2** .
         > [!NOTE]
-        > Эти интерфейсы объявляются в файле заголовка **Windows. UI. XAML. Hosting. десктопвиндовксамлсаурце. h** в Windows SDK. По умолчанию этот файл находится в% ProgramFiles (x86)% \ Windows Kits\10\Include\\< номер\>сборки \ум.
+        > Эти интерфейсы объявляются в файле заголовка **Windows. UI. XAML. Hosting. десктопвиндовксамлсаурце. h** в Windows SDK. По умолчанию этот файл находится в% ProgramFiles (x86)% \ Windows Kits\10\Include @ no__t-0 < номер сборки @ no__t-1\um.
 
     2. Вызовите метод **аттачтовиндов** интерфейса **идесктопвиндовксамлсаурценативе** или **IDesktopWindowXamlSourceNative2** и передайте в приложение маркер окна родительского элемента пользовательского интерфейса.
 
@@ -156,7 +156,7 @@ API размещения платформы UWP XAML включает следу
 
 В следующих шагах и примерах кода показано, как реализовать описанный выше процесс.
 
-1. В папке **исходные файлы** проекта откройте файл **виндовспрожект. cpp** по умолчанию. Удалите все содержимое файла и добавьте следующие `include` инструкции и. `using` В дополнение к стандартным C++ и заголовкам и пространствам имен UWP эти инструкции включают в себя несколько элементов, относящихся к островам XAML.
+1. В папке **исходные файлы** проекта откройте файл **виндовспрожект. cpp** по умолчанию. Удалите все содержимое файла и добавьте следующие инструкции `include` и `using`. В дополнение к стандартным C++ и заголовкам и пространствам имен UWP эти инструкции включают в себя несколько элементов, относящихся к островам XAML.
 
     ```cppwinrt
     #include <windows.h>
@@ -336,7 +336,7 @@ API размещения платформы UWP XAML включает следу
 
 5. Сохраните файл кода, а затем выполните сборку и запуск приложения. Убедитесь, что в окне приложения отображается элемент управления **TextBlock** элемента UWP.
     > [!NOTE]
-    > Вы можете увидеть несколько предупреждений о сборке, `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` включая `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`и. Эти предупреждения являются известными проблемами с текущими инструментами и пакетами NuGet, и их можно игнорировать.
+    > Вы можете увидеть несколько предупреждений сборки, включая `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` и `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Эти предупреждения являются известными проблемами с текущими инструментами и пакетами NuGet, и их можно игнорировать.
 
 Полные примеры, демонстрирующие эти задачи, см. в следующих файлах кода:
 
@@ -358,7 +358,7 @@ API размещения платформы UWP XAML включает следу
 
 * **Пользовательский элемент управления UWP**. Вам потребуется исходный код для пользовательского элемента управления UWP, который вы хотите разместить, чтобы его можно было скомпилировать с приложением. Как правило, Пользовательский элемент управления определяется в проекте библиотеки классов UWP, на который вы ссылаетесь в том же решении C++ , что и проект Win32.
 
-* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса, `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` предоставленному набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, и исправить класс по умолчанию `App` в этом проекте.
+* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, и исправить класс по умолчанию `App` в этом проекте.
   > [!NOTE]
   > Решение может содержать только один проект, определяющий `XamlApplication` объект. Все пользовательские элементы управления UWP в приложении совместно используют один `XamlApplication` и тот же объект. Проект, определяющий `XamlApplication` объект, должен включать ссылки на все другие библиотеки и проекты UWP, используемые для размещения элементов управления UWP в области XAML.
 
@@ -376,7 +376,7 @@ API размещения платформы UWP XAML включает следу
 
 Полный пример для приложения C++ Win32 см. в следующих проектах в разделе [остров XAML с примером настраиваемого элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-* [Самплеусерконтрол](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): В этом проекте реализуется пользовательский элемент управления типа `MyUserControl` UWP XAML с именем, который содержит текстовое поле, несколько кнопок и поле со списком.
+* [Самплеусерконтрол](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): Этот проект реализует собственный элемент управления XAML UWP с именем `MyUserControl`, который содержит текстовое поле, несколько кнопок и поле со списком.
 * [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): Это проект приложения UWP с описанными выше изменениями.
 * [Самплекппапп](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): Это проект приложения C++ Win32, в котором размещается пользовательский элемент управления XAML UWP в области XAML.
 
@@ -395,9 +395,9 @@ API размещения платформы UWP XAML включает следу
 
   * **C++ Win32:** : Приложение может вызвать **претранслатемессаже** непосредственно в основном цикле обработки сообщений. Пример см. в файле [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-  * **WPF** Приложение может вызвать **претранслатемессаже** из обработчика событий для события [компонентдиспатчер. среадфилтермессаже](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) . Пример см. в файле [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) в наборе средств сообщества Windows.
+  * **WPF** Приложение может вызвать **претранслатемессаже** из обработчика событий для события [компонентдиспатчер. среадфилтермессаже](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) . Пример см. в файле [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) в наборе средств сообщества Windows.
 
-  * **Windows Forms:** Приложение может вызвать **претранслатемессаже** из переопределения метода [Control. PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2) . Пример см. в файле [WindowsXamlHostBase.KeyboardFocus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) в наборе средств сообщества Windows.
+  * **Windows Forms:** Приложение может вызвать **претранслатемессаже** из переопределения метода [Control. PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) . Пример см. в файле [WindowsXamlHostBase.KeyboardFocus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) в наборе средств сообщества Windows.
 
 ### <a name="keyboard-focus-navigation"></a>Навигация фокуса клавиатуры
 
@@ -439,7 +439,7 @@ API хостинга UWP XAML предоставляет несколько ти
 
 Платформа XAML UWP обрабатывает изменения DPI для размещаемых элементов управления UWP автоматически (например, когда пользователь перетаскивает окно между мониторами с разными DPI на экране). Для оптимальной работы рекомендуется, чтобы Windows Forms, WPF или C++ приложение Win32 были настроены для отслеживания dpi на уровне каждого монитора.
 
-Чтобы настроить приложение для отслеживания dpi на уровне каждого монитора, добавьте в проект [параллельный манифест сборки](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) и задайте **\<\>** для элемента дпиаваренесс значение **PerMonitorV2**. Дополнительные сведения об этом значении см. в описании для [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
+Чтобы настроить приложение для отслеживания DPI на уровне каждого монитора, добавьте в проект [параллельный манифест сборки](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) и задайте для элемента **\<dpiAwareness @ no__t-3** значение **PerMonitorV2**. Дополнительные сведения об этом значении см. в описании для [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

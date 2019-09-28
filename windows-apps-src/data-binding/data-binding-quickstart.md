@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: dfe17fc64fd3e97f7562a7feca760b3a5d918f2e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0832e46794302a3ccc9eba81d4b0e9d93dd9be8c
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339664"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 
@@ -33,9 +33,9 @@ ms.locfileid: "67318013"
 
 Каждая привязка состоит из целевого объекта привязки и источника привязки. Как правило, целевым объектом является свойство элемента управления или другой элемент пользовательского интерфейса, а источником — свойство экземпляра класса (модель данных или модель представления). В этом примере показано, как привязать элемент управления к отдельному элементу. Целью является свойство **Text** элемента **TextBlock**. Источник — это экземпляр простого класса с именем **Recording**, который представляет собой аудиозапись. Сначала рассмотрим класс.
 
-Если вы используете C# или C++/CX, затем добавьте новый класс в проект и назовите класс **записи**.
+Если вы используете C# или C++/CX, добавьте в проект новый класс и назовите **запись**класса.
 
-Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), затем добавить новый **файл Midl (.idl)** элементов в проект, как показано в C++/WinRT кода примера ниже. Замените содержимое файла новые файлы с [MIDL 3.0](/uwp/midl-3/intro) код, показанный в списке, построить проект, чтобы создать `Recording.h` и `.cpp` и `RecordingViewModel.h` и `.cpp`, а затем добавьте код к созданным файлам для сопоставления в списке. Дополнительные сведения об этих созданных файлов и копировании их в проект, см. в разделе [XAML контролирует; привязка к C++свойство /WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), добавьте в проект новые элементы **файла MIDL (. IDL)** с именем, как показано в приведенном ниже C++примере кода/WinRT. Замените содержимое этих новых файлов кодом [MIDL 3,0](/uwp/midl-3/intro) , показанным в списке, выполните сборку проекта, чтобы создать `Recording.h` и `.cpp` и `RecordingViewModel.h` и `.cpp`, а затем добавьте код в создаваемые файлы, чтобы они соответствовали списку. Дополнительные сведения о созданных файлах и их копировании в проект см. в разделе [элементы управления XAML; привязка к свойству C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
 ```csharp
 namespace Quickstart
@@ -223,7 +223,7 @@ namespace Quickstart
 
 После этого предоставьте класс источника привязки из класса, представляющего страницу разметки. Для этого следует добавить свойство типа **RecordingViewModel** к **MainPage**.
 
-Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то после первого обновления `MainPage.idl`. Построение проекта, чтобы повторно создать `MainPage.h` и `.cpp`и объединить изменения в такие созданные файлы в указанных в проекте.
+Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), сначала обновите `MainPage.idl`. Постройте проект, чтобы повторно создать `MainPage.h` и `.cpp`, и объедините изменения в созданных файлах с элементами проекта.
 
 ```csharp
 namespace Quickstart
@@ -316,7 +316,7 @@ MainPage::MainPage()
 </Page>
 ```
 
-Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то вам потребуется удалить **MainPage::ClickHandler** функцию в порядке для сборки проекта.
+Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), необходимо удалить функцию **MainPage:: кликкхандлер** , чтобы построить проект.
 
 Вот результат.
 
@@ -324,9 +324,9 @@ MainPage::MainPage()
 
 ## <a name="binding-to-a-collection-of-items"></a>Привязка к коллекции элементов
 
-Распространенный сценарий — привязка к коллекции бизнес-объектов. В C# и Visual Basic универсальный класс [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) является хорошим вариантом коллекции для привязки данных, поскольку реализует интерфейсы [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) и [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN). Эти интерфейсы предоставляют уведомления об изменении для привязок при добавлении или удалении элементов, а также при изменении свойства самого списка. Если необходимо обновлять привязанные элементы управления при изменениях свойств объектов в коллекции, бизнес-объект также должен реализовать интерфейс **INotifyPropertyChanged**. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
+Распространенный сценарий — привязка к коллекции бизнес-объектов. В C# и Visual Basic универсальный класс [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) является хорошим вариантом коллекции для привязки данных, поскольку реализует интерфейсы [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) и [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged). Эти интерфейсы предоставляют уведомления об изменении для привязок при добавлении или удалении элементов, а также при изменении свойства самого списка. Если необходимо обновлять привязанные элементы управления при изменениях свойств объектов в коллекции, бизнес-объект также должен реализовать интерфейс **INotifyPropertyChanged**. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
 
-Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то Дополнительные сведения о привязке на наблюдаемые коллекции в [XAML элементов элемента управления; привязка к C++коллекции /WinRT](/windows/uwp/cpp-and-winrt-apis/binding-collection). При чтении раздела во-первых, затем цель C++/должно сделать листинг кода WinRT, показано ниже.
+Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), дополнительные сведения о привязке к наблюдаемой коллекции в [элементах управления "элементы XAML" см. в статье C++привязка к коллекции/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-collection). Если ознакомиться с этим разделом сначала, то цель приведенного ниже листинга кода C++/WinRT будет более ясной.
 
 В следующем примере выполняется привязка класса [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) к коллекции объектов `Recording`. Сначала добавим коллекцию к нашей модели представления. Просто добавьте эти новые члены в класс **RecordingViewModel**.
 
@@ -450,11 +450,11 @@ public:
 </Page>
 ```
 
-Мы еще не указали шаблон данных для класса **Recording**, поэтому инфраструктура пользовательского интерфейса может только вызвать метод [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) для каждого элемента в классе [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). По умолчанию метод **ToString** возвращает имя типа.
+Мы еще не указали шаблон данных для класса **Recording**, поэтому инфраструктура пользовательского интерфейса может только вызвать метод [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) для каждого элемента в классе [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). По умолчанию метод **ToString** возвращает имя типа.
 
 ![Привязка списка](images/xaml-databinding1.png)
 
-Чтобы исправить это, мы можем переопределять [ **ToString** ](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) для возврата значения **OneLineSummary**, или мы можем предоставить шаблон данных. Параметр шаблона данных — более распространенную решения и ее более гибкой. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
+Чтобы устранить эту проблему, можно переопределить [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) , чтобы возвращалось значение **онелинесуммари**, или можно предоставить шаблон данных. Параметр шаблона данных является более обычным решением и более гибким. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -494,15 +494,15 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 Вы можете отобразить все сведения объектов **Recording** в элементах [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), но они занимают много места. Вместо этого в элементе можно отобразить данные об объеме, достаточном для определения элемента. Затем, когда пользователь выберет содержимое, вы можете отобразить все сведения о выбранном элементе в отдельном элементе пользовательского интерфейса, известном как представление подробностей. Оно также называется главным представлением либо представлением списка или сведений.
 
-Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) класса [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Или можно использовать [ **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), в этом случае привязать оба **ListView** и представления для **CollectionViewSource**(это поэтому берет на себя элементов, выбранных в настоящий момент для вас). Ниже показаны обе методики и оба предоставляют те же результаты (показано на рисунке).
+Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) класса [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Кроме того, можно использовать [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), в этом случае вы привязываете представление **ListView** и Details к **CollectionViewSource** (при этом для вас выбирается текущий элемент). Оба метода показаны ниже, и они дают одинаковые результаты (показанные на рисунке).
 
 > [!NOTE]
 > Пока что в этом разделе мы использовали только [расширение разметки {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension).
 
-Если вы используете C++/WinRT или визуального элемента C++ расширения компонентов (C++/CX) затем, чтобы использовать [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) расширения разметки, вам потребуется добавить [ **BindableAttribute** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) для любого класса среды выполнения, который вы хотите выполнить привязку для атрибута. Чтобы использовать [{x: Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), этот атрибут не требуется.
+Если вы C++используете/WinRT или расширения визуальных C++ компонентов (C++/CX), то для использования расширения разметки [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) необходимо добавить атрибут [биндаблеаттрибуте](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) в любой класс среды выполнения, к которому необходимо выполнить привязку. Чтобы использовать [{КС:бинд}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), этот атрибут не требуется.
 
 > [!IMPORTANT]
-> Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем [ **BindableAttribute** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) атрибут доступен, если вы установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии. Без этого атрибута необходимо реализовать [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) интерфейсов, чтобы иметь возможность использовать [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) разметки расширение.
+> Если вы используете [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то атрибут [биндаблеаттрибуте](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) доступен, если вы установили Windows SDK версии 10.0.17763.0 (Windows 10, 1809) или более поздней версии. Без этого атрибута необходимо реализовать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [икустомпроперти](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) .
 
 Сначала рассмотрим способ с использованием свойства [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem).
 
@@ -577,15 +577,15 @@ public ref class Recording sealed
 Ниже приведены аналогичные результаты, полученные в каждом случае.
 
 > [!NOTE]
-> При использовании C++, пользовательский Интерфейс не будет выглядеть так же, как на рисунке ниже: отрисовка **ReleaseDateTime** свойство отличается. В следующем разделе более подробное описание этого.
+> Если вы используете C++, Пользовательский интерфейс будет выглядеть не так, как показано ниже: отрисовка свойства **релеаседатетиме** отличается. Дополнительные сведения об этом см. в следующем разделе.
 
 ![Привязка списка](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>Форматирование или преобразование значений данных для отображения
 
-Имеется проблема с отрисовкой выше. **ReleaseDateTime** свойство не только дату, это [ **DateTime** ](/uwp/api/windows.foundation.datetime) (Если вы используете C++, то он имеет [ **календаря**](/uwp/api/windows.globalization.calendar)). Таким образом, в C#, он отображается с более высокой точностью, чем это необходимо. И в C++ оно обрабатывается как имя типа. Одним из решений является добавление строчное свойство **записи** класс, который возвращает эквивалент `this.ReleaseDateTime.ToString("d")`. Именование свойства **ReleaseDate** означает, что он возвращает дату, а не даты и времени. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
+Возникла ошибка, связанная с отрисовкой выше. Свойство **релеаседатетиме** — это не просто Дата, а значение [типа DateTime](/uwp/api/windows.foundation.datetime) (если вы используете C++, а затем это [Календарь](/uwp/api/windows.globalization.calendar)). Таким образом, C#в он отображается с большей точностью, чем требуется. И в C++ нем отображаются как имя типа. Одним из решений является добавление строкового свойства к классу **записи** , который возвращает эквивалент `this.ReleaseDateTime.ToString("d")`. Именование этого свойства **ReleaseDate** указывает, что он возвращает дату, а не дату и время. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
 
-Более гибкое решение — использовать преобразователь величин. Вот пример того, как создать собственный преобразователь величин. Если вы используете C#, затем добавьте приведенный ниже код к вашей `Recording.cs` файл исходного кода. Если вы используете C++/WinRT, затем добавьте новый **файл Midl (.idl)** элемента в проект, как показано в C++/WinRT кода примера ниже, создайте проект, чтобы создать `StringFormatter.h` и `.cpp`, добавьте эти файлы в проект а затем вставьте в листингах кода в них. Кроме того, добавить `#include "StringFormatter.h"` для `MainPage.h`.
+Более гибкое решение — использовать преобразователь величин. Вот пример того, как создать собственный преобразователь величин. Если вы используете C#, добавьте приведенный ниже код в файл исходного кода `Recording.cs`. Если вы используете C++/WinRT, добавьте в проект новый элемент **файла MIDL (. IDL)** с именем, как показано в приведенном ниже примере C++кода/WinRT, выполните сборку проекта, чтобы создать `StringFormatter.h` и `.cpp`, добавьте эти файлы в проект, а затем вставьте примеры кода. Также добавьте `#include "StringFormatter.h"` в `MainPage.h`.
 
 ```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -704,9 +704,9 @@ public:
 ...
 ```
 
-> [ПРИМЕЧАНИЕ] Для C++/WinRT листинг кода выше, в `StringFormatter.idl`, мы используем [атрибут по умолчанию](https://docs.microsoft.com/windows/desktop/midl/default) для объявления **IValueConverter** как интерфейс по умолчанию. В списке, **StringFormatter** имеет только конструктор и нет методов, поэтому для нее создается интерфейс по умолчанию. `default` Атрибут неоптимальной, если не будет, добавить элементы экземпляра **StringFormatter**, так как не QueryInterface потребуется вызвать **IValueConverter** методы. Кроме того, можно ввести запрос по умолчанию **IStringFormatter** интерфейс будет создан, и это сделать, добавив аннотации для среды выполнения сам по себе класс с [default_interface атрибут](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Что вариант оптимален при добавлении членов экземпляров для **StringFormatter** , вызываемые чаще, чем методы **IValueConverter** , поскольку затем не QueryInterface потребуется вызвать члены экземпляров.
+> [Примечание.] Для приведенного выше кода C++/WinRT в `StringFormatter.idl` мы используем [атрибут по умолчанию](https://docs.microsoft.com/windows/desktop/midl/default) для объявления **IValueConverter** в качестве интерфейса по умолчанию. В списке **стрингформаттер** имеет только конструктор и не имеет методов, поэтому для него не создается интерфейс по умолчанию. Атрибут `default` является оптимальным, если вы не добавите члены экземпляра в **стрингформаттер**, так как для вызова методов **IValueConverter** не требуется QueryInterface. Кроме того, можно запросить создание интерфейса **истрингформаттер** по умолчанию и сделать это, заполнив заметку самого класса среды выполнения [атрибутом default_interface](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Этот параметр является оптимальным, если вы добавляете члены экземпляра в **стрингформаттер** , которые вызываются чаще, чем методы **IValueConverter** , поскольку не требуется QueryInterface для вызова членов экземпляра.
 
-Теперь можно добавить экземпляр **StringFormatter** как ресурс страницы и использовать его в привязку **TextBlock** , отображающий **ReleaseDateTime** свойство.
+Теперь можно добавить экземпляр **стрингформаттер** в качестве ресурса страницы и использовать его в привязке **TextBlock** , отображающей свойство **релеаседатетиме** .
 
 ```xml
 <Page.Resources>
@@ -719,14 +719,14 @@ public:
 ...
 ```
 
-Как показано выше, для форматирования гибкость мы используем разметку для передачи в преобразователь посредством параметр преобразователя строку формата. В примерах кода, приведенные в этом разделе, только C# преобразователь значений используется этого параметра. Но можно легко передать строку формата стиле C++ в качестве параметр преобразователя и использовать, что в преобразователь значений с форматированием функции например **wprintf** или **swprintf**.
+Как видно выше, для гибкости форматирования мы используем разметку для передачи строки формата в преобразователь с помощью параметра преобразователя. В примерах кода, приведенных в этом разделе, C# только преобразователь значений использует этот параметр. Но в качестве параметра преобразователя можно C++легко передать строку формата в стиле и использовать ее в преобразователе значений с помощью функции форматирования, такой как **wprintf** или **swprintf**.
 
 Вот результат.
 
 ![отображение даты в пользовательском форматировании](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь логическое значение для видимости. Преобразователь maps **true** для **Visibility.Visible** значение перечисления и **false** для **Visibility.Collapsed** , чтобы привязать Свойство видимости в логический тип, не создавая преобразователь. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. Дополнительные сведения о целевой версии, см. в разделе [адаптивной версии кода](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь логического типа для отображения. Преобразователь сопоставляется со значением **true** для свойства **Visibility. Visible** и **false** для **видимости. сворачивается** , поэтому можно привязать свойство видимости к логическому типу без создания преобразователя. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. Дополнительные сведения о целевых версиях см. в разделе [адаптивный к версии код](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>См. также
 * [Привязка данных](index.md)

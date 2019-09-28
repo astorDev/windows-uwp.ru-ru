@@ -8,25 +8,25 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 646f4ad98e6c914c2318a164629d31ce7b67dab4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ad23831372b638e6afb36355e3ea8ca322e5d91d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317305"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340278"
 ---
 # <a name="continuous-dictation"></a>Непрерывная диктовка
 
 Узнайте, как записать и распознать длительный непрерывный речевой ввод.
 
-> **Важные API**: [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [ **ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
+> **Важные API**: [**Спичконтинуаусрекогнитионсессион**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [ **континуаусрекогнитионсессион**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
 
 В разделе [Распознавание речи](speech-recognition.md) вы узнали, как записать и распознать относительно короткий речевой ввод с помощью методов [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) или [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) объекта [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), например при составлении сообщения SMS или вопроса.
 
 Чтобы записывать более длительные сеансы распознавания речи, например диктовку или сообщение электронной почты, используйте свойство [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)[**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) для получения объекта [**SpeechContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession).
 
 > [!NOTE]
-> Зависит от языковой поддержки режима диктовки [устройства](https://docs.microsoft.com/windows/uwp/design/devices/) где выполняется приложение. Для компьютеров и ноутбуков распознается только en US, хотя Xbox и телефоны может распознать все языки, поддерживаемые распознавания речи. Дополнительные сведения см. в разделе [указать язык распознаватель речи](specify-the-speech-recognizer-language.md).
+> Поддержка языка диктовки зависит от [устройства](https://docs.microsoft.com/windows/uwp/design/devices/) , на котором работает приложение. Для компьютеров и ноутбуков поддерживается только en-US, в то время как Xbox и телефоны могут распознавать все языки, поддерживаемые функцией распознавания речи. Дополнительные сведения см. [в разделе Указание языка распознавания речи](specify-the-speech-recognizer-language.md).
 
 ## <a name="set-up"></a>Настройка
 
@@ -55,7 +55,7 @@ private CoreDispatcher dispatcher;
 
 Для отслеживания речи пользователя необходимо обрабатывать события распознавания, которые создаются распознавателем речи. Эти события предоставляют результаты распознавания отрывков реплик пользователя.
 
-Здесь мы используем объект [**StringBuilder**](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder?redirectedfrom=MSDN), чтобы сохранить все предыдущие результаты распознавания, полученные в течение сеанса. Новые результаты добавляются в **StringBuilder** по мере обработки.
+Здесь мы используем объект [**StringBuilder**](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder), чтобы сохранить все предыдущие результаты распознавания, полученные в течение сеанса. Новые результаты добавляются в **StringBuilder** по мере обработки.
 
 ```CSharp
 private StringBuilder dictatedTextBuilder;
@@ -68,12 +68,12 @@ private StringBuilder dictatedTextBuilder;
 - Получить диспетчер для потока пользовательского интерфейса, если пользовательский интерфейс приложения обновляется в обработчиках событий непрерывных речи.
 - Инициализировать распознаватель речи.
 - Скомпилировать встроенную грамматику диктовки.
-    **Примечание**    распознавания речи требуется по крайней мере одно ограничение для определения запоминающееся словаря. Если не задано ни одно ограничение, будет использоваться предопределенная грамматика речевого ввода. См. [Распознавание речи](speech-recognition.md).
+    **Примечание**   для распознавания речи требуется по крайней мере одно ограничение, определяющее распознаваемый словарь. Если не задано ни одно ограничение, будет использоваться предопределенная грамматика речевого ввода. См. [Распознавание речи](speech-recognition.md).
 - Настроить прослушиватели событий распознавания.
 
 В данном примере мы инициализируем распознавание речи в событии страницы [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto).
 
-1. Поскольку события, создаваемые распознавателем речи, возникают в фоновом потоке, создайте ссылку на диспетчер для обновления потока пользовательского интерфейса. [**OnNavigatedTo** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) всегда вызывается в потоке пользовательского интерфейса.
+1. Поскольку события, создаваемые распознавателем речи, возникают в фоновом потоке, создайте ссылку на диспетчер для обновления потока пользовательского интерфейса. [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) всегда вызывается в ПОТОКЕ пользовательского интерфейса.
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -105,15 +105,15 @@ SpeechRecognitionCompilationResult result =
 
 Два события являются особенно важными.
 
-- [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated), которое присваивается, когда распознаватель создал некоторые результаты.
-- [**Завершено**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), что происходит при завершении сеанса непрерывной распознавания.
+- [**Ресултженератед**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated), которая происходит, когда распознаватель создал некоторые результаты.
+- [**Завершено**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed), что происходит после завершения сеанса непрерывного распознавания.
 
 Событие [**ResultGenerated**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) возникает, когда пользователь говорит. Распознаватель непрерывно слушает пользователя и периодически вызывает событие, которое передает реплики речевого ввода. Необходимо изучить речевой ввод с помощью свойства [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) аргумента события и принять необходимые меры в обработчике событий, например добавить текст в объект StringBuilder.
 
 В качестве экземпляра [**SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) свойство [**Result**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result) полезно для определения необходимости принятия речевого ввода. [  **SpeechRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult) предоставляет два таких свойства:
 
-- [**Состояние** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) указывает, успешно ли распознавания. Распознавание может завершиться с ошибкой по различным причинам.
-- [**Достоверности** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) указывает относительный уверенность, что распознаватель понятны правильный слова.
+- [**Состояние**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status) указывает, было ли распознавание успешным. Распознавание может завершиться с ошибкой по различным причинам.
+- [**Достоверность**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence) означает относительную уверенность, что распознаватель понимает правильные слова.
 
 Далее описаны основные действия, обеспечивающие поддержку непрерывного распознавания.  
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Затем мы проверяем свойство [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence). Если значение уверенности равно [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) или выше, мы добавляем текст в StringBuilder. Также мы обновляем пользовательский интерфейс по мере сбора ввода.
 
-    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) метод диспетчера.
+    **Обратите внимание**, что событие   the [**ресултженератед**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) возникает в фоновом потоке, который не может напрямую обновить пользовательский интерфейс. Если обработчику требуется обновить пользовательский интерфейс (например, \[Speech и TTS Sample @ no__t-1), необходимо отправить обновления в поток пользовательского интерфейса с помощью метода [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) диспетчера.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Обработчик событий проверяет свойства Status, чтобы определить, было ли распознавание успешным. Он также обрабатывает те случаи, когда пользователь перестает говорить. Часто [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) считается успешным распознаванием, так как это означает, что пользователь перестал говорить. Вы должны обрабатывать эти случаи в своем коде, обеспечивая удобную работу пользователя.
 
-    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) метод диспетчера.
+    **Обратите внимание**, что событие   the [**ресултженератед**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) возникает в фоновом потоке, который не может напрямую обновить пользовательский интерфейс. Если обработчику требуется обновить пользовательский интерфейс (например, \[Speech и TTS Sample @ no__t-1), необходимо отправить обновления в поток пользовательского интерфейса с помощью метода [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) диспетчера.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -244,8 +244,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 Распознавание может быть остановлено двумя способами:
 
--   [**StopAsync** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) позволяет все ожидающие события распознавания полный ([**ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) продолжает возникать, пока все ожидающие распознавания операции завершены).
--   [**CancelAsync** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) завершает сеанс распознавания немедленно и удаляет все ожидающие результаты.
+-   [**Стопасинк**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync) позволяет выполнять все ожидающие события распознавания ([**ресултженератед**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) по-своему, пока все ожидающие операции распознавания не будут завершены).
+-   [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) немедленно завершает сеанс распознавания и отклоняет все ожидающие результаты.
 
 После проверки состояния распознавателя речи мы останавливаем сеанс, вызвав метод [**CancelAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync) свойства [**ContinuousRecognitionSession**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) распознавателя речи.
 
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Взаимодействия с помощью речи](speech-interactions.md)
 
 **Примеры**
-* [Распознавание речи и синтеза речи-пример](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Пример распознавания речи и синтеза речи](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

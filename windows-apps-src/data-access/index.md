@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce2bbb1b72eaa33001e86c9aa81b334e338cb53
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 80cf97a7336fe912baf5cda151560dacfa12c2e2
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362613"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339712"
 ---
 # <a name="data-access"></a>Доступ к данным
 
@@ -20,7 +20,7 @@ ms.locfileid: "66362613"
 | Раздел | Описание|
 |-------|------------|
 | [Использование базы данных SQLite в приложении UWP](sqlite-databases.md) | Описывается, как можно использовать SQLite для хранения и извлечения данных из упрощенной базы данных на устройстве пользователя. SQLite – это бессерверное встраиваемое ядро СУБД. |
-| [Использование базы данных SQL Server в приложении UWP](sql-server-databases.md) | Показывается, как ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN). Уровень служб не требуется. |
+| [Использование базы данных SQL Server в приложении UWP](sql-server-databases.md) | Показывается, как ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Уровень служб не требуется. |
 
 ## <a name="related-topics"></a>Статьи по теме
 

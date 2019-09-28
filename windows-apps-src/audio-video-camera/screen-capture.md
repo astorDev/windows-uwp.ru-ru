@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: 703e5738b7e1b3ce55085aa348da5e153eb2fa71
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: ad9a6bbc4055258b5f89b07d8670f3147eafc86d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713875"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339762"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 
@@ -23,15 +23,15 @@ ms.locfileid: "67713875"
 Снимок экрана позволяет разработчикам вызывать безопасный системный интерфейс, чтобы конечные пользователи могли выбрать экран или окно приложения для захвата, после чего систему рисует желтую границу уведомления вокруг активного элемента. В случае синхронных сеансов захвата желтая граница рисуется вокруг каждого элемента, снимок которого создается.
 
 > [!NOTE]
-> Снимок экрана API-интерфейсы поддерживаются только на рабочий стол и иммерсивную смешанной реальности Windows.
+> API-интерфейсы захвата экрана поддерживаются только на настольных и впечатляющих гарнитурах Windows Mixed Reality.
 
 ## <a name="add-the-screen-capture-capability"></a>Добавление возможности захвата экрана
 
-API-интерфейсов см. в **Windows.Graphics.Capture** пространства имен требуется возможность общей объявлялся в манифесте приложения:
+Для API-интерфейсов, обнаруженных в пространстве имен **Windows. Graphics. Capture** , требуется объявление общей возможности в манифесте приложения:
 
-1. Откройте **Package.appxmanifest** в **обозревателе решений**.
+1. Откройте **Package. appxmanifest** в **Обозреватель решений**.
 2. Перейдите на вкладку **Возможности**.
-3. Проверьте **захват графики**.
+3. Проверьте **видеозапись графических объектов**.
 
 ![Захват графики](images/screen-capture-1.png)
 
@@ -94,7 +94,7 @@ Public Async Function StartCaptureAsync() As Task
 End Function
 ```
 
-Так как это код пользовательского интерфейса, он должен вызываться в потоке пользовательского интерфейса. Если вы его вызов из кода для страницы приложения (например **MainPage.xaml.cs**) это будет сделано автоматически, но если это не так, можно будет применить его для запуска в потоке пользовательского интерфейса со следующим кодом:
+Поскольку это код пользовательского интерфейса, его необходимо вызывать в потоке пользовательского интерфейса. Если вы вызываете его из кода программной части для страницы приложения (например, **MainPage.XAML.CS**), это выполняется автоматически, но в противном случае можно принудительно запустить его в ПОТОКЕ пользовательского интерфейса с помощью следующего кода:
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Создание пула кадров захвата и сеанса захвата
 
-С помощью **GraphicsCaptureItem**, вы создадите [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) с устройства D3D, поддерживаемый формат пикселей (**DXGI\_ФОРМАТ\_ B8G8R8A8\_UNORM**), число нужные кадры (что может быть любое целое число) и кадра размер. Свойство **ContentSize** класса **GraphicsCaptureItem** класс можно использовать в качестве размера кадра:
+С помощью **графикскаптуреитем**вы создадите [DIRECT3D11CAPTUREFRAMEPOOL](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) с устройством D3D, поддерживаемым форматом пикселей (**DXGI @ no__t-3FORMAT @ no__t-4B8G8R8A8 @ no__t-5UNORM**), числом нужных кадров (которое может быть любым целым числом). ) и размер кадра. Свойство **ContentSize** класса **GraphicsCaptureItem** класс можно использовать в качестве размера кадра:
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -218,9 +218,9 @@ End Sub
 
 Объект **Direct3D11CaptureFrame** содержит свойства **размер содержимого**, **Surface** и **SystemRelativeTime**. **SystemRelativeTime** — это  время QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)), которое можно использовать для синхронизации с другими элементами мультимедиа.
 
-## <a name="process-capture-frames"></a>Процесс захвата кадров
+## <a name="process-capture-frames"></a>Кадры захвата процесса
 
-Каждый кадр **Direct3D11CaptureFramePool** извлекается при вызове **TryGetNextFrame** и возвращается в соответствии с временем жизни объекта **Direct3D11CaptureFrame**. Для собственных приложений освобождения объекта **Direct3D11CaptureFrame** достаточно для возврата кадра в пул. Для управляемых приложений рекомендуется использовать метод **Direct3D11CaptureFrame.Dispose** (**Close** на C++). **Direct3D11CaptureFrame** реализует интерфейс [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), который проецируется как [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable?redirectedfrom=MSDN) для вызывающих объектов C#.
+Каждый кадр **Direct3D11CaptureFramePool** извлекается при вызове **TryGetNextFrame** и возвращается в соответствии с временем жизни объекта **Direct3D11CaptureFrame**. Для собственных приложений освобождения объекта **Direct3D11CaptureFrame** достаточно для возврата кадра в пул. Для управляемых приложений рекомендуется использовать метод **Direct3D11CaptureFrame.Dispose** (**Close** на C++). **Direct3D11CaptureFrame** реализует интерфейс [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), который проецируется как [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable) для вызывающих объектов C#.
 
 Приложения не должны сохранять ссылки на объекты **Direct3D11CaptureFrame** и не должны сохранять ссылки на базовую поверхность Direct3D после возврата кадра.
 
@@ -230,7 +230,7 @@ End Sub
 
 ## <a name="take-a-screenshot"></a>Создание снимка экрана
 
-В нашем примере мы преобразования каждого **Direct3D11CaptureFrame** в [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), который является частью [Win2D API-интерфейсы](https://microsoft.github.io/Win2D/html/Introduction.htm).
+В нашем примере мы преобразуем каждый **Direct3D11CaptureFrame** в [канвасбитмап](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), который является частью [API Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
 ```cs
 // Convert our D3D11 surface into a Win2D object.
@@ -239,7 +239,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     frame.Surface);
 ```
 
-Когда у нас **CanvasBitmap**, его можно сохранить в файл изображения. В следующем примере мы сохраните его как PNG-файл в пользователя **сохранения изображений** папки.
+После получения **канвасбитмап**можно сохранить его как файл изображения. В следующем примере мы сохраняем его как PNG-файл в папке **сохраненные рисунки** пользователя.
 
 ```cs
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
@@ -259,10 +259,10 @@ using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
 
 ## <a name="putting-it-all-together"></a>Объединение элементов
 
-В следующем фрагменте кода приведен пример end-to-end реализации снимки экрана в приложении универсальной платформы Windows. В этом примере у нас есть две кнопки в интерфейсной части: один вызовы **Button_ClickAsync**, а другой вызывает **ScreenshotButton_ClickAsync**.
+В следующем фрагменте кода приведен полный пример реализации снимка экрана в приложении UWP. В этом примере у нас есть две кнопки в интерфейсной части: один вызывает **Button_ClickAsync**, а другой вызывает **ScreenshotButton_ClickAsync**.
 
 > [!NOTE]
-> Этот фрагмент кода использует [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), библиотеку для отрисовки двумерной графики. См. в разделе документации сведения о том, как настроить его для проекта.
+> В этом фрагменте кода используется [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)— библиотека для отрисовки двухмерной графики. Сведения о том, как настроить проект, см. в их документации.
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -686,8 +686,8 @@ End Class
 
 ## <a name="record-a-video"></a>Запись видео
 
-Если вы хотите сделать видеозапись вашего приложения, поэтому более легко сделать с помощью [пространства имен Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Это является частью рабочего стола расширения пакета SDK, поэтому он работает только на рабочем столе и необходимо добавить ссылку на него из проекта. См. в разделе [Обзор семейств устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) Дополнительные сведения.
+Если вы хотите записать видео приложения, это можно сделать проще с помощью [пространства имен Windows. Media. аппрекординг](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Это часть пакета SDK для расширения настольных систем, поэтому она работает только на настольном компьютере и требует добавления ссылки на него из проекта. Дополнительные сведения см. в разделе [Обзор семейств устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>См. также
 
-* [Пространство имен Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Пространство имен Windows. Graphics. Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

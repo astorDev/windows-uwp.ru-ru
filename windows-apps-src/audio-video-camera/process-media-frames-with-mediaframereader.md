@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
-ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
+ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339751"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -129,7 +129,7 @@ ms.locfileid: "69544913"
 
 Элемент управления **Image** может отображать только изображения в формате BRGA8 с предварительным умножением альфа-канала или без него. Если поступающий кадр не соответствует этому формату, статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) используется для преобразования программного точечного рисунка в правильный формат.
 
-Далее метод [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) используется для замены ссылки на поступающий точечный рисунок точечным рисунком из заднего буфера. Этот метод заменяет такие ссылки в атомарной операции, которая является потокобезопасной. После замены старое изображение из заднего буфера, которое теперь находится в переменной *softwareBitmap*, удаляется для высвобождения ресурсов.
+Далее метод [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_) используется для замены ссылки на поступающий точечный рисунок точечным рисунком из заднего буфера. Этот метод заменяет такие ссылки в атомарной операции, которая является потокобезопасной. После замены старое изображение из заднего буфера, которое теперь находится в переменной *softwareBitmap*, удаляется для высвобождения ресурсов.
 
 Далее объект [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher), связанный с элементом **Image**, используется для создания задачи, которая будет выполняться в потоке пользовательского интерфейса, путем вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync). Поскольку асинхронные задачи будут выполняться в рамках задачи, передаваемое **RunAsync** лямбда-выражение объявляется с использованием ключевого слова *async*.
 
@@ -169,7 +169,7 @@ ms.locfileid: "69544913"
 ## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>Используйте MultiSourceMediaFrameReader для получения коррелирующих по времени кадров из нескольких источников.
 Начиная с Windows 10 версии 1607, можно использовать [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) для получения коррелирующих по времени кадров из нескольких источников. Этот API упрощает обработку, если требуются кадры из нескольких источников, сделанные примерно в одно время, например с использованием класса [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper). Одним из ограничений этого нового метода является то, что события поступления кадра создаются со скоростью самого медленного источника записи. Дополнительные кадры из более быстрых источников не обрабатываются. Кроме того, поскольку система ожидает, что кадры будут поступать из разных источников с разной скоростью, она автоматически не распознает, прекратил ли источник генерировать кадры. В примере кода из этого раздела показано, как использовать событие для создания собственной логики тайм-аута, которая вызывается, если коррелирующие кадры не поступают в течение определяемого приложением лимита времени.
 
-Действия по использованию [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) совпадают с действиями по использованию [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader), описанного ранее в этой статье. В этом примере будет использоваться источник цвета и источник глубины. Объявите несколько строчных переменных, чтобы сохранить идентификаторы источников мультимедийных кадров, которые будут использоваться для выбора кадров из каждого источника. Затем объявите [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource?redirectedfrom=MSDN) и [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler?redirectedfrom=MSDN), которые будут использоваться для реализации логики тайм-аута в этом примере. 
+Действия по использованию [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) совпадают с действиями по использованию [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader), описанного ранее в этой статье. В этом примере будет использоваться источник цвета и источник глубины. Объявите несколько строчных переменных, чтобы сохранить идентификаторы источников мультимедийных кадров, которые будут использоваться для выбора кадров из каждого источника. Затем объявите [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim), [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource) и [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler), которые будут использоваться для реализации логики тайм-аута в этом примере. 
 
 [!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
 
@@ -187,7 +187,7 @@ ms.locfileid: "69544913"
 
 Создайте и инициализируйте **MultiSourceMediaFrameReader**, вызвав [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) и передав массив источников кадров, который будет использоваться считывателем. Зарегистрируйте обработчик событий для события [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived). В этом примере создается экземпляр вспомогательного класса **FrameRenderer**, описанный ранее в этой статье, для отображения кадров элементу управления **Image**. Запустите ридер кадров вызовом метода [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync).
 
-Зарегистрируйте обработчик событий для события **CorellationFailed**, объявленного ранее в этом примере. Мы сигнализируем это событие, если один из используемых источников мультимедийных кадров прекратит создание кадров. Наконец, вызовите метод [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#System_Threading_Tasks_Task_Run_System_Action_), чтобы вызвать вспомогательный метод тайм-аута (**NotifyAboutCorrelationFailure**) в отдельном потоке. Реализации этого метода приводится далее в этой статье.
+Зарегистрируйте обработчик событий для события **CorellationFailed**, объявленного ранее в этом примере. Мы сигнализируем это событие, если один из используемых источников мультимедийных кадров прекратит создание кадров. Наконец, вызовите метод [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_), чтобы вызвать вспомогательный метод тайм-аута (**NotifyAboutCorrelationFailure**) в отдельном потоке. Реализации этого метода приводится далее в этой статье.
 
 [!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
 
@@ -195,7 +195,7 @@ ms.locfileid: "69544913"
 
 Получите метод [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference), связанный с событием, вызвав метод [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame). Получите метод **MediaFrameReference**, связанный с каждым источником мультимедийных кадров, вызвав [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid) путем передачи строк идентификаторов, сохраненных при инициализации ридера кадров.
 
-Вызовите метод [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set?redirectedfrom=MSDN#System_Threading_ManualResetEventSlim_Set) объекта **ManualResetEventSlim**, чтобы указать на поступление кадров. Мы проверим это событие в методе **NotifyCorrelationFailure**, который выполняется в отдельном потоке. 
+Вызовите метод [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set) объекта **ManualResetEventSlim**, чтобы указать на поступление кадров. Мы проверим это событие в методе **NotifyCorrelationFailure**, который выполняется в отдельном потоке. 
 
 Наконец, выполните обработку в коррелирующих по времени мультимедийных кадрах. В этом примере отображается кадр из источника глубины.
 

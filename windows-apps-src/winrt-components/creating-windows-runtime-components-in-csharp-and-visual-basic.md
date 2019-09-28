@@ -1,5 +1,5 @@
 ---
-title: Среда выполнения Windows компонентов с C# и Visual Basic
+title: Создание компонентов среды выполнения Windows с помощью C# и Visual Basic
 description: Начиная с .NET 4,5, можно использовать управляемый код для создания собственных типов среда выполнения Windows, упакованных в компонент среда выполнения Windows.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
@@ -9,16 +9,16 @@ dev_langs:
 - vb
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 351d59cbecd0941cdc6218d02672b2a679cf3fce
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: c402b8e4ba98f55267a42c1bce1c16e6f090e80c
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393728"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340378"
 ---
-# <a name="windows-runtime-components-with-c-and-visual-basic"></a>Среда выполнения Windows компонентов с C# и Visual Basic
+# <a name="windows-runtime-components-with-c-and-visual-basic"></a>Создание компонентов среды выполнения Windows с помощью C# и Visual Basic
 
-Управляемый код можно использовать для создания собственных типов среда выполнения Windows и их упаковки в среда выполнения Windows компонент. Компонент можно использовать в приложениях универсальная платформа Windows (UWP), написанных на C++языках, JavaScript, Visual Basic или. C# В этом разделе описываются правила создания компонента и обсуждаются некоторые аспекты поддержки .NET для среда выполнения Windows. Как правило, поддержка является прозрачной для программиста .NET. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
+Управляемый код можно использовать для создания собственных типов среда выполнения Windows и их упаковки в среда выполнения Windows компонент. Компонент можно использовать в приложениях универсальная платформа Windows (UWP), написанных на C++языках, JavaScript, Visual Basic или. C# В данном разделе описываются правила создания компонентов и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков для .NET. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
 
 Если вы создаете компонент для использования только в приложениях UWP, написанных на Visual Basic или C#, а компонент не содержит элементов управления UWP, то сначала используйте шаблон **библиотеки классов** вместо проекта **компонента Среда выполнения Windows** . шаблон в Microsoft Visual Studio. У простой библиотеки классов меньше ограничений.
 
@@ -28,9 +28,9 @@ ms.locfileid: "70393728"
 
 Внешние члены типов могут предоставлять только типы среда выполнения Windows для их параметров и возвращаемых значений. В следующем списке описаны ограничения на типы .NET, предоставляемые из компонента среда выполнения Windows.
 
-- Поля, параметры и возвращаемые значения всех открытых типов и членов в ваших компонентах должны относиться к типам среды выполнения Windows. Это ограничение включает в себя созданные вами типы среда выполнения Windows, а также типы, предоставляемые среда выполнения Windows. Он также включает несколько типов .NET. Включение этих типов является частью поддержки, предоставляемой .NET для того, чтобы обеспечить естественное использование среда выполнения Windows в управляемом коде&mdash;, когда код кажется использовать знакомые типы .NET вместо базовых типов Среда выполнения Windows. Например, можно использовать примитивные типы .NET, такие как **Int32** и **Double**, определенные фундаментальные типы, такие как **DateTimeOffset** и **URI**, и некоторые часто используемые универсальные типы интерфейса, такие как **&lt;IEnumerable T.&gt;** (IEnumerable (Of T) в Visual Basic) и **IDictionary&lt;TKey, TValue&gt;** . Обратите внимание, что аргументы типа для этих универсальных типов должны быть среда выполнения Windows типами. Это описано в разделах [передача типов Среда выполнения Windows в управляемый код](#passing-windows-runtime-types-to-managed-code) и [передача управляемых типов в среда выполнения Windows](#passing-managed-types-to-the-windows-runtime)далее в этом разделе.
+- Поля, параметры и возвращаемые значения всех открытых типов и членов в ваших компонентах должны относиться к типам среды выполнения Windows. Это ограничение включает в себя созданные вами типы среда выполнения Windows, а также типы, предоставляемые среда выполнения Windows. Он также включает несколько типов .NET. Включение этих типов является частью поддержки, предоставляемой .NET, чтобы обеспечить естественное использование среда выполнения Windows в коде управляемого кода @ no__t-0your — использовать знакомые типы .NET вместо базовых типов среда выполнения Windows. Например, можно использовать примитивные типы .NET, такие как **Int32** и **Double**, определенные фундаментальные типы, такие как **DateTimeOffset** и **URI**, и некоторые часто используемые универсальные типы интерфейса, такие как **IEnumerable @ no__t-5T @ no__t-6.** (IEnumerable (Of T) в Visual Basic) и **IDictionary @ No__t-8TKey, TValue @ no__t-9**. Обратите внимание, что аргументы типа для этих универсальных типов должны быть среда выполнения Windows типами. Это описано в разделах [передача типов Среда выполнения Windows в управляемый код](#passing-windows-runtime-types-to-managed-code) и [передача управляемых типов в среда выполнения Windows](#passing-managed-types-to-the-windows-runtime)далее в этом разделе.
 
-- Открытые классы и интерфейсы могут содержать методы, свойства и события. Можно объявить делегаты для событий или воспользоваться делегатом **EventHandler&lt;T&gt;**  . Открытый класс или интерфейс не могут:
+- Открытые классы и интерфейсы могут содержать методы, свойства и события. Можно объявить делегаты для событий или использовать делегат **EventHandler @ no__t-1T @ no__t-2** . Открытый класс или интерфейс не могут:
     - быть универсальными;
     - Реализуйте интерфейс, который не является интерфейсом среда выполнения Windows (Однако можно создавать собственные интерфейсы среда выполнения Windows и реализовывать их).
     - Наследовать от типов, которые не находятся в среда выполнения Windows, таких как **System. Exception** и **System. EventArgs**.
@@ -82,26 +82,26 @@ ms.locfileid: "70393728"
 
 | Среда выполнения Windows                                  | .NET                                    |
 |-|-|
-| Иитерабле&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
-| IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
-| IVectorView&lt;T&gt;                             | Иреадонлилист&lt;T&gt;                            |
-| IMAP&lt;K, V&gt;                                 | IDictionary&lt;TKey, TValue&gt;                   |
-| IMapView&lt;K, V&gt;                             | IReadOnlyDictionary&lt;TKey, TValue&gt;           |
-| IKeyValuePair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
+| Иитерабле @ no__t-0T @ no__t-1                               | IEnumerable @ no__t-0T @ no__t-1                              |
+| IVector @ no__t-0T @ no__t-1                                 | IList @ no__t-0T @ no__t-1                                    |
+| IVectorView @ no__t-0T @ no__t-1                             | Иреадонлилист @ no__t-0T @ no__t-1                            |
+| IMap @ no__t-0 тыс., V @ no__t-1                                 | IDictionary @ no__t-0TKey, TValue @ no__t-1                   |
+| IMapView @ no__t-0 тыс., V @ no__t-1                             | IReadOnlyDictionary @ no__t-0TKey, TValue @ no__t-1           |
+| IKeyValuePair @ no__t-0 тыс., V @ no__t-1                        | KeyValuePair @ no__t-0TKey, TValue @ no__t-1                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVector                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-Если тип реализует несколько интерфейсов, в качестве типа параметра или типа возвращаемого значения члена можно использовать любой из этих интерфейсов. Например, можно передать или вернуть **словарь&lt;int, String&gt;**  (**словарь (целое число, строка)** в Visual Basic) как **IDictionary&lt;int, String&gt;** , **IReadOnlyDictionary int,String&gt;или IEnumerable System. Collections. Generic. KeyValuePair TKey, TValue. &lt;** **&gt;&gt;&lt;&lt;**
+Если тип реализует несколько интерфейсов, в качестве типа параметра или типа возвращаемого значения члена можно использовать любой из этих интерфейсов. Например, вы можете передать или вернуть **словарь @ no__t-1int, String @ no__t-2** (**словарь (целочисленное значение, string)** в Visual Basic) в качестве **IDictionary @ no__t-5int, String @ no__t-6**, **IReadOnlyDictionary @ no__t-8int, String @ no__t-9** или **IEnumerable @ No__t-11System. Collections. Generic. KeyValuePair @ No__t-12TKey, TValue @ no__t-13 @ no__t-14**.
 
 > [!IMPORTANT]
-> JavaScript использует интерфейс, который отображается первым в списке интерфейсов, реализуемых управляемым типом. Например, если вы возвращаете **словарь&lt;int, String&gt;**  в код JavaScript, **&gt; он отображается как IDictionary&lt;int,** а не вне зависимости от того, какой интерфейс указан в качестве возвращаемого типа. Это означает, что если первый интерфейс не включает элемент, который отображается в последующих интерфейсах, этот элемент не будет видимым в JavaScript.
+> JavaScript использует интерфейс, который отображается первым в списке интерфейсов, реализуемых управляемым типом. Например, при возврате **словаря @ no__t-1int, String @ no__t-2** в код JavaScript, он отображается как **IDictionary @ no__t-4int, String @ no__t-5** независимо от того, какой интерфейс указан в качестве возвращаемого типа. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
 
-В среда выполнения Windows, **&lt;IMAP k,&gt; v** и **IMapView&lt;K&gt;**  просматриваются с помощью IKeyValuePair. При передаче в управляемый код они отображаются как **IDictionary&lt;TKey, TValue&gt;**  и **IReadOnlyDictionary&lt;TKey, TValue&gt;** , поэтому естественно использовать  **System. Collections. Generic.&lt;KeyValuePair TKey,&gt; TValue** для перечисления.
+В среда выполнения Windows, **IMAP @ no__t-1000, v @ no__t-2** и **IMapView @ no__t-4000, v @ no__t-5** , выполняет итерацию с помощью IKeyValuePair. При передаче в управляемый код они отображаются как **IDictionary @ no__t-1TKey, TValue @ no__t-2** и **IReadOnlyDictionary @ no__t-4TKey, TValue @ no__t-5**, поэтому естественно использовать **System. Collections. Generic. KeyValuePair @ no__t-7TKey, TValue @ no__t-8** , чтобы перечислить их.
 
-Представление интерфейсов в управляемом коде влияет на представление типов, реализующих эти интерфейсы. Например, класс **свойств** реализует **IMAP&lt;K&gt;, V**, который отображается в управляемом коде как **IDictionary&lt;TKey, TValue.&gt;** Набор **свойств** выглядит так, как если бы он реализовал **&lt;IDictionary&gt; TKey, TValue** вместо **IMAP&lt;K&gt;, V**, поэтому в управляемом коде он выглядит как метод **Add** , который ведет себя как и метод **Add** в словарях .NET. Он не имеет метода **INSERT** . Этот пример можно увидеть в разделе [Пошаговое руководство по созданию C# компонента Visual Basic среда выполнения Windows и его вызову из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+Представление интерфейсов в управляемом коде влияет на представление типов, реализующих эти интерфейсы. Например, класс **свойств** реализует протоколы **IMAP @ no__t-2000, V @ no__t-3**, который отображается в управляемом коде как **IDictionary @ no__t-5TKey, TValue @ no__t-6**. Набор **свойств** выглядит так, как если бы он реализовал **IDictionary @ no__t-2TKey, TValue @ no__t-3** вместо **IMAP @ no__t-5 КБ, V @ no__t-6**, поэтому в управляемом коде он выглядит как **метод Add,** который ведет себя как метод **Add** . СЕТЕВЫЕ словари. Он не имеет метода **INSERT** . Этот пример можно увидеть в разделе [Пошаговое руководство по созданию C# компонента Visual Basic среда выполнения Windows и его вызову из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>Передача управляемых типов в среду выполнения Windows
 
@@ -177,13 +177,13 @@ End Function
 
 ## <a name="asynchronous-operations"></a>Асинхронные операции
 
-Чтобы реализовать асинхронный метод в компоненте, добавьте "Async" в конец имени метода и возвратите один из среда выполнения Windows интерфейсов, представляющих асинхронные действия или операции: **IAsyncAction**, **IAsyncActionWithProgress&lt;TProgress&gt;** , **IAsyncOperation&lt;TResultили&gt;** **IAsyncOperationWithProgressTResult,&lt;TProgress &gt;** .
+Чтобы реализовать асинхронный метод в компоненте, добавьте "Async" в конец имени метода и возвратите один из среда выполнения Windows интерфейсов, представляющих асинхронные действия или операции: **IAsyncAction**, **IAsyncActionWithProgress @ no__t-2TProgress @ no__t-3**, **IAsyncOperation @ no__t-5TResult @ no__t-6**или **IAsyncOperationWithProgress @ no__t-8TResult, TProgress @ no__t-9**.
 
-Для реализации асинхронного метода можно использовать задачи .NET (класс [**Task**](/dotnet/api/system.threading.tasks.task) и класс "базовый" [**задачи&lt;TResult&gt;** ](/dotnet/api/system.threading.tasks.task-1) ). Необходимо вернуть задачу, которая представляет текущую операцию, например задачу, возвращаемую асинхронным методом, написанным на C# или Visual Basic, или задачу, возвращаемую методом [Task. Run](/dotnet/api/system.threading.tasks.task.run) . При создании задачи с помощью конструктора необходимо перед возвращением задачи вызвать метод [Task.Start](/dotnet/api/system.threading.tasks.task.start).
+Для реализации асинхронного метода можно использовать задачи .NET (класс [**Task**](/dotnet/api/system.threading.tasks.task) и универсальный класс [**Task @ no__t-4TResult @ no__t-5**](/dotnet/api/system.threading.tasks.task-1) ). Необходимо вернуть задачу, которая представляет текущую операцию, например задачу, возвращаемую асинхронным методом, написанным на C# или Visual Basic, или задачу, возвращаемую методом [Task. Run](/dotnet/api/system.threading.tasks.task.run) . При создании задачи с помощью конструктора необходимо перед возвращением задачи вызвать метод [Task.Start](/dotnet/api/system.threading.tasks.task.start).
 
-Для метода `await` , использующего`Await` (в Visual Basic), `async` требуется ключевое слово (`Async` в Visual Basic). Если вы предоставляете такой метод из среда выполнения Windows компонента, примените `async` ключевое слово к делегату, который передается в метод **Run** .
+Для метода, использующего `await` (`Await` в Visual Basic), требуется ключевое слово `async` (`Async` в Visual Basic). Если вы предоставляете такой метод из среда выполнения Windows компонента, примените к делегату, который передается в метод **Run** , ключевое слово `async`.
 
-Для асинхронных действий и операций, которые не поддерживают отчеты об отмене или ходе выполнения, можно использовать метод расширения [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN) или [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system?redirectedfrom=MSDN), чтобы заключить задачу в соответствующий интерфейс. Например, следующий код реализует асинхронный метод с помощью метода **Task. Run&lt;&gt; TResult** для запуска задачи. Метод **расширения&lt;асасинкоператион&gt; TResult** возвращает задачу в виде асинхронной операции среда выполнения Windows.
+Для асинхронных действий и операций, которые не поддерживают отчеты об отмене или ходе выполнения, можно использовать метод расширения [WindowsRuntimeSystemExtensions.AsAsyncAction](https://docs.microsoft.com/dotnet/api/system) или [AsAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system), чтобы заключить задачу в соответствующий интерфейс. Например, следующий код реализует асинхронный метод с помощью метода **Task. Run @ no__t-1TResult @ no__t-2** для запуска задачи. Метод расширения **асасинкоператион @ no__t-1TResult @ no__t-2** возвращает задачу в виде среда выполнения Windows асинхронной операции.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -222,7 +222,7 @@ function asyncExample(id) {
 
 Для асинхронных действий и операций, которые поддерживают отчеты об отмене или состоянии, используйте класс [**асинЦинфо**](/dotnet/api/system.runtime.interopservices.windowsruntime) для создания запущенной задачи и для подключения функций отчетов об отмене и ходе выполнения задачи с отменой и ходом выполнения. функции создания отчетов соответствующего интерфейса среда выполнения Windows. Пример, поддерживающий как отмену, так и отчеты о ходе выполнения, см. в разделе [Пошаговое руководство C# по созданию компонента Visual Basic среда выполнения Windows и его вызов из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Обратите внимание, что методы класса **асинЦинфо** можно использовать, даже если асинхронный метод не поддерживает отчеты об отмене или ходе выполнения. При использовании Visual Basic лямбда-функции или C# анонимного метода не указывайте параметры для интерфейса Token и [ипрогресс&lt;t.&gt; ](https://docs.microsoft.com/dotnet/api/system.iprogress-1?redirectedfrom=MSDN) При использовании лямбда-функции C# указывайте параметр токена, но игнорируйте его. Предыдущий пример, в котором использовался метод&lt;асасинкоператион&gt; TResult, выглядит следующим образом при использовании [**асинЦинфо. Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult)вместоэтогометодаперегрузки&gt;&gt;** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN).
+Обратите внимание, что методы класса **асинЦинфо** можно использовать, даже если асинхронный метод не поддерживает отчеты об отмене или ходе выполнения. При использовании Visual Basic лямбда-функции или C# анонимного метода не указывайте параметры для интерфейса Token и [ипрогресс @ no__t-3T @ no__t-4](https://docs.microsoft.com/dotnet/api/system.iprogress-1) . При использовании лямбда-функции C# указывайте параметр токена, но игнорируйте его. Предыдущий пример, в котором использовался метод Асасинкоператион @ no__t-0TResult @ no__t-1, выглядит следующим образом при использовании метода [**асинЦинфо. Run @ no__t-4TResult @ no__t-5 (Func @ no__t-6CancellationToken, Task @ no__t-7TResult @ no__t-8 @ no__t-9**](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime)). Вместо этого перегрузки.
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -247,7 +247,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-При создании асинхронного метода, который дополнительно поддерживает отчеты об отмене или ходе выполнения, рассмотрите возможность добавления перегрузок без параметров для токена отмены **или&lt;ипрогресс&gt; t** -интерфейса.
+При создании асинхронного метода, который дополнительно поддерживает отчеты об отмене или ходе выполнения, рассмотрите возможность добавления перегрузок без параметров для токена отмены или **ипрогресс @ no__t-1T @ no__t-2** .
 
 ## <a name="throwing-exceptions"></a>Создание исключений
 
@@ -269,7 +269,7 @@ End Function
 
 ## <a name="declaring-and-raising-events"></a>Объявление и вызов событий
 
-При объявлении типа, в котором будут храниться данные вашего события, создавайте класс, производный от Object, а не от EventArgs, поскольку EventArgs не является типом среды выполнения Windows. Используйте [**EventHandler&lt;тевентаргс&gt;** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN) в качестве типа события и используйте тип аргумента события в качестве аргумента универсального типа. Создайте событие так же, как в приложении .NET.
+При объявлении типа, в котором будут храниться данные вашего события, создавайте класс, производный от Object, а не от EventArgs, поскольку EventArgs не является типом среды выполнения Windows. Используйте [**EventHandler @ no__t-2TEventArgs @ no__t-3**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1) в качестве типа события и используйте тип аргумента события в качестве аргумента универсального типа. Создайте событие так же, как в приложении .NET.
 
 Когда компонент среды выполнения Windows вызывается из JavaScript или C++, событие выполняется в соответствии с шаблоном событий среды выполнения Windows, ожидаемым этими языками. При использовании компонента из C# или Visual Basic событие отображается как обычное событие .NET. Пример приведен в [пошаговом руководстве по созданию C# компонента Visual Basic среда выполнения Windows и его вызову из JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript).
 
@@ -283,4 +283,4 @@ End Function
 
 ## <a name="related-topics"></a>См. также
 * [.NET для приложений UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-* [Пошаговое руководство C# по созданию компонента Visual Basic среда выполнения Windows и его вызову из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Пошаговое руководство по созданию компонента среды выполнения Windows на C# или Visual Basic и его вызову с помощью JavaScript или C#](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

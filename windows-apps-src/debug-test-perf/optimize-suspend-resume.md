@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f94fcdf33267ab352f5cdc274e07373952b0939b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362158"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339577"
 ---
 # <a name="optimize-suspendresume"></a>Оптимизация времени приостановки и возобновления работы
 
@@ -60,11 +60,11 @@ ms.locfileid: "66362158"
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>Сериализация данных в C# и Visual Basic
 
-Для приложений .NET существуют следующие классы, реализующие технологии сериализации: [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) и [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN).
+Для приложений .NET существуют следующие классы, реализующие технологии сериализации: [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) и [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer).
 
-С точки зрения производительности рекомендуется использование класса [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN). **XmlSerializer** требует минимальных времени сериализации и десериализации и используемого объема памяти. **XmlSerializer** мало зависит от .NET Framework. Это означает, что для использования **XmlSerializer** потребуется загружать меньшее (по сравнению с другими технологиями сериализации) количество модулей в ваше приложение.
+С точки зрения производительности рекомендуется использование класса [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer). **XmlSerializer** требует минимальных времени сериализации и десериализации и используемого объема памяти. **XmlSerializer** мало зависит от .NET Framework. Это означает, что для использования **XmlSerializer** потребуется загружать меньшее (по сравнению с другими технологиями сериализации) количество модулей в ваше приложение.
 
-[**DataContractSerializer** ](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) упрощает для сериализации пользовательских классов, несмотря на то, что он имеет больше влияние на производительность, чем **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) упрощает сериализацию пользовательских классов, несмотря на большую производительность, чем **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
 
 ### <a name="reduce-memory-footprint"></a>Уменьшение используемого объема памяти
 
@@ -85,7 +85,7 @@ ms.locfileid: "66362158"
 
 ## <a name="related-topics"></a>См. также
 
-* [Рекомендации для приложения, приостановка и возобновление](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Рекомендации по приостановке и возобновлению работы приложения](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

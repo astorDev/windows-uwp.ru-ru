@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac91b3ea1c8396a89a2ec91c43cdcd6f52bbbbcd
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 49fb5ac5fbba5fad8123eb0167a2e00037725487
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340515"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Передача массивов компоненту среды выполнения Windows
 
@@ -20,12 +20,12 @@ ms.locfileid: "70393667"
 
 В универсальной платформе Windows (UWP) параметры используются для ввода или вывода, но не для того и другого. Это значит, что содержимое массива, который передается методу, а также сам массив предназначены только для ввода или только для вывода. Если содержимое массива используется для ввода, метод считывает данные из массива, но не записывает их в него. Если содержимое массива используется для вывода, метод записывает данные в массив, но не читает их из него. Это представляет проблему для параметров массива, так как массивы в .NET являются ссылочными типами, а содержимое массива является изменяемым даже в том случае, если ссылка на массив передается по значению (**ByVal** в Visual Basic). В [средстве экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) необходимо указать цель использования массива, если она не очевидна из контекста, с помощью атрибута ReadOnlyArrayAttribute или WriteOnlyArrayAttribute для параметра. Использование массива определяется следующим образом.
 
--   Для возвращаемого значения или выходного параметра (параметр **ByRef** с атрибутом [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) в Visual Basic) массив всегда предназначен только для вывода. Не применяйте атрибут ReadOnlyArrayAttribute. Атрибут WriteOnlyArrayAttribute разрешен для выходных параметров, но он избыточен.
+-   Для возвращаемого значения или выходного параметра (параметр **ByRef** с атрибутом [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute) в Visual Basic) массив всегда предназначен только для вывода. Не применяйте атрибут ReadOnlyArrayAttribute. Атрибут WriteOnlyArrayAttribute разрешен для выходных параметров, но он избыточен.
 
-    > **Внимание!**   Visual Basic компилятор не применяет правила только для вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
+    > **Предупреждение**  The Visual Basic компилятор не применяет правила только для вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
  
 -   Параметры с модификатором **ref** (**ByRef** в Visual Basic) не разрешены. Winmdexp.exe вызывает ошибку.
--   Для параметра, который передается значением, необходимо указать, предназначено ли содержимое массива для ввода или вывода, применив атрибут [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN) или [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN). Если указать оба атрибута, возникнет ошибка.
+-   Для параметра, который передается значением, необходимо указать, предназначено ли содержимое массива для ввода или вывода, применив атрибут [ReadOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute) или [WriteOnlyArrayAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute). Если указать оба атрибута, возникнет ошибка.
 
 Если метод должен принять массив для ввода, изменить содержимое массива и вернуть его вызывающему объекту, используйте параметр только для чтения для ввода и параметр (или возвращаемое значение) только для записи для вывода. В следующем коде показан один из способов реализации этого шаблона.
 
@@ -62,6 +62,6 @@ ms.locfileid: "70393667"
 
 ## <a name="related-topics"></a>См. также
 
-* [реадонляррайаттрибуте](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute?redirectedfrom=MSDN)
-* [вритеонляррайаттрибуте](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute?redirectedfrom=MSDN)
-* [Среда выполнения Windows компонентов с C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [реадонляррайаттрибуте](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.readonlyarrayattribute)
+* [вритеонляррайаттрибуте](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute)
+* [Создание компонентов среды выполнения Windows с помощью C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

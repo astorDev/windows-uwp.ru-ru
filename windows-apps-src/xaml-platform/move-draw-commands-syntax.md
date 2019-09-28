@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b959feed09546791840dafe15ab98d65f0ea09
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a54f87de49e9d43bfa423b0c01b086de1f89426f
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340482"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Синтаксис команд перемещения и рисования
 
@@ -22,14 +22,14 @@ ms.locfileid: "66371156"
 
 Синтаксис команд перемещения и рисования поддерживается конвертером внутренних типов для XAML, который анализирует команды и создает графическое представление времени выполнения. В сущности, это представление — конечный набор векторов, готовый для представления. Сами векторы не завершают подробности представления; вам еще нужно будет задать другие значения для элементов. Для объекта [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) вам также требуются значения для [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) и других свойств. Затем этот объект **Path** необходимо тем или иным образом подключить к визуальному дереву. Для объекта [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) задайте свойство [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconelement.foreground).
 
-Существует два свойства в среде выполнения Windows, можно использовать строку, представляющую перемещения и команд рисования. [**Path.Data** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) и [ **PathIcon.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data). Если вы задаете одно из этих свойств при помощи указания команд перемещения и рисования, вы обычно задаете его как значение атрибута XAML вместе с другими необходимыми атрибутами этого элемента. Если не вдаваться в подробности, это выглядит так:
+В среда выполнения Windows есть два свойства, которые могут использовать строку, представляющую команды перемещения и рисования: [**Path. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) и [**пасикон. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data). Если вы задаете одно из этих свойств при помощи указания команд перемещения и рисования, вы обычно задаете его как значение атрибута XAML вместе с другими необходимыми атрибутами этого элемента. Если не вдаваться в подробности, это выглядит так:
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures) можно также использовать перемещение и команд рисования. Теоретически объект [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) в объекте [**GeometryGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GeometryGroup), который затем можно использовать как значение для [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
+[**PathGeometry. Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures) также может использовать команды Move и Draw. Теоретически объект [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) в объекте [**GeometryGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GeometryGroup), который затем можно использовать как значение для [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
 
 ## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Использование команд перемещения и рисования в сравнении с использованием **PathGeometry**
 
@@ -51,9 +51,9 @@ ms.locfileid: "66371156"
 -   Обычно после каждой команды, кроме команды закрытия, идет одно или несколько чисел.
 -   Если после команды идет несколько чисел, разделите их запятыми или пробелами.
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[**  _drawCommand_ **\* \]** **\[** _closeCommand_ **\]**
+**\[** _fillRule_ **\]** _мовекомманд_ _дравкомманд_ **\[** _дравкомманд_**1 @ no__t-12** **4**_closeCommand_**7**
 
-Многие команды рисования используют точки, при этом вы предоставляете значение _x,y_. Каждый раз, когда вы видите \* _точки_ заполнитель, можно предположить, можно предоставить два десятичных значений для _x, y_ значение точки.
+Многие команды рисования используют точки, при этом вы предоставляете значение _x,y_. Когда вы видите заполнитель \*_точек_ , вы можете предположить, что вы представиме два десятичных значения для значения _x, y_ точки.
 
 Пробел часто можно опустить, когда результат однозначен. Фактически можно опустить все пробелы, если вы используете запятые в качестве разделителей для всех наборов чисел (точки и размер). Например, такое использование допустимо: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. Но для ясности между командами чаще ставятся пробелы.
 
@@ -61,9 +61,9 @@ ms.locfileid: "66371156"
 
 ## <a name="syntax-specifics"></a>Особенности синтаксиса
 
-**Заполнение правила**
+**Правило заполнения**
 
-Существует два возможных значения для правила необязательно заливки: **F0** или **F1**. ( **F** всегда является буквой верхнего регистра.) **F0** значение по умолчанию; она создает **EvenOdd** заполнения поведение, поэтому ее не указать обычно. Используйте **F1**, чтобы получить поведение заливки **Nonzero**. Эти значения заливки совпадают со значениями перечисления [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule).
+Существует два возможных значения для дополнительного правила заполнения: **F0** или **F1**. (Буква **F** всегда является прописной.) Значение по умолчанию — **F0** . Он создает поведение при заполнении **EvenOdd** , поэтому обычно он не указывается. Используйте **F1**, чтобы получить поведение заливки **Nonzero**. Эти значения заливки совпадают со значениями перечисления [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule).
 
 **Команда перемещения**
 
@@ -71,15 +71,15 @@ ms.locfileid: "66371156"
 
 | Синтаксис |
 |--------|
-| `M ` _startPoint_ <br/>- или -<br/>`m` _startPoint_|
+| `M ` _StartPoint_ <br/>- или -<br/>`m` _StartPoint_|
 
 | Термин | Описание |
 |------|-------------|
-| _startPoint_ | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/>Начальная точка новой фигуры.|
+| _startPoint_ | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/>Начальная точка новой фигуры.|
 
 **M** в верхнем регистре означает, что *startPoint* — это абсолютная координата; **m** в нижнем регистре означает, что *startPoint* — это смещение относительно предыдущей точки или же относительно (0,0), если предыдущей точки не было.
 
-**Примечание**  можно указать несколько точек после команды перемещения. К этим точкам проводится линия, как если бы вы указали команду линии. Однако такой стиль не рекомендуется; используйте вместо этого команду выделенной линии.
+**Примечание**  It's Legal, чтобы указать несколько точек после команды Move. К этим точкам проводится линия, как если бы вы указали команду линии. Однако такой стиль не рекомендуется; используйте вместо этого команду выделенной линии.
 
 **Команды рисования**
 
@@ -89,19 +89,19 @@ ms.locfileid: "66371156"
 
 Контрольные точки для сегмента указываются относительно конечной точки предыдущего сегмента. При последовательном вводе нескольких команд одного типа можно опустить повторяющуюся команду. Например, команда `L 100,200 300,400` эквивалентна `L 100,200 L 300,400`.
 
-**Средство командной строки**
+**Line, команда**
 
 Создает прямую линию между текущей точкой и указанной конечной точкой. `l 20 30` и `L 20,30` — примеры допустимых команд линии. Определяет эквивалент объекта [**LineGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LineGeometry).
 
 | Синтаксис |
 |--------|
-| `L` _Конечная точка_ <br/>- или -<br/>`l` _Конечная точка_ |
+| _Конечная точка_ @no__t 0 <br/>- или -<br/>_Конечная точка_ @no__t 0 |
 
 | Термин | Описание |
 |------|-------------|
-| endPoint | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/>Конечная точка линии.|
+| endPoint | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/>Конечная точка линии.|
 
-**Команда рисования горизонтальной линии**
+**Команда горизонтальной линии**
 
 Создает горизонтальную линию между текущей точкой и указанной х-координатой. `H 90` — пример допустимой команды горизонтальной линии.
 
@@ -111,90 +111,90 @@ ms.locfileid: "66371156"
 
 | Термин | Описание |
 |------|-------------|
-| x | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> X-координата конечной точки линии. |
+| x | [**Дважды**](https://docs.microsoft.com/dotnet/api/system.double) <br/> X-координата конечной точки линии. |
 
-**Команда рисования вертикальной линии**
+**Команда "вертикальная линия"**
 
 Создает вертикальную линию между текущей точкой и указанной y-координатой. `v 90` — пример допустимой команды вертикальной линии.
 
 | Синтаксис |
 |--------|
-| `V ` _Y_ <br/> - или - <br/> `v ` _Y_ |
+| `V ` _y_ <br/> - или - <br/> `v ` _y_ |
 
 | Термин | Описание |
 |------|-------------|
-| *Y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> Y-координата конечной точки линии. |
+| *&* | [**Дважды**](https://docs.microsoft.com/dotnet/api/system.double) <br/> Y-координата конечной точки линии. |
 
-**Команда кривой Безье третьего порядка**
+**Кубическая кривая Безье, команда**
 
 Создает кривую Безье третьего порядка между текущей точкой и указанной конечной точкой при помощи двух указанных контрольных точек (*controlPoint1* и *controlPoint2*). `C 100,200 200,400 300,200` — пример допустимой команды кривой. Определяет эквивалент объекта [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) с объектом [**BezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.BezierSegment).
 
 | Синтаксис |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - или - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *ControlPoint1* *Конечная точка* ControlPoint2 <br/> - или - <br/> `c ` *ControlPoint1* *Конечная точка* ControlPoint2 |
 
 | Термин | Описание |
 |------|-------------|
-| *controlPoint1* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Первая контрольная точка кривой, определяющая начальный тангенс кривой. |
-| *controlPoint2* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Вторая контрольная точка кривой, определяющая конечный тангенс кривой. |
-| *Конечная точка* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Конечная точка кривой. | 
+| *controlPoint1* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Первая контрольная точка кривой, определяющая начальный тангенс кривой. |
+| *controlPoint2* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Вторая контрольная точка кривой, определяющая конечный тангенс кривой. |
+| *Конечной* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Конечная точка кривой. | 
 
-**Команды кривой Безье второго порядка**
+**Команда квадратичной кривой Безье**
 
 Создает кривую Безье второго порядка между текущей точкой и указанной конечной точкой при помощи указанной контрольной точки (*controlPoint*). `q 100,200 300,200` — пример допустимой команды кривой Безье второго порядка. Определяет эквивалент объекта [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) с объектом [**QuadraticBezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment).
 
 | Синтаксис |
 |--------|
-| `Q ` *Конечная точка controlPoint* <br/> - или - <br/> `q ` *Конечная точка controlPoint* |
+| `Q ` *Конечная точка контролпоинт* <br/> - или - <br/> `q ` *Конечная точка контролпоинт* |
 
 | Термин | Описание |
 |------|-------------|
-| *controlPoint* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Контрольная точка кривой, определяющая начальный и конечный тангенсы кривой. |
-| *Конечная точка* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
+| *контролпоинт* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Контрольная точка кривой, определяющая начальный и конечный тангенсы кривой. |
+| *Конечной* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
 
-**Гладкая диаграмма команда кривой Безье третьего порядка**
+**Команда гладкой кривой Безье третьего порядка**
 
 Создает кривую Безье третьего порядка между текущей точкой и указанной конечной точкой. Первой контрольной точкой считается отражение второй контрольной точки предыдущей команды относительно текущей точки. Если предыдущей команды нет или она не является командой кривой Безье третьего порядка или гладкой кривой Безье третьего порядка, считается, что первая контрольная точка совпадает с текущей точкой. Вторая контрольная точка — контрольная точка для конца кривой — указывается с помощью *controlPoint2*. Например, `S 100,200 200,300` — допустимая команда гладкой кривой Безье третьего порядка. Эта команда определяет эквивалент объекта [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) с объектом [**BezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.BezierSegment), где был предыдущий сегмент кривой.
 
 | Синтаксис |
 |--------|
-| `S` *controlPoint2* *конечной точки* <br/> - или - <br/>`s` *Конечная точка controlPoint2* |
+| `S` *Конечная точка* ControlPoint2 <br/> - или - <br/>`s` *Конечная точка ControlPoint2* |
 
 | Термин | Описание |
 |------|-------------|
-| *controlPoint2* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Контрольная точка кривой, определяющая конечный тангенс кривой. |
-| *Конечная точка* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
+| *controlPoint2* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Контрольная точка кривой, определяющая конечный тангенс кривой. |
+| *Конечной* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
 
-**Гладкая диаграмма команды кривой Безье второго порядка**
+**Команда Smooth Безье квадратичной кривой Безье**
 
 Создает кривую Безье второго порядка между текущей точкой и указанной конечной точкой. Контрольной точкой считается отражение контрольной точки предыдущей команды относительно текущей точки. Если предыдущей команды нет или она не является командой кривой Безье второго порядка или гладкой кривой Безье второго порядка, контрольная точка совпадает с текущей точкой. Эта команда определяет эквивалент объекта [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) с объектом [**QuadraticBezierSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment), где был предыдущий сегмент кривой.
 
 | Синтаксис |
 |--------|
-| `T` *controlPoint* *конечной точки* <br/> - или - <br/> `t` *controlPoint* *конечной точки* |
+| `T` *Конечная точка* контролпоинт <br/> - или - <br/> `t` *Конечная точка* контролпоинт |
 
 | Термин | Описание |
 |------|-------------|
-| *controlPoint* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Контрольная точка кривой, определяющая начальный и конечный тангенсы кривой. |
-| *Конечная точка* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
+| *контролпоинт* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Контрольная точка кривой, определяющая начальный и конечный тангенсы кривой. |
+| *Конечной* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)<br/> Конечная точка кривой. |
 
-**Команда рисования эллиптической дуги**
+**Команда эллиптической дуги**
 
 Создает дугу эллипса между текущей точкой и указанной конечной точкой. Определяет эквивалент объекта [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry) с объектом [**ArcSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ArcSegment).
 
 | Синтаксис |
 |--------|
-| `A ` *размер* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *конечной точки* <br/> - или - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *ротатионангле* *исларжеаркфлаг* *свипдиректионфлаг* *Конечная точка* <br/> - или - <br/>`a ` *сизеротатионанглеисларжеаркфлагсвипдиректионфлажендпоинт* |
 
 | Термин | Описание |
 |------|-------------|
-| *Размер* | [**Размер**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)<br/>Радиусы дуги по оси x и по оси y. |
-| *rotationAngle* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> Поворот эллипса в градусах. |
-| *isLargeArcFlag* | Значение «1», если угол дуги должен быть больше или равен 180 градусам. В противном случае — значение «0». |
-| *sweepDirectionFlag* | Значение «1», если дуга рисуется в направлении положительного угла. В противном случае — значение «0». |
-| *Конечная точка* | [**точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Конечная точка дуги.|
+| *size* | [**Изменять**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)<br/>Радиусы дуги по оси x и по оси y. |
+| *ротатионангле* | [**Дважды**](https://docs.microsoft.com/dotnet/api/system.double) <br/> Поворот эллипса в градусах. |
+| *исларжеаркфлаг* | Значение «1», если угол дуги должен быть больше или равен 180 градусам. В противном случае — значение «0». |
+| *свипдиректионфлаг* | Значение «1», если дуга рисуется в направлении положительного угла. В противном случае — значение «0». |
+| *Конечной* | [**Точки**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) <br/> Конечная точка дуги.|
  
-**Команда закрытия**
+**Команда "Закрыть"**
 
 Завершает текущую фигуру и создает линию, соединяющую текущую точку с начальной точкой фигуры. Эта команда создает соединение линий (угол) между последним и первым сегментом фигуры.
 
@@ -212,31 +212,31 @@ ms.locfileid: "66371156"
 
 | Термин | Описание |
 |------|-------------|
-| *x* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> X-координата точки. |
-| *Y* | [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) <br/> Y-координата точки. |
+| *x* | [**Дважды**](https://docs.microsoft.com/dotnet/api/system.double) <br/> X-координата точки. |
+| *&* | [**Дважды**](https://docs.microsoft.com/dotnet/api/system.double) <br/> Y-координата точки. |
 
-**Дополнительные замечания**
+**Дополнительные примечания**
 
 Вместо стандартного числового значения вы также можете использовать следующие специальные значения. Эти значения указываются с учетом регистра.
 
--   **Бесконечность**: Представляет **положительную бесконечность**.
--   **\-Бесконечность**: Представляет **отрицательную бесконечность**.
+-   **Бесконечность**: Представляет **PositiveInfinity**.
+-   **@no__t 1Infinity**: Представляет **NegativeInfinity**.
 -   **NaN**: Представляет **NaN**.
 
 Вместо десятичных или целых чисел можно использовать экспоненциальное представление. Например, `+1.e17` — допустимое значение.
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Средства проектирования, создающие команды перемещения и рисования
 
-С помощью **пера** средство и других инструментов рисования в Blend для Microsoft Visual Studio 2015 обычно предоставляют [ **путь** ](/uwp/api/Windows.UI.Xaml.Shapes.Path) объекта, с перемещением и команд рисования.
+Использование инструмента " **перо** " и других средств рисования в Blend для Microsoft Visual Studio 2015 обычно приводит к созданию объекта [**пути**](/uwp/api/Windows.UI.Xaml.Shapes.Path) с помощью команд Move и Draw.
 
 Вы можете увидеть существующие данные команд перемещения и рисования в некоторых частях элемента управления, определенных в стандартных XAML-шаблонах для элементов управления в среде выполнения Windows. Например, некоторые элементы управления используют [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon), который содержит данные, определенные как команды перемещения и рисования.
 
-Существуют средства экспорта и подключаемые модули, доступные для других распространенных средств разработки, которые работают с векторной графикой и умеют выводить вектор в форме XAML. Они обычно создают объекты [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) в контейнере макета с помощью команд перемещения и рисования для [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data). В XAML может быть несколько элементов **Path**, чтобы можно было применять разные кисти. Многие из этих экспорта или подключаемые модули изначально были написаны для Windows Presentation Foundation (WPF) XAML или Silverlight, но синтаксис XAML путь совпадает с XAML среды выполнения Windows. Чаще всего можно использовать блоки XAML из средства экспорта и вставлять их прямо в XAML-страницу среды выполнения Windows. (Но вы не сможете использовать элемент **RadialGradientBrush**, если он был частью преобразованного XAML, так как XAML среды выполнения Windows не поддерживает эту кисть.)
+Существуют средства экспорта и подключаемые модули, доступные для других распространенных средств разработки, которые работают с векторной графикой и умеют выводить вектор в форме XAML. Они обычно создают объекты [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) в контейнере макета с помощью команд перемещения и рисования для [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data). В XAML может быть несколько элементов **Path**, чтобы можно было применять разные кисти. Многие из этих средств экспорта или подключаемых модулей изначально были написаны для Windows Presentation Foundation (WPF) XAML или Silverlight, но синтаксис пути XAML идентичен среда выполнения Windows XAML. Чаще всего можно использовать блоки XAML из средства экспорта и вставлять их прямо в XAML-страницу среды выполнения Windows. (Но вы не сможете использовать элемент **RadialGradientBrush**, если он был частью преобразованного XAML, так как XAML среды выполнения Windows не поддерживает эту кисть.)
 
 ## <a name="related-topics"></a>См. также
 
 * [Рисование фигур](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes)
-* [Использование кисти](https://docs.microsoft.com/windows/uwp/graphics/using-brushes)
-* [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data)
-* [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon)
+* [Использование кистей](https://docs.microsoft.com/windows/uwp/graphics/using-brushes)
+* [**Path. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data)
+* [**пасикон**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon)
 

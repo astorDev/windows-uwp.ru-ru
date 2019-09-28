@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, асинхронный
 ms.localizationpriority: medium
-ms.openlocfilehash: db0e3064cc64e6ffbafa50d045ced020ad30b460
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 92cded952f1d4d80290a121d038c57c356e5e206
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371545"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340541"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Вызов асинхронных API в C# и Visual Basic
 
@@ -38,7 +38,7 @@ ms.locfileid: "66371545"
 
 Есть несколько важных замечаний о приведенном выше примере. Во-первых, в строке `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` используется оператор **await** вместе с вызовом асинхронного метода [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). Можно представить себе, что оператор **await** сообщает компилятору о том, что вы вызываете асинхронный метод, в результате чего компилятор выполняет дополнительную работу за вас. Во-вторых, объявление обработчика событий включает ключевое слово **async**. Это ключевое слово необходимо включить в объявление любого метода, в котором используется оператор **await**.
 
-В этом разделе мы не будем углубляться в детали того, что компилятор делает с оператором **await**. Однако давайте изучим, что делает приложение асинхронным и способным отвечать на запросы. Рассмотрим, что происходит при использовании синхронного кода. Например, предположим, что есть синхронный метод `SyndicationClient.RetrieveFeed`. (Нет такого метода, но представьте, что имеется). Если в приложении строке `SyndicationFeed feed = client.RetrieveFeed(feedUri)`, а не `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, бы остановить выполнение приложения до возвращаемое значение `RetrieveFeed` доступен. А пока приложение ожидает завершения выполнения метода, оно не может реагировать на другие события, например на еще одно событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). То есть приложение будет блокировано, пока метод `RetrieveFeed` не вернет значение.
+В этом разделе мы не будем углубляться в детали того, что компилятор делает с оператором **await**. Однако давайте изучим, что делает приложение асинхронным и способным отвечать на запросы. Рассмотрим, что происходит при использовании синхронного кода. Например, предположим, что есть синхронный метод `SyndicationClient.RetrieveFeed`. (Такой метод не существует, но представьте, что есть.) Если приложение включало строку `SyndicationFeed feed = client.RetrieveFeed(feedUri)`, а не `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, выполнение приложения будет прервано до тех пор, пока не будет доступно возвращаемое значение `RetrieveFeed`. А пока приложение ожидает завершения выполнения метода, оно не может реагировать на другие события, например на еще одно событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). То есть приложение будет блокировано, пока метод `RetrieveFeed` не вернет значение.
 
 Однако если вызывать `client.RetrieveFeedAsync`, данный метод инициирует извлечение и немедленно возвращает значение. При использовании оператора **await** с методом [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) приложение временно завершает работу обработчика событий. Затем оно может обрабатывать любые другие события, пока **RetrieveFeedAsync** выполняется асинхронно. Это позволяет приложению сохранить способность реагировать на действия пользователя. Когда метод **RetrieveFeedAsync** завершает работу и становится доступен [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed), приложение повторно запускает обработчик событий с момента его закрытия после `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` и завершает оставшуюся часть метода.
 
@@ -51,10 +51,10 @@ ms.locfileid: "66371545"
 
 При использовании асинхронного метода можно проверить сигнатуру, чтобы увидеть, что вы получите по окончании ожидания возврата значения метода. Все асинхронные API UWP возвращают один из следующих типов:
 
--   [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
--   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
+-   [**IAsyncOperation @ no__t-2TResult @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
+-   [**IAsyncOperationWithProgress @ no__t-2TResult, TProgress @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
+-   [**IAsyncActionWithProgress @ no__t-2TProgress @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
 
 Тип результата асинхронного метода тот же, что и у параметра типа `      TResult`. У типов без `TResult` нет результата. Данный результат можно представлять как **void**. В Visual Basic процедура [Sub](https://docs.microsoft.com/dotnet/articles/visual-basic/programming-guide/language-features/procedures/sub-procedures) эквивалентна методу с типом возврата **void**.
 
@@ -62,15 +62,15 @@ ms.locfileid: "66371545"
 
 | Асинхронный метод                                                                           | Тип возврата                                                                                                                                        | Тип результата                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| [**SyndicationClient.RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
-| [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**IAsyncOperation&lt;StorageFile&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)          |
-| [**XmlDocument.SaveToFileAsync**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**IAsyncActionWithProgress&lt;UInt64&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**DataReaderLoadOperation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation), приводит к пользовательский класс, реализующий **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
+| [**Синдикатионклиент. Ретриевефидасинк**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress @ no__t-2SyndicationFeed, Ретриевалпрогресс @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
+| [**Филеопенпиккер. Пикксинглефилеасинк**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**IAsyncOperation @ no__t-2StorageFile @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)          |
+| [**XmlDocument. Саветофилеасинк**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **void**                                          |
+| [**Инкстрокеконтаинер. LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**IAsyncActionWithProgress @ no__t-2UInt64 @ no__t-3**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **void**                                          |
+| [**DataReader. LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**Датареадерлоадоператион**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation), класс пользовательских результатов, реализующий **IAsyncOperation @ no__t-3UInt32 @ no__t-4** | [**Значением**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
 
  
 
-Асинхронные методы, определенные в [ **.NET for UWP apps**](https://dotnet.microsoft.com/apps/desktop), имеют тип возврата [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?redirectedfrom=MSDN) или [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN). Методы, возвращающие **Task**, аналогичны асинхронным методам UWP, которые возвращают [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction). В каждом случае результат асинхронного метода — **void**. Тип возврата **Task&lt;TResult&gt;** подобен [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_), так как у результата асинхронного метода при выполнении задачи тот же тип, что и у параметра типа `TResult`. Дополнительную информацию об использовании **.NET for UWP apps** и задач см. в статье [Общая информация о .NET для приложений среды выполнения Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
+Асинхронные методы, определенные в [ **.NET for UWP apps**](https://dotnet.microsoft.com/apps/desktop), имеют тип возврата [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) или [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1). Методы, возвращающие **Task**, аналогичны асинхронным методам UWP, которые возвращают [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction). В каждом случае результат асинхронного метода — **void**. Тип возврата **Task&lt;TResult&gt;** подобен [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_), так как у результата асинхронного метода при выполнении задачи тот же тип, что и у параметра типа `TResult`. Дополнительную информацию об использовании **.NET for UWP apps** и задач см. в статье [Общая информация о .NET для приложений среды выполнения Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
 ## <a name="handling-errors"></a>Обработка ошибок
 
@@ -79,7 +79,7 @@ ms.locfileid: "66371545"
 
 Когда асинхронные методы вызывают другие асинхронные методы, любой асинхронный метод, приводящий к вызову исключения, распространяется на внешние методы. Это означает, что в самый внешний метод можно поместить блок **try/catch**, чтобы перехватывать ошибки для вложенных асинхронных методов. Это аналогично перехвату исключений для синхронных методов. Однако вы не можете использовать **await** в блоке **catch**.
 
-**Совет**  начиная с C# в Microsoft Visual Studio 2005, можно использовать **await** в **catch** блока.
+**Tip**  Starting с C# Microsoft Visual Studio 2005, можно использовать **await** в блоке **catch** .
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 

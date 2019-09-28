@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1f35cbab511912bd9cf6616330f3e9e7737189fd
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360659"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339749"
 ---
 # <a name="display-the-camera-preview"></a>Отображение просмотра камеры
 
@@ -24,7 +24,7 @@ ms.locfileid: "66360659"
 
 Чтобы ваше приложение получило доступ к камере устройства, необходимо объявить, что оно использует возможности устройства *webcam* и *microphone*. 
 
-**Добавления возможностей в манифесте приложения**
+**Добавление возможностей в манифест приложения**
 
 1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
@@ -40,7 +40,7 @@ ms.locfileid: "66360659"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>Использование объекта MediaCapture для запуска потока предварительного просмотра
 
-Объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) — это интерфейс приложения для взаимодействия с камерой устройства. Этот класс входит в пространство имен Windows.Media.Capture. В описанном в этой статье примере используются API из пространств имен [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) и [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN) в дополнение ко включенным в шаблон проекта по умолчанию.
+Объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) — это интерфейс приложения для взаимодействия с камерой устройства. Этот класс входит в пространство имен Windows.Media.Capture. В описанном в этой статье примере используются API из пространств имен [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) и [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks) в дополнение ко включенным в шаблон проекта по умолчанию.
 
 Добавьте директивы using, чтобы включить следующие пространства имен в файл .cs вашей страницы.
 
@@ -99,5 +99,5 @@ ms.locfileid: "66360659"
 ## <a name="related-topics"></a>См. также
 
 * [Камера](camera.md)
-* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Получить кадр предварительной версии](get-a-preview-frame.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e0f6ef206dc836e48bfc904767ff8c8c7bdca9db
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359180"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340043"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Адаптивная потоковая передача с защитой PlayReady
 
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>Инициализация AdaptiveMediaSource
 
-Наконец, вам потребуется функция для инициализации объекта [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), созданного на основе заданных [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) и [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **Uri** — это ссылка на файл мультимедиа (HLS или DASH), а элемент **MediaElement** должен быть определен в коде XAML.
+Наконец, вам потребуется функция для инициализации объекта [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), созданного на основе заданных [Uri](https://docs.microsoft.com/dotnet/api/system.uri) и [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **Uri** — это ссылка на файл мультимедиа (HLS или DASH), а элемент **MediaElement** должен быть определен в коде XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -296,7 +296,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 Можно вызвать эту функцию в любом событии, которое обрабатывает начало адаптивной потоковой передачи, например в событии нажатия кнопки.
 
 ## <a name="see-also"></a>См. также
-- [PlayReady DRM](playready-client-sdk.md)
+- [Управление цифровыми правами PlayReady](playready-client-sdk.md)
 
 
 

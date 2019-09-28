@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, мост для классических приложений, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile, классическое приложение, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362619"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340402"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Закрепление вспомогательных плиток из классических приложений
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362619"
 ![Снимок экрана: вспомогательные плитки](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **Требуется Fall Creators Update**: Вы должны быть предназначены SDK 16299 и выполняться сборка 16299 или более позднюю версию вспомогательных плиток ПИН-код из моста для классических приложений.
+> **Требуется обновление отпадает от создателя**: Необходимо выбрать пакет SDK 16299 и запустить сборку 16299 или более поздней версии, чтобы закрепить дополнительные плитки из приложений для настольных мостов.
 
 Добавление вспомогательной плитки из приложения WPF и WinForms похоже на тот же процесс в чистом приложении UWP. Единственное отличие заключается в том, что вам необходимо указать дескриптор главного окна (HWND). Это связано с тем, что при закреплении плитки Windows отображает модальное диалоговое окно с запросом на подтверждение закрепления плитки, который должен принять пользователь. Если в классическом приложении не настроен объект SecondaryTile с окном владельца, Windows не узнает, где отображать диалоговое окно, а операция завершится ошибкой.
 
@@ -34,7 +34,7 @@ ms.locfileid: "66362619"
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Предоставление доступа к интерфейсу IInitializeWithWindow
 
-Если приложение написано на управляемом языке, например C# или Visual Basic, объявите интерфейс IInitializeWithWindow в коде приложения с атрибутом [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) и Guid, как показано в следующем примере кода на C#. В этом примере предполагается, что файл кода имеет оператор using для пространства имен System.Runtime.InteropServices.
+Если приложение написано на управляемом языке, например C# или Visual Basic, объявите интерфейс IInitializeWithWindow в коде приложения с атрибутом [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) и Guid, как показано в следующем примере кода на C#. В этом примере предполагается, что файл кода имеет оператор using для пространства имен System.Runtime.InteropServices.
 
 ```csharp
 [ComImport]
@@ -90,15 +90,15 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>Отправка уведомления на плитке
 
 > [!IMPORTANT]
-> **Апрель 2018 г. 17134.81 или более поздней версии требуется**: Вы должны работать под управлением сборки 17134.81 или более поздней версии, для отправки уведомлений плитки или значок вспомогательных плиток из моста для классических приложений. До выхода этого служебного обновления .81 при попытке отправки уведомлений плитки и индикатора событий вспомогательным плиткам из приложений моста для классических приложений возникало исключение 0x80070490 — *Элемент не найден*.
+> **Требуется 2018 версии 17134,81 или более поздней**: Необходимо запустить сборку 17134,81 или более поздней версии, чтобы отправлять уведомления плиток или значков на дополнительные плитки из приложений для настольных мостов. До выхода этого служебного обновления .81 при попытке отправки уведомлений плитки и индикатора событий вспомогательным плиткам из приложений моста для классических приложений возникало исключение 0x80070490 — *Элемент не найден*.
 
 Отправка уведомлений плитки или индикатора событий аналогичная этому процессу в приложениях UWP. Инструкции см. в разделе [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md).
 
 
 ## <a name="resources"></a>Ресурсы
 
-* [Полный образец кода](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [Общие сведения о вспомогательных плиток](secondary-tiles.md)
-* [Вспомогательные плитки ПИН-кода (UWP)](secondary-tiles-pinning.md)
+* [Полный пример кода](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [Обзор дополнительных плиток](secondary-tiles.md)
+* [Закрепить дополнительные плитки (UWP)](secondary-tiles-pinning.md)
 * [Мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop)
-* [Примеры кода мост для классических приложений](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [Примеры кода для моста рабочего стола](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

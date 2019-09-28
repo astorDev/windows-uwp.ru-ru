@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1cc0e932a1dd413ed94e1fe5d9a3d1e6b0870c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393578"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339202"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Расширение классического приложения с помощью современных компонентов UWP
 
@@ -175,7 +175,7 @@ ms.locfileid: "70393578"
 
 ### <a name="start-the-uwp-app"></a>Запуск приложения UWP
 
-Во-первых, из классического приложения создайте [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN), включающий имя протокола и все параметры, которые необходимо передать в приложение UWP. Затем вызовите метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
+Во-первых, из классического приложения создайте [Uri](https://docs.microsoft.com/dotnet/api/system.uri), включающий имя протокола и все параметры, которые необходимо передать в приложение UWP. Затем вызовите метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
 ```csharp
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-В коде, расположенном на странице XAML, переопределите ``OnNavigatedTo`` метод для использования параметров, переданных на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
+В коде программной части страницы XAML Переопределите метод ``OnNavigatedTo``, чтобы использовать параметры, переданные на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -295,9 +295,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </Extensions>  
 ```
 
-Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. В этой разметке предполагается, что имя исполняемого файла для `ShareTarget.exe`приложения UWP —.
+Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. В этой разметке предполагается, что имя исполняемого файла для приложения UWP — `ShareTarget.exe`.
 
-Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы делаем для классического приложения [WPF фотосторедемо](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) общий ресурс для точечных рисунков, поэтому мы `Bitmap` указываем для поддерживаемого типа файлов.
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы создаем классическое приложение [WPF фотосторедемо](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) в качестве целевого объекта для точечных рисунков, чтобы мы указали `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
@@ -366,7 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Для экземпляров классических приложений, которые уже открыты пользователем, можно также обрабатывать событие [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) и передавать путь к расположению файла. Таким образом, все открытые экземпляры настольного приложения будут показывать общую фотографию.
+Для экземпляров классических приложений, которые уже открыты пользователем, можно также обрабатывать событие [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) и передавать путь к расположению файла. Таким образом, все открытые экземпляры настольного приложения будут показывать общую фотографию.
 
 ```csharp
 ...

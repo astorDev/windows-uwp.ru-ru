@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, вешки
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b8e14693dd6ef23714da53d652b9083f202cd62d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340438"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Отображение объектов на карте
 
 Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. Объект — это определенная точка на карте, представляющая что-нибудь интересное. Например, это может быть расположение компании, города или друга.
 
-Дополнительные сведения об отображении POI в приложении, скачайте пример из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub: [Образец карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+Чтобы узнать больше о том, как отобразить достопримечательности в приложении, Скачайте следующий пример из [репозитория Windows-универсальные примеры](https://go.microsoft.com/fwlink/p/?LinkId=619979) на сайте GitHub: [Пример схемы универсальная платформа Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 Вы можете отображать вешки, изображения и фигуры на карте, добавляя объекты [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) и [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) в коллекцию **MapElements** объекта [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Затем добавьте этот объект слоя в коллекцию **Layers** элемента управления картой.
 
@@ -163,7 +163,7 @@ public void AddLandmarkPhoto()
 }
 ```
 
-Есть три части этого кода стоит проверки стало еще проще: Изображение, камеры ссылку и [ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) свойство.
+Вот три части этого кода, которые стоит проанализировать чуть ближе: Изображение, ссылка на камеру и свойство [**нормализеданчорпоинт**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) .
 
 ### <a name="image"></a>Image
 
@@ -352,7 +352,7 @@ public Geopoint BellevueLocation { get; set; }
 </maps:MapControl>
 ```
 
-Свойство ``ItemsSource`` в приведенном выше примере привязано к свойство типа [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) в файле кода программной части.
+Свойство ``ItemsSource`` в приведенном выше примере привязано к свойство типа [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) в файле кода программной части.
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -478,6 +478,6 @@ public myMapPage()
 * [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [**мапикон**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
-* [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
+* [**мапполилине**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

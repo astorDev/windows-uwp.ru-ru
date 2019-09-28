@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fdde8c5af2120786f215480cc7e7ae422d77c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365061"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340164"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, пример настраиваемой панели
 
@@ -25,7 +25,7 @@ ms.locfileid: "66365061"
 
 Информация о написании кода для пользовательского класса [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) путем реализации методов [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) и [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride), а также использования свойства [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children). 
 
-> **Важные API**: [**Панель**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [ **ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **Важные API**: [**Панель**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
 
 В данном примере кода показана реализация пользовательской панели, но не рассматриваются подробно понятия макета, которые влияют на настройку панели для различных сценариев макета. Дополнительную информацию об этих понятиях макета и их применимости к вашему конкретному сценарию макета см. в статье [Обзор пользовательских панелей XAML](custom-panels-overview.md).
 
@@ -134,7 +134,7 @@ protected override Size MeasureOverride(Size availableSize)
 Эта панель может использоваться, когда компонент Height значения *availableSize* не связан. Тогда высота панели, которую необходимо разделить, неизвестна. В этом случае логика для прохода Measure информирует каждый дочерний элемент о том, что связанная высота еще отсутствует. Для этого структура [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) передается вызову [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) для дочерних элементов, в которых свойство [**Size.Height**](https://docs.microsoft.com/uwp/api/windows.foundation.size.height) бесконечно. Это правомерно. Когда вызывается метод **Measure**, согласно логике для свойства [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) устанавливается наименьшее из следующих значений: значение, переданное методу **Measure**, либо естественный размер элемента, который определяется такими факторами, как явным образом заданные свойства [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) и [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width).
 
 > [!NOTE]
-> Внутренняя логика [ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) также имеет такое поведение: **StackPanel** передает значение бесконечный измерения [ **мер** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) на дочерние элементы, указывающее, что не имеет ограничений на дочерние элементы в измерении «ориентация». Класс **StackPanel** обычно принимает размер динамически, чтобы разместить все дочерние элементы в стеке, который растет в этом измерении.
+> Внутренняя логика [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) также имеет такое поведение: **StackPanel** передает значение бесконечного измерения для [**измерения**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) дочерних элементов, указывая на отсутствие ограничения на дочерние элементы в измерении Orientation. Класс **StackPanel** обычно принимает размер динамически, чтобы разместить все дочерние элементы в стеке, который растет в этом измерении.
 
 Однако сама панель не может вернуть структуру [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) с бесконечным значением из метода [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride); оно создает исключение во время построения структуры. Поэтому часть логики заключается в том, чтобы выяснить максимальную высоту, которую запрашивает какой-либо дочерний элемент, и использовать эту высоту в качестве высоты ячейки, если она еще не ясна из ограничений на собственный размер панели. Ниже показана вспомогательная функция `LimitUnboundedSize`, на которую ссылался ранее приведенный код и которая затем получает максимальную высоту ячейки и использует ее, чтобы предоставить панели конечную высоту для возврата, а также проверяет, что `cellheight` является конечным значением, до инициации прохода Arrange:
 
@@ -182,7 +182,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 Иногда панелям необходимо сжать содержимое. В таком случае сжатый размер является размером, который представлен в свойстве [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize), так как логика [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) задает его в качестве минимального размера, переданного методу **Measure**, или в качестве коэффициентов естественного размера. Обычно нет необходимости специально проверять сжатие во время прохода [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange): сжатие будет выполняться просто на основе передачи свойства **DesiredSize** через каждый вызов **Arrange**.
 
-Во время прохождения цикла не всегда требуется счетчик, если вся необходимая информация для определения положения отображения известна из других источников. Например, в логике макета [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) позиция в коллекции [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) не имеет значения. Вся информация, необходимая для определения позиции каждого элемента в **Canvas**, известна из значений [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) и [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) дочерних элементов в рамках логики размещения. Этой логике `BoxPanel` необходимо сравнить счетчик со счетчиком *colcount*, чтобы узнать, когда начать новую строку и сместить значение *y*.
+Во время прохождения цикла не всегда требуется счетчик, если вся необходимая информация для определения положения отображения известна из других источников. Например, в логике макета [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) позиция в коллекции [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children) не имеет значения. Вся информация, необходимая для определения позиции каждого элемента в **Canvas**, известна из значений [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) и [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) дочерних элементов в рамках логики размещения. Этой логике `BoxPanel` необходимо сравнить счетчик со счетчиком *colcount*, чтобы узнать, когда начать новую строку и сместить значение *y*.
 
 Обычно входное значение *finalSize* и структура [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), которую вы возвращаете из реализации [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride), одинаковы. Дополнительную информацию о причинах см. в разделе "**ArrangeOverride**" статьи [Обзор пользовательских панелей XAML](custom-panels-overview.md).
 
@@ -209,7 +209,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ## <a name="the-scenario-for-boxpanel"></a>Сценарий для BoxPanel
 
-Конкретный сценарий для `BoxPanel` заключается в том, что это панель, для которой один из основных способов определить деление места — узнать число дочерних элементов и разделить известное свободное место для панели. Панели по своей сути являются прямоугольными фигурами. Многие панели работают, разделяя это прямоугольное пространство на прямоугольники меньшего размера; это делает класс [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) для своих ячеек. В случае класса **Grid** размер ячеек устанавливается по значениям [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) и [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition), и элементы объявляют точную ячейку, в которой они расположены, с помощью присоединенных свойств [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) и [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8). Для получения качественного макета от класса **Grid** обычно необходимо знать число дочерних элементов заранее, чтобы было достаточно ячеек и каждый дочерний элемент установил свои свойства в соответствии с размером своей ячейки.
+Конкретный сценарий для `BoxPanel` заключается в том, что это панель, для которой один из основных способов определить деление места — узнать число дочерних элементов и разделить известное свободное место для панели. Панели по своей сути являются прямоугольными фигурами. Многие панели работают, разделяя это прямоугольное пространство на прямоугольники меньшего размера; это делает класс [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) для своих ячеек. В случае класса **Grid** размер ячеек устанавливается по значениям [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) и [**RowDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RowDefinition), и элементы объявляют точную ячейку, в которой они расположены, с помощью присоединенных свойств [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) и [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column). Для получения качественного макета от класса **Grid** обычно необходимо знать число дочерних элементов заранее, чтобы было достаточно ячеек и каждый дочерний элемент установил свои свойства в соответствии с размером своей ячейки.
 
 Но что если число дочерних элементов динамическое? Это, конечно, возможно; код вашего приложения может добавлять элементы в коллекции в ответ на любое динамическое условие среды выполнения, которое вы считаете достаточно важным, чтобы обновить ваш пользовательский интерфейс. Если вы используете привязку данных к базовым коллекциям или бизнес-объектам, получение таких обновлений и обновление пользовательского интерфейса обрабатываются автоматически, поэтому этот прием часто является предпочтительным (см. раздел [Подробно о привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)).
 
@@ -223,10 +223,10 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 **Reference**
 
-* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Панель**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement. ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement. MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**Панели**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **Концепции**
 
-* [Выравнивание, поля и заполнение](alignment-margin-padding.md)
+* [Выравнивание, маржа и заполнение](alignment-margin-padding.md)

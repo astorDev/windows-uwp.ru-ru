@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2314110b4967653b02db6c374e6c66375814d0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b9a129e8b780e85df2c38c50ab712641d3849a34
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339851"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Обеспечение быстрого отклика потока пользовательского интерфейса
 
@@ -22,7 +22,7 @@ ms.locfileid: "67317549"
 
 Чтобы внести изменения в поток пользовательского интерфейса, включая создание типов пользовательского интерфейса и получение доступа к их членам, необходимо использовать поток пользовательского интерфейса. Невозможно обновить интерфейс из фонового потока, но можно создать сообщение с помощью [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), чтобы вызвать код для выполнения.
 
-> **Примечание**  единственное исключение — это отдельный потоку, можно применить изменения пользовательского интерфейса, которые не влияют на способ обработки входных данных или базовый макет. Например, многие анимации и переходы, которые не влияют на макет, могут выполняться в этом потоке обработки.
+> **Примечание**  The одно исключение заключается в том, что существует отдельный поток отрисовки, который может применить изменения пользовательского интерфейса, которые не влияют на обработку входных данных или базовый макет. Например, многие анимации и переходы, которые не влияют на макет, могут выполняться в этом потоке обработки.
 
 ## <a name="delay-element-instantiation"></a>Создание экземпляра элемента задержки
 
@@ -31,7 +31,7 @@ ms.locfileid: "67317549"
 -   Создавайте экземпляры элементов задержки с помощью [атрибута x:Load](../xaml-platform/x-load-attribute.md) или [x: DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute).
 -   Вставьте программным путем элементы в дерево по запросу.
 
-[**CoreDispatcher.RunIdleAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) помещающий задания в очередь потока пользовательского интерфейса для обработки, если он не занят.
+Очереди [**CoreDispatcher. рунидлеасинк**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) работают для обработки в ПОТОКЕ пользовательского интерфейса, когда он не занят.
 
 ## <a name="use-asynchronous-apis"></a>Использование асинхронных API
 
@@ -41,7 +41,7 @@ ms.locfileid: "67317549"
 
 Напишите код для обработчика событий, чтобы он быстро возвращался. В случаях, когда необходимо выполнить нестандартный объем работы, запланируйте выполнение в фоновом потоке и его возвращение.
 
-Запланировать задание можно асинхронно с помощью оператора **await** в C#, оператора **Await** в Visual Basic или делегатов в C++. Но это не гарантирует, что запланированное задание будет выполняться в фоновом потоке. Многие API универсальной платформы Windows (UWP) планируют выполнение в фоновом потоке, но если код приложения вызывается только с помощью **await** или делегата, этот делегат или метод будет выполнен в потоке пользовательского интерфейса. Необходимо явным образом указать, что требуется выполнение кода приложения в фоновом потоке. В C# и Visual Basic, это можно сделать, передав код, чтобы [ **Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#overloads).
+Запланировать задание можно асинхронно с помощью оператора **await** в C#, оператора **Await** в Visual Basic или делегатов в C++. Но это не гарантирует, что запланированное задание будет выполняться в фоновом потоке. Многие API универсальной платформы Windows (UWP) планируют выполнение в фоновом потоке, но если код приложения вызывается только с помощью **await** или делегата, этот делегат или метод будет выполнен в потоке пользовательского интерфейса. Необходимо явным образом указать, что требуется выполнение кода приложения в фоновом потоке. В C# и Visual Basic это можно сделать, передав код в [Task. Run](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run).
 
 Помните, что доступ к элементам пользовательского интерфейса можно получить только из потока. Используйте поток пользовательского интерфейса для получения доступа к элементам пользовательского интерфейса, прежде чем запустить фоновую работу и/или использовать [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) или [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) в фоновом потоке.
 
@@ -101,7 +101,7 @@ public class AsyncExample
 
 В этом примере обработчик `NextMove_Click` возвращается в **await**, чтобы обеспечить быстроту отклика потока пользовательского интерфейса. Однако выполнение снова обращается к этому обработчику после завершения `ComputeNextMove` (которое выполняется в фоновом потоке). Оставшийся код в обработчике обновляет пользовательский интерфейс с учетом результатов.
 
-> **Примечание**  также [ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) и [ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API для универсальной платформы Windows, который может быть использовать сценарии, аналогичные. Дополнительную информацию см. в разделе [Потоки и асинхронное программирование](https://docs.microsoft.com/windows/uwp/threading-async/index).
+> **Примечание**  There's также является интерфейсом [**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) и [**ThreadPool**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API для UWP, который можно использовать в подобных сценариях. Дополнительную информацию см. в разделе [Потоки и асинхронное программирование](https://docs.microsoft.com/windows/uwp/threading-async/index).
 
 ## <a name="related-topics"></a>См. также
 

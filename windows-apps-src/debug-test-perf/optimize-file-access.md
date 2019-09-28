@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc42fecf0a29784c8abe6e61a328d6e5024cc532
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 176791388bc0d0a5ac33659f6744852a2c857187
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362270"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339591"
 ---
 # <a name="optimize-file-access"></a>Оптимизация доступа к файлам
 
@@ -133,7 +133,7 @@ ms.locfileid: "66362270"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Буферизация между потоками UWP и .NET
 
-Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) или [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) в поток .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream?redirectedfrom=MSDN)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это было возможным, API-интерфейсы .NET для приложений универсальной платформы Windows предоставляет методы расширения, которые дают возможность преобразование между типами потока .NET и универсальной платформы Windows. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN).
+Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) или [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) в поток .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы сделать это, интерфейсы API .NET для приложений UWP предоставляют методы расширения, позволяющие выполнять преобразование между типами потоков .NET и UWP. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions).
 
 Во время преобразования потока UWP в поток .NET вы создаете адаптер для основного потока UWP. При некоторых условиях требуются затраты времени, связанные с применением методов на потоках UWP. Это может повлиять на скорость вашего приложения, особенно в сценариях, где необходимо выполнять много маленьких и частых операций чтения или записи.
 
@@ -194,9 +194,9 @@ ms.locfileid: "66362270"
 
 ### <a name="working-with-large-data-sets"></a>Работа с большими наборами данных
 
-При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
+При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
 
-> **Примечание**    следует соблюдать осторожность при параметр размера буфера, который больше, чем приблизительно 80 КБ, так как это может привести к фрагментации в куче сборщика мусора (см. в разделе [производительности сборки мусора](improve-garbage-collection-performance.md) ). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
+> **Примечание**.    следует быть внимательным при задании размера буфера, который больше приблизительно 80 КБ, так как это может привести к фрагментации кучи сборщика мусора (см. статью [улучшение производительности сборки мусора](improve-garbage-collection-performance.md)). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -208,7 +208,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-Методы [**Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto?redirectedfrom=MSDN#overloads) и [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync?redirectedfrom=MSDN#overloads) также выделяют локальный буфер для копирования между потоками. Как и с методом расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), вы можете получить оптимальную производительность для больших копий потоков, переопределив размер буфера по умолчанию. В следующем примере кода показано изменение размера буфера по умолчанию для вызова **CopyToAsync**.
+Методы [**Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto) и [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync) также выделяют локальный буфер для копирования между потоками. Как и с методом расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), вы можете получить оптимальную производительность для больших копий потоков, переопределив размер буфера по умолчанию. В следующем примере кода показано изменение размера буфера по умолчанию для вызова **CopyToAsync**.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 Вам также может понадобиться избегать буферизации, если вы хотите выполнять операции чтения и записи с небольшой задержкой и не хотите выполнять чтение большими блоками из основного потока UWP. Например, вам может понадобиться выполнять чтение и запись с небольшой задержкой, если вы используете поток для передачи данных по сети.
 
-В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
+В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) и [**AsStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
 
 

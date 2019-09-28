@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318410"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339824"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
 
 
-\[Некоторая информация имеет отношение к предварительному выпуску продукта, который может быть значительно изменен перед коммерческим выпуском. Майкрософт не предоставляет никаких гарантий, явных или подразумеваемых, относительно предоставленной здесь информации.\]
+сведения о @no__t 0Some относятся к предварительно выпущенному продукту, который может быть значительно изменен перед коммерческой выпуском. Корпорация Майкрософт не предоставляет никаких гарантий, явных или подразумеваемых, относительно предоставленной здесь информации. \]
 
 В этом разделе объясняется, как использовать [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) для обнаружения лиц на изображении. Инструмент [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров.
 
@@ -77,7 +77,7 @@ ms.locfileid: "67318410"
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Объявите переменную класса для объекта **FaceTracker**. В этом примере для запуска отслеживания лиц на определенный интервал используется [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) используется для обеспечения того, что в определенный момент выполняется только одна операция отслеживания лиц.
+Объявите переменную класса для объекта **FaceTracker**. В этом примере для запуска отслеживания лиц на определенный интервал используется [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim) используется для обеспечения того, что в определенный момент выполняется только одна операция отслеживания лиц.
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
@@ -91,15 +91,15 @@ ms.locfileid: "67318410"
 
 Как и **FaceDetector**, **FaceTracker** поддерживает ограниченный набор форматов пикселей. В этом примере обнаружение лиц отменяется, если формат предоставленного кадра — не Nv12.
 
-Вызовите [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync), чтобы извлечь список объектов [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace), представляющих лица в кадре. Когда у вас будет список лиц, их можно отображать тем же образом, который описан выше для обнаружения лиц. Обратите внимание, что, так как лицо, отслеживания вспомогательный метод не вызывается в потоке пользовательского интерфейса, необходимо все обновления пользовательского интерфейса в внутри вызова [ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
+Вызовите [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync), чтобы извлечь список объектов [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace), представляющих лица в кадре. Когда у вас будет список лиц, их можно отображать тем же образом, который описан выше для обнаружения лиц. Обратите внимание, что, поскольку вспомогательный метод отслеживания лиц не вызывается в потоке пользовательского интерфейса, необходимо внести любые обновления пользовательского интерфейса в вызове [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>См. также
 
 * [Анализ сцены для записи мультимедиа](scene-analysis-for-media-capture.md)
-* [Пример простого обнаружение лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Пример простого отслеживания лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Образец "базовый обнаружение лиц"](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Пример отслеживания основных лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Камера](camera.md)
-* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)

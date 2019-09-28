@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d53ab5949972c3f58e2c4db27b76fa720fd4b95
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7d00a41c5a58935a4ecfe623c71a1264a2dc1132
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339613"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 
 
-**Примечание**  Дополнительные сведения см. в разделе сеанса //build/ [значительно увеличить производительность при пользователи взаимодействуют с больших объемов данных, в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Примечание**  For. Дополнительные сведения см. в//буилд/сеансе [значительно увеличивают производительность, когда пользователи взаимодействуют с большими объемами данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Улучшите производительность и время запуска [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) и [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) с помощью виртуализации данных. Подробнее о виртуализации пользовательского интерфейса, сокращении элементов и прогрессивном обновлении элементов см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
 
@@ -27,7 +27,7 @@ ms.locfileid: "66359939"
 -   источника набора данных (расположение на локальном диске, в сети или облаке);
 -   общего потребления памяти вашим приложением.
 
-**Примечание**  Имейте в виду, что функция включена по умолчанию для ListView и GridView, отображающий временный заполнитель визуальных элементов, хотя пользователь панорамирования и прокрутки быстро. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
+**Примечание**  Be о том, что функция включена по умолчанию для ListView и GridView, которая отображает временные визуальные элементы заполнителей, когда пользователь быстро выполняет панорамирование и прокрутку. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Ниже приведены подробные сведения о методах добавочной виртуализации данных и виртуализации данных прямого доступа.
 
@@ -35,24 +35,24 @@ ms.locfileid: "66359939"
 
 Инкрементная виртуализация данных загружает данные последовательно. [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), использующий инкрементную виртуализацию данных, можно использовать для просмотра коллекции миллиона элементов, но изначально загружаются только 50 элементов. Следующие 50 загружаются, когда пользователь прокручивает страницу. По мере загрузки элементов бегунок полосы прокрутки уменьшается в размере. Для этого типа виртуализации данных записывается класс источника данных, применяющий эти интерфейсы.
 
--   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)
--   [**INotifyCollectionChanged** ](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) (C#и Visual Basic) или [ **IObservableVector&lt;T&gt;**  ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**Интерфейс**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
+-   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [иобсерваблевектор @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)
 
-Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
+Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
 
-Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) или [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения, загрузив [пример привязки данных XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows 8.1 и повторно использовать ее исходный код в приложении Windows 10.
+Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) или [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения можно узнать, загрузив [Пример привязки данных XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows 8.1 и повторно используя его исходный код в приложении Windows 10.
 
 ## <a name="random-access-data-virtualization"></a>Виртуализация данных прямого доступа
 
 Виртуализация данных прямого доступа позволяет загружать данные из произвольного места в наборе данных. [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), использующий виртуализацию данных прямого доступа, применяется для просмотра коллекции из миллиона элементов и может загружать элементы 100 000–100 050. Если пользователь затем перейдет к началу списка, элемент управления загрузит элементы 1–50. Бегунок полосы прокрутки всегда указывает, что **ListView** содержит миллион элементов. Положение бегунка полосы прокрутки зависит от того, где в полном наборе данных коллекции расположены видимые элементы. Этот тип виртуализации данных может значительно сократить требования к памяти и время загрузки для коллекции. Чтобы включить его, необходимо создать класс источника данных, который будет извлекать данные по запросу, управлять локальным кэшем и реализовывать указанные интерфейсы.
 
--   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN)
--   [**INotifyCollectionChanged** ](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) (C#и Visual Basic) или [ **IObservableVector&lt;T&gt;**  ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**Интерфейс**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
+-   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [иобсерваблевектор @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   (Необязательно) [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)
 -   (Необязательно) [**ISelectionInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISelectionInfo)
 
-[**IItemsRangeInfo** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo) сведения на элементы, которые активно используют элемент управления. Элемент управления элементами вызывает этот метод при каждом изменении представления и включает эти два набора диапазонов.
+[**Иитемсранжеинфо**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo) предоставляет сведения о том, какие элементы элемент управления активно использует. Элемент управления элементами вызывает этот метод при каждом изменении представления и включает эти два набора диапазонов.
 
 -   Набор элементов в окне просмотра.
 -   Набор элементов без виртуализации, которые используются элементом управления и которых может не быть в окне просмотра.
@@ -67,7 +67,7 @@ ms.locfileid: "66359939"
 -   При запросе элемента
     -   Если он доступен в памяти, возвратите его.
     -   Если он отсутствует, возвратите значение null или заполнитель.
-    -   Используйте запрос элемента (или сведения о диапазоне из [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)), чтобы узнать, какие элементы обязательны, и асинхронно извлечь данные из серверной части. После извлечения данных отправьте уведомление об изменении с помощью [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) или [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_), чтобы элемент управления элементами получил сведения о новых элементах.
+    -   Используйте запрос элемента (или сведения о диапазоне из [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)), чтобы узнать, какие элементы обязательны, и асинхронно извлечь данные из серверной части. После извлечения данных отправьте уведомление об изменении с помощью [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) или [**IObservableVector&lt;T&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_), чтобы элемент управления элементами получил сведения о новых элементах.
 -   (Необязательно) По мере изменения окна просмотра элемента управления элементами определите, какие элементы из источника данных необходимы, используя [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo).
 
 Более того, стратегия того, когда загружать элементы данных, сколько элементов загружать и какие элементы хранить в памяти, зависит от приложения. Несколько общих аспектов, о которых необходимо помнить.
