@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339420"
 ---
 # <a name="check-boxes"></a>Флажки
 
@@ -85,7 +85,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Привязка к свойству IsChecked
 
-Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен ли флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN), для его привязки к логическому значению вам потребуется преобразователь величин.
+Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен ли флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1), для его привязки к логическому значению вам потребуется преобразователь величин.
 
 В этом примере свойство **IsChecked** флажка для принятия условий соглашения привязано к свойству [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) кнопки "Отправить". Кнопка "Отправить" включена, только если пользователь принял условия соглашения.
 

@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e78fddf1a0dae39d4479a4a1786a36687337c75e
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364292"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340233"
 ---
 # <a name="draw-shapes"></a>Рисование фигур
 
@@ -147,7 +147,7 @@ layoutRoot.Children.Add(polygon1);
 
 [  **Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) (линия) — это линия, проведенная между двумя точками в координатном пространстве. Объект **Line** игнорирует значение параметра [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill), так как не имеет внутреннего пространства. Для объекта **Line** нужно задать значения свойств [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) и [**StrokeThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.strokethickness), так как в противном случае объект **Line** не будет отрисован.
 
-Не следует использовать значения [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) для определения фигуры [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line). Вместо этого задайте отдельные значения [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) для параметров [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1), [**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1), [**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) и [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2). Это позволяет сократить разметку для горизонтальных и вертикальных линий. Например, код `<Line Stroke="Red" X2="400"/>` определяет горизонтальную линию длиной 400 пикселей. Другие значения X,Y равны 0 по умолчанию, поэтому в отношении точек этот код XAML определяет линию от точки `(0,0)` до точки `(400,0)`. Затем можно использовать [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) для перемещения **Line** в целом, если необходимо начать с другой точки, отличной от (0,0).
+Не следует использовать значения [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) для определения фигуры [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line). Вместо этого задайте отдельные значения [**Double**](https://docs.microsoft.com/dotnet/api/system.double) для параметров [**X1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x1), [**Y1**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y1), [**X2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.x2) и [**Y2**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.line.y2). Это позволяет сократить разметку для горизонтальных и вертикальных линий. Например, код `<Line Stroke="Red" X2="400"/>` определяет горизонтальную линию длиной 400 пикселей. Другие значения X,Y равны 0 по умолчанию, поэтому в отношении точек этот код XAML определяет линию от точки `(0,0)` до точки `(400,0)`. Затем можно использовать [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) для перемещения **Line** в целом, если необходимо начать с другой точки, отличной от (0,0).
 
 ```xaml
 <Line Stroke="Red" X2="400"/>
@@ -165,7 +165,7 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
+## <a name="span-id_polylinespanspan-id_polylinespanspan-id_polylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 Фигура [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) похожа на фигуру [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) тем, что ее граница также определяется набором точек, но последняя точка в **Polyline** не соединяется с первой.
 

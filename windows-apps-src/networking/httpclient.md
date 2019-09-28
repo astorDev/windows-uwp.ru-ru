@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 877901deeec4da7674c6c8431e5b11f5eae075ed
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 8dd1fce4e8a5c18af93df32b12ce8b20c8bc69f9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714122"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340567"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -277,15 +277,15 @@ private async Task TryPostJsonAsync()
 
 Исключение создается, если конструктору для объекта [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) передается неправильная строка универсального кода ресурса (URI).
 
-**.NET:**   тип [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) отображается в C# и VB как [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN).
+**.NET:**   тип [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) отображается в C# и VB как [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri).
 
-В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
+В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
 
 В C++ нет метода для преобразования строки в код URI. Если пользователь вводит в приложение данные [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri), конструктор должен находиться в блоке try/catch. Если вызывается исключение, приложение может уведомить об этом пользователя и запросить новое имя узла.
 
 В пространстве имен [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) отсутствует удобная функция для обработки исключений. Поэтому приложение, использующее класс [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) и другие классы из этого пространства имен, должно использовать значение **HRESULT**.
 
-В приложениях, использующих .NET Framework 4.5 и написанных на C# или VB.NET, объект [System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
+В приложениях, использующих .NET Framework 4.5 и написанных на C# или VB.NET, объект [System.Exception](https://docs.microsoft.com/dotnet/api/system.exception) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult#System_Exception_HResult) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message#System_Exception_Message) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
 В приложениях на управляемом C++ объект [Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 

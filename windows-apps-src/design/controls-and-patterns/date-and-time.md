@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c980acc3b9887dac68712bd65de96e8f3a327a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1e489aa8cbf8b63885f039847b291404393444e9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319065"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339385"
 ---
 # <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
@@ -114,12 +114,12 @@ ms.locfileid: "67319065"
 ### <a name="datetime-and-calendar-values"></a>Значения DateTime и Calendar
 
 Объекты даты, используемые в элементах управления выбором даты и времени в XAML, имеют другое представление в зависимости от применяемого вами языка программирования. 
-- Языки C# и Visual Basic используют структуру [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN), которая предоставляется в .NET. 
+- Языки C# и Visual Basic используют структуру [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset), которая предоставляется в .NET. 
 - Языки C++ и CX используют структуру [Windows::Foundation::DateTime](https://docs.microsoft.com/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime). 
 
-С этим также связан класс Calendar, который влияет на интерпретацию дат в контексте. Все приложения среды выполнения Windows могут использовать класс [Windows.Globalization.Calendar](https://docs.microsoft.com/uwp/api/Windows.Globalization.Calendar). Приложения на C# и Visual Basic могут также использовать класс [System.Globalization.Calendar](https://docs.microsoft.com/dotnet/api/system.globalization.calendar?redirectedfrom=MSDN) с очень похожими функциями. (Приложения среды выполнения Windows могут использовать базовый класс .NET Calendar, но не определенные реализации; например GregorianCalendar.)
+С этим также связан класс Calendar, который влияет на интерпретацию дат в контексте. Все приложения среды выполнения Windows могут использовать класс [Windows.Globalization.Calendar](https://docs.microsoft.com/uwp/api/Windows.Globalization.Calendar). Приложения на C# и Visual Basic могут также использовать класс [System.Globalization.Calendar](https://docs.microsoft.com/dotnet/api/system.globalization.calendar) с очень похожими функциями. (Приложения среды выполнения Windows могут использовать базовый класс .NET Calendar, но не определенные реализации; например GregorianCalendar.)
 
-.NET также поддерживает тип [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime?redirectedfrom=MSDN), который неявно преобразуется в [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. См. подробнее об отличиях между типами DateTime и DateTimeOffset в разделе "Примечания" в описании класса [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset?redirectedfrom=MSDN).
+.NET также поддерживает тип [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime), который неявно преобразуется в [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. См. подробнее об отличиях между типами DateTime и DateTimeOffset в разделе "Примечания" в описании класса [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset).
 
 > **Примечание**&nbsp;&nbsp;Свойствам, которые принимают объекты даты в качестве значений, нельзя присвоить строку атрибута XAML, так как анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение [расширения разметки \{Binding\}](../../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
