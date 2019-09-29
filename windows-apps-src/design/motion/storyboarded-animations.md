@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 1107670e837dff294739e9ba38c7dea9004d1d62
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820514"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340349"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
 
@@ -66,13 +66,13 @@ ms.locfileid: "67820514"
 
 В предыдущем примере раскадровка анимировала свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) объекта [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Вы не объявляете анимации для самого объекта. Это делается в определении анимации для раскадровки. Раскадровки, как правило, определяются в XAML, который не находится в непосредственной близости от определения пользовательского интерфейса XAML для объекта, который нужно анимировать. Вместо этого они обычно задаются как ресурс XAML.
 
-Чтобы соединить анимацию с целевым объектом, вы ссылаетесь на него, используя его идентифицирующее программное имя. Следует всегда применять атрибут [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) в определении пользовательского интерфейса XAML, чтобы указать объект, который нужно анимировать. Затем вы выбираете объект, который нужно анимировать, задавая свойство [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) в определении анимации. Для значения свойства **Storyboard.TargetName** вы используете строку имени целевого объекта, которую вы задали ранее в другом месте в атрибуте x:Name.
+Чтобы соединить анимацию с целевым объектом, вы ссылаетесь на него, используя его идентифицирующее программное имя. Следует всегда применять атрибут [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) в определении пользовательского интерфейса XAML, чтобы указать объект, который нужно анимировать. Затем вы выбираете объект, который нужно анимировать, задавая свойство [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) в определении анимации. Для значения свойства **Storyboard.TargetName** вы используете строку имени целевого объекта, которую вы задали ранее в другом месте в атрибуте x:Name.
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>Выбор свойства зависимостей для анимации
 
 Вы задаете значение для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) в анимации. Таким образом определяется, какое именно свойство целевого объекта анимируется.
 
-Иногда необходимо выбрать свойство, которое не имеет прямого отношения к целевому объекту, но находится в связи между объектом и свойством на более глубоком уровне. Часто это требуется для того, чтобы детализировать набор дополнительных значений объекта и свойства, пока вы не сможете сослаться на тип свойства, который можно анимировать ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Это понятие называется *непрямой выбор*, а синтаксис для выбора свойства таким способом называется *путь к свойству*.
+Иногда необходимо выбрать свойство, которое не имеет прямого отношения к целевому объекту, но находится в связи между объектом и свойством на более глубоком уровне. Часто это требуется для того, чтобы детализировать набор дополнительных значений объекта и свойства, пока вы не сможете сослаться на тип свойства, который можно анимировать ([**Double**](https://docs.microsoft.com/dotnet/api/system.double), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Это понятие называется *непрямой выбор*, а синтаксис для выбора свойства таким способом называется *путь к свойству*.
 
 Рассмотрим пример. Распространенный сценарий для раскадрованной анимации — это изменение цвета области пользовательского интерфейса или элемента управления в приложении, чтобы показать, что элемент управления находится в конкретном состоянии. Например, вам нужно анимировать свойство [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) для [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), чтобы оно изменило свой цвет с красного на зеленый. Вы верно предполагаете, что этот процесс связан с [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation). Однако ни одно из свойств элементов пользовательского интерфейса, которые влияют на цвет объекта, на самом деле не относится к типу [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Вместо этого они относятся к типу [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Фактически вам нужно выбрать для анимации свойство [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) класса [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush), являющегося производным от **Brush** типом, который обычно используется для этих свойств пользовательского интерфейса, относящихся к цвету. Вот как это выглядит в контексте формирования пути к свойству для вашего выбора свойства анимации:
 
@@ -107,11 +107,11 @@ ms.locfileid: "67820514"
 
 Система анимации среды выполнения Windows имеет три отдельных типа, к которым может применяться раскадрованная анимация.
 
--   [**Двойные**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), могут быть анимированы с любым [ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
--   [**Точка**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), могут быть анимированы с любым [ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
--   [**Цвет**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), могут быть анимированы с любым [ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
+-   [**Double**](https://docs.microsoft.com/dotnet/api/system.double), может быть анимирован с помощью любого [ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
+-   [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)можно анимировать с помощью любого [ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
+-   [**Цвет**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), может быть анимирован с помощью любого [ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
 
-Также существует универсальный тип анимации [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN) для значений ссылок на объекты, который мы рассмотрим позднее.
+Также существует универсальный тип анимации [**Object**](https://docs.microsoft.com/dotnet/api/system.object) для значений ссылок на объекты, который мы рассмотрим позднее.
 
 ### <a name="specifying-the-animated-values"></a>Указание анимированных значений
 
@@ -125,9 +125,9 @@ ms.locfileid: "67820514"
 -   Если вы не укажете значение **To** или **By**, конечным значением будет любое значение, содержащееся в анимированном свойстве перед выполнением анимации. В этом случае рекомендуется иметь значение **From**, иначе анимация совсем не изменит значение, так как начальное и конечное значения одинаковые.
 -   Обычно анимация содержит как минимум одно из значений **From**, **By** или **To**, но никогда не имеет всех трех.
 
-Давайте вернемся к предыдущему примеру XAML и еще раз посмотрим на значения **From** и **To** и на свойство **Duration**. В этом примере анимируется свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity), а типом свойства **Opacity** является [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Итак, здесь используется анимация [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation).
+Давайте вернемся к предыдущему примеру XAML и еще раз посмотрим на значения **From** и **To** и на свойство **Duration**. В этом примере анимируется свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity), а типом свойства **Opacity** является [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Итак, здесь используется анимация [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation).
 
-`From="1.0" To="0.0"` указывает, что при выполнении анимации свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) начинается со значения 1 и анимируется до 0. Другими словами (в контексте того, что эти значения [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) означают для свойства **Opacity**), в результате анимации непрозрачный объект постепенно становится прозрачным.
+`From="1.0" To="0.0"` указывает, что при выполнении анимации свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) начинается со значения 1 и анимируется до 0. Другими словами (в контексте того, что эти значения [**Double**](https://docs.microsoft.com/dotnet/api/system.double) означают для свойства **Opacity**), в результате анимации непрозрачный объект постепенно становится прозрачным.
 
 ```xaml
 ...
@@ -149,7 +149,7 @@ ms.locfileid: "67820514"
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By определять необязательно
 
-Ранее мы говорили, что можно пропустить **From**, **To** или **By** и использовать текущие неанимированные значения в качестве замены отсутствующего значения. Угадать тип свойств **From**, **To** и **By** анимации непросто. Например, свойство [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) не относится к типу [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Зато [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) относится к **Double**. А его значение по умолчанию равно **null**, а не 0. С помощью этого значения **null** система анимации определяет, что вы не задали значение для свойства **From**, **To** или **By**. Visual C++ расширения компонентов (C++/CX) не имеет **Nullable** тип, поэтому она использует [ **IReference** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) вместо этого.
+Ранее мы говорили, что можно пропустить **From**, **To** или **By** и использовать текущие неанимированные значения в качестве замены отсутствующего значения. Угадать тип свойств **From**, **To** и **By** анимации непросто. Например, свойство [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) не относится к типу [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Зато [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1) относится к **Double**. А его значение по умолчанию равно **null**, а не 0. С помощью этого значения **null** система анимации определяет, что вы не задали значение для свойства **From**, **To** или **By**. Расширения C++ визуальных компонентовC++(/CX) не имеют типа, **допускающего значение NULL** , поэтому вместо него используется [иреференце](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) .
 
 ### <a name="other-properties-of-an-animation"></a>Другие свойства анимации
 
@@ -169,7 +169,7 @@ ms.locfileid: "67820514"
 
 Подробнее о значениях [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior) и синтаксисе XAML: [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = "останавливаться"**
 
 По умолчанию, когда анимация заканчивается, она оставляет значение свойства как окончательное значение **To** или измененное значение **By**, даже после того как ее длительность превышена. Однако если вы задаете значение свойства [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior) как [**FillBehavior.Stop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior), значение анимированного значения возвращается в любое значение, которое присутствовало до применения анимации, или, точнее, в текущее действительное значение, что определено системой свойств зависимостей (подробнее об этом отличии: [Общие сведения о свойствах зависимостей](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)).
 
@@ -239,8 +239,8 @@ ms.locfileid: "67820514"
 
 -   Значение свойства [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) анимации равно 0 секунд (см. предупреждение).
 -   Объектом анимации выбрано свойство [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity).
--   Значение вложенного свойства из этих целевым объектом для анимации [ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) свойства: [**Объект Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [ **проекции**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [ **Клипов**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
--   Объектом анимации выбрано свойство [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) или [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8)
+-   Анимация нацелена на значение вложенного свойства этих свойств [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) : [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [**проекция**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [**зажим**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+-   Объектом анимации выбрано свойство [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) или [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top)
 -   Анимация предназначена для значения [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) и использует [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush), анимируя его [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color).
 -   Анимация представляет собой [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames).
 
@@ -265,7 +265,7 @@ ms.locfileid: "67820514"
 Кроме того, как разработчик вы можете применить параметр приложения, который всегда отключает зависимые анимации, даже те, где **EnableDependentAnimation** имеет значение **true**. См.: [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> При использовании области анимации в Blend для Visual Studio 2019 г., каждый раз, когда вы попытаетесь применить зависимые анимации к свойству визуальное состояние, предупреждения будут отображаться в конструкторе. Предупреждения не будут отображаться в выходных данных сборки или списка ошибок. Если требуется вручную изменить XAML, конструктор не выведет предупреждение. Во время выполнения, при отладке, выходные данные отладки на панели вывода будут отображаться предупреждение, анимации не является независимым и будут пропущены.
+> Если вы используете панель анимации в Blend для Visual Studio 2019, при каждой попытке применить зависимую анимацию к свойству визуального состояния в конструкторе будут отображаться предупреждения. Предупреждения не будут отображаться в выходных данных сборки или Список ошибок. Если вы редактируете код XAML вручную, конструктор не будет отображать предупреждение. Во время выполнения при отладке выходные данные отладки в области вывода будут показывать предупреждение о том, что анимация не является независимой и будет пропущена.
 
 
 ## <a name="starting-and-controlling-an-animation"></a>Анимация: запуск и управление
@@ -331,13 +331,13 @@ myStoryBoard.Begin()
 
 ## <a name="related-topics"></a>См. также
 
-* [Синтаксис пути к свойству](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
+* [Синтаксис свойства-Path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
 * [Общие сведения о свойствах зависимостей](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
-* [Ключевым кадрам и анимация функция для реалистичной анимации](key-frame-and-easing-function-animations.md)
-* [Выполнена его раскадровка анимации для визуальных состояний](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
+* [Анимация по ключевым кадрам и ускорение работы с функциями](key-frame-and-easing-function-animations.md)
+* [Раскадровки анимации для визуальных состояний](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Шаблоны элементов управления](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
-* [**раскадровки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
+* [**Выполнена**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
+* [**Раскадровка. TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  
