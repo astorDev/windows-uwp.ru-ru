@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5c846d0e0110a1285e67f6f21e1eeb7a0d9c2624
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
+ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339281"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679214"
 ---
 # <a name="xaml-overview"></a>Обзор языка XAML
 
@@ -144,10 +144,10 @@ XAML — декларативный язык для объявления объ
 Приведем простой пример. Класс <xref:Windows.UI.Xaml.Controls.Button> поддерживает событие с именем <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Вы можете создать обработчик для **Click**, запускающий код, который должен вызываться после того, как пользователь щелкнет **Button**. В XAML **Click** указывается как атрибут для **Button**. В качестве значения атрибута следует задать строку, содержащую название метода обработчика.
 
 ```xml
-<Button Click="showUpdatesButton-Click">Show updates</Button>
+<Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-Теперь компилятор ожидает, что метод `showUpdatesButton-Click` будет определен в файле кода программной части в пространстве имен, объявленном в значении [x:Class](x-class-attribute.md) на XAML-странице. Кроме того, этот метод должен соответствовать контракту делегата для события <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Пример:
+Теперь компилятор ожидает, что метод `showUpdatesButton_Click` будет определен в файле кода программной части в пространстве имен, объявленном в значении [x:Class](x-class-attribute.md) на XAML-странице. Кроме того, этот метод должен соответствовать контракту делегата для события <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Пример:
 
 ```csharp
 namespace App1
