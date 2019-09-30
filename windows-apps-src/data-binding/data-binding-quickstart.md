@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 0832e46794302a3ccc9eba81d4b0e9d93dd9be8c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a967c923d9f8616a3a05af5bb0ebb612251d3b8
+ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339664"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674547"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 
@@ -704,7 +704,8 @@ public:
 ...
 ```
 
-> [Примечание.] Для приведенного выше кода C++/WinRT в `StringFormatter.idl` мы используем [атрибут по умолчанию](https://docs.microsoft.com/windows/desktop/midl/default) для объявления **IValueConverter** в качестве интерфейса по умолчанию. В списке **стрингформаттер** имеет только конструктор и не имеет методов, поэтому для него не создается интерфейс по умолчанию. Атрибут `default` является оптимальным, если вы не добавите члены экземпляра в **стрингформаттер**, так как для вызова методов **IValueConverter** не требуется QueryInterface. Кроме того, можно запросить создание интерфейса **истрингформаттер** по умолчанию и сделать это, заполнив заметку самого класса среды выполнения [атрибутом default_interface](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Этот параметр является оптимальным, если вы добавляете члены экземпляра в **стрингформаттер** , которые вызываются чаще, чем методы **IValueConverter** , поскольку не требуется QueryInterface для вызова членов экземпляра.
+> [!NOTE]
+> Для приведенного выше кода C++/WinRT в `StringFormatter.idl` мы используем [атрибут по умолчанию](https://docs.microsoft.com/windows/desktop/midl/default) для объявления **IValueConverter** в качестве интерфейса по умолчанию. В списке **стрингформаттер** имеет только конструктор и не имеет методов, поэтому для него не создается интерфейс по умолчанию. Атрибут `default` является оптимальным, если вы не добавите члены экземпляра в **стрингформаттер**, так как для вызова методов **IValueConverter** не требуется QueryInterface. Кроме того, можно запросить создание интерфейса **истрингформаттер** по умолчанию и сделать это, заполнив заметку самого класса среды выполнения [атрибутом default_interface](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Этот параметр является оптимальным, если вы добавляете члены экземпляра в **стрингформаттер** , которые вызываются чаще, чем методы **IValueConverter** , поскольку не требуется QueryInterface для вызова членов экземпляра.
 
 Теперь можно добавить экземпляр **стрингформаттер** в качестве ресурса страницы и использовать его в привязке **TextBlock** , отображающей свойство **релеаседатетиме** .
 
