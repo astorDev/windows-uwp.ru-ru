@@ -6,12 +6,12 @@ keywords: Начало работы Лицензия разработчика Vi
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867612"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205929"
 ---
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
@@ -47,7 +47,7 @@ ms.locfileid: "68867612"
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Какой параметр выбрать: загрузку неопубликованных приложений или режим разработчика?
 
 > [!NOTE]
-> Начиная с программы предварительной оценки Windows версии 18956 возможность загрузки неопубликованных приложений отключена, а режим разработчика теперь включается с помощью переключателя. Подробнее о загрузке неопубликованных приложений см. в следующем разделе. 
+> Начиная с программы предварительной оценки Windows версии 18956 возможность загрузки неопубликованных приложений отключена, а режим разработчика теперь включается с помощью переключателя. Подробнее о загрузке неопубликованных приложений см. в следующем разделе.
 
  Вы можете включить на устройстве как функции разработчика, так и просто функцию загрузки неопубликованных приложений.
 
@@ -60,7 +60,7 @@ ms.locfileid: "68867612"
 ### <a name="sideload-apps"></a>Загрузка неопубликованных приложений
 
 > [!NOTE]
-> Начиная с программы предварительной оценки Windows версии 18956 возможность загрузки неопубликованных приложений включена по умолчанию. Теперь вы можете развернуть подписанный пакет MSIX на устройстве без специальной настройки. 
+> Начиная с программы предварительной оценки Windows версии 18956 возможность загрузки неопубликованных приложений включена по умолчанию. Теперь вы можете развернуть подписанный пакет MSIX на устройстве без специальной настройки.
 
 Параметр "Загрузка неопубликованных приложений" обычно используется компаниями или учебными заведениями, которым необходимо устанавливать пользовательские приложения на управляемых устройствах, не используя Microsoft Store. Этот параметр также может потребоваться пользователям, которые запускают приложения не от корпорации Майкрософт. В этом случае организации обычно применяют политику, отключающую параметр *Приложения UWP*, как показано выше на изображении страницы параметров. Кроме того, организация предоставляет необходимый сертификат и расположение установки для загрузки неопубликованных приложений. Дополнительные сведения см. в статьях TechNet [Загрузка неопубликованных приложений в Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) и [Начало работы по развертыванию приложений в Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
@@ -100,7 +100,7 @@ ms.locfileid: "68867612"
 
 Конкретные инструкции по настройке устройства см. в следующих разделах:
 - [Портал устройств для компьютера](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Портал устройств для HoloLens](https://developer.microsoft.com/mixed-reality)
+- [Портал устройств для HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [Портал устройств для Интернета вещей](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Портал устройств для мобильных устройств](../debug-test-perf/device-portal-mobile.md)
 - [Портал устройств для Xbox](../xbox-apps/device-portal-xbox.md)
@@ -207,26 +207,26 @@ ms.locfileid: "68867612"
 1.  Выполните команду **regedit**.
 2.  Чтобы разрешить загрузку неопубликованных приложений, присвойте этому параметру типа DWORD значение 1:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
 
     - ИЛИ -
 
     Чтобы включить режим разработчика, присвойте этому параметру типа DWORD значение 1:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
 
 **Включение режима разработчика на устройстве с помощью PowerShell**
 
 1.  Запустите PowerShell с правами администратора.
 2.  Чтобы разрешить загрузку неопубликованных приложений, выполните следующую команду:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
 
     - ИЛИ -
 
     Чтобы включить режим разработчика, выполните следующую команду:
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Обновление устройства с Windows 8.1 до Windows 10
 
@@ -235,7 +235,7 @@ ms.locfileid: "68867612"
 **Отмена регистрации лицензии разработчика**
 
 1.  Запустите PowerShell с правами администратора.
-2.  Выполните команду **unregister-windowsdeveloperlicense**.
+2.  Выполните следующую команду: `unregister-windowsdeveloperlicense`.
 
 После этого необходимо включить на устройстве режим разработчика, как описано в данной статье, чтобы можно было продолжить разработку на этом устройстве. Если не сделать этого, может возникнуть ошибка при отладке вашего приложения или при создании пакета для него. Ниже указан пример такой ошибки.
 

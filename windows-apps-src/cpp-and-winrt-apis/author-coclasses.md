@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP, standard, c++, cpp, winrt, projection, author, COM, component
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
-ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
+ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
+ms.sourcegitcommit: c5699e74b60c5c7a88658b4ebe30c1475eef5c27
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293372"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344517"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Создание компонентов COM с помощью C++/WinRT
 
