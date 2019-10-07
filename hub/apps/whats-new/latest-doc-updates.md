@@ -6,25 +6,26 @@ ms.date: 09/23/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 37e771d12dd2cb49cc9f82ea1ef3a0db25de9a54
-ms.sourcegitcommit: 571467a27884ef51fa802cee6a238dafb84dbb6d
+ms.openlocfilehash: e74b04525524593d0134587bd09b2334882a138e
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409190"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982210"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Последние обновления документации для разработчиков Windows
 
-Документы для разработчиков Windows регулярно обновляются новыми и улучшенными сведениями и содержимым. Следующие документы познакомились с значительными обновлениями за последнюю неделю до сентября 27 2019:
+
+Документы для разработчиков Windows регулярно обновляются новыми и улучшенными сведениями и содержимым. В следующих документах были рассмотрены значительные обновления за последнюю неделю, в которой заканчивается 4 октября 2019:
+
 
 ## <a name="uwp-conceptual"></a>Концептуальная схема UWP
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layout-panels">Панели макета для приложений универсальная платформа Windows (UWP)</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">Звук</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Создание приложений с помощью универсальная платформа Windows</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Приступая к работе с универсальная платформа Windows (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/index">Приступая к работе с универсальная платформа Windows (UWP)</a></li></ul>
 </ul>
+
 
 
 ## <a name="win32-conceptual"></a>Основные понятия Win32
@@ -47,6 +48,6 @@ ms.locfileid: "71409190"
 <li><a href="https://docs.microsoft.com/windows/desktop/com/aggregation">Статистической обработки</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/com/com-error-codes-9">Коды ошибок COM (ВПН, МБН, P2P, Bluetooth)</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/direct3dtools/pixelhistoryoperation">Структура Пикселхисторйоператион</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Общие сведения о форматах пикселей в машинном код</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats">Общие сведения о форматах пикселей в машинном код</a></li></ul>
 </ul>
 

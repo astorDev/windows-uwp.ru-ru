@@ -5,14 +5,17 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
+ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820225"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71982233"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
+
+> [!Note]
+> Начиная с Windows 10 Май 2019 обновления (версия 1903), новые установки Windows 10 больше не будут показывать "пользователи на панели задач" по умолчанию. Клиенты могут включить эту функцию, щелкнув правой кнопкой мыши панель задач и нажав кнопку "отображать людей на панели задач". Разработчикам не рекомендуется добавлять поддержку пользователей в свои приложения, и вы должны посетить [блог разработчиков Windows](https://blogs.windows.com/windowsdeveloper/) , чтобы получить дополнительные сведения о оптимизации приложений для Windows 10.
 
 Функция "Близкие люди" позволяет пользователям закреплять контакты из приложения непосредственно на панели задач. При этом создается новый объект контакта, с который они могут взаимодействовать несколькими способами. В этой статье показано, как добавить поддержку этой функции, чтобы пользователи могли закреплять контакты непосредственно из приложения. Когда контакты закреплены, становятся доступны новые типы взаимодействия с пользователем, такие как [публикация для близких людей](my-people-sharing.md) и [уведомления](my-people-notifications.md).
 
@@ -27,8 +30,8 @@ ms.locfileid: "67820225"
 
 Чтобы реализовать поддержку функции "Близкие люди" в приложении, необходимо выполнить три действия:
 
-1. [Объявите поддержку по контракту активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Добавление заметок контакты, пользователи могут совместно использовать с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Объявите поддержку для контракта активации Шаретаржет в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Добавьте заметки к контактам, которые пользователи могут поделиться с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно. Пользователям необходимо взаимодействовать с полной версией приложения при работе с ним на панели контактов.  Они могут даже использовать его на нескольких панелях контактов одновременно.  Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 После реализации этой возможности ваше приложение будет отображаться на панели контактов для указанных контактов.
@@ -185,7 +188,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 Для добавления индикатора контакту узел всплывающего уведомления верхнего уровня должен содержать параметр hint-people для указания контакта-отправителя или связанного контакта. Этот параметр может принимать любое из перечисленных ниже значений.
 + **Адрес электронной почты** 
-    + Например: [https://support.microsoft.com/en-us/help/172983/explanation-of-the-three-way-handshake-via-tcp-ip](mailto:johndoe@mydomain.com)
+    + Например: mailto:johndoe@mydomain.com
 + **Номер телефона** 
     + Например: tel:888-888-8888
 + **Удаленный идентификатор** 
@@ -250,9 +253,9 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 ## <a name="see-also"></a>См. также
 + [Публикации близких людей](my-people-sharing.md)
-+ [Мои notificatons людей](my-people-notifications.md)
-+ [Видео на Channel 9 о добавлении поддержку Мои людей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Мой пример интеграции людей](https://aka.ms/mypeoplebuild2017)
-+ [Обратитесь в службу примере карты](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Документации по классу PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Мои люди нотификатонс](my-people-notifications.md)
++ [Видеоролик Channel 9 о добавлении поддержки пользователей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Пример интеграции "Мои люди"](https://aka.ms/mypeoplebuild2017)
++ [Пример карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Документация по классу Пиннедконтактманажер](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Подключение приложения к действиям в карточке контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
