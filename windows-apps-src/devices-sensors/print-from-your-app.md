@@ -4,14 +4,14 @@ title: Печать из приложения
 description: Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы.
 ms.date: 01/29/2018
 ms.topic: article
-keywords: Windows 10, uwp, печать
+keywords: Windows 10, UWP, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a60def61e974bca493fb932cc0fb8716ba521f0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 13b927d3e596db83a2b5cf3f51f93d5eb6c87547
+ms.sourcegitcommit: 7e8ff8c94bd09a201c8ed25fc947e3571caa1031
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321491"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999930"
 ---
 # <a name="print-from-your-app"></a>Печать из приложения
 
@@ -19,21 +19,21 @@ ms.locfileid: "67321491"
 
 **Важные API**
 
--   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
--   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**Windows. Graphics. Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows. UI. XAML. печать**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
 -   [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)
 
 Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы. Сведения о дополнительных изменениях в пользовательском интерфейсе предварительного просмотра см. в разделе [Настройка пользовательского интерфейса предварительного просмотра](customize-the-print-preview-ui.md).
 
 > [!TIP]
-> Большинство примеров в этом разделе основаны на образце печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
+>@no__t 0Most примеров в этом разделе основаны на [образце печати универсальная платформа Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), который является частью репозитория [примеров приложений универсальная платформа Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на GitHub.
 
 ## <a name="register-for-printing"></a>Регистрация для печати
 
 Первый шаг добавления возможностей печати в ваше приложение — регистрация контракта "Печать". Ваше приложение должно выполнять это на каждом экране, на котором вы хотите предоставить пользователю возможность печати. Для печати можно зарегистрировать только экран, отображаемый для пользователя. Если один экран приложения зарегистрирован для печати, при уходе с этого экрана необходимо отменить его регистрацию для печати. Если экран заменяется другим экраном, при открытии следующего экрана для него необходимо зарегистрировать новый контракт «Печать».
 
 > [!TIP]
-> Если необходима поддержка печати с более чем одной страницы в приложении, вы можете поместить этот код печати в распространенных вспомогательный класс и иметь что страницы приложения повторно. Пример того, как это сделать, см. в классе `PrintHelper` в [примере печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984).
+>@no__t 0If требуется поддержка печати из нескольких страниц в приложении, можно разместить этот код печати в общем вспомогательном классе и использовать его для повторного использования страницами приложения. Пример того, как это сделать, см. в классе `PrintHelper` в [примере печати в UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
 
 Сначала объявите [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) и [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument). Тип **PrintManager** содержится в пространстве имен [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing) наряду с типами для поддержки других возможностей печати Windows. Тип **PrintDocument** содержится в пространстве имен [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing) наряду с другими типами, поддерживающими подготовку содержимого на XAML для печати. Вы можете упростить создание кода печати, добавив на страницу операторы **using** или **Imports**.
 
@@ -44,7 +44,7 @@ using Windows.UI.Xaml.Controls;
 
 Класс [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) используется для обработки большинства взаимодействий между приложением и [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager), но предоставляет несколько собственных обратных вызовов. Во время регистрации создайте экземпляры **PrintManager** и **PrintDocument** и зарегистрируйте обработчики для их событий печати.
 
-В [примере печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) регистрация выполняется с помощью метода `RegisterForPrinting`.
+В [примере печати в UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) регистрация выполняется с помощью метода `RegisterForPrinting`.
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -77,7 +77,29 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Когда пользователь покинет страницу, отключите обработчик событий печати. В многостраничном приложении с неотключенной печатью возникает исключение, если пользователь покидает страницу, а затем возвращается к ней.
+В этом примере регистрация обработчиков событий в методе `UnregisterForPrinting` отменена.
+
+```csharp
+public virtual void UnregisterForPrinting()
+{
+    if (printDocument == null)
+    {
+        return;
+    }
+
+    printDocument.Paginate -= CreatePrintPreviewPages;
+    printDocument.GetPreviewPage -= GetPrintPreviewPage;
+    printDocument.AddPages -= AddPrintPages;
+
+    PrintManager printMan = PrintManager.GetForCurrentView();
+    printMan.PrintTaskRequested -= PrintTaskRequested;
+}
+```
+
+Когда пользователь оставляет страницу, поддерживающую печать, регистрация обработчиков событий в методе `OnNavigatedFrom` отменяется. 
+
+> [!NOTE]
+> Если у вас есть многостраничное приложение и не отключается печать, возникает исключение, когда пользователь покидает страницу, а затем возвращается к ней.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -88,6 +110,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
+
 ## <a name="create-a-print-button"></a>Создание кнопки печати
 
 Добавьте кнопку печати в нужное расположение на экране своего приложения. Убедитесь, что она не пересекается с содержимым, которое вы хотите напечатать.
@@ -97,6 +120,8 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 ```
 
 Далее добавьте обработчик событий в код приложения для обработки события нажатия кнопки. Используйте метод [**ShowPrintUIAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.showprintuiasync), чтобы начать печать из приложения. **ShowPrintUIAsync** — асинхронный метод, который отображает соответствующее окно печати. Рекомендуется сначала вызвать метод [**IsSupported**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager.issupported), чтобы проверить, что приложение выполняется на устройстве, которое поддерживает печать (и принять меры, если это не так). Если по какой-либо причине выполнить печать в это время невозможно, **ShowPrintUIAsync** создаст исключение. Рекомендуется перехватывать такие исключения, позволяя пользователю узнать, когда выполнение печати невозможно.
+
+В этом примере окно печати отображается в обработчике событий для нажатия кнопки. Если метод вызывает исключение (поскольку выполнение печати в это время невозможно), то элемент управления [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) информирует пользователя о ситуации.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
@@ -133,8 +158,6 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 }
 ```
 
-В этом примере окно печати отображается в обработчике событий для нажатия кнопки. Если метод вызывает исключение (поскольку выполнение печати в это время невозможно), то элемент управления [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) информирует пользователя о ситуации.
-
 ## <a name="format-your-apps-content"></a>Форматирование содержимого приложения
 
 При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
@@ -168,7 +191,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 После создания задания печати событие [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) запрашивает коллекцию печатаемых страниц для отображения в пользовательском интерфейсе предварительного просмотра и создает событие [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate). Это соотносится с методом **Paginate** интерфейса **IPrintPreviewPageCollection**. Созданный при регистрации обработчик событий будет вызываться в это время.
 
 > [!IMPORTANT]
-> Если этот пользователь не изменит параметры печати, пагинации обработчик событий будет вызываться снова позволяет Перекомпоновка содержимое. Для лучшего взаимодействия с пользователем рекомендуется проверять параметры, прежде чем переформатировать содержимое, и избегать повторной инициализации разбитого на страницы содержимого, если в этом нет необходимости.
+> If пользователь изменяет параметры печати, обработчик событий разбиения на страницы будет снова вызван, чтобы можно было перекомпоновку содержимого. Для лучшего взаимодействия с пользователем рекомендуется проверять параметры, прежде чем переформатировать содержимое, и избегать повторной инициализации разбитого на страницы содержимого, если в этом нет необходимости.
 
 В обработчике событий [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate) (метод `CreatePrintPreviewPages` в [примере печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)) создайте страницы для отображения в пользовательском интерфейсе предварительного просмотра и отправки на принтер. Код, используемый для подготовки содержимого вашего приложения к печати, зависит от вашего приложения и печатаемого содержимого. Чтобы увидеть, как приложение форматирует содержимое для печати, см. исходный код в [примере печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984).
 
@@ -252,10 +275,10 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 
 На этом этапе создается новый параметр печати, определяется список значений, поддерживаемых параметром, а затем добавляется параметр к пользовательскому интерфейсу предварительного просмотра. Параметр диапазона страниц имеет следующие настройки.
 
-| Имя параметра          | Действие |
+| Имя параметра          | Action |
 |----------------------|--------|
 | **Печать всех**        | Печать всех страниц в документе.|
-| **Напечатать выбранный фрагмент**  | Печатать только содержимое, выбранное пользователем.|
+| **Печать выделенного фрагмента**  | Печатать только содержимое, выбранное пользователем.|
 | **Диапазон печати**      | Отображение поля ввода, в которое пользователь может ввести страницы для печати.|
 
 Для начала измените обработчик событий [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress), добавив код для получения объекта [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails).
@@ -267,7 +290,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 Очистите список параметров, отображающихся в пользовательском интерфейсе предварительного просмотра печати, и добавьте параметры, которые вы хотите показывать, когда пользователь начинает печать из приложения.
 
 > [!NOTE]
-> Параметры отображаются в режиме предварительного просмотра пользовательского интерфейса в том же порядке, в котором они добавляются, выбрать первый вариант, отображенным в верхней части окна.
+>Параметры  The отображаются в пользовательском интерфейсе предварительного просмотра в том же порядке, в котором они добавляются, с первым параметром, отображаемым в верхней части окна.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -307,7 +330,7 @@ printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 
 Обработчик события **OptionChanged** выполняет две процедуры. Во-первых, он показывает и скрывает поле текстового ввода диапазона страниц в зависимости от параметра диапазона печати, выбранного пользователем. Во-вторых, он проверяет, является ли текст, введенный в поле диапазона страниц, допустимым диапазоном страниц для документа.
 
-В этом примере показано, как [пример печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) обрабатывает события изменений.
+В этом примере показано, как в [образце UWP для печати](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)обрабатываются события изменения параметров печати.
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -384,13 +407,13 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> См. в разделе `GetPagesInRange` метод в [пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) для сведений о том, как выполнить синтаксический анализ страницы диапазона, пользователь вводит в текстовое поле диапазона.
+> See метод `GetPagesInRange` в [образце UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) для получения подробных сведений о том, как анализировать диапазон страниц, вводимый пользователем в текстовое поле диапазон.
 
 ## <a name="preview-selected-pages"></a>Предварительный просмотр выбранных страниц
 
-Способ форматирования содержимого вашего приложения для печати зависит от характера приложения и его содержимого. В [примере печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) используется вспомогательный класс печати, форматирующий содержимое для печати.
+Способ форматирования содержимого вашего приложения для печати зависит от характера приложения и его содержимого. Вспомогательный класс печати, используемый в [образце UWP Print](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) для форматирования содержимого для печати.
 
-При печати подмножества страниц существует несколько способов показать содержимое в предварительном просмотре. Вне зависимости от выбранного вами метода отображения диапазона страниц в предварительном просмотре напечатанное содержимое должно содержать только выбранные страницы.
+При печати подмножества страниц существует несколько способов отображения содержимого в предварительном просмотре. Вне зависимости от выбранного вами метода отображения диапазона страниц в предварительном просмотре напечатанное содержимое должно содержать только выбранные страницы.
 
 -   Отобразите в предварительном просмотре все страницы вне зависимости от того, указан диапазон страниц или нет, и покажите пользователю, какие именно страницы будут напечатаны.
 -   Отобразите в предварительном просмотре только страницы выбранного пользователем диапазона, обновляя представление, если пользователь изменит диапазон страниц.
@@ -399,5 +422,5 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ## <a name="related-topics"></a>См. также
 
 * [Рекомендации по проектированию для печати](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [Видео с Build 2015: Разработка приложений, осуществляющие печать в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* видео [//сборка 2015: Разработка приложений, которые печатаются в Windows 10 @ no__t-0
+* [Пример печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)

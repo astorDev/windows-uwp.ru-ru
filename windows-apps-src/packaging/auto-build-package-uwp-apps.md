@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ad21d3ddc73499bb2b97b300e635fe0a6c148d
-ms.sourcegitcommit: 698a86640b365dc1ca772fb6f53ca556dc284ed6
+ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
+ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935777"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72008042"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -38,7 +38,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -62,7 +62,7 @@ steps:
 
 ```
 
-Шаблон по умолчанию пытается подписать пакет сертификатом, указанным в файле CSPROJ. Если вы хотите подписать пакет во время сборки, необходимо иметь доступ к закрытому ключу. В противном случае подписывание можно отключить, добавив `/p:AppxPackageSigningEnabled=false` параметр `msbuildArgs` в раздел файла YAML.
+Шаблон по умолчанию пытается подписать пакет сертификатом, указанным в файле CSPROJ. Если вы хотите подписать пакет во время сборки, необходимо иметь доступ к закрытому ключу. В противном случае подписывание можно отключить, добавив параметр `/p:AppxPackageSigningEnabled=false` в раздел `msbuildArgs` в файле YAML.
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Добавление сертификата проекта в библиотеку защищенных файлов
 
@@ -116,7 +116,7 @@ steps:
 ### <a name="configure-package-signing"></a>Настройка подписи пакета
 
 Чтобы подписать пакет MSIX (или APPX), конвейеру необходимо получить сертификат подписи. Для этого добавьте задачу Довнлоадсекурефиле перед задачей Всбуилд.
-Это обеспечит доступ к сертификату подписи через ```signingCert```.
+Это обеспечит доступ к сертификату подписи с помощью ```signingCert```.
 
 ```yml
 - task: DownloadSecureFile@1
@@ -148,7 +148,7 @@ steps:
 
 ### <a name="review-parameters"></a>Проверить параметры
 
-Параметры, определенные с помощью `$()` синтаксиса, являются переменными, определенными в определении сборки, и будут изменены в других системах сборки.
+Параметры, определенные с помощью синтаксиса `$()`, являются переменными, определенными в определении сборки, и будут изменены в других системах сборки.
 
 ![переменные по умолчанию](images/building-screen5.png)
 
@@ -176,7 +176,7 @@ steps:
 
 ![artifacts](images/building-screen6.png)
 
-Так как мы установили `UapAppxPackageBuildMode` для `StoreUpload`аргумента значение, папка артефактов включает пакет для отправки в хранилище (. мсиксуплоад/. appxupload). Обратите внимание, что можно также отправить обычный пакет приложения (. msix/. appx) или набор приложений (. msixbundle/. appxbundle/) в хранилище. В этой статье мы будем использовать файл .appxupload.
+Так как для аргумента `UapAppxPackageBuildMode` задано значение `StoreUpload`, в папку артефактов входит пакет для отправки в хранилище (. мсиксуплоад/. appxupload). Обратите внимание, что можно также отправить обычный пакет приложения (. msix/. appx) или набор приложений (. msixbundle/. appxbundle/) в хранилище. В этой статье мы будем использовать файл .appxupload.
 
 ## <a name="address-bundle-errors"></a>Ошибки пакета адресов
 
@@ -184,14 +184,14 @@ steps:
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-Эта ошибка возникает, поскольку на уровне решения неясно, какое приложение должно быть в пакете. Чтобы устранить эту проблему, откройте каждый файл проекта и добавьте следующие свойства в конец первого `<PropertyGroup>` элемента.
+Эта ошибка возникает, поскольку на уровне решения неясно, какое приложение должно быть в пакете. Чтобы устранить эту проблему, откройте каждый файл проекта и добавьте следующие свойства в конец первого элемента `<PropertyGroup>`.
 
 |**Проектом**|**Свойства**|
 |-------|----------|
 |Приложение|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
-Затем удалите `AppxBundle` аргумент MSBuild из шага сборки.
+Затем удалите аргумент `AppxBundle` MSBuild из шага сборки.
 
 ## <a name="related-topics"></a>См. также
 
