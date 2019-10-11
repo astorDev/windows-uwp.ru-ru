@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
-ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
+ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
+ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164823"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720436"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT
 
@@ -787,6 +787,51 @@ case AsyncStatus::Started:
 - **AsyncStatus::Canceled** означает, что асинхронный объект был отменен. Отмена обычно запрашивается вызывающим объектом, поэтому такое состояние обрабатывается редко. Как правило, отмененный асинхронный объект просто удаляется.
 - **AsyncStatus::Error** означает, что выполнение асинхронного объекта завершилось сбоем. При необходимости с помощью функции **get** вы можете повторно вызвать исключение.
 - **AsyncStatus::Started** означает, что асинхронный объект все еще выполняется. Асинхронный шаблон среды выполнения Windows не допускает ни множественных ожиданий, ни множественных ожидающих объектов. Это означает, что вы не можете вызывать функцию **wait_for** в цикле. Если время ожидания истекло, вы можете выбрать несколько вариантов. Можно отказаться от выполнения объекта или запросить его состояние до вызова **get** и получения результатов. Но лучше всего на этом этапе просто отменить его выполнение.
+
+## <a name="returning-an-array-asynchronously"></a>Асинхронное возвращение массива
+
+Ниже приведен пример [MIDL 3.0](/uwp/midl-3/), который порождает ошибку *error MIDL2025: [msg]syntax error [context]: expecting > or, near "["* (Ошибка MIDL2025: [сообщение]: ошибка синтаксиса; [контекст]: ожидается > or, near "[").
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+Причина в том, что не допускается использование массива в качестве аргумента типа параметра для параметризованного интерфейса. Поэтому нужен менее очевидный способ достижения цели — асинхронной передачи массива обратно из метода класса среды выполнения. 
+
+Вы можете вернуть массив, упакованный в объект [PropertyValue](/uwp/api/windows.foundation.propertyvalue). Затем вызывающий код его распакует. Ниже приведен пример кода, который можно попробовать применить, добавив класс среды выполнения **SampleComponent** в проект **компонента среды выполнения Windows (C++/WinRT)** , а затем использовав его (например) из проекта **приложения основных компонентов (C++/WinRT)** .
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IAsyncAction](/uwp/api/windows.foundation.iasyncaction)

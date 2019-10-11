@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
+ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959054"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72257932"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Интеграция упакованного классического приложения с Windows 10 и UWP
 
-При [упаковке классического приложения в контейнер MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)можно использовать расширения для интеграции упакованного настольного приложения с Windows 10 с помощью предварительно определенных расширений в манифесте [пакета приложения](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+При [упаковке классического приложения в контейнер MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)можно использовать расширения для интеграции упакованного настольного приложения с Windows 10 с помощью предварительно определенных расширений в [манифесте пакета приложения](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
 Например, используйте расширение для создания исключения брандмауэра, сделайте приложение приложением по умолчанию для типа файлов или наведите указатель на пункт Начало работы с упакованной версией приложения. Чтобы использовать расширение, просто добавьте разметку XML в файл манифеста пакета приложения. Никакой код не требуется.
 
@@ -110,7 +110,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[Name]">
+    <FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -287,8 +287,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 #### <a name="xml-namespaces"></a>Пространства имен XML
 
-* http:\//Schemas.Microsoft.com/appx/manifest/UAP/windows10
-* http:\//Schemas.Microsoft.com/appx/manifest/UAP/windows10/3 "
+* http: \//Schemas. Microsoft. com/appx/manifest/UAP/Windows 10
+* http: \//Schemas. Microsoft. com/appx/manifest/UAP/Windows 10/3 "
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
@@ -372,7 +372,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 |Имя |Описание |
 |-------|-------------|
-|Category |Постоянно``windows.firewallRules``|
+|Category |Всегда ``windows.firewallRules``|
 |Исполняемый файл |Имя исполняемого файла, который необходимо добавить в список исключений брандмауэра |
 |Direction |Указывает направление правила подключения: входящее или исходящее |
 |IPProtocol |Протокол взаимодействия |
@@ -995,17 +995,16 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  IgnorableNamespaces="uap3">
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap3, desktop">
   <Applications>
     <Application>
       <Extensions>
-         <uap3:Extension
-                Category="windows.appExecutionAlias"
-                Executable="exes\launcher.exe"
-                EntryPoint="Windows.FullTrustApplication">
-            <uap3:AppExecutionAlias>
-                <desktop:ExecutionAlias Alias="Contoso.exe" />
-            </uap3:AppExecutionAlias>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -1049,23 +1048,21 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 ```XML
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-  IgnorableNamespaces="uap3, desktop">
+  IgnorableNamespaces="uap3">
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
-</Package>
- 
-...
 </Package>
 ```
 

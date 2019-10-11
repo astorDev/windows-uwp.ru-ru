@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72da3d17f3584d0c295926880b949591b83b47a7
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076400"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163707"
 ---
 # <a name="guidelines-for-app-settings"></a>Руководство по параметрам приложений
 
@@ -82,7 +82,7 @@ ms.locfileid: "70076400"
 ## <a name="color-mode-settings"></a>Параметры "Цветовой режим"
 
 
-Если пользователи вашего приложения могут выбирать его цветовой режим, представьте эти параметры с помощью [переключателей](../controls-and-patterns/radio-button.md) или [поля со списком](../controls-and-patterns/lists.md#drop-down-lists) с заголовком "Выбор режима приложения". Параметры должны быть следующими:
+Если пользователи вашего приложения могут выбирать его цветовой режим, представьте эти параметры с помощью [переключателей](../controls-and-patterns/radio-button.md) или [поля со списком](../controls-and-patterns/combo-box.md) с заголовком "Выбор режима приложения". Параметры должны быть следующими:
 - Светлая
 - Темная
 - По умолчанию (Windows)

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: a8da69f0041c71ecfc7429cae2ed51eee0f87d5e
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
+ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393491"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71939589"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -29,6 +29,10 @@ ms.locfileid: "70393491"
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Как устранить ошибку сборки The C++/WinRT VSIX no longer provides project build support.  Please add a project reference to the Microsoft.Windows.CppWinRT Nuget package (C++/WinRT VSIX больше не обеспечивает поддержку сборки проекта. Добавьте ссылку на пакет Nuget Microsoft.Windows.CppWinRT в проект)?
 Установите пакет NuGet **Microsoft.Windows.CppWinRT** в проект. Дополнительные сведения см. в разделе [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension) (Более ранние версии расширения VSIX).
+
+## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>Как можно настроить поддержку сборки в пакете NuGet?
+
+Поддержка сборки C++/WinRT (свойства и цели) описана в [файле сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Каковы требования для расширения Visual Studio (VSIX) C++/WinRT?
 Дополнительные сведения о версии 1.0.190128.4 расширения VSIX и более поздних версиях см. в разделе о [поддержке C++/WinRT в Visual Studio](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Дополнительные сведения о других версиях см. в разделе [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension) (Более ранние версии расширения VSIX).

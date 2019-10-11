@@ -1,21 +1,21 @@
 ---
-Description: В этом разделе перечислены шрифтов, доступных для приложений универсальной платформы Windows, на которые переведены на языки, отличные от США английский.
+Description: В этом разделе перечислены шрифты, доступные для приложений UWP, локализованных на другие языки, кроме США. (США)".
 title: Международные шрифты
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
+ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601139"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237519"
 ---
 # <a name="international-fonts"></a>Международные шрифты
 
-В этом разделе перечислены шрифтов, доступных для приложений универсальной платформы Windows, на которые переведены на языки, отличные от США английский.
+В этом разделе перечислены шрифты, доступные для приложений UWP, локализованных на другие языки, кроме США. (США)".
 
 В следующей таблице столбец "Тег языка" содержит [тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) для различных языков. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
 
@@ -37,9 +37,9 @@ ms.locfileid: "57601139"
 | Каталонский | ca-ES | Segoe UI |
 | Центральнокурдский (арабский) | ku-ARAB-IQ | Segoe UI |
 | Чероки (чероки) | chr-CHER-US | Gadugi |
-| Китайский (упрощенное письмо) | zh-CN | MS YaHei UI |
-| Китайский (традиционное письмо,  Гонконг, САР) | zh-HK | MS JhengHei UI |
-| Китайский (традиционное письмо, Тайвань) | zh-TW | MS JhengHei UI |
+| Китайский (упрощенное письмо) | zh-CN | Microsoft YaHei UI |
+| Китайский (традиционное письмо, Гонконг) | zh-HK | Microsoft JhengHei UI |
+| Китайский (традиционное письмо, Тайвань) | zh-TW | Microsoft JhengHei UI |
 | Хорватский | hr-HR | Segoe UI |
 | Чешский | cs-CZ | Segoe UI |
 | Датский | da-DK | Segoe UI |
@@ -66,7 +66,7 @@ ms.locfileid: "57601139"
 | Коса | xh-ZA | Segoe UI |
 | Зулу | zu-ZA | Segoe UI |
 | Итальянский | it-IT | Segoe UI |
-| Японский | ja-JP | Meiryo UI (см. Примечания ниже) |
+| Японский | ja-JP | Yu Gothic UI |
 | Письменность каннада | kn-IN | Nirmala UI |
 | казахский; | kk-KZ | Segoe UI |
 | Кхмерский | km-KH | Leelawadee UI |
@@ -129,11 +129,7 @@ ms.locfileid: "57601139"
 | Волоф | wo-SN | Segoe UI |
 | Йоруба | yo-NG | Segoe UI |
 
-## <a name="japanese-fonts"></a>Японские шрифты
-
-Шрифт Meiryo UI используется в Windows. Windows содержит два семейства шрифтов Yu Gothic и Yu Mincho для просмотра и правки документов на японском языке. Шрифт Yu Gothic не рекомендуется использовать для пользовательского интерфейса приложений.
-
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Поддерживаемые языки](../../publish/supported-languages.md)

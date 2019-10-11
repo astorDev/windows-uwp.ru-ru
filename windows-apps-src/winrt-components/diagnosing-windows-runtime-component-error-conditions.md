@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 330cbaab4a1c8313fb0b298dea55176eb66d4803
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
+ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340521"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252309"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Диагностика состояний ошибки компонентов среды выполнения Windows
 
@@ -69,7 +69,7 @@ ms.locfileid: "71340521"
 
 На универсальной платформе Windows все открытые типы из файла метаданных Windows (.winmd) должны находиться в пространстве имен, совместно использующем имя файла .winmd, или во вложенных пространствах имен имени файла. Например, если проект Visual Studio называется A.B (т. е. компонент среды выполнения Windows — это файл A.B.winmd), он может содержать открытые классы A.B.Class1 и A.B.C.Class2, но не классы A.Class3 (WME0006) или D.Class4 (WME1044).
 
-> **Примечание**@no__t — ограничения 1These применяются только к открытым типам, а не к закрытым типам, используемым в реализации.
+> **Примечание.** Эти ограничения относятся только к открытым типам, а не к закрытым типам, используемым в вашей реализации.
 
 В случае с классом A.Class3 можно либо переместить Class3 в другое пространство имен, либо изменить имя компонента среды выполнения Windows на A.winmd. Хотя класс WME0006 является предупреждением, следует рассматривать его как ошибку. В предыдущем примере код, вызывающий A.B.winmd, не сможет найти A.Class3.
 
@@ -81,7 +81,7 @@ ms.locfileid: "71340521"
 
 В компоненте среды выполнения Windows у типа не может быть имени, совпадающего с пространством имен (WME1068).
 
-> **Внимание!**   If вы напрямую вызываете Winmdexp. exe и не используете параметр/out, чтобы указать имя для компонента Среда выполнения Windows, Winmdexp. exe пытается создать имя, включающее в себя все пространства имен в компоненте. Переименование пространств имен может изменить имя компонента.
+> **Внимание!** Если при непосредственном вызове Winmdexp.exe вы не используете параметр /out для указания имени компонента среды выполнения Windows, Winmdexp.exe пытается сформировать имя, включающее все пространства имен в компоненте. Переименование пространств имен может изменить имя компонента.
 
  
 
@@ -102,9 +102,9 @@ ms.locfileid: "71340521"
 
 Как правило, наиболее подходящим является ближайший к типу интерфейс. Например, для Dictionary&lt;int, string&gt; самым подходящим, вероятнее всего, является интерфейс IDictionary&lt;int, string&gt;.
 
-> **Важно**. @no__t 1JavaScript использует интерфейс, который отображается первым в списке интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
+> **Важно!** В коде JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
 
-> **Внимание**  Avoid с использованием неуниверсальных интерфейсов [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) и [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) , если компонент будет использоваться JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) и [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
+> **Внимание!** Старайтесь не использовать неуниверсальные интерфейсы [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) и [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable), если компонент будет использоваться в коде JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) и [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
 
  
 
@@ -131,7 +131,7 @@ ms.locfileid: "71340521"
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>В сигнатуре метода "{0}" имеется параметр типа "{1}". Хотя этот универсальный тип не является допустимым типом среды выполнения Windows, сам тип или его универсальные параметры реализуют интерфейсы, являющиеся допустимыми типами среды выполнения Windows. {2}</p>
-> **Note @ no__t-1 @ no__t-2For {2}, Winmdexp. exe добавляет список альтернатив, например "Попробуйте изменить тип" System. Collections. Generic. List @ no__t-4T поддерживается @ no__t-5 "в сигнатуре метода на один из следующих типов. System. Collections. Generic. IList @ no__t-0T @ no__t-1, System. Collections. Generic. Иреадонлилист @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T поддерживается @ no__t-5 '.»
+> **Note @ no__t-1 для {2}, Winmdexp. exe добавляет список альтернатив, например "Попробуйте изменить тип" System. Collections. Generic. List @ no__t-3T @ no__t-4 "в сигнатуре метода на один из следующих типов. System. Collections. Generic. IList @ no__t-0T @ no__t-1, System. Collections. Generic. Иреадонлилист @ no__t-2T @ no__t-3, System. Collections. Generic. IEnumerable @ no__t-4T поддерживается @ no__t-5 '.»
 </td>
 </tr>
 <tr class="even">
@@ -210,7 +210,7 @@ ms.locfileid: "71340521"
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Примечание**.   If вы изменяете имя возвращаемого значения, а новое имя конфликтует с именем другого параметра, вы получите ошибку WME1091.
+> **Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091.
 
 Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени. Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute).
 
@@ -219,7 +219,7 @@ ms.locfileid: "71340521"
 | WME1091 | Метод "\{0}" имеет возвращаемое значение с именем "\{1}", которое совпадает с именем параметра. В среде выполнения Windows параметры методов и возвращаемые значения должны иметь уникальные имена. |
 | WME1092 | Метод "\{0}" имеет параметр с именем "\{1}", который совпадает с именем возвращаемого значения по умолчанию. Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения. |
 
-**Примечание**  The имя по умолчанию — "ReturnValue" для методов доступа к свойствам и "value" для всех остальных способов.
+**Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value.
 
 ## <a name="related-topics"></a>См. также
 
