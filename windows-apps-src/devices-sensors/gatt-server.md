@@ -5,19 +5,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f59ae45486ee72f9d901898f6b03674e6b3e299c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3cded3ee7fb2cc3157caa61939e022c3869f5232
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370092"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282368"
 ---
 # <a name="bluetooth-gatt-server"></a>Сервер Bluetooth GATT
 
 
 **Важные API**
-- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+- [**Windows. Devices. Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows. Devices. Bluetooth. Женерикаттрибутепрофиле**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 
 В этой статье описываются API-интерфейсы сервера Bluetooth Generic Attribute (GATT) для приложений универсальной платформы Windows (UWP) и приводится пример кода для основных задач сервера GATT. 
@@ -31,7 +31,7 @@ ms.locfileid: "66370092"
 Как правило, Windows функционирует в роли клиента. Однако существует множество сценариев, когда операционная система Windows должна выполнять функции сервера Bluetooth GATT с низким энергопотреблением. Сюда относятся почти все сценарии для устройств интернета вещей, а также большинство сценариев обмена данными с использованием BLE. Все эти сценарии требуют, чтобы операционная система Windows функционировала как сервер GATT. Кроме того, эта технология обязательна для такого популярного сценария, как отправка уведомлений на ближайшие носимые устройства.  
 > Прежде чем продолжить, убедитесь, что вам знакомы все основные понятия, описанные в [документации клиента GATT](gatt-client.md).  
 
-Операции сервера связаны с классами Service Provider и GattLocalCharacteristic. Эти два класса предоставит функциональность, необходимую для объявления, реализации и предоставления иерархия данных к удаленному устройству.
+Операции сервера связаны с классами Service Provider и GattLocalCharacteristic. Эти два класса предоставляют функции, необходимые для объявления, реализации и предоставления иерархии данных на удаленном устройстве.
 
 ## <a name="define-the-supported-services"></a>Определение поддерживаемых служб
 Приложение может объявить одну или несколько служб, которые будут опубликованы в Windows. Каждая служба имеет уникальный идентификатор UUID. 
@@ -40,7 +40,7 @@ ms.locfileid: "66370092"
 Каждая служба, характеристика и дескриптор имеет свой уникальный 128-битный идентификатор UUID.
 > Ко всем API-интерфейсам Windows применяется термин GUID, но в стандарте Bluetooth этот идентификатор определяется как UUID. В нашем случае эти два термина взаимозаменяемы, поэтому мы будем использовать термин UUID. 
 
-Если атрибут является стандартным и определяется профилем Bluetooth SIG, у него также будет короткий 16-битный идентификатор (например, атрибут Battery Level имеет UUID 0000**2A19**-0000-1000-8000-00805F9B34FB, а его короткий идентификатор выглядит как 0x2A19). Эти стандартные идентификаторы UUID описаны в статьях [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) и [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
+Если атрибут является стандартным и определяется с помощью определяемого пользователем протокола Bluetooth, он также будет иметь соответствующий 16-разрядный короткий идентификатор (например, UUID уровня аккумулятора — 0000**2A19**-0000-1000-8000-00805F9B34FB, а короткий идентификатор — 0x2A19). Эти стандартные идентификаторы UUID описаны в статьях [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) и [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
 
 Если ваше приложение реализует собственную службу, необходимо создать пользовательский UUID. Это легко сделать в Visual Studio с помощью команды Tools (Инструменты) -> CreateGuid (используйте вариант 5, чтобы получить идентификатор в формате "xxxxxxxx-xxxx-... xxxx"). Этот UUID можно использовать для объявления новых локальных служб, характеристик или дескрипторов.
 
@@ -68,7 +68,7 @@ ms.locfileid: "66370092"
 
 > Примечание: широковещательная рассылка в настоящее время не поддерживается.  Если задать свойство Broadcast GattCharacteristicProperty, будет создано исключение.
 
-### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>Построение вверх по иерархии, служб и характеристики
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>Создание иерархии служб и характеристик
 Для создания и объявления определения основной корневой службы используется класс GattServiceProvider.  Каждой службе требуется собственный объект ServiceProvider, в который передается GUID: 
 
 ```csharp
@@ -144,8 +144,8 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**: Объявляет понятное имя для удаленных устройств в объявлении, за которой устройство обнаружения.
-- **IsConnectable**:  Объявляет объявление, доступный для соединения для использования в периферийных роли.
+- **Обнаружение**: Объявляет понятное имя удаленным устройствам в объявлении, делая устройство обнаруживаемым.
+- **Подсоединенный**:  Объявляет подсоединенное объявление для использования в роли периферийных устройств.
 
 > Когда для службы заданы оба свойства, Discoverable и Connectable, система добавляет UUID этой службы в пакет объявления.  Размер пакета объявления составляет всего 31 байт, и 16 из них занимает 128-битный UUID.
 

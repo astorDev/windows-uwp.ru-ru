@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f44772a9e8b34bf7f19a3b14dc8efd3d16c792f
-ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
+ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973703"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282502"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения "Параметры" для Windows
 
@@ -151,7 +151,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-| Дополнительно | ms-settings:extras (доступно только, если установлены "приложения параметров" (например, сторонние)) |
+| Дополнительно | MS-Settings: дополнительные компоненты (доступны только в том случае, если установлены приложения для настройки, например сторонними производителями). |
 
 ## <a name="gaming"></a>Игры
 
@@ -197,7 +197,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Мобильный хот-спот | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy (Прокси) | ms-settings:network-proxy |
-| Status | ms-settings:network-status<br/>MS-Settings: сеть |
+| Состояние | ms-settings:network-status<br/>MS-Settings: сеть |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (доступно, только если на устройстве есть адаптер Wi-Fi) |
 | Вызов через Wi-Fi | ms-settings:network-wificalling (доступно, только если возможность вызова через Wi-Fi включена) |
@@ -206,7 +206,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-| Фоновый | ms-settings:personalization-background |
+| Фон | ms-settings:personalization-background |
 | Выберите, какие папки будут отображаться на начальном экране | ms-settings:personalization-start-places |
 | Цвета | ms-settings:personalization-colors<br/>MS-Settings: цвета |
 | Заставка | MS-Settings: Персонализация — краткий обзор (**не рекомендуется в Windows 10, версия 1809 и более поздние**) |
@@ -239,13 +239,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Камера | ms-settings:privacy-webcam |
 | Контакты | ms-settings:privacy-contacts |
 | Documents | ms-settings:privacy-documents |
-| Адрес эл. почты | ms-settings:privacy-email |
+| Электронная почта | ms-settings:privacy-email |
 | "Устройство отслеживания взгляда" | ms-settings:privacy-eyetracker (требуется оборудование для отслеживания взгляда) |
 | Отзывы и диагностика | ms-settings:privacy-feedback |
 | Файловая система | ms-settings:privacy-broadfilesystemaccess |
-| Общее | ms-settings:privacy-general |
+| Общие | ms-settings:privacy-general |
 | Location | ms-settings:privacy-location |
-| Обмен сообщениями | ms-settings:privacy-messaging |
+| Messaging | ms-settings:privacy-messaging |
 | Микрофон | ms-settings:privacy-microphone |
 | Движение | ms-settings:privacy-motion |
 | Уведомления | ms-settings:privacy-notifications |
@@ -278,7 +278,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Экономия заряда аккумулятора | ms-settings:batterysaver (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Параметры экономии заряда | ms-settings:batterysaver-settings (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Использование аккумулятора | ms-settings:batterysaver-usagedetails (доступно только на устройствах с аккумулятором, таких как планшет) |
-| буфер обмена | MS-Settings: буфер обмена |
+| Буфер обмена | MS-Settings: буфер обмена |
 | Монитор | ms-settings:display |
 | Места сохранения по умолчанию | ms-settings:savelocations |
 | Монитор | ms-settings:screenrotation |
@@ -287,7 +287,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Шифрование | ms-settings:deviceencryption |
 | Фокусировка внимания | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | Параметры графики | ms-settings:display-advancedgraphics (доступно только на устройствах, поддерживающих расширенные параметры графики) |
-| Обмен сообщениями | ms-settings:messaging |
+| Messaging | ms-settings:messaging |
 | Многозадачность | ms-settings:multitasking |
 | Параметры ночного света | ms-settings:nightlight |
 | Phone | ms-settings:phone-defaultapps |
@@ -300,7 +300,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Phone | MS-Settings: Phone (**не рекомендуется в Windows 10, версия 1809 и более поздние**) |
 | Питание и спящий режим | ms-settings:powersleep |
 | Звук | MS-Settings: звук |
-| Служба хранилища | ms-settings:storagesense |
+| Хранилище | ms-settings:storagesense |
 | Контроль памяти | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>Время и язык
@@ -319,7 +319,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |Страница параметров| URI |
 |-------------|-----|
 | Активация | ms-settings:activation |
-| Архивация | ms-settings:backup |
+| Резервное копирование | ms-settings:backup |
 | Оптимизация доставки | ms-settings:delivery-optimization |
 | Поиск устройства | ms-settings:findmydevice |
 | Для разработчиков | ms-settings:developers |

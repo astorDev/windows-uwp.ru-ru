@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7ddceda3457ef5251cb2b1e384dbb880725103fa
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321810"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282307"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -32,14 +32,14 @@ ms.locfileid: "67321810"
 
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) — это единица взаимодействия с пользователем в Windows. Она состоит из трех частей: URI, используемый для активации приложения, к которому относится действие, визуальные элементы и метаданные, которые описывают действие.
 
-1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) используется, чтобы возобновить работу приложения в определенном контексте. Как правило, эта ссылка принимает форму обработчика протокола для схемы (например, my-app://page2?action=edit) или AppUriHandler (например, http://constoso.com/page2?action=edit).
+1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) используется, чтобы возобновить работу приложения в определенном контексте. Как правило, эта ссылка принимает форму обработчика протокола для схемы (например, "My-App://page2? Action = Edit") или Аппурихандлер (например, http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) предоставляет класс, который позволяет пользователю визуально распознать действие с помощью названия, описания или элементов адаптивной карты.
 3. Наконец, [Содержимое](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) — объект для хранения метаданных для этого действия, которые могут использоваться для группировки и получения действий в определенном контексте. Зачастую оно принимает форму данных [https://schema.org](https://schema.org).
 
 Добавление **UserActivity** в приложение:
 
 1. Создайте объекты **UserActivity** при изменении контекста пользователя в приложении (например, навигация по странице, новый уровень игры и т. п.)
-2. Заполнение **UserActivity** объектов с минимальным набором обязательных полей: [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId), [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri), и [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText).
+2. Заполните объекты **усерактивити** минимальным набором обязательных полей: [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId), [активатионури](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)и [усерактивити. висуалелементс. DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText).
 3. Добавьте собственный обработчик схемы для вашего приложения, чтобы его можно было повторно активировать с помощью **UserActivity**.
 
 **UserActivity** можно интегрировать в приложение с помощью нескольких строк кода. Например, предположим, что этот код расположен в MainPage.xaml.cs, в классе MainPage (обратите внимание: предполагается `using Windows.ApplicationModel.UserActivities;`):
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Что этот код делает — определяет, было ли приложение активировано при помощи протокола. Если это так, затем он ищет, что приложение должно сделать для возобновления задачи, ради которой оно активировано. Будучи простое приложение, это приложение возобновляет только действия является размещение вы на дополнительной страницы при переходе.
+Что этот код делает — определяет, было ли приложение активировано при помощи протокола. Если это так, затем он ищет, что приложение должно сделать для возобновления задачи, ради которой оно активировано. Это простое приложение. Единственное действие, которое возобновляет это приложение, помещает вас на вторичную страницу при последующем запуске приложения.
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Используйте адаптивные карты для улучшения работы с временной шкалой
 
@@ -155,7 +155,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>Сводка
 
 Можно использовать API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities), чтобы ваше приложение отображалось на временной шкале и в Кортане.
-* Дополнительные сведения о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Дополнительные сведения об API [ **усерактивити**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Ознакомьтесь с [примером кода](https://github.com/Microsoft/project-rome).
 * Посмотрите [более сложные адаптивные карты](https://adaptivecards.io/).
 * Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph).
@@ -163,13 +163,13 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="key-apis"></a>Основные API-интерфейсы
 
-* [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [Пространство имен Усерактивитиес](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## <a name="related-topics"></a>См. также
 
-* [Действия пользователя (рим проекта docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [Адаптивная карты](https://docs.microsoft.com/adaptive-cards/)
-* [Визуализатор адаптивной карты, примеры](https://adaptivecards.io/)
+* [Действия пользователя (документы Рим проекта)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
+* [Визуализатор адаптивных карт, примеры](https://adaptivecards.io/)
 * [Активация обработки URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [Привлекательные со своими клиентами на любой платформе, с помощью Microsoft Graph, канал активности и адаптивной карты](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [Взаимодействие с клиентами на любой платформе с помощью Microsoft Graph, веб-канала активности и адаптивных карт](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

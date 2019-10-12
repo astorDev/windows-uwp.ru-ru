@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, встречи, календарь
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4eeaf486738996ce5a860f567fc18a7d41cca2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361245"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282235"
 ---
 # <a name="manage-appointments"></a>Управление встречами
 
@@ -156,7 +156,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Organizer Address (e.g. Email Address)
+            // Organizer Address (for example, Email Address)
             organizer.Address = OrganizerAddressTextBox.Text;
 
             if (organizer.Address.Length > 321)
@@ -192,7 +192,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
         }
         else
         {
-            // Invitee Address (e.g. Email Address)
+            // Invitee Address (for example, Email Address)
             invitee.Address = InviteeAddressTextBox.Text;
 
             if (invitee.Address.Length > 321)
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Примечание**  приложений для Windows Phone Store [ **ShowAddAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) аналогичен принципу [ **ShowEditNewAppointment** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) тем, что диалогового окна, отображаемого для добавления встречи является редактируемым.
+**Обратите внимание**,   For Windows Phone приложения Магазина, [**шоваддаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) функционируют так же, как [**шоведитневаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) в том, что диалоговое окно, отображаемое для добавления встречи, является редактируемым.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Замена встречи в календаре пользователя
 
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>Добавление новой редактируемой встречи
 
-[**ShowEditNewAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) работает аналогично [ **ShowAddAppointmentAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) за исключением того, что диалоговое окно для добавления встречи изменяется таким образом, пользователь может изменять данные встречи, прежде чем сохранить его.
+[**Шоведитневаппоинтментасинк**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) работает так же, как [**шоваддаппоинтментасинк**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) , за исключением того, что диалоговое окно для добавления встречи доступно для редактирования, чтобы пользователь мог изменить данные встречи перед сохранением.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>Просмотр информации о встрече
 
-[**ShowAppointmentDetailsAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) заставляет систему для отображения сведений для указанного запланированного времени экзамена. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
+[**Шоваппоинтментдетаилсасинк**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) заставляет систему отображать подробные сведения для указанной встречи. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371232"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282338"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Создание службы входа Windows Hello
 
@@ -19,7 +19,7 @@ ms.locfileid: "66371232"
 
 Для создания этого проекта необходим опыт работы с C# и XAML. Вам также потребуется использовать Visual Studio 2015 (Community Edition или более старший выпуск) на компьютере под управлением Windows 10.
 
-## <a name="exercise-1-server-side-logic"></a>Упражнение 1. Логику на стороне сервера
+## <a name="exercise-1-server-side-logic"></a>Упражнение 1. Логика на стороне сервера
 
 
 В этом упражнении вы будете использовать приложение для Windows Hello, созданное на первом практикуме, и создадите локальные сервер и базу данных. В этом практическом занятии вы узнаете, как интегрировать Windows Hello в существующую систему. С помощью макетного сервера и базы данных устраняется необходимость в настройке многих несущественных параметров. В ваших собственных приложениях потребуется заменить макетные объекты реальными службами и базами данных.
@@ -535,7 +535,7 @@ ms.locfileid: "66371232"
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>Упражнение 2. Логику на стороне клиента
+## <a name="exercise-2-client-side-logic"></a>Упражнение 2. Логика на стороне клиента
 
 В этом упражнении вы будете вносить изменения в представления и вспомогательные классы на стороне клиента для использования класса AuthService. В реальных сценариях AuthService будет сервером проверки подлинности, и вам потребуется использовать веб-API для отправки и получения данных с сервера. В этом практическом занятии используются локальные клиент и сервер для упрощения разработки. Цель занятия — научиться использовать API Windows Hello.
 
@@ -661,7 +661,7 @@ ms.locfileid: "66371232"
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             //For this sample there is not concept of a server implemented so just return true.
@@ -804,7 +804,7 @@ ms.locfileid: "66371232"
     }
     ```
 
--   Как вы будете использовать AuthService при удалении учетной записи ссылка AccountHelper кнопки\_забыть\_пользователя\_щелкните метод может быть удален. Метод должен выглядеть следующим образом.
+-   Так как вы будете использовать Ауссервице при удалении учетной записи, ссылку на Аккаунселпер в методе Button @ no__t-0Forget @ no__t-1User @ no__t-2Click можно удалить. Метод должен выглядеть следующим образом.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1139,7 +1139,7 @@ ms.locfileid: "66371232"
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             return await RequestSignAsync(account.UserId, openKeyResult);
@@ -1174,4 +1174,4 @@ ms.locfileid: "66371232"
 ## <a name="related-topics"></a>См. также
 
 * [Windows Hello](microsoft-passport.md)
-* [Приложение Windows Hello входа](microsoft-passport-login.md)
+* [Приложение для входа в Windows Hello](microsoft-passport-login.md)

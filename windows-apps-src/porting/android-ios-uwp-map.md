@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfaab1c8fe3ec3cf8893022a8f4e8dae7deac63
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340582"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282366"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепции приложений для Windows для разработчиков iOS и Android
 
@@ -87,7 +87,7 @@ ms.locfileid: "71340582"
 <td align="left">Вы можете создавать многократно используемые <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style">стили</a></strong>, которые могут применяться к нескольким элементам управления и храниться в <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></strong> для повторного использования.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465381(v=win.10)">Краткое руководство. Стили элементов управления @ no__t-0</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Изменение визуальной структуры элементов управления.</strong>  <br><br>Настройка визуальной структуры элемента управления, не ограничивающаяся простым изменением свойств или атрибутов, например перемещение текста флажка под флажок.</td>
+<td align="left"><strong>Изменение визуальной структуры элементов управления.</strong>  <br><br>Настройка визуальной структуры элемента управления за пределами простого изменения свойств или атрибутов, например перемещение текста флажка под флажком.</td>
 <td align="left">В Android не существует простого способа изменить визуальную структуру элементов управления.</td>
 <td align="left">В iOS не существует простого способа изменить визуальную структуру элементов управления.</td>
 <td align="left">Чтобы настроить визуальную структуру элемента управления, вы можете скопировать и изменить его <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">шаблон элемента управления</a></strong> в разметке XAML.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)">Краткое руководство. Шаблоны элементов управления @ no__t-0</td>
@@ -348,7 +348,7 @@ ms.locfileid: "71340582"
 <td align="left"><strong>Асинхронное программирование.</strong>  <br><br>Предотвращение использования сложных потоков путем использования шаблонов асинхронного программирования для обеспечения быстроты отклика потока пользовательского интерфейса.</td>
 <td align="left">Использование <strong>потоков необходимо</strong> для создания собственных асинхронных классов. Некоторые встроенные классы являются асинхронными.</td>
 <td align="left">Использование <strong>потоков необходимо</strong> для создания собственных асинхронных классов. Некоторые встроенные классы являются асинхронными.</td>
-<td align="left">Вы можете использовать асинхронные шаблоны, чтобы избежать блокировки главного потока при создании собственных API, например с помощью ключевых слов <strong>Async</strong> и <strong>Await</strong> в C# и Visual Basic. Возможно использование встроенных асинхронных API, имена которых заканчиваются на <strong>Async</strong>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Асинхронное программирование</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Вызов асинхронных API в C# или Visual Basic</a></td>
+<td align="left">Можно использовать асинхронные шаблоны, чтобы избежать блокировки основного потока при создании собственных API, например с использованием <strong>Async</strong> и <strong>ожидания</strong> в C# и Visual Basic. Возможно использование встроенных асинхронных API, имена которых заканчиваются на <strong>Async</strong>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Асинхронное программирование</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Вызов асинхронных API в C# или Visual Basic</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Оптимизация представления списка.</strong>  <br><br>Встроенные шаблоны, помогающие оптимизировать списки данных, производительность которых зачастую снижается при отображении большого объема данных.</td>

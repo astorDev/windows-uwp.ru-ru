@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, эмуляция x86 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682744"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282349"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Устранение неполадок в классических приложениях x86
 >[!IMPORTANT]
@@ -40,7 +40,7 @@ ms.locfileid: "68682744"
 Все работающие в режиме ядра драйверы, драйверы [среды выполнения платформы драйвера режима пользователя (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) и драйверы печати необходимо скомпилировать в соответствии с особенностью архитектуры ОС. Если приложение x86 имеет драйвер, необходимо перекомпилировать его для ARM64. Приложение x86 может нормально выполняться в эмуляции, однако его драйвер потребуется перекомпилировать для ARM64, и любые взаимодействия в этом приложении, которые зависят от этого драйвера, будут недоступны. Дополнительные сведения о компиляции драйвера для ARM64 см. в разделе [Создание драйверов ARM64 с помощью WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
 ## <a name="shell-extensions"></a>Расширения оболочки 
-Приложения, которые пытаются перехватить компоненты Windows или загрузить их DLL-файлы в процессы Windows, должны будут перекомпилировать эти DLL, чтобы они соответствовали архитектуре системы, например ARM64. Как правило, они используются редакторами метода ввода (IME), вспомогательными технологиями и приложениями расширения оболочки (например, чтобы отобразить значки облачного хранилища в проводнике или контекстном меню правой кнопки мыши). Чтобы узнать, как перекомпилировать приложения или библиотеки DLL для ARM64, см. запись блога [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
+Приложения, которые пытаются перехватить компоненты Windows или загрузить их DLL-файлы в процессы Windows, должны будут перекомпилировать эти DLL, чтобы они соответствовали архитектуре системы, например ARM64. Обычно они используются редакторами методов ввода (IME), вспомогательными технологиями и приложениями расширения оболочки (например, для отображения значков облачного хранилища в обозревателе или в контекстном меню щелчка правой кнопкой мыши). Чтобы узнать, как перекомпилировать приложения или библиотеки DLL для ARM64, см. запись блога [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Отладка
 Чтобы более тщательно проанализировать поведение вашего приложения, см. раздел [Отладка в ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) — это позволит узнать больше об инструментах и стратегиях отладки в ARM.
@@ -51,4 +51,4 @@ ms.locfileid: "68682744"
 ## <a name="dynamic-code-generation"></a>Динамическое создание кода
 Классическое приложение x86 эмулируется на ARM64 системой, создающей инструкции ARM64 во время выполнения. Это означает, что если классическое приложение x86 не предотвращает создание или изменение динамического кода в процессе, это приложение не может выполняться как x86 в ARM64. 
 
-Это позволяет снизить уровень безопасности. Некоторые приложения позволяют использовать в своем процессе использование API [сетпроцессмитигатионполици](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) с `ProcessDynamicCodePolicy` флагом. Чтобы успешно запуститься в ARM64 как процесс x86, необходимо отключить эту политику защиты. 
+Это позволяет снизить уровень безопасности. Некоторые приложения позволяют использовать в своем процессе использование API [сетпроцессмитигатионполици](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) с флагом `ProcessDynamicCodePolicy`. Чтобы успешно запуститься в ARM64 как процесс x86, необходимо отключить эту политику защиты. 

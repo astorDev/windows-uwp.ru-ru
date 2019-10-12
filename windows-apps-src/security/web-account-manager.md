@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017433"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282399"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -80,7 +80,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
-Для добавления команд на панель необходимо сначала зарегистрировать обработчик событий AccountCommandsRequested. Это сообщает системе о необходимости выполнить логику сборки, когда пользователь запрашивает отображение панели (например, щелкает кнопку XAML). 
+Для добавления команд на панель необходимо сначала зарегистрировать обработчик событий AccountCommandsRequested. Это означает, что система должна выполнить нашу логику сборки, когда пользователь выводит панель (например, нажимает на нашу кнопку XAML). 
 
 Переопределите события OnNavigatedTo и OnNavigatedFrom в коде программной части и добавьте в них следующий код. 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS\://Login.Microsoft.com". 
+Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS @ no__t-0//Login. Microsoft. com". 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,

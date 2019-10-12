@@ -6,34 +6,34 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: 8248e17a342563a0746e3c54c3a69a52f027d072
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399623"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282434"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 
 Это первая часть полного пошагового руководства по созданию приложения Windows 10 UWP (универсальной платформы Windows), которое использует Windows Hello в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля. Приложение применяет имя пользователя для входа и создает ключ Hello для каждой учетной записи. Эти учетные записи будут защищены ПИН-кодом, который задается в параметрах Windows в конфигурации Windows Hello.
 
-Это пошаговое руководство делится на две части: создание приложения и подключение внутренней службы. Когда вы закончите с этой статьей, перейти к изучению часть 2: [Служба Windows Hello входа](microsoft-passport-login-auth-service.md).
+Это пошаговое руководство делится на две части: создание приложения и подключение внутренней службы. По завершении работы с этой статьей перейдите к части 2: [Служба входа Windows Hello](microsoft-passport-login-auth-service.md).
 
 Перед началом прочитайте обзор [Windows Hello](microsoft-passport.md), чтобы понять, как работает Windows Hello.
 
 ## <a name="get-started"></a>Начало работы
 
 
-Для создания этого проекта необходим опыт работы с C# и XAML. Также необходимо использовать Visual Studio 2015 (Community Edition или более поздней версии), или более поздний выпуск Visual Studio на компьютере Windows 10. Несмотря на то минимальной требуемой версии Visual Studio 2015, мы рекомендуем использовать последнюю версию Visual Studio за новостями разработчиков и безопасности.
+Для создания этого проекта необходим опыт работы с C# и XAML. Также необходимо использовать Visual Studio 2015 (выпуск Community Edition или более позднюю версию) или более поздний выпуск Visual Studio на компьютере с Windows 10. Хотя Visual Studio 2015 является минимальной требуемой версией, мы рекомендуем использовать последнюю версию Visual Studio для последних обновлений для разработчиков и безопасности.
 
--   Откройте Visual Studio и выберите Файл > Создать > проект.
+-   Откройте Visual Studio и выберите Файл > Новый > проект.
 -   Откроется окно «Новый проект». Перейдите в раздел «Шаблоны > Visual C#».
 -   Выберите шаблон «Пустое приложение (универсальные приложения для Windows)» и назовите приложение PassportLogin.
 -   Выполните построение и запустите новое приложение (клавиша F5), после чего вы увидите пустое окно на экране. Закройте приложение.
 
 ![Новый проект Windows Hello](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>Упражнение 1. Имя входа с помощью Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Упражнение 1. Вход с Microsoft Passport
 
 
 В этом упражнении вы узнаете, как проверить, настроен ли компонент Windows Hello на компьютере и как войти в учетную запись, используя Windows Hello.
@@ -490,7 +490,7 @@ ms.locfileid: "67399623"
 
     ![Запрос ПИН-кода для входа Windows Hello](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>Упражнение 2. Добро пожаловать и страницы выбора пользователя
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Упражнение 2. Страницы приветствия и выбора пользователей
 
 
 В этом упражнении вы продолжите предыдущий пример. Когда пользователи успешно входят в систему, они должны быть перенаправлены на страницу приветствия, где можно выйти из системы или удалить учетную запись. Так как служба Windows Hello создает ключ для каждого компьютера, можно создать экран выбора пользователя, содержащий всех пользователей, вошедших в систему на этом компьютере. Затем пользователь может выбрать одну из учетных записей и перейти на экран приветствия, не вводя пароль еще раз, так как проверка подлинности уже пройдена.
@@ -577,7 +577,7 @@ ms.locfileid: "67399623"
         if (keyOpenResult.Status == KeyCredentialStatus.Success)
         {
             // In the real world you would send key information to server to unregister
-            //e.g. RemovePassportAccountOnServer(account);
+            //for example, RemovePassportAccountOnServer(account);
         }
 
         // Then delete the account from the machines list of Passport Accounts
@@ -815,7 +815,7 @@ ms.locfileid: "67399623"
             // If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             // would check the signed challenge. If it is correct it would allow the user access to the backend.
             // You would likely make a new method called RequestSignAsync to handle all this
-            // e.g. RequestSignAsync(openKeyResult);
+            // for example, RequestSignAsync(openKeyResult);
             // Refer to the second Microsoft Passport sample for information on how to do this.
 
             // For this sample there is not concept of a server implemented so just return true.
@@ -876,7 +876,7 @@ ms.locfileid: "67399623"
 
     ![Список выбора пользователя Windows Hello](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Упражнение 3. Регистрация нового Windows Hello пользователя
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>Упражнение 3. Регистрация нового пользователя Windows Hello
 
 
 В этом упражнении вы создадите страницу, которая регистрирует новую учетную запись в Windows Hello. Она работает аналогично странице входа. Страница входа реализована для существующего пользователя, который начинает применять Windows Hello. Страница PassportRegister будет регистрировать нового пользователя в службе Windows Hello.
@@ -970,4 +970,4 @@ ms.locfileid: "67399623"
 ## <a name="related-topics"></a>См. также
 
 * [Windows Hello](microsoft-passport.md)
-* [Служба Windows Hello входа](microsoft-passport-login-auth-service.md)
+* [Служба входа Windows Hello](microsoft-passport-login-auth-service.md)
