@@ -1,0 +1,85 @@
+### YamlMime:Landing
+title: Разработка с помощью Node.js в Windows
+summary: Приступите к разработке на Node.js с помощью Windows.
+metadata:
+  author: mattwojo
+  description: Приступите к разработке с помощью Node.js в Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-node
+  ms.topic: landing-page
+  ms.openlocfilehash: 32c477cf230b7f8b5490b6f8ae7d227b6000aa77
+  ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 10/15/2019
+  ms.locfileid: "72314808"
+landingContent:
+- title: Настройка среды разработки Node.js
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка в подсистеме Windows для Linux (WSL 2)
+      url: ./setup-on-wsl2.md
+    - text: Настройка непосредственно в Windows
+      url: ./setup-on-windows.md
+- title: 'Как приступить к работе: инструкции для начинающих'
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Руководство для начинающих
+      url: ./beginners.md
+    - text: Типы приложений Node.js
+      url: ./beginners.md#types-of-nodejs-applications
+  - linkListType: quickstart
+    links:
+    - text: Использование Node.js в VS Code
+      url: ./beginners.md#try-using-nodejs-in-vs-code
+    - text: Настройка простого веб-приложения с помощью Express
+      url: ./beginners.md#set-up-a-basic-web-app-framework-by-using-express
+    - text: Использование модуля Node.js
+      url: ./beginners.md#try-using-a-nodejs-module
+- title: Приступая к работе с платформами веб-приложений
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Приступая к работе с Next.js
+      url: ./web-frameworks.md
+    - text: Приступая к работе с Nuxt.js
+      url: ./web-frameworks.md#get-started-with-nuxtjs
+    - text: Приступая к работе с Gatsby.js
+      url: ./web-frameworks.md#get-started-with-gatsbyjs
+- title: Приступая к работе с базами данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сравнение MongoDB и PostgreSQL
+      url: ./databases.md
+  - linkListType: quickstart
+    links:
+    - text: Приступая к работе с MongoDB
+      url: ./databases.md#install-mongodb
+    - text: Приступая к работе с PostgreSQL
+      url: ./databases.md#install-postgresql
+- title: Приступая к работе с контейнерами
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Использование Node.js с контейнерами Docker
+      url: ./containers.md
+  - linkListType: how-to-guide
+    links:
+    - text: Установка Docker
+      url: ./containers.md#install-docker-desktop-wsl-2-tech-preview
+    - text: Установка расширения Docker для VS Code
+      url: ./containers.md#install-the-docker-extension-on-vs-code
+  - linkListType: tutorial
+    links:
+    - text: Создание образа контейнера с помощью DockerFile
+      url: ./containers.md#create-a-container-image-with-dockerfile
+    - text: Передача образа контейнера в репозиторий
+      url: ./containers.md#upload-your-container-image-to-a-repository
+    - text: Развертывание в Реестре контейнеров Azure
+      url: ./containers.md#deploy-to-azure-container-registry
