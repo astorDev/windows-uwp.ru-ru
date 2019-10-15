@@ -6,14 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, о-ва XAML
 ms.author: mcleans
 author: mcleanbyron
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: bd49417d110759dc9fec4ff4c9003e842bf1d7bb
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
-ms.translationtype: MT
+ms.openlocfilehash: 52287576dbc395af60e15b5f4b4a403db7e92900
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643347"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313453"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Размещение элементов управления XAML UWP в классических приложениях (острова XAML)
 
@@ -29,7 +29,7 @@ ms.locfileid: "69643347"
 Способ использования XAML зависит от типа приложения и типов элементов управления UWP, которые требуется разместить.
 
 > [!NOTE]
-> Если у вас есть отзывы о островах XAML, создайте новую ошибку в [репозитории Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) и оставьте свои комментарии. Если вы предпочитаете отправить отзыв в частном порядке, его можно отправить в XamlIslandsFeedback@microsoft.com. Ваши ценные сведения и сценарии критически важны для нас.
+> Если у вас есть отзывы о островах XAML, создайте новую ошибку в [репозитории Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) и оставьте свои комментарии. Если вы предпочитаете отправить отзыв в частном порядке, его можно отправить на XamlIslandsFeedback@microsoft.com. Ваши ценные сведения и сценарии критически важны для нас.
 
 ## <a name="wpf-and-windows-forms-applications"></a>Приложения WPF и Windows Forms
 
@@ -81,7 +81,7 @@ ms.locfileid: "69643347"
 
 * Если вы размещаете пользовательский элемент управления UWP, проект WPF или Windows Forms должен быть предназначен для .NET Core 3. Размещение пользовательских элементов управления UWP не поддерживается в приложениях, предназначенных для .NET Framework. Вам также потребуется выполнить некоторые дополнительные действия для ссылки на пользовательский элемент управления. Дополнительные сведения см. [в разделе Размещение пользовательского элемента управления UWP в приложении WPF с помощью XAML-ва](host-custom-control-with-xaml-islands.md).
 
-* Более ранние версии этих инструкций добавили `maxversiontested` элемент в манифест приложения в проекте WPF или Windows Forms. Пока вы используете последние предварительные версии пакетов NuGet, перечисленных выше, вам больше не нужно добавлять этот элемент в манифест.
+* В предыдущих версиях этих инструкций был добавлен элемент `maxversiontested` в манифест приложения в проекте WPF или Windows Forms. Пока вы используете последние предварительные версии пакетов NuGet, перечисленных выше, вам больше не нужно добавлять этот элемент в манифест.
 
 ### <a name="architecture-of-xaml-island-net-controls"></a>Архитектура элементов управления .NET острова XAML
 
@@ -118,7 +118,7 @@ API размещения в платформе UWP XAML состоит из не
 
 Начиная с выпуска Windows 10 версии 1903, остров XAML элементы управления .NET в наборе средств Windows Community Toolkit остаются в предварительной версии для разработчиков до тех пор, пока не будет выпущена версия 1,0 элементов управления.
 
-* Версии 1,0 элементов управления для .NET Framework 4.6.2 и более поздних версий планируется выпустить в [выпуске 6,0 набора средств](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
+* Версии 1,0 элементов управления для .NET Framework 4.6.2 и более поздних версий планируется [выпустить в выпуске 6,0 набора средств](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
 * Версия 1,0 элементов управления для .NET Core 3 планируется для более поздней версии набора средств.
 * Если вы хотите ознакомиться с последним предварительным просмотром выпусков этих элементов управления версии 1,0 для .NET Framework и .NET Core 3, см. пакеты NuGet версии 6.0.0-preview7 (или более поздней версии) в коллекции [набора средств сообщества UWP](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) .
 
