@@ -8,16 +8,16 @@ ms.topic: article
 keywords: Python, Windows 10, PostgreSQL, MongoDB, postgres, Mongo, Microsoft, Python в Windows, Установка PostgreSQL в Windows, установка MongoDB в Windows, использование PostgreSQL с Python, использование MongoDB с Python, PostgreSQL на WSL, MongoDB на WSL
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 42a257361cffec974d060a6518dfdf5254d62082
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9b1bdea86739f3d58b39cf7f0e6b8090474886f3
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314858"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517775"
 ---
-# <a name="get-started-using-databases-with-python-on-windows"></a>Приступая к работе с базами данных с помощью Python в Windows
+# <a name="get-started-using-postgresql-or-mongodb-with-python-on-windows"></a>Приступая к работе с PostgreSQL или MongoDB с Python в Windows
 
-Приложениям Python часто приходится сохранять данные, которые могут происходить через файлы, локальное хранилище, облачные службы или базы данных. Это пошаговое руководство поможет приступить к подключению приложения Python к базе данных. Мы решили сосредоточиться на двух популярных вариантах: PostgreSQL и MongoDB.
+Это пошаговое руководство поможет приступить к подключению приложения Python к базе данных. Мы решили сосредоточиться на двух популярных вариантах: PostgreSQL и MongoDB.
 
 ## <a name="differences-between-mongodb-and-postgresql"></a>Различия между MongoDB и PostgreSQL
 

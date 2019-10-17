@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node. js, Windows 10, собственные окна непосредственно в Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: eaeee6e2d55bcb9221d88bd87ebeafc7c45d0a5d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315088"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517832"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Настройка среды разработки Node. js непосредственно в Windows
 
@@ -70,30 +70,19 @@ ms.locfileid: "72315088"
 
 ## <a name="install-your-favorite-code-editor"></a>Установка предпочтительного редактора кода
 
-Рекомендуется [установить VS Code](https://code.visualstudio.com), а также [пакет расширения Node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)для разработки с помощью Node. js в Windows.
-
-Пакет расширений Node. js включает в себя:
-
-- ES Lint — инструмент для "linting" вашего кода. Linting анализирует код и предупреждает о возможных ошибках.
-- NPM — запуск скриптов NPM из палитры команд и проверка установленных модулей, определенных в Package. JSON.
-- Фрагменты кода JavaScript (ES6) — добавляет фрагменты для разработки JavaScript в синтаксисе ES6.
-- Поиск node_modules. Быстрый поиск модулей Node в проекте.
-- NPM IntelliSense — добавляет в код IntelliSense для модулей NPM.
-- Путь IntelliSense — автозаполнение имен файлов в коде.
-
-Установите их все или выберите, чтобы выбрать наиболее полезные данные.
+Рекомендуется [установить VS Code](https://code.visualstudio.com), а также [пакет расширения Node. js](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)для разработки с помощью Node. js в Windows. Установите их все или выберите, чтобы выбрать наиболее полезные данные.
 
 Чтобы установить пакет расширений Node. js, выполните следующие действия.
 
 1. Откройте окно **расширения** (CTRL + SHIFT + X) в VS Code.
-2. В поле поиска в верхней части окна расширения введите: "Пакет расширения узла" (или имя любого искомого расширения).
+2. В поле поиска в верхней части окна расширения введите: "пакет расширения узла" (или имя любого искомого расширения).
 3. Нажмите кнопку **установить**. После установки расширение появится в папке "включено" в окне **расширений** . Вы можете отключить, удалить или настроить параметры, щелкнув значок шестеренки рядом с описанием нового расширения.
 
 Некоторые дополнительные расширения можно использовать в следующих случаях:
 
-- [Отладчик для Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): После завершения разработки на стороне сервера с помощью Node. js необходимо разработать и протестировать клиентскую часть. Это расширение интегрирует редактор VS Code в службу отладки браузера Chrome, делая их более эффективными.
-- [Раскладки клавиатуры из других редакторов](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Эти расширения могут помочь вашей среде дома, если вы переходите из другого текстового редактора (например, Atom, Vim, eMacs, Notepad + + и т. д.).
-- [Синхронизация параметров](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Позволяет синхронизировать параметры VS Code в разных установках с помощью GitHub. Если вы работаете на разных компьютерах, это обеспечит согласованность среды между собой.
+- [Отладчик для Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code). После завершения разработки на стороне сервера с помощью Node. js необходимо разработать и протестировать клиентскую часть. Это расширение интегрирует редактор VS Code в службу отладки браузера Chrome, делая их более эффективными.
+- [Раскладки клавиатуры из других редакторов](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): эти расширения могут помочь вашей среде, если вы перейдете из другого текстового редактора (например, Atom, подтравя, Vim, EMacs, Notepad + + и т. д.).
+- [Синхронизация параметров](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): позволяет синхронизировать параметры VS Code в разных установках с помощью GitHub. Если вы работаете на разных компьютерах, это обеспечит согласованность среды между собой.
 
 ## <a name="install-git-optional"></a>Установка Git (необязательно)
 

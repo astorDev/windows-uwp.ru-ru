@@ -8,18 +8,18 @@ ms.topic: article
 keywords: NodeJS, Node. js, Windows 10, Майкрософт, Learning NodeJS, Node в Windows, Node на WSL, Node в Linux в Windows, Установка узла в Windows, NodeJS с VS Code, разработка с помощью узла в Windows, разработка с помощью NodeJS в Windows, установка node на WSL, NodeJS в Windows Подсистема для Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bdc3e3c944c4aeb25f5cf880fc4d31df1019da5a
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315118"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517820"
 ---
-# <a name="get-started-connecting-nodejs-apps-to-a-database"></a>Приступая к подключению приложений Node. js к базе данных
+# <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Приступая к работе с MongoDB или PostgreSQL с Node. js в Windows
 
 Приложениям Node. js часто приходится сохранять данные, которые могут происходить через файлы, локальное хранилище, облачные службы или базы данных. Это пошаговое руководство поможет приступить к подключению приложения Node. js к базе данных. Мы решили сосредоточиться на двух популярных вариантах: MongoDB и PostgreSQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые условия
 
 В этом руководстве предполагается, что вы уже выполнили действия по [настройке среды разработки Node. js с помощью WSL 2](./setup-on-wsl2.md), включая:
 
@@ -48,7 +48,7 @@ VS Code поддерживает работу с базами данных Mongo
 - [Общие сведения об использовании MongoDB](https://docs.mongodb.com/manual/introduction/)
 - [Создание пользователей](https://docs.mongodb.com/manual/tutorial/create-users/)
 - [Подключение к экземпляру MongoDB на удаленном узле](https://docs.mongodb.com/manual/mongo/#mongodb-instance-on-a-remote-host)
-- @NO__T 0CRUD: Создание, чтение, обновление, удаление @ no__t-0
+- [CRUD: создание, чтение, обновление, удаление](https://docs.mongodb.com/manual/crud/)
 - [Справочные документы](https://docs.mongodb.com/manual/reference/)
 
 ## <a name="install-postgresql"></a>Установка PostgreSQL
