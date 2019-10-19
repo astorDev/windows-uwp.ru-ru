@@ -6,118 +6,105 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: c6bf49d5caa1dcf57e6b3622763fd01ad6fcf6b6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a7c4475ba22e1fd9fe6c1bb95db2183211ee734e
+ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369239"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72560821"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
-
-
 В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
 
-См. в разделе [глоссарий графики Direct3D](../graphics-concepts/index.md) сведения о незнакомых графической точки зрения или концепции, которые возникают при чтении.
+Сведения о незнакомых графических терминах и концепциях, которые возникают при чтении, см. в разделе [Глоссарий графического решения Direct3D](../graphics-concepts/index.md) .
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Важные основные пространства имен пользовательского интерфейса
 
-
 Сначала отметим пространства имен среды выполнения Windows, которые необходимо включить (с помощью ключевого слова **using**) в приложение UWP. Рассмотрим подробнее.
 
--   [**Windows.ApplicationModel.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core)
--   [**Windows.ApplicationModel.Activation**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
--   [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System**](https://docs.microsoft.com/uwp/api/Windows.System)
--   [**Windows.Foundation**](https://docs.microsoft.com/uwp/api/Windows.Foundation)
+-   [**Windows. ApplicationModel. Core**](/uwp/api/Windows.ApplicationModel.Core)
+-   [**Windows. ApplicationModel. Activation**](/uwp/api/Windows.ApplicationModel.Activation)
+-   [**Windows. UI. Core**](/uwp/api/Windows.UI.Core)
+-   [**Windows. System**](/uwp/api/Windows.System)
+-   [**Windows. Foundation**](/uwp/api/Windows.Foundation)
 
-> **Примечание**    Если вы не разрабатываете приложения универсальной платформы Windows, использовать компоненты пользовательского интерфейса, в состав библиотеки для конкретных JavaScript или XAML и пространства имен вместо типов, предоставляемых в этих пространствах имен.
-
- 
+> [!NOTE]
+> Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставляемые в библиотеках и пространствах имен JavaScript или XAML, а не типы, указанные в этих пространствах имен.
 
 ## <a name="the-windows-runtime-app-object"></a>Объект приложения среды выполнения Windows
 
+В приложении UWP необходимо получить поставщик окон или представлений, чтобы можно было получить представление и подключить собственную цепочку буферов (ваши буферы отображения). Такое представление также можно привязать к событиям окон для вашего запущенного приложения. Чтобы получить родительское окно для объекта приложения, определяемого типом [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) , создайте тип, реализующий [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource). Пример кода [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) , демонстрирующий реализацию **IFrameworkViewSource**, см. в разделе [взаимодействие машинного взаимодействия с DirectX и Direct2D](/windows/uwp/composition/composition-native-interop).
 
-В приложении UWP необходимо получить поставщик окон или представлений, чтобы можно было получить представление и подключить собственную цепочку буферов (ваши буферы отображения). Такое представление также можно привязать к событиям окон для вашего запущенного приложения. Чтобы получить родительское окно для объекта приложения, определяемого типом [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow), создайте тип, реализующий интерфейс [**IFrameworkViewSource**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource), как это было сделано в предыдущем фрагменте кода.
+Ниже приведен основной набор действий по получению окна с помощью базовой платформы пользовательского интерфейса.
 
-Здесь описаны основные действия для получения окна с помощью основной структуры пользовательского интерфейса.
-
-1.  Создайте тип, реализующий интерфейс [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView). Это ваше представление.
-
-    В этом типе определяются:
-
-    -   Метод [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), принимающий экземпляр класса [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) в качестве параметра. Чтобы получить экземпляр этого типа, вызовите метод [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview). Объект приложения вызывает его при запуске приложения.
-    -   Метод [**SetWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), принимающий экземпляр класса [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) в качестве параметра. Экземпляр этого типа можно получить, обратившись к свойству [**CoreWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) в новом экземпляре класса [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView).
-    -   Метод [**Load**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), принимающий строку для точки входа в качестве единственного параметра. При вызове этого метода объект приложения предоставляет строку точки входа. На этом этапе настраиваются ресурсы. Здесь вы создаете ресурсы устройства. Объект приложения вызывает его при запуске приложения.
-    -   Метод [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), активирующий объект класса [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) и запускающий диспетчер событий окна. Объект приложения вызывает его при запуске процесса приложения.
-    -   Метод [**Uninitialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize), очищающий ресурсы, которые настроены в вызове метода [**Load**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load). Объект приложения вызывает этот метод при закрытии приложения.
-
-2.  Создайте тип, реализующий интерфейс [**IFrameworkViewSource**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource). Это ваш поставщик представлений.
+1.  Создайте тип, реализующий интерфейс [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView). Это ваше представление.
 
     В этом типе определяются:
 
-    -   Метод [**CreateView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview), возвращающий экземпляр реализации [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView), полученной в шаге 1.
+    -   Метод [**Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), принимающий экземпляр класса [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) в качестве параметра. Чтобы получить экземпляр этого типа, вызовите метод [**CoreApplication.CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview). Объект приложения вызывает его при запуске приложения.
+    -   Метод [**SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), принимающий экземпляр класса [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) в качестве параметра. Экземпляр этого типа можно получить, обратившись к свойству [**CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) в новом экземпляре класса [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView).
+    -   Метод [**Load**](/uwp/api/windows.applicationmodel.core.iframeworkview.load), принимающий строку для точки входа в качестве единственного параметра. При вызове этого метода объект приложения предоставляет строку точки входа. На этом этапе настраиваются ресурсы. Здесь вы создаете ресурсы устройства. Объект приложения вызывает его при запуске приложения.
+    -   Метод [**Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run), активирующий объект класса [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) и запускающий диспетчер событий окна. Объект приложения вызывает его при запуске процесса приложения.
+    -   Метод [**Uninitialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize), очищающий ресурсы, которые настроены в вызове метода [**Load**](/uwp/api/windows.applicationmodel.core.iframeworkview.load). Объект приложения вызывает этот метод при закрытии приложения.
 
-3.  Передайте экземпляр поставщика представлений методу [**CoreApplication.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run) из объекта **main**.
+2.  Создайте тип, реализующий интерфейс [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource). Это ваш поставщик представлений.
+
+    В этом типе определяются:
+
+    -   Метод [**CreateView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview), возвращающий экземпляр реализации [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView), полученной в шаге 1.
+
+3.  Передайте экземпляр поставщика представлений методу [**CoreApplication.Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) из объекта **main**.
 
 Учитывая эти основы, рассмотрим другие возможности, на которые требуется распространить этот подход.
 
 ## <a name="core-user-interface-types"></a>Основные типы пользовательского интерфейса
 
-
 Здесь рассматриваются другие основные типы пользовательского интерфейса в среде выполнения Windows, которые могут быть полезны.
 
--   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
--   [**Windows.UI.Core.CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)
--   [**Windows.UI.Core.CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)
+-   [**Windows. ApplicationModel. Core. Кореаппликатионвиев**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+-   [**Windows. UI. Core. CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)
+-   [**Windows. UI. Core. CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)
 
 Такие типы позволяют получить доступ к представлению приложения, в частности, к битам, отвечающим за прорисовку содержимого родительского окна приложения и обработку событий, предназначенных для этого окна. Процесс окна приложения — это *однопотоковое подразделение приложения* (ASTA), изолированное и обрабатывающее все обратные вызовы.
 
 Представление приложения создается поставщиком представления для окна приложения, и в большинстве случаев оно будет реализовано специальным пакетом платформы или самой системой, поэтому вам не нужно его реализовывать. Для DirectX необходимо реализовать тонкий поставщик представлений, как обсуждалось ранее. Между следующими компонентами и видами поведения существует особое взаимно однозначное соотношение:
 
--   представление приложения, соответствующее типу класса [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) и определяющее методы обновления окна.
+-   представление приложения, соответствующее типу класса [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) и определяющее методы обновления окна.
 -   ASTA, определение которого задает поведение приложения. В ASTA нельзя создать экземпляры типов с атрибутами COM STA.
 -   Поставщик представлений, который приложение получает из системы или вашей реализации.
--   Родительское окно, представленное типом класса [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow).
+-   Родительское окно, представленное типом класса [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow).
 -   Привлечение ресурсов для всех событий активации. У представлений и окон отдельные события активации.
 
 Итак, объект приложения предоставляет фабрику поставщиков представлений. Для приложения он создает поставщик представлений и экземпляр родительского окна. Поставщик представлений определяет представление для родительского окна приложения. Теперь обсудим особенности данного представления и родительского окна.
 
 ## <a name="coreapplicationview-behaviors-and-properties"></a>Поведение и свойства класса CoreApplicationView
 
-
-[**CoreApplicationView** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated).
+[**Кореаппликатионвиев**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated).
 
 ## <a name="corewindow-behaviors-and-properties"></a>Поведение и свойства класса CoreWindow
 
+Родительское окно (экземпляр класса [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
 
-Родительское окно (экземпляр класса [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
+[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) предоставляет ряд событий, относящихся к входным и базовым поведениям окон. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
 
-[**Объект CoreWindow** ](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) предоставляет ряд событий поведения, специфичные для ввода и основные окна. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
-
-Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.dispatcher), предоставляющему экземпляр класса [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher).
+Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher), предоставляющему экземпляр класса [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher).
 
 ## <a name="coredispatcher-behaviors-and-properties"></a>Поведение и свойства класса CoreDispatcher
 
-
-Для окна с типом класса [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) можно определить поведение потоков отправки событий. Для этого типа есть один особенно важный метод: метод [**CoreDispatcher.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents), запускающий обработку событий окна. Вызов этого метода с неправильным параметром для приложения может привести к неожиданному поведению обработки событий любого рода.
+Для окна с типом класса [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) можно определить поведение потоков отправки событий. Для этого типа есть один особенно важный метод: метод [**CoreDispatcher.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents), запускающий обработку событий окна. Вызов этого метода с неправильным параметром для приложения может привести к неожиданному поведению обработки событий любого рода.
 
 | Параметр CoreProcessEventsOption                                                           | Описание                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, ожидает следующее новое событие.                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Отправляет новое событие, если оно ожидает выполнения в очереди. Если ожидающие события отсутствуют, не ожидает вызова следующего нового события и немедленно возвращается.                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | Ожидает новые события и отправляет все доступные события. Продолжает это поведение до тех пор, пока не будет закрыто окно или приложением не будет вызван метод [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) в экземпляре [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, немедленно возвращается.                                                                                                                                          |
-
- 
-
-В приложениях UWP, использующих DirectX, следует использовать параметр [**CoreProcessEventsOption.ProcessAllIfPresent**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption), чтобы предотвратить срабатывание правил блокировки, которая может прервать обновление графики.
+| [**Корепроцессевентсоптион. Процессонеандаллпендинг**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, ожидает следующее новое событие.                                                                                                                                 |
+| [**Корепроцессевентсоптион. Процессонеифпресент**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Отправляет новое событие, если оно ожидает выполнения в очереди. Если ожидающие события отсутствуют, не ожидает вызова следующего нового события и немедленно возвращается.                                                                                          |
+| [**Корепроцессевентсоптион. Процессунтилкуит**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | Ожидает новые события и отправляет все доступные события. Продолжает это поведение до тех пор, пока не будет закрыто окно или приложением не будет вызван метод [**Close**](/uwp/api/windows.ui.core.corewindow.close) в экземпляре [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow). |
+| [**Корепроцессевентсоптион. Процессаллифпресент**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, немедленно возвращается.                                                                                                                                          |
+В приложениях UWP, использующих DirectX, следует использовать параметр [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption), чтобы предотвратить срабатывание правил блокировки, которая может прервать обновление графики.
 
 ## <a name="asta-considerations-for-directx-devs"></a>Соображения относительно однопотокового подразделения приложения для разработчиков, использующих DirectX
 
-
-Чтобы разместить представления пользовательского интерфейса, объект приложения, определяющий состояние вашего приложения UWP и DirectX во время выполнения, использует потоковую модель, которая называется однопотоковым подразделением приложения (ASTA). Если вы разрабатываете приложение UWP и DirectX, вы уже знакомы со свойствами однопотокового подразделения приложения, потому что любой поток, обрабатываемый из вашего приложения UWP и DirectX, должен использовать либо API [**Windows::System::Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading), либо [**CoreWindow::CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher). (Можно получить объект [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) для однопотокового подразделения приложения, вызвав [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread) из своего приложения.)
+Чтобы разместить представления пользовательского интерфейса, объект приложения, определяющий состояние вашего приложения UWP и DirectX во время выполнения, использует потоковую модель, которая называется однопотоковым подразделением приложения (ASTA). Если вы разрабатываете приложение UWP и DirectX, вы уже знакомы со свойствами однопотокового подразделения приложения, потому что любой поток, обрабатываемый из вашего приложения UWP и DirectX, должен использовать либо API [**Windows::System::Threading**](/uwp/api/Windows.System.Threading), либо [**CoreWindow::CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher). (Можно получить объект [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) для однопотокового подразделения приложения, вызвав [**CoreWindow::GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) из своего приложения.)
 
 Самое главное для вас как разработчика приложений UWP и DirectX — знать, что потоку вашего приложения необходимо позволить управлять потоками многопотокового подразделения, задав **Platform::MTAThread** в функции **main()** .
 
@@ -137,7 +124,7 @@ int main(Platform::Array<Platform::String^>^)
 
 Если вы занимаетесь адаптацией существующего кода для запуска его в потоке однопотокового подразделения приложения, имейте в виду следующее:
 
--   Примитивы ожидания, такие как [**CoWaitForMultipleObjects**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-cowaitformultipleobjects), ведут себя в однопотоковом подразделении приложения (ASTA) не так, как в однопотоковом подразделении (STA).
+-   Примитивы ожидания, такие как [**CoWaitForMultipleObjects**](/windows/win32/api/combaseapi/nf-combaseapi-cowaitformultipleobjects), ведут себя в однопотоковом подразделении приложения (ASTA) не так, как в однопотоковом подразделении (STA).
 -   Модальный цикл вызова COM в ASTA работает иначе. Вы больше не можете получать посторонние вызовы, пока выполняется исходящий вызов. Например, следующее поведение создаст взаимоблокировку из ASTA (что немедленно приведет к сбою приложения):
     1.  ASTA вызывает объект MTA и передает указатель на интерфейс (P1).
     2.  Позже ASTA вызывает тот же самый объект MTA. Объект MTA вызывает P1 прежде, чем тот вернется в ASTA.
@@ -145,16 +132,8 @@ int main(Platform::Array<Platform::String^>^)
 
     Эту ситуацию можно разрешить следующими способами:
     -   с помощью шаблона **async**, определенного в библиотеке параллельных шаблонов (PPLTasks.h);
-    -   вызовом метода [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) из однопотокового подразделения приложения вашего приложения (главного потока приложения), чтобы разрешить произвольные вызовы.
+    -   вызовом метода [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) из однопотокового подразделения приложения вашего приложения (главного потока приложения), чтобы разрешить произвольные вызовы.
 
-    Тем не менее нельзя полагаться на немедленную доставку несвязанных вызовов в однопотоковое подразделение приложения вашего приложения. Для получения дополнительной информации об асинхронных вызовах см. раздел [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Тем не менее нельзя полагаться на немедленную доставку несвязанных вызовов в однопотоковое подразделение приложения вашего приложения. Для получения дополнительной информации об асинхронных вызовах см. раздел [Асинхронное программирование на языке C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
-В общем, при разработке приложения UWP используйте объект [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) для объектов [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) и [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) приложения, чтобы обработать все потоки пользовательского интерфейса, а не пытайтесь самостоятельно создавать потоки многопотокового подразделения и управлять ими. Если вам нужен отдельный поток, которым вы не можете управлять с помощью объекта **CoreDispatcher**, используйте асинхронные шаблоны и следуйте указаниям, приведенным ранее, чтобы избежать проблем с повторным вхождением.
-
- 
-
- 
-
-
-
-
+В общем, при разработке приложения UWP используйте объект [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) для объектов [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) и [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) приложения, чтобы обработать все потоки пользовательского интерфейса, а не пытайтесь самостоятельно создавать потоки многопотокового подразделения и управлять ими. Если вам нужен отдельный поток, которым вы не можете управлять с помощью объекта **CoreDispatcher**, используйте асинхронные шаблоны и следуйте указаниям, приведенным ранее, чтобы избежать проблем с повторным вхождением.
