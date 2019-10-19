@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff5d0831e918c0399bccb1dac9bb4fca8a6d408
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: a85edf0caa429d95d376af6fbc93bc7e8134340c
+ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939670"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72548454"
 ---
 # <a name="list-view-and-grid-view"></a>Представления списка и сетки
 
@@ -604,7 +604,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="drag-and-drop"></a>Перетаскивание
 
-Элементы управления ListView и GridView поддерживают перетаскивание элементов внутри данного элемента управления, а также между данным и другими элементами управления ListView и GridView. Подробнее о реализации шаблона перетаскивания см. в разделе [Перетаскивание](https://docs.microsoft.com/windows/uwp/design/input/drag-and-drop). 
+Элементы управления ListView и GridView поддерживают перетаскивание элементов внутри данного элемента управления, а также между данным и другими элементами управления ListView и GridView. Подробнее о реализации шаблона перетаскивания см. в разделе [Перетаскивание](../input/drag-and-drop.md).
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
@@ -616,4 +616,4 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 - [Списки](lists.md)
 - [Контейнеры и шаблоны элементов](item-containers-templates.md)
-- [Перетаскивание](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Перетаскивание](../input/drag-and-drop.md)
