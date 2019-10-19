@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "71339300"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
@@ -34,7 +34,7 @@ API хостинга UWP XAML предоставляет низкую инфра
 
 Так как мы рекомендуем использовать C++ только приложения Win32, использующие API размещения UWP XAML, в этой статье в первую очередь приводятся инструкции и примеры для C++ приложений Win32. Однако можно использовать API размещения UWP XAML в WPF и Windows Forms приложениях, если вы решили. В этой статье рассматривается соответствующий исходный код для [элементов управления ведущего приложения](xaml-islands.md#host-controls) для WPF и Windows Forms в наборе средств сообщества Windows, поэтому можно увидеть, как именно API размещения UWP XAML используются этими элементами управления.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые условия
 
 Для всех островов XAML требуется Windows 10, версия 1903 (или более поздняя) и соответствующая сборка Windows SDK. Чтобы использовать острова XAML в приложении C++ Win32, необходимо сначала настроить проект.
 
@@ -146,7 +146,7 @@ API размещения платформы UWP XAML включает следу
 
     1. Создайте объект **десктопвиндовксамлсаурце** и приведите его к com-интерфейсу **идесктопвиндовксамлсаурценативе** или **IDesktopWindowXamlSourceNative2** .
         > [!NOTE]
-        > Эти интерфейсы объявляются в файле заголовка **Windows. UI. XAML. Hosting. десктопвиндовксамлсаурце. h** в Windows SDK. По умолчанию этот файл находится в% ProgramFiles (x86)% \ Windows Kits\10\Include @ no__t-0 < номер сборки @ no__t-1\um.
+        > Эти интерфейсы объявляются в файле заголовка **Windows. UI. XAML. Hosting. десктопвиндовксамлсаурце. h** в Windows SDK. По умолчанию этот файл находится в% ProgramFiles (x86)% \ Windows Kits\10\Include \\ < номер сборки \> \ум.
 
     2. Вызовите метод **аттачтовиндов** интерфейса **идесктопвиндовксамлсаурценативе** или **IDesktopWindowXamlSourceNative2** и передайте в приложение маркер окна родительского элемента пользовательского интерфейса.
 
@@ -336,7 +336,7 @@ API размещения платформы UWP XAML включает следу
 
 5. Сохраните файл кода, а затем выполните сборку и запуск приложения. Убедитесь, что в окне приложения отображается элемент управления **TextBlock** элемента UWP.
     > [!NOTE]
-    > Вы можете увидеть несколько предупреждений сборки, включая `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` и `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Эти предупреждения являются известными проблемами с текущими инструментами и пакетами NuGet, и их можно игнорировать.
+    > Вы можете увидеть несколько предупреждений сборки, в том числе `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` и `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Эти предупреждения являются известными проблемами с текущими инструментами и пакетами NuGet, и их можно игнорировать.
 
 Полные примеры, демонстрирующие эти задачи, см. в следующих файлах кода:
 
@@ -344,7 +344,7 @@ API размещения платформы UWP XAML включает следу
   * См. файл [хелловиндовсдесктоп. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp) в [примере простого XAML](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp).
   * См. файл [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) в [острове XAML с примером пользовательского элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-* **WPF** См. файлы [WindowsXamlHostBase.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.  
+* **WPF:** См. файлы [WindowsXamlHostBase.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.  
 
 * **Windows Forms:** См. файлы [WindowsXamlHostBase.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.
 
@@ -358,9 +358,9 @@ API размещения платформы UWP XAML включает следу
 
 * **Пользовательский элемент управления UWP**. Вам потребуется исходный код для пользовательского элемента управления UWP, который вы хотите разместить, чтобы его можно было скомпилировать с приложением. Как правило, Пользовательский элемент управления определяется в проекте библиотеки классов UWP, на который вы ссылаетесь в том же решении C++ , что и проект Win32.
 
-* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, и исправить класс по умолчанию `App` в этом проекте.
+* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, и исправить класс `App` по умолчанию в этом проекте.
   > [!NOTE]
-  > Решение может содержать только один проект, определяющий `XamlApplication` объект. Все пользовательские элементы управления UWP в приложении совместно используют один `XamlApplication` и тот же объект. Проект, определяющий `XamlApplication` объект, должен включать ссылки на все другие библиотеки и проекты UWP, используемые для размещения элементов управления UWP в области XAML.
+  > Решение может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления UWP в приложении совместно используют один и тот же объект `XamlApplication`. Проект, определяющий объект `XamlApplication`, должен включать ссылки на все другие библиотеки и проекты UWP, используемые для размещения элементов управления UWP в области XAML.
 
 Чтобы разместить пользовательский элемент управления UWP в приложении C++ Win32, выполните следующие общие действия.
 
@@ -376,9 +376,9 @@ API размещения платформы UWP XAML включает следу
 
 Полный пример для приложения C++ Win32 см. в следующих проектах в разделе [остров XAML с примером настраиваемого элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-* [Самплеусерконтрол](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): Этот проект реализует собственный элемент управления XAML UWP с именем `MyUserControl`, который содержит текстовое поле, несколько кнопок и поле со списком.
-* [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): Это проект приложения UWP с описанными выше изменениями.
-* [Самплекппапп](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): Это проект приложения C++ Win32, в котором размещается пользовательский элемент управления XAML UWP в области XAML.
+* [Самплеусерконтрол](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): этот проект реализует настраиваемый элемент управления XAML UWP с именем `MyUserControl`, содержащий текстовое поле, несколько кнопок и поле со списком.
+* [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): проект приложения UWP с описанными выше изменениями.
+* [Самплекппапп](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): это проект приложения C++ Win32, в котором размещается пользовательский элемент управления XAML UWP в области XAML.
 
 ## <a name="handle-keyboard-layout-and-dpi"></a>Работа с клавиатурой, макетом и DPI
 
@@ -393,9 +393,9 @@ API размещения платформы UWP XAML включает следу
 
 Чтобы правильно обрабатывать ввод с клавиатуры для каждого острова XAML, приложение должно передать все сообщения Windows в платформу XAML UWP, чтобы определенные сообщения могли обрабатываться правильно. Для этого в каком-то месте приложения, которое может получить доступ к циклу обработки сообщений, приведите объект **десктопвиндовксамлсаурце** для каждого острова XAML к интерфейсу **IDesktopWindowXamlSourceNative2** com. Затем вызовите метод **претранслатемессаже** этого интерфейса и передайте текущее сообщение.
 
-  * **C++ Win32:** : Приложение может вызвать **претранслатемессаже** непосредственно в основном цикле обработки сообщений. Пример см. в файле [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * Win32:: приложение может вызывать **претранслатемессаже** непосредственно в основном цикле обработки сообщений. **C++** Пример см. в файле [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-  * **WPF** Приложение может вызвать **претранслатемессаже** из обработчика событий для события [компонентдиспатчер. среадфилтермессаже](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) . Пример см. в файле [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) в наборе средств сообщества Windows.
+  * **WPF:** Приложение может вызвать **претранслатемессаже** из обработчика событий для события [компонентдиспатчер. среадфилтермессаже](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) . Пример см. в файле [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) в наборе средств сообщества Windows.
 
   * **Windows Forms:** Приложение может вызвать **претранслатемессаже** из переопределения метода [Control. PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) . Пример см. в файле [WindowsXamlHostBase.KeyboardFocus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) в наборе средств сообщества Windows.
 
@@ -411,9 +411,9 @@ API хостинга UWP XAML предоставляет несколько ти
 
 Примеры, демонстрирующие, как это сделать в контексте рабочего примера приложения, см. в следующих файлах кода:
 
-  * **C++/Win32**: См. файл [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * /Win32. см. файл [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).  **C++**
 
-  * **WPF** См. файл [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) в наборе средств сообщества Windows.  
+  * **WPF:** См. файл [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) в наборе средств сообщества Windows.  
 
   * **Windows Forms:** См. файл [WindowsXamlHostBase.KeyboardFocus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) в наборе средств сообщества Windows.
 
@@ -423,13 +423,13 @@ API хостинга UWP XAML предоставляет несколько ти
 
 * В приложении C++ Win32, когда приложение ОБРАБАТЫВАЕТ сообщение WM_SIZE, оно может переместить размещенный остров XAML с помощью функции [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) . Пример см. в файле кода [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-* Когда родительский элемент пользовательского интерфейса должен получить размер прямоугольной области, необходимой для размещения элемента **Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**, вызовите метод [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) элемента **Windows. UI. XAML. UIElement.** . Пример:
+* Когда родительский элемент пользовательского интерфейса должен получить размер прямоугольной области, необходимой для размещения элемента **Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**, вызовите метод [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) элемента **Windows. UI. XAML. UIElement.** . Пример
 
     * В приложении WPF это можно сделать из метода [MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) , на котором размещена **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHostBase.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
     * В Windows Forms приложении это можно сделать из метода [Жетпреферредсизе](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) [элемента управления](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) , размещающего **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHostBase.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
-* При изменении размера родительского элемента пользовательского интерфейса вызовите метод [упорядочения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) корневого **интерфейса Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**. Пример:
+* При изменении размера родительского элемента пользовательского интерфейса вызовите метод [упорядочения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) корневого **интерфейса Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**. Пример
 
     * В приложении WPF это можно сделать из метода [ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) объекта [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) , в котором размещается **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHost.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
@@ -439,7 +439,7 @@ API хостинга UWP XAML предоставляет несколько ти
 
 Платформа XAML UWP обрабатывает изменения DPI для размещаемых элементов управления UWP автоматически (например, когда пользователь перетаскивает окно между мониторами с разными DPI на экране). Для оптимальной работы рекомендуется, чтобы Windows Forms, WPF или C++ приложение Win32 были настроены для отслеживания dpi на уровне каждого монитора.
 
-Чтобы настроить приложение для отслеживания DPI на уровне каждого монитора, добавьте в проект [параллельный манифест сборки](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) и задайте для элемента **\<dpiAwareness @ no__t-3** значение **PerMonitorV2**. Дополнительные сведения об этом значении см. в описании для [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
+Чтобы настроить приложение для отслеживания DPI на уровне каждого монитора, добавьте в проект [параллельный манифест сборки](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) и задайте для элемента **\<dpiAwareness \>** значение **PerMonitorV2**. Дополнительные сведения об этом значении см. в описании для [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -452,33 +452,33 @@ API хостинга UWP XAML предоставляет несколько ти
 </assembly>
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>"Устранение неполадок"
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>Ошибка при использовании API размещения UWP XAML в приложении UWP
 
-| Проблемы | Разрешение |
+| Проблема | Разрешение |
 |-------|------------|
-| Приложение получает **COMException** со следующим сообщением: "Не удается активировать Десктопвиндовксамлсаурце. Этот тип нельзя использовать в приложении UWP. " или "не удается активировать Виндовсксамлманажер. Этот тип нельзя использовать в приложении UWP. " | Эта ошибка означает, что вы пытаетесь использовать API размещения UWP XAML (в частности, вы пытаетесь создать экземпляр типов [десктопвиндовксамлсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) или [виндовсксамлманажер](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ) в приложении UWP. API размещения на языке UWP XAML предназначен только для использования в классических приложениях UWP, таких как WPF, Windows Forms и C++ приложения Win32. |
+| Приложение получает **COMException** со следующим сообщением: "не удается активировать десктопвиндовксамлсаурце. Этот тип нельзя использовать в приложении UWP. " или "не удается активировать Виндовсксамлманажер. Этот тип нельзя использовать в приложении UWP. " | Эта ошибка означает, что вы пытаетесь использовать API размещения UWP XAML (в частности, вы пытаетесь создать экземпляр типов [десктопвиндовксамлсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) или [виндовсксамлманажер](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ) в приложении UWP. API размещения на языке UWP XAML предназначен только для использования в классических приложениях UWP, таких как WPF, Windows Forms и C++ приложения Win32. |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>Ошибка при попытке использовать типы Виндовсксамлманажер или Десктопвиндовксамлсаурце
 
-| Проблемы | Разрешение |
+| Проблема | Разрешение |
 |-------|------------|
 | Приложение получает исключение со следующим сообщением: "Виндовсксамлманажер и Десктопвиндовксамлсаурце поддерживаются для приложений, предназначенных для Windows версии 10.0.18226.0 и более поздних версий. Проверьте манифест приложения или манифест пакета и убедитесь, что свойство Макстестедверсион Обновлено. " | Эта ошибка означает, что приложение попыталось использовать типы **виндовсксамлманажер** или **десктопвиндовксамлсаурце** в API размещения UWP XAML, но операционная система не может определить, было ли приложение создано для Windows 10 версии 1903 или более поздней. API размещения на языке UWP XAML впервые появился в виде предварительной версии в более ранней версией Windows 10, но поддерживается только начиная с Windows 10, версия 1903.</p></p>Чтобы устранить эту проблему, создайте пакет MSIX для приложения и запустите его из пакета или установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) в проект. Дополнительные сведения см. в [этом разделе](#configure-your-project-for-app-deployment). |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>Ошибка при присоединении к окну в другом потоке
 
-| Проблемы | Разрешение |
+| Проблема | Разрешение |
 |-------|------------|
-| Приложение получает **COMException** со следующим сообщением: "Сбой метода Аттачтовиндов, так как указанный HWND был создан в другом потоке". | Эта ошибка означает, что приложение вызвало метод **идесктопвиндовксамлсаурценативе:: аттачтовиндов** и передало ему дескриптор HWND окна, созданного в другом потоке. Этот метод необходимо передать в HWND окна, созданного в том же потоке, что и код, из которого вызывается метод. |
+| Приложение получает **COMException** со следующим сообщением: "сбой метода аттачтовиндов, так как указанный HWND был создан в другом потоке". | Эта ошибка означает, что приложение вызвало метод **идесктопвиндовксамлсаурценативе:: аттачтовиндов** и передало ему дескриптор HWND окна, созданного в другом потоке. Этот метод необходимо передать в HWND окна, созданного в том же потоке, что и код, из которого вызывается метод. |
 
 ### <a name="error-attaching-to-a-window-on-a-different-top-level-window"></a>Ошибка при присоединении к окну в другом окне верхнего уровня
 
-| Проблемы | Разрешение |
+| Проблема | Разрешение |
 |-------|------------|
-| Приложение получает **COMException** со следующим сообщением: "Сбой метода Аттачтовиндов, так как указанный HWND отличается от другого окна верхнего уровня, чем HWND, который ранее был передан в Аттачтовиндов в том же потоке". | Эта ошибка означает, что приложение вызвало метод **идесктопвиндовксамлсаурценативе:: аттачтовиндов** и передало ему HWND окна, которое отличается от окна верхнего уровня, чем окно, указанное в предыдущем вызове этого метода. в том же потоке.</p></p>После того как приложение вызовет **аттачтовиндов** в определенном потоке, все остальные объекты [десктопвиндовксамлсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) в том же потоке могут присоединяться к Windows, которые являются потомками того же окна верхнего уровня, которое было передано при первом вызове метода **Аттачтовиндов**. Когда все объекты **десктопвиндовксамлсаурце** закрываются для конкретного потока, следующий **десктопвиндовксамлсаурце** затем может быть снова подключен к любому окну.</p></p>Чтобы устранить эту проблему, закройте все объекты **десктопвиндовксамлсаурце** , привязанные к другим окнам верхнего уровня в этом потоке, или создайте новый поток для этого **десктопвиндовксамлсаурце**. |
+| Приложение получает **COMException** со следующим сообщением: "сбой метода аттачтовиндов, так как указанный HWND находится в порядке от другого окна верхнего уровня, чем HWND, который ранее был передан в аттачтовиндов в том же потоке". | Эта ошибка означает, что приложение вызвало метод **идесктопвиндовксамлсаурценативе:: аттачтовиндов** и передало ему HWND окна, которое отличается от окна верхнего уровня, чем окно, указанное в предыдущем вызове этого метода. в том же потоке.</p></p>После того как приложение вызовет **аттачтовиндов** в определенном потоке, все остальные объекты [десктопвиндовксамлсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) в том же потоке могут присоединяться к Windows, которые являются потомками того же окна верхнего уровня, которое было передано при первом вызове метода **Аттачтовиндов**. Когда все объекты **десктопвиндовксамлсаурце** закрываются для конкретного потока, следующий **десктопвиндовксамлсаурце** затем может быть снова подключен к любому окну.</p></p>Чтобы устранить эту проблему, закройте все объекты **десктопвиндовксамлсаурце** , привязанные к другим окнам верхнего уровня в этом потоке, или создайте новый поток для этого **десктопвиндовксамлсаурце**. |
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Элементы управления UWP в классических приложениях](xaml-islands.md)
 * [C++Пример XAML-островов Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)
