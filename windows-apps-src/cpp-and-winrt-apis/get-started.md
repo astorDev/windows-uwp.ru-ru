@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
-ms.openlocfilehash: e900cdddaa86857554c11605d00f59fd45a7e5ee
-ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
+ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
+ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063780"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "72292782"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
@@ -113,7 +113,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 Этот код получает текст заголовка канала в виде объекта [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (см. сведения в статье [Обработка строк в C++/WinRT](strings.md)). Затем **hstring** выводится с помощью функции **c_str**, которая отражает шаблон, используемый в строках стандартной библиотеки C++.
 
-Как видно, C++/WinRT поощряет использование современных аналогичных классам выражений C++, таких как `syndicationItem.Title().Text()`. Это более ясный стиль программирования, отличающийся от традиционного COM-программирования. Вам не нужно напрямую инициализировать COM и работать с указателями СОМ.
+Как видно, C++/WinRT поощряет использование современных аналогичных классам выражений C++, таких как `syndicationItem.Title().Text()`. Это более ясный стиль программирования, отличающийся от традиционного COM-программирования. Вам не нужно напрямую инициализировать COM или работать с указателями СОМ.
 
 Вам также не нужно обрабатывать коды возврата HRESULT. C++/ WinRT преобразует ошибки HRESULT в исключения, такие как [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error), для использования естественного и современного стиля программирования. Дополнительные сведения об обработке ошибок и примеры кода см. в статье [Обработка ошибок в C++/WinRT](error-handling.md).
 
@@ -185,7 +185,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 * [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Структура winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Обработка ошибок в C++/WinRT](error-handling.md)
 * [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2402be26a14d2e57a482a68cf8d5b587f4e65dd1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 761cd9e6d1fc92b4919f701fdd9f8f62078faedf
+ms.sourcegitcommit: b8a4b0d5a65da297290b93d73c641df3c135a086
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364946"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72531662"
 ---
 # <a name="item-containers-and-templates"></a>Контейнеры и шаблоны элементов
 
@@ -25,13 +25,20 @@ ms.locfileid: "66364946"
 
 Элементы управления **ListView** и **GridView** управляют расположением своих элементов (горизонтально, вертикально, обтекание и так далее) и взаимодействием пользователя с этими элементами, но не тем, как отдельные элементы отображаются на экране. Визуализацией элементов управляют контейнеры элементов. При добавлении элементов в представление списка они автоматически помещаются в контейнер. По умолчанию для ListView используется контейнер элементов [ListViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem), а для GridView — [GridViewItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
-> **Важные API**: [класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [свойство ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [свойство ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **Важные API**: [класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [класс ListViewItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listviewitem), [класс GridViewItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.gridviewitem), [свойство ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [свойство ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle).
 
 
 > [!NOTE]
 > Элементы управления ListView и GridView являются производными от класса [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase), поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация о представлении списка актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс *List* может быть заменен префиксом *Grid* для соответствующего эквивалента сетки (GridView или GridViewItem). 
 
-Эти контейнерные элементы управления состоят из двух важных частей, сочетание которых формирует окончательное визуальное оформление элемента: *шаблон данных* и *шаблон элемента управления*.
+## <a name="listview-items-and-gridview-items"></a>Элементы ListView и GridView
+Как упоминалось выше, элементы ListView автоматически помещаются в контейнер ListViewItem, а элементы GridView — в контейнер GridViewItem. Эти контейнеры являются элементами управления, которые обладают собственными встроенными стилями и возможностями взаимодействия, но их также можно легко настроить. Однако перед настройкой обязательно ознакомьтесь с рекомендованными стилями и указаниями для ListViewItem и GridViewItem.
+
+- Элементы **ListViewItem** имеют вытянутую форму и в основном предназначены для текста. Слева от текста могут отображаться значки или изображения.
+- Элементы **GridViewItem** обычно имеют квадратную форму или по крайней мере форму вытянутого прямоугольника. Элементы предназначены для изображений и могут содержать текст, отображаемый вокруг или поверх изображения. 
+
+## <a name="introduction-to-customization"></a>Введение в настройку
+Контейнерные элементы управления (такие как ListViewItem и GridViewItem) состоят из двух важных частей, сочетание которых формирует окончательное визуальное оформление элемента. Это *шаблон данных* и *шаблон элемента управления*.
 
 - **Шаблон данных.** Класс [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) назначается свойству [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) представления списка, чтобы указать способ отображения отдельных элементов данных.
 - **Шаблон элемента управления**. Шаблон элемента управления предоставляет часть визуализации элемента, за которую отвечает платформа, например визуальные состояния. Вы можете изменять шаблон элемента управления с помощью свойства [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle). Как правило, таким образом изменяются цвета представления списка в соответствии с фирменной символикой или способ отображения выбранных элементов.
@@ -72,6 +79,9 @@ ms.locfileid: "66364946"
     <x:String>Item 5</x:String>
 </ListView>
 ```
+
+> [!IMPORTANT]
+> Шаблоны данных и шаблоны элементов управления используются для настройки стиля ListView, GridView и многих других элементов управления. К ним относятся элементы управления с собственными встроенными стилями, такие как FlipView, и пользовательские элементы управления, такие как ItemsRepeater. Хотя приведенный ниже пример относится только к ListView и GridView, продемонстрированные в нем принципы могут применяться и ко многим другим элементам управления. 
  
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -177,7 +187,7 @@ namespace ColorsListApp
 > При использовании [расширения разметки x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) в DataTemplate необходимо задать DataType (`x:DataType`) в DataTemplate.
 
 **XAML**
-```XAML
+```xaml
 <ListView x:Name="colorsListView">
     <ListView.ItemTemplate>
         <DataTemplate x:DataType="local:NamedColor">
@@ -207,6 +217,19 @@ namespace ColorsListApp
 Вот как выглядят элементы данных при отображении с помощью этого шаблона данных.
 
 ![Элементы представления списка, отображаемые с помощью шаблона данных](images/listview-data-template-0.png)
+
+> [!IMPORTANT]
+> По умолчанию содержимое в элементах ListViewItem выравнивается по левому краю, т. е. их свойство [HorizontalContentAlignmentProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) имеет значение Left. Если в ListViewItem имеется несколько элементов, расположенных рядом по горизонтали, например столбцы элементов или элементы, размещенные в одной строке сетки, то все они будут выровнены по левому краю и разделены только заданными для них полями. 
+<br/><br/> Чтобы заполнить элементами все текстовое поле ListItem, необходимо задать для свойства HorizontalContentAlignmentProperty значение [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment), воспользовавшись классом [Setter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter) в ListView.
+
+```xaml
+<ListView.ItemContainerStyle>
+    <Style TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+</ListView.ItemContainerStyle>
+```
+
 
 Вам может потребоваться отображать данные в GridView. Вот еще один шаблон данных для отображения данных способом, более подходящим для макета сетки. На этот раз шаблон данных определяется как ресурс, а не встроенный элемент в XAML для GridView.
 
@@ -281,6 +304,9 @@ namespace ColorsListApp
  - Во-первых, в макете используется один элемент Grid. Можно использовать элемент Grid с одним столбцом и разместить эти три элемента TextBlock в элементе StackPanel, но при работе с многократно создаваемым шаблоном данных следует избегать встраивания одних панелей макета в другие.
  - Во-вторых, вы можете использовать элемент управления Border для отрисовки фона, фактически не размещая элементы внутри элемента Border. У элемента Border может быть только один дочерний элемент, поэтому для размещения трех элементов TextBlock внутри элемента Border в XAML вам потребуется добавить дополнительную панель макета. Не делая элементы TextBlock дочерними элементами Border, вы исключаете необходимость добавления панели для размещения элементов TextBlock.
  - Наконец, вы можете разместить элементы TextBlock внутри элемента StackPanel и установить свойства рамок элемента, вместо того чтобы использовать отдельный элемент Border. Однако элемент управления Border проще, чем StackPanel, поэтому при многократной отрисовке он оказывает меньшее воздействие на производительность.
+
+### <a name="using-different-layouts-for-different-items"></a>Использование различных макетов для разных элементов
+
 
 ## <a name="control-template"></a>Шаблон элемента управления
 Шаблон элемента управления содержит визуальные элементы, отображающие состояние, например выделение, наведение указателя и фокус. Эти визуальные элементы отрисовываются либо над шаблоном данных, либо под ним. Здесь показаны некоторые распространенные визуальные элементы по умолчанию, отображаемые шаблоном элемента управления ListView.

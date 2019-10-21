@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, templated, control
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0b2d8fb17b90bc55834f6bf2200b22af9352ef6
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
+ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270083"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72578174"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Создание пользовательских (на основе шаблона) элементов управления XAML с помощью C++/WinRT
 
@@ -22,6 +22,9 @@ ms.locfileid: "68270083"
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Создайте пустое приложение (BgLabelControlApp)
 Начните с создания проекта в Microsoft Visual Studio. Создайте проект **Пустое приложение (C++/WinRT)** и назовите его *BgLabelControlApp*. В следующем разделе этой статьи, вы будете перенаправлены, чтобы создать проект (не создавайте до тех пор).
+
+> [!NOTE]
+> Сведения об установке Visual Studio для разработки с использованием C++/WinRT, включая установку и использование расширения C++/WinRT для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки), приведены в разделе [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Мы собираемся создать новый класс, чтобы представить пользовательский (шаблонный) элемент управления. Класс создается и используется в рамках одной и той же единицы компиляции. Однако мы хотим иметь возможность создать этот класс из разметки XAML, поэтому это будет класс среды выполнения. Кроме того, мы применим C++/WinRT для его создания и использования.
 
@@ -116,7 +119,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 В своем конструкторе **BgLabelControl** задает собственный стандартный ключ стиля. Но что *является* стилем по умолчанию? Пользовательский (шаблонный) элемент управления должен иметь стиль по умолчанию&mdash;содержащий стандартный шаблон элемента управления&mdash;, который можно использовать для визуализации в случае, если потребитель элемента управления не устанавливает стиль и/или шаблон. В этом разделе мы добавим файл разметки в проект, содержащий наш стиль по умолчанию.
 
-В узле проекта создайте новую папку и назовите ее Themes. В разделе `Themes` добавьте новый элемент типа **Visual C++**  > **XAML** > **Представление XAML** и назовите его Generic.xaml. Имена папок и файлов должны быть такими, чтобы платформа XAML могла найти стиль по умолчанию для настраиваемого элемента управления. Удалите содержимое по умолчанию `Generic.xaml` и вставьте в разметке ниже.
+В узле проекта создайте папку (не фильтр, а папку) и назовите ее Themes. В разделе `Themes` добавьте новый элемент типа **Visual C++**  > **XAML** > **Представление XAML** и назовите его Generic.xaml. Имена папок и файлов должны быть такими, чтобы платформа XAML могла найти стиль по умолчанию для настраиваемого элемента управления. Удалите содержимое по умолчанию `Generic.xaml` и вставьте в разметке ниже.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
