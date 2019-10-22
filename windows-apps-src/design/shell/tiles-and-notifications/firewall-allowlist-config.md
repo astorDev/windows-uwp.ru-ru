@@ -9,17 +9,17 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, служба уведомлений Windows, уведомление, Windows, брандмауэр, устранение неполадок, IP, трафик, предприятие, сеть, IPv4, VIP, полное доменное имя, общедоступный IP-адрес
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
-ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
+ms.openlocfilehash: c3774164d16e86a88f45eb50030beec099629d6f
+ms.sourcegitcommit: 738bab9a088a244a7a212dcac6fb3560c547b8d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296984"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695761"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Настройка брандмауэра и прокси-сервера предприятия для поддержки трафика WNS
 
-## <a name="background"></a>Фоновый
-Многие компании используют брандмауэры для блокировки нежелательного сетевого трафика; к сожалению, это также может блокировать такие важные вещи, как связь со службой уведомлений Windows. Это означает, что все уведомления, отправляемые через WNS, будут удалены при определенных конфигурациях сети. Чтобы избежать этого, администраторы сети могут добавить список утвержденных каналов WNS в их список исключений, чтобы разрешить передачу трафика WNS через брандмауэр. Ниже приведены дополнительные сведения о том, как и что следует добавить, а также о поддержке различных типов прокси.
+## <a name="background"></a>Фон
+Многие компании используют брандмауэры для блокировки нежелательного сетевого трафика; к сожалению, это также может блокировать такие важные вещи, как связь со службой уведомлений Windows. Это означает, что все уведомления, отправляемые через WNS, будут удалены при определенных конфигурациях сети. Чтобы избежать этого, администраторы сети могут добавить список утвержденных полных доменных имен WNS или виртуальных IP-адресов в их список исключений, чтобы разрешить передачу трафика WNS через брандмауэр. Ниже приведены дополнительные сведения о том, как и что следует добавить, а также о поддержке различных типов прокси.
 
 ## <a name="proxy-support"></a>Поддержка прокси-сервера
 
@@ -78,12 +78,12 @@ ms.locfileid: "70296984"
 
 
 ## <a name="microsoft-push-notifications-service-mpns-public-ip-ranges"></a>Диапазоны общедоступных IP-адресов Microsoft Push Notification Service (MPNS)
-Если вы используете устаревшую службу уведомлений, то в центре загрузки будут доступны диапазоны IP-адресов, которые необходимо добавить в список разрешений. [Диапазоны общедоступных IP-адресов Microsoft Push Notification Service (MPNS)](https://www.microsoft.com/download/details.aspx?id=44535).
+Если вы используете устаревшую службу уведомлений, то диапазоны IP-адресов, которые необходимо добавить в список разрешений, доступны в центре загрузки: [общедоступные IP-адреса службы push-уведомлений Майкрософт (MPNS)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Краткое руководство Отправка push-уведомления](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Краткое руководство. Отправка push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
 * [Как запросить, создать и сохранить канал уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
 * [Перехват уведомлений для запуска приложений](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
 * [Проверка подлинности с помощью службы push-уведомлений Windows (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
