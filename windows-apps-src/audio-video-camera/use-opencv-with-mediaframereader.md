@@ -1,24 +1,24 @@
 ---
 ms.assetid: ''
 description: В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV) с классом MediaFrameReader.
-title: Используйте OpenCV с MediaFrameReader
+title: Использование OpenCV с MediaFrameReader
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a1993ea4808cabf9f82640f03f0187d431f3d2
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: e8f4fd041eae30269e8b876c108151e4aae45d91
+ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393510"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72811646"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
 В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV), библиотеку собственного кода, которая предоставляет широкий набор алгоритмов обработки изображений с классом [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader), который может считывать мультимедиа-кадры из нескольких источников одновременно. В примере кода в этой статье рассматривается создание простого приложения, которое получает кадры с цветной камеры, размывает каждый кадр, используя библиотеку OpenCV, и затем отображает обработанное изображение в элементе управления XAML **Image**. 
 
 >[!NOTE]
->OpenCV.Win.Core и OpenCV.Win. ImgProc не обновляются регулярно, но по-прежнему рекомендуются для создания OpenCVHelper, как описано на этой странице.
+>OpenCV. Win. Core и OpenCV. Win. Имгпрок не обновляются регулярно и не проходят проверки соответствия магазина, поэтому эти пакеты предназначены только для экспериментов.
 
 Эта статья основана на содержимом двух других статей:
 
@@ -62,7 +62,7 @@ ms.locfileid: "70393510"
 
 [!code-cs[OpenCVFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameArrived)]
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
