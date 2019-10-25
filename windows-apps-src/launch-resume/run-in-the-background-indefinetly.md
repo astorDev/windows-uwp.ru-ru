@@ -2,16 +2,16 @@
 title: Выполнение в фоновом режиме в течение неограниченного срока
 description: Используйте возможность extendedExecutionUnconstrained для выполнения фоновой задачи или расширенного сеанса выполнения в фоновом режиме в течение неограниченного срока.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: фоновая задача, расширенных выполнения, ресурсы, ограничения, фоновой задачи
+keywords: Фоновая задача, расширенное выполнение, ресурсы, ограничения, фоновая задача
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
+ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630249"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72822451"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Выполнение в фоновом режиме в течение неограниченного срока
 
@@ -31,30 +31,30 @@ _Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
 При использовании возможности `extendedExecutionUnconstrained`, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) и [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) используются вместо [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) и [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Применяется та же схема создания сеанса, установки членов и асинхронного запроса расширения: 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -69,13 +69,13 @@ switch (result)  
 _Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-Эта возможность снимает ограничения времени выполнения и удаляет средство наблюдения за простаивающими задачами. После запуска с помощью триггера или вызова службы приложения и создания отсрочки в [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance), предоставленном методом **Run**, фоновая задача может выполняться в течение неограниченного срока. Если предложению задано значение **Управляется Windows**, возможно, к нему до сих пор применяется квота энергопотребления, а его фоновые задачи не будут активироваться, пока действует экономия заряда. Это можно изменить с помощью параметров операционной системы. Дополнительные сведения см. в разделе [Оптимизация фоновых процессов](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
+Эта возможность снимает ограничения времени выполнения и удаляет средство наблюдения за простаивающими задачами. После запуска с помощью триггера или вызова службы приложения и создания отсрочки в [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance), предоставленном методом **Run**, фоновая задача может выполняться в течение неограниченного срока. Если предложению задано значение **Управляется Windows**, возможно, к нему до сих пор применяется квота энергопотребления, а его фоновые задачи не будут активироваться, пока действует экономия заряда. Это можно изменить с помощью параметров ОС. Дополнительные сведения см. в разделе [Оптимизация фоновых процессов](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
 
 Универсальная платформа Windows отслеживает выполнение фоновых задач, чтобы обеспечить экономию уровня заряда и высокую производительность задач на переднем плане. Тем не менее, с помощью расширенного выполнения и возможности **extendedBackgroundTaskTime** можно создавать приложения для личного пользования и корпоративные бизнес-приложения с неограниченным сроком выполнения независимо от объема доступных ресурсов приложения.
 
@@ -83,4 +83,4 @@ _Package.appxmanifest_
 
 ## <a name="see-also"></a>См. также
 
-[Удалить ограничения ресурсов для задач фона](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[Удалить ограничения ресурсов фоновых задач](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
