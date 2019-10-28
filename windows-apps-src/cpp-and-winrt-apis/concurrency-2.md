@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
-ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
+ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720436"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816672"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT
 
@@ -359,7 +359,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 
 Итак, сопрограммы, используемые в C++/WinRT, — это очень мощный и эффективный инструмент, особенно при разработке традиционных классических приложений в стиле Ч. Петцольда.
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>Отмена асинхронной операции и обратные вызовы для отмены
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>Отмена асинхронной операции и обратные вызовы для отмены
 
 Компоненты среды выполнения Windows для асинхронного программирования позволяют отменять выполняемые асинхронные действия или операции. Ниже приведен пример, который вызывает [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync), чтобы извлечь потенциально большую коллекцию файлов. При этом полученный объект асинхронной операции сохраняется в элементе данных. Пользователь может отменить операцию.
 
