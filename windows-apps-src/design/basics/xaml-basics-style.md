@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820503"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680763"
 ---
 # <a name="tutorial-create-custom-styles"></a>Руководство: Создание пользовательских стилей
 
@@ -36,10 +36,7 @@ ms.locfileid: "67820503"
 
 В первой части учебника мы оформим некоторые элементы управления для редактирования фотографий. 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*Простой ползунок с оформлением по умолчанию.*</figure>
-</figure>
+![Простой ползунок с оформлением по умолчанию.](../basics/images/xaml-basics/slider-start.png)
 
 Эти ползунки выполняют все положенные им функции, но они не совсем обычные. Исправим ситуацию. 
 
@@ -748,8 +745,7 @@ ms.locfileid: "67820503"
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **После**

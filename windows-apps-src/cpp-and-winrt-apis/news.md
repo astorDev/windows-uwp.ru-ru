@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fb869f4705210ab1fec28186b377ad68068b5877
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329584"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816715"
 ---
 # <a name="whats-new-in-cwinrt"></a>Что нового в C++/WinRT
 
@@ -283,7 +283,7 @@ struct MainPage : PageT<MainPage>
 | Формат системы проекта Visual Studio изменился. | См. статью [Как перенастроить проект C++/WinRT на более позднюю версию пакета SDK для Windows](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk) ниже. |
 | Существуют новые функции и базовые классы, которые помогут передать объект коллекции в функцию среды выполнения Windows или реализовать собственные свойства и типы коллекций. | См. раздел [Коллекции из C++/WinRT](collections.md). |
 | Вы можете использовать расширение разметки [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) со своими классами среды выполнения C++/WinRT. | Дополнительные сведения и примеры кода см. в разделе [Общие сведения о привязке данных](/windows/uwp/data-binding/data-binding-quickstart). |
-| Поддержка отмены соподпрограммы позволяет зарегистрировать обратный вызов отмены. | Дополнительные сведения и примеры кода см.в разделе [Отмена асинхронной операции и обратных вызовов отмены](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
+| Поддержка отмены соподпрограммы позволяет зарегистрировать обратный вызов отмены. | Дополнительные сведения и примеры кода приведены в разделе [Отмена асинхронной операции и обратные вызовы отмены](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | При создании делегата, указывающего на функцию-член, можно установить сильную или слабую ссылку на текущий объект (вместо необработанного *этого* указателя) в точке регистрации обработчика. | Дополнительные сведения и примеры кода см. в подразделе **Если вы используете функцию-член в качестве подраздела делегата** раздела [Безопасный доступ к*этому* указателю с делегатом с обработкой событий](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Исправлены ошибки, которые были обнаружены улучшенным соответствием Visual Studio стандарту C++. Набор инструментов LLVM и Clang также лучше используется для проверки соответствия стандартам C++/WinRT. | Вы больше не столкнетесь с проблемой, описанной в статье [Почему мой новый проект не компилируется? Я использую Visual Studio 2017 (версии 15.8.0 или выше) и пакет SDK версии 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
 

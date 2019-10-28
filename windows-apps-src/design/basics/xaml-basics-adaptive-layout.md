@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820459"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680754"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Руководство: Создание адаптивных макетов
 
@@ -46,11 +46,15 @@ ms.locfileid: "67820459"
     **Если вы не знакомы с GitHub:**
     
     а) Нажмите кнопку **Скачать ZIP-файл** и сохраните его локально. Будет выполнено скачивание ZIP-файла с необходимыми файлами проекта.
-    б. Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...** . в. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
+
+    б. Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...** . 
+
+    в. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
 
     **Если вы знакомы с GitHub:**
 
     а) Клонируйте основную ветвь репозитория локально.
+
     б. Перейдите к каталогу `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`.
 
 3. Откройте проект, щелкнув `Photolab.sln`.

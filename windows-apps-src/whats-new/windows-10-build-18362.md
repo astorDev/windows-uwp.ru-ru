@@ -1,17 +1,17 @@
 ---
-title: Новое в Windows 10 для разработчиков
+title: Что нового в Windows 10 (сборка 18362)
 description: Windows 10 (сборка 18362) и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, newest, developers, 18362, may
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4e92afd112ce7600bcfa650e0bb3bbeffabd7bd0
-ms.sourcegitcommit: f120968069702a7210756b508dabc4a1a8c20d53
+ms.openlocfilehash: f95193b1bbf50165619fb6c7b7222ed36853d2e2
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72438218"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893040"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>Новые возможности в Windows 10 для разработчиков (сборка 18362)
 

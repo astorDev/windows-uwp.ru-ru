@@ -1,16 +1,16 @@
 ---
-title: Новое в Windows 10 для разработчиков, средства и компоненты
+title: Что нового в Windows 10 (сборка 17134)
 description: Windows 10 (сборка 17134) и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
 keywords: новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, новинки, разработчики, 17134
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 797129b62217b9deb74781638b302c59192b7e9a
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820453"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893033"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
