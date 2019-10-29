@@ -4,14 +4,14 @@ title: Оптимизация разметки XAML
 description: В случае использования сложных пользовательских интерфейсов анализ разметки XAML с целью создания объектов в памяти отнимает много времени. Вот что можно сделать, чтобы улучшить анализ разметки XAML, сократить время загрузки приложения и повысить эффективность его работы с памятью.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
-ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
+ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
+ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852055"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980025"
 ---
 # <a name="optimize-your-xaml-markup"></a>Оптимизация разметки XAML
 
@@ -126,7 +126,7 @@ ListView и его дочерние элементы не загружаются
 
 У панелей макета есть свойство [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background), поэтому перед ними не нужно использовать класс [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), только чтобы изменить цвет панели.
 
-**Неэффективный**
+**Неэффективным**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ ListView и его дочерние элементы не загружаются
 </Grid>
 ```
 
-**Эффективный**
+**Работать**
 
 ```xaml
 <Grid Background="Black"/>
@@ -159,15 +159,15 @@ ListView и его дочерние элементы не загружаются
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary в UserControl
 
-Определение ResourceDictionary в [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) ведет к снижению производительности. Платформа создает копию такого ResourceDictionary для каждого экземпляра UserControl. Если у вас есть элемент управления UserControl, часто используются, затем переместите ResourceDictionary из пользовательского элемента управления и поместить его на уровне страницы.
+Определение ResourceDictionary в [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) ведет к снижению производительности. Платформа создает копию такого ResourceDictionary для каждого экземпляра UserControl. Если у вас есть элемент UserControl, который используется очень много, переместите ResourceDictionary из UserControl и поместите его на уровне страницы.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ресурс и область ResourceDictionary
 
-Если страница ссылается на пользовательский элемент управления или ресурс, определенный в другом файле, платформа также анализирует и этот файл.
+Если страница ссылается на пользовательский элемент управления или ресурс, определенный в другом файле, платформа анализирует и этот файл.
 
 Поскольку в этом примере _InitialPage.xaml_ использует один ресурс из _ExampleResourceDictionary.xaml_, последний _необходимо_ проанализировать при запуске.
 
-**InitialPage.xaml.**
+**Инитиалпаже. XAML.**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ ListView и его дочерние элементы не загружаются
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml.**
+**Ексамплересаурцедиктионари. XAML.**
 
 ```xaml
 <ResourceDictionary>
@@ -198,7 +198,7 @@ ListView и его дочерние элементы не загружаются
 
 Если ресурс используется на нескольких страницах приложения, мы рекомендуем сохранить его в файл _App.xaml_, чтобы избежать дублирования. Но файл _App.xaml_ анализируется при запуске приложения, поэтому любой ресурс, используемый только на одной странице (кроме начальной), необходимо включить в локальные ресурсы такой страницы. В этом примере неправильного использования файл _App.xaml_ содержит ресурсы, используемые только одной страницей, которая не является начальной. Это снижает скорость загрузки приложения.
 
-**App.XAML**
+**App. XAML**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -212,7 +212,7 @@ ListView и его дочерние элементы не загружаются
 </Application>
 ```
 
-**InitialPage.xaml.**
+**Инитиалпаже. XAML.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ ListView и его дочерние элементы не загружаются
 </Page>
 ```
 
-**SecondPage.xaml.**
+**Секондпаже. XAML.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,7 +234,7 @@ ListView и его дочерние элементы не загружаются
 </Page>
 ```
 
-Чтобы сделать сценарий в этом примере более эффективным, нужно переместить файл `SecondPageTextBrush` в _SecondPage.xaml_, а `ThirdPageTextBrush` — в _ThirdPage.xaml_. `InitialPageTextBrush` может оставаться в _App.xaml_ потому, что ресурсы приложения необходимо выполнить синтаксический анализ при запуске приложения в любом случае.
+Чтобы сделать сценарий в этом примере более эффективным, нужно переместить файл `SecondPageTextBrush` в _SecondPage.xaml_, а `ThirdPageTextBrush` — в _ThirdPage.xaml_. `InitialPageTextBrush` может остаться в _app. XAML_ , так как в любом случае необходимо проанализировать ресурсы приложения при запуске приложения.
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Объедините несколько кистей, которые выглядят одинаково, в один ресурс
 
@@ -250,7 +250,7 @@ ListView и его дочерние элементы не загружаются
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
             </TextBlock.Foreground>
-        </TextBox>
+        </TextBlock>
         <Button Content="Submit">
             <Button.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
@@ -262,7 +262,7 @@ ListView и его дочерние элементы не загружаются
 
 Чтобы устранить дублирование, определите кисть как ресурс. Если элементы управления на других страницах используют эту же кисть, переместите ее в файл _App.xaml_.
 
-**Эффективный.**
+**Работать.**
 
 ```xaml
 <Page ... >
@@ -304,7 +304,7 @@ ListView и его дочерние элементы не загружаются
 </Grid>
 ```
 
-**Эффективный.**
+**Работать.**
 
 ```xaml
 <Grid>
@@ -319,7 +319,7 @@ ListView и его дочерние элементы не загружаются
 
 ### <a name="layout-panels"></a>Панели макета
 
-У панели макета есть два варианта использования: для закрашивания области и для размещения дочерних элементов. Если элемент, который расположен ниже в z-порядке, уже закрашивает область, для этого не нужно использовать панель макета вверху. Вместо этого на ней можно просто размещать дочерние элементы. Рассмотрим пример.
+У панели макета есть два варианта использования: для закрашивания области и для размещения дочерних элементов. Если элемент, который расположен ниже в z-порядке, уже закрашивает область, для этого не нужно использовать панель макета вверху. Вместо этого на ней можно просто размещать дочерние элементы. Вот пример.
 
 **Неэффективным.**
 
@@ -334,7 +334,7 @@ ListView и его дочерние элементы не загружаются
 </GridView>
 ```
 
-**Эффективный.**
+**Работать.**
 
 ```xaml
 <GridView Background="Blue">
@@ -371,7 +371,7 @@ ListView и его дочерние элементы не загружаются
 </Grid>
 ```
 
-**Эффективный.**
+**Работать.**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -403,7 +403,7 @@ ListView и его дочерние элементы не загружаются
 
 ![Диаграмма Венна с демонстрацией перекрывающихся областей](images/translucentvenn.png)
 
-**Эффективный.**
+**Работать.**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -423,9 +423,9 @@ XBF2 — это двоичное представление разметки XAM
 
 Чтобы проверить наличие XBF2, откройте приложение в двоичном редакторе. При наличии XBF2 12-й и 13-й байты имеют значение «00 02».
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Смежные разделы
 
-- [Рекомендации по производительности запуска приложения](best-practices-for-your-app-s-startup-performance.md)
+- [Рекомендации по повышению производительности при запуске приложения](best-practices-for-your-app-s-startup-performance.md)
 - [Оптимизация макета XAML](optimize-your-xaml-layout.md)
 - [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md)
 - [Средства для профилирования и производительности](tools-for-profiling-and-performance.md)
