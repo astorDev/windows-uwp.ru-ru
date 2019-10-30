@@ -1,33 +1,33 @@
 ---
-title: Пружинная анимация
+title: Пружинные анимации
 description: Узнайте, как использовать пружинные анимации естественных движений.
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601949"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062002"
 ---
-# <a name="spring-animations"></a>Пружинная анимация
+# <a name="spring-animations"></a>Пружинные анимации
 
 В этой статье показано, как использовать пружинные анимации NaturalMotionAnimations.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Подразумевается, что вы знакомы с понятиями, которые рассматриваются в этих статьях:
 
-- [Естественное анимации](natural-animations.md)
+- [Естественная анимация движения](natural-animations.md)
 
 ## <a name="why-springs"></a>Почему пружины?
 
 Пружины обеспечивают достаточно распространенный, знакомый всем тип движения (от игрушек до опытов в кабинете физики с прикрепленным к пружине блоком). Колеблющееся движение пружины часто ассоциируется у наблюдающего с игривостью и легкостью. Следовательно, движение пружины будет хорошо смотреться в пользовательском интерфейсе всех приложений, в которых нужно создать для пользователя более игривую траекторию движения, нежели движение по кривой Безье третьего порядка. В таких случаях движение пружины не только обеспечивает более игривое взаимодействие, но и позволяет привлечь внимание к новому содержимому или содержимому, которое анимируется в настоящее время.In these cases, spring motion not only creates a livelier motion experience, but also can help draw attention to new or currently animating content. В зависимости от фирменной символики приложения или языка движения колебания могут быть более выраженными и видимыми или более незаметными.
 
-![Движения с помощью spring анимации](images/animation/offset-spring.gif)
-![движения с помощью анимации Безье третьего порядка](images/animation/offset-cubic-bezier.gif)
+![движение с пружинной анимацией](images/animation/offset-spring.gif)
+![движение с помощью анимации Безье третьего порядка](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>Использование пружин в пользовательском интерфейсе
 
@@ -92,12 +92,12 @@ private void Button_Clicked(object sender, RoutedEventArgs e)
  {
  _expanded = true;
  _propSet.InsertBoolean("expanded", true);
- _springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue + 250”;
+ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
  } else
  {
  _expanded = false;
  _propSet.InsertBoolean("expanded", false);
-_springAnimation.InitialValueExpression[“FinalValue”] = “this.StartingValue - 250”;
+_springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
  }
  _naviPane.StartAnimation("Offset.X", _springAnimation);
 }

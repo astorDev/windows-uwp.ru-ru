@@ -8,24 +8,24 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 778aa04861fa7704f4235763a429bb77f92a8b65
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1aa57af7e51fd7d6ef151909eccc444da2c44707
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365330"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062049"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Определение языка для распознавателя речи
 
 
 Узнайте, как выбрать установленный язык для распознавания речи.
 
-> **Важные API**: [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages), [ **SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages), [ **языка**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)
+> **Важные API-интерфейсы**: [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages), [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages), [**Language**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language)
 
 
 Здесь мы перечисляем языки, установленные в системе, определяем язык, используемый по умолчанию, и выбираем другой язык для распознавания.
 
-**Предварительные требования:**
+**Требований**
 
 В данной статье используются материалы статьи [Распознавание речи](speech-recognition.md).
 
@@ -36,7 +36,7 @@ ms.locfileid: "66365330"
 -   [Создание первого приложения](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-**Рекомендации по пользовательскому интерфейсу:**
+**Рекомендации по работе с пользователем:**
 
 Полезные советы по разработке практичного и привлекательного приложения с поддержкой голосовых функций см. в разделе [Рекомендации по проектированию голосовых функций](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions).
 
@@ -56,15 +56,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 На разных устройствах установленные языки могут отличаться. Следует проверить наличие языка, если с ним связано какое-либо ограничение, которое имеет для вас значение.
 
-**Примечание**  требуется перезагрузка после установки нового языкового пакета. Исключение с кодом ошибки SPERR\_не\_FOUND (0x8004503a) происходит в том случае, если указанный язык не поддерживается или не завершило установку.
+**Обратите внимание** ,  после установки нового языкового пакета требуется перезагрузка. Исключение с кодом ошибки СПЕРР\_не\_найдено (0x8004503a) возникает, если указанный язык не поддерживается или не завершил установку.
 
  
 
 Определите поддерживаемые языки на устройстве, проверив одно из двух статических свойств класса [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer):
 
--   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)— коллекция [ **языка** ](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) объекты, используемые с предопределенные диктовки и грамматики поиска web.
+-   [**Суппортедтопиклангуажес**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)— коллекция объектов [**языка**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) , используемых с предопределенными грамматиками диктовки и поиском в Интернете.
 
--   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)— коллекция [ **языка** ](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) объекты, используемые с ограничением списка или файл спецификации грамматики распознавания речи (SRGS).
+-   [**Суппортедграммарлангуажес**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)— коллекция объектов [**языка**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) , используемых с ограничением списка или файлом спецификации распознавания речи (SRGS).
 
 ## <a name="specify-a-language"></a>Определение языка
 
@@ -75,20 +75,20 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 
 ```CSharp
-var language = new Windows.Globalization.Language(“en-US”); 
+var language = new Windows.Globalization.Language("en-US"); 
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Примечания.
 
 
 Ограничение по одной теме можно настроить, добавив [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) в коллекцию [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) средства [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), а затем вызвав [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Если распознаватель не удалось инициализировать с поддерживаемым языком темы, возвращается состояние [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) для **TopicLanguageNotSupported**.
 
 Ограничение по списку можно настроить, добавив [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) в коллекцию [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) средства [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), а затем вызвав [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Вы не можете задать язык пользовательского списка напрямую. Список будет обрабатываться с использованием языка распознавателя.
 
-Грамматика SRGS – это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. [**CompileConstraintsAsync** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) завершается сбоем с [ **SpeechRecognitionResultStatus** ](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) из **TopicLanguageNotSupported** Если распознаватель не инициализирован на том же языке, как разметку SRGS.
+Грамматика SRGS – это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. [**Компилеконстраинтсасинк**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) завершается с [**спичрекогнитионресултстатус**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) **топиклангуаженотсуппортед** , если распознаватель не инициализирован на том же языке, что и разметка SRGS.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Смежные разделы
 
 **Разработчикам**
 
@@ -100,7 +100,7 @@ var recognizer = new SpeechRecognizer(language);
 
 **Примеры**
 
-* [Распознавание речи и синтеза речи-пример](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Пример распознавания речи и синтеза речи](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

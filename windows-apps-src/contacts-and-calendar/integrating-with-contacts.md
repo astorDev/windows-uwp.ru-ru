@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, контакты, карточка контакта, аннотация
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8310b7c5b629d8d3a35a05b1124b140ebf35cf17
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360457"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061872"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Подключение приложения к действиям в карточках контактов
 
@@ -185,7 +185,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto). Карточка контакта передает этому методу название операции и идентификатор пользователя.
 
-Начать видео или аудио, см. в этом примере: [Пример VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
+См. [пример с VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP), чтобы начать видеовызов или звонок. Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
 
 Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat).
 
@@ -204,7 +204,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
         var options = new Windows.System.LauncherOptions();
         options.DisplayApplicationPicker = true;
 
-        options.TargetApplicationPackageFamilyName = “ContosoApp”;
+        options.TargetApplicationPackageFamilyName = "ContosoApp";
 
         string launchString = args.uri.Scheme + ":" + args.uri.Query;
         var launchUri = new Uri(launchString);

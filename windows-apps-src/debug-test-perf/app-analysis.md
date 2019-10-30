@@ -3,14 +3,14 @@ title: Анализ приложений
 description: Проанализируйте свое приложение на проблемы производительности.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 138bb762b9b1d424ac8f9c2148b43f230f096458
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362432"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062751"
 ---
 # <a name="app-analysis-overview"></a>Обзор средства анализа приложений
 
@@ -38,7 +38,7 @@ ms.locfileid: "66362432"
 
 Класс BitmapImage подключен к дереву XAML в режиме реального времени после настройки содержимого с помощью SetSourceAsync или UriSource. Обязательно подключайте [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) к дереву в режиме реального времени до задания источника. Это необходимо делать каждый раз, когда элемент изображения или кисть задается в разметке. Примеры приведены ниже. 
 
-**Примеры динамическом дереве**
+**Примеры динамических деревьев**
 
 Пример 1 (как надо) — универсальный код ресурса (URI) задан в разметке.
 
@@ -60,7 +60,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Пример 2 кода (плохо) — установка UriSource BitmapImage перед подключением его к дереву.
+Пример 2. код программной части (плохо) — Установка Урисаурце BitmapImage перед подключением к дереву.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -209,7 +209,7 @@ ResourceDictionaries обычно используются для хранени
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>Элемент управления коллекциями используют невиртуализованную панель
 
-Если вы задали пользовательский шаблон панели элементов (см. ItemsPanel), следует использовать панель виртуализации, например ItemsWrapGrid или ItemsStackPanel. Если вы используете VariableSizedWrapGrid, WrapGrid или StackPanel, то виртуализация не будет выполнена. Кроме того следующий ListView событий только в том случае, при использовании ItemsWrapGrid или ItemsStackPanel: ChoosingGroupHeaderContainer ChoosingItemContainer и ContainerContentChanging.
+Если вы задали пользовательский шаблон панели элементов (см. ItemsPanel), следует использовать панель виртуализации, например ItemsWrapGrid или ItemsStackPanel. Если вы используете VariableSizedWrapGrid, WrapGrid или StackPanel, то виртуализация не будет выполнена. Кроме того, следующие события ListView вызываются только при использовании элементов ItemsWrapGrid или ItemsStackPanel: ChoosingGroupHeaderContainer, ChoosingItemContainer и ContainerContentChanging.
 
 Виртуализация пользовательского интерфейса — это самое важное улучшение производительности коллекций. Это означает, что элементы пользовательского интерфейса, представляющие элементы, создаются по запросу. Для элемента управления элементами, привязанного к коллекции из 1000 элементов, создание пользовательского интерфейса одновременно для всех элементов было бы напрасной тратой ресурсов, поскольку они не могут отображаться одновременно. ListView и GridView (и другие стандартные элементы управления, производные от ItemsControl) выполняют виртуализацию пользовательского интерфейса за вас. Если элементы близки к появлению на экране (за несколько страниц), платформа создает пользовательский интерфейс для таких элементов и помещает их в кэш. Если повторное появление элементов маловероятно, платформа освобождает память.
 
@@ -227,7 +227,7 @@ ResourceDictionaries обычно используются для хранени
 
 Используйте панель виртуализации, например ItemsWrapGrid или ItemsStackPanel.
 
-## <a name="accessibility-uia-elements-with-no-name"></a>Специальные возможности: Элементы UIA без имени
+## <a name="accessibility-uia-elements-with-no-name"></a>Специальные возможности: элементы автоматизации пользовательского интерфейса без имени
 
 В XAML вы можете указать имя, задав значение AutomationProperties.Name. Многие одноранговые классы автоматизации предоставляют имя по умолчанию, если свойство AutomationProperties.Name не задано. 
 
@@ -243,9 +243,9 @@ ResourceDictionaries обычно используются для хранени
 
 Задайте в свойстве AutomationProperties.Name в XAML элемента управления соответствующую локализованную строку.
 
-Иногда нужно не указать имя, а удалить элемент модели автоматизации пользовательского интерфейса из всех деревьев, кроме необработанных. Это можно сделать в XAML, задав свойству AutomationProperties.AccessibilityView значение "Raw".
+Иногда нужно не указать имя, а удалить элемент модели автоматизации пользовательского интерфейса из всех деревьев, кроме необработанных. Это можно сделать в XAML, установив `AutomationProperties.AccessibilityView = "Raw"`.
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Специальные возможности: UIA элементов с тем же Controltype не следует тем же именем
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Специальные возможности: имена элементов модели автоматизации пользовательского интерфейса с одинаковым Controltype не должны совпадать
 
 Свойства Name и ControlType двух элементов модели автоматизации пользовательского интерфейса с одним родительским элементом не должны совпадать. У двух элементов может быть одинаковое свойство Name, если ControlType различаются. 
 

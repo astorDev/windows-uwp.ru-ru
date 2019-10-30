@@ -3,14 +3,14 @@ title: Уведомления близких людей
 description: В этой статье описывается, как создавать и использовать уведомления близких людей — новый вид всплывающих уведомлений.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820229"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061893"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -21,9 +21,9 @@ ms.locfileid: "67820229"
 ## <a name="requirements"></a>Требования
 
 + Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Как это работает
 
 В качестве альтернативы универсальным всплывающим уведомлениям можно отправлять уведомления с помощью функции "Близкие люди" для создания персонализированных процессов взаимодействия с пользователями. Это новый вид всплывающих уведомлений, которые отправляются от контакта, закрепленного на панели задач пользователя с функцией "Близкие люди". При получении уведомления запускается анимация аватара отправителя на панели задач и воспроизводится звук, что сообщает о запуске уведомления. Анимация или изображение, указанные в полезных данных, отображаются 5 секунд (если это анимация длительностью менее 5 секунд, она будет зациклена для увеличения длительности до 5 секунд).
 
@@ -42,7 +42,7 @@ ms.locfileid: "67820229"
 Уведомления "Близкие люди" используют платформу [всплывающих уведомлений](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md), но требуют дополнительного узла привязки в полезных данных всплывающего уведомления. Вторая привязка должна содержать следующий параметр:
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 Это указывает, что всплывающее уведомление следует рассматривать как уведомление функции "Близкие люди".
@@ -51,15 +51,15 @@ experienceType=”shoulderTap”
 
 + **src**
     + URI ресурса. Это может веб-URI протокола HTTP и HTTPS, URI msappx или путь к локальному файлу.
-+ **spritesheet-src**
++ **спритешит-src**
     + URI ресурса. Это может веб-URI протокола HTTP и HTTPS, URI msappx или путь к локальному файлу. Требуются только для анимаций Spritesheet.
-+ **Высота spritesheet**
++ **спритешит-высота**
     + Высота кадра в пикселях. Требуются только для анимаций Spritesheet.
-+ **spritesheet-кадров/с**
++ **спритешит — кадров/с**
     + Кадров в секунду (FPS). Требуются только для анимаций Spritesheet. Поддерживаются только значения от 1 до 120.
-+ **spritesheet startingFrame**
++ **спритешит — Стартингфраме**
     + Номер начального кадра анимации. Используется только для анимаций Spritesheet. Если параметр отсутствует, используется значение по умолчанию (0).
-+ **ALT**
++ **мещающий**
     + Текстовая строка, используемая для экранного диктора.
 
 > [!NOTE]
@@ -151,7 +151,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 Если уведомление функции "Близкие люди" возвращается к всплывающему уведомлению, вторая привязка игнорируется, а для отображения всплывающего уведомления используется только первая привязка. Именно поэтому крайне важно предоставить резервные полезные данные в первой привязке всплывающего уведомления.
 
 ## <a name="see-also"></a>См. также
-+ [Мой пример уведомления пользователей](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [Поддерживает добавление Мои людей](my-people-support.md)
-+ [Адаптивная всплывающие уведомления](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [Класс ToastNotification](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [Пример уведомлений "Мои люди"](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [Добавление поддержки пользователей](my-people-support.md)
++ [Адаптивные всплывающие уведомления](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [Класс Тоастнотификатион](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
