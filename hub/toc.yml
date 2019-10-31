@@ -48,6 +48,8 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Распространение упакованного приложения
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: Предоставление идентификаторов для неупакованных классических приложений
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 'Руководство: Модернизация приложения WPF'
           items:
             - name: Обзор
