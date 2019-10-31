@@ -3,16 +3,16 @@ Description: Расширение классических приложений 
 title: Расширение классических приложений с помощью компонентов и элементов пользовательского интерфейса Windows
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339202"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142553"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Расширение классического приложения с помощью современных компонентов UWP
 
@@ -21,7 +21,7 @@ ms.locfileid: "71339202"
 Во многих случаях можно вызывать интерфейсы API среда выполнения Windows напрямую из приложения для настольных систем, поэтому перед изучением этого руководством см. статью [улучшение для Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> Для использования функций, описанных в этой статье, необходимо создать пакет приложения Windows для классического приложения. Если вы еще не сделали этого, см. раздел [Упаковка классических приложений](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> Для использования функций, описанных в этой статье, требуется, чтобы класс настольного приложения использовал [удостоверение пакета](modernize-packaged-apps.md), либо [упаковать приложение в пакет MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) , либо [предоставить удостоверение приложения с помощью разреженного пакета](grant-identity-to-nonpackaged-apps.md).
 
 Если вы готовы, давайте начнем.
 
@@ -100,15 +100,15 @@ ms.locfileid: "71339202"
 
 Для отображения пользовательского интерфейса на основе XAML выполните следующие действия.
 
-:one: [Настройка решения](#solution-setup)
+:one: [Настройте решение](#solution-setup)
 
-:two: [Создание пользовательского интерфейса XAML](#xaml-UI)
+:two: [Создайте пользовательский интерфейс на XAML](#xaml-UI)
 
-:three: [Добавление расширения протокола в проект UWP](#add-a-protocol-extension)
+:three: [Добавьте расширение протокола в этот проект UWP](#add-a-protocol-extension)
 
-:four: [Запуск приложения UWP из классического приложения](#start)
+:four: [Запустите приложение UWP из классического приложения](#start)
 
-:five: [В проекте UWP отобразите нужную страницу.](#parse)
+:five: [В проекте UWP отобразите требуемую страницу](#parse)
 
 <a id="solution-setup" />
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-В коде программной части страницы XAML Переопределите метод ``OnNavigatedTo``, чтобы использовать параметры, переданные на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
+В коде, расположенном на странице XAML, переопределите метод ``OnNavigatedTo``, чтобы использовать параметры, переданные на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -261,15 +261,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Чтобы сделать ваше приложение получателем данных, выполните следующие действия.
 
-:one: [Добавление расширения общего доступа](#share-extension)
+:one: [Добавьте расширение получателя данных](#share-extension)
 
-:two: [Переопределение обработчика событий Оншаретаржетактиватед](#override)
+: два: [Переопределение обработчика событий оншаретаржетактиватед](#override)
 
-:three: [Добавление расширений рабочего стола в проект UWP](#desktop-extensions)
+: три: [Добавление расширений для рабочего стола в проект UWP](#desktop-extensions)
 
-:four: [Добавление расширения процесса полного доверия](#full-trust)
+: четыре: [Добавление расширения процесса полного доверия](#full-trust)
 
-:five: [Изменение классического приложения для получения общего файла](#modify-desktop)
+: пять: [изменение классического приложения для получения общего файла](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -297,7 +297,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. В этой разметке предполагается, что имя исполняемого файла для приложения UWP — `ShareTarget.exe`.
 
-Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы создаем классическое приложение [WPF фотосторедемо](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) в качестве целевого объекта для точечных рисунков, чтобы мы указали `Bitmap` для поддерживаемого типа файлов.
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы делаем для классического приложения [WPF фотосторедемо](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) общий ресурс для точечных рисунков, чтобы мы указали `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
