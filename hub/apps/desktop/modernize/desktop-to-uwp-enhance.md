@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bcdeafc3f30f5b385c6feeddee78cf31635177a0
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
+ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142537"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73427088"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Вызов интерфейсов API UWP в классических приложениях
 
@@ -43,13 +43,13 @@ ms.locfileid: "73142537"
 
 2. Откройте проект в Visual Studio, щелкните проект правой кнопкой мыши в **Обозреватель решений** и выберите **Управление пакетами NuGet**.
 
-3. В окне **Диспетчер пакетов NuGet** установите флажок **включить предварительные выпуски** . Затем выберите вкладку **Обзор** и выполните поиск по запросу `Microsoft.Windows.SDK.Contracts`.
+3. В окне **Диспетчер пакетов NuGet** выберите вкладку **Обзор** и выполните поиск по запросу `Microsoft.Windows.SDK.Contracts`.
 
 4. После того как пакет `Microsoft.Windows.SDK.Contracts` будет найден, в правой области окна **Диспетчер пакетов NuGet** выберите **версию** пакета, которую необходимо установить, на основе версии Windows 10, которую вы хотите использовать.
 
-    * **10.0.18362. xxxx-Preview**: выберите это для Windows 10, версия 1903.
-    * **10.0.17763. xxxx-Preview**: выберите это для Windows 10, версия 1809.
-    * **10.0.17134. xxxx-Preview**: выберите это для Windows 10, версия 1803.
+    * **10.0.18362. xxxx**: Выберите этот вариант для Windows 10, версия 1903.
+    * **10.0.17763. xxxx**: Выберите этот вариант для Windows 10, версия 1809.
+    * **10.0.17134. xxxx**: Выберите этот вариант для Windows 10, версия 1803.
 
 5. Нажмите кнопку **Установить**.
 

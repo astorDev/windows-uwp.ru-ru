@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b665145eac8599bae69aaf4b1951d267bf79f7a7
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66825028"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062100"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
@@ -80,7 +80,7 @@ InkCanvas позволяет включить в приложении базов
 Чтобы добавить элемент управления InkCanvas в приложение, достаточно одной строки разметки:
 
 ```xaml
-<InkCanvas x:Name=“myInkCanvas”/>
+<InkCanvas x:Name="myInkCanvas"/>
 ```
 
 > [!NOTE]
@@ -89,7 +89,7 @@ InkCanvas позволяет включить в приложении базов
 Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
  ```xaml
-<InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
+<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
  ```
 
 Она позволяет отобразить следующий элемент управления InkToolbar:

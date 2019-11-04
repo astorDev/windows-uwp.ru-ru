@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b0d2ad6f0370867159054d77c7e68201d4799037
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321209"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062880"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -36,9 +36,7 @@ ms.locfileid: "67321209"
 
 ## <a name="video-summary"></a>Краткий видеообзор
 
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
-
-
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Шаг 1. Создание проекта в Visual Studio
 
