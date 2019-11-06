@@ -114,6 +114,8 @@
           items:
             - name: Контейнеры и шаблоны элементов
               href: controls-and-patterns/item-containers-templates.md
+            - name: Выбор шаблона данных
+              href: controls-and-patterns/data-template-selector.md
             - name: Шаблоны элементов для представления списка
               href: controls-and-patterns/item-templates-listview.md
             - name: Шаблоны элементов для представления сетки
