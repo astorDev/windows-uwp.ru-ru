@@ -6,12 +6,12 @@ keywords: Фоновая задача, расширенное выполнени
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
-ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
+ms.openlocfilehash: 55025d0348abdf311ebf020c70ccf9029bf7ec5a
+ms.sourcegitcommit: ebd35887b00d94f1e76f7d26fa0d138ec4abe567
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72822451"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888668"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Выполнение в фоновом режиме в течение неограниченного срока
 
@@ -27,17 +27,22 @@ Windows ограничивает использование ресурсов п�
 
 Возможность `extendedExecutionUnconstrained` добавляется в манифест приложения как ограниченная возможность. Дополнительные сведения об ограниченных возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
+> **Примечание.** Добавьте объявление пространства имен XML *xmlns: рескап* и используйте префикс *рескап* для объявления возможности.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
-...
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+  ...
   <Capabilities>
     <rescap:Capability Name="extendedExecutionUnconstrained"/>
   </Capabilities>
 </Package>
 ```
 
-При использовании возможности `extendedExecutionUnconstrained`, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) и [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) используются вместо [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) и [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Применяется та же схема создания сеанса, установки членов и асинхронного запроса расширения: 
+При использовании возможности `extendedExecutionUnconstrained`, [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) и [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) используются вместо [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) и [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Применяется та же схема создания сеанса, установки членов и асинхронного запроса расширения: 
 
 ```cs
 var newSession = new ExtendedExecutionForegroundSession();
@@ -66,9 +71,15 @@ switch (result)
 
 В универсальной платформе Windows фоновые задачи — это процессы, выполняемые в фоновом режиме без какого-либо пользовательского интерфейса. Как правило, фоновые задачи выполняются не более 25 секунд, а затем отменяются. Некоторые задачи, выполняемые в течение длительного срока, выполняют проверку на наличие простаивающих или использующих память фоновых задач. В Windows Creators Update (версии 1703) реализована ограниченная возможность [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations), призванная убрать эти ограничения. Возможность **extendedBackgroundTaskTime** добавляется в файл манифеста приложения как ограниченная возможность:
 
+> **Примечание.** Добавьте объявление пространства имен XML *xmlns: рескап* и используйте префикс *рескап* для объявления возможности.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
   <Capabilities>
     <rescap:Capability Name="extendedBackgroundTaskTime"/>
   </Capabilities>
