@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e1167a57da6a3f54cabcc946cfbf7a592f301d2c
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
+ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163748"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74086866"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
@@ -38,11 +38,11 @@ ms.locfileid: "72163748"
 
 > **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [класс FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [класс TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [класс ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
 
-> <div id="main">
-> <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>
-> </div>
-> По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
-> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения см. в разделе справки по API <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">класс ScrollViewer</a>.
+> <div id="main">  
+> <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>  
+> </div>  
+> По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).  
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения доступны в разделе справочных материалов по API, посвященном <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">классу ScrollViewer</a>.  
 
 ## <a name="examples"></a>Примеры
 
