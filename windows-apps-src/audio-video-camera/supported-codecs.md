@@ -4,14 +4,14 @@ description: В этой статье перечисляются аудио- и 
 title: Поддерживаемые кодеки
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92511c1f5b7ad8991900d80d4ec52659d6e74f88
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361405"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153720"
 ---
 # <a name="supported-codecs"></a>Поддерживаемые кодеки
 
@@ -28,7 +28,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="desktop"></a>Настольный компьютер
+### <a name="desktop"></a>Desktop
 
 <table>
 <colgroup>
@@ -65,7 +65,7 @@ ms.locfileid: "66361405"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -80,7 +80,7 @@ ms.locfileid: "66361405"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -339,7 +339,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="mobile"></a>Мобильный
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>
@@ -376,7 +376,7 @@ ms.locfileid: "66361405"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -391,7 +391,7 @@ ms.locfileid: "66361405"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -687,7 +687,7 @@ ms.locfileid: "66361405"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -702,7 +702,7 @@ ms.locfileid: "66361405"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -998,7 +998,7 @@ ms.locfileid: "66361405"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1013,7 +1013,7 @@ ms.locfileid: "66361405"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1272,7 +1272,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="xbox"></a>XBox
+### <a name="xbox"></a>"Xbox"
 
 <table>
 <colgroup>
@@ -1309,7 +1309,7 @@ ms.locfileid: "66361405"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1324,7 +1324,7 @@ ms.locfileid: "66361405"
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1593,7 +1593,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="desktop"></a>Настольный компьютер
+### <a name="desktop"></a>Desktop
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="mobile"></a>Мобильный
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>
@@ -2469,7 +2469,7 @@ ms.locfileid: "66361405"
 
  
 
-### <a name="xbox"></a>XBox
+### <a name="xbox"></a>"Xbox"
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "66361405"
 <thead>
 <tr class="header">
 <th align="left">Кодек</th>
-<th align="left">Настольный компьютер</th>
+<th align="left">Desktop</th>
 <th align="left">Другие семейства устройств</th>
 </tr>
 </thead>
