@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360702"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256665"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 
@@ -21,14 +21,14 @@ ms.locfileid: "66360702"
 > Описанные в этой статье функции доступны, только начиная c Windows 10 версии 1803.
 
 > [!NOTE] 
-> Существует пример универсального приложения для Windows, который демонстрирует использование **MediaFrameReader** для отображения кадров из разных источников, включая цветные и инфракрасные камеры и камеры с эффектом глубины. Дополнительные сведения см. в разделе [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230).
+> Существует пример универсального приложения для Windows, который демонстрирует использование **MediaFrameReader** для отображения кадров из разных источников, включая цветные и инфракрасные камеры и камеры с эффектом глубины. Дополнительные сведения см. в разделе [Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 ## <a name="setting-up-your-project"></a>Настройка проекта
 Процесс получения аудиокадров во многом похож на получение других типов кадров мультимедиа. Как и в любом приложении, использующем **MediaCapture**, перед попыткой получить доступ к камере вам необходимо объявить, что ваше приложение использует возможность *webcam*. Если ваше приложение получает данные от звукового устройства, рекомендуется также объявить возможность устройства *microphone*. 
 
-**Добавления возможностей в манифесте приложения**
+**Добавление возможностей в манифест приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -74,12 +74,12 @@ ms.locfileid: "66360702"
 
 Вы можете использовать объект [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) для передачи аудиоданных, записанных источником кадров мультимедиа объекту [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Передайте кадр в методу [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) объекта [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). Дополнительные сведения об использовании аудиографов для записи, обработки и смешивания звуковых сигналов см. в разделе [Звуковые графы](audio-graphs.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Обработка кадров мультимедиа с помощью Медиафрамереадер](process-media-frames-with-mediaframereader.md)
 * [Камера](camera.md)
-* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [Звуковые графы](audio-graphs.md)
  
 

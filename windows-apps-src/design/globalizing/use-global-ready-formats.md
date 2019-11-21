@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 54846cd350e8f91f7ba664690cfd4dd7e36c129e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634139"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258044"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Глобализация форматов даты, времени и чисел
 
@@ -56,7 +56,7 @@ ms.locfileid: "57634139"
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Задание формата даты и времени для списка языков профиля пользователя
 
-Помните, что по умолчанию **DateTimeFormatter** соответствует списку языков среды выполнения приложения. Таким образом, если при отображении таких строк, как "The date is &lt;date&gt;" (Датой является дата), язык будет соответствовать формату даты.
+Помните, что по умолчанию **DateTimeFormatter** соответствует списку языков среды выполнения приложения. Таким образом, если при отображении таких строк, как "The date is &lt;date&gt;" (Датой является {3}дата{4}), язык будет соответствовать формату даты.
 
 Если по какой-либо причине вам потребуется форматировать дату и/или время только в соответствии со списком языков профиля пользователя, это можно сделать с помощью кода, как в примере ниже. Однако, если вы решите это сделать, необходимо понимать, что пользователь может выбрать язык, для которого в вашем приложении нет переведенных строк. Например, если ваше приложение не локализовано на немецкий язык (Германия), но пользователь выбирает его в качестве предпочитаемого языка, это может привести к отображению странно выглядящих строк, таких как "The date is 06.11.2017" ("Датой является 06.11.2017").
 
@@ -116,9 +116,9 @@ ms.locfileid: "57634139"
 
 Номера телефона форматируются по-разному в различных регионах. Количество цифр, их группировка и значимость определенных частей номера телефона могут различаться в разных странах. Начиная c Windows 10 версии 1607, используйте классы в пространстве имен [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) для форматирования номера телефона в соответствии с текущим регионом.
 
-[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) выполняет синтаксический анализ строки знаков и дает возможность: определить, являются ли цифры допустимый номер телефона в текущей области; сравнения двух чисел, равенство и для извлечения различных функциональных частей телефона номер, например код страны или географические области кода.
+[**Фоненумберинфо**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) анализирует строку цифр и позволяет: определить, являются ли цифры допустимым номером телефона в текущем регионе; Сравнение двух чисел для равенства; и для извлечения различных функциональных частей номера телефона, например кода страны или географического кода города.
 
-[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) форматы строка цифр или объект **PhoneNumberInfo** для отображения, даже в том случае, если строка цифр, представляющая частичного телефонный номер. (Форматирование номера, указанного не полностью можно использовать по мере ввода номера пользователем.)
+[**Фоненумберформаттер**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) форматирует строку цифр или **фоненумберинфо** для вывода, даже если строка цифр представляет собой частичный номер телефона. (Форматирование номера, указанного не полностью можно использовать по мере ввода номера пользователем.)
 
 В следующем примере показано, как использовать **PhoneNumberFormatter** для форматирования номера телефона во время его ввода. Каждый раз, когда в элементе **TextBox** с названием phoneNumberInputTextBox меняется текст, содержимое текстового поля форматируется с учетом текущего региона по умолчанию и отображается в элементе **TextBlock** с названием phoneNumberOutputTextBlock. В целях демонстрации строка имеет региональный формат Новой Зеландии и отображается в элементе TextBlock с именем phoneNumberOutputTextBlockNZ.
   
@@ -159,21 +159,21 @@ ms.locfileid: "57634139"
 
 ## <a name="important-apis"></a>Важные API
 
-* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
+* [датетимеформаттер](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [нумберформаттинг](/uwp/api/windows.globalization.numberformatting?branch=live)
 * [Календарь](/uwp/api/windows.globalization.calendar?branch=live)
-* [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
-* [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
+* [фоненумберформаттинг](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
+* [глобализатионпреференцес](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Календарь, Дата и время элементов управления](../controls-and-patterns/date-and-time.md)
-* [Сведения о языках профиля пользователя и языки манифеста приложения](manage-language-and-region.md)
+* [Элементы управления календарем, датой и временем](../controls-and-patterns/date-and-time.md)
+* [Общие сведения о языках профилей пользователей и языках манифестов приложений](manage-language-and-region.md)
 * [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Примеры
 
-* [Сведения о календаре и пример math](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Пример форматирования даты и времени](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Пример Globalization предпочтения](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Форматирование чисел и анализа образца](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Сведения о календаре и пример математики](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
+* [Пример форматирования даты и времени](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [Пример настроек глобализации](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Пример форматирования чисел и синтаксического анализа](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)

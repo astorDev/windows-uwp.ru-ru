@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318402"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257196"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
@@ -28,7 +28,7 @@ ms.locfileid: "67318402"
 
 Пользовательский видеоэффект определяется в классе, реализующем интерфейс [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса видеоэффекта.
 
-**Добавление компонента среды выполнения Windows для вашего видео эффекта**
+**Добавление среда выполнения Windows компонента для видеоролика**
 
 1.  Открыв свое решение в Microsoft Visual Studio, перейдите в меню **Файл** и выберите пункт **Добавить-&gt;Новый проект**.
 2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)** .
@@ -162,11 +162,11 @@ ms.locfileid: "67318402"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Реализация интерфейса IBasicVideoEffect путем аппаратной обработки
 
 
-Создание пользовательского видеоэффекта с помощью аппаратной (GPU) обработки выполняется практически так же, как с использованием программной обработки, описанной выше. В этом разделе показаны несколько отличий в эффекте, использующем аппаратную обработку. В этом примере используется API среды выполнения Windows Win2D. Подробную информацию об использовании Win2D см. в [документации по Win2D](https://go.microsoft.com/fwlink/?LinkId=519078).
+Создание пользовательского видеоэффекта с помощью аппаратной (GPU) обработки выполняется практически так же, как с использованием программной обработки, описанной выше. В этом разделе показаны несколько отличий в эффекте, использующем аппаратную обработку. В этом примере используется API среды выполнения Windows Win2D. Подробную информацию об использовании Win2D см. в [документации по Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
 Выполните следующие действия, чтобы добавить пакет Win2D NuGet в проект, созданный согласно описанию в разделе **Добавление пользовательского эффекта в приложение** в начале этой статьи.
 
-**Чтобы добавить пакет Win2D NuGet в проект эффект**
+**Добавление пакета NuGet Win2D в проект Effect**
 
 1.  В **обозревателе решений** щелкните правой кнопкой мыши по проекту **VideoEffectComponent** и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
@@ -222,7 +222,7 @@ ms.locfileid: "67318402"
 
 Выполнив инструкции из статьи [Удобный доступ к предварительному просмотру на камере](simple-camera-preview-access.md), можно настроить простой поток предварительного просмотра с камеры. Выполнение этих шагов позволит создать инициализированный объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), который используется для доступа к видеопотоку камеры.
 
-Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите метод [**AddVideoEffect**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) объекта **MediaCapture**, чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. **AddVideoEffect** возвращает объект [**IMediaExtension**](https://docs.microsoft.com/uwp/api/Windows.Media.IMediaExtension), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
+Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите методAddVideoEffect[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync), чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. **AddVideoEffect** возвращает объект [**IMediaExtension**](https://docs.microsoft.com/uwp/api/Windows.Media.IMediaExtension), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
 
 После добавления эффекта вызывается [**StartPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startpreviewasync) для запуска потока предварительного просмотра.
 
@@ -238,8 +238,8 @@ ms.locfileid: "67318402"
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## <a name="related-topics"></a>См. также
-* [Доступ к предварительной версии простой камеры](simple-camera-preview-access.md)
+## <a name="related-topics"></a>Статьи по теме
+* [Простой доступ к предварительной версии камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
-* [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Документация по Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Воспроизведение мультимедиа](media-playback.md)

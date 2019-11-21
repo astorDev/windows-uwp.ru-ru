@@ -11,18 +11,18 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: b3a112305489cc9cf5971dbc218080b52e4d30bd
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 796ee7ed1454515817f5fc994ccb9242d2a2918c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340634"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259869"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
 
 В этом разделе показано, как определять и реализовывать собственные свойства зависимостей для приложения среды выполнения Windows на C++, C# или Visual Basic. Перечислены причины, по которым разработчики приложений и авторы компонентов могут пожелать создавать пользовательские свойства зависимостей. Также описаны действия по реализации пользовательского свойства зависимостей и приведены некоторые рекомендации по повышению производительности, удобства или гибкости свойства зависимостей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Мы предполагаем, что вы ознакомились с разделом [Общая информация о свойствах зависимостей](dependency-properties-overview.md) и понимаете свойства зависимостей с точки зрения потребителя существующих свойств зависимостей. Чтобы читать примеры в этом разделе, необходимо также разбираться в языке XAML и знать, как написать простое приложение среды выполнения Windows на C++, C# или Visual Basic.
 
@@ -30,7 +30,7 @@ ms.locfileid: "71340634"
 
 Чтобы поддерживать стили, привязку данных, анимацию и значения по умолчанию для свойства, оно должно быть реализовано как свойство зависимостей. Значения свойства зависимостей не хранятся как поля класса, они хранятся в платформе XAML; для ссылки на них используется ключ, который получается при регистрации свойства в системе свойств среды выполнения Windows путем вызова метода [**DependencyProperty.Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register).   Свойства зависимостей могут использоваться только типами, производными от [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). Но **DependencyObject** находится довольно высоко в иерархии классов, так что большинство классов, предназначенных для поддержки пользовательского интерфейса и презентаций, могут поддерживать свойства зависимостей. Подробнее о свойствах зависимостей и некоторых терминов и правил их описания в этой документации см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
 
-Примеры свойств зависимостей в среда выполнения Windows: [**Control. Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background), [**FrameworkElement. Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)и [**TextBox. Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text), кроме многих других.
+Примерами свойств зависимостей в среде выполнения Windows помимо прочих являются [**Control.Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background), [**FrameworkElement.Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) и [**TextBox.Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text).
 
 В соответствии с соглашением, каждое свойство зависимостей, предоставляемое классом, имеет соответствующее свойство **public static readonly** типа [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty), которое предоставляется этим же классом и обеспечивает идентификатор для свойства зависимостей. Имя идентификатора формируется следующим образом: имя свойства зависимостей, со строкой «Property», добавленной к концу имени. Например, идентификатором **DependencyProperty**, соответствующим свойству **Control.Background**, является [**Control.BackgroundProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty). Идентификатор сохраняет информацию о свойстве зависимостей, как оно было зарегистрировано, после чего идентификатор можно использовать для других операций, в которые вовлечено свойство зависимостей, например для вызова [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue).
 
@@ -166,7 +166,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> Для кода C++/CX причина, по которой у вас есть закрытое поле и открытое свойство только для чтения, которое служит для указания [DependencyProperty](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) , так что другие вызывающие объекты, использующие свойство зависимостей, также могут использовать API-интерфейсы служебной программы, для которых требуется Идентификатор, который должен быть открытым. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) или [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) (по выбору), [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue), [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue), [**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) и [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
+> Для кода C++/CX причина, по которой у вас есть закрытое поле и открытое свойство только для чтения, которое служит для указания [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) , так что другие вызывающие объекты, использующие свойство зависимостей, также могут использовать API-интерфейсы служебной программы, требующие, чтобы идентификатор был открытым. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue) или [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) (по выбору), [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue), [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue), [**SetBinding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.setbinding) и [**Setter.Property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
 
 ## <a name="dependency-property-name-conventions"></a>Соглашения об именовании свойств зависимостей
 
@@ -441,7 +441,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 У свойств зависимостей типа коллекции есть свои дополнительные проблемы реализации, которые следует рассмотреть.
 
-Свойства зависимостей типа коллекции довольно редки в API среды выполнения Windows. В большинстве случаев коллекции можно использовать там, где элементы относятся к подклассу [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), но само свойство коллекции реализовано как свойство среды CLR или C++. Это вызвано тем, что коллекции не обязательно подходят некоторым типовым сценариям, включающим свойства зависимостей. Пример:
+Свойства зависимостей типа коллекции довольно редки в API среды выполнения Windows. В большинстве случаев коллекции можно использовать там, где элементы относятся к подклассу [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject), но само свойство коллекции реализовано как свойство среды CLR или C++. Это вызвано тем, что коллекции не обязательно подходят некоторым типовым сценариям, включающим свойства зависимостей. Например:
 
 - Мы обычно не анимируем коллекции.
 - Мы обычно не выполняем предварительного заполнения элемента в коллекции стилями или шаблоном.
@@ -472,12 +472,12 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>Регистрация свойств зависимостей в приложениях на C++/CX
 
-Чтобы реализовать регистрацию свойства в C++/CX, придется приложить больше усилий, чем в C#, так как имеется разделение на заголовочный файл и файл реализации, а также потому, что инициализацию в корневой области файла реализации выполнять не рекомендуется. (Расширения C++ визуальных компонентовC++(/CX) помещает статический код инициализатора из корневой области непосредственно в **DllMain**, тогда как C# компиляторы применяют статические инициализаторы к классам и, таким образом, устраняют проблемы с блокировкой нагрузки **DllMain** .). Лучше всего объявить вспомогательную функцию (для каждого класса), которая будет выполнять регистрацию всех свойств зависимостей для класса. Далее для каждого пользовательского класса, используемого в приложении, необходимо дать ссылку на вспомогательную функцию регистрации, которая предоставляется каждым требуемым пользовательским классом. Вызывайте каждую вспомогательную функцию регистрации один раз в [**конструкторе приложений**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) перед `InitializeComponent`. Этот конструктор выполняется только в случае, когда впервые возникает ссылка на приложение. При возобновлении работы приостановленного приложения этот конструктор не выполняется. Кроме того, как было показано в предыдущем примере регистрации для C++, важно выполнять проверку на **nullptr** каждого вызова [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) — это гарантия того, что на вызывающей стороне, обращающейся к функции, регистрация свойства не будет выполнена дважды. Без этой проверки повторная регистрация может вызвать аварийное завершение приложения, поскольку имя свойства будет дублироваться. Этот шаблон реализации можно посмотреть в [примере пользовательских и настраиваемых элементов управления XAML](https://go.microsoft.com/fwlink/p/?linkid=238581) (если нужен вариант этого примера для C++/CX).
+Чтобы реализовать регистрацию свойства в C++/CX, придется приложить больше усилий, чем в C#, так как имеется разделение на заголовочный файл и файл реализации, а также потому, что инициализацию в корневой области файла реализации выполнять не рекомендуется. (Расширения C++ визуальных компонентовC++(/CX) помещает статический код инициализатора из корневой области непосредственно в **DllMain**, тогда как C# компиляторы применяют статические инициализаторы к классам и, таким образом, устраняют проблемы с блокировкой нагрузки **DllMain** .). Лучше всего объявить вспомогательную функцию (для каждого класса), которая будет выполнять регистрацию всех свойств зависимостей для класса. Далее для каждого пользовательского класса, используемого в приложении, необходимо дать ссылку на вспомогательную функцию регистрации, которая предоставляется каждым требуемым пользовательским классом. Вызывайте каждую вспомогательную функцию регистрации один раз в [**конструкторе приложений**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) перед `InitializeComponent`. Этот конструктор выполняется только в случае, когда впервые возникает ссылка на приложение. При возобновлении работы приостановленного приложения этот конструктор не выполняется. Кроме того, как было показано в предыдущем примере регистрации для C++, важно выполнять проверку на **nullptr** каждого вызова [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register) — это гарантия того, что на вызывающей стороне, обращающейся к функции, регистрация свойства не будет выполнена дважды. Без этой проверки повторная регистрация может вызвать аварийное завершение приложения, поскольку имя свойства будет дублироваться. Этот шаблон реализации можно посмотреть в [примере пользовательских и настраиваемых элементов управления XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e) (если нужен вариант этого примера для C++/CX).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 - [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
 - [**DependencyProperty. Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
 - [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
-- [Пример пользовательских и настраиваемых элементов управления XAML](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [Пример пользовательских и настраиваемых элементов управления XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
  

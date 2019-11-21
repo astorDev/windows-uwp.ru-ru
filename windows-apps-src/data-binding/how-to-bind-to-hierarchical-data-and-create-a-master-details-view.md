@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8695a385dbc6d550a8002a5f64b7d777e95594e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360033"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255125"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Привязка к иерархическим данным и создание представления основных и подробных данных
 
 
 
-> **Примечание**  также см. в разделе [пример «основной/подробности»](https://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Примечание** .  также см. [образец "основной/подробности](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail)".
 
 Создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") можно с помощью привязки элементов управления к экземплярам [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), связанным друг с другом в цепочку. В этом разделе мы используем [расширение разметки {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) где возможно, и более гибкое (но менее производительное) [расширение разметки {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) там, где необходимо.
 
@@ -27,7 +27,7 @@ ms.locfileid: "66360033"
 
 ![основное/подробное представление спортивной иерархии](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Материал этого раздела предполагает, что вы умеете создавать простые приложения UWP. Инструкции по созданию первого приложения UWP см. в [статье о создании первого приложения UWP на C# или Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 

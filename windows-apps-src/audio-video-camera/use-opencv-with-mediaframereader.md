@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f4fd041eae30269e8b876c108151e4aae45d91
-ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
+ms.openlocfilehash: a6594898dff1bf5f2262034b10e262082335f1b2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811646"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255956"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
@@ -24,9 +24,9 @@ ms.locfileid: "72811646"
 
 * [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md) — в этой статье приводятся подробные сведения по использованию **MediaFrameReader** для получения кадров из одного или нескольких источников мультимедиа-кадров и подробно рассматривается большая часть кода примера в данной статье. В частности, в разделе **Обработка мультимедиа-кадров с помощью MediaFrameReader** содержится код для вспомогательного класса **FrameRenderer**, который обрабатывает представление мультимедиа-кадров в элементе XAML **Image**. В примере кода в этой статье также используется этот вспомогательный класс.
 
-* [Обработка точечных рисунков программного обеспечения с помощью opencv](process-software-bitmaps-with-opencv.md) . в этой статье рассматривается создание машинного кода среда выполнения Windows компоненте, **опенквбридже**, который помогает выполнять преобразование между объектом **софтваребитмап** , используемым **медиафрамереадер** и тип **материалов** , используемый библиотекой opencv. В примере кода в этой статье предполагается, что уже выполнены действия по добавлению компонента **OpenCVBridge** в решение приложения UWP.
+* [Обработка точечных рисунков программного обеспечения с помощью opencv](process-software-bitmaps-with-opencv.md) . в этой статье рассматривается создание машинного кода среда выполнения Windows компоненте, **опенквбридже**, который помогает выполнять преобразование между объектом **софтваребитмап** , используемым **медиафрамереадер**, и типом **материалов** , используемым библиотекой opencv. В примере кода в этой статье предполагается, что уже выполнены действия по добавлению компонента **OpenCVBridge** в решение приложения UWP.
 
-Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
+Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) в репозитории универсальных примеров Windows на GitHub.
 
 Чтобы быстро приступить к разработке, можно включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты могут не передать процесс цертфиЦикатион приложения при отправке приложения в магазин, поэтому рекомендуется скачать OpenCV исходный код библиотеки и самостоятельное создание двоичных файлов перед отправкой приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [https://opencv.org](https://opencv.org)
 
@@ -68,8 +68,8 @@ ms.locfileid: "72811646"
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Обработка кадров мультимедиа с помощью Медиафрамереадер](process-media-frames-with-mediaframereader.md)
 * [Обработка точечных рисунков программного обеспечения с помощью OpenCV](process-software-bitmaps-with-opencv.md)
-* [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Кадры камеры + пример OpenCV](https://go.microsoft.com/fwlink/?linkid=854003)
+* [Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [Кадры камеры + пример OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV)
  
 
  

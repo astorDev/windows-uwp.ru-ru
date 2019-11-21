@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, баннеры
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627249"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260338"
 ---
 # <a name="banner-ads"></a>Рекламные баннеры
 
@@ -22,14 +22,14 @@ ms.locfileid: "57627249"
 
 ## <a name="in-this-section"></a>В этом разделе
 
-|  Раздел    | Описание |               
+|  Статья    | Описание |               
 |----------|-------|
-| [AdControl в XAML и .NET](adcontrol-in-xaml-and--net.md)     | Добавление рекламного баннера в приложения XAML/.NET.        |
-| [AdControl в HTML 5 и Javascript](adcontrol-in-html-5-and-javascript.md)     | Добавьте рекламного баннера в приложения HTML5/JavaScript.        |
-| [Поддерживаемые баннер ad размеров](supported-ad-sizes-for-banner-ads.md)    |  Проверка поддерживаемых размеров рекламных баннеров в приложениях UWP.        |
+| [Адконтрол в XAML и .NET](adcontrol-in-xaml-and--net.md)     | Добавление рекламного баннера в приложения XAML/.NET.        |
+| [Адконтрол в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)     | Добавьте рекламного баннера в приложения HTML5/JavaScript.        |
+| [Поддерживаемые размеры рекламных объявлений](supported-ad-sizes-for-banner-ads.md)    |  Проверка поддерживаемых размеров рекламных баннеров в приложениях UWP.        |
 
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Примеры рекламы на GitHub](https://aka.ms/githubads)
-* [Настройка единиц измерения ad для приложения](set-up-ad-units-in-your-app.md)
+* [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Настройка единиц AD для приложения](set-up-ad-units-in-your-app.md)

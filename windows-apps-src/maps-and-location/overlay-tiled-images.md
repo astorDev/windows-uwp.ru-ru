@@ -6,18 +6,18 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, uwp, карта, расположение, изображения, наложение
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b4d439958e6cfbf0845aaf5bcd31644ff39432
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 501e28f88d07a85c1ded3ae880d1e679169ac36a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371685"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260376"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Наложение мозаичных изображений на карту
 
 Наложение сторонних или настраиваемых мозаичных изображений на карте с помощью источников мозаичных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
 
-**Совет**. Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) с сайта GitHub.
+**Совет**. Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) с сайта GitHub.
 
 <a id="tileintro" />
 
@@ -25,7 +25,7 @@ ms.locfileid: "66371685"
 
 Службы карт, например Карты Nokia и Карты Bing, нарезают карты на квадратные плитки для быстрого восстановления и отображения. Эти плитки имеют размер 256 пикселей на 256 пикселей и предварительно обрабатываются на нескольких уровнях детализации. Многие сторонние службы также предоставляют данные на основе карт, порезанные на плитки. Используйте источники плиточных данных для получения сторонних плиток или создания собственных пользовательских плиток и наложите их на карту, которая отображается в [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-**Важные**    при использовании источников плитки, не нужно писать код для запроса или для размещения отдельных плиток. [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) запрашивает плитки по мере необходимости. Каждый запрос задает координаты X и Y и масштаб для отдельной плитки. Можно просто задать формат универсального кода ресурса (URI) или имя файла, которые будут использоваться для получения плиток, в свойстве **UriFormatString**. То есть, вы вставляете заменяемые параметры в базовый универсальный код ресурса (URI) или имя файла, чтобы указать, где нужно передать координаты X и Y, а также масштаб для каждой плитки.
+**Важно** .   при использовании источников мозаики вам не нужно писать код для запроса или позиционирования отдельных плиток. [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) запрашивает плитки по мере необходимости. Каждый запрос задает координаты X и Y и масштаб для отдельной плитки. Можно просто задать формат универсального кода ресурса (URI) или имя файла, которые будут использоваться для получения плиток, в свойстве **UriFormatString**. То есть, вы вставляете заменяемые параметры в базовый универсальный код ресурса (URI) или имя файла, чтобы указать, где нужно передать координаты X и Y, а также масштаб для каждой плитки.
 
 Вот пример свойства [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) для [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource), в котором показаны заменяемые параметры для координат X и Y и масштаба.
 
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (Координаты X и Y обозначают размещение отдельной плитки на карте мира при заданном уровне детализации. Система нумерации плиток начинается с {0, 0} в верхнем левом углу карты. Например, плитка с координатами {1, 2} находится во втором столбце в третьей строке сетки плиток.)
 
-Дополнительные сведения о системе плиток, использующейся службами карт, см. в разделе [Система плиток Карт Bing](https://go.microsoft.com/fwlink/p/?LinkId=626692).
+Дополнительные сведения о системе плиток, использующейся службами карт, см. в разделе [Система плиток Карт Bing](https://docs.microsoft.com/bingmaps/articles/bing-maps-tile-system?redirectedfrom=MSDN).
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>Наложение плиток из источника плиточных данных
 
@@ -43,9 +43,9 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 1.  Создайте экземпляр одного из трех классов источника плиточных данных, производный от [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource).
 
-    -   [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
-    -   [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
-    -   [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
+    -   [**хттпмаптиледатасаурце**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
+    -   [**локалмаптиледатасаурце**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
+    -   [**кустоммаптиледатасаурце**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
 
     Настройте **UriFormatString** для запросов плиток путем вставки заменяемых параметров в базовый универсальный код ресурса (URI) или имя файла.
 
@@ -418,10 +418,10 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 -   Укажите [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** в качестве значения свойства [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) для [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource).
 -   Укажите [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** в качестве значения свойства [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) для [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Сборка видео 2015: использование карт и расположения на телефоне, планшете и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP для работы с трафиком](https://github.com/Microsoft/Windows-appsample-trafficapp)

@@ -1,23 +1,23 @@
 ---
 title: Поддержка сети в играх
-description: Узнайте, как разрабатывать и включать компоненты для работы в сети в игры DirectX.
+description: Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, работа по сети, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: bc39f2608ed4d1be52757ae9718d1bc40a9de387
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79a1640964902f1effc08196372128bd38bebe2d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367396"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258406"
 ---
 # <a name="networking-for-games"></a>Поддержка сети в играх
 
 
 
-Узнайте, как разрабатывать и включать компоненты для работы в сети в игры DirectX.
+Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 
 ## <a name="concepts-at-a-glance"></a>Краткий обзор основных понятий
 
@@ -38,17 +38,17 @@ ms.locfileid: "66367396"
 
 Сетевая изоляция является частью модели безопасности приложения, которая используется в Windows. Windows активно обнаруживает границы сети и применяет ограничения сетевого доступа для сетевой изоляции. Для определения уровня доступа к сетевым ресурсам приложения должны объявить возможности сетевой изоляции. В противном случае приложение не получит доступа к сетевым ресурсам. Подробнее о том, как Windows применяет сетевую изоляцию для приложений см. в разделе [Настройка возможностей сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)).
 
-## <a name="design-considerations"></a>Вопросы разработки
+## <a name="design-considerations"></a>Вопросы оформления
 
 
 В играх DirectX можно использовать разнообразные сетевые API. Поэтому важно выбрать именно тот, который подходит для ваших задач. Windows поддерживает широкий спектр сетевых API, с помощью которых приложение может взаимодействовать с другими компьютерами и устройствами либо через Интернет, либо через частные сети. Сначала нужно определить, какие сетевые компоненты требуются вашему приложению.
 
 Вот некоторые наиболее популярные сетевые API для игр.
 
--   TCP и сокеты — обеспечивает надежное подключение. Используйте протокол TCP для игровых операций, не требующих обеспечения безопасности. Протокол TCP обеспечивает простое масштабирование сервера, поэтому он обычно используется в играх на базе инфраструктурной модели (клиент-сервер или одноранговое интернет-подключение). TCP также можно использовать для игр с прямым (локальным одноранговым) подключением по Wi-Fi Direct и Bluetooth. Как правило, TCP используется для перемещения игровых объектов, взаимодействия с персонажами, поддержки текстового чата и других операций. [ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) класс предоставляет TCP-сокет, который может использоваться в играх Microsoft Store. Класс **StreamSocket** используется вместе со связанными классами в пространстве имен [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets).
+-   TCP и сокеты — обеспечивает надежное подключение. Используйте протокол TCP для игровых операций, не требующих обеспечения безопасности. Протокол TCP обеспечивает простое масштабирование сервера, поэтому он обычно используется в играх на базе инфраструктурной модели (клиент-сервер или одноранговое интернет-подключение). TCP также можно использовать для игр с прямым (локальным одноранговым) подключением по Wi-Fi Direct и Bluetooth. Как правило, TCP используется для перемещения игровых объектов, взаимодействия с персонажами, поддержки текстового чата и других операций. Класс [**стреамсоккет**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) предоставляет сокет TCP, который можно использовать в Microsoft Store играх. Класс **StreamSocket** используется вместе со связанными классами в пространстве имен [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets).
 -   TCP и сокеты с использованием SSL — обеспечивает надежное подключение, предотвращающее перехват. Используйте подключения TCP с SSL для игровых операций, для которых требуется безопасность. Шифрование и передача служебных данных SSL увеличивают задержку и снижают производительность, поэтому этот вариант используется, только если требуется безопасность. TCP с SSL, как правило, используется для входа в игру, покупки и продажи ресурсов, создания игровых персонажей и управления ими. Класс [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) предоставляет TCP-сокет с поддержкой SSL.
--   UDP и сокеты — обеспечивают ненадежную передачу данных по сети с небольшим объемом служебных данных. Протокол UDP используется для игровых операций, в которых требуется малая задержка и допустима небольшая потеря пакетов. Он часто применяется для игр с боевыми действиями, шутеров и лабиринтов, сетевого звукового воспроизведения и голосового чата. [ **DatagramSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) класс предоставляет UDP-сокет, который может использоваться в играх Microsoft Store. Класс **DatagramSocket** используется вместе со связанными классами в пространстве имен [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets).
--   HTTP-клиент — обеспечивает надежное подключение к HTTP-серверам. Наиболее распространенный сетевой сценарий — доступ к веб-сайту для извлечения или сохранения информации. Простым примером может быть игра, использующая веб-сайт для хранения данных о пользователях и результаты игры. В сочетании с SSL для обеспечения безопасности HTTP-клиент можно использовать для входа в игру, покупки и продажи ресурсов, создания игровых персонажей и управления ими. [ **HttpClient** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) класс предоставляет современные HTTP API клиента для использования в Microsoft Store игры. Класс **HttpClient** используется вместе со связанными классами в пространстве имен [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http).
+-   UDP и сокеты — обеспечивают ненадежную передачу данных по сети с небольшим объемом служебных данных. Протокол UDP используется для игровых операций, в которых требуется малая задержка и допустима небольшая потеря пакетов. Он часто применяется для игр с боевыми действиями, шутеров и лабиринтов, сетевого звукового воспроизведения и голосового чата. Класс [**датаграмсоккет**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) предоставляет сокет UDP, который можно использовать в Microsoft Store играх. Класс **DatagramSocket** используется вместе со связанными классами в пространстве имен [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets).
+-   HTTP-клиент — обеспечивает надежное подключение к HTTP-серверам. Наиболее распространенный сетевой сценарий — доступ к веб-сайту для извлечения или сохранения информации. Простым примером может быть игра, использующая веб-сайт для хранения данных о пользователях и результаты игры. В сочетании с SSL для обеспечения безопасности HTTP-клиент можно использовать для входа в игру, покупки и продажи ресурсов, создания игровых персонажей и управления ими. Класс [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) предоставляет современный API клиента HTTP для использования в Microsoft Store играх. Класс **HttpClient** используется вместе со связанными классами в пространстве имен [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http).
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>Обработка сетевых исключений в игре DirectX
 
@@ -121,7 +121,7 @@ ms.locfileid: "66367396"
 
 Ошибка, обнаруженная в операции [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket), [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) или [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener), может привести к вызову исключения. Причиной исключения является значение ошибки, представленное как значение **HRESULT**. Метод [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) преобразует сетевую ошибку, произошедшую в операции с сокетом, в значение перечисления [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus). Большинство значений перечисления **SocketErrorStatus** соответствуют ошибке, возвращаемой стандартной операцией с сокетами Windows. Приложение может фильтровать полученные данные по определенным значениям перечисления **SocketErrorStatus**, чтобы действовать в зависимости от причины исключения.
 
-Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для большинства ошибок проверки параметра **HRESULT** возвращаемый **E\_INVALIDARG**.
+Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**.
 
 Добавление кода для обработки исключений при попытке подключения через сокет потока
 
@@ -273,7 +273,7 @@ using namespace Windows::Networking::Sockets;
 
 В приложениях на C++ объект [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [**Platform::Exception::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [**Platform::Exception::Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
-Для большинства ошибок проверки параметра **HRESULT** возвращаемый **E\_INVALIDARG**. Для некоторых вызовов недопустимый метод **HRESULT** возвращаемый **E\_НЕДОПУСТИМЫЙ\_МЕТОД\_вызвать**.
+Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**. Для некоторых непредусмотренных вызовов методов возвращаемым значением **HRESULT** будет **E\_ILLEGAL\_METHOD\_CALL**.
 
 Добавление кода для обработки исключений при попытке использовать [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) для подключения к HTTP-серверу
 
@@ -365,30 +365,30 @@ using namespace Windows::Web::Http;
 
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 
 **Другие ресурсы**
 
-* [Подключение к сокету датаграмм](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
-* [Подключение к сетевому ресурсу с использованием сокета потока](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
+* [Соединение с сокетом датаграмм](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
+* [Подключение к сетевому ресурсу с помощью сокета потока](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
 * [Подключение к сетевым службам](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
-* [Подключение к веб-служб](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+* [Подключение к веб-службам](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 * [Основы работы в сети](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 * [Настройка возможностей сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
 * [Включение замыкания на себя и отладка сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
 
 **Reference**
 
-* [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)
+* [**датаграмсоккет**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)
 * [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
-* [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)
-* [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
-* [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+* [**стреамсоккет**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)
+* [**Windows:: Web:: http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
+* [**Windows:: сети:: сокеты**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
 
 **Примеры**
 
-* [Пример DatagramSocket](https://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [Пример Датаграмсоккет](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
 * [Пример HttpClient]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Пример с учетом расположения](https://go.microsoft.com/fwlink/p/?linkid=245082)
-* [Пример StreamSocket](https://go.microsoft.com/fwlink/p/?linkid=243037)
+* [Пример близости](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [StreamSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

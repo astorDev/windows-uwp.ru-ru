@@ -8,12 +8,12 @@ keywords: Кортана, полотно Кортаны, проектирова�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 49290d0e0ba96a5dce562ca4148b0ebf53bf0ff5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa9001492228cee7427c2b18f2692a6a33fbb16b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648169"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258022"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>Взаимодействие с Кортаной в приложениях UWP
 
@@ -29,14 +29,14 @@ ms.locfileid: "57648169"
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [**Версия 1.2 VCD элементы и атрибуты**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**Элементы и атрибуты VCD v 1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 **Проектировщикам**
 * [Рекомендации по проектированию голосовых функций](speech-interactions.md)
-* [Рекомендации по проектированию Cortana для голосовых команд](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [Рекомендации по проектированию кортаны для голосовых команд](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 
 **Примеры**
-* [Пример команды голосовой Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+* [Пример голоса для команды кортаны](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
  
 
  

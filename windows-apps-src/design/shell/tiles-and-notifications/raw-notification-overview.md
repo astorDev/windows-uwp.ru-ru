@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 350565d9eccb8b19cf276c800522e28c59c9b10f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361032"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259699"
 ---
 # <a name="raw-notification-overview"></a>Общие сведения о необработанных уведомлениях
 
@@ -55,7 +55,7 @@ ms.locfileid: "66361032"
 
 Необработанные уведомления создаются, чтобы побудить приложение совершить какое-либо действие, например связаться напрямую со службой для синхронизации большего количества данных или изменить локальное состояние на основе содержимого уведомления. Обратите внимание, что push-уведомления WNS доставляются не всегда, поэтому приложение и облачная служба должны учитывать вероятность того, что необработанное уведомление может не достичь клиента, например, когда клиент работает автономно.
 
-Дополнительные сведения об отправке Push-уведомлений, см. в разделе [краткое руководство: Отправка Push-уведомления](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)).
+Подробнее об отправке push-уведомлений см. в разделе [Краткое руководство: отправка push-уведомления](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)).
 
 ## <a name="receiving-a-raw-notification"></a>Получение необработанного уведомления
 
@@ -76,11 +76,11 @@ ms.locfileid: "66361032"
 
 Если ваше приложение не запущено и в нем не используются [фоновые задачи](#background-tasks-triggered-by-raw-notifications)), то любое необработанное уведомление, отправленное приложению, будет при получении удалено WNS. Во избежание затрат ресурсов облачной службы впустую вам необходимо реализовать логику службы, чтобы отслеживать активность приложения. Существуют два источника подобной информации: приложение может явно информировать службу о том, что оно готово принимать уведомления, или WNS может информировать службу о том, когда необходимо остановиться.
 
--   **Приложение уведомляет облачной службы**: Приложение может обратитесь к его службе, чтобы сообщить ей о том, что приложение выполняется на переднем плане. Недостатком данного способа является то, что приложение может начать связываться со службой очень часто. Тем не менее его преимущество заключается в том, что служба всегда будет знать, когда приложение готово получать входящие необработанные уведомления. Другим преимуществом является то, что при подключении приложения к своей службе она может отправлять необработанные уведомления непосредственно этому экземпляру приложения, а не рассылать их широко.
--   **Облачная служба реагирует на сообщения ответа WNS** : Можно использовать службу приложений [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) и [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) сведения, возвращаемые службой WNS для определения времени прекращения отправки необработанных уведомлений в приложение. Когда ваша служба отправляет уведомление по такому каналу, как HTTP POST, она может получить в качестве ответа одно из следующих сообщений:
+-   **Приложение информирует облачную службу**: приложение может связаться со своей службой, чтобы уведомить ее о работе на переднем плане. Недостатком данного способа является то, что приложение может начать связываться со службой очень часто. Тем не менее его преимущество заключается в том, что служба всегда будет знать, когда приложение готово получать входящие необработанные уведомления. Другим преимуществом является то, что при подключении приложения к своей службе она может отправлять необработанные уведомления непосредственно этому экземпляру приложения, а не рассылать их широко.
+-   **Ответы облачной службы на ответные сообщения WNS**: служба вашего приложения может использовать информацию [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) и [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)), возвращаемую WNS, чтобы определить, когда следует прекратить отправку необработанных сообщений приложению. Когда ваша служба отправляет уведомление по такому каналу, как HTTP POST, она может получить в качестве ответа одно из следующих сообщений:
 
-    -   **X-WNS-NotificationStatus: удалены**: Это означает, что уведомление не было получено клиентом. Разумно предположить, что ответ **пропущен** означает, что приложение на устройстве пользователя больше не выполняется на переднем плане.
-    -   **X-WNS-DeviceConnectionStatus: Отключено** или **X-WNS-DeviceConnectionStatus: tempconnected**: Это означает, что клиент Windows больше не имеет подключение к WNS. Обратите внимание, что для получения этого сообщения от WNS вам необходимо запросить его, установив заголовок [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) в HTTP POST уведомления.
+    -   **X-WNS-NotificationStatus: (пропущено)** : это означает, что уведомление не было получено клиентом. Разумно предположить, что ответ **пропущен** означает, что приложение на устройстве пользователя больше не выполняется на переднем плане.
+    -   **X-WNS-DeviceConnectionStatus: (отключено)** или **X-WNS-DeviceConnectionStatus: (временно подключено)** : это означает, что клиент Windows не имеет соединения с WNS. Обратите внимание, что для получения этого сообщения от WNS вам необходимо запросить его, установив заголовок [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) в HTTP POST уведомления.
 
     Облачная служба вашего приложения может использовать информацию этих сообщений о состоянии, чтобы прекратить попытки связи с помощью необработанных уведомлений. Служба может возобновить отправку необработанных уведомлений, как только приложение свяжется с ней после начала работы на переднем плане.
 
@@ -113,15 +113,15 @@ ms.locfileid: "66361032"
 ## <a name="other-resources"></a>Другие ресурсы
 
 
-Дополнительные сведения, загрузив [пример необработанных уведомлений](https://go.microsoft.com/fwlink/p/?linkid=241553) для Windows 8.1 и [Push-уведомлений и пример периодических уведомлений](https://go.microsoft.com/fwlink/p/?LinkId=231476) для Windows 8.1 и повторно использовать их исходный код в приложении Windows 10.
+Дополнительные сведения можно узнать, загрузив [Пример необработанных уведомлений](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d) для Windows 8.1, а также [Пример отправки и периодических уведомлений](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) для Windows 8.1 и повторного использования исходного кода в приложении Windows 10.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Рекомендации для уведомления raw](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
-* [Краткое руководство. Создание и регистрация в фоновом режиме необработанное уведомление](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
-* [Краткое руководство. Перехват Push-уведомлений для выполнения приложений](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
-* [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
-* [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
+* [Рекомендации по необработанным уведомлениям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [Краткое руководство. Создание и регистрация фоновой задачи необработанного уведомления](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [Краткое руководство. перехват push-уведомлений для запуска приложений](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
+* [**равнотификатион**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
+* [**Баккграундексекутионманажер. Рекуестакцессасинк**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  
 
  

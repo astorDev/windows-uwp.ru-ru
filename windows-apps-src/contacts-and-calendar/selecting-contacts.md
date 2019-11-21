@@ -6,12 +6,12 @@ keywords: контакты, выбор, выбор одного контакта
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 634b72032b37fe4a6bc4ea44a2e4fe27abede47d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361270"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255077"
 ---
 # <a name="select-contacts"></a>Выбор контактов
 
@@ -230,4 +230,4 @@ public class ContactItemAdapter
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
-Теперь вы имеете представление об использовании окна выбора контактов для получения контактных данных. Скачайте [Примеры универсальных приложений для Windows](https://go.microsoft.com/fwlink/p/?linkid=619979) из GitHub, чтобы ознакомиться с другими примерами использования контактов и окна выбора контактов.
+Теперь вы имеете представление об использовании окна выбора контактов для получения контактных данных. Скачайте [Примеры универсальных приложений для Windows](https://github.com/Microsoft/Windows-universal-samples) из GitHub, чтобы ознакомиться с другими примерами использования контактов и окна выбора контактов.

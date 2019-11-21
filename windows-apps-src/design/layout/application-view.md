@@ -5,18 +5,18 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc01894311badd9bb6e88f05c0f8b49c5824736b
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: 1a89596979f84c1ec4d698d14deacf8f852a7fbd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730532"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258195"
 ---
 # <a name="show-multiple-views-with-applicationview"></a>Отображение нескольких представлений с помощью Аппликатионвиев
 
 Помогите пользователям работать эффективнее, дав им возможность открывать независимые компоненты приложения в отдельных окнах. Если создать для приложения несколько окон, каждое окно будет работать независимо. На панели задач каждое окно отображается отдельно. Пользователи могут перемещать, отображать, скрывать окна приложения и менять их размеры независимо друг от друга, а также переключаться между окнами, как будто это разные приложения. Каждое окно работает в собственном потоке.
 
-> **Важные API**: [**Аппликатионвиевсвитчер**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [ **креатеневвиев**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **Важные API-интерфейсы**: [**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
 
 ## <a name="what-is-a-view"></a>Что такое представление приложения?
 
@@ -63,7 +63,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 2.  Отслеживайте [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) нового представления. Это понадобится для отображения представления позже.
 
-    Можно создать некоторую инфраструктуру в приложении, чтобы упростить отслеживание представлений, которые вы создаете. Пример: класс `ViewLifetimeControl` в разделе [Пример MultipleViews](https://go.microsoft.com/fwlink/p/?LinkId=620574).
+    Можно создать некоторую инфраструктуру в приложении, чтобы упростить отслеживание представлений, которые вы создаете. Пример: класс `ViewLifetimeControl` в разделе [Пример MultipleViews](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MultipleViews).
 
     ```csharp
     int newViewId = 0;
@@ -71,11 +71,11 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  В новом потоке заполните окно.
 
-    При помощи метода [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://go.microsoft.com/fwlink/p/?LinkId=389615), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
+    При помощи метода [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://msdn.microsoft.com/library/bb397687.aspx), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
 
-    В XAML [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) обычно добавляется к свойству [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)[**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window), а затем выполняется переход **Frame** к [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), где определено содержимое приложения. Дополнительные сведения о кадрах и страницах см. [в разделе одноранговая Навигация между двумя страницами](../basics/navigate-between-two-pages.md).
+    В XAML [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) обычно добавляется к свойству [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window)[**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content), а затем выполняется переход **Frame** к [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), где определено содержимое приложения. Дополнительные сведения о кадрах и страницах см. [в разделе одноранговая Навигация между двумя страницами](../basics/navigate-between-two-pages.md).
 
-    После заполнения нового [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) необходимо вызвать метод [**Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)&nbsp;**Window** для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
+    После заполнения нового [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) необходимо вызвать методActivate[ **&nbsp;** Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
 
     Наконец, скачайте [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) нового используемого представления для его отображения позже. Результаты также влияют на поток нового представления, поэтому [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) получает **Id** нового представления.
 
@@ -105,7 +105,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Первое представление, создаваемое при запуске приложения, называется *главным*. Это представление хранится в свойстве [**CoreApplication.MainView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.mainview), и его свойство [**IsMain**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain) имеет значение true. Вам не нужно создавать это представление, его создает приложение. Поток главного представления служит диспетчером для приложения, и события активации в приложении происходят в этом потоке.
 
-Если открыты вспомогательные представления, окно главного представления может быть скрыто, например, по нажатию кнопки закрытия (x) на панели заголовка окна, но его поток остается активным. Вызов [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) в [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) главного представления приведет к возникновению **InvalidOperationException**. (Используйте [**приложение. Exit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit) , чтобы закрыть приложение.) Если поток главного представления завершается, приложение закрывается.
+Если открыты вспомогательные представления, окно главного представления может быть скрыто, например, по нажатию кнопки закрытия (x) на панели заголовка окна, но его поток остается активным. Вызов [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) в [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) главного представления приведет к возникновению **InvalidOperationException**. (Чтобы закрыть приложение, используйте [**Application.Exit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit).) Если работа потока главного представления завершается, приложение закрывается.
 
 ## <a name="secondary-views"></a>Дополнительные представления
 
@@ -125,7 +125,7 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 Используя [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync), можно определить, следует ли закрыть начальное окно и удалить его из панели задач, указав значение [**ApplicationViewSwitchingOptions**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitchingOptions).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 - [Отображение нескольких представлений](show-multiple-views.md)
 - [Отображение нескольких представлений с помощью Аппвиндов](app-window.md)

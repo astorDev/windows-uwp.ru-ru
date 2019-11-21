@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e30140a60906cb350940cc5ebd87347878845986
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8a91052adf29e6628ad70c1c004fdbaabe671d62
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365886"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258668"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Код, генерируемый мастером push-уведомлений
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>Регистрация для push-уведомлений
 
 
-В push.register. \*, метод UploadChannel регистрирует устройство для получения Push-уведомлений. Магазин отслеживает установленные экземпляры вашего приложения и обеспечивает канал для push-уведомлений. См. [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+В Push. Register.\*метод Уплоадчаннел регистрирует устройство для получения push-уведомлений. Магазин отслеживает установленные экземпляры вашего приложения и обеспечивает канал для push-уведомлений. См. [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 Клиентский код напоминает серверные компоненты JavaScript и .NET. По умолчанию при добавлении push-уведомлений для службы серверного компонента JavaScript образец вызова notifyAllUsers пользовательского API вставляется в метод UploadChannel.
 
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>Серверные сценарии (только внутренний сервер JavaScript)
 
 
-Для мобильных служб, которые используют внутренний сервер JavaScript, серверные сценарии выполняются только при удалении, вставке, чтении или обновлении. Сценарии не осуществляют эти операции, но выполняются после того, как соответствующие события активируются вызовом API REST в Windows Mobile со стороны клиента. После этого сценарии передают управление самим операциям, вызывая request.execute или request.respond, чтобы обеспечить ответ на контекст вызова. См. [Справочник по REST API для мобильных служб Azure](https://go.microsoft.com/fwlink/p/?linkid=511139).
+Для мобильных служб, которые используют внутренний сервер JavaScript, серверные сценарии выполняются только при удалении, вставке, чтении или обновлении. Сценарии не осуществляют эти операции, но выполняются после того, как соответствующие события активируются вызовом API REST в Windows Mobile со стороны клиента. После этого сценарии передают управление самим операциям, вызывая request.execute или request.respond, чтобы обеспечить ответ на контекст вызова. См. [Справочник по REST API для мобильных служб Azure](https://msdn.microsoft.com/library/azure/jj710108.aspx).
 
-В серверных сценариях доступны разнообразные функции. См. раздел [Регистрация операций с таблицами в мобильных службах Azure](https://go.microsoft.com/fwlink/p/?linkid=511140). Информацию обо всех доступных функциях см. в [справочнике по серверным сценариям мобильных служб](https://go.microsoft.com/fwlink/p/?linkid=257676).
+В серверных сценариях доступны разнообразные функции. См. раздел [Регистрация операций с таблицами в мобильных службах Azure](https://msdn.microsoft.com/library/azure/dn167708.aspx). Информацию обо всех доступных функциях см. в [справочнике по серверным сценариям мобильных служб](https://msdn.microsoft.com/library/windowsazure/jj554226).
 
 Также создается следующий код пользовательского API в файле Notifyallusers.js:
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 Функция sendNotifications отправляет единичное уведомление в виде всплывающего уведомления. Можно также использовать другие типы push-уведомлений.
 
-**Совет**  сведения о получении справки во время редактирования скриптов, см. в разделе [включения IntelliSense для JavaScript на стороне сервера](https://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Совет**  дополнительные сведения о том, как получить справку при редактировании скриптов, см. в разделе [Включение IntelliSense для серверной части JavaScript](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
 
  
 
@@ -224,27 +224,27 @@ Push-уведомления следует использовать соглас
 
 В случае обновления живых плиток с помощью push-уведомлений рекомендуется также следовать указаниям в [руководстве и контрольном списке по плиткам и индикаторам событий](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>Использование служб push-уведомлений Windows (WNS)
 
 Службы push-уведомлений Windows (WNS) можно вызывать напрямую, если мобильные службы не обеспечивают достаточную гибкость, если вы хотите написать код для сервера на C# или Visual Basic либо если у вас уже есть облачная служба и вы хотите отправлять push-уведомления из нее. Вызывая WNS напрямую, можно отправлять push-уведомления из собственной облачной службы — например, из рабочей роли, которая контролирует данные, поступающие из базы данных или от другой веб-службы. Чтобы отправлять push-уведомления в приложения, ваша облачная служба должна пройти проверку подлинности WNS. См. раздел [Проверка подлинности с помощью службы push-уведомлений Windows (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) или [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10)).
 
-Можно также отправлять push-уведомления с помощью плановой задачи в мобильной службе. См. раздел [Планирование повторяющихся заданий в мобильных службах](https://go.microsoft.com/fwlink/p/?linkid=301694).
+Можно также отправлять push-уведомления с помощью плановой задачи в мобильной службе. См. раздел [Планирование повторяющихся заданий в мобильных службах](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/).
 
-**Предупреждение**  после завершения проверки мастер Push-уведомлений один раз, не запустите мастер повторно добавить код регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например это можно сделать, переместив код, созданный мастером в push.register. \* (включая вызов **CreatePushNotificationChannelForApplicationAsync**) за пределами OnLaunched событие, но особенности этого будет зависеть от архитектуры приложения.
+**Предупреждение**  после однократного запуска мастера push-уведомлений не запускайте мастер еще раз, чтобы добавить код регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например, это можно сделать, переместив созданный мастером код в Push. Register.\* (включая вызов **креатепушнотификатиончаннелфораппликатионасинк**) за пределами события onlaunchd, но особенности этого зависит от архитектуры приложения.
 
  
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 
 * [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Общие сведения о необработанных уведомлениях](raw-notification-overview.md)
-* [Подключение к Windows мобильных служб Azure (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [Подключение к Windows мобильных служб Azure (C#/C+ +/ VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [Краткое руководство. Добавление Push-уведомлений для мобильной службы (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [Подключение к мобильным службам Windows Azure (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [Подключение к мобильным службам WindowsC#AzureC++(//VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [Краткое руководство. Добавление push-уведомлений для мобильной службы (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

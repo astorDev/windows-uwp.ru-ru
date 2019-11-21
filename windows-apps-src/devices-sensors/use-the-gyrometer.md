@@ -6,22 +6,22 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369628"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259640"
 ---
 # <a name="use-the-gyrometer"></a>Использование гирометра
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**гирометр**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Гирометр**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-**Пример**
+**Следующий**
 
 -   Более полные сведения о внедрении см. в [примере с гирометром](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
 
@@ -29,9 +29,9 @@ ms.locfileid: "66369628"
 
 Гирометры используются как игровые контроллеры в дополнение к акселерометрам. Акселерометр измеряет линейное перемещение, тогда как гирометр измеряет угловую скорость или вращательное движение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
+Вы должны быть знакомы с XAML (XAML), Microsoft Visual C#и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать гирометр.
 
@@ -178,6 +178,6 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## <a name="related-topics"></a>См. также
+ ## <a name="related-topics"></a>Статьи по теме
 
-* [Пример Гирометр](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [Пример гирометр](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)

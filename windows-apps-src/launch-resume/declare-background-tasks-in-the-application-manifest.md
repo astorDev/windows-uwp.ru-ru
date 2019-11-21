@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 53fb8c0b213705a5a79680356bb4f1773594dcdc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052031"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260485"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 
@@ -37,7 +37,7 @@ ms.locfileid: "73052031"
 
 Откройте манифест приложения (Package.appxmanifest) и перейдите к элементу Application. Создайте элемент Extensions (если он еще не существует).
 
-Указанный ниже фрагмент кода взят из [примера фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
+Указанный ниже фрагмент кода взят из [примера фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask).
 
 ```xml
 <Application Id="App"

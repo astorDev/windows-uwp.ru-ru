@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322333"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260159"
 ---
 # <a name="move-from-ios-to-uwp"></a>Переход с iOS на UWP
 
@@ -24,14 +24,14 @@ ms.locfileid: "67322333"
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| Раздел | Описание |
+| Статья | Описание |
 |-------|-------------|
-| [Выбрав это решение для iOS и разработки приложений UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
-| [Начало работы с универсальной платформы Windows для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
-| [Настройка Mac с Windows 10](setting-up-your-mac-with-windows-10.md) | Использование компьютера Mac для разработки приложений для Windows. |
+| [Выбор подхода к разработке приложений для iOS и UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
+| [Приступая к работе с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
+| [Настройка компьютера Mac с помощью Windows 10](setting-up-your-mac-with-windows-10.md) | Использование компьютера Mac для разработки приложений для Windows. |
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 **Для дизайнеров и разработчиков**
-* [Создание приложений Windows универсальные для всех устройств Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Скачать материалы для разработки для приложений UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [Создание универсальных приложений для Windows для всех устройств Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [Загрузка ресурсов разработки для приложений UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)

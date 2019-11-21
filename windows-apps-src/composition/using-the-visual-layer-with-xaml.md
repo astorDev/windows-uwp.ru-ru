@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c11a812aaa62e9fa4d27fddc1d55739fe491bd20
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340843"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255662"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Использование визуального уровня с помощью XAML
 
@@ -47,10 +47,10 @@ ms.locfileid: "68340843"
 
 [**Елементкомпоситионпревиев**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) — это статический класс, предоставляющий функциональные возможности взаимодействия XAML и визуального слоя. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
 
--   [**Жетелементвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получить визуальный элемент "раздаточные материалы", используемый для визуализации этого элемента
--   [**Сетелементчилдвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Устанавливает визуальный элемент "рука" как последний дочерний элемент визуального дерева этого элемента. Этот объект Visual отрисовывается поверх остальных элементов. 
--   [**Жетелементчилдвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получение набора визуальных элементов с помощью **сетелементчилдвисуал**
--   [**Жетскроллвиеверманипулатионпропертисет**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получение объекта, который можно использовать для создания анимации 60fps на основе смещения прокрутки в **ScrollViewer**
+-   [**Жетелементвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): получение визуального элемента "раздаточные материалы", который используется для отрисовки этих элементов
+-   [**Сетелементчилдвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): задает визуальный элемент "руки" в качестве последнего дочернего элемента визуального дерева этого элемента. Этот объект Visual отрисовывается поверх остальных элементов. 
+-   [**Жетелементчилдвисуал**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): получение набора визуальных элементов с помощью **сетелементчилдвисуал**
+-   [**Жетскроллвиеверманипулатионпропертисет**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): получение объекта, который можно использовать для создания анимации 60fps на основе смещения прокрутки в **ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Примечания относительно ElementCompositionPreview.GetElementVisual
 
@@ -140,7 +140,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 }
 ```
 
-### <a name="drop-shadow"></a>Тень
+### <a name="drop-shadow"></a>Отбрасывание тени
 
 Добавление точной до пикселя тени для **UIElement**, например **Ellipse** с картинкой. Поскольку тень требует создания **SpriteVisual** приложением, необходимо создать "принимающий" элемент, который будет содержать **SpriteVisual** с помощью **ElementCompositionPreview.SetElementChildVisual**.
 
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-В следующих двух примерах представлены эквиваленты кода на [C++/WinRT](https://aka.ms/cppwinrt) и [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) предыдущего кода C#, в которых используется одинаковая структура XAML.
+В следующих двух примерах представлены эквиваленты кода на [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) и [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) предыдущего кода C#, в которых используется одинаковая структура XAML.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>

@@ -8,26 +8,26 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 982f787aaef05dabdc356af906e80b28085b5a2d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363385"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257886"
 ---
 # <a name="identify-input-devices"></a>Определение устройств ввода
 
 
 Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
 
-> **Важные API**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **Важные API-интерфейсы**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>Получение свойств мыши
 
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities), который используется для получения свойств одной подключенной мыши или нескольких. Просто создайте новый объект **MouseCapabilities** и получите необходимые вам свойства.
 
-**Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на все обнаруженные мыши: Логические свойства возвращают ненулевое значение, если хотя бы один мыши поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любой один мыши.
+**Обратите внимание** ,  значения, возвращаемые описанными здесь свойствами, основаны на всех обнаруженных курсорах: логические свойства возвращают ненулевое значение, если хотя бы одна мышь поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое одним щелчком мыши.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities), используемый для получения данных о том, подключены ли сенсорные дигитайзеры. Просто создайте новый объект **TouchCapabilities** и получите необходимые вам свойства.
 
-**Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на всех обнаруженных сенсорных дигитайзеров: Логические свойства возвращают ненулевое значение, если хотя бы один дигитайзера поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любой один дигитайзера.
+**Обратите внимание** ,  значения, возвращаемые описываемыми здесь свойствами, основаны на всех обнаруженных сенсорных дигитайзерах: логические свойства возвращают ненулевое значение, если хотя бы один дигитайзер поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое одним дигитайзером.
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice), используемый для получения данных о том, поддерживают ли какие-либо из обнаруженных устройств ввод указателем (устройство сенсорного ввода, сенсорная панель, мышь или перо). Просто создайте новый объект **PointerDevice** и получите необходимые вам свойства.
 
-**Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на всех устройствах, обнаруженных указателя: Логические свойства возвращают ненулевое значение, если хотя бы одно устройство поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любого устройства один указатель.
+**Обратите внимание** ,  значения, возвращаемые описываемыми здесь свойствами, основаны на всех обнаруженных устройствах-указателях: логические свойства возвращают ненулевое значение, если хотя бы одно устройство поддерживает определенную возможность, а числовые свойства возвращают максимальный размер, предоставляемый любым устройством с одним указателем.
 
 В следующем коде для отображения свойств и значений для каждого указателя используется таблица.
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **Примеры**
-* [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
 **Примеры из архива**
-* [Входные данные: Пример возможности устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: abce9127b44249c3f021858b68784de79a18b197
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 07d8e6c180f332e75852c6a6627004f0306e26d4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371135"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259846"
 ---
 # <a name="staticresource-markup-extension"></a>Расширение разметки {StaticResource}
 
@@ -28,9 +28,9 @@ ms.locfileid: "66371135"
 
 | Термин | Описание |
 |------|-------------|
-| ключ | Ключ для запрашиваемого ресурса. Изначально ключ назначается атрибутом [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). Ключом ресурса может быть любая строка, определенная в грамматике XamlName. |
+| key | Ключ для запрашиваемого ресурса. Изначально ключ назначается атрибутом [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). Ключом ресурса может быть любая строка, определенная в грамматике XamlName. |
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Замечания
 
 **StaticResource** — это метод получения для атрибута XAML значений, которые определены где-либо в словаре ресурсов XAML. Эти значения могут быть добавлены в словарь ресурсов, так как они предназначены для использования несколькими значениями свойств; либо потому, что словарь ресурсов XAML используется как упаковка языка XAML или как метод разложения на элементарные операции. Примером метода упаковки XAML является словарь тем для элемента управления. Другим примером являются объединенные словари ресурсов, применяемые для резервирования ресурсов.
 
@@ -38,7 +38,7 @@ ms.locfileid: "66371135"
 
 Правила, по которым **StaticResource** разрешается в элемент в словаре ресурсов, в этом разделе не описываются. Это зависит от наличия ссылки и ресурса в шаблоне, от применения объединенных словарей ресурсов и т. д. Дополнительные сведения о том, как определять ресурсы и правильно использовать [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary), включая образец кода, см. в разделе [Ссылки ResourceDictionary и XAML](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
-**Важные**    объект **StaticResource** не следует пытаться сделать прямую ссылку на ресурс, определенный лексически далее в файле XAML. Создание таких ссылок не поддерживается. Даже если опережающая ссылка не вызовет ошибку, ее создание приведет к снижению производительности. Для достижения наилучших результатов составляйте словари ресурсов так, чтобы обходиться без опережающих ссылок.
+**Важно** .   параметр **StaticResource** не должен пытаться выполнить прямую ссылку на ресурс, который ОПРЕДЕЛЕН лексически в файле XAML. Создание таких ссылок не поддерживается. Даже если опережающая ссылка не вызовет ошибку, ее создание приведет к снижению производительности. Для достижения наилучших результатов составляйте словари ресурсов так, чтобы обходиться без опережающих ссылок.
 
 Если задать в **StaticResource** ключ, который не удается разрешить, то во время выполнения создается исключение синтаксического анализа XAML. Средства разработки также могут выдавать предупреждения и ошибки.
 
@@ -46,11 +46,11 @@ ms.locfileid: "66371135"
 
 [Расширение разметки {ThemeResource}](themeresource-markup-extension.md) представляет собой аналогичное расширение разметки, которое ссылается на указанные ресурсы с другим расположением. Разница в том, что расширение разметки {ThemeResource} может возвращать различные ресурсы в зависимости от активной системной темы. Подробнее см. в разделе [Расширение разметки {ThemeResource}](themeresource-markup-extension.md).
 
-**StaticResource** является расширением разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Все расширения разметки в XAML используют "\{«и»\}" символов в синтаксисе их атрибутов, который является соглашением, по которому обработчик XAML узнает, что расширение разметки должно обработать атрибут.
+**StaticResource** является расширением разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Все расширения разметки в XAML используют символы "\{" и "\}" в синтаксисе атрибутов, что является соглашением, по которому обработчик XAML распознает, что расширение разметки должно обработать атрибут.
 
 ### <a name="an-example-staticresource-usage"></a>Пример использования {StaticResource}
 
-Этот образец XAML взят из [образца привязки данных XAML](https://go.microsoft.com/fwlink/p/?linkid=226854).
+Этот образец XAML взят из [образца привязки данных XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
 
 ```xml
 <StackPanel Margin="5">
@@ -75,14 +75,14 @@ ms.locfileid: "66371135"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>Поддержка средств разработки для расширения разметки **{StaticResource}**
 
-Microsoft Visual Studio 2013 можно включить возможные значения клавиш в раскрывающихся списках Microsoft IntelliSense при использовании **{StaticResource}** расширение разметки на странице XAML. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)) и уровне приложения ([**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources)), также отображаются [ресурсы темы XAML](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources) и ресурсы из всех расширений, используемых в проекте.
+Microsoft Visual Studio 2013 могут содержать возможные значения ключа в раскрывающихся списках Microsoft IntelliSense при использовании расширения разметки **{StaticResource}** на странице XAML. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources)) и уровне приложения ([**Application.Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resources)), также отображаются [ресурсы темы XAML](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources) и ресурсы из всех расширений, используемых в проекте.
 
 Если при использовании **{StaticResource}** обнаруживается ключ ресурса, функция **Перейти к определению** (F12) может разрешить ресурс и показать словарь, в котором он определен. Для ресурсов темы во время разработки эта функция ведет к файлу generic.xaml.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Ссылки на ресурсы ResourceDictionary и XAML](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
 * [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
-* [x: Key-атрибут](x-key-attribute.md)
-* [Расширение разметки {ThemeResource}](themeresource-markup-extension.md)
+* [Атрибут x:Key](x-key-attribute.md)
+* [Расширение разметки {Семересаурце}](themeresource-markup-extension.md)
 

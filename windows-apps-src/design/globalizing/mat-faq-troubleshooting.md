@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07e087dbb0cb2fcbd4dd1d098f84c49543f3a885
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648269"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258146"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
 
@@ -83,7 +83,7 @@ No XLIFF language files were found. The app will not contain any localized resou
 
 ## <a name="what-is-microsoft-translator"></a>Что такое Microsoft Translator?
 
-Microsoft Translator является облачной службой, обеспечивающей машинный перевод. Машинный перевод является идеальным решением, когда выполнение перевода человеком нецелесообразно. Подробнее см. в разделе [Переводчик Майкрософт](https://go.microsoft.com/fwlink/p/?LinkId=258220).
+Microsoft Translator является облачной службой, обеспечивающей машинный перевод. Машинный перевод является идеальным решением, когда выполнение перевода человеком нецелесообразно. Подробнее см. в разделе [Переводчик Майкрософт](https://www.microsofttranslator.com/).
 
 Набор средств использует службу Microsoft Translator для обеспечения разработчиков предложениями по переводу. Поддерживаемые Microsoft Translator языки можно увидеть при появлении значка Microsoft Translator в диалоговом окне "Языки перевода".
 
@@ -142,7 +142,7 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>Что делать, если у переводчика нет Windows 10 и/или Visual Studio и/или набора средств для многоязычных приложений?
 
-При выборе **выходные данные: Сообщение** в диалоговом окне экспорта ресурсы строковое сообщение электронной почты со ссылкой для загрузки и установки многоязыковых приложений Toolkit (MAT) 4.0. Ваш переводчик может установить автономное средство Многоязычный редактор для MAT 4.0 даже без Windows 10 и Visual Studio.
+При выборе параметра **Выходные данные: адресат** в диалоговом окне "Экспорт ресурсов строк" в электронное письмо добавляется ссылка на скачивание и установку набора средств для многоязычных приложений (MAT) версии 4.0. Ваш переводчик может установить автономное средство Многоязычный редактор для MAT 4.0 даже без Windows 10 и Visual Studio.
 
 Подробнее см. в разделе [Использование набора средств для многоязычных приложений версии 4.0](use-mat.md).
 
@@ -177,6 +177,6 @@ TPX-файл обеспечивал простой способ включени
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Использовать набор многоязычных инструментов 4.0](use-mat.md)
-* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
-* [Параметры командной строки MakePri.exe](../../app-resources/makepri-exe-command-options.md)
+* [Использование набора многоязычных приложений 4,0](use-mat.md)
+* [Microsoft Research](https://www.microsofttranslator.com/)
+* [Параметры командной строки передаваемые программе MakePRI. exe](../../app-resources/makepri-exe-command-options.md)

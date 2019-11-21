@@ -8,12 +8,12 @@ keywords: сенсорная панель, PTP, касание, указател
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4c3c5e2c3041aef3e2223e3bb45c1c3d3d37ad
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365268"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258222"
 ---
 # <a name="touchpad-design-guidelines"></a>Рекомендации по проектированию для сенсорной панели
 
@@ -55,11 +55,11 @@ ms.locfileid: "66365268"
 
 ![Параметры стандартной сенсорной панели](images/mouse-touchpad-settings-standard.png)
 
-<sup>Стандартный\\ сенсорной панели\\ параметры</sup>
+<sup>Параметры\\ сенсорной панели "Стандартный\\"</sup>
 
 ![Параметры высокоточной сенсорной панели Windows](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ точности\\ сенсорной панели\\ параметры</sup>
+<sup>Параметры\\ сенсорной панели\\ Windows\\</sup>
 
 Далее приведены некоторые примеры жестов, оптимизированных для сенсорной панели, которые можно использовать для выполнения общих задач.
 
@@ -155,15 +155,15 @@ ms.locfileid: "66365268"
 * [Работа с данными указателя](handle-pointer-input.md)
 * [Определение устройств ввода](identify-input-devices.md)
 **Примеры**
-* [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **Примеры из архива**
-* [Входные данные: Пример возможности устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Входные данные: Пример события ввода пользовательского XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML прокрутки, сдвига и масштабирования примера](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Входные данные: Жестов и манипуляций с ними GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Входные данные: пример событий пользовательского ввода XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Пример прокрутки XAML, панорамирования и масштабирования](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Входные данные: жесты и манипуляции с GestureRecognizer](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
  
 
 

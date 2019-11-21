@@ -4,31 +4,31 @@ title: Печать и сканирование
 description: В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, печать, 3dprinting трехмерной печати
+keywords: Windows 10, UWP, печать, 3dprinting, трехмерная печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 763fbc1c3cb7e969b2e932ded7cf32d7447a6e98
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7212f2e2b755d9b9cbefc3d47f3199139df45794
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369810"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258626"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
 
 В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
 
-| Раздел | Описание | 
+| Статья | Описание | 
 |-------|-------------|
 | [Печать из приложения](print-from-your-app.md) | Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы. |
-| [Настройка пользовательского интерфейса представления предпросмотра печатаемого](customize-the-print-preview-ui.md) | В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. |
-| [Настройка печати рабочего процесса](print-workflow-customize.md) | В этом разделе рассматривается, как создать собственные рабочие процессы печати, соответствующие потребностям вашей организации.  |
+| [Настройка пользовательского интерфейса предварительного просмотра](customize-the-print-preview-ui.md) | В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. |
+| [Настройка рабочего процесса печати](print-workflow-customize.md) | В этом разделе рассматривается, как создать собственные рабочие процессы печати, соответствующие потребностям вашей организации.  |
 | [Сканирование из приложения](scan-from-your-app.md) | Узнайте, как сканировать содержимое из приложения с помощью планшетного сканера, сканера с модулем подачи или автоматически настраиваемого источника сканирования.|
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Рекомендации по проектированию для печати](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [Видео с Build 2015: Разработка приложений, осуществляющие печать в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Сборка видео 2015: Разработка приложений, которые печатаются в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Пример печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
  
 

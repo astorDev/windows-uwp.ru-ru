@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: c8130c6a8e4d8441fdf8ff60c702bd1ae30bae6e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0b870bd59cb5b6c524cf85165fa182314b93c855
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372266"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259813"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 
@@ -21,7 +21,7 @@ ms.locfileid: "66372266"
 В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д. Метод [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) отправляет запрос поставщику сетевых удостоверений и получает маркер доступа, описывающий ресурсы поставщика, к которым имеет доступ приложение.
 
 >[!NOTE]
->Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
+>Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker).
 
  
 
@@ -87,7 +87,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->Помимо [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) пространство имен [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) включает метод [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods). Не вызывайте этот метод. Он предназначен для приложений, предназначенных только для Windows Phone 8.1 и является устаревшим, начиная с Windows 10.
+>Помимо [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) пространство имен [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) включает метод [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods). Не вызывайте этот метод. Она предназначена для приложений, предназначенных только для Windows Phone 8,1 и не является устаревшей начиная с Windows 10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Подключение с единым входом
 
@@ -136,30 +136,30 @@ catch (Exception ex)
 
 ### <a name="operational-logs"></a>Операционные журналы
 
-Нередко определить, что именно не работает, помогают операционные журналы. Канал выделенный журнал событий Microsoft-Windows-веб-аутентификация\\Operational, который позволяет разработчикам веб-сайта понять, которые обрабатываются как веб-страниц с веб-брокер проверки подлинности. Чтобы включить ее, eventvwr.exe запуска и включить Operational журнала в группе приложений и служб\\Microsoft\\Windows\\веб-аутентификация. Брокер веб-проверки подлинности также добавляет уникальную строку к строке агента пользователя, чтобы идентифицировать себя на веб-сервере. Это строка "MSAuthHost/1.0". Обратите внимание, что номер версии в дальнейшем может меняться, поэтому ваш код не должен зависеть от номера версии. Ниже приведен пример полной строки агента пользователя и полной процедуры отладки.
+Нередко определить, что именно не работает, помогают операционные журналы. Существует выделенный канал журнала событий Microsoft-Windows-\\, позволяющий разработчикам веб-сайтов понять, как веб-страницы обрабатываются брокером веб-проверки подлинности. Чтобы включить его, запустите eventvwr. exe и включите операционный журнал в приложении и службах\\Microsoft\\Windows\\веб auth. Брокер веб-проверки подлинности также добавляет уникальную строку к строке агента пользователя, чтобы идентифицировать себя на веб-сервере. Это строка "MSAuthHost/1.0". Обратите внимание, что номер версии в дальнейшем может меняться, поэтому ваш код не должен зависеть от номера версии. Ниже приведен пример полной строки агента пользователя и полной процедуры отладки.
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
 1.  Включите операционные журналы.
 2.  Запустите социальное приложение Contoso. ![Средство просмотра событий, отображающее операционные журналы WebAuth](images/wab-event-viewer-1.png)
 3.  Записи, созданные в журналах, помогают глубже вникнуть в особенности поведения брокера веб-проверки подлинности. В нашем случае записи могут содержать следующую информацию.
-    -   Начало навигации: Журналы при AuthHost запускается и содержит сведения об URL-адресах начала и завершения.
+    -   Навигация начата: регистрирует время запуска AuthHost и содержит сведения о URL-адресах начала и окончания навигации.
     -   ![Иллюстрация к сведениям о начале навигации](images/wab-event-viewer-2.png)
-    -   Полный навигации: Записывает в журнал завершения загрузки веб-страницы.
-    -   Мета-тег: Журналы при обнаружении мета тег, включая сведения.
-    -   Завершить навигации: Переход остановлен пользователем.
-    -   Ошибка навигации: AuthHost, возникает ошибка навигации по URL-АДРЕСУ, включая HttpStatusCode.
-    -   Окончание навигации: Обнаружено завершение URL-адрес.
+    -   Навигация выполнена: регистрирует выполнение загрузки веб-страницы.
+    -   Метатег: регистрирует подробную информацию в случае обнаружения метатега.
+    -   Завершение навигации: навигация завершена пользователем.
+    -   Ошибка навигации: AuthHost обнаруживает ошибку навигации в URL-адресе, включая код состояния HttpStatusCode.
+    -   Конец навигации: обнаружен завершающий URL-адрес.
 
 ### <a name="fiddler"></a>Fiddler
 
 Веб-отладчик Fiddler можно использовать с приложениями.
 
-1.  Поскольку AuthHost работает в собственном контейнере приложений, ей возможность частной сети необходимо задать раздел реестра: Редактор реестра Windows, версия 5.00
+1.  Поскольку AuthHost выполняется в собственном контейнере приложения, чтобы предоставить ему возможность частной сети, необходимо задать раздел реестра: редактор реестра Windows версии 5,00
 
-    **Открываемый раздел HKEY\_ЛОКАЛЬНОГО\_МАШИНЫ**\\**программного обеспечения**\\**Microsoft**\\**Windows NT** \\ **CurrentVersion**\\**изображения File Execution Options**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_локальный\_компьютер**\\**программное обеспечение**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Параметры выполнения файла изображения**\\**authhost. exe**\\**енаблеприватенетворк** = 00000001
 
-    Если у вас нет этого раздела реестра, можно создать его в командную строку с правами администратора.
+    Если этот раздел реестра отсутствует, его можно создать в командной строке с правами администратора.
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

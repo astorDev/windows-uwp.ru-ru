@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363705"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257975"
 ---
 # <a name="guidelines-for-cross-slide"></a>Руководство по скольжению по диагонали
 
@@ -20,20 +20,20 @@ ms.locfileid: "66363705"
 
 **Важные API**
 
--   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
--   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**кроссслидинг**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**кроссслидесрешолдс**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows. UI. input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Используйте скольжение по диагонали для поддержки выделения с помощью жеста прокрутки и перетаскивания (перемещения) с помощью жеста перетаскивания.
 
-## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации и запреты
+## <a name="span-iddos_and_don_tsspanspan-iddos_and_don_tsspanspan-iddos_and_don_tsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>DOS и нечего
 
 
 -   Используйте скольжение по диагонали для списков и коллекций, которые прокручиваются в одном направлении.
 -   Используйте скольжение по диагонали для выбора элементов, когда взаимодействие в форме касания используется для другой цели.
 -   Не используйте скольжение по диагонали для добавления элементов в очередь.
 
-## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительные инструкции по использованию
+## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительное руководство по использованию
 
 
 Выделение и перетаскивание возможны только в области содержимого, поддерживающей сдвиг в одном направлении (по вертикали или по горизонтали). Чтобы эти операции работали, необходимо заблокировать одно из направлений сдвига и выполнять жест в направлении, перпендикулярном направлению сдвига.
@@ -56,7 +56,7 @@ ms.locfileid: "66363705"
 
 Используйте скольжение по диагонали для списков и коллекций, которые прокручиваются в одном направлении. Подробнее: [Добавление элементов управления ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Примечание**  в случаях, где может быть панорамировании окна области содержимого в двух направлениях, таких как веб-браузерами или e читателей, нажатие и удерживание синхронизированного взаимодействия следует использовать для вызова контекстного меню для объектов, таких как изображения и гиперссылки.
+**Обратите внимание** ,  в случаях, когда область содержимого может быть сдвигаемых в двух направлениях, например в веб-браузерах или средствах чтения электронной почты, для вызова контекстного меню для таких объектов, как изображения и гиперссылки, следует использовать время ожидания нажатия и удерживания.
 
  
 
@@ -97,7 +97,7 @@ ms.locfileid: "66363705"
 
 В приложениях, где основным действием является выбор элемента, реализуйте его одиночным касанием. Самостоятельно проявляющаяся анимация при скольжении по диагонали отображается, чтобы отличить эту функциональную возможность от стандартного взаимодействия в форме касания для активации и навигации.
 
-**Подборка**
+**Корзина выбора**
 
 Средство выбора — это визуально отчетливое, динамичное представление элементов, выбранных в основном списке или коллекции в приложении. Этот компонент удобно использовать для отслеживания выбранных элементов, его следует применять в приложениях, где:
 
@@ -123,29 +123,29 @@ ms.locfileid: "66363705"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Перетащите**
+**Переместить**
 
 Для перемещения одного или нескольких объектов используйте перетаскивание.
 
 Если нужно переместить несколько объектов, пользователь выбирает несколько элементов, а затем перетаскивает их за один раз.
 
-## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Связанные статьи
+## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>Связанные статьи
 
 
 **Примеры**
-* [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **Примеры из архива**
-* [Входные данные: Пример события ввода пользовательского XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Входные данные: Пример возможности устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Входные данные: Пример проверки попадания сенсорного ввода](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML прокрутки, сдвига и масштабирования примера](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Входные данные: Пример упрощенного рукописного ввода](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Входные данные: Пример жесты Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Входные данные: Манипуляции и образец жестов (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Пример входной привязки для сенсорного ввода DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Входные данные: пример событий пользовательского ввода XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Входные данные: пример проверки нажатия касания](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Пример прокрутки XAML, панорамирования и масштабирования](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Входные данные: Пример упрощенного рукописного ввода](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Входные данные: пример использования жестов Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Входные данные: пример манипуляций иC++жестов ()](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Пример входных данных DirectX Touch](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5b87590736c4875214819f5c60a05edd47b1476
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339514"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257794"
 ---
 # <a name="accessible-text-requirements"></a>Требования к специальным возможностям отображения текста  
 
@@ -28,7 +28,7 @@ ms.locfileid: "71339514"
 ## <a name="contrast-ratios"></a>Коэффициенты контрастности  
 Хотя у пользователей всегда есть возможность переключиться в режим высокой контрастности, с точки зрения дизайна текста в вашем приложении её стоит рассматривать как крайний шаг. Имеет смысл удостовериться, что текст вашего приложения соответствует рекомендациям по уровню контрастности между текстом и фоном. Оценка уровня контрастности основана на детерминированных методах, которые не учитывают оттенок цвета. Например, если у вас имеется красный текст на зеленом фоне, то этот текст может оказаться нечитабельным для людей, страдающих дальтонизмом. Проверка и исправление коэффициента контрастности поможет избежать подобных проблем.
 
-Рекомендации по сравнению с текстом, описанным здесь, основаны на стандарте Web Accessibility, [G18: Обеспечение степени контрастности не менее 4.5:1 между текстом (и изображениями текста) и фоном текста @ no__t-0. Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG 2.0*.
+За основу приведенных здесь рекомендаций по контрастности текста взяты стандарты специальных возможностей в Интернете [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/TR/WCAG20-TECHS/G18.html). Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG 2.0*.
 
 Чтобы видимый текст соответствовал требованиям специальных возможностей, коэффициент его контрастности должен составлять не менее 4,5:1 по отношению к фону. В число исключений входят логотипы и несущественный текст, например текст, являющийся частью неактивного компонента пользовательского интерфейса.
 
@@ -70,7 +70,7 @@ ms.locfileid: "71339514"
 * смогут переместить фокус экранного диктора на список;
 * смогут переходить по вариантам с помощью всех других режимов чтения.
 
-![Suggestion List @ no__t-1<br/>
+![список предложений](images/autosuggest-list.png)<br/>
 _Пример списка предложений_
 
 <span id="Implementing_auto-suggest"/>
@@ -85,13 +85,13 @@ _Пример списка предложений_
 **Выбор по умолчанию**  
 Если в списке есть элемент, выбранный по умолчанию, экранный диктор ждет событие [**UIA_SelectionItem_ElementSelectedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) в классическом приложении или событие [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) в приложении UWP. Каждый раз, когда меняется выбранный элемент, пользователь вводит другую букву, варианты обновляются или пользователь переходит по списку, срабатывает событие **ElementSelected**.
 
-![List с выбором по умолчанию @ no__t-1<br/>
+![списка с выбором по умолчанию](images/autosuggest-default-selection.png)<br/>
 _Пример выбора по умолчанию_
 
 **Нет выбора по умолчанию**  
 Если элемент по умолчанию не выбран, как в поле расположения приложения "Погода", экранный диктор ждет событие [**UIA_LayoutInvalidatedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) или [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) для UWP, которое инициируется при каждом обновлении списка.
 
-![List без выбора по умолчанию @ no__t-1<br/>
+![списка без выбора по умолчанию](images/autosuggest-no-default-selection.png)<br/>
 _Пример, в котором нет выбора по умолчанию_
 
 ### <a name="xaml-implementation"></a>Реализация XAML  
@@ -169,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-Значение **текстскалефактор** является двойным в диапазоне \[1, 2,25 @ no__t-2. Самый маленький текст масштабируется по этому значению. С помощью этого значения можно, например, масштабировать графику в соответствии с текстом. Однако помните, что не весь текст масштабируется с одинаковым коэффициентом. В целом чем больше текст, тем меньше он подвергается масштабированию.
+Значение **текстскалефактор** является типом Double в диапазоне \[1, 2,25\]. Самый маленький текст масштабируется по этому значению. С помощью этого значения можно, например, масштабировать графику в соответствии с текстом. Однако помните, что не весь текст масштабируется с одинаковым коэффициентом. В целом чем больше текст, тем меньше он подвергается масштабированию.
 
 Данные типы имеют свойство **IsTextScaleFactorEnabled**:  
 * [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
@@ -181,11 +181,11 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>См. также  
+## <a name="related-topics"></a>Статьи по теме  
 
 * [Масштабирование текста](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Специальные возможности](accessibility.md)
 * [Основные сведения о специальных возможностях](basic-accessibility-information.md)
-* [Пример вывода текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238579)
-* [Пример редактирования текста XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
-* [Пример специальных возможностей XAML](https://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [Пример вывода текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+* [Пример редактирования текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+* [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 

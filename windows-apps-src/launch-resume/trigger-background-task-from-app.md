@@ -3,20 +3,20 @@ title: Запуск фоновой задачи в приложении
 description: Описывается, как запустить фоновую задачу из приложения
 ms.date: 07/06/2018
 ms.topic: article
-keywords: триггер фоновой задачи, фоновой задачи
+keywords: Триггер фоновой задачи, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d8917c6ed181607459d6126aa295d270cfea838
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371892"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259406"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
 Узнайте, как использовать [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) для активации фоновой задачи в приложении.
 
-Пример того, как создать триггер приложения, см. в этом [пример](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
+Пример создания триггера приложения см. в этом [примере](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
 
 В этом разделе предполагается, что есть фоновая задача, которая требуется активировать из вашего приложения. Если у вас еще нет в фоновом режиме, это пример фоновой задачи в [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs). Или выполните действия, описанные в [Создание и регистрация out-of-process фоновую задачу](create-and-register-a-background-task.md) создать ее.
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 Можно создать условие фоновой задачи, чтобы контролировать время запуска задачи. Условие запрещает фоновую задачу, пока не будет выполнено. См. также: [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
 
-В этом примере условие имеет значение **InternetAvailable** таким образом, чтобы после запуска, задание выполняется только после подключения к Интернету. Список возможных условий см. в статье [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+В этом примере условие имеет значение **интернетаваилабле** , поэтому после запуска задача выполняется только после того, как доступ к Интернету будет доступен. Список возможных условий см. в статье [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -134,28 +134,28 @@ var result = await _AppTrigger.RequestAsync();
 
 Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. В разделе [оптимизировать фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о том, как пользователи могут управлять параметрами для фоновой активности.  
 
-- Память: Настройка использования памяти и энергии приложения крайне важно убедиться, что операционная система позволит запускать задание фона. Используйте [API-интерфейсы управления памятью](https://docs.microsoft.com/uwp/api/windows.system.memorymanager), чтобы узнать, сколько памяти потребляет ваше фоновое задание. Чем больше памяти потребляет ваше фоновое задание, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
-- Время ЦП: Фоновые задачи ограничены объемом физическое время использования им получить зависимости от типа триггера. Фоновые задачи, инициируемые триггер приложения ограничены около 10 минут.
+- Память: Настройка использования памяти и энергию ваше приложение является ключом к гарантируя, что операционная система будет разрешать запуск фоновой задачи. Используйте [API-интерфейсы управления памятью](https://docs.microsoft.com/uwp/api/windows.system.memorymanager), чтобы узнать, сколько памяти потребляет ваше фоновое задание. Чем больше памяти потребляет ваше фоновое задание, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
+- Время ЦП: Фоновые задачи ограничены физическим временем использования, которое они получают в зависимости от типа триггера. Фоновые задачи, инициируемые триггер приложения ограничены около 10 минут.
 
 Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Замечания
 
-Начиная с Windows 10, он больше не необходимости добавить в приложение на экран блокировки, чтобы использовать фоновые задачи.
+Начиная с Windows 10, пользователю больше не нужно добавлять приложение на экран блокировки, чтобы использовать фоновые задачи.
 
 Фоновая задача будет запускаться только с помощью **ApplicationTrigger**, если сначала вызвано [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Пример кода для задач фона](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [Пример кода фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Освобождение памяти при переключении приложения в фоновый режим](reduce-memory-usage.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Как активировать события приостановки, возобновления и фоновых событий в приложениях UWP (при отладке)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Задержка приостановки приложения с помощью расширенного сеанса выполнения](run-minimized-with-extended-execution.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)

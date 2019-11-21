@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: d23d33eb98f5ed01cf48eebd63a46aba2f923c65
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339824"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257113"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
 
 
-сведения о @no__t 0Some относятся к предварительно выпущенному продукту, который может быть значительно изменен перед коммерческой выпуском. Корпорация Майкрософт не предоставляет никаких гарантий, явных или подразумеваемых, относительно предоставленной здесь информации. \]
+\[некоторые сведения относятся к предварительно выпущенному продукту, который может быть значительно изменен перед коммерческой выпуском. Корпорация Майкрософт не предоставляет никаких гарантий, явных или подразумеваемых, относительно предоставленной здесь информации.\]
 
 В этом разделе объясняется, как использовать [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) для обнаружения лиц на изображении. Инструмент [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров.
 
 Сведения об альтернативном методе отслеживания лиц с помощью [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect) см. в разделе [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md).
 
-В этой статье используется код, адаптированный из примеров [Базовое обнаружение лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) и [Базовое отслеживание лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Вы можете скачать эти примеры, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
+В этой статье используется код, адаптированный из примеров [Базовое обнаружение лиц](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection) и [Базовое отслеживание лиц](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking). Вы можете скачать эти примеры, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
 
 ## <a name="detect-faces-in-a-single-image"></a>Обнаружение лиц на одном изображении
 
@@ -95,11 +95,11 @@ ms.locfileid: "71339824"
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Анализ сцены для записи мультимедиа](scene-analysis-for-media-capture.md)
-* [Образец "базовый обнаружение лиц"](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Пример отслеживания основных лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Образец "базовый обнаружение лиц"](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
+* [Пример отслеживания основных лиц](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)

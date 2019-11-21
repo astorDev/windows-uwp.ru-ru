@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e1f285f53f2f4c9f160b573141666609560c00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 05a646979977bca5c19be2efe3f8bec12994cb19
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633659"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259623"
 ---
 # <a name="enterprise-shared-storage"></a>Общее корпоративное хранилище
 
-Общее хранилище состоит из двух местоположений, в которых приложения с ограниченной возможностью **enterpriseDeviceLockdown** и корпоративный сертификат имеют полный доступ на чтение и запись. Обратите внимание, что возможность **enterpriseDeviceLockdown** позволяет приложениям использовать API блокировки устройства и предоставляет им доступ к корпоративным папкам общего хранилища. Дополнительные сведения об интерфейсе API можно получить, ознакомившись с информацией о пространстве имен [**Windows.Embedded.DeviceLockdown**](https://go.microsoft.com/fwlink/?LinkId=699331).  
+Общее хранилище состоит из двух местоположений, в которых приложения с ограниченной возможностью **enterpriseDeviceLockdown** и корпоративный сертификат имеют полный доступ на чтение и запись. Обратите внимание, что возможность **enterpriseDeviceLockdown** позволяет приложениям использовать API блокировки устройства и предоставляет им доступ к корпоративным папкам общего хранилища. Дополнительные сведения об интерфейсе API можно получить, ознакомившись с информацией о пространстве имен [**Windows.Embedded.DeviceLockdown**](https://docs.microsoft.com/uwp/api/Windows.Embedded.DeviceLockdown?redirectedfrom=MSDN).  
 
 Эти местоположения заданы на локальном диске:
 - \Data\SharedData\Enterprise\Persistent
@@ -27,7 +27,7 @@ ms.locfileid: "57633659"
 
 - Вы можете предоставить общий доступ к данным в рамках экземпляра приложения, между экземплярами одного приложения или даже между несколькими приложениями, если у них есть соответствующие возможности и сертификат.
 - Вы можете сохранить данные на локальном жестком диске в папке \Data\SharedData\Enterprise\Persistent, которые сохранятся даже после перезагрузки устройства.
-- Управление файлами, включая чтение, запись и удаление файлов на устройстве через службу управления мобильными устройствами (MDM). Дополнительные сведения о том, как использовать общее корпоративное хранилище через службу MDM см. в разделе [EnterpriseExtFileSystem CSP](https://go.microsoft.com/fwlink/?LinkId=699333).
+- Управление файлами, включая чтение, запись и удаление файлов на устройстве через службу управления мобильными устройствами (MDM). Дополнительные сведения о том, как использовать общее корпоративное хранилище через службу MDM см. в разделе [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp?redirectedfrom=MSDN).
 
 ## <a name="access-enterprise-shared-storage"></a>Доступ к общему корпоративному хранилищу
 

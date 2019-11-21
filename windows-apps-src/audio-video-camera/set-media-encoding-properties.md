@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 044d759d2e62dedf9660f2536eca9064dbf8315b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 031f3f8f5b15f839348c05c1fd26b7711856d659
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361403"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256245"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
@@ -21,7 +21,7 @@ ms.locfileid: "66361403"
 
 Профили камеры предлагают более современный способ обнаружения и задания свойств потока камеры, но они поддерживаются не на всех устройствах. Дополнительные сведения см. в разделе [Профили камеры](camera-profiles.md).
 
-В этой статье используется код, адаптированный из [примера CameraResolution](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
+В этой статье используется код, адаптированный из [примера CameraResolution](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraResolution). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
 
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
@@ -30,7 +30,7 @@ ms.locfileid: "66361403"
 
 Если создать простой вспомогательный класс, включающий функции интерфейса [**IMediaEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties), будет удобнее выбирать набор свойств кодирования, которые отвечают конкретным критериям. Этот вспомогательный класс особенно полезен для следующего поведения свойств кодирования.
 
-**Предупреждение**    [ **VideoDeviceController.GetAvailableMediaStreamProperties** ](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.getavailablemediastreamproperties) метод принимает членом [ **MediaStreamType**  ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) перечисления, таких как **VideoRecord** или **Photo**и возвращает список либо [ **ImageEncodingProperties** ](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) или [ **VideoEncodingProperties** ](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) объекты, которые передают параметры кодировки, например разрешения записанного фото или видео потока. Результаты вызова **GetAvailableMediaStreamProperties** могут включать **ImageEncodingProperties** или **VideoEncodingProperties**, независимо от того, какое указано значение **MediaStreamType**. По этой причине необходимо всегда проверять тип каждого возвращенного значения и приводить его к соответствующему типу, прежде чем пытаться получить доступ к какому-либо значению свойства.
+**Предупреждение**   метод [**видеодевицеконтроллер. жетаваилаблемедиастреампропертиес**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.getavailablemediastreamproperties) принимает член перечисления [**Медиастреамтипе**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) , например **видеорекорд** или **Photo**, и возвращает список объектов [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) или [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) , которые передают параметры кодирования потока, такие как разрешение захваченной фотографии или видео. Результаты вызова **GetAvailableMediaStreamProperties** могут включать **ImageEncodingProperties** или **VideoEncodingProperties**, независимо от того, какое указано значение **MediaStreamType**. По этой причине необходимо всегда проверять тип каждого возвращенного значения и приводить его к соответствующему типу, прежде чем пытаться получить доступ к какому-либо значению свойства.
 
 Вспомогательный класс, определенный ниже, выполняет проверку и приведение типа для параметра [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) или [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties), чтобы коду приложения не нужно было различать два типа. В дополнение к этому, вспомогательный класс представляет свойства для пропорций свойств, частоты кадров (только для свойств кодирования видео) и понятного имени, что упрощает отображение свойств кодирования в пользовательском интерфейсе приложения.
 
@@ -74,7 +74,7 @@ ms.locfileid: "66361403"
 
 -   Выберите разрешение предварительного просмотра, наиболее близкое к размеру [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement), чтобы через конвейер потока предварительного просмотра проходило столько пикселов, сколько нужно, но не более того.
 
-**Важные**    это возможно, на некоторых устройствах, чтобы другие пропорции для камеры поток предварительного просмотра и записи потока. Обрезка кадра в результате такого несоответствия может привести к наличию в записи мультимедиа содержимого, которого не было видно в режиме предварительного просмотра, что может вызвать недовольство пользователей. Настоятельно рекомендуется использовать одинаковые пропорции (с небольшим диапазоном допуска) для потоков предварительного просмотра и захвата. Можно иметь совершенно различные разрешения, доступные для захвата и предварительного просмотра, пока их пропорции максимально соответствуют друг другу.
+**Важно**   на некоторых устройствах можно задать различные пропорции для потока предварительной версии камеры и потока записи. Обрезка кадра в результате такого несоответствия может привести к наличию в записи мультимедиа содержимого, которого не было видно в режиме предварительного просмотра, что может вызвать недовольство пользователей. Настоятельно рекомендуется использовать одинаковые пропорции (с небольшим диапазоном допуска) для потоков предварительного просмотра и захвата. Можно иметь совершенно различные разрешения, доступные для захвата и предварительного просмотра, пока их пропорции максимально соответствуют друг другу.
 
 
 Чтобы обеспечить соответствие потоков фото- и видеозахвата пропорциям потока предварительного просмотра, в этом примере вызывается [**VideoDeviceController.GetMediaStreamProperties**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) и передается значение перечисления **VideoPreview** для запроса текущих свойств потока предварительного просмотра. Затем определяется небольшой диапазон допуска для пропорций, чтобы можно было включать пропорции, которые не совпадают с потоком предварительного просмотра полностью, но которые близки к этому. Далее метод расширения Linq используется для выбора только тех объектов **StreamPropertiesHelper**, пропорции которых входят в указанный диапазон допуска потока предварительного просмотра.

@@ -1,5 +1,5 @@
 ---
-Description: Если вы хотите, чтобы ваше приложение поддерживало разные языки интерфейса, а в вашем коде или разметке XAML либо манифесте пакета приложения есть строковые литералы, переместите эти строки из кода или разметки в файл ресурсов (.resw). Затем можно создать переведенную копию этого файла ресурсов для каждого языка, поддерживаемого вашим приложением.
+Description: Если вы хотите, чтобы ваше приложение поддерживало разные языки интерфейса, а в вашем коде или разметке XAML либо манифесте пакета приложения есть строковые литералы, переместите эти строки из кода или разметки в файл ресурсов (RESW-файл). Затем можно создать переведенную копию этого файла ресурсов для каждого языка, поддерживаемого вашим приложением.
 title: Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -8,34 +8,34 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: c40e909f0f6411be054a5e534325d801656002c5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270087"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254705"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
 
-Если вы хотите, чтобы ваше приложение поддерживало разные языки интерфейса, а в вашем коде или разметке XAML либо манифесте пакета приложения есть строковые литералы, переместите эти строки из кода или разметки в файл ресурсов (.resw). Затем можно создать переведенную копию этого файла ресурсов для каждого языка, поддерживаемого вашим приложением.
+Если вы хотите, чтобы ваше приложение поддерживало разные языки интерфейса, а в вашем коде или разметке XAML либо манифесте пакета приложения есть строковые литералы, переместите эти строки из кода или разметки в файл ресурсов (RESW-файл). Затем можно создать переведенную копию этого файла ресурсов для каждого языка, поддерживаемого вашим приложением.
 
 Жестко закодированные строковые литералы могут появляться в императивном коде или в разметке XAML, например в виде свойства **Text** объекта **TextBlock**. Они также могут появляться в исходном файле манифесте пакета приложения (файле `Package.appxmanifest`), например в качестве значения для отображаемого имени на вкладке "Приложение" в конструкторе манифеста Visual Studio. Переместите эти строки в файл ресурсов (.resw) и замените жестко закодированные строковые литералы в своем приложении и в манифесте ссылками на идентификаторы ресурсов.
 
 В отличие от ресурсов изображений, где в файле ресурсов содержится только один ресурс изображения, в файле строковых ресурсов содержится *много* строковых ресурсов. Файл строковых ресурсов представляет собой файл ресурсов (.resw), и обычно такой файл ресурсов создается в папке \Strings проекта. Общие сведения об использовании квалификаторов в именах файлов ресурсов (.resw) приводятся в разделе [Адаптация ресурсов для языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
 
-## <a name="store-strings-in-a-resources-file"></a>Store строки в файле ресурсов
+## <a name="store-strings-in-a-resources-file"></a>Хранение строк в файле ресурсов
 
 1. Установите язык по умолчанию для приложения.
     1. Открыв решение в Visual Studio, откройте файл `Package.appxmanifest`.
     2. На вкладке «Приложения» убедитесь, что язык по умолчанию задан соответствующим образом (например, en или en-US). На дальнейших этапах предполагается, что вы задали язык по умолчанию en-US.
-    <br>**Примечание** как минимум, необходимо предоставить строковые ресурсы, локализованные для данного языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
+    <br>**Обратите внимание** , как минимум необходимо предоставить строковые ресурсы, локализованные для этого языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
 2. Создайте файл ресурсов (.resw) для языка по умолчанию.
     1. В узле проекта создайте новую папку и назовите ее Strings.
     2. В разделе `Strings` создайте новую вложенную папку и назовите ее en-US.
     3. В разделе `en-US` создайте новый файл ресурсов (.resw) и убедитесь, что он называется Resources.resw.
-    <br>**Примечание** при наличии файлы ресурсов .NET (.resx), которые требуется перенести, см. в разделе [перенос XAML и пользовательским Интерфейсом](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Обратите внимание** , если у вас есть файлы ресурсов .NET (RESX), которые требуется перенести, см. раздел [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3. Откройте `Resources.resw` и добавьте эти строковые ресурсы.
 
     `Strings/en-US/Resources.resw`
@@ -48,7 +48,7 @@ ms.locfileid: "68270087"
 
     Идентификаторы ресурсов не чувствительны к регистру и должны быть уникальны для файла ресурсов. Используйте осмысленные идентификаторы ресурсов — это даст дополнительный контекст для перевода. Не меняйте идентификаторы ресурсов после отправки строковых ресурсов на перевод. Переводчики используют идентификаторы ресурсов, чтобы отслеживать добавление, удаление и обновление данных в ресурсах. Изменение идентификаторов ресурсов, называемое также сдвигом идентификаторов ресурсов, приводит к необходимости повторного перевода строк, поскольку ситуация выглядит таким образом, будто прежние строки были удалены и затем добавлены новые.
 
-## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>Ссылаться на идентификатор ресурса строки из XAML
+## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>Ссылка на идентификатор строкового ресурса из XAML
 
 Вы используете [x:Uid directive](../xaml-platform/x-uid-directive.md) для привязки элемента управления или другого элемента в разметке к идентификатору строкового ресурса.
 
@@ -56,13 +56,13 @@ ms.locfileid: "68270087"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-Во время выполнения загружается `\Strings\en-US\Resources.resw` (поскольку сейчас это единственный файл ресурсов в проекте). Директива **X:Uid** для **TextBlock** вызывает выполнение поиска в `Resources.resw` для обнаружения идентификаторов свойств, содержащих идентификатор строкового ресурса Greeting. Обнаруживаются идентификаторы свойств Greeting.Text и Greeting.Width, и их значения применяются к **TextBlock**, переопределяя значения, заданные локально в разметке. Значение Greeting.Foreground также будет применяться, если оно добавлено. Однако только идентификаторы свойств используются для задания свойств элементов разметки XAML, поэтому установка **x:Uid** со значением Farewell для этого TextBlock не даст никакого эффекта. `Resources.resw` *does* содержать идентификатор ресурса строку «Заключение», но содержит не идентификаторов свойств для него.
+Во время выполнения загружается `\Strings\en-US\Resources.resw` (поскольку сейчас это единственный файл ресурсов в проекте). Директива **X:Uid** для **TextBlock** вызывает выполнение поиска в `Resources.resw` для обнаружения идентификаторов свойств, содержащих идентификатор строкового ресурса Greeting. Обнаруживаются идентификаторы свойств Greeting.Text и Greeting.Width, и их значения применяются к **TextBlock**, переопределяя значения, заданные локально в разметке. Значение Greeting.Foreground также будет применяться, если оно добавлено. Однако только идентификаторы свойств используются для задания свойств элементов разметки XAML, поэтому установка **x:Uid** со значением Farewell для этого TextBlock не даст никакого эффекта. `Resources.resw` содержит строковый идентификатор ресурса "Прощай", *но не содержит* идентификаторов свойств для него.
 
 При назначении идентификатора строкового ресурса элементу XAML следите за тем, чтобы *все* идентификаторы свойств для этого идентификатора подходили этому элементу XAML. Например, если установить `x:Uid="Greeting"` для **TextBlock**, то значение Greeting.Text будет обработано, поскольку у типа **TextBlock** есть свойство Text. Но если вы задали `x:Uid="Greeting"` для **Button**, то Greeting.Text приведет к ошибке во время выполнения, поскольку у типа **Button** нет свойства Text. Возможное решение проблемы в этом случае — создать идентификатор свойства с именем ButtonGreeting.Content и задать `x:Uid="ButtonGreeting"` для **Button**.
 
 Вместо определения значения **Width** из файла ресурсов, возможно, логично будет разрешить динамическую адаптацию размера элементов управления по содержимому.
 
-**Примечание** для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), вам потребуется специальный синтаксис в столбце имени в resw-файл. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
+**Примечание** . для [вложенных свойств](../xaml-platform/attached-properties-overview.md)требуется специальный синтаксис в столбце Name файла. resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Тот же самый код можно использовать из проекта с библиотекой классов (Universal Windows) или [библиотекой среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md). Во время выполнения загружаются ресурсы приложения, в котором размещается библиотека. Рекомендуется, чтобы библиотека загружала ресурсы из приложения, в котором она расположена, поскольку выше вероятность, что это приложение локализовано в большей степени. Если библиотеке не требуется предоставлять ресурсы, то она должна обеспечить приложению возможность заменять их при вызове.
 
-Если имя ресурса разбито (он содержит «.» символов), затем замените точек с косой черты («/») символы в имени ресурса. Идентификаторы свойств, например, содержать точки; Поэтому необходимо сделать это substition, чтобы загрузить один из них из кода.
+Если имя ресурса сегментировано (в нем содержатся символы "."), замените точки символами косой черты ("/") в имени ресурса. Идентификаторы свойств, например, содержат точки; Поэтому вам потребуется сделать это субститион, чтобы загрузить один из них из кода.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-Если вы сомневаетесь, вы можете использовать [MakePri.exe](makepri-exe-command-options.md) для помещения в дамп PRI-файл приложения. Каждый ресурс `uri` отображается в файле дампа.
+Если вы сомневаетесь, вы можете использовать [передаваемые программе MakePRI. exe](makepri-exe-command-options.md) для дампа PRI файла приложения. `uri` каждого ресурса отображается в файле дампа.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -106,7 +106,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>Ссылка на идентификатор строкового ресурса из манифеста пакета приложения
 
-1. Откройте файл манифеста источника пакета приложения ( `Package.appxmanifest` файл), в которой по умолчанию приложения `Display name` выражается в виде строкового литерала.
+1. Откройте исходный файл манифеста пакета приложения (файл `Package.appxmanifest`), в котором по умолчанию `Display name` приложения выражается в виде строкового литерала.
 
    ![Добавление ресурса (английский язык)](images/display-name-before.png)
 
@@ -122,7 +122,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 1. Создайте копию файла ресурсов (.resw) для другого языка.
     1. В разделе Strings создайте новую вложенную папку и назовите ее de-DE для немецкого языка (Германия).
-   <br>**Примечание** для имени папки, можно использовать любой [тега языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
+   <br>**Обратите внимание** , для имени папки можно использовать любой [тег языка BCP-47](https://tools.ietf.org/html/bcp47). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
    2. Создайте копию `Strings/en-US/Resources.resw` в папке `Strings/de-DE`.
 2. Переведите строки.
     1. Откройте `Strings/de-DE/Resources.resw` и переведите значения в столбце Value. Комментарии переводить не нужно.
@@ -155,7 +155,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-Необходимо добавить `/<resources-file-name>/` перед идентификатором строку ресурса для файлов ресурсов *отличное от* `Resources.resw`. Это вызвано тем, что Resources.resw — имя файла по умолчанию, и оно используется, если имя файла не указано (как в предыдущих примерах в этом разделе).
+Необходимо добавить `/<resources-file-name>/` только перед идентификатором строкового ресурса для файлов ресурсов, отличных *от* `Resources.resw`. Это вызвано тем, что Resources.resw — имя файла по умолчанию, и оно используется, если имя файла не указано (как в предыдущих примерах в этом разделе).
 
 В коде ниже предполагается, что `ErrorMessages.resw` содержит ресурс с именем MismatchedPasswords, значение которого описывает ошибку.
 
@@ -179,13 +179,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Если вы решите переместить ресурс AppDisplayName из `Resources.resw` в `ManifestResources.resw`, то в манифесте пакета приложения необходимо изменить `ms-resource:AppDisplayName` на `ms-resource:/ManifestResources/AppDisplayName`.
 
-Если имя файла ресурсов делится (он содержит «.» символов), оставьте число точек в имени при ссылке на нее. **Не** replace точек с косой черты («/»), символы, так же, как для имени ресурса.
+Если имя файла ресурса сегментировано (в нем содержатся символы "."), то при ссылке на него оставьте точки в имени. **Не** заменяйте точки символами косой черты ("/"), например, для имени ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-Если вы сомневаетесь, вы можете использовать [MakePri.exe](makepri-exe-command-options.md) для помещения в дамп PRI-файл приложения. Каждый ресурс `uri` отображается в файле дампа.
+Если вы сомневаетесь, вы можете использовать [передаваемые программе MakePRI. exe](makepri-exe-command-options.md) для дампа PRI файла приложения. `uri` каждого ресурса отображается в файле дампа.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -264,24 +264,24 @@ private void RefreshUIText()
 }
 ```
 
-## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Загрузка строк из библиотеки классов или библиотеки среды выполнения Windows
+## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Загрузка строк из библиотеки классов или библиотеки среда выполнения Windows
 
 Строковые ресурсы в указываемой ссылкой библиотеке классов (универсальная платформа Windows) или [библиотеке среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md) обычно добавляются в подпапку пакета, в который они включаются во время сборки. Идентификатор ресурса такой строки обычно принимает форму *LibraryName/ResourcesFileName/ResourceIdentifier*.
 
-Библиотека может получить ResourceLoader для собственных ресурсов. Например следующий код иллюстрирует, как библиотека или приложение, которое ссылается на него можно получить ResourceLoader для строковых ресурсов библиотеки.
+Библиотека может получить ResourceLoader для собственных ресурсов. Например, в следующем коде показано, как библиотека или приложение, ссылающееся на нее, могут получить ResourceLoader для строковых ресурсов библиотеки.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Для библиотеки среды выполнения Windows (универсальных Windows), если разделить пространство имен по умолчанию (он содержит «.» символов), затем используйте точки в имени карты ресурса.
+Для библиотеки среда выполнения Windows (Universal Windows), если пространство имен по умолчанию сегментировано (содержит символы "."), используйте точки в имени схемы ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Не нужно делать и для библиотеки классов (универсальной Windows). Если вы сомневаетесь, можно указать [параметры командной строки MakePri.exe](makepri-exe-command-options.md) для помещения в дамп компонента или библиотеки PRI-файл. Каждый ресурс `uri` отображается в файле дампа.
+Это не нужно делать для библиотеки классов (универсальное Windows). Если вы сомневаетесь, можно указать [Параметры командной строки передаваемые программе MakePRI. exe](makepri-exe-command-options.md) для дампа PRI файла компонента или библиотеки. `uri` каждого ресурса отображается в файле дампа.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -289,44 +289,44 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="loading-strings-from-other-packages"></a>Загрузка строк из других пакетов
 
-Ресурсы для пакета приложения управлять и пользоваться из пакета владельцем верхнего уровня [**ResourceMap** ](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступен из текущей [**ResourceManager** ](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В рамках каждого пакета различные компоненты могут иметь свои собственные ResourceMap поддеревьях, которые можно получить через [ **ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Ресурсы для пакета приложения управляются и доступны через собственные [**ресаурцемап**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) верхнего уровня пакета, доступные из текущего [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь собственные поддеревья Ресаурцемап, к которым можно получить доступ через [**ресаурцемап. жетсубтри**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 
-## <a name="loading-strings-in-non-packaged-applications"></a>Загрузка строк, не упакованных приложений
+## <a name="loading-strings-in-non-packaged-applications"></a>Загрузка строк в неупакованных приложениях
 
-Начиная с версии Windows 1903 (может обновлять 2019 г.) не упакованные приложения можно также использовать систему управления ресурсами.
+Начиная с версии Windows 1903 (Май 2019), неупакованные приложения также могут использовать систему управления ресурсами.
 
-Просто создайте пользователя элементы управления универсальной платформы Windows или библиотек и [хранить все строки в файле ресурсов](#store-strings-in-a-resources-file). После этого можно [ссылаться на идентификатор ресурса строки из XAML](#refer-to-a-string-resource-identifier-from-xaml), [ссылаться на идентификатор ресурса строки из кода](#refer-to-a-string-resource-identifier-from-code), или [загрузить строки из библиотеки классов или библиотеки среды выполнения Windows](#load-strings-from-a-class-library-or-a-windows-runtime-library).
+Просто создайте пользовательские элементы управления и библиотеки UWP и [Храните все строки в файле ресурсов](#store-strings-in-a-resources-file). Затем можно [ссылаться на идентификатор строкового ресурса из XAML](#refer-to-a-string-resource-identifier-from-xaml), [ссылаться на идентификатор строковых ресурсов из кода](#refer-to-a-string-resource-identifier-from-code)или [загружать строки из библиотеки классов или библиотеки среда выполнения Windows](#load-strings-from-a-class-library-or-a-windows-runtime-library).
 
-Чтобы использовать ресурсы в приложениях, не упаковываются, следует выполнить ряд действий:
+Чтобы использовать ресурсы в приложениях, не являющихся пакетами, необходимо выполнить следующие действия.
 
-1. Используйте [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) вместо [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) при разрешении ресурсы из кода, так как не *текущее представление* в сценариях не упакован. Возникает следующее исключение при вызове метода [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) в сценариях, не упакованных: *Контекстами ресурсов может быть создан в потоках, у которых нет CoreWindow.*
-1. Используйте [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) можно вручную создать файл resources.pri этого приложения.
-    - Выполнить `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
-    - &lt;PRICONFIG&gt; необходимо опустить "&lt;упаковки&gt;" раздела, чтобы все ресурсы объединяются в единый resources.pri файле. Если используется значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), вам придется удалить "&lt;упаковки&gt;" разделе вручную после его создания.
-    - &lt;PRICONFIG&gt; должен содержать все соответствующие индексаторов, необходимые для слияния всех ресурсов в проекте в одном resources.pri файл. Значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) включает в себя всех индексаторов.
-    - Если вы не используете файл конфигурации по умолчанию, убедитесь, что индексатор PRI включен (по умолчанию файл конфигурации для этого просмотрите) для слияния PRIs найти ссылки на проект UWP, ссылки на пакеты NuGet и т. д., которые находятся в корневом каталоге проекта.
+1. Используйте [жетфорвиевиндепендентусе](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) вместо [жетфоркуррентвиев](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) при разрешении ресурсов из кода, так как отсутствует *Текущее представление* в сценариях без упаковки. При вызове [жетфоркуррентвиев](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) в неупакованных сценариях возникает следующее исключение: *контексты ресурсов могут не создаваться в потоках, которые не имеют CoreWindow.*
+1. Используйте [передаваемые программе MakePRI. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) , чтобы вручную создать файл ресурсов. PRI приложения.
+    - Выполните команду `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`.
+    - &lt;файлу PRICONFIG&gt; должен опустить раздел "&lt;упаковки&gt;", чтобы все ресурсы были объединены в один файл ресурсов. PRI. При использовании [файла конфигурации передаваемые программе MakePRI. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) по умолчанию, созданного [креатеконфиг](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), необходимо вручную удалить раздел "&lt;упаковки&gt;" после его создания.
+    - &lt;файлу PRICONFIG&gt; должны содержать все соответствующие индексаторы, необходимые для объединения всех ресурсов в проекте в один файл Resources. PRI. [Файл конфигурации передаваемые программе MakePRI. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) по умолчанию, созданный [креатеконфиг](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) , включает все индексаторы.
+    - Если вы не используете конфигурацию по умолчанию, убедитесь, что индексатор PRI включен (см. раздел Настройка по умолчанию), чтобы объединить Прис, найденный из ссылок проекта UWP, ссылок NuGet и т. д., расположенных в корневом каталоге проекта.
         > [!NOTE]
-        > Опустив `/IndexName`, и в проекте, не имеющий манифест приложения, автоматически присваивается Имя_индекса/корневое пространство имен файла PRI *приложения*, который среда выполнения понимает для приложений, не упакованных (при этом удаляются Предыдущий жесткие зависимости от идентификатор пакета). При указании ресурса URI, ms-resource: вывести / / / ссылки, которые пропускают корневое пространство имен *приложения* как корневое пространство имен для приложения не упаковываются (или можно указать *приложения* явным образом как в ms-resource://Application/).
-1. Скопируйте PRI-файл в выходной каталог сборки из .exe
-1. Запустите .exe 
+        > Если пропустить `/IndexName`и проект не имеет манифеста приложения, пространство имен IndexName/root для PRI-файла автоматически устанавливается в *приложение*, которое среда выполнения понимает для неупакованных приложений (при этом удаляется Предыдущая жесткая зависимость от идентификатора пакета). При указании URI ресурсов, MS-Resource:///, не пропуская корневое пространство имен в качестве корневого пространства имен для неупакованных *приложений (* или можно явно указать *приложение* как в MS-Resource://аппликатион/).
+1. Скопируйте PRI файл в выходной каталог сборки exe.
+1. Запуск exe 
     > [!NOTE]
-    > Система управления ресурсами использует язык системы, а не список предпочитаемый язык пользователя, при разрешении ресурсов на основе языка в приложениях не упакован. Список предпочитаемый язык пользователя используется только для приложений универсальной платформы Windows.
+    > Система управления ресурсами использует системный язык, а не список предпочитаемых пользователем языков при разрешении ресурсов на основе языка в приложениях, не являющихся упакованными. Список предпочитаемый язык пользователя используется только для приложений UWP.
 
 > [!Important]
-> Необходимо вручную перестроить файлов PRI всякий раз, когда ресурсы будут изменены. Мы рекомендуем использовать скрипт после сборки, который обрабатывает [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) команды и копирует выходные данные resources.pri каталог .exe.
+> При изменении ресурсов необходимо вручную перестраивать файлы PRI. Рекомендуется использовать скрипт, выполняемый после сборки, который обрабатывает команду [передаваемые программе MakePRI. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) и копирует выходные данные Resources. PRI в каталог. exe.
 
 ## <a name="important-apis"></a>Важные API
-* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
-* [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
-* [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
+* [ApplicationModel. Resources. ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+* [Ресаурцеконтекст. Сетглобалкуалифиервалуе](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [мапчанжед](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 * [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [Директива x: Uid](../xaml-platform/x-uid-directive.md)
-* [Вложенные свойства](../xaml-platform/attached-properties-overview.md)
+* [Директива x:Uid](../xaml-platform/x-uid-directive.md)
+* [вложенные свойства](../xaml-platform/attached-properties-overview.md)
 * [Локализуемые элементы манифеста](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)
+* [Тег языка BCP-47](https://tools.ietf.org/html/bcp47)
+* [Адаптация ресурсов для языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Загрузка строковых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

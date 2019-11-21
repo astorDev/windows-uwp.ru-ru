@@ -6,12 +6,12 @@ ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, маршрут, карта, расположение, направления
 ms.localizationpriority: medium
-ms.openlocfilehash: 196cb4801436e8094dae4ead363ff86cc746034e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e9e464f9a3b49d3a94edbc8593df58e1e7c24515
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371694"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259337"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Отображение маршрутов и направлений на карте
 
@@ -20,8 +20,8 @@ ms.locfileid: "66371694"
 Запрос маршрутов и направлений и их отображение в вашем приложении.
 
 >[!Note]
->Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
->Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
+>Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Общие сведения о результатах MapRouteFinder
@@ -239,10 +239,10 @@ private async void ShowRouteOnMap()
 }
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Сборка видео 2015: использование карт и расположения на телефоне, планшете и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP для работы с трафиком](https://github.com/Microsoft/Windows-appsample-trafficapp)

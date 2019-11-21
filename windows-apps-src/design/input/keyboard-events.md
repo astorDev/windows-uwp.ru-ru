@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2800db96177f77648d2d2a98f5cd87c930f6840a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339904"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258334"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -35,7 +35,7 @@ ms.locfileid: "71339904"
 > Это предоставляет эквивалентную встроенную клавиатуру для вызова кнопки, что похоже на касание пальцем или щелчок мышью. Клавиши, отличные от клавиш ПРОБЕЛ и ВВОД, вызывают события [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup). Дополнительные сведения об обработке событий на базе класса можно найти в статье [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview) (в частности, в разделе "Обработчики событий ввода в элементах управления").
 
 
-Элементы пользовательского интерфейса создают события клавиатуры только после получения фокуса ввода. Отдельный элемент управления получает фокус, когда пользователь щелкает этот элемент или касается его непосредственно в макете либо переходит на него с помощью клавиши Tab по последовательности табуляции в пределах области размещения содержимого.
+Элементы пользовательского интерфейса создают события клавиатуры только при наличии у них фокуса ввода. Отдельный элемент управления получает фокус, когда пользователь щелкает этот элемент или касается его непосредственно в макете либо переходит на него с помощью клавиши Tab по последовательности табуляции в пределах области размещения содержимого.
 
 Также можно принудительно установить фокус, вызвав метод [**Focus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.focus) элемента управления. Это необходимо при реализации сочетаний клавиш, поскольку по умолчанию фокус клавиатуры не устанавливается при загрузке пользовательского интерфейса. Дополнительные сведения см. в разделе **Пример использования сочетания клавиш** далее в этой теме.
 
@@ -99,7 +99,7 @@ void MyProject::MainPage::Grid_KeyUp(
 -   [**Задействован**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**Оригиналсаурце**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (наследуется от [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Ключ
+### <a name="key"></a>Раздел
 
 Событие [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) создается, когда нажата клавиша. Подобным образом событие [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) создается, когда клавиша отпущена. Обычно прослушивание событий выполняется для обработки определенного значения клавиши. Чтобы определить, какая клавиша нажата или отпущена, проверьте значение [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) в данных события. **Key** возвращает значение [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey). Перечисление **VirtualKey** содержит все поддерживаемые клавиши.
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler и уже обработанные события клавиатуры
 
-Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот способ использует метод [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) для регистрации обработчика вместо использования атрибутов XAML или синтаксиса, зависящего от языка, для добавления обработчиков, например + = в C @ no__t-2.
+Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот способ использует метод [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) для регистрации обработчика вместо использования атрибутов XAML или синтаксиса, зависящего от языка, для добавления обработчиков, таких как + = в C\#.
 
 Обычным ограничением для этой методики является то, что API **AddHandler** принимает параметр типа [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent), который идентифицирует рассматриваемое перенаправленное событие. Идентификатор **RoutedEvent** предоставляется не всеми перенаправленными событиями, и это соображение влияет на то, какие перенаправленные события все же могут быть обработаны в случае [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). События [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) имеют идентификаторы перенаправленных событий ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) и [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) в [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Однако другие события, например [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), не имеют идентификаторов перенаправленных событий, и поэтому для них нельзя использовать методику **AddHandler**.
 
@@ -393,16 +393,16 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 **Примеры**
 * [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с небольшой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Примеры из архива**
-* [Образец входных данных](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* @no__t 0Input: Возможности устройства — пример @ no__t-0
-* @no__t 0Input: Сенсорная клавиатура — пример @ no__t-0
-* [Ответ на внешний вид образца экранной клавиатуры](https://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Пример редактирования текста XAML](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Образец входных данных](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Входные данные: пример сенсорной клавиатуры](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+* [Ответ на внешний вид образца экранной клавиатуры](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
+* [Пример редактирования текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
  
 
  

@@ -6,19 +6,19 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
-ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320229"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260270"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установить пакет Microsoft Advertising SDK
 
-Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
+Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
 
 > [!NOTE]
-> Если вы разрабатываете приложения UWP JavaScript и HTML и установки пакета SDK для Windows 10 версии 10.0.14393 (Юбилейное обновление) или более поздней версии, необходимо также установить [WinJS](https://github.com/winjs/winjs) библиотеки. Эта библиотека ранее включалась в предыдущие версии Windows 10 SDK, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно.
+> Если вы разрабатываете приложение UWP на JavaScript или HTML и установили пакет SDK для Windows 10 версии 10.0.14393 (годовщина) или более позднюю версию, необходимо также установить библиотеку [WinJS](https://github.com/winjs/winjs) . Эта библиотека ранее включалась в предыдущие версии Windows 10 SDK, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно.
 
 <span id="install-msi" />
 
@@ -35,7 +35,7 @@ ms.locfileid: "67320229"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Скачайте и установите пакет [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
+3.  Скачайте и установите пакет [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
 
 4.  Перезапустите Visual Studio.
 
@@ -94,14 +94,14 @@ ms.locfileid: "67320229"
 
 * [Межстраничные объявления](interstitial-ads.md)
 * [Собственные объявления](native-ads.md)
-* [AdControl в XAML и .NET](adcontrol-in-xaml-and--net.md)
-* [AdControl в HTML 5 и Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Адконтрол в XAML и .NET](adcontrol-in-xaml-and--net.md)
+* [Адконтрол в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Общие сведения о пакетах платформы в Microsoft Advertising SDK
 
-Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит API-интерфейсы рекламы в пространствах имен [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) и [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
+Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит API-интерфейсы рекламы в пространствах имен [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) и [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
 
 Поскольку библиотека представляет собой пакет платформы, это означает, что после установки пользователем версии вашего приложения, которое применяет эту библиотеку, библиотека будет автоматически обновляться на устройстве пользователя через Центр обновления Windows, когда мы опубликуем новую версию библиотеки с исправлениями и улучшенной производительностью. Это позволяет гарантировать, что ваши клиенты всегда будут иметь последнюю доступную версию библиотеки на своих устройствах.
 

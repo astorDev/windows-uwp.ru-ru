@@ -4,26 +4,26 @@ description: Узнайте, как ваше приложение распозн
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, фоновую задачу
+keywords: Windows 10, UWP, фоновая задача
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d8e4a84b0e927be8e1b89e6189e80acd2d3e4266
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79e511d20874470dfea8413bdf88365bba86d087
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371311"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260462"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Отслеживание хода выполнения и завершения фоновых задач
 
 **Важные API**
 
-- [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
-- [**BackgroundTaskProgressEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
-- [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
+- [**баккграундтаскрегистратион**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+- [**баккграундтаскпрогрессевенсандлер**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
+- [**баккграундтасккомплетедевенсандлер**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 Узнайте, как ваше приложение распознает события выполнения и завершения, сообщаемые фоновой задачей, которая выполняется отдельным процессом. (Для задач, выполняемых в том же процессе, можно задать общие переменные для обозначения хода выполнения и завершения).
 
@@ -34,9 +34,9 @@ ms.locfileid: "66371311"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Создание обработчика событий для обработки завершенных фоновых задач
 
 ### <a name="step-1"></a>Шаг 1
-Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен соответствовать определенной объем пространства, который принимает [ **IBackgroundTaskRegistration** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) объекта и [ **BackgroundTaskCompletedEventArgs** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs) объекта.
+Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен следовать определенному объему, который принимает объект [**ибаккграундтаскрегистратион**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) и объект [**баккграундтасккомплетедевентаргс**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs) .
 
-Используйте следующие занимаемое пространство **OnCompleted** фоновых метод обработчика событий для задач.
+Используйте следующее место для метода обработчика событий **OnComplete** фоновой задачи.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -61,10 +61,10 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 };
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
 
-Например, [образец фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) обновляет пользовательский интерфейс.
+Например, [образец фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) обновляет пользовательский интерфейс.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -119,10 +119,10 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 };
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
 
-Например, в [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) пользовательский интерфейс обновляется с помощью состояния выполнения, передаваемого через параметр *args*:
+Например, в [образце фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) пользовательский интерфейс обновляется с помощью состояния выполнения, передаваемого через параметр *args*:
 
 ```csharp
 private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
@@ -158,7 +158,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 ### <a name="step-1"></a>Шаг 1
 Когда приложение регистрирует фоновую задачу впервые, оно должно выполнить регистрацию, чтобы получить обновления выполнения и завершения для задачи, в случае если задача выполняется в то время, когда приложение еще работает на переднем плане.
 
-Например, в [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) для каждой регистрируемой фоновой задачи вызывается следующая функция:
+Например, в [образце фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) для каждой регистрируемой фоновой задачи вызывается следующая функция:
 
 ```csharp
 private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
@@ -214,10 +214,10 @@ void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskReg
 }
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 Когда приложение запускается или переходит на новую страницу, где состояние фоновой задачи имеет значение, оно должно получить список зарегистрированных в настоящее время фоновых задач и сопоставить их с функциями обработчика событий выполнения и завершения. Список фоновых задач, зарегистрированных приложением в настоящее время, хранится в свойстве [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).[**AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks).
 
-Например, чтобы подключить обработчики событий при выполнении перехода на страницу SampleBackgroundTask, в [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) используется следующий код:
+Например, чтобы подключить обработчики событий при выполнении перехода на страницу SampleBackgroundTask, в [образце фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) используется следующий код:
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -285,7 +285,7 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
@@ -299,4 +299,4 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
-* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Как активировать события приостановки, возобновления и фоновых событий в приложениях UWP (при отладке)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

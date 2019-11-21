@@ -8,19 +8,19 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f321b9ec43f2c844854600b8260a7fdc189c0446
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0df5f6c2e12b3b2e761ce45f95930dc179ef367f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365391"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258253"
 ---
 # <a name="set-speech-recognition-timeouts"></a>Установка времени ожидания распознавания речи
 
 
 Вы можете задать время, в течение которого распознаватель речи будет игнорировать тишину или нераспознаваемые звуки (бормотание) и будет ожидать данные на речевом входе.
 
-> **Важные API**: [**Время ожидания**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [ **SpeechRecognizerTimeouts**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
+> **Важные API-интерфейсы**: [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [**SpeechRecognizerTimeouts**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
 
 ## <a name="set-a-timeout"></a>Настройка времени ожидания
 
@@ -31,7 +31,7 @@ ms.locfileid: "66365391"
 -   BabbleTimeout — продолжительность периода времени, в течение которого объект SpeechRecognizer продолжает "прослушивать" нераспознаваемые звуки (бормотание), прежде чем он решит, что речевой ввод закончен, и завершит операцию распознавания.
 -   EndSilenceTimeout — продолжительность периода времени, в течение которого объект SpeechRecognizer обнаруживает тишину (после получения результатов распознавания) и решает, что речевой ввод закончен.
 
-**Примечание**  можно задать значения времени ожидания на основе распознаватель.
+**Обратите внимание** ,  время ожидания может быть задано для каждого распознавателя.
 
  
 
@@ -47,7 +47,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
 **Примеры**
-* [Распознавание речи и синтеза речи-пример](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Пример распознавания речи и синтеза речи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

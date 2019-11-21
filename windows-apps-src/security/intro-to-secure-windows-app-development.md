@@ -1,24 +1,24 @@
 ---
 title: Введение в разработку безопасных приложений для Windows
-description: В этой вводной статье помогает приложений архитекторам и разработчикам лучше понять различные возможности платформы Windows 10, позволяющие ускорить создание защищенных приложений универсальной платформы Windows (UWP).
+description: Эта Вводная статья поможет архитекторам и разработчикам приложений лучше понять различные возможности платформы Windows 10, которые ускоряют создание приложений Secure универсальная платформа Windows (UWP).
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 98ef721c2068927733648d494a086160f23baab9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320605"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258951"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Введение в разработку безопасных приложений для Windows
 
 
 
 
-В этой вводной статье помогает приложений архитекторам и разработчикам лучше понять различные возможности платформы Windows 10, позволяющие ускорить создание защищенных приложений универсальной платформы Windows (UWP). В ней подробно описано, как использовать функции безопасности Windows, доступные на каждом из этих этапов: проверка подлинности, передача данных и данные в состоянии покоя. Более подробные сведения по каждой теме можно получить в дополнительных ресурсах к каждой главе.
+Эта Вводная статья поможет архитекторам и разработчикам приложений лучше понять различные возможности платформы Windows 10, которые ускоряют создание приложений Secure универсальная платформа Windows (UWP). В ней подробно описано, как использовать функции безопасности Windows, доступные на каждом из этих этапов: проверка подлинности, передача данных и данные в состоянии покоя. Более подробные сведения по каждой теме можно получить в дополнительных ресурсах к каждой главе.
 
 ## <a name="1-introduction"></a>1\. Введение.
 
@@ -75,7 +75,7 @@ ms.locfileid: "67320605"
 ## <a name="211-web-authentication-broker"></a>2.1.1. Брокер веб-проверки подлинности
 
 
-Как уже упоминалось, одна из проблем, с помощью проверки пароля для ИТ-отдел — добавленный издержек на управление основание имена пользователей и пароли, механизмы сброса и т. д. Все более популярным решением является зависят от сторонних поставщиков, Предложить проверку подлинности через OAuth, открытый стандарт для проверки подлинности.
+Как обсуждалось ранее, одной из сложностей проверки подлинности пароля для ИТ-отдела является дополнительная нагрузка, связанная с управлением базой имен пользователей и паролей, механизмами сброса и пр. Все популярным вариантом становится привлечение сторонних поставщиков удостоверений, которые предлагают проверку подлинности с помощью OAuth — открытого стандарта для проверки подлинности.
 
 С помощью OAuth ИТ-отделы могут эффективно привлекать ресурсы сторонних поставщиков удостоверений, в частности, Facebook, Twitter или Microsoft, для решения проблемы со сложностью управления базой данных имен пользователей и паролей, функцией сброса пароля и пр.
 
@@ -96,7 +96,7 @@ ms.locfileid: "67320605"
 
 Если взаимодействие успешно, обработайте строку ответа, возвращенную поставщиком удостоверений. Если взаимодействие неуспешно, обработайте ошибку.
 
-См. пример кода на языке C#, который предназначен для этого процесса, ниже. Дополнительные сведения и пошаговое руководство см. в разделе [WebAuthenticationBroker](web-authentication-broker.md). Полный пример кода см. в [образце WebAuthenticationBroker на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
+См. пример кода на языке C#, который предназначен для этого процесса, ниже. Дополнительные сведения и пошаговое руководство см. в разделе [WebAuthenticationBroker](web-authentication-broker.md). Полный пример кода см. в [образце WebAuthenticationBroker на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker).
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";
@@ -192,9 +192,9 @@ Windows Hello — это не просто замена традиционных
 
 Требования к безопасности для связи с веб-службой выше, чем требования для сценариев с прямой связью, так как данные больше не являются только частью безопасной сети, и вероятность перехвата данных злоумышленниками является более высокой. Поскольку доступ к службе будут получать разные типы устройств, они, скорее всего, будут созданы как службы RESTful, в противовес, например, WCF. Это означает, что проверка подлинности и авторизация службы также влечет за собой новые сложности. Мы обсудим два требования для связи с защищенной удаленной службой.
 
-Первым требованием является конфиденциальность сообщений: Сведения, передаваемые между клиентом и веб-служб (например, удостоверение пользователя и другие сведения личного характера) не должны читаться третьим сторонам в процессе передачи. Обычно это делается путем шифрования подключения, через которое отправляются сообщения, и шифрованием самого сообщения. В шифровании с помощью пары из открытого и закрытого ключа открытый ключ доступен всем и используется для шифрования сообщений, которые должны быть отправлены определенному получателю. Закрытый ключ содержится только у получателя и используется для расшифровки сообщения.
+Первым требованием является конфиденциальность сообщений: информация, передаваемая между клиентом и веб-службами (например, удостоверение пользователя и другие персональные данные) не должна быть доступна для чтения третьими лицами в процессе передачи. Обычно это делается путем шифрования подключения, через которое отправляются сообщения, и шифрованием самого сообщения. В шифровании с помощью пары из открытого и закрытого ключа открытый ключ доступен всем и используется для шифрования сообщений, которые должны быть отправлены определенному получателю. Закрытый ключ содержится только у получателя и используется для расшифровки сообщения.
 
-Второе требование — проверку целостности сообщений: Клиент и веб-службы должны иметь возможность убедитесь, что сообщения, полученные, они должны отправляться с другой стороны, и сообщение не было изменено при передаче. Это делается с помощью подписи сообщений цифровыми подписями и использования проверки подлинности сертификата.
+Вторым требованием является целостность сообщения: клиент и веб-служба должны иметь возможность убедиться в том, что сообщения, которые они получают, являются именно теми сообщениями, которые собиралась отправить другая сторона, и что данное сообщение не было изменено во время передачи. Это делается с помощью подписи сообщений цифровыми подписями и использования проверки подлинности сертификата.
 
 ## <a name="32-ssl-connections"></a>3.2 Подключения SSL
 
@@ -286,7 +286,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 
 Традиционно, у Windows никогда не было определения для приложения. Наиболее часто так называли исполняемый файл (.exe), но в определение никогда не входили установка, сохранение состояния, длина выполнения, управление версиями, интеграция операционной системы или взаимодействие между приложениями. Модель универсальной платформы Windows определяет модель приложения, в которую входят установка, среда выполнения, управление ресурсами, обновления, модель данных и удаление.
 
-Windows 10 приложения выполняются в контейнере, это означает, что они ограниченные привилегии по умолчанию (Дополнительные привилегии может запросить и от пользователя). Например, если приложению нужно получить доступ к файлам в системе, то должно использоваться средство выбора файлов из пространства имен [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers), чтобы разрешить пользователю выбрать файл (прямой доступ к файлам невозможен). Другой пример: если приложению необходимо получить доступ к данным о местоположении пользователя, ему следует объявить возможность определения местоположения устройства, предложив пользователю в момент скачивания, чтобы это приложение запрашивало доступ к данным о местоположении пользователя. Кроме этого, когда приложению необходимо получить доступ к данным о местоположении пользователя в первый раз, пользователю отобразится дополнительный запрос на продолжение с запросом на разрешение на доступ к данным.
+Приложения Windows 10 выполняются в контейнере. Это означает, что у них есть ограниченные привилегии по умолчанию (дополнительные привилегии могут быть запрошены и предоставлены пользователю). Например, если приложению нужно получить доступ к файлам в системе, то должно использоваться средство выбора файлов из пространства имен [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers), чтобы разрешить пользователю выбрать файл (прямой доступ к файлам невозможен). Другой пример: если приложению необходимо получить доступ к данным о местоположении пользователя, ему следует объявить возможность определения местоположения устройства, предложив пользователю в момент скачивания, чтобы это приложение запрашивало доступ к данным о местоположении пользователя. Кроме этого, когда приложению необходимо получить доступ к данным о местоположении пользователя в первый раз, пользователю отобразится дополнительный запрос на продолжение с запросом на разрешение на доступ к данным.
 
 Обратите внимание, что данная модель приложений играет роль "тюрьмы" для приложений. Это означает, что к ним нельзя получить внешний доступ, но это не "замок", доступ к которому нельзя получить снаружи (приложения с правами администратора могут по-прежнему получать доступ изнутри). Device Guard в Windows 10, который позволяет огранизациям и ИТ-отделам определить, какие приложения (Win32) можно выполнять, может в дальнейшем помочь ограничить доступ.
 
@@ -294,7 +294,7 @@ Windows 10 приложения выполняются в контейнере, 
 
 Если ресурсов памяти устройства становится недостаточно, Windows высвобождает пространство памяти, закрывая приложения. Эта модель жизненного цикла заставляет приложения сохранять данные, когда они приостановлены, поскольку у него нет доступного дополнительного времени между приостановкой и завершением.
 
-Дополнительные сведения см. в разделе [это универсальная: Понимание жизненного цикла приложения Windows 10](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
+Подробнее см. в разделе [Универсальность: понимание жизненного цикла приложения для Windows 10](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
 
 ## <a name="42-stored-credential-protection"></a>4.2 Защита сохраненных учетных данных
 
@@ -450,7 +450,7 @@ public void SampleReusableHash()
 ## <a name="5-summary"></a>5\. Резюме
 
 
-Универсальная платформа Windows в Windows 10 предоставляет множество способов воспользоваться возможностями операционной системы для создания более безопасных приложений. В различных сценариях проверки подлинности, например, однофакторной, многофакторной или посреднической с помощью поставщика удостоверений OAuth, API существуют для решения наиболее сложных проблем с проверкой подлинности. Windows Hello предоставляет новый биометрический вход в систему, который распознает пользователя и активно предотвращает попытки обойти надлежащую идентификацию. Она также предоставляет несколько уровней ключей и сертификатов, которые ни при каких обстоятельствах не могут быть раскрыты или использованы за пределами доверенного платформенного модуля. Кроме того, дальнейший уровень безопасности обеспечивается с помощью дополнительного использования ключей удостоверения подлинности и сертификатов.
+Универсальная платформа Windows в Windows 10 предоставляет множество способов воспользоваться возможностями операционной системы для создания более безопасных приложений. В различных сценариях проверки подлинности, например, однофакторной, многофакторной или посреднической с помощью поставщика удостоверений OAuth, API существуют для решения наиболее сложных проблем с проверкой подлинности. Windows Hello предоставляет новую биометрическую систему входа, которая распознает пользователя и активно предотвращает попытки обойти надлежащую идентификацию. Она также предоставляет несколько уровней ключей и сертификатов, которые ни при каких обстоятельствах не могут быть раскрыты или использованы за пределами доверенного платформенного модуля. Кроме того, дальнейший уровень безопасности обеспечивается с помощью дополнительного использования ключей удостоверения подлинности и сертификатов.
 
 Чтобы обеспечить безопасность данных в процессе передачи, API помогают установить безопасную связь с удаленными системами через SSL, одновременно предоставляя возможность проверить подлинность сервера с помощью закрепления SSL. Управление API Azure помогает в безопасной и контролируемой публикации API, предоставляя мощные варианты конфигурации для отображения API в Интернете с помощью прокси-сервера, который дополнительно скрывает конечную точку API. Доступ к этим API защищается с помощью ключей API, а для контроля производительности можно отрегулировать вызовы API.
 
@@ -465,9 +465,9 @@ public void SampleReusableHash()
 -   [Windows Hello](microsoft-passport.md)
 -   [Хранилище учетных данных](credential-locker.md)
 -   [Брокер веб-аутентификации](web-authentication-broker.md)
--   [Биометрические данные отпечатков пальцев](fingerprint-biometrics.md)
+-   [Биометрия отпечатков пальцев](fingerprint-biometrics.md)
 -   [Смарт-карты](smart-cards.md)
--   [Общих сертификатов](share-certificates.md)
+-   [Общие сертификаты](share-certificates.md)
 -   [Шифрование](cryptography.md)
 -   [Сертификаты](certificates.md)
 -   [Криптографические ключи](cryptographic-keys.md)
@@ -481,24 +481,24 @@ public void SampleReusableHash()
 -   [Хранилище учетных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
 -   [Средство выбора учетных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
 -   [Блокировка устройства с помощью входа в Azure](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
--   [Защита корпоративных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [защита корпоративных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [кэйкредентиалманажер](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [Смарт-карты](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
--   [Управление учетными записями Web](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
+-   [Управление учетными записями веб-сайта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [вебаусентикатионброкер](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3. Справочник по API
 
--   [**Windows.Security.Authentication.OnlineId**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
--   [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
--   [**Windows.Security.Authentication.Web.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
--   [**Windows.Security.Authentication.Web.Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
--   [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
--   [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
--   [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
--   [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
--   [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
--   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
--   [**Windows.Security.EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)
+-   [**Windows. Security. Authentication. Онлинеид**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
+-   [**Windows. Security. Authentication. Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
+-   [**Windows. Security. Authentication. Web. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
+-   [**Windows. Security. Authentication. Web. Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
+-   [**Windows. Security. Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows. Security. Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows. Security. Credentials. UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
+-   [**Windows. Security. Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
+-   [**Windows. Security. Cryptography. Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
+-   [**Windows. Security. Cryptography. Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
+-   [**Windows. Security. Cryptography. Защита**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
+-   [**Windows. Security. Ексчанжеактивесинкпровисионинг**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
+-   [**Windows. Security. Ентерприседата**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)

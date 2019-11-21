@@ -8,12 +8,12 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa57af7e51fd7d6ef151909eccc444da2c44707
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 200fe265390d10a12a8e1b3a1abf7cd8164238d6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062049"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258233"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Определение языка для распознавателя речи
 
@@ -79,7 +79,7 @@ var language = new Windows.Globalization.Language("en-US");
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <a name="remarks"></a>Примечания.
+## <a name="remarks"></a>Замечания
 
 
 Ограничение по одной теме можно настроить, добавив [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) в коллекцию [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) средства [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), а затем вызвав [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Если распознаватель не удалось инициализировать с поддерживаемым языком темы, возвращается состояние [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) для **TopicLanguageNotSupported**.
@@ -88,7 +88,7 @@ var recognizer = new SpeechRecognizer(language);
 
 Грамматика SRGS – это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. [**Компилеконстраинтсасинк**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) завершается с [**спичрекогнитионресултстатус**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) **топиклангуаженотсуппортед** , если распознаватель не инициализирован на том же языке, что и разметка SRGS.
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
 **Разработчикам**
 
@@ -100,7 +100,7 @@ var recognizer = new SpeechRecognizer(language);
 
 **Примеры**
 
-* [Пример распознавания речи и синтеза речи](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Пример распознавания речи и синтеза речи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

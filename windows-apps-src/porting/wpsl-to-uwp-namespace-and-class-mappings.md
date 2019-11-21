@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e02d74df59bae4dd4bdaa909c97866da754db93
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339922"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259067"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone сопоставления Silverlight с UWP API
 
@@ -22,7 +22,7 @@ ms.locfileid: "71339922"
 
 **Как использовать таблицу:  ** Сначала найдите имя класса, который вы используете. Классы указываются, когда для сопоставления требуются более сложные действия, чем просто изменение имени пространства имен. Если класс не указан, тогда сопоставление заключается лишь в изменении пространства имен. Найдите имя пространства имен класса, и таким образом вы получите соответствующее имя пространства имен в UWP. Ваш класс будет указан в этом пространстве имен. Если вашего пространства имен нет в списке, это значит, что его имя не изменялось.
 
-**Примечание**. @no__t 1Windows 10 поддерживает гораздо больше .NET Framework чем приложение для Магазина Windows Phone. Например, в Windows 10 имеется несколько пространств имен System. ServiceModel. \*, а также System.Net, System .NET. NetworkInformation и System .NET. Sockets.
+**Примечание** .  Windows 10 поддерживает гораздо больше .NET Framework чем приложение для Магазина Windows Phone. Например, в Windows 10 имеется несколько System. ServiceModel.\* пространства имен, а также System.Net, System .NET. NetworkInformation и System .NET. Sockets.
 Кроме того, в приложении Windows 10 вы получите преимущества от .NET Native, которая является технологией предварительной компиляции, преобразующей MSIL в собственный код машинного кода. Приложения .NET Native запускаются быстрее, используют меньше памяти и меньше заряда батареи, чем аналоги MSIL.
 
 | Windows Phone Silverlight | Среда выполнения Windows |
@@ -52,11 +52,11 @@ ms.locfileid: "71339922"
 | (SWT = **System.Windows.Threading**) <br/> Класс **SWT.DispatcherTimer** | Класс [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) |
 | Blend для Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> Класс **MEDC.GeometryHelper** | Нет прямого эквивалента |
-| Пространство имен **Microsoft.Expression.Interactivity** | Пространство имен [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) |
-| Пространство имен **Microsoft.Expression.Interactivity.Core** | Пространство имен [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) |
+| Пространство имен **Microsoft.Expression.Interactivity** | Пространство имен [Microsoft.Xaml.Interactivity](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactivity.aspx) |
+| Пространство имен **Microsoft.Expression.Interactivity.Core** | Пространство имен [Microsoft.Xaml.Interactions.Core](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.core.aspx) |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> Класс **MEIC.ExtendedVisualStateManager** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Expression.Interactivity.Input** | Нет прямого эквивалента |
-| Пространство имен **Microsoft.Expression.Interactivity.Media** | Пространство имен [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) |
+| Пространство имен **Microsoft.Expression.Interactivity.Media** | Пространство имен [Microsoft.Xaml.Interactions.Media](https://msdn.microsoft.com/library/windows/apps/microsoft.xaml.interactions.media.aspx) |
 | Пространство имен **Microsoft.Expression.Shapes** | Нет прямого эквивалента |
 | (MI = **Microsoft.Internal**) <br/> Интерфейс **MI.IManagedFrameworkInternalHelper** | Нет прямого эквивалента |
 | Данные контактов и календаря | |
@@ -121,7 +121,7 @@ ms.locfileid: "71339922"
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentUICulture** |
 | Графика и анимация | |
-| Пространства имен **Microsoft. XNA. Framework. \*** , [Библиотека классов XNA Framework](https://go.microsoft.com/fwlink/p/?LinkId=263769), [Библиотека классов конвейера содержимого](https://go.microsoft.com/fwlink/p/?LinkId=263770) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) и C++. См. разделы [Разработка игр](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) и [Взаимодействие DirectX и XAML](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
+| Пространства имен **Microsoft. XNA. Framework.\*** , [Библиотека классов XNA Framework](https://msdn.microsoft.com/library/bb203940.aspx), [Библиотека классов конвейера содержимого](https://msdn.microsoft.com/library/bb195587(v=XNAGameStudio.40).aspx) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) и C++. См. разделы [Разработка игр](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10)) и [Взаимодействие DirectX и XAML](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10)). |
 | Класс **Microsoft.Xna.Framework.Audio.Microphone** | Класс [**медиакаптуре**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) |
 | Класс **Microsoft.Xna.Framework.Audio.SoundEffect** | Класс [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) |
 | Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> [**WPS. Пространство имен UserProfile. Гамесервицес. Core**](https://docs.microsoft.com/uwp/api/Windows.Phone.System.UserProfile.GameServices.Core) |
@@ -221,7 +221,7 @@ ms.locfileid: "71339922"
 | (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.ProtectedData** | Класс [**датапротектионпровидер**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) |
 | (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.RandomNumberGenerator** | Класс [**криптографикбуффер**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.CryptographicBuffer) |
 | (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.X509Certificates.X509Certificate** | Класс [**цертификатинроллментманажер**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager) |
-| Shell | |
+| Оболочка | |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBar** | Класс [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBarIconButton** | Класс [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) (при использовании в свойстве [**примарикоммандс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands) ) |
 | (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBarMenuItem** | Класс [**AppBarButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) (при использовании в свойстве [**секондарикоммандс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) ) |

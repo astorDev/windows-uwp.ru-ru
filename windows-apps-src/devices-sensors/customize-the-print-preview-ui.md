@@ -4,14 +4,14 @@ title: Настройка пользовательского интерфейс�
 description: В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, печать
+keywords: Windows 10, UWP, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 000985d5f9dac5363a1ea2fb002c2be40e2777dd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321558"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258657"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
@@ -19,13 +19,13 @@ ms.locfileid: "67321558"
 
 **Важные API**
 
--   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
--   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
--   [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager)
+-   [**Windows. Graphics. Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows. UI. XAML. печать**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**принтманажер**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager)
 
 В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. Дополнительные сведения о печати см. в разделе [Печать из приложения](print-from-your-app.md).
 
-**Совет**  Большинство примеров в этом разделе основаны на образце печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
+**Совет**  большинство примеров в этом разделе основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) из [репозитория Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) на GitHub.
 
  
 
@@ -33,22 +33,22 @@ ms.locfileid: "67321558"
 
 По умолчанию в пользовательском интерфейсе предварительного просмотра отображаются параметры печати [**ColorMode**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.colormode), [**Copies**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.copies) и [**Orientation**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.orientation). Кроме них существует несколько других распространенных параметров принтера, которые можно добавить в пользовательский интерфейс предварительного просмотра:
 
--   [**Привязки**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding)
+-   [**Вязывания**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding)
 -   [**Параметры сортировки**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.collation)
--   [**Дуплексный режим**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex)
--   [**HolePunch**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.holepunch)
--   [**InputBin**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.inputbin)
--   [**MediaSize**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize)
--   [**Тип носителя**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype)
--   [**NUp**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.nup)
--   [**PrintQuality**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.printquality)
--   [**Скрепка**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple)
+-   [**Устройства**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex)
+-   [**холепунч**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.holepunch)
+-   [**инпутбин**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.inputbin)
+-   [**медиасизе**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize)
+-   [**Мультимедиа**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype)
+-   [**Чистки**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.nup)
+-   [**принткуалити**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.printquality)
+-   [**Основой**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple)
 
 Эти параметры определены в классе [**StandardPrintTaskOptions**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.StandardPrintTaskOptions). Вы можете добавить или удалить параметры из списка, отображаемого в пользовательском интерфейсе предварительного просмотра. Можно также менять порядок отображения параметров и задавать значения по умолчанию, которые будут показаны пользователю.
 
 Но изменения, внесенные этим способом, повлияют только на пользовательский интерфейс предварительного просмотра. Пользователь всегда сможет получить доступ ко всем поддерживаемым принтером параметрам посредством пункта **Дополнительные параметры** в пользовательском интерфейсе предварительного просмотра.
 
-**Примечание**  несмотря на то, что приложение может указать параметры печати для отображения, только те, которые поддерживаются на данном принтере отображаются в режиме предварительного просмотра пользовательского интерфейса. Параметры, не поддерживаемые выбранным принтером, не будут отображаться в пользовательском интерфейсе печати.
+**Примечание**  несмотря на то, что приложение может указывать любые параметры печати для отображения, в пользовательском интерфейсе предварительного просмотра отображаются только те, которые поддерживаются выбранным принтером. Параметры, не поддерживаемые выбранным принтером, не будут отображаться в пользовательском интерфейсе печати.
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Важные**  вызова [ **displayedOptions.clear**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions)() удаляет все параметры печати в режиме предварительного просмотра пользовательского интерфейса, включая **Дополнительные параметры** ссылку. Не забудьте добавить параметры, которые требуется показывать в пользовательском интерфейсе предварительного просмотра.
+**Важно** .  вызов [**дисплайедоптионс. Clear**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions)() удаляет все параметры печати из пользовательского интерфейса предварительного просмотра, включая ссылку " **другие параметры** ". Не забудьте добавить параметры, которые требуется показывать в пользовательском интерфейсе предварительного просмотра.
 
 ### <a name="specify-default-options"></a>Определение параметров по умолчанию
 
@@ -183,8 +183,8 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Рекомендации по проектированию для печати](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [Видео с Build 2015: Разработка приложений, осуществляющие печать в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Сборка видео 2015: Разработка приложений, которые печатаются в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Пример печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)

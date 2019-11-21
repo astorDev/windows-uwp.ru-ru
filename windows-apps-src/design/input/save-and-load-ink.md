@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb7f085c5e4daa46cfa6c256ec3938be3c13d82
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2919a2f61f3185d85b91bdf6fd6be22402eb77d0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365349"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258271"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных движения пера Windows Ink
 
@@ -23,13 +23,13 @@ ms.locfileid: "66365349"
 > [!NOTE]
 > Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
-> **Важные API**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Важные API-интерфейсы**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Сохранение росчерков пера в файл
 
 Здесь мы покажем, как сохранить росчерки пера, нарисованные в элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
-**Загрузить этот образец из [сохранять и загружать штрихов рукописного ввода из файла формата сериализации рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**Загрузите этот пример с [помощью сохранения и загрузки рукописных штрихов из файла сериализованного формата рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) .**
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
@@ -161,7 +161,7 @@ public MainPage()
 
 Здесь мы покажем, как загрузить росчерки пера из файла и отобразить их в элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
-**Загрузить этот образец из [сохранять и загружать штрихов рукописного ввода из файла формата сериализации рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**Загрузите этот пример с [помощью сохранения и загрузки рукописных штрихов из файла сериализованного формата рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) .**
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
@@ -277,7 +277,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 В этом примере мы добавляем возможность выбора росчерка, когда входные данные изменяются кнопкой пера (или правой кнопкой мыши). Полный пример реализации возможности выбора росчерка см. в подразделе "Передача входных данных для расширенной обработки" раздела [Взаимодействие с помощью пера](pen-and-stylus-interactions.md).
 
-**Загрузить этот образец из [сохранять и загружать рукописных штрихов из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
+**Скачайте этот пример с [помощью сохранения и загрузки рукописных штрихов из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
@@ -436,17 +436,17 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 * [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
-**Примеры в разделе**
-* [Сохранение и загрузка штрихов рукописного ввода из файла формата сериализации рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+**Примеры разделов**
+* [Сохранение и загрузка рукописных штрихов из файла сериализованного формата рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
 * [Сохранение и загрузка рукописных штрихов из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **Другие примеры**
-* [Пример простого рукописного ввода (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Пример сложной рукописного ввода (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Пример рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Руководство по началу работы: Поддержка рукописного ввода в приложении универсальной платформы Windows](https://aka.ms/appsample-ink)
-* [Пример книги выделение цветом](https://aka.ms/cpubsample-coloringbook)
-* [Пример семейства заметки](https://aka.ms/cpubsample-familynotessample)
+* [Пример простого рукописногоC#вводаC++(/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [Образец сложных рукописныхC++данных ()](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [Образец рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Руководство по началу работы. Поддержка рукописного ввода в приложении UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Образец цветовой книги](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [Образец заметок для семьи](https://github.com/Microsoft/Windows-appsample-familynotes)
 
 
 

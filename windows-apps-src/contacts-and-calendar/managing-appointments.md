@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, встречи, календарь
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 52200d7896c9edea727bf31c69c04c4c1bd02bb2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282235"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255496"
 ---
 # <a name="manage-appointments"></a>Управление встречами
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Обратите внимание**,   For Windows Phone приложения Магазина, [**шоваддаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) функционируют так же, как [**шоведитневаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) в том, что диалоговое окно, отображаемое для добавления встречи, является редактируемым.
+**Примечание** .  для приложений Магазина Windows Phone, [**шоваддаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) работает так же, как [**шоведитневаппоинтмент**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) в том, что диалоговое окно, отображаемое для добавления встречи, является редактируемым.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Замена встречи в календаре пользователя
 
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
-Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](https://go.microsoft.com/fwlink/p/?linkid=619979) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
+Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](https://github.com/Microsoft/Windows-universal-samples) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Пример API встреч](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Пример API встреч](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
  
 
  

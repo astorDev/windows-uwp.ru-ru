@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 51bc293a779a96db75ce83da68cb3beea54b9618
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c5c86ad836c94d990f5728ce9f7cfe49c754ce19
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368724"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259526"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Сопоставление компонентов DirectX 9 и API DirectX 11
 
@@ -19,8 +19,8 @@ ms.locfileid: "66368724"
 
 **Сводка**
 
--   [Планирование портов DirectX](plan-your-directx-port.md)
--   [Важные изменения с Direct3D 9 в Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Планирование порта DirectX](plan-your-directx-port.md)
+-   [Важные изменения с Direct3D 9 на Direct3D 11](understand-direct3d-11-1-concepts.md)
 -   Сопоставление компонентов
 
 
@@ -55,7 +55,7 @@ D3DX и DXUT являются нерекомендуемыми и не могу�
 
 -   В пошаговом руководстве [Простой перенос из Direct3D 9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) показано, как настроить окно, инициализировать Direct3D и выполнить базовую трехмерную отрисовку.
 -   В пошаговом руководстве [Простая игра UWP с использованием DirectX](tutorial--create-your-first-uwp-directx-game.md) демонстрируются стандартные задачи, возникающие при программировании игры, включая графику, загрузку файлов, пользовательский интерфейс, элементы управления и звук.
--   Сообщество [DirectX Tool Kit](https://go.microsoft.com/fwlink/p/?LinkID=248929) (Набор инструментов DirectX) предлагает вспомогательные классы для использования с Direct3D 11 и приложениями UWP.
+-   Сообщество [DirectX Tool Kit](https://github.com/Microsoft/DirectXTK) (Набор инструментов DirectX) предлагает вспомогательные классы для использования с Direct3D 11 и приложениями UWP.
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>Перенос программ-шейдеров с FX на HLSL
 
@@ -66,7 +66,7 @@ Visual Studio по-прежнему использует FXC для компил
 
 Чтобы взглянуть на загрузку ресурсов шейдера, см. раздел [Простое портирование с Direct3D 9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Direct3D 11 появилась 5 модель шейдера, который требуется уровень возможностей Direct3D 11\_0 (или более поздней версии). См. раздел [Компоненты модели 5 шейдера HLSL для Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
+В Direct3D 11 появилась модель шейдера 5, для которой требуется уровень функций Direct3D 11\_0 (или выше). См. раздел [Компоненты модели 5 шейдера HLSL для Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>Замена XNAMath и D3DXMath
 
@@ -101,17 +101,17 @@ DirectShow больше не является частью API DirectX (или A
 
 Microsoft DirectPlay устарел. Если ваша игра использует сетевые службы, вам нужно предоставить сетевой код, соответствующий требованиям сертификации UWP. Используйте следующие API:
 
--   [Win32 и COM для приложений универсальной платформы Windows (сеть) (Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
--   [**Пространство имен Windows.Networking (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking)
--   [**Пространство имен Windows.Networking.Sockets (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
--   [**Пространство имен Windows.Networking.Connectivity (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
--   [**Пространство имен Windows.ApplicationModel.Background (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [Win32 и COM для приложений UWP (работа в сети) (Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+-   [**Пространство имен Windows. Networking (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking)
+-   [**Пространство имен Windows. Networks. Sockets (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+-   [**Пространство имен Windows. Networking. Connectivity (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
+-   [**Пространство имен Windows. ApplicationModel. Background (Windows)** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Следующие статьи помогут вам добавить сетевые возможности и объявить поддержку сети в манифесте пакета приложения.
 
--   [Подключение с помощью сокетов (приложениях UWP с помощью C#/VB/C++ и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
--   [Соединение с помощью WebSockets (приложениях UWP с помощью C#/VB/C++ и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
--   [Подключение к веб-служб (приложений универсальной платформы Windows с помощью C#/VB/C++ и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+-   [Подключение с помощью сокетов (приложения UWP C#сC++ использованием/ВБ/и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
+-   [Подключение через WebSockets (приложения UWP с использованием C#/ВБ/C++ и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
+-   [Подключение к веб-службам (приложения C#UWPC++ с использованием/ВБ/и XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 -   [Основы работы в сети](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 
 Обратите внимание, что все приложения UWP (включая игры) используют специфические типы фоновых задач для поддержки подключения, когда приложение приостановлено. Если вашей игре необходимо поддерживать подключенное состояние во время приостановки, см. раздел [Основы работы в сети](https://docs.microsoft.com/windows/uwp/networking/networking-basics).
@@ -146,11 +146,11 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3">IDXGIDevice3</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9::Present</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9::P повторно отправлено</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::P resent1</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9::TestCooperativeLevel</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9:: Тесткуперативелевел</a></p></td>
 <td align="left"><p>Вызовите <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> с установленным флагом DXGI_PRESENT_TEST.</p></td>
 </tr>
 <tr class="odd">
@@ -179,58 +179,58 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout">ID3D11InputLayout</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setrenderstate">IDirect3DDevice9::SetRenderState</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setsamplerstate">IDirect3DDevice9::SetSamplerState</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setrenderstate">IDirect3DDevice9:: Сетрендерстате</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setsamplerstate">IDirect3DDevice9:: Сетсамплерстате</a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11blendstate1">ID3D11BlendState1</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilstate">ID3D11DepthStencilState</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11rasterizerstate1">ID3D11RasterizerState1</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11samplerstate">ID3D11SamplerState</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9::DrawIndexedPrimitive</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9::DrawPrimitive</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">ID3D11DeviceContext::Draw</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">ID3D11DeviceContext::DrawIndexed</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">ID3D11DeviceContext::DrawIndexedInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">ID3D11DeviceContext::DrawInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">ID3D11DeviceContext::IASetPrimitiveTopology</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">ID3D11DeviceContext::DrawAuto</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9::D Равиндекседпримитиве</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9::D Равпримитиве</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">Ссылку ID3D11DeviceContext::D RAW</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">Ссылку ID3D11DeviceContext::D Равиндексед</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">Ссылку ID3D11DeviceContext::D Равиндексединстанцед</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">Ссылку ID3D11DeviceContext::D Равинстанцед</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">Ссылку ID3D11DeviceContext:: Иасетпримитиветопологи</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">Ссылку ID3D11DeviceContext::D Равауто</a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-beginscene">IDirect3DDevice9::BeginScene</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-endscene">IDirect3DDevice9::EndScene</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9::DrawPrimitiveUP</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9::DrawIndexedPrimitiveUP</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-beginscene">IDirect3DDevice9:: Бегинсцене</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-endscene">IDirect3DDevice9:: Ендсцене</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9::D Равпримитивеуп</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9::D Равиндекседпримитивеуп</a></p></td>
 <td align="left"><p>Нет прямого эквивалента</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-showcursor">IDirect3DDevice9::ShowCursor</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorposition">IDirect3DDevice9::SetCursorPosition</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorproperties">IDirect3DDevice9::SetCursorProperties</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-showcursor">IDirect3DDevice9:: Шовкурсор</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorposition">IDirect3DDevice9:: Сеткурсорпоситион</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorproperties">IDirect3DDevice9:: Сеткурсорпропертиес</a></p></td>
 <td align="left"><p>Используйте стандартные API курсора.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9::Reset</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9:: Reset</a></p></td>
 <td align="left"><p>LOST device и POOL_MANAGED более не существуют. <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> может завершиться сбоем и возвратить значение <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a>.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawrectpatch">IDirect3DDevice9:DrawRectPatch</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawtripatch">IDirect3DDevice9:DrawTriPatch</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-lightenable">IDirect3DDevice9:LightEnable</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-multiplytransform">IDirect3DDevice9:MultiplyTransform</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setlight">IDirect3DDevice9:SetLight</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setmaterial">IDirect3DDevice9:SetMaterial</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setnpatchmode">IDirect3DDevice9:SetNPatchMode</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-settransform">IDirect3DDevice9:SetTransform</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setfvf">IDirect3DDevice9:SetFVF</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-settexturestagestate">IDirect3DDevice9:SetTextureStageState</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawrectpatch">IDirect3DDevice9: Дравректпатч</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawtripatch">IDirect3DDevice9: Дравтрипатч</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-lightenable">IDirect3DDevice9: досветлее</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-multiplytransform">IDirect3DDevice9: Мултиплитрансформ</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/direct3d9/id3dxeffectstatemanager--setlight">IDirect3DDevice9: Сетлигхт</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setmaterial">IDirect3DDevice9: Сетматериал</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setnpatchmode">IDirect3DDevice9: Сетнпатчмоде</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-settransform">IDirect3DDevice9: Сеттрансформ</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setfvf">IDirect3DDevice9: Сетфвф</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-settexturestagestate">IDirect3DDevice9: Сеттекстурестажестате</a></p></td>
 <td align="left"><p>Конвейер фиксированной функции устарел.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdepthstencilmatch">IDirect3DDevice9:CheckDepthStencilMatch</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9:CheckDeviceFormat</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9:GetDeviceCaps</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9:ValidateDevice</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdepthstencilmatch">IDirect3DDevice9: ЧеккдепсстенЦилматч</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9: Чеккдевицеформат</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9: Жетдевицекапс</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9: Валидатедевице</a></p></td>
 <td align="left"><p>Биты возможностей заменены уровнями компонентов. Только некоторые форматы и случаи использования компонентов являются необязательными для любого уровня компонентов. Это можно проверить с помощью <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device::CheckFeatureSupport</a> и <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device::CheckFormatSupport</a>.</p></td>
 </tr>
 </tbody>
@@ -342,7 +342,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    используйте .r перехода в шейдере дублировать red на другие компоненты, чтобы получить поведение Direct3D 9.
+<strong>Обратите внимание</strong> ,   использовать. r свиззле в шейдере для дублирования красного в другие компоненты для получения поведения Direct3D 9.
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    использовать .rrrg перехода в шейдере дублировать red и перемещение зеленый альфа-компоненты, чтобы получить поведение Direct3D 9.
+<strong>Обратите внимание</strong> ,   использовать свиззле. рррг в шейдере для дублирования красного цвета и перемещения зеленого цвета в альфа-компоненты для получения поведения Direct3D 9.
 </div>
 <div>
  
@@ -398,7 +398,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    был увеличивать на Direct3D 9 данные с помощью 255.0f, но это можно сделать в шейдере.
+<strong>Примечание</strong> .   в Direct3D 9 данные были масштабированы с помощью 255.0 f, но это может быть обработано в шейдере.
 </div>
 <div>
  
@@ -412,7 +412,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    был увеличивать на Direct3D 9 данные с помощью 255.0f, но это можно сделать в шейдере.
+<strong>Примечание</strong> .   в Direct3D 9 данные были масштабированы с помощью 255.0 f, но это может быть обработано в шейдере.
 </div>
 <div>
  
@@ -426,7 +426,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>Примечание</strong>    DXT1 и DXT2 совпадают с точки зрения API/оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong>Обратите внимание</strong> ,   DXT1 и DXT2 одинаковы с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -440,7 +440,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>Примечание</strong>    DXT3 и DXT4 совпадают с точки зрения API/оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong>Обратите внимание</strong> ,   DXT3 и DXT4 одинаковы с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -506,7 +506,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    используйте .r перехода в шейдере дублировать red другим компонентам D3D9 поведения.
+<strong>Обратите внимание</strong> ,   использовать. r свиззле в шейдере для дублирования красного в другие компоненты для получения поведения d3d9.
 </div>
 <div>
  
@@ -580,7 +580,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Примечание</strong>    шейдера получает значения целое число без знака, однако, требуются ли Direct3D 9 стиля целочисленного значения с плавающей запятой (0, 0f, 1.0f... 255.f), целое число без знака можно преобразовать только float32 в шейдере.
+<strong>Обратите внимание</strong> ,   шейдер получает значения uint, но если требуется целочисленный плавающий стиль Direct3D 9 (0,0 f, 1,0 f... 255. f), значение UINT можно просто преобразовать в значение float32 в шейдере.
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>Примечание</strong>    шейдера получает СИНТ значения, но если требуется Direct3D 9 стиля целочисленных значений с плавающей запятой, СИНТ просто могут преобразовываться в float32 в шейдере.
+<strong>Обратите внимание</strong> ,   шейдер получает значения Синт, но если требуется целочисленное число с плавающей запятой в стиле Direct3D 9, то параметр Синт можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>Примечание</strong>    шейдера получает СИНТ значения, но если требуется Direct3D 9 стиля целочисленных значений с плавающей запятой, СИНТ просто могут преобразовываться в float32 в шейдере.
+<strong>Обратите внимание</strong> ,   шейдер получает значения Синт, но если требуется целочисленное число с плавающей запятой в стиле Direct3D 9, то параметр Синт можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -646,7 +646,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    требуется функциональный уровень 10.0 или более поздней версии
+<strong>Примечание</strong> .   требуется уровень Feature 10,0 или более поздней версии.
 </div>
 <div>
  
@@ -656,7 +656,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>    требуется функциональный уровень 10.0 или более поздней версии
+<strong>Примечание</strong> .   требуется уровень Feature 10,0 или более поздней версии.
 </div>
 <div>
  

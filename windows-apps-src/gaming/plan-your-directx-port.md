@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, directx, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c7cb05027520cb7a39e04ff65579297b66dc9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 032eeaf2a17ef244287e25e6d9ff32a12c61e137
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368300"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258464"
 ---
 # <a name="plan-your-directx-port"></a>Планирование переноса приложений на DirectX
 
@@ -20,8 +20,8 @@ ms.locfileid: "66368300"
 **Сводка**
 
 -   Планирование переноса приложений на DirectX
--   [Важные изменения с Direct3D 9 в Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Функция сопоставления](feature-mapping.md)
+-   [Важные изменения с Direct3D 9 на Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Сопоставление компонентов](feature-mapping.md)
 
 
 Спланируйте свой проект переноса игры с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP): обновление кода графики и помещение игры в среду выполнения Windows.
@@ -35,11 +35,11 @@ ms.locfileid: "66368300"
 
 Вспомогательные библиотеки D3DX и DXUT необходимо заменить на собственные вспомогательные библиотеки или средства от сообщества. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
 
-> **Примечание**    можно использовать [набор инструментов DirectX](https://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) заменить некоторые функциональные возможности, которые раньше реализовывались D3DX и DXUT.
+> **Обратите внимание** ,   для замены некоторых функциональных возможностей, которые ранее были предоставлены D3DX и дксут, можно использовать [набор средств DirectX](https://github.com/Microsoft/DirectXTK) или [директкстекс](https://github.com/Microsoft/DirectXTex) .
 
  
 
-Шейдеров, написанных на языке сборки необходимо обновить до HLSL, используя шейдера модели 4 уровень 9\_1 или 9\_3 функциональные возможности и шейдеров, написанные для библиотеку эффектов будет необходимо обновить до более новой версии синтаксиса HLSL. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
+Шейдеры, написанные на языке ассемблера, должны быть обновлены до HLSL с помощью Shader Model 4 уровня 9\_1 или 9\_3 функции, а шейдеры, написанные для библиотеки эффектов, должны быть обновлены до более поздней версии синтаксиса HLSL. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
 
 Познакомьтесь с различными [уровнями возможностей Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro). Уровни возможностей классифицируют широкий спектр видеооборудования за счет определения наборов известных функций. Каждый из наборов примерно соответствует версии Direct3D, от 9.1 до 11.2. Все уровни возможностей используют API DirectX 11.
 

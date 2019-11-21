@@ -6,14 +6,14 @@ label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b68e736cc6d413196205f84467b7e159c53cb98e
-ms.sourcegitcommit: e7589fa25d8de86c36b6ce6d90d360337718ef93
+ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311233"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258345"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
@@ -59,7 +59,7 @@ ms.locfileid: "71311233"
 <td align="left"><p>Щелчок правой кнопкой мыши для выбора и выполнения команды</p></td>
 <td align="left"><p>Щелчок правой кнопкой мыши для отображения панели навигации (при наличии) и панели приложения с глобальными командами. Щелчок правой кнопкой мыши на элементе для его выделения и отображения контекстных команд для выбранного элемента.</p>
 <div class="alert">
-<strong></strong>Примечание  . Щелкните правой кнопкой мыши, чтобы открыть контекстное меню, если выборка или команды панели приложений не соответствуют поведению пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
+<strong>Обратите внимание</strong> ,  щелкнуть правой кнопкой мыши, чтобы открыть контекстное меню, если выборка или команды панели приложений не соответствуют поведению пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
 </div>
 <div>
  
@@ -127,7 +127,7 @@ ms.locfileid: "71311233"
 
 Тем не менее можно воспользоваться возможностями каждого устройства (например, события колесика мыши), используя события указателя, жеста и манипуляции в [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Регистрируют** См. наш [Пример басиЦинпут](https://go.microsoft.com/fwlink/p/?LinkID=620302)для.
+**Примеры:** См. наш [Пример басиЦинпут](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)для.
 
 ## <a name="guidelines-for-visual-feedback"></a>Руководство по визуальной обратной связи
 
@@ -162,7 +162,7 @@ ms.locfileid: "71311233"
 
 ### <a name="samples"></a>Примеры
 
-- [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Пример ввода с небольшой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)

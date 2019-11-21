@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 84835449c7c259c45423a93716b4fbc85fa0a7ab
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369953"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258647"
 ---
 # <a name="pair-devices"></a>Связывание устройств
 
@@ -20,7 +20,7 @@ ms.locfileid: "66369953"
 
 **Важные API**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) поддерживает три разных способа связывания устройств.
 
@@ -28,7 +28,7 @@ ms.locfileid: "66369953"
 -   Базовое связывание
 -   Пользовательское связывание
 
-**Совет**  некоторые устройства не обязательно должны быть в паре для использования. Такие случаи описаны в разделе об автоматическом связывании.
+**Совет**  некоторые устройства не обязательно должны быть парными для использования. Такие случаи описаны в разделе об автоматическом связывании.
 
  
 
@@ -59,7 +59,7 @@ ms.locfileid: "66369953"
 
 Важно помнить о том, что пользовательское связывание всегда является операцией на уровне системы. Из-за этого при работе на настольном компьютере или в Windows Phone перед началом связывания на экране всегда будет отображаться диалоговое окно системы. Это связано с тем, что для обеих этих платформ требуется согласие пользователя. Поскольку это диалоговое окно создается автоматически, вам не нужно будет создавать собственное диалоговое окно при выборе [**DevicePairingKinds**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds)**ConfirmOnly** во время работы на этих платформах. Для другого **DevicePairingKinds** необходимо будет выполнить специальную обработку в зависимости от конкретного значения **DevicePairingKinds**. См. пример обработки пользовательского связывания для разных значений **DevicePairingKinds**.
 
-Начиная с Windows 10, версия 1903, новый **DevicePairingKinds** поддерживается, **ProvidePasswordCredential**. Это значение означает, что приложение должно запросить имя пользователя и пароль от пользователя для проверки подлинности связанное устройство. Чтобы в этом случае вызовите [ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) метод аргументов события из **PairingRequested** обработчик событий для приема сопряжение. Передайте [ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) объект, инкапсулирующий имя пользователя и пароль в качестве параметра. Обратите внимание, что имя пользователя и пароль для удаленного устройства отличаются от и часто не совпадает учетные данные для локально вошедшего пользователя.
+Начиная с Windows 10 версии 1903, поддерживается новый **девицепаирингкиндс** , **провидепассвордкредентиал**. Это значение означает, что приложение должно запросить имя пользователя и пароль у пользователя для проверки подлинности на связанном устройстве. Для обработки этого сценария вызовите метод [**акцептвиспассвордкредентиал**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) аргументов события обработчика событий **паирингрекуестед** , чтобы принять связывание. Передайте объект [**PasswordCredential**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) , инкапсулирующий имя пользователя и пароль в качестве параметра. Обратите внимание, что имя пользователя и пароль для удаленного устройства отличаются от и часто не совпадают с учетными данными для пользователя, выполнившего вход локально.
 
 ## <a name="unpairing"></a>Отмена связывания
 
@@ -71,7 +71,7 @@ ms.locfileid: "66369953"
 ## <a name="sample"></a>Пример
 
 
-Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), перейдите [по этой ссылке](https://go.microsoft.com/fwlink/?LinkID=620536).
+Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), перейдите [по этой ссылке](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
  
 

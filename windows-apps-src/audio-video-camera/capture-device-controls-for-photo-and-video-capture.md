@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ffa0dcae3412d49aef9da5bc3dfea255173ecb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7344e5004e6ac398673734cb03ddbdde93b3bd0d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358937"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254309"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Ручные элементы управления фото- и видеозахватом на камере
 
@@ -21,7 +21,7 @@ ms.locfileid: "66358937"
 
 Описанные в ней элементы управления добавляются в приложение с помощью одного и того же шаблона. Для начала проверьте, поддерживается ли элемент управления на устройстве, на котором выполняется приложение. Если это так, установите для элемента управления нужный режим. Как правило, если элемент управления не поддерживается на текущем устройстве, необходимо отключить или скрыть элемент пользовательского интерфейса, который позволяет пользователю включать соответствующую функцию.
 
-В этой статье используется код, адаптированный из [примера Camera Manual Controls SDK](https://go.microsoft.com/fwlink/?linkid=845228). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
+В этой статье используется код, адаптированный из [примера Camera Manual Controls SDK](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraManualControls). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
 
 > [!NOTE]
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
@@ -104,7 +104,7 @@ ms.locfileid: "66358937"
 > [!NOTE] 
 >  На некоторых устройствах фонарик не будет светить, даже если для [**TorchControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.enabled) установлено значение true, если на устройстве не запущен поток предварительного просмотра и в данный момент не выполняется запись видео. Рекомендуемый порядок действий: включить предварительный просмотр видео, затем включить фонарик, установив для **Enabled** значение true, а затем начать видеозапись. На некоторых устройствах фонарик включается после запуска предварительного просмотра. На других устройствах фонарик может не включаться, пока не начнется видеозапись.
 
-## <a name="focus"></a>Фокус
+## <a name="focus"></a>Фокусировка
 
 Для объекта [**FocusControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.FocusControl) поддерживаются три распространенных метода настройки фокусировки камеры: непрерывная автофокусировка, фокусировка по нажатию и фокусировка вручную. Приложение камеры поддерживает все три этих метода, но для удобства чтения в этой статье каждый метод обсуждается по отдельности. В этом разделе также рассматривается включение вспомогательного света для фокусировки.
 
@@ -149,13 +149,13 @@ ms.locfileid: "66358937"
 
 Следующий шаг — ожидание передачи данных для события, когда пользователь касается экрана, путем обработки события [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped) для [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement), для которого в данный момент отображается поток предварительного просмотра. Если камера в настоящее время не отображает поток предварительного просмотра или если режим фокусировки по нажатию отключен, выполните возврат из обработчика, не выполняя никаких действий.
 
-Если переменная отслеживания  *\_isFocused* установлен в значение false, и если камеры в настоящее время не находится в процессе фокус (определяется [ **FocusState** ](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) Свойство **FocusControl**), начать процесс tap фокус. Получите положение касания пользователя из аргументов события, переданных в обработчик. В данном примере эта возможность также используется для получения размера области, на которой будет выполняться фокусировка. В этом случае размер составляет 1/4 от наименьшего размера элемента захвата. Передайте положение касания и размер области во вспомогательный метод **TapToFocus**, который определяется в следующем разделе.
+Если переменная отслеживания *\_фокус* переключена на значение false, а также если камера не находится в процессе фокусировки (определяется свойством [**фокусстате**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) **фокусконтрол**), начните процесс TAP в фокусировку. Получите положение касания пользователя из аргументов события, переданных в обработчик. В данном примере эта возможность также используется для получения размера области, на которой будет выполняться фокусировка. В этом случае размер составляет 1/4 от наименьшего размера элемента захвата. Передайте положение касания и размер области во вспомогательный метод **TapToFocus**, который определяется в следующем разделе.
 
-Если  *\_isFocused* переключатель устанавливается значение true, пользователь tap должен очистить фокус из предыдущей области. Это действие выполняется во вспомогательном методе **TapUnfocus**, показанном ниже.
+Если переключатель *\_с фокусом* установлен в значение true, пользователь касания должен удалить фокус из предыдущего региона. Это действие выполняется во вспомогательном методе **TapUnfocus**, показанном ниже.
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-В **TapToFocus** вспомогательный метод, первого набора  *\_isFocused* переключателя значение true, чтобы далее коснитесь экрана выпустит фокус из полученные региона.
+В вспомогательном методе **таптофокус** установите переключатель *\_с фокусом* на true, чтобы следующий экран отправит фокус из области касания.
 
 Следующая задача в этом вспомогательном методе — определить прямоугольник в потоке предварительного просмотра, которому будет назначаться элемент управления фокусом. Для этого требуется два действия. Сначала нужно определить прямоугольник, в котором разместится поток предварительного просмотра, в элементе управления [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement). Он зависит от размеров потока предварительного просмотра и ориентации устройства. Вспомогательный метод **GetPreviewStreamRectInControl**, показанный в конце данного раздела, выполняет эту задачу и возвращает прямоугольник, содержащий поток предварительного просмотра.
 
@@ -172,9 +172,9 @@ ms.locfileid: "66358937"
 > [!IMPORTANT]
 > При реализации сценария «коснитесь, чтобы навести фокус» важен порядок операций. Вам следует вызывать эти API в следующем порядке:
 >
-> 1. [**FocusControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.configure)
-> 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync)
-> 3. [**FocusControl.FocusAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusasync)
+> 1. [**Фокусконтрол. Настройка**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.configure)
+> 2. [**Регионсофинтерестконтрол. Сетрегионсасинк**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync)
+> 3. [**Фокусконтрол. Фокусасинк**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusasync)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -265,7 +265,7 @@ ms.locfileid: "66358937"
 ## <a name="powerline-frequency"></a>Частота линии питания
 Некоторые камеры поддерживают обработку для защиты от мерцания, которая зависит от частоты переменного тока в текущей среде. Некоторые устройства поддерживают автоматическое определение частоты питания, а на других ее необходимо задать вручную. В следующем примере кода показано, как определить частоты питания устройстве и, если требуется, задать частоту вручную. 
 
-Сначала вызовите метод [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency) класса **VideoDeviceController**, передав выходной параметр типа [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency). Если вызов завершается ошибкой, управление частотой питания на текущем устройстве не поддерживается. Если функция поддерживается, вы можете определить, доступен ли на устройстве автоматический режим, попытавшись установить автоматический режим. Для этого вызовите метод [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) и передайте ему значение **Auto**. Если вызов выполнен успешно, автоматическая установка частоты питания поддерживается. Если контроллер частоты питания поддерживается на устройстве, а автоматическое обнаружение частоты — нет, вы можете вручную задать частоту с помощью метода **TrySetPowerlineFrequency**. В этом примере **MyCustomFrequencyLookup** — это пользовательский метод, который реализуется, чтобы определить правильную частоту для текущего расположения устройства. 
+Сначала вызовите методTryGetPowerlineFrequency[**класса**VideoDeviceController](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency), передав выходной параметр типа [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency). Если вызов завершается ошибкой, управление частотой питания на текущем устройстве не поддерживается. Если функция поддерживается, вы можете определить, доступен ли на устройстве автоматический режим, попытавшись установить автоматический режим. Для этого вызовите [**трисетповерлинефрекуенци**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) и передавайте значение **Auto**. Если вызов будет выполнен, это означает, что частота автоматической Powerline поддерживается. Если контроллер частоты питания поддерживается на устройстве, а автоматическое обнаружение частоты — нет, вы можете вручную задать частоту с помощью метода **TrySetPowerlineFrequency**. В этом примере **MyCustomFrequencyLookup** — это пользовательский метод, который реализуется, чтобы определить правильную частоту для текущего расположения устройства. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -335,13 +335,13 @@ ms.locfileid: "66358937"
 
 В обработчике события **ManipulationDelta** обновите коэффициент масштабирования в зависимости от изменения жеста сжатия пользователя. Значение [**ManipulationDelta.Scale**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationDelta) указывает на изменение масштаба с помощью жеста сжатия. Например, небольшое увеличение масштаба обозначается значением, которое немного превышает 1, а небольшое уменьшение — значением, которое немного меньше 1. В этом примере текущее значение элемента управления масштабированием умножается на значение разницы масштаба.
 
-Прежде чем задавать коэффициент масштабирования, убедитесь, что его значение не меньше минимального значения, которое поддерживается устройством и указано свойством [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min). Кроме того, убедитесь, что значение коэффициента меньше или равно значению [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max). Наконец, убедитесь, что значения масштаба является кратен размеру шаг масштабирования, поддерживаемых устройством, как указано в [ **шаг** ](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) свойство. Если коэффициент масштабирования не соответствует этим требованиям, при попытке задать масштаб на устройстве захвата будет отображено исключение.
+Прежде чем задавать коэффициент масштабирования, убедитесь, что его значение не меньше минимального значения, которое поддерживается устройством и указано свойством [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min). Кроме того, убедитесь, что значение коэффициента меньше или равно значению [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max). Наконец, необходимо убедиться, что коэффициент масштабирования является кратным размеру шага масштабирования, поддерживаемого устройством, как указано в свойстве [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) . Если коэффициент масштабирования не соответствует этим требованиям, при попытке задать масштаб на устройстве захвата будет отображено исключение.
 
 Чтобы установить масштаб на устройстве захвата, создайте новый объект [**ZoomSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomSettings). Установите для свойства [**Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.mode) значение [**ZoomTransitionMode.Smooth**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomTransitionMode), а затем укажите требуемый коэффициент масштабирования в свойстве [**Value**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.value). После этого вызовите метод [**ZoomControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.configure), чтобы задать новое значение масштаба на устройстве. В результате устройство плавно перейдет на новый масштаб.
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

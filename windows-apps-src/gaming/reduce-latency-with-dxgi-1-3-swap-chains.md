@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, задержка, dxgi, цепочки буферов, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf4935abc543b1c11fbbee32812a7702298cd79
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dd414c3ea65d30253d54cd335ed0b85d151b6dff
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368184"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258436"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Сокращение задержки с помощью цепочек буферов DXGI 1.3
 
@@ -24,18 +24,18 @@ DXGI 1.3 позволяет сократить фактическую заде�
 
 Если у нас есть цепочка буферов на основе модели отражений, «отражения» заднего буфера ставятся в очередь каждый раз, когда игра вызывает функцию [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present). Когда цикл отрисовки вызывает Present(), система блокирует поток, пока не закончится отображение предыдущего кадра, освобождая место в очереди для нового кадра, до его фактического отображения. Такая логика создает дополнительную задержку между моментом отрисовки кадра в игре и моментом, когда система разрешит отобразить этот кадр. Во многих случаях система достигает устойчивого равновесия, при котором в игре всегда имеется период ожидания между временем отрисовки и временем отображения каждого кадра величиной почти в полный дополнительный кадр. Лучше подождать, пока система будет готова принять новый кадр, затем выполнить отрисовку этого кадра по текущим данным и сразу поставить его в очередь.
 
-Создание цепочки ожидания переключения с [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_ФЛАГ\_КАДРА\_ЗАДЕРЖКИ\_WAITABLE\_объект** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) флаг. Созданные таким способом цепочки буферов могут уведомлять цикл отрисовки, когда система фактически готова принять новый кадр. В итоге игра может выполнить отрисовку по текущим данным и затем сразу поставить результирующий кадр в очередь на отображение.
+Создайте цепочку ожидающих подкачки с помощью [**DXGI\_ПЕРЕключить цепочку\_\_флаг\_рамки\_задержку**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)\_\_ный флаг объекта. Созданные таким способом цепочки буферов могут уведомлять цикл отрисовки, когда система фактически готова принять новый кадр. В итоге игра может выполнить отрисовку по текущим данным и затем сразу поставить результирующий кадр в очередь на отображение.
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>Шаг 1. Создание цепочки ожидания переключения
+## <a name="step-1-create-a-waitable-swap-chain"></a>Шаг 1. Создание цепочки буферов с ожиданием
 
 
-Укажите [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_ФЛАГ\_КАДРА\_ЗАДЕРЖКИ\_WAITABLE\_объект** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) флаг, при вызове [ **CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
+При вызове [**креатесвапчаинфоркоревиндов**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)укажите [ **\_\_флага цепочки\_рамки\_** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) ,\_задержка\_время ожидания.\_
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Примечание**    в отличие от некоторых флагов, этот флаг, нельзя добавить или удалить с помощью [ **ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). DXGI возвращает код ошибки, если значение этого флага отличается от установленного во время создания цепочки буферов.
+> **Примечание** .   в отличие от некоторых флагов, этот флаг нельзя добавить или удалить с помощью [**ресизебуфферс**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). DXGI возвращает код ошибки, если значение этого флага отличается от установленного во время создания цепочки буферов.
 
  
 
@@ -50,7 +50,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>Шаг 2. Задайте задержкой кадров
+## <a name="step-2-set-the-frame-latency"></a>Шаг 2. Настройка задержки кадров
 
 
 Задайте задержку кадров с помощью API [**IDXGISwapChain2::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency) вместо вызова [**IDXGIDevice1::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency).
@@ -68,7 +68,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Шаг 3. Получить этот объект из цепочки буферов
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Шаг 3. Получение объекта ожидания от цепочки буферов
 
 
 Вызовите [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) для получения дескриптора ожидания. Дескриптор ожидания — это указатель на объект ожидания. Сохраните этот дескриптор — он будет использоваться циклом отрисовки.
@@ -80,7 +80,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>Шаг 4. Подождите до отрисовки каждого кадра
+## <a name="step-4-wait-before-rendering-each-frame"></a>Шаг 4. Ожидание перед отрисовкой каждого кадра
 
 
 Прежде чем начинать отрисовку каждого кадра, цикл отрисовки должен дождаться сигнала от цепочки буферов, передаваемого через объект ожидания. Это относится и к первому кадру, отрисованному с использованием цепочки буферов. Используйте функцию [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex), предоставляя дескриптор ожидания, полученный в шаге 2, для указания начала каждого кадра.
@@ -144,17 +144,17 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 Дополнительные сведения о многопоточном программировании в Windows см. в следующих разделах по теме.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 
-* [Пример DirectXLatency](https://go.microsoft.com/fwlink/p/?LinkID=317361)
-* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
-* [**Сбой в WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
-* [**Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
-* [Асинхронное программирование в C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Пример Директкслатенци](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
+* [**IDXGISwapChain2:: Жетфрамелатенциваитаблеобжект**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
+* [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
+* [**Windows. System. Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+* [Асинхронное программирование вC++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
 * [Процессы и потоки](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
-* [Синхронизация](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
-* [С помощью объектов событий (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
+* [Синхронизиру](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
+* [Использование объектов событий (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
 
  
 

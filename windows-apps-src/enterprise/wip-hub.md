@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321394"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259620"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -41,9 +41,9 @@ WIP вместе с MDM предоставляет организации бол
 
 ![Жизненный цикл WIP](images/wip-lifecycle.png)
 
-> **Дополнительные сведения о WIP** <br>
-* [Знакомство с Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Защита корпоративных данных с помощью Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **Подробнее о WIP** <br>
+* [Знакомство с Information Protection Windows](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Защита корпоративных данных с помощью Information Protection Windows (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Если ваше приложение входит в список разрешенных, на все данные, созданные вашим приложением, распространяются ограничения политики. Это означает, что если администраторы отзовут у пользователей права доступа к корпоративным данным, эти пользователи потеряют доступ ко всем данным, созданным в приложении.
 
@@ -61,13 +61,13 @@ WIP вместе с MDM предоставляет организации бол
 
 Если вы готовы обучить свое приложение, ознакомьтесь с каким-либо из указанных ниже руководств.
 
-**Для приложений универсальной платформы Windows (UWP), создаваемых с помощьюC#**
+**Для приложений универсальная платформа Windows (UWP), создаваемых с помощьюC#**
 
 [Руководство разработчика Windows Information Protection (WIP)](wip-dev-guide.md).
 
-**Для классических приложений, создаваемых с помощью C++**
+**Для классических приложений, созданных с помощьюC++**
 
-[Руководство разработчика Windows Information Protection (WIP) (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
+[Руководство разработчика Windows Information Protection (WIP) (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Создание корпоративного приложения, не поддерживающего корпоративную безопасность

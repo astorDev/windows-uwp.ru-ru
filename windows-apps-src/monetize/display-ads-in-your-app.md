@@ -6,16 +6,16 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ef3050e2583674bf6cd5a601dbde1500f6b457e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1c12d64bde6b16774b9090f7122f3933e0129ddc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372554"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260325"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 
-Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Нашей платформы монетизацию ad предлагает различные форматы рекламы, которые можно легко интегрировать в ваши приложения и поддерживает mediation с многих популярных рекламным сетям. Наша платформа соответствует стандартам OpenRTB, VAST 2.x, MRAID 2 и VPAID 3, а также MOAT и IAS. 
+Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа AD монетизацию предлагает разнообразные форматы рекламы, которые можно легко интегрировать в свои приложения и поддерживать множество популярных сетей ad. Наша платформа соответствует стандартам OpenRTB, VAST 2.x, MRAID 2 и VPAID 3, а также MOAT и IAS. 
 
 <br/>
 
@@ -32,33 +32,33 @@ ms.locfileid: "66372554"
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>Начало работы</b><br/><br/>
-    <a href="https://aka.ms/ads-sdk-uwp">Установите пакет SDK Microsoft Advertising</a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Установите пакет SDK для Microsoft Advertising</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>Руководства для разработчиков</b><br/><br/>
-    <a href="banner-ads.md">Рекламные объявления</a>
+    <a href="banner-ads.md">Баннеры</a>
     <br/>
-    <a href="interstitial-ads.md">Вставки рекламы</a>
+    <a href="interstitial-ads.md">Внутреннего ads</a>
     <br/>
-    <a href="native-ads.md">Собственный рекламы</a>
+    <a href="native-ads.md">Встроенные рекламные объявления</a>
     </td>
 <td align="left"><img src="images/api-reference.png" alt="API ref icon" /></td>
 <td align="left"><b>Другие ресурсы</b><br/><br/>
-    <a href="set-up-ad-units-in-your-app.md">Настройка единиц измерения ad в приложении</a>
+    <a href="set-up-ad-units-in-your-app.md">Настройка единиц AD в приложении</a>
     <br/>
-    <a href="best-practices-for-ads-in-apps.md">Советы и рекомендации</a>
-    <br/>
+    <a href="best-practices-for-ads-in-apps.md">Рекомендации
+    </a><br/>
     <a href="https://docs.microsoft.com/uwp/api/overview/advertising">Справочник по API</a>
     </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Шаг 1. Установить пакет Microsoft Advertising SDK
+## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Этап 1. Установите Microsoft Advertising SDK
 
-Чтобы начать работу, установите [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) на компьютере разработчика, который вы используете для создания приложения. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
+Чтобы начать работу, установите [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) на компьютере разработчика, который вы используете для создания приложения. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
-## <a name="step-2-implement-ads-in-your-app"></a>Шаг 2. Реализация рекламы в приложении
+## <a name="step-2-implement-ads-in-your-app"></a>Этап 2. Реализация рекламы в приложении
 
 Microsoft Advertising SDK предоставляет несколько различных типов элементов управления рекламой, которые можно использовать в приложении. Выберите, какие типы рекламы лучше всего подходят для вашей ситуации, и затем добавьте код в свое приложение для отображения таких объявлений. На этом шаге будет использоваться тестовая группа объявлений, чтобы вы могли видеть, как отображается реклама в приложении во время тестирования.
 
@@ -88,19 +88,19 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 <span id="ad-mediation"/>
 
-## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Шаг 3. Создать единицу ad и настроить посредника
+## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Этап 3. Создание группы объявлений и настройка рекламного посредника
 
-После завершения тестирования приложения, и вы будете готовы отправить ее в Store, создать ad единицу на [рекламы в приложении](../publish/in-app-ads.md) страницы в центре партнеров. Обновите код приложения для использования этой группы объявлений, чтобы ваше приложение получало реальные объявления. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+После завершения тестирования приложения и готовности его отправить в магазин создайте модуль AD на странице [рекламных объявлений в приложении](../publish/in-app-ads.md) в центре партнеров. Обновите код приложения для использования этой группы объявлений, чтобы ваше приложение получало реальные объявления. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
 По умолчанию приложение будет отображать рекламу из сети платной рекламы корпорации Майкрософт. Чтобы максимально увеличить доход от рекламы, можно использовать [рекламный посредник](ad-mediation-service.md) для группы объявлений в целях показа рекламы из дополнительных платных рекламных сетей, таких как Taboola и Smaato. Также можно расширить возможности продвижения вашего приложения путем показа объявлений из кампаний по продвижению приложений корпорации Майкрософт.
 
 Чтобы начать использовать рекламный посредник в своем приложении UWP, [настройте параметры рекламного посредника](../publish/in-app-ads.md#mediation-settings) для своей группы объявлений. По умолчанию мы автоматически настраиваем параметры посредника с помощью алгоритмов машинного обучения, чтобы помочь вам получить максимальную выручку от рекламы на рынках, поддерживаемых вашим приложением. Однако используемые сети можно выбирать и вручную. В любом случае параметры посредника полностью настроены на наших серверах. Вам не нужно менять код в вашем приложении.    
 
-## <a name="step-4-submit-your-app-and-review-performance"></a>Шаг 4. Отправка приложения и проверка результатов
+## <a name="step-4-submit-your-app-and-review-performance"></a>Этап 4. Отправка приложения и проверка результатов
 
-После завершения разработки приложения с помощью решения ads, вы можете [Отправка обновленного приложения](https://docs.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, чтобы сделать его доступным в Store. Приложения, отображающие рекламу, должны отвечать дополнительным требованиям, изложенным в [разделе 10.10 Политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) и [приложении E к Соглашению с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+После завершения разработки приложения с помощью рекламных объявлений вы можете [отправить обновленное приложение](https://docs.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, чтобы оно было доступно в магазине. Приложения, отображающие рекламу, должны отвечать дополнительным требованиям, изложенным в [разделе 10.10 Политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) и [приложении E к Соглашению с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
 
-После публикации приложения и доступный в Store, вы можете просмотреть ваши [рекламу отчеты о производительности](../publish/advertising-performance-report.md) в центре партнеров и внести изменения настроек посредника для оптимизации производительности рекламных материалах по-прежнему. Доход от рекламы входит в состав вашей [Сводки по выплатам](../publish/payout-summary.md).
+После публикации и доступности приложения в магазине вы можете просматривать [отчеты о производительности рекламы](../publish/advertising-performance-report.md) в центре партнеров и продолжать вносить изменения в Параметры исправлений, чтобы оптимизировать производительность ваших рекламных объявлений. Доход от рекламы входит в состав вашей [Сводки по выплатам](../publish/payout-summary.md).
 
 <span id="additional-help" />
 
@@ -108,19 +108,19 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 Дополнительные сведения по использованию Microsoft Advertising SDK можно найти на следующих ресурсах.
 
-|  Задача    | Resource |               
+|  Задача    | Ресурс |               
 |----------|-------|
 | Сообщить об ошибке или получить техническую поддержку по вопросам рекламы     | Посетите [страницу поддержки](https://developer.microsoft.com/en-us/windows/support) и выберите **Реклама в приложениях**.        |
-| Получить поддержку сообщества     | Посетите [форум](https://go.microsoft.com/fwlink/p/?LinkId=401266).       |
-| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и промежуточную видеорекламу в приложения.     | См. [примеры рекламы на GitHub](https://aka.ms/githubads).       |
+| Получить поддержку сообщества     | Посетите [форум](https://go.microsoft.com/fwlink/?LinkID=401264).       |
+| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и промежуточную видеорекламу в приложения.     | См. [примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Сведения о последних возможностях получения дохода из приложений для Windows     | Посетите раздел [Монетизация приложений](https://developer.microsoft.com/store/monetize).        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Приложения для Windows 8.1 и Windows Phone 8.x
 
-Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://aka.ms/store-8-sdk). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
+Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Отчет о результативности рекламы](../publish/advertising-performance-report.md)
-* [Программа издателей Ads "премиум" Windows](windows-premium-ads-publishers-program.md)
+* [Программа для издателей Windows Premium ADS](windows-premium-ads-publishers-program.md)

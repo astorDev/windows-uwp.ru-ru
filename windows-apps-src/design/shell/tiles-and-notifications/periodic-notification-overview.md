@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 617b5d013c8452733fae2a1fa7c16180d37fbe57
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360943"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259712"
 ---
 # <a name="periodic-notification-overview"></a>Обзор периодических уведомлений
  
@@ -25,7 +25,7 @@ ms.locfileid: "66360943"
 
 Периодические уведомления позволяют приложению обновлять живые плитки с минимальным участием облачной службы и клиента. Периодические уведомления удобно использовать для распространения одного и того же содержимого среди широкой аудитории.
 
-**Примечание**    Дополнительные сведения, загрузив [Push-уведомлений и пример периодических уведомлений](https://go.microsoft.com/fwlink/p/?linkid=231476) для Windows 8.1 и повторно использовать ее исходный код в приложении Windows 10.
+**Обратите внимание** ,   вы можете узнать больше, загрузив [Пример push-уведомлений и периодического уведомления](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) для Windows 8.1 и повторно используя его исходный код в приложении Windows 10.
 
  
 
@@ -48,9 +48,9 @@ ms.locfileid: "66360943"
 
 Чтобы начать опрос, вызовите один из следующих методов:
 
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (плитки)
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (эмблема)
--   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (плитки)
+-   [**Стартпериодикупдате**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (плитка)
+-   [**Стартпериодикупдате**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (эмблема)
+-   [**Стартпериодикупдатебатч**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (плитка)
 
 При вызове одного из этих методов указанный в вызове URI немедленно опрашивается. Полученное содержимое используется для обновления плитки либо индикатора событий. После первоначального опроса Windows продолжает предоставлять обновления с указанной периодичностью. Опрос продолжается до явной остановки (с помощью [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)), удаления приложения или, если это вспомогательная плитка, — до удаления плитки. В противном случае Windows продолжит опрос для обновлений плитки или индикатора событий, даже если приложение никогда не будет запущено снова.
 
@@ -77,7 +77,7 @@ ms.locfileid: "66360943"
 
 По умолчанию срок действия периодических уведомлений на индикаторах событий и плитках истекает через три дня с момента скачивания уведомлений. По окончании срока действия уведомления содержимое удаляется с плитки или из очереди и более не показывается пользователю. Рекомендуется явным образом установить срок действия для всех периодических уведомлений на плитках и индикаторах событий. Исходя из особенностей вашего приложения или уведомления, следует выбрать время, позволяющее гарантировать, что содержание вашей плитки не будет сохраняться после того, как утратит актуальность. Явное указание срока действия важно для содержимого с определенной продолжительностью существования. Это также гарантирует удаление устаревшего содержимого, если облачная служба стала недоступной или если пользователь отключился от сети на продолжительное время.
 
-Облачная служба устанавливает срок действия и время уведомления добавлением HTTP-заголовка X-WNS-Expires в полезные данные HTTP-отклика. HTTP-заголовок X-WNS-Expires соответствует формату [HTTP-date](https://go.microsoft.com/fwlink/p/?linkid=253706). Подробнее: [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) или [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
+Облачная служба устанавливает срок действия и время уведомления добавлением HTTP-заголовка X-WNS-Expires в полезные данные HTTP-отклика. HTTP-заголовок X-WNS-Expires соответствует формату [HTTP-date](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1). Подробнее: [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) или [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
 
 Например, во время торгового дня на бирже срок действия для обновлений курсов акций можно установить равным двойному интервалу опроса (допустим, через час после получения при опросе, выполняемом каждые полчаса). Рассмотрим другой пример: для новостного приложения можно определить, что один день является подходящим временем для истечения срока действия обновлений плитки ежедневных новостей.
 
@@ -100,10 +100,10 @@ ms.locfileid: "66360943"
 
 Для каждого уведомления, которое Windows должна скачивать для вашей плитки, вам нужно предоставить уникальный URI. Использование метода [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) позволяет предоставить для работы с очередью уведомлений до пяти URI одновременно. Все URI опрашиваются на наличие отдельных полезных данных уведомления одновременно или почти одновременно. Каждый опрошенный URI может возвращать собственные срок действия и значение тега.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 
-* [Рекомендации по периодических уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
-* [Как настроить периодические уведомления для эмблемы](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
-* [Как настроить периодические уведомления для плиток](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [Рекомендации для периодических уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [Настройка периодических уведомлений для эмблем](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [Настройка периодических уведомлений для плиток](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

@@ -1,42 +1,42 @@
 ---
 title: Выполнение геокодирования и обратного геокодирования
-description: В этом руководстве показано, как для преобразования адресов в географические расположения (геокодирования) и преобразования географических расположениях, в адресах улиц (обратного геокодирования) путем вызова методов класса MapLocationFinder в пространстве имен Windows.Services.Maps.
+description: В этом руководство показано, как преобразовать адреса улицы в географические расположения (геокодирование) и преобразовать географические расположения в адреса улицы (обратная кодировка), вызвав методы класса Маплокатионфиндер в пространстве имен Windows. Services. Maps.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, геокодирование, карта, расположение
 ms.localizationpriority: medium
-ms.openlocfilehash: 88687f6e7074ff7c914927a81a08720336b3c60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5d7e1dda355cf87a2c8e26c11327cfff32e9d0b5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371876"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259366"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Выполнение геокодирования и обратного геокодирования
 
-В этом руководстве показано, как преобразовать улиц географических расположениях (геокодирования) и преобразовать географических расположений в адресах улиц (обратного геокодирования), вызывая методы класса [ **MapLocationFinder** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) в класс [ **Windows.Services.Maps** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) пространства имен.
+В этом руководство показано, как преобразовать адреса улицы в географические расположения (геокодирование) и преобразовать географические расположения в адреса улицы (обратная кодировка), вызвав методы класса [**маплокатионфиндер**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) в пространстве имен [**Windows. Services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) .
 
 > [!TIP]
-> Дополнительные сведения об использовании карт в вашем приложении, загрузите [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) образец из [Windows универсальной примеры репозитория](h https://github.com/Microsoft/Windows-universal-samples) на сайте GitHub.
+> Чтобы узнать больше об использовании карт в приложении, Скачайте пример [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) из [репозитория по универсальным образцам Windows](h https://github.com/Microsoft/Windows-universal-samples) на сайте GitHub.
 
-Классы, участвующие в геокодирование и обратного геокодирования упорядочены следующим образом.
+Классы, вовлеченные в геокодирование и обратную геокодирование, организованы следующим образом.
 
--   [ **MapLocationFinder** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) класс содержит методы, обрабатывающие геокодирования ([**FindLocationsAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) и обратное геокодирование ([ **FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
--   Оба эти методы возвращают [ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) экземпляра.
--   [ **Расположения** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) свойство [ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) предоставляет доступ к коллекции [  **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объектов. 
--   [**MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объекты имеют оба [ **адрес** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) свойство, которое предоставляет [ **MapAddress** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) Объект, представляющий адрес улицы и [ **точки** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point) свойство, которое предоставляет [ **Geopoint** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) объекта представляющий географическое расположение.
+-   Класс [**маплокатионфиндер**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) содержит методы, обрабатывающие геокодирование ([**финдлокатионсасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)) и обратную геокодирование ([**финдлокатионсатасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)).
+-   Эти методы возвращают экземпляр [**маплокатионфиндерресулт**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
+-   Свойство [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) объекта [**маплокатионфиндерресулт**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) предоставляет коллекцию объектов [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) . 
+-   Объекты [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) имеют оба свойства [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) , которые предоставляют объект [**мападдресс**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) , представляющий адрес улицы, и свойство [**Point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point) , которое [**предоставляет объект**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) географического расположения.
 
 > [!IMPORTANT]
-> Перед тем как использовать карты служб необходимо указать ключ проверки подлинности карты. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
+> необходимо указать ключ проверки подлинности карты, прежде чем можно будет использовать службы сопоставления. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
 
 ## <a name="get-a-location-geocode"></a>Получение сведений о расположении (геокодирование)
 
-В этом разделе показано, как преобразовать почтовый адрес или название места географическое расположение (геокодирования).
+В этом разделе показано, как преобразовать почтовый адрес или имя места в географическое расположение (геокодирование).
 
-1.  Вызовите одну из перегрузок [ **FindLocationsAsync** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) метод [ **MapLocationFinder** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) класс с именем месте или улицы адрес.
-2.  [ **FindLocationsAsync** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) возвращает [ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) объекта.
-3.  Используйте [ **расположения** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) свойство [ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) для предоставления коллекции [  **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объектов. Может быть несколько [ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объекты, так как система может найти несколько расположений, которые соответствуют заданный входной.
+1.  Вызовите одну из перегрузок метода [**финдлокатионсасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) класса [**маплокатионфиндер**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder) с именем места или улицы.
+2.  Метод [**финдлокатионсасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync) возвращает объект [**маплокатионфиндерресулт**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) .
+3.  Используйте свойство [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) объекта [**маплокатионфиндерресулт**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) для предоставления объектов [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) коллекции. Может существовать несколько объектов [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) , так как система может найти несколько расположений, соответствующих заданным входам.
 
 ```csharp
 using Windows.Services.Maps;
@@ -80,12 +80,12 @@ result = (47.6406099647284,-122.129339994863)
 
 ## <a name="get-an-address-reverse-geocode"></a>Получение адреса (обратное геокодирование)
 
-В этом разделе показано, как преобразовать географического расположения в адрес (обратного геокодирования).
+В этом разделе показано, как преобразовать географическое расположение в адрес (обратная геокодирование).
 
 1.  Вызовите метод [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) класса [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder).
 2.  Метод [**FindLocationsAtAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync) возвращает объект [**MapLocationFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult), который содержит коллекцию подходящих объектов [**MapLocation**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
-3.  Используйте [ **расположения** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) свойство [ **MapLocationFinderResult** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) для предоставления коллекции [  **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объектов. Может быть несколько [ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) объекты, так как система может найти несколько расположений, которые соответствуют заданный входной.
-4.  Доступ [ **MapAddress** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) объектов через [ **адрес** ](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) свойства каждого [ **MapLocation** ](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
+3.  Используйте свойство [**Locations**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinderresult.locations) объекта [**маплокатионфиндерресулт**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinderResult) для предоставления объектов [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) коллекции. Может существовать несколько объектов [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation) , так как система может найти несколько расположений, соответствующих заданным входам.
+4.  Доступ к объектам [**мападдресс**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapAddress) осуществляется через свойство [**Address**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.address) каждого [**маплокатион**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocation).
 
 ```csharp
 using Windows.Services.Maps;
@@ -119,13 +119,13 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 town = Redmond
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
+* [Пример приложения UWP для работы с трафиком](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Видео: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Видео. Использование карт и расположения на телефоне, планшете и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [**MapLocationFinder** класса](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
-* [**FindLocationsAsync** метод](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
-* [**FindLocationsAtAsync** метод](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)
+* [Класс **маплокатионфиндер**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)
+* [Метод **финдлокатионсасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsasync)
+* [Метод **финдлокатионсатасинк**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocationfinder.findlocationsatasync)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2a13f0779414f60784ac1703fa32ac1ef5c89635
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339751"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256543"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -23,7 +23,7 @@ ms.locfileid: "71339751"
 > Описанные в этой статье функции доступны, только начиная c Windows 10 версии 1607.
 
 > [!NOTE] 
-> Существует пример универсального приложения для Windows, который демонстрирует использование **MediaFrameReader** для отображения кадров из разных источников, включая цветные и инфракрасные камеры и камеры с эффектом глубины. Дополнительные сведения см. в разделе [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230).
+> Существует пример универсального приложения для Windows, который демонстрирует использование **MediaFrameReader** для отображения кадров из разных источников, включая цветные и инфракрасные камеры и камеры с эффектом глубины. Дополнительные сведения см. в разделе [Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 > [!NOTE] 
 > Новый набор API-интерфейсов для использования **MediaFrameReader** со звуковыми данными появился в Windows 10 версии 1803. Дополнительные сведения см. в разделе [Обработка аудиокадров с помощью MediaFrameReader](process-audio-frames-with-mediaframereader.md).
@@ -34,7 +34,7 @@ ms.locfileid: "71339751"
 
 **Добавление возможностей в манифест приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -48,7 +48,7 @@ ms.locfileid: "71339751"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-Вы также можете создать [**девицеватчер**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) с помощью [**девицеинформатион. креатеватчер**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) и значения, возвращенного из [**медиафрамесаурцеграуп. жетдевицеселектор**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) , для получения уведомлений о доступных группах источников кадров на устройстве. изменения, например, когда внешняя камера подключена к сети. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+Вы также можете создать [**девицеватчер**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) с помощью [**девицеинформатион. креатеватчер**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) и значения, возвращаемого [**медиафрамесаурцеграуп. жетдевицеселектор**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) , чтобы получать уведомления при изменении доступных групп источников кадров на устройстве, например при подключении внешней камеры. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
 
 [  **MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) содержит коллекцию объектов [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo), описывающих источники кадров, включенные в эту группу. После получения групп источников кадров, доступных на устройстве, можно выбрать группу, которая предоставляет интересующие вас источники кадров.
 
@@ -151,7 +151,7 @@ ms.locfileid: "71339751"
 Подробные сведения об удалении объектов захвата мультимедиа при приостановке вашего приложения см. в разделе [**Отображение просмотра камеры**](simple-camera-preview-access.md).
 
 ## <a name="the-framerenderer-helper-class"></a>Вспомогательный класс FrameRenderer
-[Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230) для универсальной платформы Windows содержит вспомогательный класс, который упрощает показ кадров, полученных от цветных и инфракрасных камер, а также источников с эффектом глубины в вашем приложении. Обычно данные с камеры с эффектом глубины или инфракрасной камеры подвергаются дополнительной обработке, а не просто отображаются на экране, но этот вспомогательный класс представляет собой полезное средство для демонстрации функции ридера кадров и для отладки собственной реализации ридера кадров.
+[Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames) для универсальной платформы Windows содержит вспомогательный класс, который упрощает показ кадров, полученных от цветных и инфракрасных камер, а также источников с эффектом глубины в вашем приложении. Обычно данные с камеры с эффектом глубины или инфракрасной камеры подвергаются дополнительной обработке, а не просто отображаются на экране, но этот вспомогательный класс представляет собой полезное средство для демонстрации функции ридера кадров и для отладки собственной реализации ридера кадров.
 
 Вспомогательный класс **FrameRenderer** реализует следующие методы.
 
@@ -208,7 +208,7 @@ ms.locfileid: "71339751"
 [!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="use-buffered-frame-acquisition-mode-to-preserve-the-sequence-of-acquired-frames"></a>Используйте буферизованный режим получения кадров, чтобы сохранить последовательность полученных кадров
-Начиная с Windows 10 версии 1709, вы можете задать значение **Buffered** свойству **[AcquisitionMode](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** объекта **MediaFrameReader** или **MultiSourceMediaFrameReader**, чтобы переданная в приложение из источника последовательность кадров сохранялась.
+Начиная с Windows 10 версии 1709, вы можете задать значение **Buffered[ свойству ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** AcquisitionMode объекта **MediaFrameReader** или **MultiSourceMediaFrameReader**, чтобы переданная в приложение из источника последовательность кадров сохранялась.
 
 [!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
 
@@ -235,7 +235,7 @@ ms.locfileid: "71339751"
 
 [!code-cs[MediaSourceInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceInitMediaCapture)]
 
-Наконец, вызовите метод **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** , чтобы создать **MediaSource** для каждого источника кадров, указав свойство **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** связанного объекта **MediaFrameSourceInfo** для выбора одного из источников кадров в коллекции **[FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** объекта **MediaCapture**. Инициализируйте новый объект **MediaPlayer** и назначьте его **MediaPlayerElement**, вызвав метод **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)** . Затем задайте свойство **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** у созданного объекта **MediaSource**.
+Наконец, вызовите метод **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** , чтобы создать **MediaSource** для каждого источника кадров, указав свойство **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** связанного объекта **MediaFrameSourceInfo** для выбора одного из источников кадров в коллекцииFrameSources **[ объекта ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)MediaCapture**. Инициализируйте новый объект **MediaPlayer** и назначьте его **MediaPlayerElement**, вызвав метод **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)** . Затем задайте свойство **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** у созданного объекта **MediaSource**.
 
 [!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
 
@@ -249,11 +249,11 @@ ms.locfileid: "71339751"
 
 Дополнительные сведения об использовании профилей камеры см. на странице [Профили камеры](camera-profiles.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Пример кадров камеры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3c8bf0d2d203b650b2706c24dc4c20e88e2576
-ms.sourcegitcommit: 36f502e2449f49e82bd593d6aea0b71ac48d6bec
+ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750563"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259997"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Ниже приведены некоторые важные сведения о получении платежей для приложений, надстроек и заработок в рекламе.
@@ -21,7 +21,7 @@ ms.locfileid: "70750563"
 
 ## <a name="store-fee"></a>Комиссия Магазина
 
-При [регистрации учетной записи разработчика](https://go.microsoft.com/fwlink/p/?LinkID=615100) вы принимаете [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). В этом соглашении описываются отношения между вами и корпорацией Майкрософт, касающиеся продажи приложений в Microsoft Store, в том числе оговаривается комиссия Microsoft Store, взимаемая корпорацией Майкрософт за каждую продажу.
+При [регистрации учетной записи разработчика](https://developer.microsoft.com/store/register) вы принимаете [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). В этом соглашении описываются отношения между вами и корпорацией Майкрософт, касающиеся продажи приложений в Microsoft Store, в том числе оговаривается комиссия Microsoft Store, взимаемая корпорацией Майкрософт за каждую продажу.
 
 Суммы комиссии официально определены в [соглашении с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Всегда обращайтесь к этому документу, если у вас возникают вопросы.
 

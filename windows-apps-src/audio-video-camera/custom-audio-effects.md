@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e4bcd5294031e64aa9f21371fa389978b5e708ab
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318575"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257410"
 ---
 # <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
@@ -22,7 +22,7 @@ ms.locfileid: "67318575"
 
 Пользовательский аудиоэффект определяется в классе, реализующем интерфейс [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса аудиоэффекта.
 
-**Добавление в компонент среды выполнения Windows, для звуковых эффектов**
+**Добавление среда выполнения Windows компонента для звукового эффекты**
 
 1.  Открыв свое решение в Microsoft Visual Studio, перейдите в меню **Файл** и выберите пункт **Добавить-&gt;Новый проект**.
 2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)** .
@@ -93,7 +93,7 @@ ms.locfileid: "67318575"
 
 ### <a name="close-method"></a>Метод Close
 
-Система будет вызывать [ **закрыть** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [ **закрыть** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) метода в классе, если эффект следует завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
+Система будет вызывать метод [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) для класса, когда действие должно завершиться. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -123,7 +123,7 @@ ms.locfileid: "67318575"
 
 1.  В обозревателе решений внутри проекта приложения щелкните правой кнопкой мыши по разделу **Ссылки** и выберите **Добавить ссылку**.
 2.  Разверните вкладку **Проекты**, выберите **Решение** и установите флажок для имени вашего проекта эффекта. В этом примере используется имя *AudioEffectComponent*.
-3.  Нажмите кнопку **ОК**
+3.  Нажмите **ОК**
 
 Если ваш класс звукового эффекта объявлен в другом пространстве имен, не забудьте включить это пространство имен в свой файл кода.
 
@@ -144,10 +144,10 @@ ms.locfileid: "67318575"
 
 
 
-## <a name="related-topics"></a>См. также
-* [Доступ к предварительной версии простой камеры](simple-camera-preview-access.md)
+## <a name="related-topics"></a>Статьи по теме
+* [Простой доступ к предварительной версии камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
-* [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Документация по Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Воспроизведение мультимедиа](media-playback.md)
 
  

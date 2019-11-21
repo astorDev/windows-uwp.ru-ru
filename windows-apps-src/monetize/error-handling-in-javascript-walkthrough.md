@@ -6,18 +6,18 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: df33dc84823d5bcdc02d892820967b74ff0e5f65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b68979bfa6b1f661ca7765ebc2598b201f013e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645909"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260292"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Пошаговое руководство по обработке ошибок в JavaScript
 
 В этом руководстве рассматривается перехват связанных с рекламой ошибок в приложении на JavaScript. В этом руководстве используется элемент управления [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для отображения баннера, но изложенные в нем общие принципы также применимы к межстраничным и собственным объявлениям.
 
-Эти примеры составлены с учетом того, что у вас есть приложение на JavaScript, которое содержит элемент управления **AdControl**. Пошаговые инструкции по добавлению элемента **AdControl** в приложение см. в разделе [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md). Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](https://aka.ms/githubads).
+Эти примеры составлены с учетом того, что у вас есть приложение на JavaScript, которое содержит элемент управления **AdControl**. Пошаговые инструкции по добавлению элемента **AdControl** в приложение см. в разделе [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md). Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 1.  В файле default.html file добавьте значение для события **onErrorOccurred**, где свойство **data-win-options**для элемента **AdControl** определяется в **div**. Найдите следующий код в файле default.html.
     ``` HTML
@@ -66,4 +66,4 @@ ms.locfileid: "57645909"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Примеры рекламы на GitHub](https://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

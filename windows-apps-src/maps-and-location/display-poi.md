@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, вешки
 ms.localizationpriority: medium
-ms.openlocfilehash: b8e14693dd6ef23714da53d652b9083f202cd62d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340438"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259378"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Отображение объектов на карте
 
 Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. Объект — это определенная точка на карте, представляющая что-нибудь интересное. Например, это может быть расположение компании, города или друга.
 
-Чтобы узнать больше о том, как отобразить достопримечательности в приложении, Скачайте следующий пример из [репозитория Windows-универсальные примеры](https://go.microsoft.com/fwlink/p/?LinkId=619979) на сайте GitHub: [Пример схемы универсальная платформа Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+Чтобы получить дополнительные сведения об отображении объектов в приложении, скачайте [пример карты универсальной платформы для Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) из [репозитория Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) на веб-сайте GitHub.
 
 Вы можете отображать вешки, изображения и фигуры на карте, добавляя объекты [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) и [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) в коллекцию **MapElements** объекта [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Затем добавьте этот объект слоя в коллекцию **Layers** элемента управления картой.
 
@@ -163,9 +163,9 @@ public void AddLandmarkPhoto()
 }
 ```
 
-Вот три части этого кода, которые стоит проанализировать чуть ближе: Изображение, ссылка на камеру и свойство [**нормализеданчорпоинт**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) .
+В этом коде есть три фрагмента, которые заслуживают более тщательного изучения: изображение, опорная камера и свойство [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint).
 
-### <a name="image"></a>Image
+### <a name="image"></a>Изображение
 
 В этом примере показано пользовательское изображение, сохраненное в папку проекта **Assets**. Свойство [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) объекта [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) принимает значение с типом [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Этому типу требуется оператор **using** для пространства имен [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams).
 
@@ -186,7 +186,7 @@ public void AddLandmarkPhoto()
 
 ## <a name="add-a-shape"></a>Добавление фигуры
 
-Для отображения многоточечной фигуры на карте используйте класс [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon). В показанном ниже фрагменте из [примера карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить красное поле с синей рамкой на карте.
+Для отображения многоточечной фигуры на карте используйте класс [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon). В показанном ниже фрагменте из [примера карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) показано, как отобразить красное поле с синей рамкой на карте.
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>Добавление линии
 
 
-Для отображения линии на карте используйте класс [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline). В показанном ниже фрагменте из [примера карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить пунктирную линию на карте.
+Для отображения линии на карте используйте класс [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline). В показанном ниже фрагменте из [примера карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) показано, как отобразить пунктирную линию на карте.
 
 ```csharp
 public void DrawLineOnMap()
@@ -471,13 +471,13 @@ public myMapPage()
     MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Сборка видео 2015: использование карт и расположения на телефоне, планшете и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP для работы с трафиком](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**мапикон**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**мапполилине**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

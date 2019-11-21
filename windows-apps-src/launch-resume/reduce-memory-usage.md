@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a660512abe5f18f7b1955853dc5389dc902fd2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0b5e0ea6deef7dfe3531c8d0406e08bfae80f0e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371275"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260460"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>Освобождение памяти при переходе приложения в фоновый режим
 
@@ -101,7 +101,7 @@ ms.locfileid: "66371275"
 
 - **Используйте** событие **LeavingBackground**, чтобы восстановить ресурсы ИП, освобожденные приложением при переходе в фоновый режим.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Пример воспроизведения мультимедиа в фоновом режиме](https://go.microsoft.com/fwlink/p/?LinkId=800141) — показывает, как освободить память при переходе приложения в фоновый режим.
+* [Пример воспроизведения мультимедиа в фоновом режиме](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) — показывает, как освободить память при переходе приложения в фоновый режим.
 * [Диагностические инструменты](https://devblogs.microsoft.com/devops/diagnostic-tools-debugger-window-in-visual-studio-2015/) — используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.

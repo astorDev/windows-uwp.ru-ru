@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 17ca27e9f9c10ba59edbe0af84118a1bee0a44a3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317599"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254342"
 ---
 # <a name="audio-graphs"></a>Звуковые графы
 
@@ -32,7 +32,7 @@ ms.locfileid: "67317599"
 При добавлении к звуковому графу звуковых эффектов реализуются дополнительные сценарии. Каждый узел звукового графа можно при необходимости заполнить звуковыми эффектами, которые отвечают за обработку звука, проходящего через узел. Написав всего несколько строк кода, вы можете подключить к звуковому узлу несколько встроенных эффектов, таких как эхо, эквалайзер, ограничение и реверберация. Кроме того, вы можете создать собственные пользовательские звуковые эффекты, которые работают точно так же, как и встроенные эффекты.
 
 > [!NOTE]
-> В [примере UWP AudioGraph](https://go.microsoft.com/fwlink/?LinkId=619481) реализован код, описанный в этом обзоре. Скачайте этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
+> В [примере UWP AudioGraph](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation) реализован код, описанный в этом обзоре. Скачайте этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>Выбор между звуковым графом среды выполнения Windows и интерфейсом XAudio2
 
@@ -43,7 +43,7 @@ API звуковых графов среды выполнения Windows:
 -   значительно проще в использовании, чем XAudio2;
 -   помимо C++, могут использоваться и в C#;
 -   могут использовать звуковые файлы, в том числе в сжатых форматах, напрямую. Интерфейс XAudio2 работает только в звуковых буферах и не обеспечивает никаких возможностей ввода-вывода файлов;
--   В Windows 10 можно использовать конвейер аудио низкой задержкой.
+-   Может использовать конвейер аудиопотока с низкой задержкой в Windows 10.
 -   поддерживают автоматическое переключение между конечными точками, если используются параметры конечной точки по умолчанию. Например, если пользователь переключается с динамика устройства на гарнитуру, звук автоматически перенаправляется на новый ввод.
 
 ## <a name="audiograph-class"></a>Класс AudioGraph
@@ -54,12 +54,12 @@ API звуковых графов среды выполнения Windows:
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   Все типы узлов аудио создаются с помощью создания\* методы **AudioGraph** класса.
--   Метод [**AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start) позволяет начать обработку звуковых данных с помощью звукового графа. Метод [**AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop) позволяет остановить звуковую обработку. Каждый узел графа можно запустить и остановить независимо от того, выполняется ли граф, однако при остановке графа все узлы отключаются. [**ResetAllNodes** ](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes) вызывает все узлы в графе, чтобы удалить все данные в буферы аудио.
+-   Все типы звуковых узлов создаются с помощью методов create\* класса **аудиограф** .
+-   Метод [**AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start) позволяет начать обработку звуковых данных с помощью звукового графа. Метод [**AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop) позволяет остановить звуковую обработку. Каждый узел графа можно запустить и остановить независимо от того, выполняется ли граф, однако при остановке графа все узлы отключаются. [**Ресеталлнодес**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes) приводит к тому, что все узлы в графе отменяют все данные, находящиеся в их звуковых буферах.
 -   Событие [**QuantumStarted**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumstarted) возникает, когда граф приступает к обработке нового кванта времени звуковых данных. Событие [**QuantumProcessed**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumprocessed) возникает, когда обработка кванта времени завершается.
 
 -   Единственное необходимое свойство [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings) — это [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory). Если задать это значение, система оптимизирует звуковой конвейер для указанной категории.
--   Размер кванта времени звукового графа определяет количество примеров, которые обрабатываются одновременно. По умолчанию размер кванта времени составляет 10 мс на основе частоты дискретизации по умолчанию. Если указать пользовательский размер кванта времени, установив свойство [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum), необходимо также задать значение **ClosestToDesired** для свойства [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode). В противном случае указанное значение будет проигнорировано. Если используется это значение, система выберет размер кванта времени, максимально соответствующий указанному вами. Чтобы определить фактический размер кванта времени, проверьте свойство [**SamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum) класса **AudioGraph** после его создания.
+-   Размер кванта времени звукового графа определяет количество примеров, которые обрабатываются одновременно. По умолчанию размер кванта времени составляет 10 мс на основе частоты дискретизации по умолчанию. Если указать пользовательский размер кванта времени, установив свойство [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum), необходимо также задать значение [ClosestToDesired**для свойства**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode)QuantumSizeSelectionMode. В противном случае указанное значение будет проигнорировано. Если используется это значение, система выберет размер кванта времени, максимально соответствующий указанному вами. Чтобы определить фактический размер кванта времени, проверьте свойство [**SamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum) класса **AudioGraph** после его создания.
 -   Если вы планируете всего лишь использовать звуковой граф с файлами без вывода на звуковое устройство, мы рекомендуем использовать размер кванта времени по умолчанию, не задавая свойство [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum).
 -   Свойство [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing) определяет объем выходных данных звукового графа, обрабатываемых первичным устройством рендеринга. Параметр **Default** позволяет системе использовать обработку звука по умолчанию для определенной категории рендеринга звуковых данных. С помощью такой обработки вы можете значительно улучшить качество звука на некоторых устройствах, особенно мобильных устройствах с небольшими динамиками. Параметр **Raw** позволяет повысить производительность благодаря уменьшению количества обрабатываемых сигналов, но также может привести к ухудшению качества звука на некоторых устройствах.
 -   Если для режима [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode) задано значение **LowestLatency**, звуковой граф автоматически будет использовать параметр **Raw** для [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing).
@@ -80,7 +80,7 @@ API звуковых графов среды выполнения Windows:
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-Если вы хотите указать определенные записи звука устройства для устройства входной узел, можно использовать [ **Windows.Devices.Enumeration.DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) класс для получения списка доступных звуковых системы устройства записи путем вызова [ **FindAllAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) и передачи в селекторе устройства обработки звука, возвращенный [  **Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector). Вы можете выбрать один из возвращенных объектов **DeviceInformation** программным путем или отобразить пользовательский интерфейс, с помощью которого пользователь сможет выбрать устройство для последующей передачи методу [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync).
+Если вы хотите указать конкретное устройство записи звука для узла ввода устройства, можно использовать класс [**Windows. Devices. Enumeration. девицеинформатион**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) для получения списка доступных системных устройств записи звука путем вызова [**финдалласинк**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) и передачи селектора устройства рендеринга звука, возвращенного [**Windows. Media. Devices. медиадевице. жетаудиокаптуреселектор**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector). Вы можете выбрать один из возвращенных объектов **DeviceInformation** программным путем или отобразить пользовательский интерфейс, с помощью которого пользователь сможет выбрать устройство для последующей передачи методу [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
@@ -231,12 +231,12 @@ API звукового графа позволяет добавить звуко
 
 -   Все звуковые эффекты реализуют интерфейс [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition). Каждый узел предоставляет свойство **EffectDefinitions**, представляющее список эффектов, которые применяются к этому узлу. Эффект добавляется путем внесения его объекта определения в список.
 -   Пространство имен **Windows.Media.Audio** включает несколько классов определений эффектов. К ним можно отнести следующие.
-    -   [**EchoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
-    -   [**EqualizerEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
-    -   [**LimiterEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
-    -   [**ReverbEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.ReverbEffectDefinition)
+    -   [**ечоеффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
+    -   [**екуализереффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
+    -   [**лимитереффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
+    -   [**ревербеффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.ReverbEffectDefinition)
 -   Вы можете создать собственные звуковые эффекты, реализующие интерфейс [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition), и применить их к любому узлу в звуковом графе.
--   Каждый тип узла предоставляет метод **DisableEffectsByDefinition**, который отключает все эффекты в списке **EffectDefinitions** узла, добавленные с помощью указанного определения. Метод **EnableEffectsByDefinition** включает эффекты с указанным определением.
+-   Каждый тип узла предоставляет метод **DisableEffectsByDefinition**, который отключает все эффекты в списке **EffectDefinitions** узла, добавленные с помощью указанного определения. Метод **EnableEffectsByDefinition** реализует эффекты с указанным определением.
 
 ## <a name="spatial-audio"></a>Пространственный звук
 Начиная с Windows 10 версии 1607 **AudioGraph** поддерживает пространственный звук, который позволяет указать расположение источника звука (любого узла ввода или субмикширования) в трехмерном пространстве. Можно также указать форму и направление, в котором испущен звук, скорость, которая будет использоваться для доплеровского сдвига звука узла, и определить модель затухания, которая описывает ослабление звука с увеличением расстояния. 

@@ -1,23 +1,23 @@
 ---
-Description: В этом разделе перечислены шрифты, доступные для приложений UWP, локализованных на другие языки, кроме США. (США)".
+Description: В этом разделе перечислены шрифты, доступные для приложений UWP, которые локализованы для языков, отличных от английского (США).
 title: Международные шрифты
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 06284481ccecbc3c9cd7d7a78d83ccd6e97a49a7
-ms.sourcegitcommit: f3c1a81b50f4a372a15996ac71b3f408a8ee1409
+ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237519"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258080"
 ---
 # <a name="international-fonts"></a>Международные шрифты
 
-В этом разделе перечислены шрифты, доступные для приложений UWP, локализованных на другие языки, кроме США. (США)".
+В этом разделе перечислены шрифты, доступные для приложений UWP, которые локализованы для языков, отличных от английского (США).
 
-В следующей таблице столбец "Тег языка" содержит [тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) для различных языков. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
+В следующей таблице столбец "Тег языка" содержит [тег языка BCP-47](https://tools.ietf.org/html/bcp47) для различных языков. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
 
 | Язык | Тег языка | Шрифт, используемый в Windows |
 | --------- | ----------- | -------------------- |
@@ -30,7 +30,7 @@ ms.locfileid: "72237519"
 | Азербайджанский (латиница) | az-Latn-AZ | Segoe UI |
 | Бенгальский (Бангладеш) | bn-BD | Nirmala UI |
 | Бенгальский (Индия) | bn-IN | Nirmala UI |
-| Баскский | eu-ES | Segoe UI |
+| Баскский (Баскония) | eu-ES | Segoe UI |
 | Белорусский | be-BY | Segoe UI |
 | Боснийский (латиница) | bs-Latn-BA | Segoe UI |
 | Болгарский | bg-BG | Segoe UI |
@@ -68,7 +68,7 @@ ms.locfileid: "72237519"
 | Итальянский | it-IT | Segoe UI |
 | Японский | ja-JP | Yu Gothic UI |
 | Письменность каннада | kn-IN | Nirmala UI |
-| казахский; | kk-KZ | Segoe UI |
+| Казахский | kk-KZ | Segoe UI |
 | Кхмерский | km-KH | Leelawadee UI |
 | Киче | qut-GT | Segoe UI |
 | Киньяруанда | rw-RW | Segoe UI |
@@ -129,7 +129,7 @@ ms.locfileid: "72237519"
 | Волоф | wo-SN | Segoe UI |
 | Йоруба | yo-NG | Segoe UI |
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
-* [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Тег языка BCP-47](https://tools.ietf.org/html/bcp47)
 * [Поддерживаемые языки](../../publish/supported-languages.md)

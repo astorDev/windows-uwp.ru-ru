@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: c90a3257f8a54202e7ac50395e7e73f0538a484a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282399"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259879"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
 В этой статье описан метод использования **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows 10. Вы узнаете, как запросить разрешение пользователя на использование учетной записи Майкрософт, получить маркер доступа и использовать его для выполнения базовых операций (например, для получения данных профиля или отправки файлов в учетную запись OneDrive). Порядок действий при получении разрешения пользователя и доступа с помощью любого поставщика удостоверений, поддерживающего диспетчер учетных записей в Интернете, практически одинаков.
 
 > [!NOTE]
-> Полный пример кода см. в [образце кода WebAccountManagement на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
+> Полный пример кода см. в [образце кода WebAccountManagement на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
 
 ## <a name="get-set-up"></a>Подготовка
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS @ no__t-0//Login. Microsoft. com". 
+Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS\://login.microsoft.com". 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 На AccountsSettingsPane можно добавлять пользовательские команды, которые отображаются в виде ссылок под списком поддерживаемых WebAccountProviders. Пользовательские команды прекрасно подходят для выполнения простых задач, связанных с учетной записью пользователя, таких как отображение политики конфиденциальности или переход на страницу поддержки пользователей, столкнувшихся с проблемами. 
 
-Ниже приведен пример: 
+Пример: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -430,6 +430,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Брокер веб-аутентификации](web-authentication-broker.md)
 
-[Пример управления учетными записями веб-сайта](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Пример управления учетными записями веб-сайта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
 [Приложение планировщика обедов](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

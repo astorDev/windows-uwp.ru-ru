@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655789"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260139"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Выбор подхода к разработке приложений iOS и UWP
 
@@ -26,19 +26,19 @@ ms.locfileid: "57655789"
 
 Если вы начинаете с чистого листа, в вашем распоряжении множество возможностей, в том числе:
 
--   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](https://xamarin.com/)
 
     С помощью Xamarin можно написать приложение на C#, работающее в Windows, а также создать собственные приложения для iOS. Поддержка Xamarin встроена в Visual Studio, поэтому просто выберите соответствующий тип проекта.
 
--   [Apache Cordova](https://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](https://www.microsoft.com/?ref=go)
 
     Если вам больше по душе JavaScript и HTML, Apache Cordova (другое название — PhoneGap) поможет вам создать кроссплатформенные приложения для iOS, Windows и Android. Этот тип проекта также встроен в Visual Studio.
 
 -   Игровые модули
 
-    С помощью таких средств, как [Unity3D](https://go.microsoft.com/fwlink/p/?LinkID=394062) и [Unreal Engine](https://go.microsoft.com/fwlink/p/?LinkID=320479) вы можете разрабатывать игры высочайшего качества для Windows и многих других платформ, включая iOS. Unity поддерживает скрипты C#, Unreal использует C++.
+    С помощью таких средств, как [Unity3D](https://www.unity3d.com/) и [Unreal Engine](https://www.unrealengine.com/en-US/) вы можете разрабатывать игры высочайшего качества для Windows и многих других платформ, включая iOS. Unity поддерживает скрипты C#, Unreal использует C++.
 
--   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](http://www.monogame.net/)
 
     Это духовный правопреемник XNA. Теперь это платформа с открытым кодом для создания кроссплатформенных приложений, т. е. вы можете создавать приложения на C# для многочисленных платформ с поддержкой физического модуля, а также двухмерной и трехмерной графики.
 
@@ -46,7 +46,7 @@ ms.locfileid: "57655789"
 
 Если у вас есть существующее приложение для iOS, число вариантов немного меньше. Однако все далеко не потеряно.
 
--   [Мост Windows для iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Мост Windows для iOS](https://github.com/Microsoft/WinObjC)
 
     Это средство также известно как Project Islandwood. Оно все еще находится в стадии разработки и может импортировать проекты Xcode непосредственно в Visual Studio. Код Objective-C можно скомпилировать и отладить в Visual Studio. Если ваш проект использует библиотеки, например Cocos для графики, этот способ позволит быстро перенести ваше приложение.
 
@@ -54,45 +54,45 @@ ms.locfileid: "57655789"
 
     Если ваша основная бизнес-логика написана на C++, а не Objective-C или Swift, зачастую можно использовать этот код, внеся в проект незначительные изменения. Затем можно использовать XAML для определения пользовательского интерфейса, как и в других приложениях для Windows, и при необходимости вызывать код C++.
 
--   [Использовать УГОЛ OpenGL ES под управлением Windows](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Использование угла для запуска OpenGL ES в Windows](https://github.com/microsoft/angle/wiki)
 
     В качестве промежуточного действия при портировании проекта OpenGL ES 2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Другие средства разработки кроссплатформенных приложений
 
--   [GameSalad](https://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [гамесалад](https://gamesalad.com/)
 
     Среда для разработки игр.
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Конструкция 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     Среда для разработки игр.
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Титане Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Кроссплатформенная среда для разработки.
 
--   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](https://www.cocos2d-x.org/)
 
     Кроссплатформенная библиотека кода для обработки спрайтовой графики и физического моделирования.
 
--   [Impact.js](https://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Воздействие. js](https://impactjs.com/)
 
     Библиотека игр на базе HTML.
 
--   [Дольки](https://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Дольк](http://madewithmarmalade.com/)
 
     Кроссплатформенный пакет SDK.
 
--   [OpenFL](https://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [опенфл](https://www.openfl.org/)
 
     Кроссплатформенное средство разработки.
 
--   [GameMaker](https://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [гамемакер](https://www.yoyogames.com/gamemaker/studio)
 
     Среда разработки, специально созданная для игр.
 
--   [PlayCanvas](https://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [плайканвас](https://playcanvas.com/)
 
     Средство разработки игр на базе HTML.
 

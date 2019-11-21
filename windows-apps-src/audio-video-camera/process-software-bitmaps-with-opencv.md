@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 349326ba458999b2b1e299e8260d52d608d5af1f
-ms.sourcegitcommit: e189166dea855ce330bd0634cc158b51cb4fbd69
+ms.openlocfilehash: 68d5ba1c12a3c7dc5531934835f47af35c269b57
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811637"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256706"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Обработка точечных рисунков с помощью OpenCV
 
@@ -22,7 +22,7 @@ ms.locfileid: "72811637"
 * Введение в использование **SoftwareBitmap** см. в разделе [Создание, редактирование и сохранение растровых изображений](imaging.md). 
 * Чтобы узнать, как использовать библиотеку OpenCV, перейдите на сайт [https://opencv.org](https://opencv.org).
 * Чтобы узнать, как использовать описанный в этой статье вспомогательный компонент OpenCV вместе с **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** для реализации обработки изображений на поступающих с камеры кадрах в режиме реального времени, см. раздел [Использование OpenCV с MediaFrameReader](use-opencv-with-mediaframereader.md).
-* Полный пример кода, реализующий некоторые различные эффекты, см. в разделе [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
+* Полный пример кода, реализующий некоторые различные эффекты, см. в разделе [Пример кадров камеры + OpenCV](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraOpenCV) в репозитории универсальных примеров Windows на GitHub.
 
 > [!NOTE] 
 > Прием, используемый компонентом OpenCVHelper, подробно описанный в этом разделе, требует, чтобы данные изображения, которые необходимо обработать, находились в памяти ЦП, а не в памяти графического процессора. Таким образом, для API-интерфейсов, позволяющих запрашивать расположение изображений в памяти, таких как класс **[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)** , необходимо указать память ЦП.
@@ -84,7 +84,7 @@ ms.locfileid: "72811637"
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Простой пример SoftwareBitmap OpenCV с использованием вспомогательного компонента
 После создания компонента OpenCVBridge можно создать простое приложение на C#, использующее OpenCV-метод **Blur** для изменения **SoftwareBitmap**. Чтобы получить доступ к компоненту среда выполнения Windows из приложения UWP, необходимо сначала добавить ссылку на этот компонент. В Обозревателе решений щелкните правой кнопкой мыши по узлу **Ссылки** в проекте приложения UWP и выберите **Добавить ссылку...** . В диалоговом окне Диспетчера ссылок выберите **Проекты -> Решение**. Установите флажок рядом с проектом OpenCVBridge и нажмите **ОК**.
 
-В примере кода ниже пользователь выбирает файл изображения, а затем для создания представления **SoftwareBitmap** этого изображения используется **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** . Дополнительные сведения о работе с **SoftwareBitmap** см. в разделе [Создание, редактирование и сохранение растровых изображений](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
+В примере кода ниже пользователь выбирает файл изображения, а затем для создания представления **SoftwareBitmap[ этого изображения используется ](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** BitmapDecoder. Дополнительные сведения о работе с **SoftwareBitmap** см. в разделе [Создание, редактирование и сохранение растровых изображений](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 
 Как отмечено ранее в этой статье, класс **OpenCVHelper** требует, чтобы все предоставляемые изображения **SoftwareBitmap** были закодированы в пиксельном формате BGRA8 с предварительным умножением альфа-канала; поэтому, если изображение еще не представлено в этом формате, в примере кода вызывается **[Convert](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.BitmapAlphaMode)** , чтобы преобразовать изображение в ожидаемый формат.
 

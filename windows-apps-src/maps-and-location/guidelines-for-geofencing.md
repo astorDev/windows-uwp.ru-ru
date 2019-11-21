@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, геозоны
 ms.localizationpriority: medium
-ms.openlocfilehash: 4580662bf4caf5124caeb34883023121db7ce30f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b1f328d45e626e1c7eb633165aad3671f1645e5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370670"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260384"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Руководство по приложениям, использующим функцию геозон
 
@@ -20,8 +20,8 @@ ms.locfileid: "66370670"
 
 **Важные API**
 
--   [**Класс Геозоны (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
--   [**Класс Geolocator (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**Класс геозоны (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
+-   [**Класс геоуказателя (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 Следуйте этим рекомендациям по [**созданию и настройке геозон**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing) в своем приложении.
 
@@ -124,12 +124,12 @@ function onVisibilityChanged() {
 
 Если приложению требуются небольшие геозоны, рекомендуйте пользователям использовать такое приложение на устройстве с радиомодулем GPS, чтобы обеспечить наилучшую производительность.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 
 * [Настройка геозоны](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [Получение сведений о текущем расположении](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
-* [Пример расположения UWP (geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример расположения UWP (географическое расположение)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

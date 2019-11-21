@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fc4f704d8e9f53282ab09dbc61bc5e625d00da9
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 948b16c4e093f7b638ba9abc5bf18e30da8047a2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393527"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259799"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Использование объектов среды выполнения Windows в многопоточной среде
 В этой статье описывается, как .NET Framework обрабатывает вызовы из C# и Visual Basic кода в объекты, предоставляемые среда выполнения Windows или среда выполнения Windows компонентами.
@@ -20,11 +20,11 @@ ms.locfileid: "70393527"
 
 Везде, где возможно, среда CLR обрабатывает объекты из других источников, например из среды выполнения Windows, как объекты .NET Framework.
 
-- Если объект реализует интерфейс [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) или имеет атрибут [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) с типом [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), среда CLR рассматривает его как гибкий.
+- Если объект реализует интерфейс [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) или имеет атрибут [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) с типом [MarshalingType.Agile](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx), среда CLR рассматривает его как гибкий.
 
 - Если среда CLR может маршалировать вызов из потока, где он был произведен, к контексту потока целевого объекта, это происходит прозрачно.
 
-- Если объект имеет атрибут [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) с типом [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023), класс не предоставляет информацию о маршалинге. Среда CLR не может маршалировать вызов, поэтому создается исключение [InvalidCastException](/dotnet/api/system.invalidcastexception) с сообщением о том, что объект можно использовать только в том контексте потоков, в котором он был создан.
+- Если объект имеет атрибут [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) с типом [MarshalingType.None](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx), класс не предоставляет информацию о маршалинге. Среда CLR не может маршалировать вызов, поэтому создается исключение [InvalidCastException](/dotnet/api/system.invalidcastexception) с сообщением о том, что объект можно использовать только в том контексте потоков, в котором он был создан.
 
 В следующих разделах описаны последствия такого поведения для объектов из различных источников.
 
@@ -37,7 +37,7 @@ ms.locfileid: "70393527"
 При создании компонента среды выполнения Windows значения по умолчанию можно переопределить. См. статьи об интерфейсах [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) и [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject).
 
 ## <a name="objects-from-the-windows-runtime"></a>Объекты из среды выполнения Windows
-Большинство классов в среде выполнения Windows являются гибкими, и среда CLR обрабатывает их как гибкие. В документации к этим классам среди атрибутов классов указан MarshalingBehaviorAttribute(Agile). Однако члены некоторых из этих гибких классов, например элементы управления XAML, создают исключения, если они не вызываются в потоке пользовательского интерфейса. Например, следующий код пытается использовать фоновый поток для задания свойства кнопки, которую нажали. Свойство кнопки [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025) вызывает исключение.
+Большинство классов в среде выполнения Windows являются гибкими, и среда CLR обрабатывает их как гибкие. В документации к этим классам среди атрибутов классов указан MarshalingBehaviorAttribute(Agile). Однако члены некоторых из этих гибких классов, например элементы управления XAML, создают исключения, если они не вызываются в потоке пользовательского интерфейса. Например, следующий код пытается использовать фоновый поток для задания свойства кнопки, которую нажали. Свойство кнопки [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) вызывает исключение.
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ Private Async Sub Button_Click_2(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-Безопасный доступ к кнопке можно получить, воспользовавшись ее свойством [Dispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256026) или свойством `Dispatcher` любого объекта, существующего в контексте потока пользовательского интерфейса (например, страницы, на которой находится эта кнопка). В приведенном ниже коде метод [RunAsync](https://go.microsoft.com/fwlink/p/?LinkId=256030) объекта [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) используется для перенаправления вызова в поток пользовательского интерфейса.
+Безопасный доступ к кнопке можно получить, воспользовавшись ее свойством [Dispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.dispatcher.aspx) или свойством `Dispatcher` любого объекта, существующего в контексте потока пользовательского интерфейса (например, страницы, на которой находится эта кнопка). В приведенном ниже коде метод [RunAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) объекта [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) используется для перенаправления вызова в поток пользовательского интерфейса.
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -92,9 +92,9 @@ End Sub
 При создании собственного элемента управления путем наследования от элемента управления XAML или путем объединения нескольких элементов управления XAML полученный элемент управления будет гибким, поскольку он является объектом .NET Framework. Однако если он вызывает члены своего базового класса или классов-составляющих, а также при вызове унаследованных членов, эти члены будут создавать исключения, когда они вызываются из любого потока, отличного от потока пользовательского интерфейса.
 
 ### <a name="classes-that-cant-be-marshaled"></a>Классы, которые невозможно маршалировать
-У классов среды выполнения Windows, которые не предоставляют данные о маршалинге, есть атрибут [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) с типом [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023). В документации к этим классам среди атрибутов классов указан MarshalingBehaviorAttribute(None).
+У классов среды выполнения Windows, которые не предоставляют данные о маршалинге, есть атрибут [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) с типом [MarshalingType.None](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx). В документации к этим классам среди атрибутов классов указан MarshalingBehaviorAttribute(None).
 
-Приведенный ниже код создает объект [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) в потоке пользовательского интерфейса, а затем пытается задать свойство объекта из потока пула потоков. Среда CLR не может маршалировать вызов, поэтому создается исключение [System.InvalidCastException](/dotnet/api/system.invalidcastexception) с сообщением о том, что объект можно использовать только в том контексте потоков, в котором он был создан.
+Приведенный ниже код создает объект [CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) в потоке пользовательского интерфейса, а затем пытается задать свойство объекта из потока пула потоков. Среда CLR не может маршалировать вызов, поэтому создается исключение [System.InvalidCastException](/dotnet/api/system.invalidcastexception) с сообщением о том, что объект можно использовать только в том контексте потоков, в котором он был создан.
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -122,9 +122,9 @@ Private Async Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-В документации к [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) среди атрибутов класса также указан ThreadingAttribute(STA), поскольку он должен создаваться в однопотоковом контексте, например в потоке пользовательского интерфейса.
+В документации к [CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) среди атрибутов класса также указан ThreadingAttribute(STA), поскольку он должен создаваться в однопотоковом контексте, например в потоке пользовательского интерфейса.
 
-Если необходимо обратиться к объекту [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) из другого потока, можно кэшировать объект [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) потока пользовательского интерфейса и использовать его в дальнейшем для перенаправления вызова в этот поток. Либо можно получить диспетчер из объекта XAML, например страницы, как показано в следующем примере кода.
+Если необходимо обратиться к объекту [CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) из другого потока, можно кэшировать объект [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) потока пользовательского интерфейса и использовать его в дальнейшем для перенаправления вызова в этот поток. Либо можно получить диспетчер из объекта XAML, например страницы, как показано в следующем примере кода.
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -158,7 +158,7 @@ End Sub
 ## <a name="objects-from-a-windows-runtime-component-that-is-written-in-c"></a>Объекты из компонента среды выполнения Windows, написанного на C++
 Классы в компоненте, который может быть активирован, являются гибкими по умолчанию. Однако C++ предоставляет значительные возможности контроля над моделями потоков и маршалингом. Как указано выше в этой статье, среда CLR распознает гибкие классы, пытается маршалировать вызовы, когда классы не являются гибкими, и создает исключение [System.InvalidCastException](/dotnet/api/system.invalidcastexception), когда класс не содержит данных о маршалинге.
 
-Для объектов, которые работают в потоке пользовательского интерфейса и создают исключения при вызове из потоков, отличных от потоков пользовательского интерфейса, можно использовать объект потока пользовательского интерфейса [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) для перенаправления вызова.
+Для объектов, которые работают в потоке пользовательского интерфейса и создают исключения при вызове из потоков, отличных от потоков пользовательского интерфейса, можно использовать объект потока пользовательского интерфейса [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) для перенаправления вызова.
 
 ## <a name="see-also"></a>См. также
 [Руководство по C#](/dotnet/csharp/)

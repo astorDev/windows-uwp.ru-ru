@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f54cb261f6ef94545d656d5bd4f624622cc6dfff
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982233"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255139"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 
@@ -24,7 +24,7 @@ ms.locfileid: "71982233"
 ## <a name="requirements"></a>Требования
 
 + Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 
@@ -104,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте файл **Package.appxmanifest** с помощью редактора по умолчанию и перейдите на вкладку "Упаковка". Здесь "App" — это активируемый класс, соответствующий представлению приложения при запуске.
+"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** с помощью редактора по умолчанию и найдите вкладку «Упаковка». Здесь элемент «Приложение» является активируемым классом, соответствующим представлению запуска приложения.
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>Предоставление контактам возможности приглашать новых потенциальных пользователей
 
@@ -255,7 +255,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [Публикации близких людей](my-people-sharing.md)
 + [Мои люди нотификатонс](my-people-notifications.md)
 + [Видеоролик Channel 9 о добавлении поддержки пользователей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Пример интеграции "Мои люди"](https://aka.ms/mypeoplebuild2017)
++ [Пример интеграции "Мои люди"](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Пример карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Документация по классу Пиннедконтактманажер](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Подключение приложения к действиям в карточке контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

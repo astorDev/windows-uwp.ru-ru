@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a8e19961fa7cd1dd67e52339f49fd012f21f06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 04133cc4a58ddbdbd45ba68b4c0635cd47ca2ca8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361736"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257006"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
 
@@ -39,7 +39,7 @@ ms.locfileid: "66361736"
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
 
-Существует универсальной пример Windows, демонстрирующий функциональность класса **AdvancedPhotoCapture**, с помощью которого можно увидеть API, используемые в контексте. Кроме того, этот класс может служить начальной точкой создания собственного приложения. Дополнительные сведения см. в разделе [Пример расширенной съемки на камеру](https://go.microsoft.com/fwlink/?LinkID=620517).
+Существует универсальной пример Windows, демонстрирующий функциональность класса **AdvancedPhotoCapture**, с помощью которого можно увидеть API, используемые в контексте. Кроме того, этот класс может служить начальной точкой создания собственного приложения. Дополнительные сведения см. в разделе [Пример расширенной съемки на камеру](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture).
 
 ## <a name="advanced-photo-capture-namespaces"></a>Пространства имен расширенного фотозахвата
 
@@ -51,7 +51,7 @@ ms.locfileid: "66361736"
 
 ### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>Определение возможности фотозахвата HDR на текущем устройстве
 
-Описанный в этой статье способ захвата HDR выполняется с помощью объекта [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture). Не все устройства поддерживают фотозахват HDR с помощью **AdvancedPhotoCapture**. Определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойство [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController) объекта **MediaCapture**, а затем получить свойство [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Просмотрите коллекцию контроллера видеоустройств [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes), чтобы узнать, включает ли она [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Если да, то захват HDR с использованием **AdvancedPhotoCapture** поддерживается.
+Описанный в этой статье способ захвата HDR выполняется с помощью объекта [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture). Не все устройства поддерживают фотозахват HDR с помощью **AdvancedPhotoCapture**. Определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойствоVideoDeviceController[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController), а затем получить свойство [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Проверьте коллекцию [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) контроллера видеоустройства , чтобы узнать, входит ли в нее режим [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Если входит, то в **AdvancedPhotoCapture** поддерживается режим записи HDR.
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
@@ -61,9 +61,9 @@ ms.locfileid: "66361736"
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
-После того как вы инициализировали объект **MediaCapture**, создайте в своем приложении объект [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) и установите режим [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Вызовите метод [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) объекта [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl), передав созданный объект **AdvancedPhotoCaptureSettings**.
+В вашем приложении после инициализации объекта **MediaCapture** создайте объект [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) и установите режим [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Вызовите метод [**Configure**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) объекта [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure), передав в него созданный объект **AdvancedPhotoCaptureSettings**.
 
-Вызовите метод [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync) объекта **MediaCapture**, передав объект [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) с указанием типа кодирования, которое должно использоваться в захвате. Класс **ImageEncodingProperties** предоставляет статические методы для создания кодирования изображений, которые поддерживаются **MediaCapture**.
+Вызовите методPrepareAdvancedPhotoCaptureAsync[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync), передав объект [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) с указанием типа кодирования, которое должно использоваться в захвате. Класс **ImageEncodingProperties** предоставляет статические методы для создания кодирования изображений, которые поддерживаются **MediaCapture**.
 
 **PrepareAdvancedPhotoCaptureAsync** возвращает объект [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture), который будет использоваться для инициализации фотозахвата. Вы можете использовать этот объект, чтобы зарегистрировать обработчики событий для [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) и [**AllPhotosCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured), которые описываются далее в этой статье.
 
@@ -71,7 +71,7 @@ ms.locfileid: "66361736"
 
 ### <a name="capture-an-hdr-photo"></a>Захват фотографий с технологией HDR
 
-Чтобы захватить фотографию с расширенным динамическим диапазоном (HDR), вызовите метод [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) объекта [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture). Этот метод возвращает объект [**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto), предоставляющий созданную фотографию в свойстве [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame).
+Чтобы захватить фотографию с расширенным динамическим диапазоном (HDR), вызовите метод [**CaptureAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) объекта [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync). Этот метод возвращает объект [**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto), предоставляющий созданную фотографию в свойстве [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame).
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
@@ -84,7 +84,7 @@ ms.locfileid: "66361736"
 При использовании технологии HDR захватывается несколько кадров. После захвата всех кадров из них составляется одно изображение. Вы можете получить доступ к кадру после его захвата, но до завершения обработки HDR, обработав событие [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured). Если вас интересует только конечный результат фотографии с расширенным динамическим диапазоном (HDR), этого делать не нужно.
 
 > [!IMPORTANT]
-> [**OptionalReferencePhotoCaptured** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) не возникает на устройствах, поддерживающих оборудования HDR и поэтому не приводят к формированию опорными кадрами. В приложении должны предусматриваться случаи, при которых это событие не возникает.
+> [**Оптионалреференцефотокаптуред**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) не вызывается на устройствах, поддерживающих HDR-устройство, и поэтому не создает опорные кадры. В приложении должны предусматриваться случаи, при которых это событие не возникает.
 
 Поскольку опорный кадр поступает из контекста вызова **CaptureAsync**, предусмотрен механизм для передачи контекстной информации обработчику **OptionalReferencePhotoCaptured**. Сначала нужно вызвать объект, который будет содержать контекстные данные. При этом имя и содержимое этого объекта зависит только от вас. В этом примере определяется объект, который содержит члены для отслеживания имени файла и ориентации камеры при захвате.
 
@@ -114,7 +114,7 @@ ms.locfileid: "66361736"
 ## <a name="low-light-photo-capture"></a>Фотозахват при слабом освещении
 Начиная c Windows 10 (версия 1607) класс **AdvancedPhotoCapture** можно использовать для съемки фото с применением встроенного алгоритма, который повышает качество фото, сделанных в условиях низкой освещенности. При использовании функции съемки при низком освещении, предоставляемой классом [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture), система оценивает текущую сцену и при необходимости применяет алгоритм, компенсирующий условия низкой освещенности. Если система определяет, что этот алгоритм не нужен, выполняется обычный захват.
 
-Прежде чем использовать фотозахват в условиях низкой освещенности, определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойство [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController) объекта **MediaCapture**, а затем получить свойство [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Просмотрите коллекцию контроллера видеоустройств [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes), чтобы узнать, включает ли она [**AdvancedPhotoMode.LowLight**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Если да, то захват в условиях низкого освещения с использованием **AdvancedPhotoCapture** поддерживается. 
+Прежде чем использовать фотозахват в условиях низкой освещенности, определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойствоVideoDeviceController[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController), а затем получить свойство [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl). Просмотрите коллекцию контроллера видеоустройств [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes), чтобы узнать, включает ли она [**AdvancedPhotoMode.LowLight**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Если да, то захват в условиях низкого освещения с использованием **AdvancedPhotoCapture** поддерживается. 
 [!code-cs[LowLightSupported1](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetLowLightSupported1)]
 
 [!code-cs[LowLightSupported2](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetLowLightSupported2)]
@@ -123,9 +123,9 @@ ms.locfileid: "66361736"
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
-После того как вы инициализировали объект **MediaCapture**, создайте в своем приложении объект [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) и установите режим [**AdvancedPhotoMode.LowLight**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Вызовите метод [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) объекта [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl), передав созданный объект **AdvancedPhotoCaptureSettings**.
+После того как вы инициализировали объект **MediaCapture**, создайте в своем приложении объект [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) и установите режим [**AdvancedPhotoMode.LowLight**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode). Вызовите метод [**Configure**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) объекта [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure), передав созданный объект **AdvancedPhotoCaptureSettings**.
 
-Вызовите метод [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync) объекта **MediaCapture**, передав объект [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) с указанием типа кодирования, которое должно использоваться в захвате. 
+Вызовите методPrepareAdvancedPhotoCaptureAsync[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync), передав объект [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) с указанием типа кодирования, которое должно использоваться в захвате. 
 
 [!code-cs[CreateAdvancedCaptureLowLightAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateAdvancedCaptureLowLightAsync)]
 
@@ -142,7 +142,7 @@ ms.locfileid: "66361736"
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 ## <a name="working-with-advancedcapturedphoto-objects"></a>Работа с объектами AdvancedCapturedPhoto
-[**AdvancedPhotoCapture.CaptureAsync** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) возвращает [ **AdvancedCapturedPhoto** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) объект, представляющий записанного фотографии. Этот объект предоставляет свойство [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame), которое возвращает объект [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame), представляющий изображение. Событие [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) также предоставляет объект **CapturedFrame** в аргументах события. Получив объект этого типа, с ним можно выполнить несколько действий, включая создание [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) или сохранение изображения в файл. 
+[**Адванцедфотокаптуре. каптуреасинк**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) возвращает объект [**адванцедкаптуредфото**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) , представляющий захваченную фотографию. Этот объект предоставляет свойство [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame), которое возвращает объект [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame), представляющий изображение. Событие [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) также предоставляет объект **CapturedFrame** в аргументах события. Получив объект этого типа, с ним можно выполнить несколько действий, включая создание [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) или сохранение изображения в файл. 
 
 ## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>Получение объекта SoftwareBitmap из CapturedFrame
 Чтобы получить **SoftwareBitmap** из объекта **CapturedFrame**, нужно всего лишь получить доступ к свойству [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) объекта. Однако большинство форматов кодирования не поддерживают свойство **SoftwareBitmap** с **AdvancedPhotoCapture**, поэтому прежде необходимо проверить и убедиться, что это свойство не равно null.
@@ -166,7 +166,7 @@ ms.locfileid: "66361736"
 
 [!code-cs[SaveCapturedFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSaveCapturedFrameAsync)]
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

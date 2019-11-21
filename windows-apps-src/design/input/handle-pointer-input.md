@@ -1,5 +1,5 @@
 ---
-Description: Прием, обработку и управление ими входных данных от указывающего устройства, например прикосновений, мыши, перо или пера и сенсорной панели, в приложениях универсальной платформы Windows (UWP).
+Description: Получение, обработка и управление входными данными с указывающих устройств, таких как сенсорный ввод, мышь, перо, перо и сенсорная панель, в приложениях универсальная платформа Windows (UWP).
 title: Работа с входными данными указателя
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,12 +8,12 @@ keywords: перо, мышь, сенсорная панель, сенсорны�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7f3d5480c0fa12366afe02cc31cdb994fdd4a842
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619369"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257904"
 ---
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 
@@ -61,7 +61,7 @@ ms.locfileid: "57619369"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>поинтерканцелед</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель отменяется платформой. Может возникать при следующих условиях.</p>
 <ul>
 <li>Указатели касания отменяются в том случае, если перо обнаруживается в пределах поверхности ввода.</li>
@@ -72,17 +72,17 @@ ms.locfileid: "57619369"
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>поинтеркаптурелост</strong></a></p></td>
 <td align="left"><p>Происходит, если указатель захватывается другим элементом пользовательского интерфейса, если указатель отпущен пользователем или если происходит захват другого указателя программным путем.</p>
 <div class="alert">
-<strong>Примечание</strong>  нет соответствующего события отслеживания указателя.
+<strong>Обратите внимание</strong> ,  отсутствует соответствующее событие захвата указателя.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>поинтерентеред</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель входит в контактный участок элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>В случае сенсорного ввода для запуска этого события требуется контакт с пальцем либо путем непосредственного прикосновения к элементу, либо путем касания и перемещения пальца в контактный участок элемента.</li>
@@ -91,7 +91,7 @@ ms.locfileid: "57619369"
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>поинтерекситед</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель выходит из контактного участка элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>В случае сенсорного ввода для запуска этого события требуется контакт с пальцем, когда указатель выходит за пределы контактного участка элемента.</li>
@@ -100,7 +100,7 @@ ms.locfileid: "57619369"
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>поинтермовед</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель изменяет координаты, состояние кнопок, давление, наклон или геометрию контакта (например, ширину и высоту) в пределах контактного участка элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>Сенсорный ввод требует контакта с пальцем и запускает это событие только в случае контакта в пределах контактного участка элемента.</li>
@@ -109,16 +109,16 @@ ms.locfileid: "57619369"
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>поинтерпрессед</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель указывает действие нажатия (например, касание, нажатие кнопки мыши, касание пера или нажатие кнопки сенсорной панели) в пределах контактного участка элемента.</p>
 <p>Для этого события необходимо вызывать <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> из обработчика.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>поинтеррелеасед</strong></a></p></td>
 <td align="left"><p>Происходит, когда указатель указывает действие отпускания (например, разрыв контакта с пальцем или пером, поднятие кнопки мыши или кнопки сенсорной панели) на контактном участке элемента или, в случае захвата указателя, за пределами контактного участка.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>поинтервхилчанжед</strong></a></p></td>
 <td align="left"><p>Происходит при вращении колесика мыши.</p>
 <p>Ввод мыши связывается с отдельным указателем, назначаемым при первом обнаружении ввода мыши. При щелчке кнопкой мыши (левой, правой или колеса) создается вспомогательная связь между указателем и этой кнопкой с помощью события <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a>.</p></td>
 </tr>
@@ -131,7 +131,7 @@ ms.locfileid: "57619369"
 
 ![Пользовательский интерфейс приложения указателя](images/pointers/pointers1.gif)
 
-**Загрузить этот образец из [указатель ввода, образец ("базовый")](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
+**Скачать этот пример из [образца входных данных указателя (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
 
 ### <a name="create-the-ui"></a>Создание пользовательского интерфейса
 
@@ -196,7 +196,7 @@ ms.locfileid: "57619369"
 
 В большинстве случаев мы рекомендуем получать сведения от указателя посредством [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) обработчика событий.
 
-Если аргумент события не предоставляет требуемых указатель, могут получить доступ к расширенной [ **PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) сведения предоставляются через [ **GetCurrentPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) и [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) методы [ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
+Если аргумент события не предоставляет необходимых данных указателя, можно получить доступ к расширенным сведениям [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint), выраженным через методы [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) и [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) для [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
 
 Следующий код задает глобальный объект словаря для отслеживания каждого активного указателя и определяет прослушиватели для различных событий указателя для целевого объекта.
 
@@ -243,7 +243,7 @@ public MainPage()
 -   Этот обработчик управляет событием [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Мы добавляем это событие в журнал событий, добавляем указатель в активный словарь указателя и отображаем данные указателя.
 
     > [!NOTE]
-    > [**PointerPressed** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) и [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) события не всегда происходят попарно. Приложение должно ожидать и обрабатывать любые события, которые могут содержать действие указателя "вниз" (например, [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) и [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
+    > События [**поинтерпрессед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) и [**поинтеррелеасед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) не всегда встречаются парами. Приложение должно ожидать и обрабатывать любые события, которые могут содержать действие указателя "вниз" (например, [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) и [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
 
 ```csharp
 /// <summary>
@@ -531,7 +531,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   Этот обработчик управляет событием [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost). Мы добавляем это событие в журнал событий, удаляем указатель из массива указателей и обновляем данные указателя.
 
     > [!NOTE]
-    > [**PointerCaptureLost** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) может возникнуть вместо [ **PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased). Захват указателя может быть утерян по разным причинам, включая взаимодействие с пользователем, программный захват другого указателя, вызов метода [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**Поинтеркаптурелост**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) может использоваться вместо [**поинтеррелеасед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased). Захват указателя может быть утерян по разным причинам, включая взаимодействие с пользователем, программный захват другого указателя, вызов метода [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -572,7 +572,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>Получение свойств указателя
 
-Как уже говорилось ранее, необходимо получить наиболее расширенных указатель сведений из [ **Windows.UI.Input.PointerPoint** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) получить объект с помощью [ **GetCurrentPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) и [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) методы [ **PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). Рассмотрим следующие фрагменты кода.
+Как упоминалось ранее, вам необходимо получить наиболее полные сведения указателя от объекта [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint), получаемые с помощью методов [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) и [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) класса [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). Рассмотрим следующие фрагменты кода.
 
 -   Сначала мы создаем новый [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) для каждого указателя.
 
@@ -696,13 +696,13 @@ String QueryPointer(PointerPoint ptrPt)
 
 ![Указатель приложения с анимированной визуальной обратной связью](images/pointers/pointers-usercontrol-animation.gif)
 
-**Загрузить этот образец из [пример входной привязки указатель (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
+**Скачать этот пример из [примера входных данных указателя (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>Визуальная обратная связь
 
-Мы определяем **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** в зависимости от XAML-объекта **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)**, который выделяет место каждого указателя на полотне и использует **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** для анимации эллипса, который соответствует основному указателю.
+Мы определяем **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** в зависимости от XAML-объекта **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** , который выделяет место каждого указателя на полотне и использует **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** для анимации эллипса, который соответствует основному указателю.
 
-**Ниже приведен XAML:**
+**Вот XAML:**
 
 ```xaml
 <UserControl
@@ -892,7 +892,7 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>Создание пользовательского интерфейса
-Пользовательский интерфейс в этом примере ограничен входными данными **[Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)**, где мы отслеживаем все указатели, а также отображаем индикаторы указателей и анимацию основного указателя (если применимо) вместе с панелью заголовка, содержащей счетчик указателя и идентификатор основного указателя.
+Пользовательский интерфейс в этом примере ограничен входными данными **[Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** , где мы отслеживаем все указатели, а также отображаем индикаторы указателей и анимацию основного указателя (если применимо) вместе с панелью заголовка, содержащей счетчик указателя и идентификатор основного указателя.
 
 Вот код MainPage.xaml.
 
@@ -949,20 +949,20 @@ namespace UWP_Pointers
 
 ## <a name="related-articles"></a>Связанные статьи
 
-**Примеры в разделе**
-* [Указатель пример входной привязки ("базовый")](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
-* [Пример входной привязки указатель (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
+**Примеры разделов**
+* [Образец ввода указателя (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+* [Пример входного указателя (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
 **Другие примеры**
-* [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Примеры из архива**
-* [Входные данные: Пример события ввода пользовательского XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Входные данные: Пример возможности устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Входные данные: Манипуляции и образец жестов (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Входные данные: Пример проверки попадания сенсорного ввода](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML прокрутки, сдвига и масштабирования примера](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Входные данные: Пример упрощенного рукописного ввода](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Входные данные: пример событий пользовательского ввода XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Входные данные: пример манипуляций иC++жестов ()](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Входные данные: пример проверки нажатия касания](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Пример прокрутки XAML, панорамирования и масштабирования](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Входные данные: Пример упрощенного рукописного ввода](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)

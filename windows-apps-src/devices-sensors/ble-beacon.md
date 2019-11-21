@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3deb5aca27b4f33d0492bae9fd4ddbce4f52d065
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370363"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259690"
 ---
 # <a name="bluetooth-le-advertisements"></a>Объявления Bluetooth LE
 
 
 **Важные API**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows. Devices. Bluetooth. Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 В этой статье приводится обзор маяков объявлений Bluetooth с низким энергопотреблением (LE) для приложений универсальной платформы Windows (UWP).  
 
@@ -29,7 +29,7 @@ ms.locfileid: "66370363"
 -   [Advertisement Watcher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher): прием сообщений близлежащих маяков и их фильтрация на основе полезной нагрузки или близости.  
 -   [Advertisement Publisher](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher): определение полезной нагрузки, чтобы Windows могла показывать рекламу от имени разработчика.  
 
-Полный пример кода включен в [Пример объявления Bluetooth](https://go.microsoft.com/fwlink/p/?LinkId=619990) на Github
+Полный пример кода включен в [Пример объявления Bluetooth](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothAdvertisement) на Github
 
 ## <a name="basic-setup"></a>Базовая настройка
 
@@ -43,7 +43,7 @@ ms.locfileid: "66370363"
 
 С помощью объявлений Bluetooth LE устройство может постоянно устанавливать маяки в определенных полезных данных — объявлениях. Это объявление будет видно любому устройству с поддержкой Bluetooth LE поблизости, если оно настроено для прослушивания именно этого объявления.
 
-> **Примечание**. Для обеспечения конфиденциальности пользователей срок действия вашего объявления связано с вашего приложения. Вы можете создать BluetoothLEAdvertisementPublisher и вызвать задачу "Запуск в фоновом режиме" для объявления в фоновом режиме. Подробнее о фоновых задачах см. в разделе [Запуск, возобновление и фоновые задачи](https://docs.microsoft.com/windows/uwp/launch-resume/index).
+> **Примечание**. В целях сохранения конфиденциальности пользователя, продолжительность существования объявления привязана к продолжительности существования приложения. Вы можете создать BluetoothLEAdvertisementPublisher и вызвать задачу "Запуск в фоновом режиме" для объявления в фоновом режиме. Подробнее о фоновых задачах см. в разделе [Запуск, возобновление и фоновые задачи](https://docs.microsoft.com/windows/uwp/launch-resume/index).
 
 ### <a name="basic-publishing"></a>Базовые возможности публикации
 
@@ -55,7 +55,7 @@ ms.locfileid: "66370363"
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId** *0xFFFE*, а в объявление добавляется текст *Hello World*. 
+Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId***0xFFFE*, а в объявление добавляется текст *Hello World*. 
 
 ```csharp
 // Add custom data to the advertisement

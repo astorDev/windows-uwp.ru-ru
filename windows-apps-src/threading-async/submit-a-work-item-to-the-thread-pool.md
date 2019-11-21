@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322020"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259806"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
-\[ Обновления для приложений универсальной платформы Windows в Windows 10. Статьи по Windows 8.x см. в разделе [архива](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ обновлены для приложений UWP в Windows 10. Статьи по Windows 8. x см. в \] [архива](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) .
 
 <b>Важные API</b>
 
@@ -31,7 +31,7 @@ ms.locfileid: "67322020"
 Доступны три версии функции [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
 >[!NOTE]
->Используйте [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) для доступа в потоке пользовательского интерфейса и отображает ход выполнения задания из рабочего элемента.
+>Используйте [**CoreDispatcher. RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) для доступа к ПОТОКУ пользовательского интерфейса и отображения хода выполнения рабочего элемента.
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 
@@ -350,9 +350,9 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
-Дополнительные сведения, загрузив код из этого краткого руководства в [Создание ThreadPool рабочий элемент образца](https://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows 8.1, а также повторно использовать исходный код в win\_приложения unap Windows 10.
+Дополнительные сведения можно узнать, загрузив код из этого краткого руководства, в [примере создания рабочего элемента ThreadPool](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) , написанном для Windows 8.1, и повторно использовать исходный код в приложении Win\_УНАП Windows 10.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
