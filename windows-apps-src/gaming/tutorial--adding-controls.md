@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, элементы управления, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9c2b7031bf8afb047fcfc869e23ee1c398218af8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367957"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258429"
 ---
 # <a name="add-controls"></a>Добавление элементов управления
 
 
-\[ Обновления для приложений универсальной платформы Windows в Windows 10. Статьи по Windows 8.x см. в разделе [архива](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
-Хорошая игра для универсальной платформы Windows (UWP) должна поддерживать широкое разнообразие интерфейсов. Потенциальные проигрывателя может иметь Windows 10 на планшете с нет физических кнопок, ПК с помощью контроллера Xbox подключается или последней тестовой платформы игры для настольных систем с высокой производительностью мышь и клавиатура игр. В нашей игре элементы управления реализуются в классе [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Этот класс агрегирует все три типа ввода (мышь и клавиатура, сенсорный ввод и геймпад) в единый контроллер. В результате получается игра-шутер от первого лица, в которой используются стандартные элементы управления перемещением и обзором, работающие на различных устройствах.
+Хорошая игра для универсальной платформы Windows (UWP) должна поддерживать широкое разнообразие интерфейсов. A potential player might have Windows 10 on a tablet with no physical buttons, a PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. В нашей игре элементы управления реализуются в классе [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Этот класс агрегирует все три типа ввода (мышь и клавиатура, сенсорный ввод и геймпад) в единый контроллер. В результате получается игра-шутер от первого лица, в которой используются стандартные элементы управления перемещением и обзором, работающие на различных устройствах.
 
 > [!NOTE]
 > Подробнее об элементах управления см. в статьях [Элементы управления перемещением и обзором для игр](tutorial--adding-move-look-controls-to-your-directx-game.md) и [Сенсорные элементы управления для игр](tutorial--adding-touch-controls-to-your-directx-game.md).
@@ -39,7 +39,7 @@ ms.locfileid: "66367957"
 
 Сенсорные элементы управления и элементы управления с помощью мыши и клавиатуры реализуются сходным образом. В приложении UWP указатель — это всего лишь точка на экране. Ею можно управлять с помощью мыши либо скольжением пальца по сенсорному экрану. Поэтому можно зарегистрировать единый набор событий, не беспокоясь о том, пользуется ли игрок мышью или сенсорным экраном, чтобы передвигать указатель и нажимать его.
 
-Когда класс **MoveLookController** в примере игры инициализирован, он регистрирует четыре типа событий для указателя и одно событие для мыши:
+После инициализации класс **MoveLookController** в примере игры регистрирует четыре типа событий для указателя и одно событие для мыши:
 
 Событие | Описание
 :------ | :-------
@@ -82,9 +82,9 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 Для определения того, когда игра должна прослушивать определенные виды ввода, **MoveLookController** имеет три особых состояния, не зависящих от вида контроллера:
 
-Состояние | Описание
+Штат или регион | Описание
 :----- | :-------
-**None** | Инициализированное состояние контроллера. Весь ввод игнорируется, поскольку игра еще не ожидает никакого ввода контроллера.
+**Нет** | Это инициализированное состояние контроллера. Весь ввод игнорируется, поскольку игра еще не ожидает никакого ввода контроллера.
 **WaitForInput** | Контроллер ожидает, что игрок подтвердит сообщение от игры нажатием левой кнопкой мыши, событием касания или нажатием кнопки меню на геймпаде.
 **Active** | Контроллер находится в режиме активного игрового процесса.
 
@@ -95,7 +95,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 В состояние **WaitForInput** игра переходит в случае приостановки. Это случается, если игрок перемещает указатель за пределы главного окна игры или нажимает кнопку "Пауза" (клавиша P или кнопка **Пуск** на геймпаде). **MoveLookController** регистрирует нажатие и сообщает об этом игровому циклу, вызывая метод [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127). Если **IsPauseRequested** возвращает значение **true**, игровой цикл вызывает метод **WaitForPress** экземпляра **MoveLookController**, чтобы перевести контроллер в состояние **WaitForInput**. 
 
 
-После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Кроме «Пауза», в порядке для игры, чтобы вернуться к **Active** состояние игроку необходимо выбрать пункт меню. 
+После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Other than the pause button, in order for the game to go back to the **Active** state the player needs to select a menu item. 
 
 
 
@@ -105,7 +105,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 
 В состоянии **Active** отслеживается весь ввод указателя, причем разным действиям указателя соответствуют разные идентификаторы указателя.
-После того как было получено событие [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed), **MoveLookController** получает задаваемое окном значение идентификатора указателя. Идентификатор указателя представляет собой особый вид ввода. Например, при использовании устройства с мультисенсорной технологией можно одновременно совершать несколько активных действий ввода. Идентификаторы используются для отслеживания типа ввода данных игроком. Если событие произошло в прямоугольнике движения сенсорного экрана, назначается идентификатор указателя для отслеживания всех событий указателя в прямоугольнике движения. Другие события указателя в прямоугольнике огня отслеживаются отдельно с помощью отдельного идентификатора указателя.
+После получения события [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)**MoveLookController** получает значение идентификатора указателя, созданное окном. Идентификатор указателя представляет собой особый вид ввода. Например, при использовании устройства с мультисенсорной технологией можно одновременно совершать несколько активных действий ввода. Идентификаторы используются для отслеживания типа ввода данных игроком. Если событие произошло в прямоугольнике движения сенсорного экрана, назначается идентификатор указателя для отслеживания всех событий указателя в прямоугольнике движения. Другие события указателя в прямоугольнике огня отслеживаются отдельно, с помощью отдельного идентификатора указателя.
 
 
 > [!NOTE]
@@ -113,7 +113,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 Когда события указателя соотнесены с конкретным игровым действием, обновляются данные, которые объект **MoveLookController** передает основному циклу игры.
 
-При вызове [ **обновление** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) метод в пример игры обрабатывает входные данные и обновляет переменные направление скорость и внешний вид (**m\_скорости** и **m\_значение свойства lookdirection —** ), которое затем получает цикл игры, вызвав открытый [ **скорости** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) и [ **Значение свойства lookdirection —** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) методы.
+When called, the [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) method in the game sample processes the input and updates the velocity and look direction variables (**m\_velocity** and **m\_lookdirection**), which the game loop then retrieves by calling the public [**Velocity**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) and [**LookDirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) methods.
 
 > [!NOTE]
 > Подробнее о методе [**Update**](#the-update-method) речь пойдет дальше на этой странице.
@@ -121,7 +121,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 
 
-Цикл игры может проверить, стреляет ли игрок, направляя вызов методу **IsFiring** экземпляра **MoveLookController**. **MoveLookController** проверяет, нажал ли игрок кнопку "Стрелять" на любом из трех возможных устройств ввода.
+Проверить, стреляет ли игрок, игровой цикл может путем вызова метода **IsFiring** экземпляра **MoveLookController**. **MoveLookController** проверяет, нажал ли игрок кнопку "Стрелять" на одном из трех возможных устройств ввода.
 
 ```cpp
 bool MoveLookController::IsFiring()
@@ -153,7 +153,7 @@ bool MoveLookController::IsFiring()
 
 
 
-Теперь давайте рассмотрим подробнее, как реализован каждый из трех типов элементов управления.
+Теперь давайте рассмотрим подробнее, как реализован каждый из трех видов элементов управления.
 
 ## <a name="adding-relative-mouse-controls"></a>Добавление относительных элементов управления мышью
 
@@ -212,7 +212,7 @@ void MoveLookController::OnMouseMoved(
 ![компоновка зон сенсорного ввода для управления перемещением и обзором](images/simple-dx-game-controls-touchzones.png)
 
 Следующие команды характеризуют поведение наших элементов сенсорного управления.
-Ввод данных пользователем | Действие
+Пользовательский ввод | "Действие"
 :------- | :--------
 Прямоугольник движения | Сенсорный ввод преобразовывается в виртуальный джойстик, где вертикальное движение превращается в перемещение положения назад/вперед, а горизонтальное движение — в перемещение положение влево/вправо.
 Прямоугольник огня | Выстрел шариком.
@@ -240,7 +240,7 @@ void MoveLookController::OnMouseMoved(
 Методы [**SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) и [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867) создают наши прямоугольники ввода, принимая два двухмерных вектора для задания положений верхнего левого и нижнего углов прямоугольников на экране. 
 
 
-Параметры затем назначаются **m\_fireUpperLeft** и **m\_fireLowerRight** , помогут нам определить, если пользователь касается внутри прямоугольников. 
+The parameters are then assigned to **m\_fireUpperLeft** and **m\_fireLowerRight** that will help us determine if the user is touching within on of the rectangles. 
 ```cpp
 m_fireUpperLeft  = upperLeft;
 m_fireLowerRight = lowerRight;
@@ -266,9 +266,9 @@ window->PointerReleased +=
 
 Сначала мы определим, что происходит, когда пользователь совершает первое нажатие в пределах прямоугольника движения или прямоугольника огня, используя метод [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313).
 В данном случае мы проверяем, касается ли пользователь элемента управления, а также находится ли указатель уже в пределах этого элемента управления. Если это первое касание конкретного элемента управления, мы делаем следующее.
-- Store расположение touchdown в **m\_moveFirstDown** или **m\_fireFirstDown** виде двухмерного вектора.
-- Назначьте идентификатор указатель для **m\_movePointerID** или **m\_firePointerID**.
-- Задайте правильные **модуль** флаг (**m\_moveInUse** или **m\_fireInUse**) для `true` так, как для этого теперь есть указатель active элемент управления.
+- Store the location of the touchdown in **m\_moveFirstDown** or **m\_fireFirstDown** as a 2D vector.
+- Assign the pointer ID to **m\_movePointerID** or **m\_firePointerID**.
+- Set the proper **InUse** flag (**m\_moveInUse** or **m\_fireInUse**) to `true` since we now have an active pointer for that control.
 
 
 ```cpp
@@ -357,7 +357,7 @@ window->PointerReleased +=
 
 Если отпущен элемент управления движением, мы делаем следующее.
 - Задаем скорость игрока равной `0` во всех направлениях, чтобы он больше не двигался в игре.
-- Коммутатор **m\_moveInUse** для `false` так, как пользователь больше не касается перемещения контроллера.
+- Switch **m\_moveInUse** to `false` since the user is no longer touching the move controller.
 - Установим идентификатор указателя движения в `0`, поскольку в контроллере движения больше нет указателя.
 
 ```cpp
@@ -399,13 +399,13 @@ window->PointerReleased +=
 
 
 
-В данном случае **MoveLookController** назначает идентификатор указателя для указателя, который вызвал событие, конкретной переменной, которая соответствует зоне управления обзором. В случае сенсорного ввода, в области Вид **m\_lookPointerID** переменной присваивается идентификатор указателя, инициировавший событие. Логическая переменная, **m\_lookInUse**, также установите, чтобы указать, что элемент управления имеет не еще были выпущены.
+В данном случае **MoveLookController** назначает идентификатор указателя для указателя, который вызвал событие, конкретной переменной, которая соответствует зоне управления обзором. In the case of a touch occurring in the look region, the **m\_lookPointerID** variable is set to the pointer ID that fired the event. A boolean variable, **m\_lookInUse**, is also set to indicate that the control has not yet been released.
 
-Теперь давайте рассмотрим, как в образце игры обрабатывается событие [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) на сенсорном экране.
+Теперь давайте рассмотрим, как в примере игры обрабатывается событие [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) на сенсорном экране.
 
 
 В методе **MoveLookController::OnPointerMoved** мы проверяем, какой идентификатор указателя назначен этому событию. Если это **m_lookPointerID**, мы вычисляем изменение положения указателя.
-Затем мы используем эту разность для вычисления того, насколько должен измениться поворот. Наконец, мы находимся в точке, где мы можем обновить **m\_pitch** и **m\_Поворот** для использования в игре для изменения проигрывателя поворота. 
+Затем мы используем эту разность для вычисления того, насколько должен измениться поворот. Finally we're at a point where we can update the **m\_pitch** and **m\_yaw** to be used in the game to change the player rotation. 
 
 ```cpp
     else if (pointerID == m_lookPointerID)     // This is the look pointer.
@@ -456,10 +456,10 @@ window->PointerReleased +=
 
 В этой игре следующая схема элементов управления для клавиатуры и мыши.
 
-Ввод данных пользователем | Действие
+Пользовательский ввод | "Действие"
 :------- | :--------
 W | Переместить игрока вперед
-Объект | Переместить игрока влево
+Кнопка | Переместить игрока влево
 S | Переместить игрока назад
 D | Переместить игрока вправо
 X | Переместить камеру вверх
@@ -565,7 +565,7 @@ window->KeyUp +=
 
 Элементы управления геймпада у нас будут следующие.
 
-Ввод данных пользователем | Действие
+Пользовательский ввод | "Действие"
 :------- | :--------
 Левый аналоговый стик | Переместить игрока
 Правый аналоговый стик | Изменить поворот и наклон камеры
@@ -575,7 +575,7 @@ window->KeyUp +=
 
 
 
-В методе [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) мы добавляем два новых события для проверки того, был ли геймпад [добавлен](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) или [удален](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Эти события обновляют свойство **m_gamepadsChanged**. Это используется в **UpdatePollingDevices** метод для проверки, если был изменен список известных игровых панелей. 
+В методе [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) мы добавляем два новых события для проверки того, был ли геймпад [добавлен](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) или [удален](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Эти события обновляют свойство **m_gamepadsChanged**. This is used in the **UpdatePollingDevices** method to check if the list of known gamepads has changed. 
 
 ```cpp
     // Detect gamepad connection and disconnection events.
@@ -587,7 +587,7 @@ window->KeyUp +=
 ```
 
 > [!NOTE]
-> Приложения универсальной платформы Windows не может принимать входные данные из одного контроллера Xbox, пока приложение не находится в фокусе.
+> UWP apps cannot receive input from an Xbox One Controller while the app is not in focus.
 
 ### <a name="the-updatepollingdevices-method"></a>Метод UpdatePollingDevices
 
@@ -727,7 +727,7 @@ window->KeyUp +=
 
 Затем в методе **Update** мы обновляем следующие проверки ввода.
 - Если игрок использует прямоугольник контроллера движения, мы определяем изменение в положении указателя и используем его для вычисления того, переместил ли пользователь указатель за пределы мертвой зоны контроллера. Если выход за пределы мертвой зоны имеет место, векторное свойство **m_moveCommand** обновляется в соответствии со значением виртуального джойстика.
-- Если входные данные имеют перемещения клавиатуры нажимаются, значение `1.0f` или `-1.0f` добавляются в соответствующий компонент **m_moveCommand** вектор &mdash; `1.0f` для прямого и `-1.0f`для обратно.
+- If any of the movement keyboard inputs are pressed, a value of `1.0f` or `-1.0f` are added in the corresponding component of the **m_moveCommand** vector &mdash; `1.0f` for forward, and `-1.0f` for backward.
 
 
 Как только весь ввод перемещений учтен, мы прогоняем вектор **m_moveCommand** через некоторые расчеты, чтобы сформировать новый вектор, представляющий направление игрока по отношению к игровому миру.
@@ -810,7 +810,7 @@ void MoveLookController::Update()
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Итак, элементы управления добавлены. Для создания иммерсивной игры не хватает еще одной вещи — звука!
 Музыка и звуковые эффекты очень важны для любой игры, поэтому следующее, что мы рассмотрим, — это [добавление звука](tutorial--adding-sound.md).
