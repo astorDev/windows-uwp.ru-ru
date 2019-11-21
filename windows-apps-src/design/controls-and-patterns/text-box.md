@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e05880dc8b0a983f4f8005b40939e5ffe0cbe4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 67c729455c6eb2d8f5e8b07db5e1be7ac13f59b8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340393"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258177"
 ---
 # <a name="text-box"></a>Текстовое поле
 
@@ -215,7 +215,7 @@ rootGrid.Children.Add(textBox);
 Выделить все | элемент TextBox содержит текст.
 Отменить | текст был изменен.
 
-Чтобы изменить команды, отображаемые в контекстном меню, обработайте событие [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening). Пример см. в сценарии 2 элемента [ContextMenu sample](https://go.microsoft.com/fwlink/p/?linkid=234891). Сведения о проектировании см. в Руководстве по контекстным меню.
+Чтобы изменить команды, отображаемые в контекстном меню, обработайте событие [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening). Пример см. в сценарии 2 элемента [ContextMenu sample](https://code.msdn.microsoft.com/windowsapps/Context-menu-sample-40840351). Сведения о проектировании см. в Руководстве по контекстным меню.
 
 ### <a name="select-copy-and-paste"></a>Выделение, копирование и вставка
 

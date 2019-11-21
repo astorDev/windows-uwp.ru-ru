@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 28eb1dfecf9f6648bd43606c541daf7b57960771
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 986fa1b14fcb3b1ada150a232fb0d42f7eafa133
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320444"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258906"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Что нового для разработчиков в Windows 10, сборка 10240
 
-Сборка 10240 Windows 10 и обновленный пакет SDK предоставляют доступ к инструментам, компонентам и возможностям для создания потрясающих приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 10240 Windows 10 и обновленный пакет SDK предоставляют доступ к инструментам, компонентам и возможностям для создания потрясающих приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 Здесь представлен обзор новых функций в Windows 10 (сборка 10240, которая также известна как Windows 10 версии 1507).
 

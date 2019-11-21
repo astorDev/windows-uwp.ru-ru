@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 31f527cff7588ccf6da2594566cfa3cf13a214f1
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061911"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258673"
 ---
 # <a name="sound"></a>Звук
 
@@ -69,7 +69,7 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ### <a name="sound-for-tv-and-xbox"></a>Звук для телевизора и Xbox
 
 Звук имеет важное значение для просмотра на большом расстоянии, поэтому по умолчанию для **ElementSoundPlayer** установлено значение **Auto**, что означает, что звук будет воспроизводиться, только когда приложение запущено на Xbox.
-Дополнительные сведения о проектировании Xbox и телевизора см. в статье [Проектирование для Xbox и телевизора](https://go.microsoft.com/fwlink/?LinkId=760736).
+Дополнительные сведения о проектировании Xbox и телевизора см. в статье [Проектирование для Xbox и телевизора](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
 
 ## <a name="sound-volume-override"></a>Переопределение громкости звука
 

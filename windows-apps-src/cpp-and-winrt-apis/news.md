@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72998618"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255047"
 ---
 # <a name="whats-new-in-cwinrt"></a>Что нового в C++/WinRT
 
@@ -19,7 +19,7 @@ ms.locfileid: "72998618"
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>Новости и изменения в C++/WinRT 2.0
 
-Чтобы получить дополнительную информации о [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix), [пакете Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), а также о `cppwinrt.exe` инструменте &mdash;, в том числе о том, как получить и установить их &mdash;, см. [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Чтобы получить дополнительную информации о [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), [пакете Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), а также о `cppwinrt.exe` инструменте &mdash;, в том числе о том, как получить и установить их &mdash;, см. [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="changes-to-the-cwinrt-visual-studio-extension-vsix-for-version-20"></a>Изменения в C++/WinRT Visual Studio Extension (VSIX) для версии 2.0
 
@@ -302,7 +302,7 @@ struct MainPage : PageT<MainPage>
 - Защищенные интеллектуальные указатели. Раньше средству аннулирования событий не удавалось выполнить аннулирование во время присваивания и переноса нового значения. Это помогло выявить проблему, при которой классы интеллектуальных указателей не всегда надежно обрабатывали самоназначение; она коренится в шаблоне структуры [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr). Исправлен **winrt:: com_ptr**, а также обработчики событий для правильного обрабатывания семантики перемещения, чтобы они отзывались при назначении.
 
 > [!IMPORTANT]
-> Важные изменения были внесены в [расширение C++/WinRT Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix), как в версии 1.0.181002.2, так и позже в версии 1.0.190128.4. Подробные сведения об этих изменениях и о том, как они влияют на существующие проекты, [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) и [более ранних версий расширения VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+> Важные изменения были внесены в [расширение C++/WinRT Visual Studio (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), как в версии 1.0.181002.2, так и позже в версии 1.0.190128.4. Подробные сведения об этих изменениях и о том, как они влияют на существующие проекты, [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) и [более ранних версий расширения VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ### <a name="isolation-from-windows-sdk-header-files"></a>Изоляция из файлов заголовков пакета SDK для Windows
 

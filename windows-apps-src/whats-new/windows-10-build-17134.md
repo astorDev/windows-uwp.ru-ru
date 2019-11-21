@@ -5,18 +5,18 @@ keywords: новые возможности, что нового, обновле
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 797129b62217b9deb74781638b302c59192b7e9a
-ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
+ms.openlocfilehash: cce2c6c36918a117ba6aee25987be9060b3ec148
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893033"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258866"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
-Сборка 17134 Windows 10 (также известная как April Update или версия 1803), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 17134 Windows 10 (также известная как April Update или версия 1803), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10, сборка 17134](windows-10-build-17134-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в [списке возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
+В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10, сборка 17134](windows-10-build-17134-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers). Кроме того, в [списке возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 
 ## <a name="design--ui"></a>Оформление и пользовательский интерфейс
 

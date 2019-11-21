@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c42a058398539701cc1df003717eec99d1b2cd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 74735b15ec53cf04e33dcb850c6cb174082ac438
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362855"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257262"
 ---
 # <a name="create-custom-transport-controls"></a>Создание пользовательских элементов управления транспортировкой
 
@@ -26,7 +26,7 @@ ms.locfileid: "66362855"
 Перед началом необходимо ознакомиться с классами MediaPlayerElement и MediaTransportControls. Подробнее см. в руководстве по элементу управления MediaPlayerElement.
 
 > [!TIP]
-> Примеры в этом разделе основаны на [Примере элементов управления транспортировкой мультимедиа](https://go.microsoft.com/fwlink/p/?LinkId=620023). Вы можете скачать пример для просмотра и запуска полного кода.
+> Примеры в этом разделе основаны на [Примере элементов управления транспортировкой мультимедиа](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls). Вы можете скачать пример для просмотра и запуска полного кода.
 
 > [!NOTE]
 > **MediaPlayerElement** доступен только в Windows 10 версии 1607 или выше. При разработке приложения для более ранней версии Windows 10 потребуется использовать [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). Все примеры на этой странице также совместимы с **MediaElement**.
@@ -95,7 +95,7 @@ ms.locfileid: "66362855"
 
 ### <a name="create-a-derived-control"></a>Создание производного элемента управления
 
-Чтобы добавить или изменить функционал элементов управления транспортировкой, необходимо создать новый класс, производный от MediaTransportControls. Производный класс под названием `CustomMediaTransportControls` показан в [примере Media Transport Controls](https://go.microsoft.com/fwlink/p/?LinkId=620023) и других примерах на этой странице.
+Чтобы добавить или изменить функционал элементов управления транспортировкой, необходимо создать новый класс, производный от MediaTransportControls. Производный класс под названием `CustomMediaTransportControls` показан в [примере Media Transport Controls](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls) и других примерах на этой странице.
 
 **Создание нового класса, производного от MediaTransportControls**
 1. Добавьте новый файл класса в проект.
@@ -202,7 +202,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### <a name="adding-a-custom-button"></a>Добавление пользовательской кнопки
 
-Одной из причин, по которой может потребоваться настройка MediaTransportControls, является добавление пользовательской команды к элементу управления. Независимо от того, добавляете ли вы ее как основную команду или как второстепенную, процедуры создания кнопки команды и изменения ее поведение одинаковы. В [примере Media Transport Controls](https://go.microsoft.com/fwlink/p/?LinkId=620023) кнопка оценки добавляется к основным командам.
+Одной из причин, по которой может потребоваться настройка MediaTransportControls, является добавление пользовательской команды к элементу управления. Независимо от того, добавляете ли вы ее как основную команду или как второстепенную, процедуры создания кнопки команды и изменения ее поведение одинаковы. В [примере Media Transport Controls](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls) кнопка оценки добавляется к основным командам.
 
 **Добавление пользовательской кнопки команды**
 1. Создайте объект AppBarButton и добавьте его в CommandBar в шаблоне элемента управления.

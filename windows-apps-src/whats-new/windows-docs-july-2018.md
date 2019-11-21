@@ -5,18 +5,18 @@ keywords: what's new, update, features, developer guidance, Windows 10, july
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320387"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258798"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Дополнение документации для разработчиков Windows в июле 2018 г.
 
 Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В июле появились приведенные ниже обзоры функций, руководства для разработчиков, видео и примеры.
 
-[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -34,7 +34,7 @@ ms.locfileid: "67320387"
 
 ### <a name="notepad"></a>Блокнот
 
-В Windows 10 Insider Preview сборки 17713 в [Блокнот добавлено множество новых функций](https://aka.ms/ant-man). Теперь [участникам программы предварительной оценки Windows](https://insider.windows.com/) доступны функции масштабирования, поиска и замены с обтеканием и поддержка окончания строк для Unix/Linux (LF) и Mac (CR). 
+В Windows 10 Insider Preview сборки 17713 в [Блокнот добавлено множество новых функций](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/). Теперь [участникам программы предварительной оценки Windows](https://insider.windows.com/) доступны функции масштабирования, поиска и замены с обтеканием и поддержка окончания строк для Unix/Linux (LF) и Mac (CR). 
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 
@@ -70,11 +70,11 @@ ms.locfileid: "67320387"
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Начало работы для разработчиков. Создание и настройка формы для системы Windows 10.
 
-[Документация по началу работы](../get-started/index.md) для разработчиков Windows позволяет получить практический опыт по работе с базовой задачей разработки приложений. В этом видео рассматривается один из этих разделов и основы создания формы пользовательского интерфейса в приложении. [Просмотрите видео](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) о коде в действии, а затем [просмотрите раздел самостоятельно](https://aka.ms/CreateForms).
+[Документация по началу работы](../get-started/index.md) для разработчиков Windows позволяет получить практический опыт по работе с базовой задачей разработки приложений. В этом видео рассматривается один из этих разделов и основы создания формы пользовательского интерфейса в приложении. [Просмотрите видео](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) о коде в действии, а затем [просмотрите раздел самостоятельно](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track).
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Улучшения бота с помощью Project Personality Chat
 
-Project Personality Chat позволяет добавлять настраиваемого пользователя в чат-боты. Благодаря интеграции с SDK для Microsoft Bot Framework вы можете добавить возможности для небольших разговоров для более интерактивного взаимодействия с клиентами. [Просмотрите видео](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be), чтобы узнать, как реализовать эти возможности, а затем [поработайте с демонстрационным роликом](https://aka.ms/PersonalityChat) для получения практического опыта.
+Project Personality Chat позволяет добавлять настраиваемого пользователя в чат-боты. Благодаря интеграции с SDK для Microsoft Bot Framework вы можете добавить возможности для небольших разговоров для более интерактивного взаимодействия с клиентами. [Просмотрите видео](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be), чтобы узнать, как реализовать эти возможности, а затем [поработайте с демонстрационным роликом](https://www.microsoft.com/research/project/personality-chat/) для получения практического опыта.
 
 ### <a name="one-dev-question"></a>One Dev Question
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0b5ca136b969ca238226d6f6b63b8e2fcff3207f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334772"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259740"
 ---
 # <a name="uwp-on-xbox-one"></a>Приложения UWP для Xbox One
 
@@ -40,7 +40,7 @@ ms.locfileid: "58334772"
 |[Вводные сведения о многопользовательских приложениях](multi-user-applications.md)| В этом разделе описаны многопользовательские приложения в Xbox One. |
 | [Автоматизация задач разработки для Xbox One](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | В проекте WindowsDevicePortalWrapper на GitHub предоставлена библиотека, позволяющая автоматизировать распространенные задачи разработки, такие как развертывание и запуск приложений. Проект содержит пример XboxWdpDriver.exe, который показывает, как использовать интерфейсы API для распространенных задач. |
 |[Перенос имеющихся игр на Xbox](development-lanes-landing.md)|В зависимости от технологии, лежащей в основе вашей игры, мы можем предоставить вам пошаговые инструкции по ускорению процесса переноса вашей игры на Xbox с помощью UWP.|
-|[Функции UWP, которые еще не поддерживаются в Xbox One](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  В этом разделе описаны функциональные области UWP, которые еще не полностью реализованы в Xbox One.|
+|[Функции UWP, которые еще не поддерживаются в Xbox One](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  В этом разделе описаны функциональные области UWP, которые еще не полностью реализованы в Xbox One.|
 
 ## <a name="videos"></a>Видео
 

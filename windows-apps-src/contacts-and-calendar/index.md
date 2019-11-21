@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, контакты, календарь, встречи, электронные сообщения
 ms.localizationpriority: medium
-ms.openlocfilehash: 6356e20966fc3899196e00ba5a99ebcf0104f8d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361261"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255443"
 ---
 # <a name="contacts-my-people-and-calendar"></a>"Контакты", "Близкие люди" и "Календарь"
 
@@ -35,8 +35,8 @@ ms.locfileid: "66361261"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Пример API встреч](https://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Пример API диспетчера контактов](https://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Пример приложения "Окно выбора контактов"](https://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Пример обработки действий с контактами](https://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Пример API встреч](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
+* [Пример API диспетчера контактов](https://code.msdn.microsoft.com/windowsapps/Contact-manager-API-sample-319bdcef)
+* [Пример приложения "Окно выбора контактов"](https://code.msdn.microsoft.com/windowsapps/Contact-Picker-App-sample-fc6677a1)
+* [Пример обработки действий с контактами](https://code.msdn.microsoft.com/windowsapps/Handling-Contact-Actions-359380e2)
 * [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

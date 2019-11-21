@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: b0ec2c5a05e7c4e9309311fa22ad863d06597a53
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939589"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254993"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -51,7 +51,7 @@ ms.locfileid: "71939589"
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Почему компоновщик отображает сообщение об ошибке "LNK2019: неразрешенный внешний символ"?
 Если неразрешенный символ — это API из заголовков пространства имен Windows для проекции C++/WinRT (в пространстве имен **winrt**), то этот API объявляется в заголовке, который вы включили, но его определение находится в заголовке, который еще не включен. Включите заголовок с именем, соответствующим пространству имен API, и повторно выполните сборку. Дополнительные сведения см. в разделе [C++/WinRT projection headers](consume-apis.md#cwinrt-projection-headers) (Заголовки проекции C++/WinRT).
 
-Если неразрешенный символ — это свободная функция среды выполнения Windows, такая как [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), необходимо явно включить библиотеку [WindowsApp.lib](/uwp/win32-and-com/win32-apis) в проект. Проекция C++/WinRT зависит от некоторых из этих свободных (не являющихся членами) функций и точек входа. Если вы используете один из шаблонов проектов [Расширение C++/WinRT для Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix) для вашего приложения, `WindowsApp.lib` компонуется автоматически. В противном случае вы можете использовать параметры компоновки проекта, чтобы включить библиотеку, или можете сделать это в исходном коде.
+Если неразрешенный символ — это свободная функция среды выполнения Windows, такая как [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), необходимо явно включить библиотеку [WindowsApp.lib](/uwp/win32-and-com/win32-apis) в проект. Проекция C++/WinRT зависит от некоторых из этих свободных (не являющихся членами) функций и точек входа. Если вы используете один из шаблонов проектов [Расширение C++/WinRT для Visual Studio (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) для вашего приложения, `WindowsApp.lib` компонуется автоматически. В противном случае вы можете использовать параметры компоновки проекта, чтобы включить библиотеку, или можете сделать это в исходном коде.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

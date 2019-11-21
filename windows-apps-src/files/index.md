@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369462"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259601"
 ---
  # <a name="files-folders-and-libraries"></a>Файлы, папки и библиотеки
 
@@ -36,11 +36,11 @@ API в пространствах имен [Windows.Storage](https://docs.micros
 | [Быстрый доступ к свойствам файлов в UWP](fast-file-properties.md) | Теперь можно получить список файлов и их свойств из библиотеки для использования в приложении UWP. |
 
 ## <a name="related-samples"></a>Связанные примеры
-[Пример перечисления папок](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[Пример перечисления папок](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[Пример доступа к файлу](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[Пример средства выбора файлов](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[Пример средства выбора файлов](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

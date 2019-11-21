@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9793679dcd036415ba6a1c238c1986392beb5761
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319145"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257736"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -406,7 +406,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
-- [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Пример команд XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>Связанные статьи
 

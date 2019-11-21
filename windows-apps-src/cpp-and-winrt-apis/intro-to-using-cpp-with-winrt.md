@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
-ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
+ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71976336"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255098"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -37,7 +37,7 @@ C++/WinRT — это рекомендуемая корпорацией Майк
 
 Хотя мы рекомендуем выполнять разработку с последними версиями Visual Studio и Windows SDK, если вы используете версию C++/WinRT, которая поставляется вместе с версией Windows SDK, предшествующей версии 10.0.17763.0 (Windows 10 версии 1809), для упомянутых выше заголовков пространств имен Windows в проекте вам потребуется минимальная целевая версия Windows SDK 10.0.17134.0 (Windows 10 версии 1803).
 
-Вам нужно будет скачать и установить последнюю версию [расширения C++/WinRT для Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+Вам нужно будет скачать и установить последнюю версию [расширения C++/WinRT для Visual Studio (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 - Расширение VSIX предоставляет шаблоны проектов и элементов C++/WinRT в Visual Studio, чтобы вы могли начать разработку с C++/WinRT.
 - Кроме того, расширение также поддерживает визуализацию встроенной отладки Visual Studio (natvis) проецированных типов C++/WinRT, что обеспечивает возможности, аналогичные отладке на C#. Natvis автоматически используется для сборок отладки. Вы можете выбрать сборки выпуска, указав символ WINRT_NATVIS.
@@ -96,7 +96,7 @@ Visual Studio предоставляет поддержку компилятор
 Объедините в пакет созданный двоичный файл компонента среды выполнения Windows и его файл с расширением `.winmd` с приложением UWP, которое их использует.
 
 ## <a name="earlier-versions-of-the-vsix-extension"></a>Более ранние версии расширения VSIX
-Мы рекомендуем установить (или обновить до) последнюю версию [расширения VSIX](https://aka.ms/cppwinrt/vsix). По умолчанию для него настроено самостоятельное обновление. Если вы это сделаете при наличии проектов, созданных с версией расширения VSIX ранее 1.0.190128.4, следует ознакомиться с этим разделом, содержащим важную информацию об обновлении этих проектов для работы с новой версией. Если вы не выполните обновление, вам все равно будет полезно ознакомиться со сведениями в этом разделе.
+Мы рекомендуем установить (или обновить до) последнюю версию [расширения VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264). По умолчанию для него настроено самостоятельное обновление. Если вы это сделаете при наличии проектов, созданных с версией расширения VSIX ранее 1.0.190128.4, следует ознакомиться с этим разделом, содержащим важную информацию об обновлении этих проектов для работы с новой версией. Если вы не выполните обновление, вам все равно будет полезно ознакомиться со сведениями в этом разделе.
 
 С точки зрения поддерживаемых пакетов Windows SDK и версий Visual Studio, а также конфигурации Visual Studio информация в приведенном выше разделе [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) относится к более ранним версиям расширения VSIX. Ниже описываются важные различия в поведении и конфигурации проектов, созданных (или обновленных для работы) с более ранними версиями.
 
@@ -147,7 +147,7 @@ Visual Studio предоставляет поддержку компилятор
 
 ## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Расширение C++/WinRT для Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [Расширение C++/WinRT для Visual Studio (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [Начало работы с C++/WinRT](get-started.md)
 * [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md)
 * [Обработка строк в C++/WinRT](strings.md)

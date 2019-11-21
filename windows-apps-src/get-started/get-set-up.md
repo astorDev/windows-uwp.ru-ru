@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318795"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258369"
 ---
 # <a name="get-set-up"></a>Подготовка
 
@@ -28,7 +28,7 @@ Microsoft Visual Studio 2019 помогает в проектировании, 
 
 Если у вас еще нет Visual Studio 2019, вы можете установить бесплатную среду Microsoft Visual Studio Community 2019. В этот скачиваемый пакет входят симуляторы устройств для тестирования приложений:
 
--   [Скачать средства разработчика Windows 10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Скачать средства разработчика Windows 10](https://developer.microsoft.com/windows/downloads)
 
 При установке Visual Studio обязательно выберите параметр "Средства разработки универсальных приложений для Windows", как показано ниже.
 
@@ -67,7 +67,7 @@ Microsoft Visual Studio 2019 помогает в проектировании, 
 
 ## <a name="want-more-tools-and-downloads"></a>Нужны дополнительные инструменты и скачиваемые файлы?
 
-Полный список инструментов и скачиваемых файлов см. на странице [скачиваемых файлов](https://go.microsoft.com/fwlink/p/?linkid=285935).
+Полный список инструментов и скачиваемых файлов см. на странице [скачиваемых файлов](https://developer.microsoft.com/windows/downloads).
 
 ## <a name="see-also"></a>См. также
 

@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370470"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258706"
 ---
 # <a name="reveal-focus"></a>Обозначение фокуса
 
@@ -163,7 +163,7 @@ ms.locfileid: "66370470"
 
 ## <a name="use-your-own-focus-visuals"></a>Использование собственных визуальных элементов фокуса
 
-Еще один способ настройки обозначения фокуса  — отказаться от использования системных визуальных элементов фокуса, нарисовав собственные с помощью визуальных состояний. Дополнительные сведения можно почерпнуть из [примера визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895).
+Еще один способ настройки обозначения фокуса  — отказаться от использования системных визуальных элементов фокуса, нарисовав собственные с помощью визуальных состояний. Дополнительные сведения можно почерпнуть из [примера визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Обозначение фокуса и система проектирования Fluent Design
@@ -175,7 +175,7 @@ ms.locfileid: "66370470"
 - [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal) (Подсвечивание)
 - [Проектирование для Xbox и телевизора](/windows/uwp/design/devices/designing-for-tv)
 - [Взаимодействие с помощью геймпада и пульта дистанционного управления](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 - [Composition Effects](https://docs.microsoft.com/windows/uwp/graphics/composition-effects) (Эффекты композиции)
-- [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) (Глубина в Fluent Design)
+- [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) (Наука системы: глубина в Fluent Design)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f) (Свет в Fluent Design)

@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363303"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259180"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-С точки зрения **StreamSocket** завершающий обработчик завершит выполнение (и сокет станет готовым к ликвидации) до запуска основной части продолжения. Таким образом, чтобы предотвратить удаление сокета, если вы хотите использовать его в этом продолжении, необходимо ссылаться на сокет напрямую (через захват лямбда-функции) и использовать его, или косвенно (продолжая осуществлять доступ к `args->Socket` внутри продолжения), или обеспечить принудительное выполнение задач продолжения в коде. Эту первую технику можно наблюдать в действии (захват лямбда-функции) в [примере StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609). Код C++/CX в разделе [Создание базового клиента и сервера TCP-сокета](#build-a-basic-tcp-socket-client-and-server) выше использует второй способ. Он возвращает запрос в качестве ответа и осуществляет доступ к `args->Socket` из одного из продолжений самого глубокого уровня.
+С точки зрения **StreamSocket** завершающий обработчик завершит выполнение (и сокет станет готовым к ликвидации) до запуска основной части продолжения. Таким образом, чтобы предотвратить удаление сокета, если вы хотите использовать его в этом продолжении, необходимо ссылаться на сокет напрямую (через захват лямбда-функции) и использовать его, или косвенно (продолжая осуществлять доступ к `args->Socket` внутри продолжения), или обеспечить принудительное выполнение задач продолжения в коде. Эту первую технику можно наблюдать в действии (захват лямбда-функции) в [примере StreamSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket). Код C++/CX в разделе [Создание базового клиента и сервера TCP-сокета](#build-a-basic-tcp-socket-client-and-server) выше использует второй способ. Он возвращает запрос в качестве ответа и осуществляет доступ к `args->Socket` из одного из продолжений самого глубокого уровня.
 
 Третий способ подходит в тех случаях, когда не нужно выводить ответ. Параметр `task_continuation_context::use_synchronous_execution()` используется для принудительного выполнения основной части продолжения внутри PPL. Этот пример кода демонстрирует, как это сделать.
 
@@ -1384,4 +1384,4 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>Примеры
-* [StreamSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)
