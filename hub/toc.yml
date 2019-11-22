@@ -1,7 +1,7 @@
 - name: Создание приложений для Windows
   items:
     - name: Обзор
-      href: apps/index.md
+      href: apps/index.yml
     - name: Создание классических приложений
       items:
         - name: Обзор
