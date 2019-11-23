@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Создание пула кадров захвата и сеанса захвата
 
-С помощью **графикскаптуреитем**вы создадите [DIRECT3D11CAPTUREFRAMEPOOL](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) с устройством D3D, поддерживаемым форматом пикселей (**DXGI @ no__t-3FORMAT @ no__t-4B8G8R8A8 @ no__t-5UNORM**), числом нужных кадров (которое может быть любым целым числом). ) и размер кадра. Свойство **ContentSize** класса **GraphicsCaptureItem** класс можно использовать в качестве размера кадра:
+С помощью **графикскаптуреитем**вы создадите [DIRECT3D11CAPTUREFRAMEPOOL](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) с устройством D3D, поддерживаемым форматом ПИКСЕЛЕЙ (**DXGI\_Format\_B8G8R8A8\_UNORM**), количеством нужных кадров (которое может быть любым целым числом) и размером кадра. Свойство **ContentSize** класса **GraphicsCaptureItem** класс можно использовать в качестве размера кадра:
 
 ```cs
 private GraphicsCaptureItem _item;

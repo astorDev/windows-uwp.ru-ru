@@ -54,7 +54,7 @@ ms.locfileid: "71339895"
 
 Анимирование [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) — тоже не очень хорошая идея. Это может отрицательно повлиять на производительность, а также привести к появлению разрывов или других артефактов в воспроизводимом видео.
 
-> **Примечание**   рекомендации в этой статье для **медиаплайерелемент** также применяются к [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **MediaPlayerElement** доступен только в Windows 10 версии 1607, поэтому при создании приложения для более ранней версии Windows следует использовать **MediaElement**.
+> **Обратите внимание** ,   рекомендации в этой статье для **медиаплайерелемент** также применяются к [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **MediaPlayerElement** доступен только в Windows 10 версии 1607, поэтому при создании приложения для более ранней версии Windows следует использовать **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Используйте бесконечно повторяемые анимации как можно реже
 
@@ -66,7 +66,7 @@ ms.locfileid: "71339895"
 
 Пространство имен [**Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation) содержит библиотеку высокопроизводительных плавных анимаций, которые имеют внешний вид, согласованный с другими анимациями Windows. В именах соответствующих классов присутствует слово "Theme". Они описаны в статье [Обзор анимаций](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Эта библиотека поддерживает многие распространенные сценарии анимации (например, анимацию первого представления приложения, а также создание переходов состояний и содержимого). Мы рекомендуем использовать эту библиотеку анимации везде, где это возможно, чтобы повысить производительность и согласованность для пользовательского интерфейса UWP.
 
-> **Примечание**  . Библиотека анимации не может анимировать все возможные свойства. Сценарии XAML, в которых библиотека анимации не применяется, см. в статье [Раскадрованные анимации](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
+> **Обратите внимание** ,   библиотека анимации не может анимировать все возможные свойства. Сценарии XAML, в которых библиотека анимации не применяется, см. в статье [Раскадрованные анимации](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Независимая анимация свойств CompositeTransform3D

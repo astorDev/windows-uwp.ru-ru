@@ -16,7 +16,7 @@ ms.locfileid: "71339613"
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 
 
-**Примечание**  For. Дополнительные сведения см. в//буилд/сеансе [значительно увеличивают производительность, когда пользователи взаимодействуют с большими объемами данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Примечание** .  дополнительные сведения см. в разделе сеанс//Буилд/ [значительно повышает производительность при взаимодействии пользователей с большими объемами данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Улучшите производительность и время запуска [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) и [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) с помощью виртуализации данных. Подробнее о виртуализации пользовательского интерфейса, сокращении элементов и прогрессивном обновлении элементов см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
 
@@ -27,7 +27,7 @@ ms.locfileid: "71339613"
 -   источника набора данных (расположение на локальном диске, в сети или облаке);
 -   общего потребления памяти вашим приложением.
 
-**Примечание**  Be о том, что функция включена по умолчанию для ListView и GridView, которая отображает временные визуальные элементы заполнителей, когда пользователь быстро выполняет панорамирование и прокрутку. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
+**Обратите внимание** ,  имейте в виду, что функция включена по умолчанию для ListView и GridView, которая отображает временные визуальные элементы заполнителей, когда пользователь быстро выполняет панорамирование и прокрутку. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Ниже приведены подробные сведения о методах добавочной виртуализации данных и виртуализации данных прямого доступа.
 
@@ -36,7 +36,7 @@ ms.locfileid: "71339613"
 Инкрементная виртуализация данных загружает данные последовательно. [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), использующий инкрементную виртуализацию данных, можно использовать для просмотра коллекции миллиона элементов, но изначально загружаются только 50 элементов. Следующие 50 загружаются, когда пользователь прокручивает страницу. По мере загрузки элементов бегунок полосы прокрутки уменьшается в размере. Для этого типа виртуализации данных записывается класс источника данных, применяющий эти интерфейсы.
 
 -   [**Интерфейс**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [иобсерваблевектор @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [**иобсерваблевектор&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)
 
 Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
@@ -48,7 +48,7 @@ ms.locfileid: "71339613"
 Виртуализация данных прямого доступа позволяет загружать данные из произвольного места в наборе данных. [  **ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), использующий виртуализацию данных прямого доступа, применяется для просмотра коллекции из миллиона элементов и может загружать элементы 100 000–100 050. Если пользователь затем перейдет к началу списка, элемент управления загрузит элементы 1–50. Бегунок полосы прокрутки всегда указывает, что **ListView** содержит миллион элементов. Положение бегунка полосы прокрутки зависит от того, где в полном наборе данных коллекции расположены видимые элементы. Этот тип виртуализации данных может значительно сократить требования к памяти и время загрузки для коллекции. Чтобы включить его, необходимо создать класс источника данных, который будет извлекать данные по запросу, управлять локальным кэшем и реализовывать указанные интерфейсы.
 
 -   [**Интерфейс**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [иобсерваблевектор @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) или [**иобсерваблевектор&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   (Необязательно) [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)
 -   (Необязательно) [**ISelectionInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISelectionInfo)
 
