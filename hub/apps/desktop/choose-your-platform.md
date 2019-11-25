@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, desktop development
-ms.openlocfilehash: c931991c283bb0b31f55c3e5539eac5ddeda9575
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
+ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74056855"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74392092"
 ---
 # <a name="choose-your-app-platform"></a>Выбор платформы для приложения
 
@@ -69,7 +69,8 @@ Windows Forms — это исходная платформа для управ�
 Дополнительные сведения о Windows Forms доступны в следующих статьях:
 
 * [Приступая к работе с Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
-* [Создание первого приложения](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
+* [Создание приложения Windows Forms](/dotnet/framework/winforms/creating-a-new-windows-form)
+* [Руководство. Создание средства просмотра рисунков](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [Справочные материалы по API (.NET)](https://docs.microsoft.com/dotnet/api/index)
 * [Усовершенствование приложений Windows Forms](/dotnet/framework/winforms/advanced/)
 

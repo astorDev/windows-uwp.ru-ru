@@ -1,0 +1,156 @@
+### YamlMime:Hub
+title: Документация разработчика приложений для Windows
+summary: Узнайте, как проектировать, разрабатывать, а также развертывать приложения и решения для компьютеров с Windows и других устройств.
+brand: windows
+metadata:
+  title: Документация разработчика для Windows
+  description: Проектируйте, разрабатывайте, а также развертывайте приложения и решения для компьютеров с Windows и других устройств.
+  author: mcleanbyron
+  ms.author: mcleans
+  ms.topic: hub-page
+  ms.date: 11/08/2019
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: f7c79005943440c4b8896e35f78b86c300a23d7f
+  ms.sourcegitcommit: 5bd8dcb5dc1b07fd97c60b41c3f8feae099fee4a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 11/22/2019
+  ms.locfileid: "74320027"
+highlightedContent:
+  items:
+  - title: Получение Visual Studio и пакета SDK для Windows
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: Рекомендации по пользовательскому интерфейсу и проектированию
+    itemType: overview
+    url: /windows/apps/fluent-design-system
+  - title: Присоединяйтесь к программе предварительной оценки
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Интерактивный учебный курс для разработчиков приложений для Windows
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+conceptualContent:
+  items:
+  - title: Платформы устройств
+    links:
+    - text: Windows PCs
+      url: /windows/apps/desktop/
+      itemType: get-started
+    - text: Смешанная реальность и HoloLens
+      url: https://docs.microsoft.com/windows/mixed-reality/
+      itemType: get-started
+    - text: IoT Базовая
+      url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
+      itemType: get-started
+    - text: Xbox One
+      url: https://www.xbox.com/developers
+      itemType: get-started
+    - text: Разработка мобильных приложений
+      url: https://docs.microsoft.com/azure/mobile-apps/
+      itemType: overview
+  - title: Разработка первого классического приложения
+    links:
+    - text: UWP
+      url: /windows/uwp/get-started/
+      itemType: get-started
+    - text: Win32
+      url: https://docs.microsoft.com/windows/win32/desktop-programming/
+      itemType: get-started
+    - text: WPF (.NET Core)
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
+      itemType: get-started
+    - text: WPF (.NET Framework)
+      url: https://docs.microsoft.com/dotnet/framework/wpf/getting-started/
+      itemType: get-started
+    - text: Windows Forms
+      url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms
+      itemType: get-started
+  - title: Справочник по API
+    links:
+    - text: UWP
+      url: https://docs.microsoft.com/uwp/
+      itemType: reference
+    - text: Win32 (по заголовкам)
+      url: https://docs.microsoft.com/windows/win32/api/
+      itemType: reference
+    - text: Win32 (по функциям)
+      url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
+      itemType: reference
+    - text: .NET Core
+      url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.0
+      itemType: reference
+    - text: .NET Framework
+      url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+      itemType: reference
+tools:
+  title: Платформы и среды для приложений
+  items:
+  - title: UWP
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: /windows/uwp/
+  - title: Win32
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows/win32/
+  - title: WPF
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/wpf/
+  - title: Windows Forms
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/winforms/
+additionalContent:
+  sections:
+  - title: Задачи
+    items:
+    - title: Создание классического приложения
+      summary: Разработка классических приложений UWP, Win32, WPF и Windows Forms для компьютеров с Windows.
+      url: /windows/apps/desktop/
+    - title: Модернизация классического приложения
+      summary: Усовершенствуйте существующее классическое приложение, добавив поддержку новых функций Windows 10.
+      url: /windows/apps/desktop/modernize
+    - title: Функции разработки приложений для Windows
+      summary: Узнайте, как разные платформы приложений поддерживают функции Windows.
+      url: /windows/apps/features-and-technologies/
+    - title: Поиск примеров кода
+      summary: Узнайте, как создавать отличные приложения, экспериментируя с нашими примерами.
+      url: https://developer.microsoft.com/windows/samples
+    - title: Разработка мобильных приложений
+      summary: Ознакомьтесь со службами Майкрософт, которые позволяют создавать безопасные и надежные облачные мобильные приложения.
+      url: https://docs.microsoft.com/azure/mobile-apps/
+    - title: Разработка с использованием Python, Node.js и других технологий
+      summary: Настройте компьютер с Windows для работы с такими кроссплатформенными технологиями, как Python, Node.js и т. д.
+      url: /windows/dev-environment/
+    - title: Публикация в Microsoft Store
+      summary: Публикуйте приложения и игры для Windows в Microsoft Store с помощью Центра партнеров.
+      url: /windows/uwp/publish/
+    - title: Добавление специальных возможностей в приложение
+      summary: Встраивайте специальные возможности в приложения, чтобы они были доступны для каждого пользователя.
+      url: /windows/apps/accessibility/
+  - title: Технологии
+    items:
+    - title: Новые возможности для разработчиков
+      summary: Узнайте о последних функциях разработки в Windows 10.
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+    - title: ИИ Windows
+      summary: Используйте ИИ Windows, чтобы создавать интеллектуальные решения для выполнения сложных задач в приложениях.
+      url: https://docs.microsoft.com/windows/ai/
+    - title: Windows для Интернета вещей
+      summary: Создавайте решения для платформы Windows для Интернета вещей.
+      url: https://docs.microsoft.com/windows/iot-core/
+    - title: MSIX
+      summary: Упакуйте и разверните любое приложение для Windows, воспользовавшись современным универсальным форматом пакета.
+      url: https://docs.microsoft.com/windows/msix/
+    - title: Контейнеры в Windows
+      summary: Упаковывайте приложения с зависимостями в быстрые, полностью изолированные среды Windows.
+      url: https://docs.microsoft.com/virtualization/windowscontainers/
+    - title: Смешанная реальность
+      summary: Создавайте решения смешанной реальности для HoloLens, поддерживающие совместную работу, и выполняйте другие задачи.
+      url: https://docs.microsoft.com/windows/mixed-reality/
+    - title: Project Rome
+      summary: Создавайте для своих приложений интерфейсы с поддержкой различных устройств.
+      url: https://docs.microsoft.com/windows/project-rome/
+    - title: Microsoft Graph
+      summary: Создавайте приложения, взаимодействующие с данными миллионов пользователей, с помощью унифицированной модели программирования.
+      url: https://docs.microsoft.com/graph/
+  footer: '[@WindowsDocs в Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute в YouTube](https://aka.ms/OneDevMinute) - [Поддержка разработчиков для Windows](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'
