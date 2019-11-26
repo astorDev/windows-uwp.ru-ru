@@ -6,30 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, запуск, возобновление
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f075b50c3f943ec016ebdb513367aff680897aa5
+ms.sourcegitcommit: c5dc47198f40339a047db72db9d5f2248583b948
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662219"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74490626"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Запуск и возобновление работы приложений (DirectX и C++)
 
-
-
 Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX.
 
-| Раздел | Описание |
-|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Активация приложения](how-to-activate-an-app-directx-and-cpp.md) | В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX. |
-| [Приостановка приложения](how-to-suspend-an-app-directx-and-cpp.md) | В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX. |
-| [Возобновление приложения](how-to-resume-an-app-directx-and-cpp.md) | В этом разделе показано, как восстановить важные данные приложения, когда система возобновляет работу приложения универсальной платформы Windows (UWP), использующего DirectX. |
- 
-
- 
-
- 
-
-
-
-
+|Статья|Описание|
+|-|-|
+|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX.|
+|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX.|
+|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|В этом разделе показано, как восстановить важные данные приложения, когда система возобновляет работу приложения универсальной платформы Windows (UWP), использующего DirectX.|
