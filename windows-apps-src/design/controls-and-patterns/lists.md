@@ -12,16 +12,20 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
-ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
+ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
+ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74086866"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162353"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
-Коллекции и списки связаны с представлением нескольких связанных элементов данных, которые отображаются вместе. Коллекции могут быть представлены несколькими способами, различными элементами управления коллекциями (также могут называться представлениями коллекций). Элементы управления коллекциями отображают содержимое на основе коллекции, например список контактов, список дат, набор изображений и т. д., а также обеспечивают взаимодействие с этим содержимым.  В этой статье описаны следующие элементы управления:
+Коллекции и списки связаны с представлением нескольких связанных элементов данных, которые отображаются вместе. Коллекции могут быть представлены несколькими способами, различными элементами управления коллекциями (также могут называться представлениями коллекций). Элементы управления коллекциями отображают содержимое на основе коллекции, например список контактов, список дат, набор изображений и т. д., а также обеспечивают взаимодействие с этим содержимым.
+
+> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [класс FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [класс TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [класс ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
+
+В этой статье описаны следующие элементы управления:
 
 - представления списка, которые применяются преимущественно для отображения коллекций с большими объемами текста;
 - представления сетки, которые применяются преимущественно для отображения коллекций с большим количеством изображений;
@@ -29,20 +33,14 @@ ms.locfileid: "74086866"
 - представления в виде дерева, которые применяются преимущественно для отображения коллекций с большими объемами текста в специальной иерархии;
 - ItemsRepeater — настраиваемый стандартный блок, используемый для создания пользовательских элементов управления коллекциями.
 
-
 Ниже представлены рекомендации по проектированию, описаны возможности и приведены примеры каждого элемента управления.
 
 Каждый из этих элементов управления (за исключением ItemsRepeater) предоставляет встроенные стили и возможности взаимодействия. Однако для расширенной настройки внешнего вида представления коллекции и элементов в нем используется шаблон [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Подробные сведения о шаблонах данных и настройке внешнего вида представления коллекции можно найти на странице [Контейнеры и шаблоны элементов](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Каждый из этих элементов управления (за исключением ItemsRepeater) также имеет встроенный режим, позволяющей выбирать один или несколько элементов. Дополнительные сведения см. в разделе [Общие сведения о режиме выделения](selection-modes.md).
 
-> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [класс FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [класс TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [класс ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
-
-> <div id="main">  
-> <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>  
-> </div>  
-> По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).  
-> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения доступны в разделе справочных материалов по API, посвященном <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">классу ScrollViewer</a>.  
+> **Windows 10 Fall Creators Update — изменения в поведении**. По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения доступны в разделе справочных материалов по API, посвященном [классу ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Примеры
 

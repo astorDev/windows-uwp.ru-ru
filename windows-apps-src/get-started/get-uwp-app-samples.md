@@ -6,31 +6,31 @@ ms.topic: article
 keywords: windows 10, uwp, sample code, code samples
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0e30804eabb7e50c5a7319bba9a6b2c83e1d7e
-ms.sourcegitcommit: 99595e4938213aafdb49635d684d8ba8eb3f697a
+ms.openlocfilehash: ac3c99bc364e81386a362f1d1b5530bee9d462c4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69487856"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259517"
 ---
 # <a name="get-uwp-app-samples"></a>Получение примеров приложений UWP
 
-Примеры приложений универсальной платформы Windows (UWP) доступны в репозиториях на GitHub. Чтобы воспользоваться упорядоченным по категориям списком с возможностью поиска, см. раздел с [примерами](https://developer.microsoft.com/windows/samples). Можете также обратиться к репозиторию [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub"). Этот репозиторий содержит примеры, демонстрирующие все функции UWP и шаблоны использования их API.
+Примеры приложений универсальной платформы Windows (UWP) доступны в репозиториях на GitHub. Чтобы воспользоваться упорядоченным по категориям списком с возможностью поиска, см. раздел с [примерами](https://developer.microsoft.com/windows/samples). Можете также обратиться к репозиторию [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Репозиторий GitHub с примерами приложений универсальной платформы Windows"). Этот репозиторий содержит примеры, демонстрирующие все функции UWP и шаблоны использования их API.
 
 ![Репозиторий примеров UWP на GitHub](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Скачать код
 
-Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows в GitHub"). Выберите **Clone or download** (Клонировать или скачать), а затем — **Download ZIP** (Скачать ZIP-файл). 
+Чтобы загрузить образцы, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий GitHub с примерами приложений универсальной платформы Windows"). Выберите **Clone or download** (Клонировать или скачать), а затем — **Download ZIP** (Скачать ZIP-файл). 
 
 ![Скачивание примеров](images/SamplesDownloadButton.png)
 
-Кроме того, вы можете [скачать примеры](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачивание ZIP-файла с примерами приложений универсальной платформы Windows") в этой статье.
+Вы также можете [загрузить образцы](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows") из этой статьи.
 
 В ZIP-файле для скачивания всегда содержатся последние версии примеров. Для скачивания файла не требуется учетная запись GitHub. Если выпущено обновление SDK или необходимо получить только последние изменения и добавления, просто скачайте актуальный ZIP-файл.
 
 > [!NOTE]
-> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить [бесплатную копию Visual Studio Community](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Файлы для скачивания средств разработки для Windows"). Visual Studio Community поддерживает создание приложений UWP.  
+> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить [бесплатную копию Visual Studio Community](https://www.microsoft.com/?ref=go). Visual Studio Community поддерживает создание приложений UWP.  
 >
 > Для правильной работы примеров нужно распаковать весь архив, а не только отдельные примеры. Все примеры зависят от папки SharedContent в архиве. Примеры функций UWP используют связанные файлы в Visual Studio, чтобы уменьшить дублирование общих файлов, включая файлы шаблонов примеров и ресурсы изображений. Общие файлы хранятся в папке SharedContent в корне репозитория. В файлах проекта для обращения к общим файлам используются ссылки.
 > 

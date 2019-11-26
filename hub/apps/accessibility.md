@@ -1,31 +1,31 @@
 ---
-title: Специальные возможности в Windows 10
-description: На этой странице содержатся сведения, которые помогут приступить к разработке доступных приложений Windows.
+title: Специальные возможности в Windows 10
+description: На этой странице содержатся сведения, которые помогут приступить к разработке приложений Windows со специальными возможностями.
 ms.topic: article
 ms.date: 09/12/2019
-keywords: Специальные возможности в Windows 10, Специальные возможности, создание доступных приложений Win32, создание доступных приложений UWP, создание доступных приложений WPF, создание доступных приложений WinForms
+keywords: Специальные возможности в Windows 10, специальные возможности, создание приложений win32 со специальными возможностями, создание приложений UWP со специальными возможностями, создание приложений WPF со специальными возможностями, создание приложений WinForms со специальными возможностями
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
 ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/14/2019
 ms.locfileid: "70987188"
 ---
-# <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
+# <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 
-![Херо-акцессибилити-бар-смаллер. png](images/hero-accessibility-bar-smaller.png)
+![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Создавайте специальные возможности в приложениях, чтобы предоставить пользователям все возможности
+## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Встраивание специальных возможностей в приложения, чтобы они были доступны для каждого пользователя
 
-Продукты и услуги, включая электронные носители, доступны, когда они предназначены для полного и успешного взаимодействия с максимально возможным количеством пользователей.
+Продукты и службы, включая электронные мультимедиа, предоставляют специальные возможности, если они обеспечивают полные и эффективные возможности взаимодействия для максимально возможного количества пользователей.
 
-Создавайте доступные и инклюзивные приложения Windows с улучшенными функциональными возможностями и удобством использования для людей с ограниченными возможностями (временный и постоянный), личных настроек, специальных стилей работы или ограничений, связанных с ситуацией (например, общие рабочие пространства). движущиеся, приготовление, покрытие и т. д. Некоторые распространенные решения включают в себя предоставление сведений в альтернативных форматах (например, субтитры на видео) или разрешение использования вспомогательных технологий (таких как средства чтения с экрана).
+Создавайте инклюзивные приложения Windows с улучшенными функциональными возможностями и удобством использования для людей с ограниченными возможностями (временными и постоянными), особыми предпочтениями, разными стилями работы или ситуационными ограничениями (например, общие рабочие пространства, работа во время вождения, готовки, отблеск поверхности и т. д.). Некоторые распространенные решения включают в себя предоставление сведений в альтернативных форматах (например, субтитры на видео) или разрешение использования вспомогательных технологий (таких как средства чтения с экрана).
 
-**Каждый должен иметь доступ к одним и тем же комнатам в здании независимо от того, нужно ли использовать лестницу или Лифт.**
+**У всех должен быть доступ к одним и тем же помещениям в здании, независимо от того, что нужно использовать: лестницу или лифт.**
 
-На этой странице содержатся сведения о том, как различные платформы разработки Windows обеспечивают поддержку специальных возможностей для разработчиков, создающих приложения Windows, разработчиков вспомогательных технологий, таких как средства чтения с экрана и экранные лупы, а также программное обеспечение инженеры тестирования, создающие автоматизированные сценарии для тестирования приложений.
+На этой странице содержатся сведения о том, как различные платформы разработки Windows обеспечивают поддержку специальных возможностей для разработчиков, создающих приложения Windows, разработчиков вспомогательных технологий, создающих такие инструменты, как средства чтения с экрана и экранные увеличители, а также для инженеров тестирования программного обеспечения, создающих автоматизированные сценарии для тестирования приложений.
 
 ## <a name="platform-specific-documentation"></a>Документация для определенных платформ
 
@@ -35,7 +35,7 @@ ms.locfileid: "70987188"
 
       **Универсальная платформа Windows (UWP)**
 
-      Разрабатывайте доступные приложения и средства на современных платформах для приложений и игр Windows 10 на любом устройстве Windows (включая ПК, телефоны, Xbox One, HoloLens и др.) и публикуйте их в Microsoft Store.
+      Разрабатывайте приложения и средства со специальными возможностями на современных платформах для приложений и игр в Windows 10 на любом устройстве с Windows (включая ПК, телефоны, Xbox One, HoloLens и др.) и публикуйте их в Microsoft Store.
 
       [Проектирование инклюзивного программного обеспечения](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -50,19 +50,19 @@ ms.locfileid: "70987188"
 
       **Платформа Win32**
 
-      Разрабатывайте доступные приложения и средства на исходной платформе для приложений CC++ /Windows.
+      Разрабатывайте приложения и средства со специальными возможностями на исходной платформе для приложений C/C++ Windows.
 
-      [Новые возможности в области специальных возможностей и автоматизации Windows](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Что нового в области специальных возможностей и автоматизации Windows](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
       [Разработка приложений со специальными возможностями для Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-      [Разработка доступных платформ пользовательского интерфейса для Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Разработка платформ пользовательского интерфейса со специальными возможностями для Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
       [Разработка вспомогательных технологий для Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-      [Проверка специальных возможностей](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Тестирование специальных возможностей](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-      [Устаревшие технологии обеспечения доступности и автоматизации — MSAA для модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Устаревшие технологии обеспечения специальных возможностей и автоматизации — от MSAA до автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
       [Специальные возможности Windows](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
@@ -75,7 +75,7 @@ ms.locfileid: "70987188"
 
       **Windows Presentation Foundation (WPF)**
 
-      Разрабатывайте доступные приложения и средства на установленной платформе для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
+      Разрабатывайте приложения и средства со специальными возможностями на установленной платформе для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
 
       [Рекомендации по специальным возможностям](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
@@ -87,38 +87,38 @@ ms.locfileid: "70987188"
 
       [Шаблоны элементов управления модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [Шаблон текста модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Шаблон текста для модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [Типы элементов управления модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [Типы элементов управления для автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [Спецификация модели автоматизации пользовательского интерфейса и обещание сообщества](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [Спецификация модели автоматизации пользовательского интерфейса и Обещание сообществу](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Приложения платформы Windows Forms](images/platform-winforms.png)
 
       **Windows Forms (WinForms)**
 
-      Разрабатывайте доступные приложения и средства для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
+      Разрабатывайте приложения и средства со специальными возможностями для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
 
-      [Специальные возможности Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Поддержка специальных возможностей в Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [Создание приложения Windows со специальными возможностями](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Создание приложения Windows с поддержкой специальных возможностей](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [Свойства элементов управления Windows Forms, которые поддерживают рекомендации по обеспечению доступности](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Свойства элементов управления Windows Forms, в которых соблюдены правила доступности](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Предоставление сведений о специальных возможностях для элементов управления в форме Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Определение сведений, связанных со специальными возможностями, для элементов управления в Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
-      **Веб-доступ**
+      **Специальные возможности в Интернете**
 
-      Проектирование, сборка и тестирование доступных веб-сайтов в Microsoft ребро.
+      Проектируйте, выполняйте сборку и тестирование веб-сайтов со специальными возможностями в Microsoft Edge.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [Общие сведения о веб-специальных возможностях](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Знакомство со специальными возможностями в Интернете](https://docs.microsoft.com/microsoft-edge/accessibility)
 
       [Проектирование доступных веб-сайтов](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
@@ -131,7 +131,7 @@ ms.locfileid: "70987188"
 
 ## <a name="samples"></a>Примеры
 
-Загрузите и запустите полный набор примеров Windows, демонстрирующих различные специальные возможности и функциональные возможности.
+Загрузите и запустите полные примеры Windows, демонстрирующие различные компоненты и функции специальных возможностей.
 
 :::row:::
    :::column:::
@@ -140,7 +140,7 @@ ms.locfileid: "70987188"
       Новый браузер примеров заменяет коллекцию кода MSDN.
    :::column-end:::
    :::column:::
-      [Коллекция кода MSDN (с снятой с учета)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [Коллекция кода MSDN (прекращение использования)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
 
       Загрузите примеры для Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight и других продуктов.
    :::column-end:::
@@ -152,32 +152,32 @@ ms.locfileid: "70987188"
       В этих примерах демонстрируются функциональные возможности и модель программирования для Windows и Windows Server. 
    :::column-end:::
    :::column:::
-      [Примеры универсальная платформа Windows (UWP) на GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Примеры универсальной платформы Windows (UWP) на GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
 
-      В этих примерах демонстрируются шаблоны использования API для универсальная платформа Windows (UWP) в пакете средств разработки программного обеспечения (SDK) для Windows 10.
+      В этих примерах демонстрируются шаблоны использования API для универсальной платформы Windows (UWP) в пакете средств разработки программного обеспечения (SDK) для Windows 10.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
       [Коллекция элементов управления XAML](https://github.com/microsoft/Xaml-Controls-Gallery)
 
-      В этом приложении демонстрируются различные элементы управления XAML, поддерживаемые в системе разработки Fluent.
+      В этом приложении демонстрируются различные элементы управления Xaml, поддерживаемые в системе Fluent Design.
    :::column-end:::
 :::row-end:::
 
 ## <a name="videos"></a>Видео
 
-Различные видеоматериалы, охватывающие создание приложений Windows с поддержкой специальных возможностей и их адресации в корпорации Майкрософт.
+Различные видеоматериалы, охватывающие темы от создания приложений Windows с поддержкой специальных возможностей до проблем общей доступности и того, как Microsoft их решает.
 
 :::row:::
    :::column:::
-      **Как приступить к работе со специальными возможностями в приложениях Windows**
+      **Начало работы со специальными возможностями в приложениях Windows**
    :::column-end:::
    :::column:::
-      **Одна минута разработки: Разработка приложений для специальных возможностей**
+      **Блог One Dev Minute: Разработка специальных возможностей для приложений**
    :::column-end:::
    :::column:::
-      **Введение в инвалидность и специальные возможности**
+      **Общие сведения на тему ограниченных возможностей и специальных возможностей**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -193,13 +193,13 @@ ms.locfileid: "70987188"
 :::row-end:::
 :::row:::
    :::column:::
-      **От взлома до продукта, управление глазами для Windows 10**
+      **От hack (взлома) до продукта, управление глазами для Windows 10**
    :::column-end:::
    :::column:::
-      **Специальные возможности в Windows 10**
+      **Специальные возможности в Windows 10**
    :::column-end:::
    :::column:::
-      **Общие сведения о создании доступных приложений UWP**
+      **Введение в создание доступных приложений UWP**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -218,10 +218,10 @@ ms.locfileid: "70987188"
       **Разработка специальных возможностей Windows**
    :::column-end:::
    :::column:::
-      **Специальные возможности Windows 10 позволяют всем пользователям**
+      **Специальные возможности Windows 10 расширяют потенциал для всех пользователей**
    :::column-end:::
    :::column:::
-      **Упрощение просмотра указателей мыши**
+      **Улучшение видимости указателей мыши**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -242,7 +242,7 @@ ms.locfileid: "70987188"
    :::column span="3":::
       **Блоги и новости**
 
-      Новейшее из мира Microsoft Accessibility.
+      Последние новости из мира специальных возможностей Microsoft.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -261,7 +261,7 @@ ms.locfileid: "70987188"
    :::column span="3":::
       **Сообщество и поддержка**
 
-      Место, где разработчики и пользователи Windows соблюдают и изучены вместе.
+      Место, где разработчики и пользователи Windows встречаются и учатся вместе.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -272,6 +272,6 @@ ms.locfileid: "70987188"
       [Форум по разработке специальных возможностей и автоматизации Windows](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
    :::column-end:::
    :::column:::
-      [Служба ответов с ограниченными ИТ](https://www.microsoft.com/Accessibility/disability-answer-desk)
+      [Служба Answer Desk для людей с ограниченными возможностями](https://www.microsoft.com/Accessibility/disability-answer-desk)
    :::column-end:::
 :::row-end:::
