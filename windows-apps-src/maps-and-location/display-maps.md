@@ -90,7 +90,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 Используйте элемент управления картой, если нужно показать карту в приложении, которое позволяет пользователям просматривать сведения, зависящие от приложения или общие географические сведения. Наличие элемента управления картой в вашем приложении означает, что пользователям не нужно выходить из вашего приложения для получения соответствующих сведений.
 
 > [!NOTE]
->Если ничего опасного в выходе пользователей за пределы вашего приложения нет, рассмотрите возможность использования приложения Карты Windows для предоставления этих сведений. Ваше приложение может использовать приложение Карты Windows для отображения определенных карт, маршрутов и результатов поиска. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Если ничего опасного в выходе пользователей за пределы вашего приложения нет, рассмотрите возможность использования приложения Карты Windows для предоставления этих сведений. Ваше приложение может использовать приложение Карты Windows для отображения определенных карт, маршрутов и результатов поиска. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
 ### <a name="add-a-map-control-to-your-app"></a>Добавление элемента управления с картой в приложение
 
@@ -144,7 +144,7 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="set-a-starting-location-for-the-map"></a>Задайте начальное расположение для карты
 
-Укажите местоположение для отображения на карте, задав свойство [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) класса [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
+Укажите расположение, которое должно отображаться на карте, задав свойство [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) класса [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
 
 > [!NOTE]
 > Так как строку невозможно преобразовать в класс [**Geopoint**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), то, соответственно, невозможно задать значение для свойства [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setlocation).)
@@ -284,7 +284,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 Приближение, отдаление, поворот и наклон камеры карты для получения именно того угла, который необходим для вашего эффекта. Попробуйте использовать следующие свойства.
 
--   Установите **центр** карты в географическую точку, определив свойство [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center).
+-   Установите географическую точку как **центр** карты, задав соответствующее значение для свойства [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center).
 -   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) от 1 до 20.
 -   Установите **вращение** карты, задав свойство [**Heading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
 -   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch) от 0 до 65 градусов.
@@ -308,7 +308,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 ## <a name="display-streetside-views"></a>Отображение представлений Streetside
 
 
-Представление Streetside — это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
+Представление Streetside — это перспектива уровня улицы для определенного расположения, отображаемая в верхней части элемента управления картой.
 
 ![Пример представления Streetside элемента управления картой.](images/onlystreetside-730width.png)
 
@@ -452,7 +452,7 @@ private async void display3DLocation()
 
 -   Укажите достопримечательности на карте, используя [**map elements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapelementsproperty). Любые дополнительные сведения могут быть отображены в качестве прозрачного наложения пользовательского интерфейса на карту.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)

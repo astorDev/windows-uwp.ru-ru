@@ -5,7 +5,7 @@ ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 617b5d013c8452733fae2a1fa7c16180d37fbe57
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -100,7 +100,7 @@ ms.locfileid: "74259712"
 
 Для каждого уведомления, которое Windows должна скачивать для вашей плитки, вам нужно предоставить уникальный URI. Использование метода [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) позволяет предоставить для работы с очередью уведомлений до пяти URI одновременно. Все URI опрашиваются на наличие отдельных полезных данных уведомления одновременно или почти одновременно. Каждый опрошенный URI может возвращать собственные срок действия и значение тега.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Рекомендации для периодических уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)

@@ -90,7 +90,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 -   Не гарантируется соответствие культуре.
 -   Может быть задана любая комбинация компонентов в любом порядке.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 Предположим, что требуется отобразить текущие месяц и день вместе с текущим временем в определенном формате. Например, вы хотите, чтобы пользователи с английским языком (США) увидели данные в следующем формате:
 
@@ -139,6 +139,6 @@ string output = patternFormatter.Format(System.DateTime.Now);
 * [датетимеформаттер](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример форматирования даты и времени](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)

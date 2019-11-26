@@ -6,7 +6,7 @@ label: Panning
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 945368e27c4f6215d2f5df20d52d916ead3597dd
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

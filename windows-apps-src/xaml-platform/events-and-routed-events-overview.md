@@ -4,7 +4,7 @@ title: Общие сведения о событиях и перенаправл
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0e97f51a8e34c5949e789b203abf896f035d
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -308,7 +308,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 Определение пользовательского события обычно является частью задачи на определение пользовательского элемента управления. Общий шаблон выглядит следующим образом: имеется свойство зависимостей с возможностью обратного вызова при изменении свойства. Также имеется возможность определить пользовательское событие, которое порождается обратным вызовом свойства зависимостей в некоторых или во всех классах. Пользователи вашего элемента управления не имеют доступа к определенному вами обратному вызову при изменении свойства, но лучше иметь возможность получать события уведомления. Дополнительную информацию см. в разделе [Пользовательские свойства зависимостей](custom-dependency-properties.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Обзор языка XAML](xaml-overview.md)
 * [Краткое руководство. сенсорный ввод](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))

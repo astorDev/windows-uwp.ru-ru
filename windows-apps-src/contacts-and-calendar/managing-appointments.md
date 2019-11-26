@@ -567,7 +567,7 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](https://github.com/Microsoft/Windows-universal-samples) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример API встреч](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
  

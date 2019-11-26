@@ -4,7 +4,7 @@ title: Руководство по скольжению по диагонали
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

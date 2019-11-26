@@ -352,7 +352,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 Дополнительные сведения можно узнать, загрузив код из этого краткого руководства, в [примере создания рабочего элемента ThreadPool](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) , написанном для Windows 8.1, и повторно использовать исходный код в приложении Win\_УНАП Windows 10.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

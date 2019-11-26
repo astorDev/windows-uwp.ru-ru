@@ -1,6 +1,6 @@
 ---
 title: Структура приложения Marble Maze
-description: Структура приложения универсальной платформы Windows (UWP) на базе DirectX отличается от обычного классического приложения.
+description: Структура приложения универсальной платформы Windows (UWP) на DirectX отличается от обычного классического приложения.
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ms.date: 09/08/2017
 ms.topic: article
@@ -18,7 +18,7 @@ ms.locfileid: "74258500"
 
 
 
-Структура приложения универсальной платформы Windows (UWP) на базе DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types), и функциями, подобными [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
+Структура приложения универсальной платформы Windows (UWP) на DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types), и функциями, подобными [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
 
 > [!NOTE]
 > Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://github.com/microsoft/Windows-appsample-marble-maze).
@@ -48,7 +48,7 @@ ms.locfileid: "74258500"
 | BasicShapes.h, BasicShapes.cpp             | Определяют класс **BasicShapes**, который предоставляет служебные методы для создания основных фигур (кубов, сфер и т. п.). (Эти файлы не используются в реализации Marble Maze) |                                                                                  |
 | Camera.h, Camera.cpp                       | Определяют класс **Camera**, который предоставляет положение и ориентацию камеры                                                                                               |
 | Collision.h, Collision.cpp                 | Обрабатывают столкновения шарика с другими объектами (в том числе со стенами лабиринта)                                                                                                       |
-| DDSTextureLoader.h, DDSTextureLoader.cpp   | Определяют функцию **CreateDDSTextureFromMemory**, которая загружает текстуры в формате DDS из буфера памяти.                                                              |
+| DDSTextureLoader.h, DDSTextureLoader.cpp   | Определяют функцию **CreateDDSTextureFromMemory**, которая загружает текстуры в формате DDS из буфера памяти                                                              |
 | DirectXHelper.h             | Определяет вспомогательные функции DirectX, используемые во многих приложениях UWP DirectX.                                                                            |
 | LoadScreen.h, LoadScreen.cpp               | Определяют класс **LoadScreen**, который отображает экран загрузки во время инициализации приложения                                                                                         |
 | MarbleMazeMain.h, MarbleMazeMain.cpp               | Определяют класс **MarbleMazeMain**, который управляет игровыми ресурсами и определяет большую часть игровой логики.                                                                          |
@@ -57,7 +57,7 @@ ms.locfileid: "74258500"
 | Physics.h, Physics.cpp                     | Определяют класс **Physics**, в котором реализуется физика взаимодействия шарика и лабиринта                                                                              |
 | Primitives.h                               | Определяет геометрические типы, используемые в игре                                                                                                                                   |
 | SampleOverlay.h, SampleOverlay.cpp         | Определяют класс **SampleOverlay**, предоставляющий общие данные и операции для двухмерной графики и пользовательского интерфейса.                                                                               |
-| SDKMesh.h, SDKMesh.cpp                     | Определяют класс **SDKMesh**, который загружает и отрисовывает сетки в формате SDK Mesh (.sdkmesh).                                                                                |
+| SDKMesh.h, SDKMesh.cpp                     | Определяют класс **SDKMesh**, который загружает и отрисовывает сетки в формате SDK Mesh (.sdkmesh)                                                                                |
 | StepTimer.h               | Определяют класс **StepTimer**, который позволяет легко получать значения общего и затраченного времени.
 | UserInterface.h, UserInterface.cpp         | Определяют функции пользовательского интерфейса (системы меню, таблицы результатов и т. п.).                                                                        |
 
@@ -421,7 +421,7 @@ void MarbleMazeMain::LoadState()
 
 Ознакомьтесь с разделом [Добавление визуального содержимого в пример Marble Maze](adding-visual-content-to-the-marble-maze-sample.md), чтобы изучить основные моменты, о которых нужно помнить при работе с визуальными ресурсами.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Добавление визуального содержимого в пример лабиринта мрамора](adding-visual-content-to-the-marble-maze-sample.md)
 * [Основные сведения о примерах лабиринта мраморов](marble-maze-sample-fundamentals.md)

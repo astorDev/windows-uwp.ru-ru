@@ -4,7 +4,7 @@ title: Привязка к иерархическим данным и созда
 description: Создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") можно с помощью привязки элементов управления к экземплярам CollectionViewSource, связанным друг с другом в цепочку.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -27,7 +27,7 @@ ms.locfileid: "74255125"
 
 ![основное/подробное представление спортивной иерархии](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Материал этого раздела предполагает, что вы умеете создавать простые приложения UWP. Инструкции по созданию первого приложения UWP см. в [статье о создании первого приложения UWP на C# или Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 

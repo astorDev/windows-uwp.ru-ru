@@ -119,7 +119,7 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Отчет о результативности рекламы](../publish/advertising-performance-report.md)

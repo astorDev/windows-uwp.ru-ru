@@ -4,7 +4,7 @@ description: В этом практическом примере, который
 title: Windows Phone пример использования Silverlight с UWP, Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1440bf3cfded6b50eb58feffd322ea484e488a
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

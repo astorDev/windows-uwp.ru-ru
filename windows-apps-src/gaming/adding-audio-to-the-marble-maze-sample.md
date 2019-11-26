@@ -1,5 +1,5 @@
 ---
-title: Добавление звука в пример Marble Maze
+title: Добавление звука в образец Marble Maze
 description: В данном документе описаны ключевые принципы, которые следует учитывать при работе со звуком, и показано, как эти принципы применяются в игре Marble Maze.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.date: 10/18/2017
@@ -13,7 +13,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258559"
 ---
-# <a name="adding-audio-to-the-marble-maze-sample"></a>Добавление звука в пример Marble Maze
+# <a name="adding-audio-to-the-marble-maze-sample"></a>Добавление звука в образец Marble Maze
 
 В данном документе описаны ключевые принципы, которые следует учитывать при работе со звуком, и показано, как эти принципы применяются в игре Marble Maze. Marble Maze использует [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) для загрузки звуковых ресурсов из файлов и [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) для микширования и воспроизведения звука, а также для добавления эффектов к звукозаписям.
 
@@ -194,7 +194,7 @@ DX::ThrowIfFailed(
 > [!TIP]
 > Если нужно присоединить существующую цепочку эффектов к существующему тембру субмикширования или заменить текущую цепочку эффектов, используйте метод [IXAudio2Voice::SetEffectChain](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectchain).
 
-Метод **Audio::CreateReverb** вызывает метод [IXAudio2Voice::SetEffectParameters](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectparameters), чтобы задать дополнительные параметры, связанные с этим эффектом. Этот метод принимает структуру параметров, характерную для данного эффекта. Объект [параметров\_XAUDIO2FX\_](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters) , **m_reverbParametersSmall**, который содержит параметры эффектов для переглагола, инициализируется в методе **Audio:: Initialize** , так как каждый перекомандный результат использует одни и те же параметры. В следующем примере показано, как метод **Audio::Initialize** инициализирует параметры для реверберации в ближней зоне.
+Метод **Audio::CreateReverb** вызывает метод [IXAudio2Voice::SetEffectParameters](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2voice-seteffectparameters), чтобы задать дополнительные параметры, связанные с этим эффектом. Этот метод принимает структуру параметров для данного конкретного эффекта. Объект [параметров\_XAUDIO2FX\_](https://docs.microsoft.com/windows/desktop/api/xaudio2fx/ns-xaudio2fx-xaudio2fx_reverb_parameters) , **m_reverbParametersSmall**, который содержит параметры эффектов для переглагола, инициализируется в методе **Audio:: Initialize** , так как каждый перекомандный результат использует одни и те же параметры. В следующем примере показано, как метод **Audio::Initialize** инициализирует параметры для реверберации в ближней зоне.
 
 ```cpp
 m_reverbParametersSmall.ReflectionsDelay = XAUDIO2FX_REVERB_DEFAULT_REFLECTIONS_DELAY;
@@ -429,7 +429,7 @@ DX::ThrowIfFailed(
 ## <a name="playing-background-music"></a>Воспроизведение фоновой музыки
 
 
-Исходный тембр создается в остановленном состоянии. Marble Maze запускает фоновую музыку в игровом цикле. Первый вызов метода **MarbleMazeMain::Update** вызывает **Audio::Start**, чтобы запустить фоновую музыку.
+Исходный тембр создается в остановленном состоянии. Marble Maze запускает фоновую музыку в цикле игры. Первый вызов метода **MarbleMazeMain::Update** вызывает **Audio::Start**, чтобы запустить фоновую музыку.
 
 ```cpp
 if (!m_audio.m_isAudioStarted)
@@ -469,7 +469,7 @@ void Audio::Start()
 
 Метод **Audio::CreateResources** использует Media Foundation для загрузки фоновой музыки. Но на этом этапе у исходного тембра нет звуковых данных для обработки. Кроме того, так как фоновая музыка повторяется циклично, исходный тембр необходимо регулярно обновлять данными, чтобы воспроизведение музыки продолжалось.
 
-Для поддержки наполнения исходного тембра данными игровой цикл обновляет буферы звука каждый кадр. Метод **MarbleMazeMain::Render** вызывает метод **Audio::Render** для обработки звукового буфера фоновой музыки. Класс **Audio** определяет массив из трех буферов аудио, **m\_аудиобуфферс**. Каждый буфер содержит 64 КБ (65536 байт) данных. Цикл считывает данные из объекта Media Foundation и записывает их в исходный тембр до тех пор, пока в исходном тембре не будет три поставленных в очередь буфера.
+Для поддержки наполнения исходного тембра данными цикл игры обновляет буферы звука каждый кадр. Метод **MarbleMazeMain::Render** вызывает метод **Audio::Render** для обработки звукового буфера фоновой музыки. Класс **Audio** определяет массив из трех буферов аудио, **m\_аудиобуфферс**. Каждый буфер содержит 64 КБ (65536 байт) данных. Цикл считывает данные из объекта Media Foundation и записывает их в исходный тембр до тех пор, пока в исходном тембре не будет три поставленных в очередь буфера.
 
 > [!CAUTION]
 > Marble Maze использует для музыкальных данных буфер размером 64 КБ, но вам может понадобиться буфер большего или меньшего размера. Этот объем зависит от требований создаваемой игры.
@@ -829,7 +829,7 @@ if (m_engineExperiencedCriticalError)
 
 Если же вас интересует разработка игр для UWP в целом, обратитесь к документации в разделе [Программирование игр](index.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Добавление входных и интерактивных данных в образец лабиринта мрамора](adding-input-and-interactivity-to-the-marble-maze-sample.md)
 * [Разработка лабиринта мрамора, игры UWP C++ в и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

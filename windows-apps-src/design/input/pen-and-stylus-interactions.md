@@ -107,7 +107,7 @@ ms.locfileid: "74258301"
 > [!NOTE]
 > Стандартный рукописный ввод (кончик пера или кнопка/кончик ластика) не изменены с помощью таких дополнительных возможностей, как кнопка пера, правая кнопка мыши или подобные механизмы. 
 
-По умолчанию рукописный ввод поддерживает только ввод с помощью пера. Здесь мы настраиваем [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) для интерпретации данных, вводимые пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+По умолчанию рукописный ввод поддерживает только ввод с помощью пера. Здесь мы настраиваем [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) для интерпретации данных, вводимых пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
 Чтобы включить рукописный ввод с помощью мыши и сенсорного ввода, задайте свойство [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes)[**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) для сочетания значений [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes), которые вам необходимы.
 
@@ -462,7 +462,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 ## <a name="other-articles-in-this-section"></a>Другие статьи в этом разделе
 
-| Статья | Описание |
+| Раздел | Описание |
 | --- | --- |
 | [Распознавание рукописных штрихов](convert-ink-to-text.md) | Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания. |
 | [Хранение и получение рукописных штрихов](save-and-load-ink.md) | Храните данные росчерка пера в GIF-файле, используя встроенные метаданные формата Ink Serialized Format (ISF). |

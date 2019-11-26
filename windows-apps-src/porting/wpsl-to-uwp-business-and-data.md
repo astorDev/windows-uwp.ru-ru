@@ -4,7 +4,7 @@ title: Перенос Windows Phone бизнеса и уровня данных 
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d8bba5e1b26613185017642d63128cc2b1f7f6
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -137,7 +137,7 @@ Windows Phone код Silverlight, в котором параметры прил�
 
 Следующий раздел называется [Перенос для форм-фактора и взаимодействия с пользователем](wpsl-to-uwp-form-factors-and-ux.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Сопоставления пространств имен и классов](wpsl-to-uwp-namespace-and-class-mappings.md)
  

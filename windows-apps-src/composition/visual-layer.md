@@ -4,7 +4,7 @@ title: Визуальный уровень
 description: API-интерфейс Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ac41d461982a39a939e460b7a81b144e5a08fdb3
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

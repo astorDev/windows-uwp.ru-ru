@@ -4,7 +4,7 @@ title: Рекомендации по повышению производител
 description: Создавайте приложения универсальной платформы Windows (UWP) с оптимальными временем запуска, улучшив управление им, а также активацией.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

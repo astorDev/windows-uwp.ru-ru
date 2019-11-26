@@ -4,7 +4,7 @@ title: Microsoft Store маркетинговые рекомендации дл�
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 610e9758de3a00c112b10b463f678efc53a79e0c
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

@@ -222,7 +222,7 @@ ms.locfileid: "74257860"
 
 ### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>Раздел "чтение и запись общего PE"
 
-**Сообщение об ошибке комплекта сертификации приложений для Windows.** Ошибка диагностики SharedSectionsCheck.
+**Сообщение об ошибке комплекта сертификации приложений для Windows:** не пройден тест SharedSectionsCheck.
 
 Двоичные файлы с записываемыми разделами, помеченными как общие, представляют угрозу безопасности. Без необходимости не выполняйте сборку приложений с общими записываемыми разделами. Используйте [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) или [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), чтобы создать правильно защищенный объект общей памяти.
 
@@ -266,7 +266,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 ### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>вксчекк
 
-**Сообщение об ошибке комплекта сертификации приложений для Windows.** Ошибка диагностики WXCheck.
+**Сообщение об ошибке комплекта сертификации приложений для Windows:** не пройден тест WXCheck.
 
 Этот тест помогает убедиться, что двоичный файл не содержит страниц, которые сопоставлены как записываемые и исполняемые. Это может произойти, если двоичный файл содержит доступный для записи и исполняемый раздел или если *выравнивание раздела* двоичного файла меньше *размера страницы\-* .
 
@@ -665,7 +665,7 @@ Microsoft Store требует, чтобы все приложения, испо
 Измените код JavaScript фоновой задачи, задав правильный вызов оператора Close().
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Тесты для приложений моста Windows Desktop](windows-desktop-bridge-app-tests.md)
 * [Политики для Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)

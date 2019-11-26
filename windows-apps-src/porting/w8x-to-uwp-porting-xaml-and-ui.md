@@ -4,7 +4,7 @@ title: Перенос XAML среды выполнения Windows 8.x и пол
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -116,7 +116,7 @@ ms.locfileid: "74259108"
 | [**Текстовое поле**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | В приложении среда выполнения Windows 8. x Проверка орфографии для [**текстового поля**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)по умолчанию отключена. В приложении для Магазина Windows Phone и в приложении Windows 10 оно включено по умолчанию. |
 | [**Текстовое поле**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Размер шрифта по умолчанию для [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) изменен с 11 на 15. |
 | [**Текстовое поле**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Значение по умолчанию [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) изменилось с **Default** на **DetectFromContent**. Если это нежелательно, используйте **UseFlowDirection**. Использовать значение **Default** не рекомендуется. |
-| Различные | Контрастный цвет применяется к приложениям Магазина Windows Phone и приложениям Windows 10, но не к среда выполнения Windows приложениям 8. x.  |
+| Various | Контрастный цвет применяется к приложениям Магазина Windows Phone и приложениям Windows 10, но не к среда выполнения Windows приложениям 8. x.  |
 
 Дополнительные сведения об элементах управления приложения UWP см. в разделах [Распределение элементов управления по функциям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)[Список элементов управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) и [Руководство по элементам управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
@@ -450,7 +450,7 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 Страница параметров должна полностью заполнять окно приложения и также располагаться в разделе сведений о приложении и отзывов. Рекомендации по проектированию страницы параметров см. в разделе [Рекомендации по параметрам приложений](https://docs.microsoft.com/windows/uwp/app-settings/guidelines-for-app-settings).
 
-## <a name="text"></a>Текст
+## <a name="text"></a>Текста
 
 Текст (или шрифтовое оформление) является важным аспектом для приложения UWP. Во время переноса, возможно, необходимо будет пересмотреть визуальные элементы в представлениях, чтобы они соответствовали новому языку дизайна. Используйте эти иллюстрации, чтобы найти доступные стили системы UWP **TextBlock**. Найдите те из них, которые соответствуют используемым вами стилям Windows Phone Silverlight. Кроме того, можно создать собственные универсальные стили и скопировать свойства из стилей системы Windows Phone Silverlight в них.
 

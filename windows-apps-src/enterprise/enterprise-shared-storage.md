@@ -4,7 +4,7 @@ title: Общее корпоративное хранилище
 description: Общее корпоративное хранилище определяет местоположение локальных данных для бизнес-приложений в целях совместного их использования.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 05a646979977bca5c19be2efe3f8bec12994cb19
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

@@ -6,7 +6,7 @@ label: Optical zoom and resizing
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fbcb4510a5b3ecca80b388172fe30028ac511452
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

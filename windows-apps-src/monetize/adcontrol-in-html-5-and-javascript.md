@@ -19,7 +19,7 @@ ms.locfileid: "74260347"
 
 Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установка [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
@@ -115,7 +115,7 @@ ms.locfileid: "74260347"
 
 1. Убедитесь, что использование вами рекламных баннеров в своем приложении соответствует нашим [рекомендациям для рекламных баннеров](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
 
-1.  В центре партнеров перейдите на страницу [рекламных объявлений в приложении](../publish/in-app-ads.md) и [Создайте модуль AD](set-up-ad-units-in-your-app.md#live-ad-units). В качестве типа рекламного блока укажите **Баннер**. Запомните идентификатор группы объявлений и идентификатор приложения.
+1.  В центре партнеров перейдите на страницу [рекламных объявлений в приложении](../publish/in-app-ads.md) и [Создайте модуль AD](set-up-ad-units-in-your-app.md#live-ad-units). В качестве типа рекламного блока укажите **Баннер**. Запишите идентификатор рекламного блока и идентификатор приложения.
     > [!NOTE]
     > Значения идентификатора приложения для тестовых рекламных блоков и реальных рекламных блоков UWP имеют разные форматы. Тестовые значения идентификатора приложения представляют собой элементы GUID. При создании активной единицы AD UWP в центре партнеров значение идентификатора приложения для единицы AD всегда совпадает с ИДЕНТИФИКАТОРом магазина для вашего приложения (пример значения идентификатора магазина выглядит как 9NBLGGH4R315).
 
@@ -136,7 +136,7 @@ ms.locfileid: "74260347"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации по баннерам](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

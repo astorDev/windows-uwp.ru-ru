@@ -285,7 +285,7 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)

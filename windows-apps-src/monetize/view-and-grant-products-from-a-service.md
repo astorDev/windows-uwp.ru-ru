@@ -126,7 +126,7 @@ grant_type=client_credentials
 
 * В качестве параметра *resource* укажите один из URI аудиторий, указанных в [предыдущем разделе](#access-tokens), в зависимости от типа создаваемого маркера доступа.
 
-После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям, приведенным [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Дополнительную информацию о структуре маркера доступа см. в статье [Поддерживаемые маркеры и типы утверждений](https://docs.microsoft.com/azure/active-directory/develop/id-tokens).
+После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям, приведенным [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Дополнительную информацию о структуре маркера доступа см. в статье [Поддерживаемые токены и типы утверждений](https://docs.microsoft.com/azure/active-directory/develop/id-tokens).
 
 <span id="step-4"/>
 
@@ -244,7 +244,7 @@ grant_type=client_credentials
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Запрос продуктов](query-for-products.md)
 * [Сообщать об использовании продукты как выполненные](report-consumable-products-as-fulfilled.md)

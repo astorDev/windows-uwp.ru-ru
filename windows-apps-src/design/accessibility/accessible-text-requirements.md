@@ -6,7 +6,7 @@ label: Accessible text requirements
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -181,7 +181,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 
 * [Масштабирование текста](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Специальные возможности](accessibility.md)

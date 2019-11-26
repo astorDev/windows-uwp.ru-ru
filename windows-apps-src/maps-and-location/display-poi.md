@@ -409,7 +409,7 @@ var pikePlaceIcon = new MapIcon
 myMap.MapElements.Add(pikePlaceIcon);
 ```
 
-Хотя по-прежнему можно использовать этот подход, вы упустите некоторые преимущества новой модели слоев карты. Группируя элементы в слои, можно управлять каждым слоем независимо друг от друга. Например: каждый слой имеет собственный набор событий, поэтому можно реагировать на событие в определенном слое и выполнить действие для этого события.
+Хотя по-прежнему можно использовать этот подход, вы упустите некоторые преимущества новой модели слоев карты. Группируя элементы в слои, можно управлять каждым слоем независимо друг от друга. Например, каждый слой имеет собственный набор событий, поэтому можно реагировать на событие в определенном слое и выполнить действие для этого события.
 
 Также можно привязать XAML непосредственно к [MapLayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer). Это нельзя сделать с помощью коллекции [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements).
 
@@ -471,7 +471,7 @@ public myMapPage()
     MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)

@@ -22,14 +22,14 @@ ms.locfileid: "74260338"
 
 ## <a name="in-this-section"></a>В этом разделе
 
-|  Статья    | Описание |               
+|  Раздел    | Описание |               
 |----------|-------|
 | [Адконтрол в XAML и .NET](adcontrol-in-xaml-and--net.md)     | Добавление рекламного баннера в приложения XAML/.NET.        |
 | [Адконтрол в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)     | Добавьте рекламного баннера в приложения HTML5/JavaScript.        |
 | [Поддерживаемые размеры рекламных объявлений](supported-ad-sizes-for-banner-ads.md)    |  Проверка поддерживаемых размеров рекламных баннеров в приложениях UWP.        |
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
 * [Настройка единиц AD для приложения](set-up-ad-units-in-your-app.md)

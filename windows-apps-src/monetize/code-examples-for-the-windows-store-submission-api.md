@@ -36,6 +36,6 @@ ms.locfileid: "74258695"
 * [Пример для Java: отправка приложения с помощью параметров игры и трейлеров](java-code-examples-for-submissions-game-options-and-trailers.md)
 * [Пример Python. Отправка приложений с помощью параметров игры и трейлеров](python-code-examples-for-submissions-game-options-and-trailers.md)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание отправок и управление ими с помощью служб Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)

@@ -3,7 +3,7 @@ title: Активация режима разработчика Xbox One
 description: Активация режима разработчика для переключения между коммерческим режимом и режимом разработчика.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 95b65e63c081734a560a852a5d064ef76c423ef6

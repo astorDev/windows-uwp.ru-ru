@@ -232,7 +232,7 @@ ms.locfileid: "74260485"
 > [!NOTE]
 > Вы не можете задать `ResourceGroup` или `ServerName` в сочетании с `SupportsMultipleInstances`.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)

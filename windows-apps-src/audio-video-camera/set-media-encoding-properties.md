@@ -4,7 +4,7 @@ description: В этой статье рассказывается, как с п
 title: Установка формата, разрешения и частоты кадров для MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 031f3f8f5b15f839348c05c1fd26b7711856d659
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

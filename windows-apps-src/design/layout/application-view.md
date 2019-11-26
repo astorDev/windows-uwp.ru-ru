@@ -3,7 +3,7 @@ Description: Используйте класс Аппликатионвиев д
 title: Использование класса Аппликатионвиев для отображения дополнительных окон для приложения
 ms.date: 07/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a89596979f84c1ec4d698d14deacf8f852a7fbd
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -125,7 +125,7 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 Используя [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync), можно определить, следует ли закрыть начальное окно и удалить его из панели задач, указав значение [**ApplicationViewSwitchingOptions**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitchingOptions).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Отображение нескольких представлений](show-multiple-views.md)
 - [Отображение нескольких представлений с помощью Аппвиндов](app-window.md)

@@ -140,7 +140,7 @@ void LoadMesh(
 
 Прочтите раздел [Структура приложения Marble Maze](marble-maze-application-structure.md), чтобы понять, как структурирован код приложения Marble Maze и как структура приложения UWP на DirectX отличается от структуры традиционного классического приложения.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Структура приложения лабиринта мрамора](marble-maze-application-structure.md)

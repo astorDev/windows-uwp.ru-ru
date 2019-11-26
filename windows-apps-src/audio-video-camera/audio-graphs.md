@@ -4,7 +4,7 @@ description: В этой статье показано, как с помощью
 title: Звуковые графы
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17ca27e9f9c10ba59edbe0af84118a1bee0a44a3
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -236,7 +236,7 @@ API звукового графа позволяет добавить звуко
     -   [**лимитереффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
     -   [**ревербеффектдефинитион**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.ReverbEffectDefinition)
 -   Вы можете создать собственные звуковые эффекты, реализующие интерфейс [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition), и применить их к любому узлу в звуковом графе.
--   Каждый тип узла предоставляет метод **DisableEffectsByDefinition**, который отключает все эффекты в списке **EffectDefinitions** узла, добавленные с помощью указанного определения. Метод **EnableEffectsByDefinition** реализует эффекты с указанным определением.
+-   Каждый тип узла предоставляет метод **DisableEffectsByDefinition**, который отключает все эффекты в списке **EffectDefinitions** узла, добавленные с помощью указанного определения. Метод **EnableEffectsByDefinition** включает эффекты с указанным определением.
 
 ## <a name="spatial-audio"></a>Пространственный звук
 Начиная с Windows 10 версии 1607 **AudioGraph** поддерживает пространственный звук, который позволяет указать расположение источника звука (любого узла ввода или субмикширования) в трехмерном пространстве. Можно также указать форму и направление, в котором испущен звук, скорость, которая будет использоваться для доплеровского сдвига звука узла, и определить модель затухания, которая описывает ослабление звука с увеличением расстояния. 

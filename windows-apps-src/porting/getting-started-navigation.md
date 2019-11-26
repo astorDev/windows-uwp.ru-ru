@@ -4,7 +4,7 @@ description: Приступая к работе - навигация
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dcbc8f6737c2b7450e42ed01a752087d6e9034c1
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -13,7 +13,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259149"
 ---
-# <a name="getting-started-navigation"></a>Начало работы: навигация
+# <a name="getting-started-navigation"></a>Приступая к работе: навигация
 
 
 ## <a name="adding-navigation"></a>Добавление навигации

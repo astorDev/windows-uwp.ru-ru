@@ -4,7 +4,7 @@ description: В этой статье описано, как добавить м
 title: PlayReady DRM
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 13cd80818835511310820285a2da498309d9db8a
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -21,7 +21,7 @@ ms.locfileid: "74256909"
 
 PlayReady DRM позволяет разработчикам создавать приложения UWP, способные предоставлять пользователю содержимое PlayReady, и при этом применять правила доступа, заданные поставщиком содержимого. В этом разделе описываются изменения, внесенные в Microsoft PlayReady DRM для Windows 10, и изменение приложения PlayReady UWP для поддержки изменений, внесенных в предыдущей версии Windows 8.1, в версию Windows 10.
  
-| Статья                                                                     | Описание                                                                                                                                                                                                                                                                             |
+| Раздел                                                                     | Описание                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Оборудование DRM](hardware-drm.md)                                           | В данной статье рассказывается, как добавить аппаратное управление цифровыми правами (DRM) PlayReady в приложение UWP.                                                                                                                                                                 |
 | [Адаптивная потоковая передача с помощью PlayReady](adaptive-streaming-with-playready.md) | В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH). |
@@ -393,7 +393,7 @@ PlayReady DRM позволяет воспроизводить содержимо
 </table>
 <br/>
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к созданию приложения UWP, защищенного PlayReady, в вашей системе необходимо установить указанное ниже программное обеспечение.
 
@@ -435,7 +435,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 В предыдущих версиях пакета PlayReady DRM можно было получать несохраняемые лицензии только во время воспроизведения. В этой версии можно получать несохраняемые лицензии заблаговременно перед началом воспроизведения.
 
-1.  Заранее создайте сеанс воспроизведения, в котором можно сохранить несохраняемую лицензию. Например:
+1.  Заранее создайте сеанс воспроизведения, в котором можно сохранить несохраняемую лицензию. Пример:
 
     ```cs
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -447,7 +447,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  Свяжите этот сеанс воспроизведения с классом получения лицензии. Например:
+2.  Свяжите этот сеанс воспроизведения с классом получения лицензии. Пример:
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -455,14 +455,14 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  Создайте запрос лицензии в службу поддержки. Например:
+3.  Создайте запрос лицензии в службу поддержки. Пример:
 
     ```cs
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
 4.  Выполните получение лицензии с использованием запроса в службу поддержки, созданного в шаге 3. Лицензия будет сохранена в сеансе воспроизведения.
-5.  Для воспроизведения источника мультимедиа свяжите с ним сеанс воспроизведения. Например:
+5.  Для воспроизведения источника мультимедиа свяжите с ним сеанс воспроизведения. Пример:
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );

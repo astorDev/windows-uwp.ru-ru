@@ -79,7 +79,7 @@ var language = new Windows.Globalization.Language("en-US");
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 
 Ограничение по одной теме можно настроить, добавив [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) в коллекцию [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) средства [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), а затем вызвав [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Если распознаватель не удалось инициализировать с поддерживаемым языком темы, возвращается состояние [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) для **TopicLanguageNotSupported**.

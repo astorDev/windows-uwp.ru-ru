@@ -6,7 +6,7 @@ label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f3f409116cc904d9cef5bc3960b90225ed3b5721
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -536,7 +536,7 @@ API-интерфейсы, реализуемые для поддержки од�
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 * [Специальные возможности](accessibility.md)
 * [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [**фрамеворкелементаутоматионпир**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer)

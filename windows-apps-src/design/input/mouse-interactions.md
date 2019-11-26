@@ -6,7 +6,7 @@ label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

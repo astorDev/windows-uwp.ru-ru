@@ -165,7 +165,7 @@ ms.locfileid: "74258044"
 * [фоненумберформаттинг](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [глобализатионпреференцес](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Элементы управления календарем, датой и временем](../controls-and-patterns/date-and-time.md)
 * [Общие сведения о языках профилей пользователей и языках манифестов приложений](manage-language-and-region.md)

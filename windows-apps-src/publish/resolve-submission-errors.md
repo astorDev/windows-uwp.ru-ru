@@ -4,7 +4,7 @@ title: Устранение ошибок отправки
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f67474905f4c689153af4dec22cf05f8399db535
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

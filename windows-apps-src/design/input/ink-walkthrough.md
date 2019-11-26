@@ -15,7 +15,7 @@ ms.locfileid: "74258397"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Учебник: поддержка рукописного ввода в приложении UWP
 
-![Surface Pen](images/ink/ink-hero-small.png)  
+Перо ![Surface](images/ink/ink-hero-small.png)  
 *Ручка Surface* (доступна для приобретения в [Магазине Microsoft](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)).
 
 В данной статье приводится пошаговое руководство по созданию простого приложения универсальной платформы Windows (UWP), которое поддерживает письмо и рисование с помощью Windows Ink. Мы используем фрагменты кода из примера приложения, которое можно скачать с GitHub (см. [Пример кода](#sample-code)), чтобы продемонстрировать различные возможности и связанные API-интерфейсы Windows Ink (см. раздел [Компоненты платформы Windows Ink](#components-of-the-windows-ink-platform)), описанные на каждом этапе.
@@ -33,15 +33,15 @@ ms.locfileid: "74258397"
 
 С помощью Windows Ink можно обеспечить своих клиентов цифровым эквивалентом почти любого варианта работы с ручкой и бумагой от быстрых, рукописных примечаний и заметок до демонстрационных версий доски и от архитектурных и инженерных чертежей до персональных шедевров.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер (или виртуальная машина) под управлением текущей версии Windows 10
-* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
+* [Visual Studio 2019 и пакет SDK для RS2](https://developer.microsoft.com/windows/downloads)
+* [Пакет SDK для Windows 10 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* В зависимости от конфигурации может потребоваться установить пакет NuGet [Microsoft. NETCore. UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) и включить **режим разработчика** в системных параметрах (параметры — > Обновление & безопасность > для разработчиков — > использовать функции разработчика).
 * Если вы еще не знакомы с разработкой приложений универсальной платформы Windows (UWP) с помощью Visual Studio, изучите следующие разделы, прежде чем использовать этот учебник.  
     * [Подготовка](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Создание приложения "Hello, World" (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[НЕОБЯЗАТЕЛЬНО]** Цифровое перо и компьютер с монитором, который поддерживает ввод от этого цифрового пера.
 
 > [!NOTE] 
@@ -53,7 +53,7 @@ ms.locfileid: "74258397"
 Скачайте пример Visual Studio и исходный код с [GitHub](https://github.com/) в [примере windows-appsample-get-started-ink](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink):
 
 1. Выберите зеленую кнопку **Клонировать или скачать**  
-![Cloning the repo](images/ink/ink-clone.png)
+![клонирования репозитория](images/ink/ink-clone.png)
 2. Если у вас есть учетная запись GitHub, вы можете клонировать репозиторий на локальный компьютер, выбрав **Открыть в Visual Studio** 
 3. Если у вас нет учетной записи GitHub или вам просто нужна локальная копия проекта, выберите **Скачать ZIP-файл** (чтобы скачивать последние обновления, необходимо будет регулярно следить за ними)
 
@@ -66,9 +66,9 @@ ms.locfileid: "74258397"
 
 | Component | Описание |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke. |
-| [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (предоставляется свойством [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), вместе с полным набором API для дополнительной настройки и персонализации. |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | A XAML UI platform control containing a customizable and extensible collection of buttons that activate ink-related features in an associated [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Элемент управления платформы пользовательского интерфейса XAML, который по умолчанию получает и отображает все входные данные пера в виде рукописного штриха или стирания. |
+| [**Элемента**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (предоставляется свойством [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), вместе с полным набором API для дополнительной настройки и персонализации. |
+| [**инктулбар**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Элемент управления платформы пользовательского интерфейса XAML, содержащий настраиваемую и расширяемую коллекцию кнопок, которые активируют функции, связанные с рукописным вводом, в связанном [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Здесь не описаны эти функции. Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk). | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas). |
 
 ## <a name="step-1-run-the-sample"></a>Шаг 1. Запуск примера
@@ -80,7 +80,7 @@ ms.locfileid: "74258397"
 
    > [!NOTE]
    > Кроме того, можно последовательно выбрать пункты меню **Отладка** > **Начать отладку** или нажать кнопку запуска **локального компьютера**, показанную здесь.
-   > ![Visual Studio Build project button](images/ink/ink-vsrun-small.png)
+   > ![кнопку проекта сборки Visual Studio](images/ink/ink-vsrun-small.png)
 
 Откроется окно приложения и после появления экрана-заставки на несколько секунд вы увидите этот начальный экран.
 
@@ -112,7 +112,7 @@ ms.locfileid: "74258397"
 ```
 
 4. Откройте файл MainPage.xaml.
-5. Find the code marked with the title of this step ("\<!-- Step 2: Basic inking with InkCanvas -->").
+5. Найдите код, помеченный заголовком этого шага ("\<!--шаг 2. базовый рукописный ввод с помощью InkCanvas-->").
 6. Раскомментируйте следующую строку.  
 
 ``` xaml
@@ -165,7 +165,7 @@ ms.locfileid: "74258397"
 
 ### <a name="in-the-sample"></a>В примере:
 1. Откройте файл MainPage.xaml.
-2. Find the code marked with the title of this step ("\<!-- Step 4: Add an ink toolbar -->").
+2. Найдите код, помеченный заголовком этого шага ("\<!--шаг 4. Добавление панели инструментов рукописного ввода >").
 3. Раскомментируйте следующие строки.  
 
 ``` xaml
@@ -213,13 +213,13 @@ ms.locfileid: "74258397"
 > Распознавание рукописного ввода может быть улучшено с помощью параметров **Перо и Windows Ink**:
 > 1. Откройте меню "Пуск" и выберите **Параметры**.
 > 2. На экране параметров выберите **Устройства** > **Перо и Windows Ink**.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-small.png)
+> ![Инктулбар из альбом в рабочей области рукописного ввода](images/ink/ink-settings-small.png)
 > 3. Выберите **Изучить почерк**, чтобы открыть диалоговое окно **Персонализация рукописного текста**.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Инктулбар из альбом в рабочей области рукописного ввода](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>В примере:
 1. Откройте файл MainPage.xaml.
-2. Find the code marked with the title of this step ("\<!-- Step 5: Support handwriting recognition -->").
+2. Найдите код, помеченный заголовком этого шага ("\<!--шаг 5. Поддержка распознавания рукописного ввода — >").
 3. Раскомментируйте следующие строки.  
 
 ``` xaml
@@ -347,7 +347,7 @@ Windows Ink поддерживает распознавание текста д�
 
 ### <a name="in-the-sample"></a>В примере:
 1. Откройте файл MainPage.xaml
-2. Find the code marked with the title of this step ("\<!-- Step 6: Recognize shapes -->")
+2. Найдите код, помеченный заголовком этого шага ("\<!--шаге 6: Recognize Shapes-->")
 3. Раскомментируйте эту строку.  
 
 ``` xaml
@@ -402,7 +402,7 @@ Windows Ink поддерживает распознавание текста д�
 
 ### <a name="in-the-sample"></a>В примере:
 1. Откройте файл MainPage.xaml.
-2. Find the code marked with the title of this step ("\<!-- Step 7: Saving and loading ink -->").
+2. Найдите код, помеченный заголовком этого шага ("\<!--шаге 7: сохранение и загрузка рукописных данных >").
 3. Раскомментируйте следующие строки. 
 
 ``` xaml
@@ -462,21 +462,21 @@ Windows Ink поддерживает распознавание текста д�
 
 Поздравляем, вы завершили изучение учебника **Ввод: поддержка рукописного ввода в приложении UWP**! Мы показали вам базовый код, необходимый для поддержки рукописного ввода в приложениях UWP, и способы предоставления некоторых усовершенствованных возможностей для пользователя, поддерживаемых платформой Windows Ink.
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
 * [Взаимодействие с пером и Windows Ink в приложениях UWP](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>Примеры
 
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-* [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [Save and load ink strokes from the clipboard](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
-* [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-* [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
-* [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-* [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-* [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-* [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
-* [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)
+* [Пример анализа рукописного ввода (базовыйC#) ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Пример распознавания рукописного вводаC#рукописного текста ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+* [Сохранение и загрузка рукописных штрихов из файла сериализованного формата рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Сохранение и загрузка рукописных штрихов из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [Пример расположения и ориентации панели инструментов для рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [Пример расположения и ориентации панели инструментов для рукописного ввода (динамический)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+* [Пример простого рукописногоC#вводаC++(/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [Образец сложных рукописныхC++данных ()](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [Образец рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Руководство по началу работы. Поддержка рукописного ввода в приложении UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Образец цветовой книги](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [Образец заметок для семьи](https://github.com/Microsoft/Windows-appsample-familynotes)

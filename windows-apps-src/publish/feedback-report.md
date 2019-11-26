@@ -1,10 +1,10 @@
 ---
 Description: Отчет о отзывах в центре партнеров позволяет просматривать проблемы, предложения и отзывы, которые клиенты Windows 10 отправили через центр обратной связи.
-title: Отчет "Отзывы"
+title: Отчет об отзывах
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -13,7 +13,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259018"
 ---
-# <a name="feedback-report"></a>Отчет "Отзывы"
+# <a name="feedback-report"></a>Отчет об отзывах
 
 **Отчет о отзывах** в центре партнеров позволяет просматривать проблемы, предложения и отзывы, которые клиенты Windows 10 отправили через центр обратной связи. Вы можете просмотреть эти данные в центре партнеров или экспортировать данные для просмотра в автономном режиме.
 

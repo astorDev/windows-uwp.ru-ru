@@ -419,7 +419,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 -   Отобразите в предварительном просмотре только страницы выбранного пользователем диапазона, обновляя представление, если пользователь изменит диапазон страниц.
 -   Отобразите в предварительном просмотре все страницы, но сделайте неактивными те из них, которые не входят в выбранный пользователем диапазон страниц.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации по проектированию для печати](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [Сборка видео 2015: Разработка приложений, которые печатаются в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)

@@ -55,7 +55,7 @@ ms.locfileid: "74258540"
 -   [Улучшенная графика и производительность DirectX 12](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) — Макс Макмаллен (Max McMullen)
 -   [Игровое взаимодействие с пользователем в Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) — Билл Шифельбайн (Bill Schiefelbein)
 -   [Новые возможности для независимых разработчиков](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) — Крис Чарла (Chris Charla)
--   [Разработка с Xbox LIVE для Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
+-   [Разработка с Xbox LIVE для Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
 -   [Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр](https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) — Фердинанд Шобер (Ferdinand Schober)
 -   [Fable Legends: многопользовательские игры на разных устройствах с Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) — Рэймонд Арифьянто (Raymond Arifianto), Джулиан Дэвис (Julian Davis)
 -   [Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) — Сьерра Макдоналд (Cierra McDonald)
@@ -69,7 +69,7 @@ ms.locfileid: "74258540"
 
 
 -   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631) — Саймон Тао (Simon Tao)
--   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686) — Tony Balogh (Тони Балог)
+-   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686) — Тони Балог (Tony Balogh)
 -   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673) — Макс Макмаллен (Max McMullen)
 
 ## <a name="other-resources"></a>Другие ресурсы

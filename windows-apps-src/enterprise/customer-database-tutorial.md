@@ -24,7 +24,7 @@ ms.locfileid: "74258619"
 
 ![Главная страница рабочего приложения](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * [Убедитесь, что у вас установлена последняя версия Visual Studio и пакет SDK для Windows 10.](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [Клонирование или скачивание примера учебника по базе данных клиента](https://github.com/microsoft/windows-tutorials-customer-database)

@@ -19,7 +19,7 @@ ms.locfileid: "74257834"
 
 Чтобы приложение было [сертифицировано](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) или подготовлено для [публикации в Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), необходимо сначала проверить и проверить его локально. В этом разделе показано, как установить и запустить [Комплект сертификации приложений для Windows](https://msdn.microsoft.com/en-US/windows/apps/bg127575) , чтобы обеспечить безопасность и эффективность работы приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия для тестирования универсального приложения для Windows:
 
@@ -92,7 +92,7 @@ ms.locfileid: "74257834"
 
 Так как маломощные компьютеры совершенствуются, со временем их рабочие характеристики могут меняться. Ознакомьтесь с самыми последними [политиками Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) и протестируйте приложение с последней версией комплекта сертификации приложений для Windows, чтобы убедиться, что приложение соответствует последним требованиям к производительности.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Тесты набора сертификации приложений Windows](windows-app-certification-kit-tests.md)
 * [Политики для Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)

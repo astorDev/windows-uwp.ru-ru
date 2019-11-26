@@ -124,7 +124,7 @@ function onVisibilityChanged() {
 
 Если приложению требуются небольшие геозоны, рекомендуйте пользователям использовать такое приложение на устройстве с радиомодулем GPS, чтобы обеспечить наилучшую производительность.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Настройка геозоны](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)

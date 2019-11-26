@@ -64,6 +64,6 @@ ms.locfileid: "74260292"
 
 5.  Сборка и запуск файла. Вы увидите первоначальное рекламное объявление из созданного ранее примера приложения и текст под этим объявлением с описанием ошибки. Вы не увидите рекламное объявление с идентификатором **liveAd**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

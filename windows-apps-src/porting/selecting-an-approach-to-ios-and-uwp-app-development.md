@@ -4,7 +4,7 @@ title: Выбор подхода к разработке приложений iO
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

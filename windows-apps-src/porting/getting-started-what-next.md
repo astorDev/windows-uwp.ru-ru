@@ -4,7 +4,7 @@ ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: С помощью этих базовых сведений теперь вы можете начать писать более интересные приложения для платформы UWP.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76be28f48be4297d1e81e5a7ab7c07ee55212102
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -31,7 +31,7 @@ ms.locfileid: "74259138"
 
 Мы думаем, что Windows 10 откроет новые возможности для создания приложений. С нетерпением ждем воплощения ваших замыслов!
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Темы для iOS разработчики**
 * [Ресурсы для iOS разработчики](https://docs.microsoft.com/previous-versions/windows/apps/jj945493(v=win.10))

@@ -4,7 +4,7 @@ ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: Выбор языка программирования
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 037c079881dbb2634b31cc0cf5b9248115dbceef
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

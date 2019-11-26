@@ -87,7 +87,7 @@ ms.locfileid: "74259388"
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)

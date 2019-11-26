@@ -1,12 +1,12 @@
 ---
-title: Help moving from Mac (Unix) to Windows
-description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
+title: Справка по переходу с Mac (UNIX) на Windows
+description: Рекомендации по переходу с Mac (UNIX) на среду разработки Windows, включая сопоставление сочетаний клавиш и краткий обзор концепций, отличающихся между Mac и Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC
+keywords: С Mac на Windows, сочетание клавиш, переход с UNIX на Windows, переход с Mac на Windows, Справка по переходу с MacBook на поверхность, использование Windows для пользователя Macintosh, переключение из Macintosh в Windows, Справка по изменению сред разработки, Mac OS X в Windows, Справка Переход с Mac на ПК
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
@@ -16,79 +16,79 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74309162"
 ---
-# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Guide for changing your dev environment from Mac to Windows
+# <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Инструкции по изменению среды разработки с Mac на Windows
 
-The following tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.
+Следующие советы и управляющие эквиваленты должны помочь при переходе между средой разработки Mac и Windows (или WSL/Linux).
 
-For app development, the nearest equivalent to Xcode would be [Visual Studio](https://visualstudio.microsoft.com). There is also a version of [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), if you ever feel the need to go back. For cross-platform source code editing (and a huge number of plug-ins) [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) is the most popular choice.
+Для разработки приложений самым близким эквивалентом к Xcode будет [Visual Studio](https://visualstudio.microsoft.com). Существует также версия [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/), если вам когда-либо придется вернуться. Для изменения исходного кода на разных платформах (и огромного количества подключаемых модулей) [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) является самым популярным выбором.
 
 ## <a name="keyboard-shortcuts"></a>Сочетания клавиш
 
-| **Operation** | **Mac** | **Windows** |
+| **Операцию** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| "Копировать" | Command+C | Ctr+C |
-| Cut | Command+X | Ctr+X |
-| Вставка | Command+V | Ctr+V |
-| Undo | Command+Z | CTRL+Z |
-| "Сохранить" | Command+S | CTRL+S |
-| Откройте | Command+O | CTRL+O |
-| Lock computer | Command+Control+Q | WindowKey+L |
-| Show desktop | Command+F3 | WindowKey+D |
-| Minimize windows | COMMAND +M | Windows key+M |
-| "Поиск" | Command+Space | Клавиша Windows |
-| Close active window | Command+W | Control+W |
-| Switch current task | Command+Tab | ALT + Tab |
-| Save screen (Screenshot) | Command+Shift+3 | Windows+Shift+S |
-| Save window | Command+Shift+4 | Windows+Shift+S |
-| View item information or properties | Command+I | Alt+Enter |
- | Select all items | Command+A | CTRL+A |
-| Select more than one item in a list (noncontiguous) | Command, then click each item | Control, then click each item |
-| Type special characters | Option+ character key | Alt+ character key|
+| Копировать | Command + C | Ctrl + C |
+| Вырезать | Command + X | Ctrl + X |
+| Вставка | Command + V | Ctrl + V |
+| Отменить | Command + Z | CTRL+Z |
+| Сохранить | Command + S | CTRL+S |
+| Открыть | Command + O | CTRL+O |
+| Блокировка компьютера | Command + Control + Q | Виндовкэй + L |
+| Show desktop | Command + F3 | Виндовкэй + D |
+| Minimize Windows | COMMAND + M | Ключ Windows + M |
+| Поиск | Команда + пробел | Клавиша Windows |
+| Закрыть активное окно | Command + W | Управление + W |
+| Переключить текущую задачу | Команда + Tab | ALT + Tab |
+| Экран сохранения (снимок экрана) | Command + Shift + 3 | Windows + Shift + S |
+| Сохранить окно | Command + Shift + 4 | Windows + Shift + S |
+| Просмотр сведений об элементе или свойств | Command + I | ALT + ВВОД |
+ | Выбрать все элементы | Команда + A | CTRL+A |
+| Выбор нескольких элементов в списке (не непрерывном) | , Затем щелкните каждый элемент. | , Затем щелкните каждый элемент. |
+| Введите специальные символы | Option + ключ символа | Alt + клавиша с символом|
 
 ## <a name="trackpad-shortcuts"></a>Команды сенсорной панели
 
-Note: Some of these shortcuts require a “Precision Trackpad”, such as the trackpad on Surface devices and some other third party laptops.
+Примечание. для некоторых из этих сочетаний клавиш требуется "точность трекпада", например трекпада на устройствах Surface и некоторые другие ноутбуки сторонних производителей.
 
- **Operation** | **Mac** | **Windows** |
+ **Операцию** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Scroll | Two finger vertical swipe | Two finger vertical swipe |
-| Zoom | Two finger pinch in and out | Two finger pinch in and out |
-| Swipe back and forward between views | Two finger sideways swipe | Two finger sideways swipe |
-| Switch virtual workspaces | Four fingers sideways swipe | Four fingers sideways swipe |
-| Display currently open apps | Four fingers upward swipe | Three fingers upward swipe |
-| Switch between apps | Нет данных | Slow three finger sideways swipe |
-| Go to desktop | Spread out four fingers | Three finger swipe downwards |
-| Open Cortana / Action center | Two finger slide from right | Three finger tap |
-| Open extra information | Three finger tap | Нет данных |
-|Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
+| Scroll | Два пальца по вертикали | Два пальца по вертикали |
+| Zoom | Два пальца и сжатие | Два пальца и сжатие |
+| Прокрутка назад и вперед между представлениями | Два прокрутки на сторону пальца | Два прокрутки на сторону пальца |
+| Переключение виртуальных рабочих областей | Четыре пальца в сторону прокрутки | Четыре пальца в сторону прокрутки |
+| Отображение открытых в настоящий момент приложений | Четыре пальца, прокрутка вверх | Три пальца, прокрутка вверх |
+| Переключение между приложениями | Нет данных | Снижение скорости с тремя пальцами |
+| К рабочему столу | Распределение четырех пальцев | Три пальца — проведите вниз |
+| Открытие Кортаны или центра действий | Два пальца с вправо | Касание тремя пальцами |
+| Открыть дополнительные сведения | Касание тремя пальцами | Нет данных |
+|Отобразить панель запуска/запустить приложение | Сжатие с четырьмя пальцами | Коснитесь четырьмя пальцами |
 
-Note: Trackpad options are configurable on both platforms.
+Примечание. параметры трекпада можно настроить на обеих платформах.
 
 ## <a name="terminal-and-shell"></a>Терминал и оболочка
 
-Windows provides several alternatives to the Mac's terminal emulator.
+Windows предоставляет несколько альтернатив эмулятору терминала Mac.
 
-1. The Windows Command Line
+1. Командная строка Windows
 
-The Windows command line will accept DOS commands, and is the most commonly used command line tool on Windows. To open it: Press **Windows+R** to open the **Run** box, then type **cmd** and then click **OK**. To open an administrator command line, type **cmd** and then press **Ctrl+Shift+Enter**. 
+Командная строка Windows будет принимать команды DOS и является наиболее часто используемым средством командной строки в Windows. Чтобы открыть его, нажмите клавиши **Windows + R** , чтобы открыть окно **выполнить** , введите **cmd** и нажмите кнопку **ОК**. Чтобы открыть командную строку администратора, введите **cmd** и нажмите клавиши **CTRL + SHIFT + ВВОД**. 
 
 2. PowerShell
 
-[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) is a "PowerShell is a task-based command-line shell and scripting language built on .NET. PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems". In other words, it's a very powerful command line, and is especially loved by system admins.
+[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) — это оболочка командной строки на основе задач и язык сценариев, созданный на платформе .NET. PowerShell помогает системным администраторам и опытным пользователям быстро автоматизировать задачи, управляющие операционными системами. Другими словами, это очень мощная Командная строка, которая особенно обожаю системными администраторами.
 
-Incidentally, PowerShell is [also available for Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
+Кстати, PowerShell [также доступен для Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
 
 3. Подсистема Windows для Linux (WSL)
 
-WSL allows you to run a Linux shell within Windows. This means you can run *bash** or other shell, depending on choice and the specific Linux distro installed. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will **ls** to list the files in a current directory, not **dir** as you would with the Windows command line. To learn about instaling and using WSL, see the [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+WSL позволяет запускать оболочку Linux в Windows. Это означает, что можно запустить *Bash** или другую оболочку, в зависимости от выбора и установленного дистрибутива Linux. Использование WSL обеспечит наиболее привычную среду для пользователей Mac. Например, **можно будет вывести** список файлов в текущем каталоге, а не **dir** , как в командной строке Windows. Дополнительные сведения об установке и использовании WSL см. в статье [подсистема Windows для Linux для Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 ## <a name="apps-and-utilities"></a>Приложения и служебные программы
 
- **App** | **Mac** | **Windows** |
+ **Приложения** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Settings and Preferences | System Preferences | "Параметры" |
-| Диспетчер задач | Activity Monitor | "Диспетчер задач" |
-| Disk formatting | Disk Utility | Управление дисками |
-| Text editing | TextEdit | Блокнот |
-| Event viewing | Console (консоль), | Просмотр событий |
-| Find files/apps | Command+Space | Клавиша Windows |
+| Параметры и настройки | Системные настройки | Параметры |
+| Диспетчер задач | Монитор активности | Диспетчер задач |
+| Форматирование диска | Служебная программа Disk | Управление дисками |
+| Редактирование текста | TextEdit | Блокнот |
+| Просмотр событий | Консоль | Просмотр событий |
+| Поиск файлов и приложений | Команда + пробел | Клавиша Windows |

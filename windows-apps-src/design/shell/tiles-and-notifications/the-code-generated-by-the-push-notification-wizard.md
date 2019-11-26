@@ -5,7 +5,7 @@ ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a91052adf29e6628ad70c1c004fdbaabe671d62
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -237,7 +237,7 @@ Push-уведомления следует использовать соглас
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)

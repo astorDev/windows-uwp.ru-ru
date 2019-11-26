@@ -4,7 +4,7 @@ title: Переход с Windows Phone Silverlight на UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d37e40d58d8825d4361efbd10108c1169b8df87f
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -64,7 +64,7 @@ Windows Phone Silverlight имеет платформу пользователь
 
 &nbsp;
 
-| Статья| Описание|
+| Раздел| Описание|
 |------|------------| 
 | [Сопоставления пространств имен и классов](wpsl-to-uwp-namespace-and-class-mappings.md) | В этом разделе представлено комплексное сопоставление API-интерфейсов Windows Phone Silverlight с их эквивалентами UWP. |
 | [Перенос проекта](wpsl-to-uwp-porting-to-a-uwp-project.md) | Процесс переноса начинается с создания нового проекта Windows 10 в Visual Studio и копирования в него файлов. |
@@ -76,7 +76,7 @@ Windows Phone Silverlight имеет платформу пользователь
 |[Пример использования: Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | В этом разделе представлен пример того, как перенести очень простое Windows Phone приложение Silverlight в приложение универсальной платформы Windows 10. В Windows 10 можно создать один пакет приложения, который клиенты могут устанавливать на широком спектре устройств, и это будет сделано в нашем примере. |
 | [Пример использования: Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | В этом примере, который строится на информации в [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), начинается с Windows Phone приложения Silverlight, отображающего сгруппированные данные в **LongListSelector**. В модели представления каждый экземпляр класса **Author** представляет группу книг одного автора, а в классе **LongListSelector** мы можем просмотреть список книг, сгруппированных по автору, или уменьшить представление, чтобы просмотреть список переходов по авторам. |
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Документация**
 * [Новые возможности для разработчиков в Windows 10](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)

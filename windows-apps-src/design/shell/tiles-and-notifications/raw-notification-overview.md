@@ -5,7 +5,7 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -115,7 +115,7 @@ ms.locfileid: "74259699"
 
 Дополнительные сведения можно узнать, загрузив [Пример необработанных уведомлений](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d) для Windows 8.1, а также [Пример отправки и периодических уведомлений](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) для Windows 8.1 и повторного использования исходного кода в приложении Windows 10.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации по необработанным уведомлениям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
 * [Краткое руководство. Создание и регистрация фоновой задачи необработанного уведомления](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))

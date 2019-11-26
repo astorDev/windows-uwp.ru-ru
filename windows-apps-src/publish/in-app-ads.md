@@ -4,7 +4,7 @@ title: Реклама в приложении
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 03/25/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e12641695dd72cddcfb6b51f6cd2f20fa66ddf41
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

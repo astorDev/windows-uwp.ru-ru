@@ -4,7 +4,7 @@ title: Создание учетной записи разработчика
 description: Ниже приведен обзор того, как зарегистрироваться для использования учетной записи разработчика Windows для Microsoft Store и других программ Майкрософт в центре партнеров.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d00fcee11b8cf813144a6f8ea021dc40829056d2
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

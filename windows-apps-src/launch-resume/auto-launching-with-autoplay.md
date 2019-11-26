@@ -4,7 +4,7 @@ description: Автозапуск можно использовать для д�
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab690fa3964fd9e9c517aedb6adb9e05154fad15
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

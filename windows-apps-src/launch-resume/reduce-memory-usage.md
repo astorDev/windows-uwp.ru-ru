@@ -4,7 +4,7 @@ description: В этой статье рассказывается о том, к
 title: Уменьшение потребления памяти при переходе приложения в фоновый режим
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5e0ea6deef7dfe3531c8d0406e08bfae80f0e2
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -101,7 +101,7 @@ ms.locfileid: "74260460"
 
 - **Используйте** событие **LeavingBackground**, чтобы восстановить ресурсы ИП, освобожденные приложением при переходе в фоновый режим.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример воспроизведения мультимедиа в фоновом режиме](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) — показывает, как освободить память при переходе приложения в фоновый режим.
 * [Диагностические инструменты](https://devblogs.microsoft.com/devops/diagnostic-tools-debugger-window-in-visual-studio-2015/) — используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.

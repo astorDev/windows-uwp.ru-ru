@@ -68,11 +68,11 @@ ms.locfileid: "74260278"
     }
     ```
 
-4.  Сборка и запуск проекта. После запуска приложения отобразится сообщение, похожее на отображаемое в окне **вывода** в Visual Studio.
+4.  Постройте и запустите проект. После запуска приложения отобразится сообщение, похожее на отображаемое в окне **вывода** в Visual Studio.
     ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

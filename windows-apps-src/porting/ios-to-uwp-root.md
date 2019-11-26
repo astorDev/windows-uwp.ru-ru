@@ -5,7 +5,7 @@ title: Переход с iOS на UWP
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -24,13 +24,13 @@ ms.locfileid: "74260159"
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| Статья | Описание |
+| Раздел | Описание |
 |-------|-------------|
 | [Выбор подхода к разработке приложений для iOS и UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
 | [Приступая к работе с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
 | [Настройка компьютера Mac с помощью Windows 10](setting-up-your-mac-with-windows-10.md) | Использование компьютера Mac для разработки приложений для Windows. |
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Для дизайнеров и разработчиков**
 * [Создание универсальных приложений для Windows для всех устройств Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

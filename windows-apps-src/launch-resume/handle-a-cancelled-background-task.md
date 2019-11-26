@@ -253,7 +253,7 @@ else
 }
 ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Вы можете скачать [пример фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask), чтобы увидеть эти примеры кода в контексте методов.
 
@@ -400,7 +400,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 - [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)

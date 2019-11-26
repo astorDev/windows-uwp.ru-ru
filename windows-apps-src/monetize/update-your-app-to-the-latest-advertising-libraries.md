@@ -36,7 +36,7 @@ ms.locfileid: "74259239"
 > [!NOTE]
 > Если ваше приложение уже использует [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (для приложений UWP), вам не требуется вносить изменения в приложение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Полный исходный код и файлы проекта Visual Studio для приложения, в котором используются элементы управления **AdControl**.
 * Пакет AppX для приложения.

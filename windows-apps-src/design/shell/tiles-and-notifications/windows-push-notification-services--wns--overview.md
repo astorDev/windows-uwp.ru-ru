@@ -5,7 +5,7 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -240,7 +240,7 @@ async public void CheckForEnergySaving()
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md)

@@ -4,7 +4,7 @@ title: Использование гирометра
 description: Узнайте, как использовать гирометр для отслеживания изменений в движениях пользователя.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -29,7 +29,7 @@ ms.locfileid: "74259640"
 
 Гирометры используются как игровые контроллеры в дополнение к акселерометрам. Акселерометр измеряет линейное перемещение, тогда как гирометр измеряет угловую скорость или вращательное движение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы должны быть знакомы с XAML (XAML), Microsoft Visual C#и событиями.
 
@@ -178,6 +178,6 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## <a name="related-topics"></a>Статьи по теме
+ ## <a name="related-topics"></a>См. также
 
 * [Пример гирометр](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)

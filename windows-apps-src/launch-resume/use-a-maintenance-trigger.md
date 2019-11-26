@@ -4,7 +4,7 @@ description: Узнайте, как использовать класс Maintena
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -115,7 +115,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > [!NOTE]
 > Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)

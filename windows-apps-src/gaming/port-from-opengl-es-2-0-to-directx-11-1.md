@@ -30,7 +30,7 @@ ms.locfileid: "74258455"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>

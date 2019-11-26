@@ -6,7 +6,7 @@ label: Expose basic accessibility information
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -32,7 +32,7 @@ ms.locfileid: "74257774"
 | Тип элемента | Описание |
 |--------------|-------------|
 | Статический текст | Для элементов [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) и [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) специальное имя определяется автоматически на основе видимого (внутреннего) текста. Весь текст в этом элементе используется как имя. См. [Имя на основе внутреннего текста](#name_from_inner_text). |
-| Изображения | Элемент XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) не имеет прямого аналога для атрибута HTML **alt** в **img** и аналогичных элементах. Используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name), чтобы задать имя, или примените метод титров. Подробнее: [Специальные имена изображений](#images). |
+| Изображений | Элемент XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) не имеет прямого аналога для атрибута HTML **alt** в **img** и аналогичных элементах. Используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name), чтобы задать имя, или примените метод титров. Подробнее: [Специальные имена изображений](#images). |
 | Элементы формы | Специальное имя для элемента формы должно совпадать с меткой, отображаемой для этого элемента. См. [Метки и LabeledBy](#labels). |
 | Кнопки и ссылки | По умолчанию специальное имя кнопки или ссылки задается на основе видимого текста с помощью правил, аналогичных указанным в статье [Имя на основе внутреннего текста](#name_from_inner_text). Если кнопка содержит только изображение, используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) для предоставления текстового эквивалента предполагаемого действия кнопки. |
 
@@ -154,7 +154,7 @@ Windows поддерживает множество элементов упра�
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 * [Специальные возможности](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
 * [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

@@ -4,7 +4,7 @@ title: Схемы URI
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
-keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+keywords: Windows 10, uwp, ресурс, изображение, актив, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -267,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 Разработчики определенных компонентов, находящихся в слое выше этого анализа URI, могут выбрать удобное для них использование параметров запроса.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Универсальный код ресурса (URI): универсальный синтаксис](https://www.ietf.org/rfc/rfc3986.txt)
 * [Создание пакетов приложений](../packaging/index.md)

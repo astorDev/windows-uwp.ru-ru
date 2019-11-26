@@ -4,7 +4,7 @@ title: Защита товарных знаков и авторских прав
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 14dae80876e1e7a77151f4e814a8dcd06e039645
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

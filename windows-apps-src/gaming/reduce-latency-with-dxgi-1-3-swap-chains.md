@@ -144,7 +144,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 Дополнительные сведения о многопоточном программировании в Windows см. в следующих разделах по теме.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Пример Директкслатенци](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)

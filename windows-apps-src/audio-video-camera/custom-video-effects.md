@@ -6,7 +6,7 @@ Search.Product: eADQiWindows 10XVcnh
 title: Пользовательские видеоэффекты
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
@@ -238,7 +238,7 @@ ms.locfileid: "74257196"
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Простой доступ к предварительной версии камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)

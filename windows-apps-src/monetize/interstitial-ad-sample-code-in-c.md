@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: Узнайте, как запускать промежуточную рекламу с помощью C#.
-title: Пример кода промежуточной рекламы в C
+title: Пример кода межстраничного объявления на C#
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, c#, пример кода
@@ -15,7 +15,7 @@ ms.locfileid: "74259290"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Пример кода внутреннего AD на языке C\# #  
 
-В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на C# и XAML, в котором отображается межстраничная видеореклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом см. в разделе [примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
+В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на C# и XAML, в котором отображается межстраничная видеореклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
 ## <a name="code-example"></a>Пример кода
 
@@ -37,7 +37,7 @@ ms.locfileid: "74259290"
 [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
 
  
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
  

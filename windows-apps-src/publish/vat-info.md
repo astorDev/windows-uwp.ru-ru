@@ -4,7 +4,7 @@ title: Сведения об НДС
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

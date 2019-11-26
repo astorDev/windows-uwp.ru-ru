@@ -6,7 +6,7 @@ label: Accessibility testing
 template: detail.hbs
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9480740746b6e6ec792d4b88f4d84e4acb7c0e
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -159,7 +159,7 @@ ms.locfileid: "74257801"
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 * [Специальные возможности](accessibility.md)
 * [Методики, которые не следует использовать](practices-to-avoid.md)
 * [Модель автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)

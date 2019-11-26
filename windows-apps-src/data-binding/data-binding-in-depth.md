@@ -4,7 +4,7 @@ title: Подробно о привязке данных
 description: Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными.
 ms.date: 10/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -800,12 +800,12 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## <a name="xbind-and-binding-feature-comparison"></a>Сравнение компонентов расширений разметки {x:Bind} и {Binding}
 
-| Функция | {x:Bind} | {Binding} | Заметки |
+| Компонент | {x:Bind} | {Binding} | Примечания |
 |---------|----------|-----------|-------|
 | Path — свойство по умолчанию | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Свойство Path | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | В расширении разметки x:Bind свойство Path по умолчанию размещается в корне класса Page, а не DataContext. | 
 | Индексатор | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Привязывается к определенному элементу в коллекции. Поддерживаются только целочисленные индексы. | 
-| Присоединенные свойства | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Присоединенные свойства указываются в скобках. Если свойство не объявляется в пространстве имен XAML, нужно установить для него префикс пространства имен xml, которое необходимо сопоставить с пространством имен кода в заголовке документа. | 
+| Вложенные свойства | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Присоединенные свойства указываются в скобках. Если свойство не объявляется в пространстве имен XAML, нужно установить для него префикс пространства имен xml, которое необходимо сопоставить с пространством имен кода в заголовке документа. | 
 | Приведение | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Не требуется. | Приведения указываются в скобках. Если свойство не объявляется в пространстве имен XAML, нужно установить для него префикс пространства имен xml, которое необходимо сопоставить с пространством имен кода в заголовке документа. | 
 | Преобразователь | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Преобразователи необходимо объявлять в корне класса Page или ResourceDictionary или в App.xaml. | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Преобразователи необходимо объявлять в корне класса Page или ResourceDictionary или в App.xaml. | 

@@ -98,7 +98,7 @@ ms.locfileid: "74256706"
 
 [!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Справочник по параметрам BitmapEncoder](bitmapencoder-options-reference.md)
 * [Метаданные изображения](image-metadata.md)

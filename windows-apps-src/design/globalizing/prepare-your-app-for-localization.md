@@ -180,7 +180,7 @@ ms.locfileid: "74258096"
   - Если включена фуригана, 希蒼 сортируется по の.
   - Если фуригана отсутствует, 希蒼 сортируется по 漢字.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Рекомендации по глобализации](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../app-resources/localize-strings-ui-manifest.md)

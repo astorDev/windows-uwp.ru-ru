@@ -1,6 +1,6 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
-title: Тесты приложений моста для классических приложений
+title: Тесты приложения, перенесенного из классического приложения для Windows
 description: Используйте встроенные тесты моста для настольных систем, чтобы убедиться, что классическое приложение оптимизировано для его преобразования в приложение UWP.
 ms.date: 12/18/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257822"
 ---
-# <a name="windows-desktop-bridge-app-tests"></a>Тесты приложений моста для классических приложений
+# <a name="windows-desktop-bridge-app-tests"></a>Тесты приложения, перенесенного из классического приложения для Windows
 
 [Приложения](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) классических мостов — это классические приложения Windows, преобразованные в приложения универсальная платформа Windows (UWP) с помощью [моста рабочего стола](https://developer.microsoft.com/en-us/windows/bridges/desktop). После преобразования классическое приложение для Windows упаковывается, обслуживается и развертывается в виде пакета приложения UWP (APPX или APPXBUNDLE), предназначенного для классической версии Windows 10.
 
@@ -284,6 +284,6 @@ ms.locfileid: "74257822"
 Удалите из пакета все ключи подписи частных кодов (например, файлы PFX и SNK).
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Политики для Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)

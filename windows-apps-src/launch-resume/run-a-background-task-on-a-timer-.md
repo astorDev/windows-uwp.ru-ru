@@ -122,13 +122,13 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Начиная с Windows 10, пользователю больше не нужно добавлять приложение на экран блокировки, чтобы использовать фоновые задачи.
 
 Фоновая задача будет запускаться только с помощью **TimeTrigger**, если вызван метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Пример кода фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)

@@ -53,7 +53,7 @@ ms.locfileid: "74259324"
 
 Служба рекламного посредника работает с различными рекламными сетями для показа наиболее актуальной рекламы каждому пользователю. Это достигается путем отправки более подробных сигналов о пользователе и приложении в рекламную сеть с учетом требований к конфиденциальности.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Параметры исправления](../publish/in-app-ads.md#mediation-settings)

@@ -6,7 +6,7 @@ label: Interaction primer
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

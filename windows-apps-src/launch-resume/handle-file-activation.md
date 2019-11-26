@@ -4,7 +4,7 @@ description: Приложение можно зарегистрировать в
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ms.date: 07/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -127,11 +127,11 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 При запуске приложения с помощью активации файлов следует рассмотреть возможность включения пользовательского интерфейса, который позволяет пользователю вернуться на верхнюю страницу приложения.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 ### <a name="complete-example"></a>Полный пример
 

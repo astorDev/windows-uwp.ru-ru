@@ -19,7 +19,7 @@ ms.locfileid: "74260310"
 
 ## <a name="in-this-section"></a>В этом разделе
 
-|  Статья    | Описание |               
+|  Раздел    | Описание |               
 |----------|-------|
 | [Рекламные баннеры](banner-ads.md)     | Содержит инструкции по добавлению баннера в приложение UWP с помощью класса [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) в Microsoft Advertising SDK.        |
 | [Внутреннего Реклама](interstitial-ads.md)    | Содержит инструкции по добавлению межстраничного объявления в приложение UWP с помощью класса [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) в Microsoft Advertising SDK.       |

@@ -3,7 +3,7 @@ title: Реакция на отзывы пользователей
 description: Можно отвечать непосредственно на отзывы, которые клиенты оставляют в Центре отзывов.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2

@@ -5,7 +5,7 @@ title: Темы с высокой контрастностью
 template: detail.hbs
 ms.date: 09/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 617511d23bcabe342abe7477f617d81cd01182e6
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -233,7 +233,7 @@ Windows поддерживает темы с высокой контрастно
 > [!NOTE]
 > Убедитесь, что конструктор **AccessibilitySettings** вызывается из области, в которой приложение инициализировано и уже отображает содержимое.
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 * [Специальные возможности](accessibility.md)
 * [Пример контрастности и параметров пользовательского интерфейса](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
 * [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

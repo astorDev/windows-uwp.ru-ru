@@ -175,12 +175,12 @@ recurringTaskBuilder->AddCondition(internetCondition);
 BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 > [!NOTE]
 > Выберите условия для фоновой задачи так, чтобы она выполнялась только при необходимости и не выполнялась. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)

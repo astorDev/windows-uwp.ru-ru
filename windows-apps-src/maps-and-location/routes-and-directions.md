@@ -21,7 +21,7 @@ ms.locfileid: "74259337"
 
 >[!Note]
 >Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
->Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Общие сведения о результатах MapRouteFinder
@@ -239,7 +239,7 @@ private async void ShowRouteOnMap()
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)

@@ -5,7 +5,7 @@ title: Подключение к удаленным камерам
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -46,7 +46,7 @@ ms.locfileid: "74257353"
 [!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

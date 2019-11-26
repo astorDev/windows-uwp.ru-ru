@@ -4,7 +4,7 @@ title: Просмотр сведений об идентификации при�
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

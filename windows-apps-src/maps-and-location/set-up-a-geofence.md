@@ -479,7 +479,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 -   Параметр **Местоположение** служб определения местоположения **включен**
 -   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример определения географического положения UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
 * [Рекомендации по проектированию для георазграничения](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)

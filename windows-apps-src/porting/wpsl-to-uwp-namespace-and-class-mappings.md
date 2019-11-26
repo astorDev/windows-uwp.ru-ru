@@ -4,7 +4,7 @@ title: Windows Phone сопоставления Silverlight с простран�
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

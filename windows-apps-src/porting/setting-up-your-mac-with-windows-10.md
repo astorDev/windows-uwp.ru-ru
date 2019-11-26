@@ -4,7 +4,7 @@ title: Установка Windows 10 на Mac
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

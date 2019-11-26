@@ -217,7 +217,7 @@ ms.locfileid: "74258929"
 > DelayTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Приложения универсальной платформы Windows (UWP) не могут использовать **Thread.Sleep**, поскольку это может привести к блокированию потока пользовательского интерфейса. Вместо этого для создания рабочего элемента вы можете использовать метод [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer); в результате задача, выполняемая рабочим элементом, будет отложена без блокировки потока пользовательского интерфейса.
 
@@ -225,7 +225,7 @@ ms.locfileid: "74258929"
 
 Дополнительные сведения о повторяющихся таймерах см. в разделе [Создание периодического рабочего элемента](create-a-periodic-work-item.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

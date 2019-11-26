@@ -3,7 +3,7 @@ title: Добавление поддержки функции "Близкие л
 description: В этой статье описывается, как добавить поддержку функции "Близкие люди" в приложение, как закрепить и открепить контакты
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -24,7 +24,7 @@ ms.locfileid: "74255139"
 ## <a name="requirements"></a>Требования
 
 + Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 

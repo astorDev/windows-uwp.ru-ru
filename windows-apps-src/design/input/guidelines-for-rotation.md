@@ -6,7 +6,7 @@ label: Rotation
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a09d304b0d68bf01012166173360ec6304fb2c
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -99,7 +99,7 @@ Windows 10 поддерживает три типа вращения: Free, CONS
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 **Примеры**

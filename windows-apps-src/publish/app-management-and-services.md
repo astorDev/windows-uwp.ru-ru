@@ -4,7 +4,7 @@ title: Управление приложениями и службы
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 03/21/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 30610cdacbd9d2be10205958688376371f0387f6
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

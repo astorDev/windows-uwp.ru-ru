@@ -4,7 +4,7 @@ title: Расширение разметки StaticResource
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 07d8e6c180f332e75852c6a6627004f0306e26d4
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -30,7 +30,7 @@ ms.locfileid: "74259846"
 |------|-------------|
 | key | Ключ для запрашиваемого ресурса. Изначально ключ назначается атрибутом [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). Ключом ресурса может быть любая строка, определенная в грамматике XamlName. |
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 **StaticResource** — это метод получения для атрибута XAML значений, которые определены где-либо в словаре ресурсов XAML. Эти значения могут быть добавлены в словарь ресурсов, так как они предназначены для использования несколькими значениями свойств; либо потому, что словарь ресурсов XAML используется как упаковка языка XAML или как метод разложения на элементарные операции. Примером метода упаковки XAML является словарь тем для элемента управления. Другим примером являются объединенные словари ресурсов, применяемые для резервирования ресурсов.
 
@@ -79,7 +79,7 @@ Microsoft Visual Studio 2013 могут содержать возможные з
 
 Если при использовании **{StaticResource}** обнаруживается ключ ресурса, функция **Перейти к определению** (F12) может разрешить ресурс и показать словарь, в котором он определен. Для ресурсов темы во время разработки эта функция ведет к файлу generic.xaml.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Ссылки на ресурсы ResourceDictionary и XAML](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
 * [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)

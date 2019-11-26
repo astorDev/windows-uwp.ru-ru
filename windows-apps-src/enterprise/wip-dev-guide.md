@@ -1161,6 +1161,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **Интерфейсы** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)<br>
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 [Пример Information Protection Windows (WIP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)

@@ -4,7 +4,7 @@ title: Адаптация ресурсов с учетом языка, масш�
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+keywords: Windows 10, uwp, ресурс, изображение, актив, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d6af9d532ecabe517983e8b56cdf8e1b2a2d812
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -280,7 +280,7 @@ Windows автоматически выбирает коэффициент ма�
 * [Ресаурцеконтекст. Куалифиервалуес](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [сетглобалкуалифиервалуе](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Эффективные Пиксели и коэффициент масштабирования](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Система управления ресурсами](resource-management-system.md)

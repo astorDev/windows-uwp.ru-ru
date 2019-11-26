@@ -4,7 +4,7 @@ title: Настройка счета для выплат и налоговых �
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 12/14/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a56630a0a2f0acdc71241ac0234cad463e45ace
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

@@ -41,7 +41,7 @@ ms.locfileid: "74258088"
 * [Language. Куррентинпутмесодлангуажетаг](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
 * [Windows. Globalization. шрифты](/uwp/api/windows.globalization.fonts?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации по использованию строк](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
 * [Глобализация форматов даты, времени и чисел](use-global-ready-formats.md)

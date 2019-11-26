@@ -78,7 +78,7 @@ ms.locfileid: "74260062"
 
 Вы можете скачать журнал выставления для вашей учетной записи в виде документа Microsoft Word, щелкнув ссылку **Скачать**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создать кампанию AD для приложения](create-an-ad-campaign-for-your-app.md)
 

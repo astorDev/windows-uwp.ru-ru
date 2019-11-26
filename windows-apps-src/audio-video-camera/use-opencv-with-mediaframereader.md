@@ -1,7 +1,7 @@
 ---
 ms.assetid: ''
 description: В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV) с классом MediaFrameReader.
-title: Использование OpenCV с MediaFrameReader
+title: Используйте OpenCV с MediaFrameReader
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
@@ -62,7 +62,7 @@ ms.locfileid: "74255956"
 
 [!code-cs[OpenCVFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameArrived)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

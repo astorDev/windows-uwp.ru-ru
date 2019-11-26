@@ -3,7 +3,7 @@ Description: В этой статье описано, как создать ко
 title: Пользовательские звуковые эффекты
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e4bcd5294031e64aa9f21371fa389978b5e708ab
@@ -123,7 +123,7 @@ ms.locfileid: "74257410"
 
 1.  В обозревателе решений внутри проекта приложения щелкните правой кнопкой мыши по разделу **Ссылки** и выберите **Добавить ссылку**.
 2.  Разверните вкладку **Проекты**, выберите **Решение** и установите флажок для имени вашего проекта эффекта. В этом примере используется имя *AudioEffectComponent*.
-3.  Нажмите **ОК**
+3.  Нажмите кнопку **ОК**
 
 Если ваш класс звукового эффекта объявлен в другом пространстве имен, не забудьте включить это пространство имен в свой файл кода.
 
@@ -144,7 +144,7 @@ ms.locfileid: "74257410"
 
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Простой доступ к предварительной версии камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)

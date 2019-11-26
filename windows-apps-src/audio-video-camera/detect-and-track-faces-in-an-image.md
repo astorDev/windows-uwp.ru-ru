@@ -4,7 +4,7 @@ description: В этом разделе объясняется, как испо�
 title: Обнаружение лиц на изображениях или в видео
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d23d33eb98f5ed01cf48eebd63a46aba2f923c65
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -95,7 +95,7 @@ ms.locfileid: "74257113"
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Анализ сцены для записи мультимедиа](scene-analysis-for-media-capture.md)
 * [Образец "базовый обнаружение лиц"](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)

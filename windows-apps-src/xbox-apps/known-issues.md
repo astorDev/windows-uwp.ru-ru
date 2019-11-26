@@ -3,7 +3,7 @@ title: Известные проблемы с программой для раз
 description: Ниже перечислены известные проблемы в программе разработчиков UWP для Xbox.
 ms.date: 03/29/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5

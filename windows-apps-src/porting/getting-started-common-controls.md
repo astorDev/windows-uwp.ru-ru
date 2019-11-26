@@ -4,7 +4,7 @@ description: Приступая к работе с общими элемента
 title: Приступая к работе с общими элементами управления
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bc45f21acf5b9a485cf6bd5ead18482f1920bf99
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -37,11 +37,11 @@ ms.locfileid: "74260144"
 | Индикатор выполнения (UIProgressView) | [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
 | Представление с прокруткой (UIScrollView) и делегат представления с прокруткой (UIScrollViewDelegate) | [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) <br/>  См. также [Примеры прокрутки, сдвига и масштабирования в XAML](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9) |
 | Панель поиска (UISearchBar) и делегат панели поиска (UISearchBarDelegate) | См. раздел [Добавление поиска в приложение](https://docs.microsoft.com/previous-versions/windows/apps/jj130767(v=win.10)) <br/>  См. также [Краткое руководство. Добавление поиска в приложение](https://docs.microsoft.com/previous-versions/windows/apps/hh868180(v=win.10)) |
-| Сегментированный элемент управления (UISegmentedControl) | Нет |
+| Сегментированный элемент управления (UISegmentedControl) | None |
 | Ползунок (UISlider) | [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) <br/>  См. также раздел [Добавление ползунка](https://docs.microsoft.com/previous-versions/windows/apps/hh868197(v=win.10)) |
-| Контроллер разделенного представления (UISplitViewController) и делегат контроллера разделенного представления (UISplitViewControllerDelegate) | Нет |
+| Контроллер разделенного представления (UISplitViewController) и делегат контроллера разделенного представления (UISplitViewControllerDelegate) | None |
 | Переключатель (UISwitch) | [ToggleSwitch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) <br/>  См. также раздел [Добавление переключателя](https://docs.microsoft.com/previous-versions/windows/apps/hh868198(v=win.10)) |
-| Контроллер панели вкладок (UITabBarController) и делегат контроллера панели вкладок (UITabBarControllerDelegate) | Нет |
+| Контроллер панели вкладок (UITabBarController) и делегат контроллера панели вкладок (UITabBarControllerDelegate) | None |
 | Контроллер представления таблицы (UITableViewController), представление таблицы (UITableView), делегат представления таблицы (UITableViewDelegate) и ячейка таблицы (UITableViewCell) | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) <br/>  См. также [Краткое руководство: добавление элементов управления ListView и GridView](https://docs.microsoft.com/previous-versions/windows/apps/hh780650(v=win.10)). |
 | Текстовое поле (UITextField) и делегат текстового поля (UITextFieldDelegate) | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) <br/>  См. также статью [Отображение и редактирование текста](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-controls) |
 | Текстовое представление (UITextView) и делегат текстового представления (UITextViewDelegate) | [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/>  См. также [Краткое руководство: отображение текста](https://docs.microsoft.com/previous-versions/windows/apps/hh700392(v=win.10)). |
@@ -57,7 +57,7 @@ ms.locfileid: "74260144"
 
 [Начало работы: Навигация](getting-started-navigation.md)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Сборка 2014: что насчет пользовательского интерфейса XAML и элементов управления?](https://channel9.msdn.com/Events/Build/2014/2-516)
 * [Сборка 2014: Разработка приложений с помощью общей платформы пользовательского интерфейса XAML](https://channel9.msdn.com/Events/Build/2014/2-507)

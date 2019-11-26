@@ -4,7 +4,7 @@ ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: В этом разделе представлен пример того, как перенести очень простое универсальное приложение 8,1 в приложение Windows 10 универсальная платформа Windows (UWP).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ecbc4d3fcdff9d06469e7a274fd56ef453a81e02
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

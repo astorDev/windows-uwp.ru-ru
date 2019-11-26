@@ -4,7 +4,7 @@ description: В этом разделе представлен пример то
 title: Пример переноса среды выполнения Windows 8.x в UWP - образец однорангового приложения QuizGame
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b03e13352717c5e414dda60fe413b00edc9ba827
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

@@ -4,7 +4,7 @@ title: Связывание устройств
 description: Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен Windows.Devices.Enumeration поддерживает три разных способа связывания устройств.
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
