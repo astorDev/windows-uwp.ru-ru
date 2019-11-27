@@ -68,7 +68,7 @@ ms.locfileid: "74258080"
 | Итальянский | it-IT | Segoe UI |
 | Японский | ja-JP | Yu Gothic UI |
 | Письменность каннада | kn-IN | Nirmala UI |
-| Казахский | kk-KZ | Segoe UI |
+| казахский; | kk-KZ | Segoe UI |
 | Кхмерский | km-KH | Leelawadee UI |
 | Киче | qut-GT | Segoe UI |
 | Киньяруанда | rw-RW | Segoe UI |
@@ -129,7 +129,7 @@ ms.locfileid: "74258080"
 | Волоф | wo-SN | Segoe UI |
 | Йоруба | yo-NG | Segoe UI |
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Тег языка BCP-47](https://tools.ietf.org/html/bcp47)
 * [Поддерживаемые языки](../../publish/supported-languages.md)
