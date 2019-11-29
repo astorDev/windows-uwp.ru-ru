@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: 433c9589876ef7dac1c5c2b862176ff0eb47b1b3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0575127096a016c54c1ee84c1e57c2f22054384b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339944"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260225"
 ---
 # <a name="manage-app-submissions"></a>Управление отправками приложений
 
@@ -55,7 +55,7 @@ API отправки в Microsoft Store предоставляет методы,
 <td align="left"><a href="get-status-for-an-app-submission.md">Получение состояния существующего отправленного приложения</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions</td>
 <td align="left"><a href="create-an-app-submission.md">Создание новой отправки приложения</a></td>
 </tr>
@@ -65,7 +65,7 @@ API отправки в Microsoft Store предоставляет методы,
 <td align="left"><a href="update-an-app-submission.md">Обновление существующей отправки приложения</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit</td>
 <td align="left"><a href="commit-an-app-submission.md">Фиксация новой или обновленной отправки приложения</a></td>
 </tr>
@@ -98,7 +98,7 @@ API отправки в Microsoft Store предоставляет методы,
     Тело ответа содержит ресурс [отправки приложения](#app-submission-object), включающий в себя идентификатор новой отправки, URI подписанного URL-адреса (Shared Access Signature, SAS) для передачи любых необходимых файлов для отправки в хранилище BLOB-объектов Azure (таких как пакеты приложения, изображения для описания и файлы трейлеров), а также все данные новой отправки (в том числе все описания и информацию о ценах).
 
     > [!NOTE]
-    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Общие сведения об URI SAS и их использовании с хранилищем BLOB-объектов Azure @no__t см. в разделе 0Shared Access Signatures, часть 1. Общие сведения о модели SAS @ no__t-0 и [Shared Access Signatures, часть 2. Создайте и используйте SAS с хранилищем больших двоичных объектов @ no__t-0.
+    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Основные сведения об URI SAS и их использовании с хранилищем BLOB-объектов Azure см. в разделах [Подписанные URL-адреса, часть 1. Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) и [Подписанные URL-адреса, часть 2. Создание и использование SAS с хранилищем BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. При добавлении новых пакетов, изображений для описания и файлов трейлеров для отправки [подготовьте пакеты приложения](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) и [подготовьте снимки экранов, изображения и трейлеры](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Добавьте все эти файлы в ZIP-архив.
 
@@ -175,17 +175,17 @@ API отправки в Microsoft Store предоставляет методы,
 <td align="left"><a href="get-package-rollout-info-for-an-app-submission.md">Получение сведений об постепенном переходе для отправки приложения</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
 <td align="left"><a href="update-the-package-rollout-percentage-for-an-app-submission.md">Обновить процент постепенного развертывания для отправки приложения</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout</td>
 <td align="left"><a href="halt-the-package-rollout-for-an-app-submission.md">Остановка постепенного развертывания для отправки приложения</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout</td>
 <td align="left"><a href="finalize-the-package-rollout-for-an-app-submission.md">Завершение постепенного развертывания для отправки приложения</a></td>
 </tr>
@@ -206,9 +206,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 ## <a name="storebroker-powershell-module"></a>Модуль StoreBroker PowerShell
 
-В качестве альтернативы прямому вызову API отправки в Microsoft Store также предоставляется модуль PowerShell с открытым исходным кодом, в котором поверх API реализован интерфейс командной строки. Этот модуль называется [StoreBroker](https://aka.ms/storebroker). Этот модуль можно использовать для управления приложением, тестируемой возможностью и отправками надстроек из командной строки, вместо того чтобы вызывать API отправки в Microsoft Store напрямую. Кроме того, можно просмотреть дополнительные примеры вызова этого API, изучив исходный код. Модуль StoreBroker активно используется Microsoft в качестве основного способа отправки многих собственных приложений компании в Магазин.
+В качестве альтернативы прямому вызову API отправки в Microsoft Store также предоставляется модуль PowerShell с открытым исходным кодом, в котором поверх API реализован интерфейс командной строки. Этот модуль называется [StoreBroker](https://github.com/Microsoft/StoreBroker). Этот модуль можно использовать для управления приложением, тестируемой возможностью и отправками надстроек из командной строки, вместо того чтобы вызывать API отправки в Microsoft Store напрямую. Кроме того, можно просмотреть дополнительные примеры вызова этого API, изучив исходный код. Модуль StoreBroker активно используется Microsoft в качестве основного способа отправки многих собственных приложений компании в Магазин.
 
-Дополнительные сведения см. на нашей [странице StoreBroker на сайте GitHub](https://aka.ms/storebroker).
+Дополнительные сведения см. на нашей [странице StoreBroker на сайте GitHub](https://github.com/Microsoft/StoreBroker).
 
 <span/>
 
@@ -335,33 +335,33 @@ API отправки в Microsoft Store предоставляет методы,
 
 У этого ресурса есть следующие значения.
 
-| Значение      | Type   | Описание      |
+| Значение      | Тип   | Описание      |
 |------------|--------|-------------------|
-| id            | строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки приложения](create-an-app-submission.md), [получение всех приложений](get-all-apps.md) и [получение определенного приложения](get-an-app.md). Для отправки, созданной в центре партнеров, этот идентификатор также доступен в URL-адресе страницы отправки в центре партнеров.  |
-| applicationCategory           | строка  |   Строка, указывающая [категорию или подкатегорию](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
+| id            | Строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки приложения](create-an-app-submission.md), [получение всех приложений](get-all-apps.md) и [получение определенного приложения](get-an-app.md). Для отправки, созданной в центре партнеров, этот идентификатор также доступен в URL-адресе страницы отправки в центре партнеров.  |
+| applicationCategory           | Строка  |   Строка, указывающая [категорию или подкатегорию](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
 | pricing           |  object  | [Ресурс цены](#pricing-object), содержащий сведения о цене приложения.        |   
-| visibility           |  строка  |  Видимость приложения. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>       |   
-| targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
-| targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |  
+| visibility           |  Строка  |  Видимость приложения. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>       |   
+| targetPublishMode           | Строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
+| targetPublishDate           | Строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |  
 | listings           |   object  |  Словарь пар "ключ-значение", где каждый ключ является кодом страны, а каждое значение — объектом [ресурса описания](#listing-object), содержащим данные описания приложения.       |   
-| hardwarePreferences           |  array  |   Массив строк, определяющих [предпочтения оборудования](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
-| automaticBackupEnabled           |  boolean  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
-| canInstallOnRemovableMedia           |  boolean  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
-| isGameDvrEnabled           |  boolean |   Указывает, включена ли для приложения функция DVR для игр.    |   
-| gamingOptions           |  array |   Массив, содержащий один [ресурс параметров игры](#gaming-options-object), который определяет относящиеся к игре параметры для приложения.     |   
-| hasExternalInAppProducts           |     boolean          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
-| meetAccessibilityGuidelines           |    boolean           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
-| notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
-| status           |   строка  |  Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>      |    
+| hardwarePreferences           |  Массив  |   Массив строк, определяющих [предпочтения оборудования](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
+| automaticBackupEnabled           |  Логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
+| canInstallOnRemovableMedia           |  Логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| isGameDvrEnabled           |  Логический |   Указывает, включена ли для приложения функция DVR для игр.    |   
+| gamingOptions           |  Массив |   Массив, содержащий один [ресурс параметров игры](#gaming-options-object), который определяет относящиеся к игре параметры для приложения.     |   
+| hasExternalInAppProducts           |     Логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| meetAccessibilityGuidelines           |    Логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
+| notesForCertification           |  Строка  |   Содержит [заметки по сертификации](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
+| status           |   Строка  |  Состояние отправки. Может принимать одно из следующих значений. <ul><li>None</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>      |    
 | statusDetails           |   object  | [Ресурс сведений о состоянии](#status-details-object), который содержит дополнительные сведения о состоянии отправки, включая сведения об ошибках.       |    
-| fileUploadUrl           |   строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов, изображений описания или файлов трейлеров для отправки выложите ZIP-архив, содержащий пакеты и изображения, по этому URI. Дополнительную информацию см. в разделе [Создание отправки приложения](#create-an-app-submission).       |    
-| applicationPackages           |   array  | Массив [ресурсов пакета приложения](#application-package-object), предоставляющий сведения о каждом пакете в отправке |    
+| fileUploadUrl           |   Строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов, изображений описания или файлов трейлеров для отправки выложите ZIP-архив, содержащий пакеты и изображения, по этому URI. Дополнительную информацию см. в разделе [Создание отправки приложения](#create-an-app-submission).       |    
+| applicationPackages           |   Массив  | Массив [ресурсов пакета приложения](#application-package-object), предоставляющий сведения о каждом пакете в отправке |    
 | packageDeliveryOptions    | object  | [Ресурс параметров доставки пакета](#package-delivery-options-object), который содержит постепенный выпуск пакета и обязательные параметры обновления для отправки.  |
-| enterpriseLicensing           |  строка  |  Одно из значений, связанных с [корпоративным лицензированием](#enterprise-licensing), указывающих на поведение приложения в отношении корпоративного лицензирования.  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).    |    
+| enterpriseLicensing           |  Строка  |  Одно из значений, связанных с [корпоративным лицензированием](#enterprise-licensing), указывающих на поведение приложения в отношении корпоративного лицензирования.  |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  Логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10.](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).    |    
 | allowTargetFutureDeviceFamilies           | object   |  Словарь пар "ключ-значение", в котором каждый ключ представляет собой [семейство устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability), а каждое значение является логическим значением, которое указывает, разрешено ли нацеливание приложения на указанное семейство устройств.     |    
-| friendlyName           |   строка  |  Понятное имя отправки, как показано в центре партнеров. Это значение создается при создании отправки.       |  
-| trailers           |  array |   Массив, содержащий до 15 [ресурсов трейлеров](#trailer-object), представляющие видеотрейлеры для описания приложения.<br/><br/>   |  
+| friendlyName           |   Строка  |  Понятное имя отправки, как показано в центре партнеров. Это значение создается при создании отправки.       |  
+| trailers           |  Массив |   Массив, содержащий до 15 [ресурсов трейлеров](#trailer-object), представляющие видеотрейлеры для описания приложения.<br/><br/>   |  
 
 
 <span id="pricing-object" />
@@ -370,13 +370,13 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит сведения о ценах для приложения. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-|  trialPeriod               |    строка     |  Строка, указывающая срок действия пробной версии приложения. Может принимать одно из следующих значений. <ul><li>NoFreeTrial (Нет пробного периода)</li><li>OneDay (Один день)</li><li>TrialNeverExpires (Бессрочный пробный период)</li><li>SevenDays (7 дней)</li><li>FifteenDays (15 дней)</li><li>ThirtyDays (30 дней)</li></ul>    |
+|  trialPeriod               |    Строка     |  Строка, указывающая срок действия пробной версии приложения. Может принимать одно из следующих значений. <ul><li>NoFreeTrial (Нет пробного периода)</li><li>OneDay (Один день)</li><li>TrialNeverExpires (Бессрочный пробный период)</li><li>SevenDays (7 дней)</li><li>FifteenDays (15 дней)</li><li>ThirtyDays (30 дней)</li></ul>    |
 |  marketSpecificPricings               |    object     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.      |     
-|  sales               |   array      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для приложения.   |     
-|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) для приложения.   |     
-|  isAdvancedPricingModel               |   boolean      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
+|  sales               |   Массив      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для приложения.   |     
+|  priceId               |   Строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) для приложения.   |     
+|  isAdvancedPricingModel               |   Логический      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
 
 
 <span id="sale-object" />
@@ -392,12 +392,12 @@ API отправки в Microsoft Store предоставляет методы,
 
 У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание    |
+| Значение           | Тип    | Описание    |
 |-----------------|---------|------|
-|  name               |    строка     |   Имя продажи.    |     
-|  basePriceId               |   строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
-|  startDate               |   строка      |   Дата начала для продажи в формате ISO 8601.  |     
-|  endDate               |   строка      |  Дата окончания для продажи в формате ISO 8601.      |     
+|  name               |    Строка     |   Имя продажи.    |     
+|  basePriceId               |   Строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
+|  startDate               |   Строка      |   Дата начала для продажи в формате ISO 8601.  |     
+|  endDate               |   Строка      |  Дата окончания для продажи в формате ISO 8601.      |     
 |  marketSpecificPricings               |   object      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
 
 
@@ -407,7 +407,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит информацию описания для приложения. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание                  |
+| Значение           | Тип    | Описание                  |
 |-----------------|---------|------|
 |  baseListing               |   object      |  Информация [базового описания](#base-listing-object) для приложения, которая определяет описание по умолчанию на всех платформах.   |     
 |  platformOverrides               | object |   Словарь пар "ключ-значение", где каждый ключ является строкой, идентифицирующей платформу, для которой необходимо переопределить информацию в описании, а каждое значение является ресурсом [базового описания](#base-listing-object) (содержащим только значения от описания до заголовка), определяющим информацию для переопределения описания для указанной платформы. Ключи могут иметь следующие значения: <ul><li>Неизвестно</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
@@ -418,26 +418,26 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит базовую информацию описания для приложения. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание       |
+| Значение           | Тип    | Описание       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   строка      |  Необязательные [сведения об авторских правах и (или) товарных знаках](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).  |
-|  keywords                |  array       |  Массив [ключевых слов](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions), способствующих появлению вашего приложения в результатах поиска.    |
-|  licenseTerms                |    строка     | Необязательные [условия лицензионного соглашения](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.     |
-|  privacyPolicy                |   строка      |   Это значение устарело. Чтобы задать или изменить URL-адрес политики конфиденциальности для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#privacy-policy-url) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.       |
-|  supportContact                |   строка      |  Это значение устарело. Чтобы задать или изменить URL-адрес или адрес электронной почты службы поддержки для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#support-contact-info) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.        |
-|  websiteUrl                |   строка      |  Это значение устарело. Чтобы задать или изменить URL-адрес веб страницы для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#website) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.      |    
-|  description               |    строка     |   [Описание](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для описания приложения.   |     
-|  features               |    array     |  Массив размером до 20 строк со списком [функций](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) вашего приложения.     |
-|  releaseNotes               |  строка       |  [Заметки о выпуске](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.    |
-|  images               |   array      |  Массив ресурсов [изображений и значков](#image-object) для описания приложения.  |
-|  recommendedHardware               |   array      |  Массив размером до 11 строк со списком [рекомендуемой конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.     |
-|  minimumHardware               |     строка    |  Массив размером до 11 строк со списком [минимальной конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.    |  
-|  title               |     строка    |   Название для описания приложения.   |  
-|  shortDescription               |     строка    |  Используется только для игр. Это описание отображается в разделе **Информация** в центре игр на Xbox One и помогает пользователям узнать больше об игре.   |  
-|  shortTitle               |     строка    |  Краткая версия названия вашего продукта. Если оно указывается, это короткое название может отображаться в различных местах на Xbox One (во время установки, при получении достижения т. д.) вместо полного названия продукта.    |  
-|  sortTitle               |     строка    |   Если ваш продукт можно добавить в алфавитный список разными способами, вы можете ввести другую версию названия в этом поле. Это может помочь пользователям быстрее найти продукт при поиске.    |  
-|  voiceTitle               |     строка    |   Альтернативное имя вашего продукта, которое, если возможно, можно использовать с голосовыми функциями Xbox One при использовании Kinect или гарнитуры.    |  
-|  devStudio               |     строка    |   Задайте это значение, если хотите включить поле **Developed by** в описание. (В поле **Published by** будет указываться отображаемое имя издателя, связанное с вашей учетной записью, независимо от того, указали ли вы значение *devStudio*.)    |  
+|  copyrightAndTrademarkInfo                |   Строка      |  Необязательные [сведения об авторских правах и (или) товарных знаках](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).  |
+|  keywords                |  Массив       |  Массив [ключевых слов](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions), способствующих появлению вашего приложения в результатах поиска.    |
+|  licenseTerms                |    Строка     | Необязательные [условия лицензионного соглашения](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.     |
+|  privacyPolicy                |   Строка      |   Это значение устарело. Чтобы задать или изменить URL-адрес политики конфиденциальности для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#privacy-policy-url) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.       |
+|  supportContact                |   Строка      |  Это значение устарело. Чтобы задать или изменить URL-адрес или адрес электронной почты службы поддержки для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#support-contact-info) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.        |
+|  websiteUrl                |   Строка      |  Это значение устарело. Чтобы задать или изменить URL-адрес веб страницы для приложения, необходимо сделать это на странице [свойств](../publish/enter-app-properties.md#website) в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.      |    
+|  Описание               |    Строка     |   [Описание](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для описания приложения.   |     
+|  features               |    Массив     |  Массив размером до 20 строк со списком [функций](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) вашего приложения.     |
+|  releaseNotes               |  Строка       |  [Заметки о выпуске](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.    |
+|  images               |   Массив      |  Массив ресурсов [изображений и значков](#image-object) для описания приложения.  |
+|  recommendedHardware               |   Массив      |  Массив размером до 11 строк со списком [рекомендуемой конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.     |
+|  minimumHardware               |     Строка    |  Массив размером до 11 строк со списком [минимальной конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.    |  
+|  title               |     Строка    |   Название для описания приложения.   |  
+|  shortDescription               |     Строка    |  Используется только для игр. Это описание отображается в разделе **Информация** в центре игр на Xbox One и помогает пользователям узнать больше об игре.   |  
+|  shortTitle               |     Строка    |  Краткая версия названия вашего продукта. Если оно указывается, это короткое название может отображаться в различных местах на Xbox One (во время установки, при получении достижения т. д.) вместо полного названия продукта.    |  
+|  sortTitle               |     Строка    |   Если ваш продукт можно добавить в алфавитный список разными способами, вы можете ввести другую версию названия в этом поле. Это может помочь пользователям быстрее найти продукт при поиске.    |  
+|  voiceTitle               |     Строка    |   Альтернативное имя вашего продукта, которое, если возможно, можно использовать с голосовыми функциями Xbox One при использовании Kinect или гарнитуры.    |  
+|  devStudio               |     Строка    |   Задайте это значение, если хотите включить поле **Developed by** в описание. (В поле **Published by** будет указываться отображаемое имя издателя, связанное с вашей учетной записью, независимо от того, указали ли вы значение *devStudio*.)    |  
 
 <span id="image-object" />
 
@@ -445,13 +445,13 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит данные изображений и значков для описания приложения. Дополнительные сведения об изображениях и значках для описания приложения см. в разделе [Снимки экранов приложения и изображения](../publish/app-screenshots-and-images.md). У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание           |
+| Значение           | Тип    | Описание           |
 |-----------------|---------|------|
-|  fileName               |    строка     |   Имя файла изображения в ZIP-архиве, который был передан для отправки.    |     
-|  fileStatus               |   строка      |  Состояние файла изображения. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>   |
-|  id  |  строка  | Идентификатор для изображения. Это значение предоставляется центром партнеров.  |
-|  description  |  строка  | Описание изображения.  |
-|  imageType  |  строка  | Указывает тип изображения. В настоящее время поддерживаются перечисленные ниже строки. <p/>[Изображения снимков экрана](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (используйте это значение для снимка экрана рабочего стола)</li><li>MobileScreenshot (Снимок экрана мобильного устройства)</li><li>XboxScreenshot (Снимок экрана Xbox)</li><li>SurfaceHubScreenshot (Снимок экрана SurfaceHub)</li><li>HoloLensScreenshot (Снимок экрана HoloLens)</li></ul><p/>[Логотипы в Магазине](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (используйте это значение для логотипа 1:1 300 x 300 пикселей)</li></ul><p/>[Рекламные изображения](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200 (Рекламное изображение 2400X1200)</li></ul><p/>[Изображения для Xbox](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Дополнительные рекламные изображения](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358 (Фоновое изображение 358X358)</li><li>BackgroundImage1000X800 (Фоновое изображение 1000X800)</li><li>PromotionalArtwork414X180 (Рекламное изображение 414X180)</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
+|  fileName               |    Строка     |   Имя файла изображения в ZIP-архиве, который был передан для отправки.    |     
+|  fileStatus               |   Строка      |  Состояние файла изображения. Может принимать одно из следующих значений. <ul><li>None</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>   |
+|  id  |  Строка  | Идентификатор для изображения. Это значение предоставляется центром партнеров.  |
+|  Описание  |  Строка  | Описание изображения.  |
+|  imageType  |  Строка  | Указывает тип изображения. В настоящее время поддерживаются перечисленные ниже строки. <p/>[Изображения снимков экрана](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (используйте это значение для снимка экрана рабочего стола)</li><li>MobileScreenshot (Снимок экрана мобильного устройства)</li><li>XboxScreenshot (Снимок экрана Xbox)</li><li>SurfaceHubScreenshot (Снимок экрана SurfaceHub)</li><li>HoloLensScreenshot (Снимок экрана HoloLens)</li></ul><p/>[Логотипы в Магазине](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (используйте это значение для логотипа 1:1 300 x 300 пикселей)</li></ul><p/>[Рекламные изображения](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200 (Рекламное изображение 2400X1200)</li></ul><p/>[Изображения для Xbox](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Дополнительные рекламные изображения](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358 (Фоновое изображение 358X358)</li><li>BackgroundImage1000X800 (Фоновое изображение 1000X800)</li><li>PromotionalArtwork414X180 (Рекламное изображение 414X180)</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
 
 <span id="gaming-options-object" />
@@ -486,20 +486,20 @@ API отправки в Microsoft Store предоставляет методы,
 
 У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-|  genres               |    array     |  Массив из одной или нескольких приведенных ниже строк, которые описывают жанры игры: <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
-|  isLocalMultiplayer               |    boolean     |  Указывает, поддерживает ли игра локальный многопользовательский режим.      |     
-|  isLocalCooperative               |   boolean      |  Указывает, поддерживает ли игра локальный совместный режим.    |     
-|  isOnlineMultiplayer               |   boolean      |  Указывает, поддерживает ли игра онлайн-многопользовательский режим.    |     
-|  isOnlineCooperative               |   boolean      |  Указывает, поддерживает ли игра онлайн-совместный режим.    |     
+|  genres               |    Массив     |  Массив из одной или нескольких приведенных ниже строк, которые описывают жанры игры: <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
+|  isLocalMultiplayer               |    Логический     |  Указывает, поддерживает ли игра локальный многопользовательский режим.      |     
+|  isLocalCooperative               |   Логический      |  Указывает, поддерживает ли игра локальный совместный режим.    |     
+|  isOnlineMultiplayer               |   Логический      |  Указывает, поддерживает ли игра онлайн-многопользовательский режим.    |     
+|  isOnlineCooperative               |   Логический      |  Указывает, поддерживает ли игра онлайн-совместный режим.    |     
 |  localMultiplayerMinPlayers               |   int      |   Определяет минимальное поддерживаемое число игроков, поддерживаемое игрой в локальном многопользовательском режиме.   |     
 |  localMultiplayerMaxPlayers               |   int      |   Определяет максимальное поддерживаемое число игроков, поддерживаемое игрой в локальном многопользовательском режиме.  |     
 |  localCooperativeMinPlayers               |   int      |   Определяет минимальное поддерживаемое число игроков, поддерживаемое игрой в локальном совместном режиме.  |     
 |  localCooperativeMaxPlayers               |   int      |   Определяет максимальное поддерживаемое число игроков, поддерживаемое игрой в локальном совместном режиме.  |     
-|  isBroadcastingPrivilegeGranted               |   boolean      |  Указывает, поддерживает ли игра трансляции.   |     
-|  isCrossPlayEnabled               |   boolean      |   Указывает, поддерживает ли игра многопользовательские сеансы между игроками, использующими компьютеры под управлением ОС Windows 10 и устройства Xbox.  |     
-|  kinectDataForExternal               |   строка      |  Одно из следующих строковых значений, указывающее, может ли игра получать данные Kinect и отправлять их внешним службам: <ul><li>NotSet (Не задано)</li><li>Неизвестно</li><li>Enabled</li><li>Отключено</li></ul>   |
+|  isBroadcastingPrivilegeGranted               |   Логический      |  Указывает, поддерживает ли игра трансляции.   |     
+|  isCrossPlayEnabled               |   Логический      |   Указывает, поддерживает ли игра многопользовательские сеансы между игроками, использующими компьютеры под управлением ОС Windows 10 и устройства Xbox.  |     
+|  kinectDataForExternal               |   Строка      |  Одно из следующих строковых значений, указывающее, может ли игра получать данные Kinect и отправлять их внешним службам: <ul><li>NotSet (Не задано)</li><li>Неизвестно</li><li>Enabled</li><li>Отключено</li></ul>   |
 
 > [!NOTE]
 > Ресурс *gamingOptions* был добавлен в мае 2017 г. после первого выпуска API отправки в Microsoft Store для разработчиков. Если вы создали отправку для приложения с помощью API отправки до появления этого ресурса и эта отправка все еще выполняется, этот ресурс будет иметь значение null для отправок приложения, пока вы успешно не выполните отправку или не удалите ее. Если ресурс *gamingOptions* недоступен для отправок приложения, поле *hasAdvancedListingPermission* в [ресурсе Application](get-app-data.md#application_object), возвращаемом методом [получения приложения](get-an-app.md), будет иметь значение false.
@@ -510,7 +510,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит дополнительные сведения о состоянии отправки. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание         |
+| Значение           | Тип    | Описание         |
 |-----------------|---------|------|
 |  errors               |    object     |   Массив [ресурсов сведений о состоянии](#status-detail-object), который содержит информацию об ошибках для отправки.    |     
 |  warnings               |   object      | Массив [ресурсов сведений о состоянии](#status-detail-object), который содержит информацию о предупреждениях для отправки.      |
@@ -523,10 +523,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит дополнительные сведения обо всех связанных ошибках или предупреждениях для отправки. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-|  code               |    строка     |   [Код состояния отправки](#submission-status-code), описывающий тип ошибки или предупреждения.   |     
-|  details               |     строка    |  Сообщение с дополнительными сведениями о проблеме.     |
+|  code               |    Строка     |   [Код состояния отправки](#submission-status-code), описывающий тип ошибки или предупреждения.   |     
+|  details               |     Строка    |  Сообщение с дополнительными сведениями о проблеме.     |
 
 
 <span id="application-package-object" />
@@ -567,18 +567,18 @@ API отправки в Microsoft Store предоставляет методы,
 > [!NOTE]
 > При вызове метода для [обновления отправки приложения](update-an-app-submission.md) в тексте запроса требуются только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этого объекта. Другие значения заполняются центром партнеров.
 
-| Значение           | Type    | Описание                   |
+| Значение           | Тип    | Описание                   |
 |-----------------|---------|------|
-| fileName   |   строка      |  Имя пакета.    |  
-| fileStatus    | строка    |  Состояние пакета. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>    |  
-| id    |  строка   |  Идентификатор, который уникально идентифицирует пакет. Это значение предоставляется центром партнеров.   |     
-| version    |  строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| architecture    |  строка   |  Архитектура пакета (например, ARM).   |     
-| languages    | array    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  array   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  строка   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>Нет</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | строка    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | array    |  Массив строк, представляющих семейства устройств, для которых предназначен пакет. Это значение используется только для пакетов, предназначенных для Windows 10; для пакетов, предназначенных для предыдущих выпусков, это значение равно **None**. В настоящее время поддерживаются следующие строки семейств устройств для пакетов Windows 10, где *{0}* представляет собой строку версии Windows 10, например 10.0.10240.0, 10.0.10586.0 или 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
+| fileName   |   Строка      |  Имя пакета.    |  
+| fileStatus    | Строка    |  Состояние пакета. Может принимать одно из следующих значений. <ul><li>None</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>    |  
+| id    |  Строка   |  Идентификатор, который уникально идентифицирует пакет. Это значение предоставляется центром партнеров.   |     
+| version    |  Строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  Строка   |  Архитектура пакета (например, ARM).   |     
+| languages    | Массив    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  Массив   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| minimumDirectXVersion    |  Строка   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | Строка    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>None</li><li>Memory2GB</li></ul>   |       
+| targetDeviceFamilies    | Массив    |  Массив строк, представляющих семейства устройств, для которых предназначен пакет. Это значение используется только для пакетов, предназначенных для Windows 10; для пакетов, предназначенных для предыдущих выпусков, это значение равно **None**. В настоящее время поддерживаются следующие строки семейств устройств для пакетов Windows 10, где *{0}* представляет собой строку версии Windows 10, например 10.0.10240.0, 10.0.10586.0 или 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
 
 <span/>
 
@@ -588,10 +588,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс предоставляет доступ к данным отчета о сертификации для отправки. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание             |
+| Значение           | Тип    | Описание             |
 |-----------------|---------|------|
-|     date            |    строка     |  Дата и время создания отчета в формате ISO 8601.    |
-|     reportUrl            |    строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
+|     date            |    Строка     |  Дата и время создания отчета в формате ISO 8601.    |
+|     reportUrl            |    Строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
 
 
 <span id="package-delivery-options-object" />
@@ -617,10 +617,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
 | packageRollout   |   object      |  [Ресурс выпуска пакета](#package-rollout-object), который содержит параметры постепенного выпуска пакета для отправки.   |  
-| isMandatoryUpdate    | boolean    |  Указывает, следует ли рассматривать пакеты в этой отправке как обязательные для самоустанавливающихся обновлений приложений. Дополнительные сведения об обязательных пакетах самоустанавливаемых обновлений приложений см. в разделе [Загрузка и установка обновлений пакетов для приложения](../packaging/self-install-package-updates.md).    |  
+| isMandatoryUpdate    | Логический    |  Указывает, следует ли рассматривать пакеты в этой отправке как обязательные для самоустанавливающихся обновлений приложений. Дополнительные сведения об обязательных пакетах самоустанавливаемых обновлений приложений см. в разделе [Загрузка и установка обновлений пакетов для приложения](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  date   |  Дата и время, когда пакеты в этой отправке станут обязательными, в формате ISO 8601 и по часовому поясу UTC.   |        
 
 <span id="package-rollout-object" />
@@ -629,12 +629,12 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит [параметры постепенного выпуска пакета](#manage-gradual-package-rollout) для отправки. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-| isPackageRollout   |   boolean      |  Указывает, включен ли постепенный выпуск пакета для этой отправки.    |  
+| isPackageRollout   |   Логический      |  Указывает, включен ли постепенный выпуск пакета для этой отправки.    |  
 | packageRolloutPercentage    | float    |  Процент пользователей, которые будут получать пакеты при постепенном выпуске.    |  
-| packageRolloutStatus    |  строка   |  Одна из следующих строк, указывающая состояние постепенного выпуска пакета: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  строка   |  Идентификатор отправки, который будет поступать от пользователей, которые не получают пакеты постепенного выпуска.   |          
+| packageRolloutStatus    |  Строка   |  Одна из следующих строк, указывающая состояние постепенного выпуска пакета: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  Строка   |  Идентификатор отправки, который будет поступать от пользователей, которые не получают пакеты постепенного выпуска.   |          
 
 > [!NOTE]
 > Значения *паккажероллаутстатус* и *Фаллбакксубмиссионид* назначаются центром партнеров и не предназначены для установки разработчиком. Если эти значения содержатся в теле запроса, они будут проигнорированы.
@@ -673,11 +673,11 @@ API отправки в Microsoft Store предоставляет методы,
 
 У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-|  id               |    строка     |   Идентификатор для трейлера. Это значение предоставляется центром партнеров.   |
-|  videoFileName               |    строка     |    Имя файла видеотрейлера в ZIP-архиве, который содержит файлы для отправки.    |     
-|  videoFileId               |   строка      |  Идентификатор файла видеотрейлера. Это значение предоставляется центром партнеров.   |     
+|  id               |    Строка     |   Идентификатор для трейлера. Это значение предоставляется центром партнеров.   |
+|  videoFileName               |    Строка     |    Имя файла видеотрейлера в ZIP-архиве, который содержит файлы для отправки.    |     
+|  videoFileId               |   Строка      |  Идентификатор файла видеотрейлера. Это значение предоставляется центром партнеров.   |     
 |  trailerAssets               |   object      |  Словарь пар "ключ-значение", где каждый ключ является кодом языка, а каждое значение — [набором ресурсов трейлера](#trailer-assets-object), содержащим относящиеся к языковым стандартам ресурсы для трейлера. Дополнительные сведения о кодах поддерживаемых языков см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
@@ -689,10 +689,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс содержит дополнительные данные, относящиеся к языковым стандартам, для трейлера, который определен в [ресурсе трейлера](#trailer-object). У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание        |
+| Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-| title   |   строка      |  Локализованное название трейлера. Заголовок отображается, когда пользователь воспроизводит трейлер в полноэкранном режиме.     |  
-| imageList    | array    |   Массив, содержащий один ресурс [image](#image-for-trailer-object), который предоставляет эскиз для трейлера. В этот массив можно включать только один ресурс [image](#image-for-trailer-object).  |   
+| title   |   Строка      |  Локализованное название трейлера. Заголовок отображается, когда пользователь воспроизводит трейлер в полноэкранном режиме.     |  
+| imageList    | Массив    |   Массив, содержащий один ресурс [image](#image-for-trailer-object), который предоставляет эскиз для трейлера. В этот массив можно включать только один ресурс [image](#image-for-trailer-object).  |   
 
 
 <span id="image-for-trailer-object" />
@@ -701,11 +701,11 @@ API отправки в Microsoft Store предоставляет методы,
 
 Этот ресурс описывает эскиз для трейлера. У этого ресурса есть следующие значения.
 
-| Значение           | Type    | Описание           |
+| Значение           | Тип    | Описание           |
 |-----------------|---------|------|
-|  fileName               |    строка     |   Имя файла эскиза в ZIP-архиве, который был передан для отправки.    |     
-|  id  |  строка  | Идентификатор для эскиза. Это значение предоставляется центром партнеров.  |
-|  description  |  строка  | Описание эскиза. Это значение представляет собой лишь метаданные и не отображается пользователям.   |
+|  fileName               |    Строка     |   Имя файла эскиза в ZIP-архиве, который был передан для отправки.    |     
+|  id  |  Строка  | Идентификатор для эскиза. Это значение предоставляется центром партнеров.  |
+|  Описание  |  Строка  | Описание эскиза. Это значение представляет собой лишь метаданные и не отображается пользователям.   |
 
 <span/>
 
@@ -724,7 +724,7 @@ API отправки в Microsoft Store предоставляет методы,
 |  Base               |   Ценовая категория не задана; используется базовая цена для приложения.      |     
 |  NotAvailable              |   Приложение недоступно в указанном регионе.    |     
 |  Free              |   Бесплатное приложение.    |    
-|  Tier*xxx*               |   Строка, указывающая ценовую категорию приложения в формате **Tier<em>xxxx</em>** . В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Чтобы просмотреть полную таблицу ценовых уровней, доступных для вашей учетной записи разработчика, включая цены для рынка, связанные с каждым из уровней, перейдите на страницу **цены и доступности** для любых отправок приложений в центре партнеров и Щелкните ссылку **Просмотр таблицы** в разделе " **рынки и настраиваемые цены** " (для некоторых учетных записей разработчиков эта ссылка находится в разделе " **цены** ").    |
+|  Tier*xxx*               |   Строка, указывающая ценовую категорию приложения в формате **Tier<em>xxxx</em>** . В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Чтобы просмотреть полную таблицу ценовых уровней, доступных для вашей учетной записи разработчика, включая цены, связанные с каждым из уровней рынка, перейдите на страницу **цены и доступности** для всех отправок приложения в центре партнеров и щелкните ссылку **Просмотреть таблицу** в разделе " **рынки и настраиваемые цены** " (для некоторых учетных записей разработчиков эта ссылка находится в разделе " **цены** ").    |
 
 
 <span id="enterprise-licensing" />
@@ -739,7 +739,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           |  Описание      |
 |-----------------|---------------|
-| Нет            |     Приложение недоступно организациям путем корпоративного лицензирования от Магазина (в режиме онлайн).         |     
+| None            |     Приложение недоступно организациям путем корпоративного лицензирования от Магазина (в режиме онлайн).         |     
 | Online        |     Приложение доступно организациям путем корпоративного лицензирования от Магазина (в режиме онлайн).  |
 | OnlineAndOffline | Приложение доступно организациям путем корпоративного лицензирования от Магазина (в режиме онлайн); кроме того, приложение доступно организациям путем лицензирования без подключения (в автономном режиме). |
 
@@ -752,7 +752,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           |  Описание      |
 |-----------------|---------------|
-| Нет            |     Код не указан.         |     
+| None            |     Код не указан.         |     
 | InvalidArchive        |     ZIP-архив, содержащий пакет, является недопустимым или имеет неизвестный формат архива.  |
 | MissingFiles | В ZIP-архиве отсутствуют файлы, перечисленные в данных отправки, или они находятся в неправильном месте в архиве. |
 | PackageValidationFailed | Один или несколько пакетов в вашей отправке не прошли проверку. |

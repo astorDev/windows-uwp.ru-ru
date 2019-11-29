@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, учебники, онлайн-курсы, блоги, события
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 64d4fc1c85ae4056da02f987ca654305a883d2c6
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
+ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313411"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309163"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ресурсы для разработки с использованием Python в Windows
 
@@ -56,6 +56,8 @@ ms.locfileid: "72313411"
 - [Учебники на сайте Python.org](https://docs.python.org/3/tutorial/index.html). Предоставляют читателям неформальное описание основных понятий и функций языка и системы Python.
 
 - [Изучение Python на сайте Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html). Основные сведения о Python.
+
+- [Real Python.](https://realpython.com/) Центр ресурсов для разработчиков Python: руководства, видеокурсы викторины и книги по Python, а также примеры кода и многое другое.
 
 ## <a name="web-development"></a>Веб-разработка
 
