@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
-ms.openlocfilehash: e8bb86bd8d52ff96f010bf41758f1e4602330d52
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
+ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393481"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551661"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
-В этом разделе показано, как создать компонент среды выполнения Windows, который содержит класс среды выполнения, представляющий банковский счет, который порождает событие при списании с баланса. В нем также показано базовое приложение, которое использует класс среды выполнения банковского счета, вызывает функцию для изменения баланса и обрабатывает все возникающие события.
+В этом разделе показано, как создать компонент среды выполнения Windows. Он содержит класс среды выполнения, представляющий банковский счет, который порождает событие при возникновении задолженности. Здесь также показано базовое приложение, которое использует класс среды выполнения банковского счета, вызывает функцию для корректировки баланса и обрабатывает все возникающие события.
 
 > [!NOTE]
 > Сведения об установке и использовании расширения [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки) см. в разделе о [поддержке C++/WinRT в Visual Studio](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -24,7 +24,7 @@ ms.locfileid: "70393481"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Создание компонента среды выполнения Windows (BankAccountWRC)
 
-Начните с создания проекта в Microsoft Visual Studio. Создайте проект **компонента среды выполнения Windows (C++/WinRT)** и назовите его *BankAccountWRC* (компонент среды выполнения Windows банковского счета). На данный момент проект создавать не нужно.
+Начните с создания проекта в Microsoft Visual Studio. Создайте проект **компонента среды выполнения Windows (C++/WinRT)** и назовите его *BankAccountWRC* (компонент среды выполнения Windows банковского счета). Если вы назовете проект *BankAccountWRC*, вам будет проще работать с остальными шагами, описанными в этом разделе. На данный момент проект создавать не нужно.
 
 Созданный проект содержит файл с именем `Class.idl`. Переименуйте этот файл `BankAccount.idl` (при переименовании `.idl`файл также автоматически переименовывает файл зависимой `.h` и `.cpp`). Замените содержимое `BankAccount.idl` на перечисленное ниже.
 
@@ -45,7 +45,7 @@ namespace BankAccountWRC
 
 Во время сборки запускается инструмент `midl.exe` для создания файла метаданных компонента среды выполнения Windows (`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Затем запускается средство `cppwinrt.exe` (с параметром `-component`) для создания файлов исходного кода для поддержки создания компонента. Эти файлы включают заглушки для начала реализации класса среды выполнения **BankAccount**, объявленного в вашем IDL. Это заглушки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` и `BankAccount.cpp`.
 
-Щелкните правой кнопкой мыши узел проекта и нажмите кнопку **Открыть папку в проводнике**. После этого в проводнике откроется папка проекта. Там скопируйте файлы заглушки `BankAccount.h` и `BankAccount.cpp` из папки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` в папку, содержащую файлы проекта (`\BankAccountWRC\BankAccountWRC\`), и замените файлы в месте назначения. Теперь давайте откроем `BankAccount.h` и `BankAccount.cpp` и реализуем класс среды выполнения. В `BankAccount.h` добавьте два закрытых члена в реализацию (*не* фабричную реализацию) BankAccount.
+Щелкните правой кнопкой мыши узел проекта и нажмите кнопку **Открыть папку в проводнике**. После этого в проводнике откроется папка проекта. Там скопируйте файлы заглушки `BankAccount.h` и `BankAccount.cpp` из папки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` в папку, содержащую файлы проекта (`\BankAccountWRC\BankAccountWRC\`), и замените файлы в месте назначения. Теперь давайте откроем `BankAccount.h` и `BankAccount.cpp` и реализуем класс среды выполнения. В `BankAccount.h` добавьте два закрытых члена в реализацию (*не* фабричную реализацию) **BankAccount**.
 
 ```cppwinrt
 // BankAccount.h
@@ -102,9 +102,12 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Создание приложения основных компонентов (BankAccountCoreApp) для тестирования компонента среды выполнения Windows
 
-Теперь создайте новый проект (в вашем решении `BankAccountWRC` или в новом). Создайте проект **приложения основных компонентов (C++/WinRT)** и назовите его *BankAccountCoreApp*.
+Теперь создайте новый проект (в решении *BankAccountWRC* или новом решении). Создайте проект **приложения основных компонентов (C++/WinRT)** и назовите его *BankAccountCoreApp*.
 
-Добавьте ссылку и перейдите к `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (или добавьте межпроектную ссылку, если два проекта находятся в одном решении). Нажмите кнопку **Добавить**, а затем кнопку **OK**. Теперь выполните сборку BankAccountCoreApp. В случае возникновения проблем, а именно сообщения о том, что файл полезных данных `readme.txt` не существует, исключите этот файл из проекта компонента среды выполнения Windows, заново выполните сборку проекта, а затем снова выполните сборку BankAccountCoreApp.
+> [!NOTE]
+> Как упоминалось ранее, в папке `\BankAccountWRC\Debug\BankAccountWRC\` создается файл метаданных среды выполнения Windows для компонента среды выполнения Windows (проект которого называется *BankAccountWRC*). Первый сегмент этого пути — это имя папки, содержащей файл решения. Следующий сегмент — это подкаталог с именем `Debug`. Последний сегмент — это подкаталог, названный для компонента среды выполнения Windows. Если вы не назвали проект *BankAccountWRC*, файл метаданных будет находиться в папке `\<YourProjectName>\Debug\<YourProjectName>\`.
+
+Теперь в проекте базового приложения (*BankAccountCoreApp*) добавьте ссылку и перейдите к `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (или добавьте перекрестную ссылку, если два проекта находятся в одном решении). Нажмите кнопку **Добавить**, а затем кнопку **OK**. Теперь выполните сборку *BankAccountCoreApp*. В случае возникновения проблем, например если появится сообщение о том, что файл полезных данных `readme.txt` не существует, исключите такой файл из проекта компонента среды выполнения Windows, а затем заново выполните сборку проекта и сборку *BankAccountCoreApp*.
 
 Во время сборки запускается средство `cppwinrt.exe` для обработки указанного файла `.winmd` в файлы исходного кода, содержащие проецируемые типы для поддержки использования вашего компонента. Заголовок проецируемых типов для классов среды выполнения вашего компонента &mdash; с именем `BankAccountWRC.h`&mdash; создается в папке `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
 
@@ -114,7 +117,7 @@ namespace winrt::BankAccountWRC::implementation
 #include <winrt/BankAccountWRC.h>
 ```
 
-Кроме того, добавьте в `App.cpp` следующий код для создания экземпляра BankAccount (с помощью конструктора по умолчанию проецируемого типа), зарегистрируйте обработчик событий, а затем произведите списание со счета.
+Кроме того, добавьте в `App.cpp` следующий код для создания экземпляра **BankAccount** (с помощью конструктора по умолчанию проецируемого типа), зарегистрируйте обработчик событий, а затем сделайте так, чтобы по счету образовалась задолженность.
 
 `WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 

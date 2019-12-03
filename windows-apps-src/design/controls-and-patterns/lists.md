@@ -12,16 +12,16 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
-ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
+ms.openlocfilehash: 06cd49ce68de6f1c7a7a29b94c80f0a004a2eca3
+ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162353"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74478536"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
-Коллекции и списки связаны с представлением нескольких связанных элементов данных, которые отображаются вместе. Коллекции могут быть представлены несколькими способами, различными элементами управления коллекциями (также могут называться представлениями коллекций). Элементы управления коллекциями отображают содержимое на основе коллекции, например список контактов, список дат, набор изображений и т. д., а также обеспечивают взаимодействие с этим содержимым.
+Коллекции и списки относятся к представлению нескольких связанных элементов данных, которые отображаются вместе. Коллекции могут быть представлены несколькими способами, различными элементами управления коллекциями (также могут называться представлениями коллекций). Элементы управления коллекциями отображают содержимое на основе коллекции, например список контактов, список дат, набор изображений и т. д., а также обеспечивают взаимодействие с этим содержимым.
 
 > **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [класс FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [класс TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [класс ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
 
