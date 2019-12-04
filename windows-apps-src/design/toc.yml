@@ -130,6 +130,8 @@
               href: controls-and-patterns/swipe.md
             - name: Обновление путем оттягивания
               href: controls-and-patterns/pull-to-refresh.md
+            - name: Фильтрация коллекций
+              href: controls-and-patterns/listview-filtering.md
         - name: Дополнительные параметры и настройки коллекций
           items:
             - name: Перевернутые списки
