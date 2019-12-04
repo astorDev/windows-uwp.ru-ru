@@ -1,19 +1,19 @@
 ---
-Description: Распространение упакованного классического приложения (Настольный мост)
+Description: Распространение приложения из пакета Desktop Bridge
 title: Опубликуйте упакованное настольное приложение на Microsoft Store или загружать неопубликованные его на одном или нескольких устройствах.
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 597a283fd28b571ed968255312059c7049f3f700
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 15970afbeb5d9dee1c2079cd5933b1250ecb2f09
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682566"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734780"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Распространение упакованного классического приложения
 
@@ -28,7 +28,7 @@ ms.locfileid: "68682566"
 
 Опубликуйте приложение в Microsoft Store для достижения самой широкой аудитории. Кроме того, клиенты организации могут получить ваше приложение для внутреннего распространения в своих организациях через [Microsoft Store для бизнеса](https://businessstore.microsoft.com/store).
 
-Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Дополнительные сведения об этом требовании можно узнать здесь: [Ограниченные возможности](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Подробнее об этом сценарии требовании см. здесь [Ограниченные возможности](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Вам не нужно подписывать приложение перед его отправкой в магазин.
 
@@ -162,7 +162,7 @@ private void RemoveDesktopApp()
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 **Поиск ответов на вопросы**
 

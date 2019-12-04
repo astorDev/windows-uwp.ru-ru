@@ -1,18 +1,18 @@
 ---
 Description: Расширение классических приложений с помощью компонентов и элементов пользовательского интерфейса Windows
-title: Расширение классических приложений с помощью компонентов и элементов пользовательского интерфейса Windows
+title: Расширение возможностей приложения с помощью пользовательского интерфейса и компонентов Windows
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 4e4d3d22af21b8df3c78afc725ccc0e861934681
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142553"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734990"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Расширение классического приложения с помощью современных компонентов UWP
 

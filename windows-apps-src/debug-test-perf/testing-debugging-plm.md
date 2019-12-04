@@ -1,17 +1,17 @@
 ---
 description: Средства и методы отладки и тестирования работы приложений с управлением жизненным циклом процесса.
-title: Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
+title: Тестирование и отладка управления жизненным циклом процессов
 ms.date: 04/08/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d99492577fafc9f67929f795cd115d367940938
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 6912d7faa3a86dade13b60eac5654aef8a52173d
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713735"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735019"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
 
@@ -84,7 +84,7 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 
 Обратите внимание, что каждый вызов **/enableDebug** следует позже присоединить к другому вызову PLMDebug с помощью параметра **/disableDebug**. Кроме того, путь к отладчику должен быть абсолютным (относительные пути не поддерживаются).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 - [Развертывание и отладка приложений UWP](deploying-and-debugging-uwp-apps.md)
 - [Средства отладки, тестирования и повышения производительности](index.md)

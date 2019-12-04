@@ -1,17 +1,17 @@
 ---
 description: В этом разделе содержится комплексное сопоставление интерфейсов API Windows Phone Silverlight с их эквивалентами универсальная платформа Windows (UWP).
-title: Windows Phone сопоставления Silverlight с пространством имен и классами UWP
+title: Сопоставление пространств имен и классов ВПСЛ с UWP
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af36b43e02c9ee08373098f57ba29c10badb6c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb1dc8ad4b4e61e1ffec294cfbf17e8abcc8586
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259067"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735059"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Windows Phone сопоставления Silverlight с UWP API
 
@@ -104,7 +104,7 @@ ms.locfileid: "74259067"
 | Класс **System.Data.Linq.DataContext** | Нет прямого эквивалента |
 | Класс **System.Data.Linq.Mapping.ColumnAttribute** | Нет прямого эквивалента |
 | Класс **System.Data.Linq.SqlClient.SqlHelpers** | Нет прямого эквивалента |
-| Устройства | |
+| "Устройства" | |
 | Пространства имен **Microsoft.Devices**, **Microsoft.Devices.Sensors** | Пространства имен Windows [ **. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration), [**Windows. Devices. reenumeration. PnP**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.Pnp), [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) . |
 | Классы **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera** | Класс [**медиакаптуре**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) . Также класс [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) (только Windows). |
 | Класс **Microsoft.Devices.CameraButtons** | Класс [**HardwareButtons**](https://docs.microsoft.com/uwp/api/Windows.Phone.UI.Input.HardwareButtons) |
@@ -116,7 +116,7 @@ ms.locfileid: "74259067"
 | Классы **Microsoft.Devices.Sensors.Accelerometer**, **Compass** | В пространстве имен [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) |
 | Класс **Microsoft.Devices.Sensors.Gyroscope** | Класс [**гирометр**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer) |
 | Класс **Microsoft.Devices.Sensors.Motion** | Класс [**Уклономер**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) |
-| Глобализация | |
+| Globalization | |
 | Пространство имен **System.Globalization** | Пространство имен [**Windows. Globalization**](https://docs.microsoft.com/uwp/api/Windows.Globalization) |
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentUICulture** |
@@ -154,7 +154,7 @@ ms.locfileid: "74259067"
 | Классы **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask**, **SavePhoneNumberTask** | Класс [**сторедконтакт**](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact) (только Windows Phone) | 
 | Класс **Microsoft.Phone.Tasks.SaveRingtoneTask** | Нет прямого эквивалента |
 | Классы **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask**, **ShareStatusTask** | Класс [**Package**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) |
-| Location | |
+| Местоположение | |
 | Пространство имен **System.Device.Location** | Пространство имен [**Windows. Devices. Географическое расположение**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation) |
 | Класс **System.Device.GeoCoordinateWatcher** | Класс [**геоуказателя**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) |
 | Карты | |
@@ -170,7 +170,7 @@ ms.locfileid: "74259067"
 | Пространство имен **Microsoft.Phone.Marketplace** | Пространство имен [**Windows. ApplicationModel. Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) |
 | Media | |
 | Пространство имен **Microsoft.Phone.Media** | Класс [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) |
-| Сеть | |
+| Возможности работы с сетями в | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.DeviceNetworkInformation** | [**Имя узла**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName), классы [**NetworkInformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.NetworkInterface** | Класс [**NetworkInformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.NetworkInterfaceInfo** | Класс [**ConnectionProfile**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) |

@@ -1,17 +1,17 @@
 ---
-title: Разработка игр на C++ для Xbox с использованием универсальной платформы Windows (UWP)
+title: C++Разработка игр на Xbox с помощью UWP
 description: Разработка игр на C++ для Xbox с использованием UWP.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 276a352918e4458e145755bbafad09d4278ec4d7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e64a9a443a35e1585257c02ad58186ae53192b48
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322053"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734939"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Перенос пользовательских игр на C++ для Xbox на UWP
 

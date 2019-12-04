@@ -1,17 +1,17 @@
 ---
 description: За вашим пользовательским интерфейсом расположены уровни бизнеса и данных.
-title: Перенос Windows Phone бизнеса и уровня данных Silverlight в UWP
+title: Перенос бизнес-слоев и уровней данных ВПСЛ в UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d8bba5e1b26613185017642d63128cc2b1f7f6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9548026f0cae4ac414da15ad4ad2aa86f6226cbc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259084"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734919"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Перенос Windows Phone бизнеса и уровня данных Silverlight в UWP
 
@@ -137,7 +137,7 @@ Windows Phone код Silverlight, в котором параметры прил�
 
 Следующий раздел называется [Перенос для форм-фактора и взаимодействия с пользователем](wpsl-to-uwp-form-factors-and-ux.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Сопоставления пространств имен и классов](wpsl-to-uwp-namespace-and-class-mappings.md)
  

@@ -1,6 +1,6 @@
 ---
 Description: Можно использовать расширения для интеграции вашего упакованного классического приложения с Windows 10 предопределенными способами.
-title: Интеграция упакованного классического приложения с Windows 10 и UWP (Настольный мост)
+title: Модернизировать существующих классических приложений с помощью Desktop Bridge
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 65724a7524f68535f4ac917c5527ae8de8f2c6fb
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560682"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734829"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Интеграция классического приложения с Windows 10 и UWP
 
@@ -1198,12 +1198,12 @@ ms.locfileid: "73560682"
 
 Если требуется перезапустить приложение после завершения обновления, вызовите функцию [регистераппликатионрестарт](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) в каждом процессе, который требуется перезапустить.
 
-Каждое активное окно приложения получает сообщение [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) . На этом этапе приложение может снова вызвать функцию [регистераппликатионрестарт](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) , чтобы при необходимости обновить командную строку.
+Каждое активное окно приложения получает [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) сообщение. На этом этапе приложение может снова вызвать функцию [регистераппликатионрестарт](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) , чтобы при необходимости обновить командную строку.
 
 Когда каждое активное окно приложения получает сообщение [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) , приложение должно сохранить данные и завершить работу.
 
 >[!NOTE]
-Активные окна также получают сообщение [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) на случай, если приложение не обрабатывает сообщение [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) .
+Активные окна также получают [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) сообщение на случай, если приложение не обрабатывает сообщение [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) .
 
 На этом этапе приложение имеет 30 секунд для закрытия собственных процессов, или платформа завершается принудительно.
 
