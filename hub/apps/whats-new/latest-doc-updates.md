@@ -2,33 +2,108 @@
 Description: Узнайте о последних дополнениях к документации для разработчиков Windows.
 title: Последние обновления документации для разработчиков Windows
 ms.topic: article
-ms.date: 10/13/2019
+ms.date: 12/05/2019
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 19028ca868c05ac0a1de39b3187a30f95567d915
-ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
+ms.openlocfilehash: 37349fb802b05399d025b1f8cdc46235fe7de824
+ms.sourcegitcommit: dd4ee5c2a8c2ab20c3a78dfd6b939483d8c562b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329506"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74854173"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Последние обновления документации для разработчиков Windows
 
 
-Документы для разработчиков Windows регулярно обновляются новыми и улучшенными сведениями и содержимым. Приведенные ниже документы содержат важные обновления за последний месяц, начиная с 31 октября 2019 г.
+Документы для разработчиков Windows регулярно обновляются новыми и улучшенными сведениями и содержимым. Приведенные ниже документы содержат существенные обновления за последний месяц, в конце которых заканчивается 30 ноября 2019:
 
 
 ## <a name="winrt-conceptual"></a>Концептуальная среда WinRT
 
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes">Схемы URI</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/camera">Камера</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/inertia-modifiers">Использование модификаторов инерции для создания точек привязки</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/composition/spring-animations">Пружинные анимации</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency">Concurrency and asynchronous operations with C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/visual-layer">Визуальный уровень</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/index">Контакты и календарь</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Создание интерфейсов API с помощью C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Часто задаваемые вопросы о C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">Начало работы с C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">Что нового в C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">Использование базы данных SQLite в приложении UWP</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/app-analysis">Анализ приложений</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Общие сведения о портале устройств Windows</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/pgo-for-uwp">Выполнение профильной оптимизации (PGO) в приложениях универсальная платформа Windows (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/devices/index">Рекомендации по пользовательскому интерфейсу для устройств UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/downloads/index">Наборы средств и примеры для приложений UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat">Использование набора многоязычных приложений</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/custom-text-input">Общие сведения о пользовательском вводе текста</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/focus-navigation">Навигация по фокусу без мыши</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-toolbar">Добавление Инктулбар в приложение универсальная платформа Windows (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-walkthrough">Поддержка рукописного ввода в приложении UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/input-primer">Руководство по взаимодействию</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-events">События клавиатуры</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink">Хранение и извлечение данных движения пера Windows Ink</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/application-view">Использование класса Аппликатионвиев для отображения дополнительных окон для приложения</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/grid-tutorial">Используйте Grid и StackPanel для создания простого приложения.</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/motion/parallax">Используйте фокусировки для добавления глубины и перемещения в приложение.</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/color">Цвет в приложениях UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/reveal-focus">Показать фокус</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/rounded-corner">Радиус угла</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/sound">Звук</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/ble-beacon">Объявления Bluetooth</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices">Связывание устройств</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">Функции корпоративного уровня</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-dev-guide">Руководством для разработчиков по Information Protection Windows (WIP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/wip-hub">Windows Information Protection (WIP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/files/index">Файлы, папки и библиотеки</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/concept-approval">Утверждение концепции</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/directx-porting-faq">Вопросы и ответы по переносу DirectX 11</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Руководство по разработке игр для Windows 10</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/feature-mapping">Сопоставьте функции DirectX 9 с API-интерфейсами DirectX 11</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">Монетизацию для игр</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/plan-your-directx-port">Планирование порта DirectX</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/get-set-up">Подготовка</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/plan-your-app">Создание приложения сложного универсальная платформа Windows (UWP)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/sign-up">Создание учетной записи разработчика</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">Создание первого приложения</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Жизненный цикл приложения UWP Windows 10</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app">Запуск приложения "Карты Windows"</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/suspend-an-app">Обработка приостановки работы приложения</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps">Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/display-poi">Отображение объектов на карте</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/geocoding">Выполнение геокодирования и обратного геокодирования</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/get-location">Получение местоположения пользователя</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/maps-and-location/index">Общие сведения о картах и расположении</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/ad-mediation-service">Служба исправлений Microsoft AD</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/banner-ads">Рекламные баннеры</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/index">Монетизация, привлечение и службы Store</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads">Межстраничные объявления</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/native-ads">Собственные объявления</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/networking-basics">Основы работы в сети</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/sockets">Сокеты</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/websockets">WebSockets</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Переход с iOS на UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">Переход с среда выполнения Windows 8. x на UWP</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/ad-campaign-report">Отчет о рекламной кампании</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-submissions">Отправка надстроек</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/age-ratings">Возрастная категория</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Анализ производительности приложений</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/feedback-report">Отчет об отзывах</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps">Получение платежей</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/in-app-ads">Реклама в приложении</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/link-to-your-app">Ссылка на приложение</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/payout-summary">Сводка о выплатах</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Политики для Microsoft Store</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/vat-info">Сведения об НДС</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/microsoft-passport">Windows Hello</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/security/web-account-manager">Диспетчер учетных веб-записей</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation">Активация режима разработчика Xbox One</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Приложения UWP для Xbox One</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/known-issues">Известные проблемы с UWP в программе для разработчиков Xbox</a></li>
 </ul>
 
 
@@ -36,54 +111,13 @@ ms.locfileid: "73329506"
 ## <a name="winrt-api-reference"></a>Справочник по API WinRT
 
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence">ID3D12Fence (d3d12. h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12fence1">ID3D12Fence1 (d3d12. h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nc-winuser-dlgproc">ДЛГПРОК (Winuser. h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setfocus">Функция SetFocus (Winuser. h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspioctl">лпвспиоктл</a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ws2spi/nc-ws2spi-lpwspsend">лпвспсенд</a></li>
 </ul>
 
-## <a name="win32-conceptual"></a>Основные понятия Win32
-
-<ul>
-<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/enumerations">Перечисления Direct2D</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ETW/starttrace">Функция Старттраце</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file">Именование файлов, путей и пространств имен</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Intl/international-support">Международная связь для приложений Windows</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/basewindow-sample">Пример Басевиндов</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-circle-sample">Пример Direct2D Circle</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/direct2d-clock-sample">Пример Direct2D Clock</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/draw-circle-sample">Пример рисования круга</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/drawing-with-direct2d">Рисование с помощью Direct2D</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/open-dialog-box-sample">Открыть образец диалогового окна</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/simple-drawing-sample">Простой пример рисования</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/what-is-a-com-interface-">Что такое COM-интерфейс</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Midl/response-files">Файлы ответов</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/power-setting-guids">Идентификаторы GUID параметров питания</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/system-power-states">Состояния питания системы</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Power/wm-powerbroadcast">Сообщение WM_POWERBROADCAST</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Sync/interlocked-variable-access">Доступ к блокируемым переменным</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-app-technologies">Технологии классических приложений</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/desktop-programming">Начало работы</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-glossary">Глоссарий Direct3D 12</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/multi-engine">Системы с несколькими адаптерами</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/new-releases">Новые выпуски</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/shared-heaps">Общие кучи</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-4-improvements">Усовершенствования DXGI 1,4</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-1-6-improvements">Усовершенствования DXGI 1,6</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis">API-интерфейсы видео Direct3D 11</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-apis">API-интерфейсы видео Direct3D 12</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-guids">Идентификаторы GUID видео Direct3D 12</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-12-video-overview">Видеообзор Direct3D 12</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float2-structure">Структура float2</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3-structure">Структура float3</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float3x2-structure">Структура float3x2</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4-structure">Структура float4</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/float4x4-structure">Структура float4x4</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/plane-structure">Структура плоскости</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/numerics_h/quaternion-structure">Структура кватерниона</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/wer/collecting-user-mode-dumps">Сбор дампов пользовательского режима</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/windows-application-ui-development">Пользовательский интерфейс приложения для настольных систем</a></li>
-</ul>
-
-## <a name="win32-api-reference"></a>Справочник по API Win32
+## <a name="win32"></a>Win32
 
 <ul>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.devices.lights.lamparraykind">Windows. Devices. огни. Лампаррайкинд</a></li>
