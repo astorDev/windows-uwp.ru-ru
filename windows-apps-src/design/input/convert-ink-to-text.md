@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ра�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2931e63bd8a7ebd668d62c0e83a762015073cd6f
-ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
+ms.openlocfilehash: 825b13fe4b854a7a792ce11dd50a2da34ac40c76
+ms.sourcegitcommit: d7d509fe0f636e798adb2fa6e2299ba692847dd2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74478528"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74906935"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Распознавание росчерков пера Windows Ink как текста и фигур
 
@@ -34,10 +34,10 @@ ms.locfileid: "74478528"
 
 1. Сначала мы настраиваем пользовательский интерфейс (MainPage.xaml). 
 
-    Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и стандартный [**холст**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). При нажатии кнопки "Распознать" все росчерки рукописного ввода на холсте рукописного ввода анализируются, и (если будут распознаны) на стандартном холсте рисуются соответствующие фигуры и пишется текст. Затем исходные росчерки пера удаляются с холста рукописного ввода.
+   Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и стандартный [**холст**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). При нажатии кнопки "Распознать" все росчерки рукописного ввода на холсте рукописного ввода анализируются, и (если будут распознаны) на стандартном холсте рисуются соответствующие фигуры и пишется текст. Затем исходные росчерки пера удаляются с холста рукописного ввода.
 
-```xaml
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   ```xaml
+   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -61,8 +61,8 @@ ms.locfileid: "74478528"
             <InkCanvas x:Name="inkCanvas" />
 
         </Grid>
-    </Grid>
-```
+   </Grid>
+   ```
 
 2. В этом примере мы сначала добавим ссылки на тип пространства имен, необходимые для наших функций рукописного ввода и его анализа, в файл кода программной части пользовательского интерфейса (MainPage.xaml.cs):
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
@@ -71,22 +71,22 @@ ms.locfileid: "74478528"
 
 3. Затем мы определим наши глобальные переменные:
 
-```csharp
+   ```csharp
     InkAnalyzer inkAnalyzer = new InkAnalyzer();
     IReadOnlyList<InkStroke> inkStrokes = null;
     InkAnalysisResult inkAnalysisResults = null;
-```
+   ```
 
 4. Затем мы зададим некоторые основные реакции на рукописный ввод:
     - [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается для интерпретации входных данных от пера, мыши и сенсорного устройства как росчерков пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). 
     - Росчерки пера выводятся на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) с помощью указанных атрибутов [**InkDrawingAttributes**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class). 
     - Также объявляется прослушиватель для события нажатия кнопки "Распознать".
 
-```csharp
-/// <summary>
-/// Initialize the UI page.
-/// </summary>
-public MainPage()
+    ```csharp
+    /// <summary>
+    /// Initialize the UI page.
+    /// </summary>
+    public MainPage()
     {
         this.InitializeComponent();
 
@@ -106,25 +106,25 @@ public MainPage()
         // Listen for button click to initiate recognition.
         recognize.Click += RecognizeStrokes_Click;
     }
-```
+    ```
 
 5. В этом примере мы выполним анализ чернил в обработчике событий нажатия кнопки "Распознать".
-    - Сначала вызовите [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) на [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) из [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter), чтобы получить коллекцию всех текущих росчерков пера.
-    - Если имеются росчерки пера, передайте их в вызов [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) из InkAnalyzer.
-    - Мы пытаемся распознать и рисунки, и текст, но вы можете использовать метод [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind), чтобы указать, интересует ли вас только текст (в том числе структура документа и маркированные списки) или только рисунки (в том числе для распознавания фигур).
-    - Вызовите [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) для запуска анализа рукописного ввода и получения [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
-    - Если [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) возвращает состояние **Updated**, вызовите [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) для [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) и [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
+    - Сначала вызовите [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) на [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) из [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter), чтобы получить коллекцию всех текущих росчерков пера.
+    - Если имеются росчерки пера, передайте их в вызов [**AddDataForStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) из InkAnalyzer.
+    - Мы пытаемся распознать и рисунки, и текст, но вы можете использовать метод [**SetStrokeDataKind**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind), чтобы указать, интересует ли вас только текст (в том числе структура документа и маркированные списки) или только рисунки (в том числе для распознавания фигур).
+    - Вызовите [**AnalyzeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) для запуска анализа рукописного ввода и получения [**InkAnalysisResult**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
+    - Если [**Status**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) возвращает состояние **Updated**, вызовите [**FindNodes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) для [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) и [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Пройдите через оба набора типов узлов и нарисуйте соответствующий текст или фигуру на холсте распознавания (ниже холста рукописного ввода).
     - И, наконец, удалите распознанные узлы из InkAnalyzer и соответствующие росчерки с холста рукописного ввода.
 
-```csharp
-/// <summary>
-/// The "Analyze" button click handler.
-/// Ink recognition is performed here.
-/// </summary>
-/// <param name="sender">Source of the click event</param>
-/// <param name="e">Event args for the button click routed event</param>
-private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
+    ```csharp
+    /// <summary>
+    /// The "Analyze" button click handler.
+    /// Ink recognition is performed here.
+    /// </summary>
+    /// <param name="sender">Source of the click event</param>
+    /// <param name="e">Event args for the button click routed event</param>
+    private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     {
         inkStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
         // Ensure an ink stroke is present.
@@ -213,32 +213,32 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
             }
         }
     }
-```
+    ```
 
 6. Ниже показана функция для рисования TextBlock на холсте распознавания. Мы используем ограничивающий прямоугольник связанного рукописного штриха на холсте рукописного ввода, чтобы задать расположение и размер шрифта TextBlock.
 
-```csharp
-/// <summary>
-/// Draw ink recognition text string on the recognitionCanvas.
-/// </summary>
-/// <param name="recognizedText">The string returned by text recognition.</param>
-/// <param name="boundingRect">The bounding rect of the original ink writing.</param>
-private void DrawText(string recognizedText, Rect boundingRect)
-{
-    TextBlock text = new TextBlock();
-    Canvas.SetTop(text, boundingRect.Top);
-    Canvas.SetLeft(text, boundingRect.Left);
-
-    text.Text = recognizedText;
-    text.FontSize = boundingRect.Height;
-
-    recognitionCanvas.Children.Add(text);
-}
-```
+   ```csharp
+    /// <summary>
+    /// Draw ink recognition text string on the recognitionCanvas.
+    /// </summary>
+    /// <param name="recognizedText">The string returned by text recognition.</param>
+    /// <param name="boundingRect">The bounding rect of the original ink writing.</param>
+    private void DrawText(string recognizedText, Rect boundingRect)
+    {
+        TextBlock text = new TextBlock();
+        Canvas.SetTop(text, boundingRect.Top);
+        Canvas.SetLeft(text, boundingRect.Left);
+    
+        text.Text = recognizedText;
+        text.FontSize = boundingRect.Height;
+    
+        recognitionCanvas.Children.Add(text);
+    }
+   ```
 
 7. Ниже приведены функции для рисования эллипсов и многоугольников на холсте распознавания. Мы используем ограничивающий прямоугольник связанного рукописного штриха на холсте рукописного ввода, чтобы задать расположение и размер шрифта для фигур.
 
-```csharp
+   ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
     {
@@ -273,7 +273,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
         polygon.StrokeThickness = 2;
         recognitionCanvas.Children.Add(polygon);
     }
-```
+   ```
 
 Ниже показан этот пример в действии:
 
@@ -283,7 +283,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 ## <a name="constrained-handwriting-recognition"></a>Ограниченное распознавание рукописного ввода
 
-В предыдущем разделе ([Произвольное распознавание с помощью средства анализа рукописного ввода](#free-form-recognition-with-ink-analysis)) мы показали, как использовать [API-интерфейсы анализа рукописного ввода](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) для анализа и распознавания произвольных росчерков пера в области InkCanvas.
+В предыдущем разделе ([Произвольное распознавание с помощью средства анализа рукописного ввода](#free-form-recognition-with-ink-analysis)) мы показали, как использовать [API-интерфейсы анализа рукописного ввода](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis) для анализа и распознавания произвольных росчерков пера в области InkCanvas.
 
 В этом разделе мы покажем, как использовать модуль распознавания рукописного ввода Windows Ink (не анализ рукописного ввода) для преобразования набора росчерков на объекте [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) в текст (в зависимости от установленного языкового пакета по умолчанию).
 
@@ -296,37 +296,37 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 1. Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и область для отображения результатов распознавания.    
+   Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и область для отображения результатов распознавания.    
 
-    ```xaml
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <StackPanel x:Name="HeaderPanel"
-                        Orientation="Horizontal"
-                        Grid.Row="0">
+   ```xaml
+   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="HeaderPanel"
+                    Orientation="Horizontal"
+                    Grid.Row="0">
                 <TextBlock x:Name="Header"
-                        Text="Basic ink recognition sample"
-                        Style="{ThemeResource HeaderTextBlockStyle}"
-                        Margin="10,0,0,0" />
+                    Text="Basic ink recognition sample"
+                    Style="{ThemeResource HeaderTextBlockStyle}"
+                    Margin="10,0,0,0" />
                 <Button x:Name="recognize"
-                        Content="Recognize"
-                        Margin="50,0,10,0"/>
-            </StackPanel>
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <InkCanvas x:Name="inkCanvas"
-                        Grid.Row="0"/>
-                <TextBlock x:Name="recognitionResult"
-                        Grid.Row="1"
-                        Margin="50,0,10,0"/>
-            </Grid>
+                    Content="Recognize"
+                    Margin="50,0,10,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <InkCanvas x:Name="inkCanvas"
+                Grid.Row="0"/>
+            <TextBlock x:Name="recognitionResult"
+                Grid.Row="1"
+                Margin="50,0,10,0"/>
         </Grid>
+    </Grid>
     ```
 
 2. В этом примере необходимо сначала добавить ссылки на тип пространства имен, необходимые для функций рукописного ввода.
@@ -361,14 +361,14 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 4. Наконец, мы выполняем базовое распознавание рукописного ввода. В этом примере для выполнения распознавания рукописного ввода мы используем обработчик событий для нажатия кнопки "Распознать".
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Росчерки отображаются через свойство [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)**InkPresenter** и извлекаются методом [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes).
+   - [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Росчерки отображаются через свойство [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)**InkPresenter** и извлекаются методом [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes). 
 
     ```csharp
     // Get all strokes on the InkCanvas.
         IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
     ```
 
-    Объект [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) создается для управления процессом распознавания рукописного ввода.
+    - Объект [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) создается для управления процессом распознавания рукописного ввода.
 
     ```csharp
     // Create a manager for the InkRecognizer object
@@ -377,9 +377,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
             new InkRecognizerContainer();
     ```
 
-[**Рекогнизеасинк**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) вызывается для получения набора объектов [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) .
-
-Результаты распознавания формируются для каждого слова, обнаруженного [**инкрекогнизер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+    - [**Рекогнизеасинк**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) вызывается для получения набора объектов [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) . Результаты распознавания формируются для каждого слова, обнаруженного [**инкрекогнизер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +387,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-Каждый объект [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) содержит набор текстовых кандидатов. Самый верхний элемент в этом списке рассматривается подсистемой распознавания как наилучшее соответствие, за которой следуют оставшиеся кандидаты в порядке уменьшения достоверности.
+    - Каждый объект [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) содержит набор текстовых кандидатов. Самый верхний элемент в этом списке рассматривается подсистемой распознавания как наилучшее соответствие, за которой следуют оставшиеся кандидаты в порядке уменьшения достоверности.
 
-Мы перебираем все [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) и компилируем список кандидатов. Затем отображаются кандидаты, а [**инкстрокеконтаинер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) очищается (что также очищает [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
+       Мы перебираем все [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) и компилируем список кандидатов. Затем отображаются кандидаты, а [**инкстрокеконтаинер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) очищается (что также очищает [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
     ```csharp
     string str = "Recognition result\n";
@@ -412,7 +410,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-Ниже приведен пример обработчика щелчка Full.
+    - Ниже приведен пример обработчика щелчка Full.
 
     ```csharp
     // Handle button click to initiate recognition.
@@ -479,7 +477,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 Распознавание рукописного ввода встроено в платформу Windows Ink и поддерживает множество языковых стандартов и языков, которые поддерживает Windows.
 
-Список языков, поддерживаемых [**InkRecognizer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizer.name), см. в описании свойства [**InkRecognizer.Name**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+Список языков, поддерживаемых [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer), см. в описании свойства [**InkRecognizer.Name**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizer.name).
 
 Ваше приложение может запросить набор установленных модулей распознавания рукописного ввода и использовать один из них или позволить пользователю выбрать предпочитаемый язык.
 
@@ -499,93 +497,93 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 1. Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопку "Распознать", поле со списком всех установленных распознавателей рукописного ввода, [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и область для отображения результатов распознавания.
+   Пользовательский интерфейс включает кнопку "Распознать", поле со списком всех установленных распознавателей рукописного ввода, [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и область для отображения результатов распознавания.
 
-```xaml
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="HeaderPanel"
-                    Orientation="Horizontal"
-                    Grid.Row="0">
-            <TextBlock x:Name="Header"
-                       Text="Advanced international ink recognition sample"
-                       Style="{ThemeResource HeaderTextBlockStyle}"
-                       Margin="10,0,0,0" />
-            <ComboBox x:Name="comboInstalledRecognizers"
-                     Margin="50,0,10,0">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-            <Button x:Name="buttonRecognize"
-                    Content="Recognize"
-                    IsEnabled="False"
-                    Margin="50,0,10,0"/>
-        </StackPanel>
-        <Grid Grid.Row="1">
+    ```xaml
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <InkCanvas x:Name="inkCanvas"
-                       Grid.Row="0"/>
-            <TextBlock x:Name="recognitionResult"
-                       Grid.Row="1"
-                       Margin="50,0,10,0"/>
+            <StackPanel x:Name="HeaderPanel"
+                        Orientation="Horizontal"
+                        Grid.Row="0">
+                <TextBlock x:Name="Header"
+                           Text="Advanced international ink recognition sample"
+                           Style="{ThemeResource HeaderTextBlockStyle}"
+                           Margin="10,0,0,0" />
+                <ComboBox x:Name="comboInstalledRecognizers"
+                         Margin="50,0,10,0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button x:Name="buttonRecognize"
+                        Content="Recognize"
+                        IsEnabled="False"
+                        Margin="50,0,10,0"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <InkCanvas x:Name="inkCanvas"
+                           Grid.Row="0"/>
+                <TextBlock x:Name="recognitionResult"
+                           Grid.Row="1"
+                           Margin="50,0,10,0"/>
+            </Grid>
         </Grid>
-    </Grid>
-```
+    ```
 
 2. Затем мы задаем некоторые основные реакции на рукописный ввод.
 
-    Элемент [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Росчерки пера выводятся на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) с помощью указанных атрибутов [**InkDrawingAttributes**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class).
+   Элемент [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Росчерки пера выводятся на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) с помощью указанных атрибутов [**InkDrawingAttributes**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class).
 
-    Мы вызываем функцию `InitializeRecognizerList`, чтобы заполнить поле со списком распознавателя списком установленных распознавателей рукописного ввода.
+   Мы вызываем функцию `InitializeRecognizerList`, чтобы заполнить поле со списком распознавателя списком установленных распознавателей рукописного ввода.
 
-    Мы также объявляем прослушиватели для события нажатия кнопки "Распознать" и для события изменения выбора в поле со списком распознавателя.
+   Мы также объявляем прослушиватели для события нажатия кнопки "Распознать" и для события изменения выбора в поле со списком распознавателя.
 
-```csharp
- public MainPage()
+    ```csharp
+     public MainPage()
      {
-         this.InitializeComponent();
+        this.InitializeComponent();
 
-         // Set supported inking device types.
-         inkCanvas.InkPresenter.InputDeviceTypes =
-             Windows.UI.Core.CoreInputDeviceTypes.Mouse |
-             Windows.UI.Core.CoreInputDeviceTypes.Pen;
+        // Set supported inking device types.
+        inkCanvas.InkPresenter.InputDeviceTypes =
+            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+            Windows.UI.Core.CoreInputDeviceTypes.Pen;
 
-         // Set initial ink stroke attributes.
-         InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
-         drawingAttributes.Color = Windows.UI.Colors.Black;
-         drawingAttributes.IgnorePressure = false;
-         drawingAttributes.FitToCurve = true;
-         inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
+        // Set initial ink stroke attributes.
+        InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
+        drawingAttributes.Color = Windows.UI.Colors.Black;
+        drawingAttributes.IgnorePressure = false;
+        drawingAttributes.FitToCurve = true;
+        inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
 
-         // Populate the recognizer combo box with installed recognizers.
-         InitializeRecognizerList();
+        // Populate the recognizer combo box with installed recognizers.
+        InitializeRecognizerList();
 
-         // Listen for combo box selection.
-         comboInstalledRecognizers.SelectionChanged +=
-             comboInstalledRecognizers_SelectionChanged;
+        // Listen for combo box selection.
+        comboInstalledRecognizers.SelectionChanged +=
+            comboInstalledRecognizers_SelectionChanged;
 
-         // Listen for button click to initiate recognition.
-         buttonRecognize.Click += Recognize_Click;
-     }
-```
+        // Listen for button click to initiate recognition.
+        buttonRecognize.Click += Recognize_Click;
+    }
+    ```
 
 3. Мы заполняем поле со списком распознавателя списком установленных распознавателей рукописного ввода.
 
-    Объект [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) создается для управления процессом распознавания рукописного ввода. Используйте этот объект, чтобы вызвать [**GetRecognizers**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.getrecognizers) и извлечь список установленных распознавателей для заполнения поля со списком распознавателя.
+   Объект [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer) создается для управления процессом распознавания рукописного ввода. Используйте этот объект, чтобы вызвать [**GetRecognizers**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.getrecognizers) и извлечь список установленных распознавателей для заполнения поля со списком распознавателя.
 
-```csharp
-// Populate the recognizer combo box with installed recognizers.
+    ```csharp
+    // Populate the recognizer combo box with installed recognizers.
     private void InitializeRecognizerList()
     {
         // Create a manager for the handwriting recognition process.
@@ -600,72 +598,72 @@ private void DrawText(string recognizedText, Rect boundingRect)
             buttonRecognize.IsEnabled = true;
         }
     }
-```
-
+    ```
+    
 4. Обновите распознаватель рукописного ввода при изменении выбора в поле со списком распознавателя.
 
-    Используйте [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer), чтобы вызвать [**SetDefaultRecognizer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.setdefaultrecognizer) на основе распознавателя, выбранного в поле со списком распознавателя.
+   Используйте [**InkRecognizerContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizerContainer), чтобы вызвать [**SetDefaultRecognizer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkrecognizercontainer.setdefaultrecognizer) на основе распознавателя, выбранного в поле со списком распознавателя.
 
-```csharp
-// Handle recognizer change.
-    private void comboInstalledRecognizers_SelectionChanged(
-        object sender, SelectionChangedEventArgs e)
-    {
-        inkRecognizerContainer.SetDefaultRecognizer(
-            (InkRecognizer)comboInstalledRecognizers.SelectedItem);
-    }
-```
+    ```csharp
+    // Handle recognizer change.
+        private void comboInstalledRecognizers_SelectionChanged(
+            object sender, SelectionChangedEventArgs e)
+        {
+            inkRecognizerContainer.SetDefaultRecognizer(
+                (InkRecognizer)comboInstalledRecognizers.SelectedItem);
+        }
+    ```
 
 5. Наконец, мы выполняем распознавание рукописного ввода на основе выбранного распознавателя рукописного ввода. В этом примере для выполнения распознавания рукописного ввода мы используем обработчик событий для нажатия кнопки "Распознать".
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Росчерки отображаются через свойство [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)**InkPresenter** и извлекаются методом [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes).
+   - [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Росчерки отображаются через свойство [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer)**InkPresenter** и извлекаются методом [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes).
 
-```csharp
-// Get all strokes on the InkCanvas.
-    IReadOnlyList<InkStroke> currentStrokes =
-        inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
-```
+    ```csharp
+    // Get all strokes on the InkCanvas.
+        IReadOnlyList<InkStroke> currentStrokes =
+            inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+    ```
 
-    [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
+    - [**Рекогнизеасинк**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) вызывается для получения набора объектов [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) .
 
-    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+      Результаты распознавания формируются для каждого слова, обнаруженного [**инкрекогнизер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
-```csharp
-// Recognize all ink strokes on the ink canvas.
+    ```csharp
+    // Recognize all ink strokes on the ink canvas.
     IReadOnlyList<InkRecognitionResult> recognitionResults =
         await inkRecognizerContainer.RecognizeAsync(
             inkCanvas.InkPresenter.StrokeContainer,
             InkRecognitionTarget.All);
-```
+    ```
 
-    Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
+    - Каждый объект [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) содержит набор текстовых кандидатов. Самый верхний элемент в этом списке рассматривается подсистемой распознавания как наилучшее соответствие, за которой следуют оставшиеся кандидаты в порядке уменьшения достоверности.
 
-    We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
+       Мы перебираем все [**инкрекогнитионресулт**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) и компилируем список кандидатов. Затем отображаются кандидаты, а [**инкстрокеконтаинер**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) очищается (что также очищает [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
-```csharp
-string str = "Recognition result\n";
+    ```csharp
+    string str = "Recognition result\n";
     // Iterate through the recognition results.
     foreach (InkRecognitionResult result in recognitionResults)
     {
-        // Get all recognition candidates from each recognition result.
-        IReadOnlyList<string> candidates =
-            result.GetTextCandidates();
-        str += "Candidates: " + candidates.Count.ToString() + "\n";
-        foreach (string candidate in candidates)
-        {
-            str += candidate + " ";
-        }
+            // Get all recognition candidates from each recognition result.
+            IReadOnlyList<string> candidates =
+                result.GetTextCandidates();
+            str += "Candidates: " + candidates.Count.ToString() + "\n";
+            foreach (string candidate in candidates)
+            {
+                str += candidate + " ";
+            }
     }
     // Display the recognition candidates.
     recognitionResult.Text = str;
     // Clear the ink canvas once recognition is complete.
     inkCanvas.InkPresenter.StrokeContainer.Clear();
-```
+    ```
 
-    Here's the click handler example, in full.
+    - Ниже приведен пример обработчика щелчка Full.
 
-```csharp
-// Handle button click to initiate recognition.
+    ```csharp
+    // Handle button click to initiate recognition.
     private async void Recognize_Click(object sender, RoutedEventArgs e)
     {
         // Get all strokes on the InkCanvas.
@@ -722,7 +720,7 @@ string str = "Recognition result\n";
             recognitionResult.Text = "No ink strokes to recognize.";
         }
     }
-```
+    ```
 
 ## <a name="dynamic-recognition"></a>Динамическое распознавание
 
@@ -732,15 +730,15 @@ string str = "Recognition result\n";
 
 1. Эти глобальные объекты ([InkAnalyzer](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer), [InkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstroke), [InkAnalysisResult](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult), [DispatcherTimer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer)) часто используются в нашем приложении.
 
-```csharp
+    ```csharp
     // Stroke recognition globals.
     InkAnalyzer inkAnalyzer;
     DispatcherTimer recoTimer;
-```
+    ```
 
 2. Вместо кнопки для запуска распознавания, мы добавили прослушиватели для двух событий росчерка [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ([**StrokesCollected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokescollected) и [**StrokeStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted)) и настроили основной таймер ([**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer)) на секундный интервал [**Tick**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer.tick).
 
-```csharp
+    ```csharp
     public MainPage()
     {
         this.InitializeComponent();
@@ -766,19 +764,19 @@ string str = "Recognition result\n";
         recoTimer.Interval = TimeSpan.FromSeconds(1);
         recoTimer.Tick += recoTimer_TickAsync;
     }
-```
+    ```
 
-3. Затем мы определяем обработчики событий InkPresenter, которые мы объявили на первом шаге (мы также переопределим событие страницы [**OnNavigatingFrom**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) для управления таймером).
+3. Затем мы определяем обработчики событий InkPresenter, которые мы объявили на первом шаге (мы также переопределим событие страницы [**OnNavigatingFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) для управления таймером).
 
     - [**строкесколлектед**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokescollected)  
-    Добавьте росчерки пера ([**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) в InkAnalyzer и запустите таймер распознавания, когда пользователь прерывает рукописный ввод, поднимая перо или палец либо отпуская кнопку мыши. Распознавание вызывается через одну секунду отсутствия рукописного ввода.  
+    Добавьте росчерки пера ([**AddDataForStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) в InkAnalyzer и запустите таймер распознавания, когда пользователь прерывает рукописный ввод, поднимая перо или палец либо отпуская кнопку мыши. Распознавание вызывается через одну секунду отсутствия рукописного ввода.  
 
-        Используйте метод [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind), чтобы указать, интересует ли вас только текст (в том числе структура документа и маркированные списки) или только рисунки (в том числе для распознавания фигур).
+        Используйте метод [**SetStrokeDataKind**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind), чтобы указать, интересует ли вас только текст (в том числе структура документа и маркированные списки) или только рисунки (в том числе для распознавания фигур).
 
     - [**строкестартед**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted)  
     Если новый росчерк начинается до следующего события такта таймера, останавливать таймер, так как новый росчерк — это, скорее всего, продолжение одной рукописной записи.
 
-```csharp
+    ```csharp
     // Handler for the InkPresenter StrokeStarted event.
     // Don't perform analysis while a stroke is in progress.
     // If a new stroke starts before the next timer tick event,
@@ -787,7 +785,7 @@ string str = "Recognition result\n";
     private void inkCanvas_StrokeStarted(InkStrokeInput sender, PointerEventArgs args)
     {
         recoTimer.Stop();
-    }    
+    }
     // Handler for the InkPresenter StrokesCollected event.
     // Stop the timer and add the collected strokes to the InkAnalyzer.
     // Start the recognition timer when the user stops inking (by 
@@ -807,22 +805,22 @@ string str = "Recognition result\n";
             inkAnalyzer.SetStrokeDataKind(stroke.Id, InkAnalysisStrokeKind.Writing);
         }
         recoTimer.Start();
-    }    
+    }
     // Override the Page OnNavigatingFrom event handler to 
     // stop our timer if user leaves page.
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
     {
         recoTimer.Stop();
-    } 
-```
+    }
+    ```
 
 4. Наконец, мы выполняем распознавание рукописного ввода. В этом примере мы используем обработчик событий [**Tick**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer.tick) элемента [**DispatcherTimer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DispatcherTimer) для вызова функции распознавания рукописного ввода.
-    - Вызовите [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) для запуска анализа рукописного ввода и получения [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
-    - Если [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) возвращает состояние **Updated**, вызовите [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) для узлов типа [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
+    - Вызовите [**AnalyzeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) для запуска анализа рукописного ввода и получения [**InkAnalysisResult**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
+    - Если [**Status**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) возвращает состояние **Updated**, вызовите [**FindNodes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) для узлов типа [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Теперь пройдемся по узлам и покажем распознанный текст.
     - И, наконец, удалите распознанные узлы из InkAnalyzer и соответствующие росчерки с холста рукописного ввода.
 
-```csharp
+    ```csharp
     private async void recoTimer_TickAsync(object sender, object e)
     {
         recoTimer.Stop();
@@ -866,13 +864,13 @@ string str = "Recognition result\n";
             recoTimer.Start();
         }
     }
-```
+    ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Смежные разделы
 
 - [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
-### <a name="topic-samples"></a>Примеры в разделе
+### <a name="topic-samples"></a>Примеры в статье
 
 - [Пример анализа рукописного ввода (базовыйC#) ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
 - [Пример распознавания рукописного вводаC#рукописного текста ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
