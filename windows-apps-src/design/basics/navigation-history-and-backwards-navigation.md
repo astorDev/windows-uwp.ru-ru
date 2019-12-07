@@ -1,18 +1,18 @@
 ---
 Description: Узнайте, как реализовать навигацию в обратном направлении для обхода истории навигации пользователя в приложении UWP.
-title: Журнал навигации и навигация в обратном направлении (приложения для Windows)
+title: Журнал навигации и навигация в обратном направлении
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713800"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735029"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
