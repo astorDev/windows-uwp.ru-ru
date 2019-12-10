@@ -553,19 +553,6 @@
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
                 - name: Игры Xbox One и Xbox Live
                   items:
-                    - name: Получение сведений о покупках игр на Xbox One
-                      href: ../monetize/get-xbox-one-game-acquisitions.md
-                    - name: Получение сведений о приобретениях надстроек для Xbox One
-                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
-                    - name: Получение данных системы отчетов об ошибках для игры Xbox One
-                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-                      items:
-                        - name: Получение сведений об ошибке в игре Xbox One
-                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-                        - name: Получение трассировки стека при возникновении ошибки в игре Xbox One
-                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-                        - name: Скачивание CAB-файла для ошибки в игре Xbox One
-                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
                     - name: Получение аналитических данных Xbox Live
                       href: ../monetize/get-xbox-live-analytics.md
                       items:

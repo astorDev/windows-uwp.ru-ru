@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
+ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259317"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954068"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -30,7 +30,7 @@ ms.locfileid: "74259317"
 
 Перед тем как начать писать код для вызова API аналитики для Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть катало Azure AD. В противном случае вы можете [создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо связать приложение Azure AD с учетной записью центра партнеров, получить идентификатор клиента и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в API аналитики для Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -50,7 +50,7 @@ ms.locfileid: "74259317"
 
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>Шаг 2. Получение маркера доступа Azure AD
 
-Перед тем как можно будет вызвать любой из методов в API аналитики для Microsoft Store, сначала необходимо получить маркер доступа Azure AD и передать его в заголовок **Авторизация** каждого метода в API. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия маркера вы можете обновить его, чтобы дальше использовать в последующих вызовах к API.
+Перед тем как можно будет вызвать любой из методов в API аналитики для Microsoft Store, сначала необходимо получить маркер доступа Azure AD и передать его в заголовок **Авторизация** каждого метода в API. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера вы можете обновить его, чтобы дальше использовать в последующих вызовах к API.
 
 Для получения маркера доступа следуйте инструкциям в разделе [Вызовы между службами с помощью учетных данных клиентов](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), чтобы отправить HTTP-запрос POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
@@ -73,7 +73,7 @@ grant_type=client_credentials
 
 ## <a name="step-3-call-the-microsoft-store-analytics-api"></a>Шаг 3. Вызов API аналитики для Microsoft Store
 
-После получения маркера доступа Azure AD вы можете вызвать API аналитики для Microsoft Store. Необходимо передать токен доступа в заголовок **Authorization** каждого метода.
+После получения маркера доступа Azure AD вы можете вызвать API аналитики для Microsoft Store. Необходимо передать маркер доступа в заголовок **Authorization** каждого метода.
 
 ### <a name="methods-for-uwp-apps-and-games"></a>Методы для приложений и игр UWP
 Следующие методы доступны для приобретения приложений и игр и дополнительных приобретений. 
@@ -89,7 +89,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | Получение, преобразование, установка и использование |  <ul><li>[Получение приобретений приложений](get-app-acquisitions.md) (прежние версии)</li><li>[Получение данных воронки для получения приложения](get-acquisition-funnel-data.md) (прежние версии)</li><li>[Получение преобразований приложений по каналу](get-app-conversions-by-channel.md)</li><li>[Получение дополнительных приобретений](get-in-app-acquisitions.md)</li><li>[Получение дополнительных приобретений подписки](get-subscription-acquisitions.md)</li><li>[Получение преобразований надстроек по каналу](get-add-on-conversions-by-channel.md)</li><li>[Получить установки приложений](get-app-installs.md)</li><li>[Получение ежедневного использования приложения](get-app-usage-daily.md)</li><li>[Получение ежемесячного использования приложений](get-app-usage-monthly.md)</li></ul> |
 | Ошибки приложения | <ul><li>[Получение данных отчетов об ошибках](get-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md)</li><li>[Получение трассировки стека для ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| Insights | <ul><li>[Получение данных аналитики для приложения](get-insights-data-for-your-app.md)</li></ul>  |
+| Аналитика | <ul><li>[Получение данных аналитики для приложения](get-insights-data-for-your-app.md)</li></ul>  |
 | Оценки и отзывы | <ul><li>[Получить рейтинги приложений](get-app-ratings.md)</li><li>[Получить обзоры приложений](get-app-reviews.md)</li></ul> |
 | Реклама в приложении и рекламные кампании | <ul><li>[Получение данных о производительности AD](get-ad-performance-data.md)</li><li>[Получение данных о производительности кампании ad](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -101,8 +101,8 @@ grant_type=client_credentials
 |---------------|--------------------|
 | Установки |  <ul><li>[Получение установок для настольных приложений](get-desktop-app-installs.md)</li></ul> |
 | Blocks |  <ul><li>[Получение блоков обновления для классического приложения](get-desktop-block-data.md)</li><li>[Получение сведений о блоке обновления для классического приложения](get-desktop-block-data-details.md)</li></ul> |
-| Ошибки приложений. |  <ul><li>[Получение данных отчетов об ошибках для приложения для настольных систем](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении для настольных систем](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека для ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачайте CAB-файл для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Insights | <ul><li>[Получение данных аналитики для настольного приложения](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Ошибки приложений |  <ul><li>[Получение данных отчетов об ошибках для приложения для настольных систем](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении для настольных систем](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека для ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачайте CAB-файл для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| Аналитика | <ul><li>[Получение данных аналитики для настольного приложения](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
@@ -113,15 +113,6 @@ grant_type=client_credentials
 | Общая аналитика |  <ul><li>[Получение данных Xbox Live Analytics](get-xbox-live-analytics.md)</li><li>[Получение данных о достижениях Xbox Live](get-xbox-live-achievements-data.md)</li><li>[Получение данных о параллельном использовании Xbox Live](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | Аналитика работоспособности |  <ul><li>[Получение данных о работоспособности Xbox Live](get-xbox-live-health-data.md)</li></ul> |
 | Аналитика сообщества |  <ul><li>[Получение данных из игрового центра Xbox Live](get-xbox-live-game-hub-data.md)</li><li>[Получение данных клуба Xbox Live](get-xbox-live-club-data.md)</li><li>[Получение данных многопользовательского режима Xbox Live](get-xbox-live-multiplayer-data.md)</li></ul>  |
-
-### <a name="methods-for-xbox-one-games"></a>Методы для игр Xbox One
-
-Следующие дополнительные методы доступны для использования учетными записями разработчиков с Xbox One, которые были получены на портале разработчика Xbox (КСДП) и доступны на панели мониторинга КСДП Analytics.
-
-| Сценарий       | Методы      |
-|---------------|--------------------|
-| Приобретения |  <ul><li>[Получение приобретений для одной игры Xbox](get-xbox-one-game-acquisitions.md)</li><li>[Получение дополнительных приобретений Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Ошибки |  <ul><li>[Получение данных отчетов об ошибках для игры Xbox One](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Получение сведений об ошибке в игре Xbox One](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Получение трассировки стека для ошибки в игре Xbox One](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Скачайте CAB-файл для ошибки в игре Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
