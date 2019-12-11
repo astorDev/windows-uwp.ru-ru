@@ -1,16 +1,16 @@
 ---
-title: Что нового в документации Windows в сентябре 2017 г. — разработка приложений UWP
+title: Что нового в документации Windows появилось в сентябре 2017 г.
 description: В сентябре 2017 г документация для разработчиков Windows 10 пополнилась описанием новых возможностей, видеоматериалами и руководствами для разработчиков.
 keywords: what's new, update, features, developer guidance, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bf88814e00e81608f698231f31c2f4ab52cd4ea6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258781"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734959"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Что нового в документации для разработчиков Windows в сентябре 2017 г.
 

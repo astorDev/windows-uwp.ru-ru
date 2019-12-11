@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
-ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
+ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551661"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830787"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
@@ -253,8 +253,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Параметризованные делегаты, простые сигналы и обратные вызовы в проекте
-
-Если событие используется только внутри вашего проекта C++/WinRT (не в двоичных файлах), вы все равно используете шаблон структуры [ **winrt::event** ](/uwp/cpp-ref-for-winrt/event), но параметризуете его с помощью среды выполнения для C++/WinRT's, отличной от среды выполнения Windows [**winrt::delegate&lt;... T&gt;** ](/uwp/cpp-ref-for-winrt/delegate) — шаблон структуры, который является эффективным делегатом с учетом ссылок. Он поддерживает любое количество параметров, и они не ограничены типами среды выполнения Windows.
+Если вам нужны внутренние события проекта Visual Studio (не для двоичных файлов), которые не ограничиваются типами среды выполнения Windows, вы все равно можете использовать шаблон класса [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\>. Просто используйте [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) вместо фактического типа делегата среды выполнения Windows, поскольку **winrt::delegate** также поддерживает параметры для среды выполнения, отличной от среды выполнения Windows.
 
 В приведенном ниже примере сначала показана подпись делегата, которая не принимает никакие параметры (по сути, простой сигнал), а затем подпись, которая принимает строку.
 

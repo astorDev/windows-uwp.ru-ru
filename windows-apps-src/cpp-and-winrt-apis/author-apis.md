@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: eba0e6312bc22153d8cb62eb97d32635184f0fdc
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
+ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317114"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701488"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание интерфейсов API с помощью C++/WinRT
 
@@ -239,7 +239,7 @@ namespace winrt::MyProject
 Вот несколько примеров.
 
 - Типы параметров можно опускать. Например, если в IDL ваш метод принимает **SomeClass**, вы можете изменить его на **IInspectable** в реализации. Это возможно благодаря тому, что все экземпляры **SomeClass** могут передаваться **IInspectable** (это однонаправленное действие).
-- Вы можете принять параметр, который можно скопировать, по значению, а не по ссылке. Например измените `SomeClass const&` на `SomeClass const&`. Это нужно сделать, чтобы предотвратить запись ссылки в сопрограмме (см. в руководство по [передаче параметров](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Вы можете принять параметр, который можно скопировать, по значению, а не по ссылке. Например измените `SomeClass` на `SomeClass const&`. Это нужно сделать, чтобы предотвратить запись ссылки в сопрограмме (см. в руководство по [передаче параметров](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - Полученное значение можно опускать. Например, можно изменить **void** на [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 Это важно в ситуации, когда вы создаете асинхронный обработчик событий.
@@ -276,7 +276,13 @@ namespace MyProject
 }
 ```
 
-Чтобы перейти от **MyType** к объекту **IStringable** или **IClosable**, который можно использовать или вернуть в составе проекции, вызовите шаблон функции [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **make** возвращает интерфейс по умолчанию для типа реализации.
+Тип реализации нельзя выделить непосредственно.
+
+```cppwinrt
+MyType myimpl; // error C2259: 'MyType': cannot instantiate abstract class
+```
+
+Однако вы можете перейти от **MyType** к объекту **IStringable** или **IClosable**, который можно использовать или вернуть в составе проекции, вызвав шаблон функции [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **make** возвращает интерфейс по умолчанию для типа реализации.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -329,36 +335,73 @@ impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
-Тип реализации сам по себе не является производным от **winrt::Windows::Foundation::IUnknown**, поэтому не имеет функции **as**. Но вы можете создать его экземпляр и получить доступ к членам всех его интерфейсов. Но в этом случае не следует возвращать необработанный экземпляр типа реализации вызывающему объекту. Вместо этого используйте один из показанных выше методов и возвращайте проецируемый интерфейс или **com_ptr**.
+Тип реализации сам по себе не является производным от **winrt::Windows::Foundation::IUnknown**, поэтому не имеет функции **as**. Тем не менее, как вы видите в функции **ImplFromIClosable** выше, вы можете получить доступ ко всем участникам его интерфейсов. Однако в этом случае они не будут возвращать вызывающему объекту необработанный экземпляр типа реализации. Вместо этого используйте один из уже показанных методов и возвратите проецируемый интерфейс или **com_ptr**.
+
+Если у вас есть экземпляр типа реализации и вам необходимо передать его функции, которая ожидает соответствующий тип проекции, это можно сделать, следуя примеру кода ниже. Существует оператор преобразования для типа реализации (при условии, что тип реализации был создан с помощью инструмента `cppwinrt.exe`), который делает это возможным. Значение типа реализации можно передать непосредственно в метод, который ожидает значение соответствующего типа проецируемых. Значение типа реализации можно передать непосредственно в метод `*this`, который ожидает значение соответствующего типа проекции.
 
 ```cppwinrt
-MyType myimpl;
-myimpl.ToString();
-myimpl.Close();
-IClosable ic1 = myimpl.as<IClosable>(); // error
-```
-
-Если у вас есть экземпляр типа реализации и вам необходимо передать его функции, которая ожидает соответствующий тип проекции, это можно сделать. Существует оператор преобразования для типа реализации (при условии, что тип реализации был создан с помощью инструмента `cppwinrt.exe`), который делает это возможным. Значение типа реализации можно передать непосредственно в метод, который ожидает значение соответствующего типа проецируемых. Значение типа реализации можно передать непосредственно в метод `*this`, который ожидает значение соответствующего типа проекции.
-
-```cppwinrt
-// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
-
-void MyOtherType::DoWork(MyProject::MyType const&){ ... }
-
-...
-
-void FreeFunction(MyProject::MyOtherType const& ot)
+// MyClass.idl
+import "MyOtherClass.idl";
+namespace MyProject
 {
-    MyType myimpl;
-    ot.DoWork(myimpl);
+    runtimeclass MyClass
+    {
+        MyClass();
+        void MemberFunction(MyOtherClass oc);
+    }
 }
 
+// MyClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : MyClassT<MyClass>
+    {
+        MyClass() = default;
+        void MemberFunction(MyProject::MyOtherClass const& oc) { oc.DoWork(*this); }
+    };
+}
 ...
 
-void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+// MyOtherClass.idl
+import "MyClass.idl";
+namespace MyProject
 {
-    ot.DoWork(*this);
+    runtimeclass MyOtherClass
+    {
+        MyOtherClass();
+        void DoWork(MyClass c);
+    }
 }
+
+// MyOtherClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyOtherClass : MyOtherClassT<MyOtherClass>
+    {
+        MyOtherClass() = default;
+        void DoWork(MyProject::MyClass const& c){ /* ... */ }
+    };
+}
+...
+
+//main.cpp
+#include "pch.h"
+#include <winrt/base.h>
+#include "MyClass.h"
+#include "MyOtherClass.h"
+using namespace winrt;
+
+// MyProject::MyClass is the projected type; the implementation type would be MyProject::implementation::MyClass.
+
+void FreeFunction(MyProject::MyOtherClass const& oc)
+{
+    auto defaultInterface = winrt::make<MyProject::implementation::MyClass>();
+    MyProject::implementation::MyClass* myimpl = winrt::get_self<MyProject::implementation::MyClass>(defaultInterface);
+    oc.DoWork(*myimpl);
+}
+...
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Наследование от типа, имеющего нестандартный конструктор
