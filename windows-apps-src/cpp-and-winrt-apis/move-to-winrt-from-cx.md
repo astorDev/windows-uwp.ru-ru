@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393459"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958974"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
@@ -468,24 +468,23 @@ C++/CX представляет строку среды выполнения Win
 
 Более того, C++/CX позволяет вам разыменовать строку **String^** со значением NULL. В таком случае она будет вести себя как строка `""`.
 
-| Операция | C++/CX | C++/WinRT|
+| Поведение | C++/CX | C++/WinRT|
 |-|-|-|
+| Объявления | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | Категория типа строки | Ссылочный тип | Тип значения |
 | **HSTRING** со значением NULL проецируется как | `(String^)nullptr` | `hstring{}` |
 | Значение NULL и `""` идентичны? | Да | Да |
-| Допустимость значения NULL | `s = nullptr;`<br>`s->Length == 0` (допустимо) | `s = nullptr;`<br>`s.size() == 0` (допустимо) |
-| Упаковка-преобразование строки | `o = s;` | `o = box_value(s);` |
-| Если `s` имеет значение `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| Если `s` имеет значение `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Упаковка-преобразование строки с сохранением значения NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Принудительная упаковка-преобразование строки | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| Распаковка-преобразование известной строки | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| Если `o` имеет значение NULL | `s == nullptr; // equivalent to ""` | Аварийное завершение |
-| Если `o` не является упакованной строкой | `Platform::InvalidCastException` | Аварийное завершение |
-| Выполните распаковку-преобразование строки, используйте откат при значении NULL; аварийное завершение при других вариантах | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Выполните распаковку-преобразование строки, если это возможно; используйте откат при других вариантах | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Допустимость значения NULL | `s = nullptr;`<br>`s->Length == 0` (допустимо) | `s = hstring{};`<br>`s.size() == 0` (допустимо) |
+| Если присвоить пустую строку объекту | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Если присвоить `""` объекту | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-В двух случаях *распаковки с откатом* выше возможна ситуация, когда к строке со значением NULL применяется принудительная упаковка, после чего откат использоваться не будет. Результирующее значение будет пустой строкой, так как в пакете находилась именно она.
+Базовые операции упаковки-преобразования и распаковки-преобразования.
+
+| Операция | C++/CX | C++/WinRT|
+|-|-|-|
+| Упаковка-преобразование строки | `o = s;`<br>Пустая строка преобразуется в nullptr. | `o = box_value(s);`<br>Пустая строка преобразуется в непустой объект. |
+| Распаковка-преобразование известной строки | `s = (String^)o;`<br>Пустой объект преобразуется в пустую строку.<br>InvalidCastException, если не является строкой. | `s = unbox_value<hstring>(o);`<br>Сбой пустого объекта.<br>Сбой, если не является строкой. |
+| Распаковка-преобразование возможной строки | `s = dynamic_cast<String^>(o);`<br>Пустой объект или нестрока преобразуется в пустую строку. | `s = unbox_value_or<hstring>(o, fallback);`<br>Пустая строка или нестрока преобразуется в fallback.<br>Пустая строка сохранена. |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>Параллельная обработка и асинхронные операции
 

@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a63d38db613ebe6425a05ed20563405242ffd441
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328857"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958964"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Переход на C++/WinRT с C#
 
@@ -264,7 +264,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 | Если o имеет значение NULL | `System.NullReferenceException` | Аварийное завершение |
 | Если o не является упакованным целым числом | `System.InvalidCastException` | Аварийное завершение |
 | Выполните распаковку-преобразование целого числа, используйте откат при значении NULL; аварийное завершение при других вариантах | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| Выполните распаковку-преобразование целого числа, если это возможно; используйте откат при других вариантах | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| Выполните распаковку-преобразование целого числа, если это возможно; используйте откат при других вариантах | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### <a name="boxing-and-unboxing-a-string"></a>Упаковка-преобразование и распаковка-преобразование строки
 
@@ -274,24 +274,23 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 C# представляет строку среды выполнения Windows в виде ссылочного типа, хотя C++/WinRT проецирует строку в виде типа значения. Это означает, что упакованная строка со значением NULL может иметь разные представления в зависимости от способа ее получения.
 
+| Поведение | C# | C++/WinRT|
+|-|-|-|
+| Объявления | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| Категория типа строки | Ссылочный тип | Тип значения |
+| **HSTRING** со значением NULL проецируется как | `""` | `hstring{}` |
+| Значение NULL и `""` идентичны? | Нет | Да |
+| Допустимость значения NULL | `s = null;`<br>`s.Length` вызывает NullReferenceException | `s = hstring{};`<br>`s.size() == 0` (допустимо) |
+| Если присвоить пустую строку объекту | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Если присвоить `""` объекту | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+Базовые операции упаковки-преобразования и распаковки-преобразования.
+
 | Операция | C# | C++/WinRT|
 |-|-|-|
-| Категория типа строки | Ссылочный тип | Тип значения |
-| **HSTRING** со значением NULL проецируется как | `""` | `hstring{ nullptr }` |
-| Значение NULL и `""` идентичны? | Нет | Да |
-| Допустимость значения NULL | `s = null;`<br>`s.Length` вызывает **NullReferenceException** | `s = nullptr;`<br>`s.size() == 0` (допустимо) |
-| Упаковка-преобразование строки | `o = s;` | `o = box_value(s);` |
-| Если `s` имеет значение `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| Если `s` имеет значение `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Упаковка-преобразование строки с сохранением значения NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Принудительная упаковка-преобразование строки | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| Распаковка-преобразование известной строки | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| Если `o` имеет значение NULL | `s == null; // not equivalent to ""` | Аварийное завершение |
-| Если `o` не является упакованной строкой | `System.InvalidCastException` | Аварийное завершение |
-| Выполните распаковку-преобразование строки, используйте откат при значении NULL; аварийное завершение при других вариантах | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Выполните распаковку-преобразование строки, если это возможно; используйте откат при других вариантах | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-В двух случаях *распаковки с откатом* выше возможна ситуация, когда к строке со значением NULL применяется принудительная упаковка, после чего откат использоваться не будет. Результирующее значение будет пустой строкой, так как в пакете находилась именно она.
+| Упаковка-преобразование строки | `o = s;`<br>Пустая строка преобразуется в непустой объект. | `o = box_value(s);`<br>Пустая строка преобразуется в непустой объект. |
+| Распаковка-преобразование известной строки | `s = (string)o;`<br>Пустой объект преобразуется в пустую строку.<br>InvalidCastException, если не является строкой. | `s = unbox_value<hstring>(o);`<br>Сбой пустого объекта.<br>Сбой, если не является строкой. |
+| Распаковка-преобразование возможной строки | `s = o as string;`<br>Пустой объект или нестрока преобразуется в пустую строку.<br><br>ИЛИ<br><br>`s = o as string ?? fallback;`<br>Пустая строка или нестрока преобразуется в fallback.<br>Пустая строка сохранена. | `s = unbox_value_or<hstring>(o, fallback);`<br>Пустая строка или нестрока преобразуется в fallback.<br>Пустая строка сохранена. |
 
 ## <a name="derived-classes"></a>Производные классы
 
