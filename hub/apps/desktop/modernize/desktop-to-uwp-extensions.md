@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734829"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302598"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Интеграция классического приложения с Windows 10 и UWP
 
@@ -1376,10 +1376,4 @@ ms.locfileid: "74734829"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-**Поиск ответов на вопросы**
-
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Отправьте отзыв или получите предложения по функциям**
-
-См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)

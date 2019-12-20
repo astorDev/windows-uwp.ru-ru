@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e4d3d22af21b8df3c78afc725ccc0e861934681
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734990"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302588"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Расширение классического приложения с помощью современных компонентов UWP
 
@@ -501,12 +501,6 @@ public void RegisterBackgroundTask(String triggerName)
 }
 ```
 
-## <a name="support-and-feedback"></a>Поддержка и отзывы
-
-**Поиск ответов на вопросы**
+## <a name="find-answers-to-your-questions"></a>Поиск ответов на вопросы
 
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Отправьте отзыв или получите предложения по функциям**
-
-См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)

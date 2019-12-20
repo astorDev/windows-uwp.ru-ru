@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
-ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
+ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73427088"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302608"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Вызов интерфейсов API UWP в классических приложениях
 
@@ -253,12 +253,6 @@ void UWP::ShowToast()
 * [Приложение WinForms, реализующее Упдатетаск UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Примеры моста для классических приложений в UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
-## <a name="support-and-feedback"></a>Поддержка и отзывы
-
-**Поиск ответов на вопросы**
+## <a name="find-answers-to-your-questions"></a>Поиск ответов на вопросы
 
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Отправьте отзыв или получите предложения по функциям**
-
-См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
