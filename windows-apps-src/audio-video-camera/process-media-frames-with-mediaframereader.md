@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a13f0779414f60784ac1703fa32ac1ef5c89635
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 520e1fa18a0930d2a1fd4c2561dd4a4fc8d6c14b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256543"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683512"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -34,7 +34,7 @@ ms.locfileid: "74256543"
 
 **Добавление возможностей в манифест приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -97,12 +97,12 @@ ms.locfileid: "74256543"
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## <a name="create-a-frame-reader-for-the-frame-source"></a>Создание ридера кадров для источника кадров
+## <a name="create-a-frame-reader-for-the-frame-source"></a>Создание средство чтения кадров для источника кадров
 Для получения кадров от источника кадров мультимедиа используйте [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader).
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
 
-Создайте экземпляр ридера кадров путем вызова [**CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync) на инициализированном объекте **MediaCapture**. Первым аргументом этого метода должен быть источник кадров, из которого вы хотите получать кадры. Можно создать отдельный ридер кадров для каждого источника кадров, который вы хотите использовать. Второй аргумент сообщает системе формат вывода, в котором вы хотите получать кадры. Это поможет вам избежать необходимости самостоятельного преобразования кадров при их поступлении. Обратите внимание, что при выборе формата, не поддерживаемого источником кадров, возникнет исключение, поэтому убедитесь, что это значение входит в коллекцию [**SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats).  
+Создайте экземпляр средства чтения кадров путем вызова [**CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync) в инициализированном объекте **MediaCapture**. Первым аргументом этого метода должен быть источник кадров, из которого вы хотите получать кадры. Можно создать отдельный ридер кадров для каждого источника кадров, который вы хотите использовать. Второй аргумент сообщает системе формат вывода, в котором вы хотите получать кадры. Это поможет вам избежать необходимости самостоятельного преобразования кадров при их поступлении. Обратите внимание, что при выборе формата, не поддерживаемого источником кадров, возникнет исключение, поэтому убедитесь, что это значение входит в коллекцию [**SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats).  
 
 После создания ридера кадров зарегистрируйте обработчик для события [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived), которое создается при поступлении нового кадра из источника.
 
@@ -117,11 +117,11 @@ ms.locfileid: "74256543"
 
 [!code-xml[ImageElementXAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetImageElementXAML)]
 
-На странице программной части объявите переменную-член класса типа **SoftwareBitmap**, которая будет использоваться в качестве заднего буфера, в который будут копироваться все входящие изображения. Обратите внимание, что копируются не сами данные изображений, а только ссылки на объекты. Также объявите логическую переменную для отслеживания того, выполняется ли наша операция пользовательского интерфейса в данный момент.
+На странице программной части объявите переменную-член класса типа **SoftwareBitmap**, которая будет использоваться в качестве заднего буфера, в который будут копироваться все входящие изображения. Обратите внимание, что копируются не сами данные изображений, а только ссылки на объекты. Также объявите логическую переменную для отслеживания того, выполняется ли в данный момент наша операция пользовательского интерфейса.
 
 [!code-cs[DeclareBackBuffer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareBackBuffer)]
 
-Поскольку кадры будут поступать как объекты **SoftwareBitmap**, необходимо создать объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), который позволяет использовать **SoftwareBitmap** в качестве источника для **элемента управления** XAML. Перед запуском ридера кадров необходимо где-либо в коде задать источник изображений.
+Поскольку кадры будут поступать как объекты **SoftwareBitmap**, необходимо создать объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), который позволяет использовать **SoftwareBitmap** в качестве источника для **элемента управления** XAML. Перед запуском средства чтения кадров необходимо задать где-либо в коде источник изображений.
 
 [!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
 
@@ -138,7 +138,7 @@ ms.locfileid: "74256543"
 В заключение переменная *_taskRunning* снова получает значение false, чтобы задачу можно было запустить снова при следующем вызове обработчика.
 
 > [!NOTE] 
-> Если вы осуществляете доступ к объектам [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) или [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface), предоставляемым свойством [**VideoMediaFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) класса [**MediaFrameReference**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference), система создает строгую ссылку на эти объекты, что означает, что они не будут удален при вызове метода [**Dispose**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.close) в содержащем классе **MediaFrameReference**. Необходимо явно вызвать метод **Dispose** класса **SoftwareBitmap** или **Direct3DSurface** непосредственно для объектов, чтобы немедленно удалить их. В противном случае сборщик мусора в конечном итоге освободит память для этих объектов, однако узнать, когда это произойдет, невозможно, и если количество выделенных растровых изображений или поверхностей превышает максимальное количество, разрешенное системой, поток новых кадров будет остановлен. Вы можете скопировать полученные кадры, например методом [**SoftwareBitmap.Copy**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.softwarebitmap.copy), а затем освободить исходные кадры и обойти это ограничение. Также, если вы создали **MediaFrameReader** перегруженной версией метода [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_Windows_Graphics_Imaging_BitmapSize_) или [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_), то будут возращены копии исходных кадров, поэтому их сохранение не приведет к остановке процесса получения кадров. 
+> Если вы осуществляете доступ к объектам [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) или [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface), предоставляемым свойством [**VideoMediaFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) класса [**MediaFrameReference**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference), система создает строгую ссылку на эти объекты, что означает, что они не будут удален при вызове метода [**Dispose**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference.close) в содержащем классе **MediaFrameReference**. Необходимо явно вызвать метод **Dispose** класса **SoftwareBitmap** или **Direct3DSurface** непосредственно для объектов, чтобы немедленно удалить их. В противном случае сборщик мусора в конечном итоге освободит память для этих объектов, однако узнать, когда это произойдет, невозможно, и если количество выделенных растровых изображений или поверхностей превышает максимальное количество, разрешенное системой, поток новых кадров будет остановлен. Вы можете скопировать полученные кадры, например методом [**SoftwareBitmap.Copy**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.copy), а затем освободить исходные кадры и обойти это ограничение. Также, если вы создали **MediaFrameReader** перегруженной версией метода [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_Windows_Graphics_Imaging_BitmapSize_) или [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_), то будут возращены копии исходных кадров, поэтому их сохранение не приведет к остановке процесса получения кадров. 
 
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
@@ -208,7 +208,7 @@ ms.locfileid: "74256543"
 [!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="use-buffered-frame-acquisition-mode-to-preserve-the-sequence-of-acquired-frames"></a>Используйте буферизованный режим получения кадров, чтобы сохранить последовательность полученных кадров
-Начиная с Windows 10 версии 1709, вы можете задать значение **Buffered[ свойству ](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** AcquisitionMode объекта **MediaFrameReader** или **MultiSourceMediaFrameReader**, чтобы переданная в приложение из источника последовательность кадров сохранялась.
+Начиная с Windows 10 версии 1709, вы можете задать значение **Buffered** свойству **[AcquisitionMode](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** объекта **MediaFrameReader** или **MultiSourceMediaFrameReader**, чтобы переданная в приложение из источника последовательность кадров сохранялась.
 
 [!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
 
@@ -235,7 +235,7 @@ ms.locfileid: "74256543"
 
 [!code-cs[MediaSourceInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceInitMediaCapture)]
 
-Наконец, вызовите метод **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** , чтобы создать **MediaSource** для каждого источника кадров, указав свойство **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** связанного объекта **MediaFrameSourceInfo** для выбора одного из источников кадров в коллекцииFrameSources **[ объекта ](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)MediaCapture**. Инициализируйте новый объект **MediaPlayer** и назначьте его **MediaPlayerElement**, вызвав метод **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)** . Затем задайте свойство **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** у созданного объекта **MediaSource**.
+Наконец, вызовите метод **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** , чтобы создать **MediaSource** для каждого источника кадров, указав свойство **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** связанного объекта **MediaFrameSourceInfo** для выбора одного из источников кадров в коллекции **[FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** объекта **MediaCapture**. Инициализируйте новый объект **MediaPlayer** и назначьте его **MediaPlayerElement**, вызвав метод **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)** . Затем задайте свойство **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source)** у созданного объекта **MediaSource**.
 
 [!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
 
@@ -249,7 +249,7 @@ ms.locfileid: "74256543"
 
 Дополнительные сведения об использовании профилей камеры см. на странице [Профили камеры](camera-profiles.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

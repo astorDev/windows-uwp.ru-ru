@@ -1,48 +1,48 @@
 ---
-title: Запуск функции "Фрагмент экрана"
-description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или, чтобы открыть новый фрагмент.
+title: Запуск фрагмента экрана
+description: В этом разделе описываются схемы универсального кода ресурса (URI) MS-скринклип и MS-скринскетч. Приложение может использовать эти схемы URI для запуска фрагмента & эскиза или для открытия нового фрагмента.
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, uwp, uri, фрагмент, эскиза
+keywords: Windows 10, UWP, URI, фрагмент, эскиз
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 06e988387f574b74d511b14a2ebca24b0a149158
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9469dd6efd3598ab7abd9791a976385f4dfce49
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595389"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684661"
 ---
-# <a name="launch-screen-snipping"></a>Запуск функции "Фрагмент экрана"
+# <a name="launch-screen-snipping"></a>Запуск фрагмента экрана
 
-**Ms screenclip:** и **ms screensketch:** Схемы URI позволяет инициировать выделения или изменение снимков экрана.
+Схемы **MS-скринклип:** и **MS-скринскетч:** URI позволяют запускать ножницы или изменять снимки экрана.
 
-## <a name="open-a-new-snip-from-your-app"></a>Откройте новый фрагмент из приложения
+## <a name="open-a-new-snip-from-your-app"></a>Открытие нового фрагмента из приложения
 
-**Ms screenclip:** URI позволяет приложению автоматически открыться и начать новый фрагмент. Результирующий фрагмент копируется в буфер обмена пользователя, но не передается автоматически открытия приложения.
+**MS-скринклип:** URI позволяет приложению автоматически открывать и запускать новый фрагмент. Полученный фрагмент копируется в буфер обмена пользователя, но не возвращается в открытое приложение автоматически.
 
-**MS-screenclip:** принимает следующие параметры:
+**MS-скринклип:** принимает следующие параметры:
 
-| Параметр | Тип | Обязательно | Описание |
+| Параметр | Введите | Обязательный | Описание |
 | --- | --- | --- | --- |
-| Источник | Строка | Нет | Строковое значение свободной формы для указания источника, который запустил URI. |
-| delayInSeconds | int | Нет | Целочисленное значение от 1 до 30. Задержка в полной секунды, между URI и начала выделения. |
-| callbackformat | Строка | Нет | Этот параметр недоступен. |
+| источник | Строка | Нет | Произвольная строка, указывающая источник, который запустил URI. |
+| delayInSeconds | int | Нет | Целочисленное значение от 1 до 30. Указывает задержку в полной секунде между вызовом URI и началом выделения. |
+| каллбаккформат | Строка | Нет | Этот параметр недоступен. |
 
-## <a name="launching-the-snip--sketch-app"></a>Запуск фрагмент & эскиз приложения
+## <a name="launching-the-snip--sketch-app"></a>Запуск приложения фрагмента & наброска
 
-**Ms screensketch:** URI позволяет программным путем запуска приложения фрагмент & эскиз и открыть конкретный образ в таком приложении для заметки.
+**MS-скринскетч:** универсальный код ресурса (URI) позволяет программным путем запустить приложение фрагмента & наброска и открыть в нем конкретный образ для аннотации.
 
-**MS-screensketch:** принимает следующие параметры:
+**MS-скринскетч:** принимает следующие параметры:
 
-| Параметр | Тип | Обязательно | Описание |
+| Параметр | Введите | Обязательный | Описание |
 | --- | --- | --- | --- |
-| sharedAccessToken | Строка | Нет | Маркер идентификации файл, чтобы открыть в приложении фрагмент & эскиза. Полученный из [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр опущен, приложение запускается без применительно к открытому файлу. |
-| secondarySharedAccessToken | Строка | Нет | Строка, определяющая JSON-файл с метаданными о фрагмента. Метаданные могут включать **clipPoints** поле с массивом координаты x и y, и/или [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
-| Источник | Строка | Нет | Строковое значение свободной формы для указания источника, который запустил URI. |
-| IsTemporary | bool | Нет | Если задано значение True, эскиз экрана попытается удалить файл после его открытия. |
+| шаредакцесстокен | Строка | Нет | Токен, определяющий файл, который должен быть открыт в приложении & эскиза. Получено из [шаредсторажеакцессманажер. AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр не указан, приложение будет запущено без открытия файла. |
+| секондаришаредакцесстокен | Строка | Нет | Строка, идентифицирующая JSON-файл с метаданными о фрагменте. Метаданные могут содержать поле **клиппоинтс** с массивом координат x, y и (или) [усерактивити](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
+| источник | Строка | Нет | Произвольная строка, указывающая источник, который запустил URI. |
+| IsTemporary задано | bool | Нет | Если задано значение true, эскиз экрана будет пытаться удалить файл после его открытия. |
 
-В следующем примере вызывается [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) метод для отправки изображения фрагмент & Sketch из приложения пользователя.
+В следующем примере вызывается метод [лаунчуриасинк](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) для отправки изображения в фрагмент & эскиза из приложения пользователя.
 
 ```csharp
 
@@ -50,7 +50,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-В следующем примере показано, какой файл, указанный параметром **secondarySharedAccessToken** параметр **ms-screensketch** может содержать:
+В следующем примере показано, что может содержать файл, заданный параметром **секондаришаредакцесстокен** **MS-скринскетч** :
 
 ```json
 {
@@ -72,7 +72,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
       "y": 780
     }
   ],
-  "userActivity": "{\"$schema\":\"http://activity.windows.com/user-activity.json\",\"UserActivity\":\"type\",\"1.0\":\"version\",\"cross-platform-identifiers\":[{\"platform\":\"windows_universal\",\"application\":\"Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge\"},{\"platform\":\"host\",\"application\":\"edge.activity.windows.com\"}],\"activationUrl\":\"microsoft-edge:https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"contentUrl\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"visualElements\":{\"attribution\":{\"iconUrl\":\"https://www.microsoft.com/favicon.ico?v2\",\"alternateText\":\"microsoft.com\"},\"description\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"backgroundColor\":\"#FF0078D7\",\"displayText\":\"Use snipping tool to capture screenshots - Windows Help\",\"content\":{\"$schema\":\"http://adaptivecards.io/schemas/adaptive-card.json\",\"type\":\"AdaptiveCard\",\"version\":\"1.0\",\"body\":[{\"type\":\"Container\",\"items\":[{\"type\":\"TextBlock\",\"text\":\"Use snipping tool to capture screenshots - Windows Help\",\"weight\":\"bolder\",\"size\":\"large\",\"wrap\":true,\"maxLines\":3},{\"type\":\"TextBlock\",\"text\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"size\":\"normal\",\"wrap\":true,\"maxLines\":3}]}]}},\"isRoamable\":true,\"appActivityId\":\"https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots\"}"
+  "userActivity": "{\"$schema\":\"http://activity.windows.com/user-activity.json\",\"UserActivity\":\"type\",\"1.0\":\"version\",\"cross-platform-identifiers\":[{\"platform\":\"windows_universal\",\"application\":\"Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge\"},{\"platform\":\"host\",\"application\":\"edge.activity.windows.com\"}],\"activationUrl\":\"microsoft-edge:https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"contentUrl\":\"https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"visualElements\":{\"attribution\":{\"iconUrl\":\"https://www.microsoft.com/favicon.ico?v2\",\"alternateText\":\"microsoft.com\"},\"description\":\"https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"backgroundColor\":\"#FF0078D7\",\"displayText\":\"Use snipping tool to capture screenshots - Windows Help\",\"content\":{\"$schema\":\"http://adaptivecards.io/schemas/adaptive-card.json\",\"type\":\"AdaptiveCard\",\"version\":\"1.0\",\"body\":[{\"type\":\"Container\",\"items\":[{\"type\":\"TextBlock\",\"text\":\"Use snipping tool to capture screenshots - Windows Help\",\"weight\":\"bolder\",\"size\":\"large\",\"wrap\":true,\"maxLines\":3},{\"type\":\"TextBlock\",\"text\":\"https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\",\"size\":\"normal\",\"wrap\":true,\"maxLines\":3}]}]}},\"isRoamable\":true,\"appActivityId\":\"https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\"}"
 }
 
 ```

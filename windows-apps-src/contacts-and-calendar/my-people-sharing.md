@@ -3,14 +3,14 @@ title: Публикации близких людей
 description: Описание добавления поддержки публикаций для близких людей
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820191"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683492"
 ---
 # <a name="my-people-sharing"></a>Публикации близких людей
 
@@ -20,15 +20,15 @@ ms.locfileid: "67820191"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 
 Вам необходимо выполнить три действия, что сделать ваше приложением допустимой целью для публикации с помощью функции "Близкие люди".
 
-1. [Объявите поддержку по контракту активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Добавление заметок контакты, пользователи могут совместно использовать с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Объявите поддержку для контракта активации Шаретаржет в манифесте приложения.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Добавьте заметки к контактам, которые пользователи могут поделиться с помощью вашего приложения.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно.  Пользователям необходимо взаимодействовать с полной версией приложения, сохраняя возможность делиться содержимым с другими. Они могут использовать его в нескольких окнах общего доступа одновременно. Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 После этого приложение станет целью общего доступа в окне "Близкие люди", которое можно запустить двумя способами:
@@ -75,7 +75,7 @@ ms.locfileid: "67820191"
 </Applications>
 ```
 
-Этот код добавляет поддержку всех файлов и форматов данных, но вы можете указать поддерживаемые типы файлов и форматы данных (дополнительные сведения см. в разделе [Документация по классу ShareTarget](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)).
+Этот код добавляет поддержку всех файлов и форматов данных, но вы можете указать поддерживаемые типы файлов и форматы данных (дополнительные сведения см. в разделе [Документация по классу ShareTarget](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)).
 
 ## <a name="annotating-contacts"></a>Аннотация контактов
 
@@ -103,11 +103,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте файл **Package.appxmanifest** с помощью редактора по умолчанию и перейдите на вкладку "Упаковка". Здесь "App" — это активируемый класс, соответствующий представлению цели передачи данных.
+"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** с помощью редактора по умолчанию и найдите вкладку «Упаковка». Здесь элемент «Приложение» является активируемым классом, соответствующим представлению получателя данных.
 
 ## <a name="running-as-a-my-people-share-target"></a>Запуск приложения в качестве цели общего доступа функции "Близкие люди"
 
-Наконец, чтобы запустить приложение, переопределите метод [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) в основном классе приложения для обработки активации общего доступа. Свойство [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) будет содержать контакты, которым передаются данные, или будет пустым, если это стандартная операция общего доступа (не публикация близким людям).
+Наконец, чтобы запустить приложение, переопределите метод [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) в основном классе приложения для обработки активации общего доступа. Свойство [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) будет содержать контакты, которым передаются данные, или будет пустым, если это стандартная операция общего доступа (не публикация близким людям).
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>См. также
-+ [Поддерживает добавление Мои людей](my-people-support.md)
-+ [Класс ShareTarget](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [Контактные пример интеграции карты](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
+## <a name="see-also"></a>См. также статью
++ [Добавление поддержки пользователей](my-people-support.md)
++ [Класс Шаретаржет](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [Пример интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

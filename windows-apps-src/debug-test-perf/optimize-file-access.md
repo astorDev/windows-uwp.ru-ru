@@ -4,14 +4,14 @@ title: Оптимизация доступа к файлам
 description: Создайте приложения универсальной платформы Windows (UWP), получающие эффективный доступ к файловой системе, избегая проблем с производительностью, связанных с задержкой диска и тактами запоминания данных в памяти и центральном процессоре.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 176791388bc0d0a5ac33659f6744852a2c857187
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339591"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681955"
 ---
 # <a name="optimize-file-access"></a>Оптимизация доступа к файлам
 
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 Вам также может понадобиться избегать буферизации, если вы хотите выполнять операции чтения и записи с небольшой задержкой и не хотите выполнять чтение большими блоками из основного потока UWP. Например, вам может понадобиться выполнять чтение и запись с небольшой задержкой, если вы используете поток для передачи данных по сети.
 
-В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) и [**AsStream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
+В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
 
 

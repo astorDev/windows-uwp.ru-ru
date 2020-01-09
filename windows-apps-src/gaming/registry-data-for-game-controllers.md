@@ -6,19 +6,19 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: bfce7503efd88a7a05a0471667953e287262bc35
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714053"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684921"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 
 > [!NOTE]
 > Данный раздел предназначен для производителей игровых устройств, совместимых с Windows 10, и не применим для большинства разработчиков.
 
-[Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) позволяет независимым поставщикам оборудования (IHV) добавлять данные в реестр компьютера, чтобы их устройства отображались как элементы [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick) и [UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) соответствующим образом. Все независимые поставщики оборудования должны добавить эти данные для совместимых контроллеров. Таким образом все игры UWP (и любые классические игры, которые используют API WinRT) смогут поддерживать ваше игровое устройство управления.
+[Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) позволяет независимым поставщикам оборудования (IHV) добавлять данные в реестр компьютера, чтобы их устройства отображались как элементы [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) и [UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) соответствующим образом. Все независимые поставщики оборудования должны добавить эти данные для совместимых контроллеров. Таким образом все игры UWP (и любые классические игры, которые используют API WinRT) смогут поддерживать ваше игровое устройство управления.
 
 ## <a name="mapping-scheme"></a>Схема сопоставления
 
@@ -31,19 +31,19 @@ ms.locfileid: "67714053"
 <table>
     <tr>
         <th>Имя</th>
-        <th>Type</th>
+        <th>Введите</th>
         <th>Требуется?</th>
         <th>Info</th>
     </tr>
     <tr>
-        <td>Отключено</td>
+        <td>Отключен</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>
-            <p>Указывает, что следует отключить это устройство.</p>
+            <p>Указывает, что конкретное устройство должно быть отключено.</p>
             <ul>
-                <li><b>0</b>: Устройство не отключено.</li>
-                <li><b>1</b>: Устройство отключено.</li>
+                <li><b>0</b>: устройство не отключено.</li>
+                <li><b>1</b>: устройство отключено.</li>
             </ul>
         </td>
     </tr>
@@ -69,61 +69,61 @@ ms.locfileid: "67714053"
         <th>Info</th>
     </tr>
     <tr>
-        <td>Меню</td>
-        <td>Да</td>
+        <td>Menu</td>
+        <td>"Да",</td>
         <td rowspan="18" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
-        <td>Просмотр</td>
-        <td>Да</td>
+        <td>"Вид"</td>
+        <td>"Да",</td>
     </tr>
     <tr>
-        <td>Объект</td>
-        <td>Да</td>
+        <td>Кнопка</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>B</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>X</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>LeftShoulder</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>RightShoulder</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>LeftThumbstickButton</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>RightThumbstickButton</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Paddle1</td>
@@ -143,28 +143,28 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>LeftTrigger</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="6" style="vertical-align: middle;">См. разделе <a href="#axis-mapping">Сопоставление осей</a></td>
     </tr>
     <tr>
         <td>RightTrigger</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>LeftThumbstickX</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>LeftThumbstickY</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>RightThumbstickX</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>RightThumbstickY</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
 </table>
 
@@ -183,12 +183,12 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>PreviousGear</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="30" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
         <td>NextGear</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>DPadUp</td>
@@ -304,16 +304,16 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>Колесо</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="5" style="vertical-align: middle;">См. разделе <a href="#axis-mapping">Сопоставление осей</a></td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Brake</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Clutch</td>
@@ -325,7 +325,7 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>См. раздел <a href="#properties-mapping">Сопоставление свойств</a></td>
     </tr>
 </table>
@@ -342,52 +342,52 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>Action1</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="12" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
         <td>Action2</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Action3</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Action4</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Action5</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Action6</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Special1</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Special2</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>StickUp</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>StickDown</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>StickLeft</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>StickRight</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
 </table>
 
@@ -403,33 +403,33 @@ ms.locfileid: "67714053"
     </tr>
     <tr>
         <td>FirePrimary</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="2" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
         <td>FireSecondary</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Roll</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td rowspan="4" style="vertical-align: middle;">См. разделе <a href="#axis-mapping">Сопоставление осей</a></td>
     </tr>
     <tr>
-        <td>Уклон</td>
-        <td>Да</td>
+        <td>Pitch</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Yaw</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>HatSwitch</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>См. раздел <a href="#switch-mapping">Сопоставление переключателей</a></td>
     </tr>
 </table>
@@ -445,37 +445,37 @@ ms.locfileid: "67714053"
         <th>Info</th>
     </tr>
     <tr>
-        <td>Меню</td>
-        <td>Да</td>
+        <td>Menu</td>
+        <td>"Да",</td>
         <td rowspan="24" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
-        <td>Просмотр</td>
-        <td>Да</td>
+        <td>"Вид"</td>
+        <td>"Да",</td>
     </tr>
     <tr>
-        <td>Принять</td>
-        <td>Да</td>
+        <td>Accept</td>
+        <td>"Да",</td>
     </tr>
     <tr>
-        <td>Отмена</td>
-        <td>Да</td>
+        <td>"Отмена"</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>PrimaryUp</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>PrimaryDown</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>PrimaryLeft</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>PrimaryRight</td>
-        <td>Да</td>
+        <td>"Да",</td>
     </tr>
     <tr>
         <td>Context1</td>
@@ -555,28 +555,28 @@ ms.locfileid: "67714053"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Источник</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td>Кнопка</td>
+        <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Индекс в массиве кнопок <b>RawGameController</b>.</td>
     </tr>
     <tr>
         <td rowspan="4" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Индекс в массиве осей <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Инверсия</td>
+        <td>Invert</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>Указывает, что значение оси следует инвертировать перед применением коэффициентов <b>ThresholdPercent</b> и <b>DebouncePercent</b>.</td>
@@ -584,39 +584,39 @@ ms.locfileid: "67714053"
     <tr>
         <td>ThresholdPercent</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Указывает положение оси, в котором сопоставленное значение кнопки переходит между состоянием "нажато" и "отпущено". Допустимый диапазон значений — от 0 до 100. Кнопка считается нажатой, если значение оси больше или равно этому значению.</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>
             <p>Определяет размер окна вокруг значения <b>ThresholdPercent</b>, которое используется для устранения ложного срабатывания обнаруженного состояния кнопки. Допустимый диапазон значений — от 0 до 100. Переход между состояниями кнопки возможен, только если значение оси выходит за верхнюю или нижнюю границу окна между моментом. Например, если <b>ThresholdPercent</b> имеет значение 50, а <b>DebouncePercent</b> — 10, то границами окна между моментом будет 45 % и 55 % от полных значений диапазона оси. Кнопка не может перейти в нажатое состояние, пока значение оси не достигнет 55 % или не превысит это значение, и не может перейти в отпущенное состояние, пока значение оси не достигнет 45 % или меньшего значения.</p>
             <p>Вычисленные границы окна между моментом находятся в диапазоне от 0 % до 100 %. Например, пороговое значение 5 % и окно между моментом 20 % приведут к тому, что границы окна между моментом станут равны 0 % и 15 %. Состояние кнопки для значений оси 0 % и 100 % всегда отображаются как отпущенное и нажатое соответственно независимо от порогового значения и значения между моментом.</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
+        <td rowspan="3" style="vertical-align: middle;">Измените значение переключателя</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Индекс в массиве переключателей <b>RawGameController</b>.</td>
     </tr>
     <tr>
         <td>SwitchPosition</td>
         <td>REG_SZ</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>
             <p>Указывает положение переключателя, в котором сопоставленная кнопка сообщит о нажатии. Значением положений может быть одна из этих строк:</p>
             <ul>
-                <li>Вверх</li>
+                <li>Up</li>
                 <li>UpRight</li>
-                <li>Справа</li>
+                <li>Вправо</li>
                 <li>DownRight</li>
-                <li>Вниз</li>
+                <li>Down</li>
                 <li>DownLeft</li>
-                <li>Слева</li>
+                <li>Влево</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -635,17 +635,17 @@ ms.locfileid: "67714053"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Источник</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Кнопка</td>
+        <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>
             <p>Индекс в массиве кнопок <b>RawGameController</b>, который преобразуется в сопоставленное однонаправленное значение оси.</p>
             <table>
@@ -659,7 +659,7 @@ ms.locfileid: "67714053"
                 </tr>
                 <tr>
                     <td>TRUE</td>
-                    <td>1.0</td>
+                    <td>1,0</td>
                 </tr>
             </table>
         </td>
@@ -684,7 +684,7 @@ ms.locfileid: "67714053"
                 <tr>
                     <td>FALSE</td>
                     <td>TRUE</td>
-                    <td>1.0</td>
+                    <td>1,0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
@@ -703,36 +703,36 @@ ms.locfileid: "67714053"
         <td rowspan="2" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Индекс в массиве осей <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Инверсия</td>
+        <td>Invert</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>Указывает, что сопоставленное значение оси следует инвертировать перед возвратом.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
+        <td rowspan="3" style="vertical-align: middle;">Измените значение переключателя</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>Индекс в массиве переключателей <b>RawGameController</b>.
     </tr>
     <tr>
         <td>MaxValueSwitchPosition</td>
         <td>REG_SZ</td>
-        <td>Да</td>
+        <td>"Да",</td>
         <td>
             <p>Одна из следующих строк:</p>
             <ul>
-                <li>Вверх</li>
+                <li>Up</li>
                 <li>UpRight</li>
-                <li>Справа</li>
+                <li>Вправо</li>
                 <li>DownRight</li>
-                <li>Вниз</li>
+                <li>Down</li>
                 <li>DownLeft</li>
-                <li>Слева</li>
+                <li>Влево</li>
                 <li>UpLeft</li>
             </ul>
             <p>Указывает положение переключателя, в котором сопоставленное значение оси отображается как равное 1,0. Противоположное направление <b>MaxValueSwitchPosition</b> считается равным 0,0. Например, если значение <b>MaxValueSwitchPosition</b> равно <b>Up</b>, значение оси преобразуется, как показано ниже:</p>
@@ -742,15 +742,15 @@ ms.locfileid: "67714053"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Вверх</td>
-                    <td>1.0</td>
+                    <td>Up</td>
+                    <td>1,0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Вниз</td>
+                    <td>Down</td>
                     <td>0,0</td>
                 </tr>
             </table>
@@ -768,23 +768,23 @@ ms.locfileid: "67714053"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Вверх</td>
-                    <td>1.0</td>
+                    <td>Up</td>
+                    <td>1,0</td>
                 </tr>
                 <tr>
                     <td>UpRight</td>
-                    <td>1.0</td>
+                    <td>1,0</td>
                 </tr>
                 <tr>
                     <td>UpLeft</td>
-                    <td>1.0</td>
+                    <td>1,0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Вниз</td>
+                    <td>Down</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
@@ -806,13 +806,13 @@ ms.locfileid: "67714053"
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Источник</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Кнопка</td>
+        <td rowspan="10" style="vertical-align: middle;">Button</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 или 8</td>
@@ -820,7 +820,7 @@ ms.locfileid: "67714053"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b>, или <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>фаурвай</b>или <b>еигхтвай</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,13 +898,13 @@ ms.locfileid: "67714053"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
+        <td rowspan="3" style="vertical-align: middle;">Измените значение переключателя</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Индекс в массиве переключателей <b>RawGameController</b>.
     </tr>
     <tr>
-        <td>Инверсия</td>
+        <td>Invert</td>
         <td>DWORD</td>
         <td>Указывает, что переключатель сообщает о положении против часовой стрелки, а не по часовой стрелке.</td>
     </tr>
@@ -926,7 +926,7 @@ ms.locfileid: "67714053"
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Справа</td>
+                    <td>Вправо</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -936,17 +936,17 @@ ms.locfileid: "67714053"
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Вверх</td>
+                    <td>Up</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
                 <tr>
                     <td>UpLeft</td>
-                    <td>4</td>
+                    <td>추가를 클릭합니다.</td>
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Слева</td>
+                    <td>Влево</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -956,9 +956,9 @@ ms.locfileid: "67714053"
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Вниз</td>
+                    <td>Down</td>
                     <td>7</td>
-                    <td>4</td>
+                    <td>추가를 클릭합니다.</td>
                 </tr>
             </table>
     </tr>
@@ -966,7 +966,7 @@ ms.locfileid: "67714053"
 
 #### <a name="buttonindex-values"></a>Значения *ButtonIndex
 
-\*Индекс ButtonIndex значений в **RawGameController**элемента массива кнопки:
+\*индекс значений Буттониндекс в массив кнопок **равгамеконтроллер**:
 
 <table>
     <tr>
@@ -985,7 +985,7 @@ ms.locfileid: "67714053"
         </td>
     </tr>
     <tr>
-        <td>4</td>
+        <td>추가를 클릭합니다.</td>
         <td>FourWay</td>
         <td>
             <ul>
@@ -997,7 +997,7 @@ ms.locfileid: "67714053"
         </td>
     </tr>
     <tr>
-        <td>4</td>
+        <td>추가를 클릭합니다.</td>
         <td>EightWay</td>
         <td>
             <ul>
@@ -1047,7 +1047,7 @@ ms.locfileid: "67714053"
 
 ## <a name="labels"></a>Метки
 
-Метки должны находиться в разделе **Labels** в корневом каталоге устройства. **Метки** может иметь 3 подразделов: **Кнопки**, **осей**, и **коммутаторы**.
+Метки должны находиться в разделе **Labels** в корневом каталоге устройства. В разделе **Labels** может быть три подраздела: **Buttons**, **Axes** и **Switches**.
 
 ### <a name="button-labels"></a>Метки кнопок
 
@@ -1075,11 +1075,11 @@ RightBumper         // Index 9
     </tr>
     <tr>
         <td>Button0</td>
-        <td>Меню</td>
+        <td>Menu</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>Просмотр</td>
+        <td>"Вид"</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1117,7 +1117,7 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>Метки осей
 
-Раздел **Axes** сопоставляет каждую позицию оси в массиве осей **RawGameController** с одной из меток в перечислении [перечисления GameControllerButtonLabel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel), как и метки кнопок. См. пример в разделе [Метки кнопок](#button-labels).
+Раздел **Axes** сопоставляет каждую позицию оси в массиве осей **RawGameController** с одной из меток в перечислении [перечисления GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel), как и метки кнопок. См. пример в разделе [Метки кнопок](#button-labels).
 
 ### <a name="switch-labels"></a>Метки переключателей
 
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
-* [Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Пространство имен Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [Файлы INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [Пространство имен Windows. Gaming. input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows. Gaming. input. настраиваемое пространство имен](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [INF-файлы](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

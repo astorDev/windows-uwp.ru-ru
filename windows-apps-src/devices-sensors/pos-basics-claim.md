@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3fc2b2aa10fedf143c55158e521b2c1cd5b75d
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: bc3a8afbc0d3ca4655e0b1745090db633bcd92b7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816689"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684668"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Утверждение устройства службы и включение модели
 
@@ -81,7 +81,7 @@ ms.locfileid: "72816689"
 
 > [!Warning]
 > Присвоение может быть утеряно при следующих условиях.
-> 1. Другое приложение запросило присвоение этого же устройства, а ваше приложение не выдало **RetainDevice** в ответ на событие **ReleaseDeviceRequested**.  (Дополнительные сведения см. в разделе [Согласование присвоения](#Claim-negotiation).)
+> 1. Другое приложение запросило присвоение этого же устройства, а ваше приложение не выдало **RetainDevice** в ответ на событие **ReleaseDeviceRequested**.  (Дополнительные сведения см. в разделе [Согласование присвоения](#claim-negotiation).)
 > 2. Приложение было приостановлено, что привело к закрытию объекта устройства, и в результате присвоение стало недействительным. (Дополнительные сведения см. в разделе [Жизненный цикл объекта устройства](pos-basics-deviceobject.md#device-object-lifecycle).)
 
 

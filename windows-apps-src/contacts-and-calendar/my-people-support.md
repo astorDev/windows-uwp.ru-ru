@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e58334dafa35004080b7ed109fa90e253399040
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255139"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683482"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 
@@ -23,15 +23,15 @@ ms.locfileid: "74255139"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 
 Чтобы реализовать поддержку функции "Близкие люди" в приложении, необходимо выполнить три действия:
 
-1. [Объявите поддержку для контракта активации Шаретаржет в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Добавьте заметки к контактам, которые пользователи могут поделиться с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Объявите поддержку для контракта активации Шаретаржет в манифесте приложения.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Добавьте заметки к контактам, которые пользователи могут поделиться с помощью вашего приложения.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно. Пользователям необходимо взаимодействовать с полной версией приложения при работе с ним на панели контактов.  Они могут даже использовать его на нескольких панелях контактов одновременно.  Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 После реализации этой возможности ваше приложение будет отображаться на панели контактов для указанных контактов.
@@ -172,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Если приложение активируется с этим контрактом, оно получает [объект ContactPanelActivatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Он содержит идентификатор контакта, с которым ваше приложение пытается взаимодействовать при запуске, и объект [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel). Вам следует сохранить ссылку на этот объект ContactPanel, что позволит взаимодействовать с панелью.
+Если приложение активируется с этим контрактом, оно получает [объект ContactPanelActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Он содержит идентификатор контакта, с которым ваше приложение пытается взаимодействовать при запуске, и объект [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel). Вам следует сохранить ссылку на этот объект ContactPanel, что позволит взаимодействовать с панелью.
 
 Объект ContactPanel предоставляет два события, которые ваше приложение должно прослушивать.
 + Событие **LaunchFullAppRequested** отправляется, когда пользователь вызывает элемент интерфейса, который запрашивает запуск полного приложения в отдельном окне.  Ваше приложение отвечает за собственный запуск и передачу необходимого контекста.  Вы можете сделать это любым способом (например, за счет запуска протокола).
@@ -182,13 +182,13 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 ## <a name="supporting-notification-badging"></a>Поддержка индикаторов для уведомлений
 
-Если вы хотите, чтобы на контактах, закрепленных на панели задач, появлялись индикаторы при получении новых уведомлений, связанных с этим контактом, из вашего приложения, необходимо включить параметр **hint-people** во [всплывающих уведомлениях](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) и явные [Уведомления близких людей](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
+Если вы хотите, чтобы на контактах, закрепленных на панели задач, появлялись индикаторы при получении новых уведомлений, связанных с этим контактом, из вашего приложения, необходимо включить параметр **hint-people** во [всплывающих уведомлениях](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) и явные [Уведомления близких людей](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications).
 
 ![Индикаторы для уведомлений людей](images/my-people-badging.png)
 
 Для добавления индикатора контакту узел всплывающего уведомления верхнего уровня должен содержать параметр hint-people для указания контакта-отправителя или связанного контакта. Этот параметр может принимать любое из перечисленных ниже значений.
 + **Адрес электронной почты** 
-    + Например: mailto:johndoe@mydomain.com
+    + Например: [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
 + **Номер телефона** 
     + Например: tel:888-888-8888
 + **Удаленный идентификатор** 
@@ -206,12 +206,12 @@ override protected void OnActivated(IActivatedEventArgs e)
 ```
 
 > [!NOTE]
-> Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
+> Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
 > Если уникальность и стабильность удаленных идентификаторов, используемых вашим приложением, нельзя гарантировать, то можно использовать класс RemoteIdHelper, показанный ниже в этом разделе, чтобы добавить ко всем вашим удаленным идентификаторам уникальный тег перед добавлением их к системе. Или можно вовсе отказаться от использования свойства RemoteId и создать собственное расширенное свойство, в котором будут храниться удаленные идентификаторы для ваших контактов.
 
 ## <a name="the-pinnedcontactmanager-class"></a>Класс The PinnedContactManager
 
-Класс [PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) используется для управления контактами, которые закреплены на панели задач. Этот класс позволяет закрепить и открепить контакты, определить, закреплен ли контакт и поддерживается ли закрепление на той или иной поверхности системой, в которой сейчас выполняется приложение.
+Класс [PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) используется для управления контактами, которые закреплены на панели задач. Этот класс позволяет закрепить и открепить контакты, определить, закреплен ли контакт и поддерживается ли закрепление на той или иной поверхности системой, в которой сейчас выполняется приложение.
 
 Вы можете получить объект PinnedContactManager с помощью метода **GetDefault**:
 
@@ -249,13 +249,13 @@ async Task PinMultipleContacts(Contact[] contacts)
 > [!Note]
 > В данный момент пакетная операция для закрепления контактов отсутствует.
 
-**Примечание.** 
+**Примечание**. 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 + [Публикации близких людей](my-people-sharing.md)
 + [Мои люди нотификатонс](my-people-notifications.md)
 + [Видеоролик Channel 9 о добавлении поддержки пользователей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Пример интеграции "Мои люди"](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Пример карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Документация по классу Пиннедконтактманажер](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Подключение приложения к действиям в карточке контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Документация по классу Пиннедконтактманажер](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Подключение приложения к действиям в карточке контакта](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

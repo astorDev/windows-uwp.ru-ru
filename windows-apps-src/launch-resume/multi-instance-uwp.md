@@ -5,12 +5,12 @@ keywords: UWP с несколькими экземплярами
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: cdb8d87a63eba14ecb2dc25e3cb5451dce6cae60
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259439"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684638"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Создание универсального приложения для Windows с несколькими экземплярами
 
@@ -110,7 +110,7 @@ public static class Program
 
 в первую очередь выполняется `Main()`. Он выполняется перед [**запуском**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) и [**активируется**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Это позволяет вам определить, следует ли активировать этот или другой экземпляр, перед выполнением какого-либо кода инициализации в вашем приложении.
 
-Приведенный выше код определяет, какой экземпляр вашего приложения активируется: существующий или новый. Для определения наличия существующего экземпляра, который требуется активировать, используется ключ. Например, если ваше приложение может запускаться для [Обработки активации файла](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), в качестве ключа можно использовать имя файла. Затем можно проверить, зарегистрирован ли экземпляр вашего приложения с таким ключом, и активировать его вместо открытия нового экземпляра. Это идея кода: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+Приведенный выше код определяет, какой экземпляр вашего приложения активируется: существующий или новый. Для определения наличия существующего экземпляра, который требуется активировать, используется ключ. Например, если ваше приложение может запускаться для [Обработки активации файла](https://docs.microsoft.com/windows/uwp/launch-resume/handle-file-activation), в качестве ключа можно использовать имя файла. Затем можно проверить, зарегистрирован ли экземпляр вашего приложения с таким ключом, и активировать его вместо открытия нового экземпляра. Это идея кода: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 Если обнаруживается зарегистрированный экземпляр с таким ключом, этот экземпляр активируется. Если ключ не найден, текущий экземпляр (в котором в настоящее время выполняется `Main`) создает объект приложения и запускается.
 
@@ -134,7 +134,7 @@ public static class Program
 
 Пример перенаправления активации с несколькими экземплярами см. в разделе [пример с несколькими экземплярами](https://github.com/Microsoft/AppModelSamples/tree/master/Samples/BananaEdit) .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 [AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
 [AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)

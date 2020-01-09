@@ -1,19 +1,19 @@
 ---
 description: Использование компьютера Mac для разработки приложений для Windows.
-title: Установка Windows 10 на Mac
+title: Настройка Mac с Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259115"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685002"
 ---
-# <a name="setting-up-your-mac-with-windows-10"></a>Установка Windows 10 на Mac
+# <a name="setting-up-your-mac-with-windows-10"></a>Настройка Mac с Windows 10
 
 
 Использование компьютера Mac для разработки приложений для Windows.
@@ -24,7 +24,7 @@ ms.locfileid: "74259115"
 
 **Обратите внимание** ,  потребуется загрузочный образ Windows 10 на диске или флэш-накопителе USB. Подписчики MSDN могут скачать образ с веб-сайта скачиваемых файлов для подписчиков MSDN. Если вы не являетесь подписчиком, установщик можно приобрести в [Microsoft Store](https://www.microsoft.com/store/apps). Его также можно скачать [здесь](https://www.microsoft.com/software-download/windows10), что полезно, если вы уже работаете с Windows и хотите обновиться.
 
-После запуска Windows вы сможете установить последний выпуск Visual Studio из [центра загрузки для разработчиков для Windows 10](https://developer.microsoft.com/en-us/windows/downloads) и начать писать приложения!
+После запуска Windows вы сможете установить последний выпуск Visual Studio из [центра загрузки для разработчиков для Windows 10](https://developer.microsoft.com/windows/downloads) и начать писать приложения!
 
 **Примечание** .  если планируется использовать эмуляторы устройств Visual Studio, **необходимо** 64 установить 64-разрядную (x64) версию Windows 10 Pro или более. К сожалению, 64-разрядная версия Windows не будет работать на некоторых старых компьютерах Mac. Узнать, совместимо ли ваше оборудование, можно на[этой странице поддержки Apple](https://support.apple.com/kb/HT5634).
 

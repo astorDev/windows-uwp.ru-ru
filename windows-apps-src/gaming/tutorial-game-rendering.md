@@ -1,19 +1,19 @@
 ---
-title: Настройка
+title: "\"Настройка\""
 description: Узнайте, как собрать конвейер отрисовки для отображения графических объектов. Отрисовка игры, настройка и подготовка данных.
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 324aff61057103d5aed00e455a7f2a8d0cfe83b4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367573"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684936"
 ---
-# <a name="rendering-framework-ii-game-rendering"></a>Платформу для отображения II: Отрисовки игр
+# <a name="rendering-framework-ii-game-rendering"></a>Платформа отрисовки II: отрисовка игры
 
 В разделе [Платформа отрисовки I](tutorial--assembling-the-rendering-pipeline.md) мы рассмотрели, как сведения о сцене и выводятся на экран для отображения. Теперь мы сделаем шаг назад и узнаем, как подготовить данные для отрисовки.
 
@@ -25,10 +25,10 @@ ms.locfileid: "66367573"
 Краткое обобщение задачи. Требуется понять, как настроить базовую платформу отрисовки для отображения вывода графики для игр UWP на базе DirectX. Мы можем гибко сгруппировать необходимые процедуры в эти три шага.
 
  1. Подключение к нашему графическому интерфейсу
- 2. Подготовка к: Создание ресурсов, нам нужно добавлять графические объекты
- 3. Для отображения графики: Отрисовки кадра
+ 2. Подготовка: создание ресурсов, необходимых для рисования графики
+ 3. Отображение графики: отрисовка кадра
 
-[Платформу для отображения инструкции: Общие сведения о подготовке к просмотру](tutorial--assembling-the-rendering-pipeline.md) описано, как подготавливаются к просмотру графики, охватывающий шаги 1 и 3. 
+В разделе [Платформа отрисовки I: введение в отрисовку](tutorial--assembling-the-rendering-pipeline.md) описано, как выполняется отрисовка графики, что охватывает шаги 1 и 3. 
 
 В этой статье объясняется, как настроить другие компоненты этой платформы и подготовить необходимые данные для выполнения отрисовки, что представляет собой шаг 2.
 
@@ -41,15 +41,15 @@ ms.locfileid: "66367573"
 * Буферы констант определяются в этом классе для хранения различных данных, необходимых для отрисовки.
     * Используйте несколько буферов констант с различной частотой обновления для уменьшения количества данных, которые необходимо посылать GPU для каждого кадра. В этом примере константы разделяются по разным буферам на основании частоты их обновления. Это лучшая методика программирования в Direct3D. 
     * В этом примере игры определены 4 буфера констант.
-        1. __m\_constantBufferNeverChanges__ содержит параметры освещения. Он задается однократно в методе __FinalizeCreateGameDeviceResources__ и никогда не меняется.
-        2. __m\_constantBufferChangeOnResize__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
-        3. __m\_constantBufferChangesEveryFrame__ содержит матрица просмотра. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в __платформу для отображения инструкции: Общие сведения о подготовке к просмотру__в разделе [ __GameRenderer::Render__ метод](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
-        4. __m\_constantBufferChangesEveryPrim__ содержит свойства матрицы и материал модели каждый примитив. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в __платформу для отображения инструкции: Общие сведения о подготовке к просмотру__в разделе [примитивов отрисовки](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
+        1. __m\_константбуфферневерчанжес__ содержит параметры освещения. Он задается однократно в методе __FinalizeCreateGameDeviceResources__ и никогда не меняется.
+        2. __m\_константбуфферчанжеонресизе__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
+        3. __m\_константбуфферчанжесеверифраме__ содержит матрицу представления. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в описании метода [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+        4. __m\_константбуфферчанжесевериприм__ содержит матрицу модели и свойства материала для каждого примитива. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в подразделе [Отрисовка примитивов](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * В этом классе также определяются объекты ресурсов шейдеров, которые содержат текстуры для примитивов.
     * Некоторые текстуры являются предопределенными ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) — это формат файла, который может использоваться для хранения сжатых и несжатых текстур. Текстуры DDS используются для стен и пола мира, а также сферы боеприпасов).
-    * В этот пример, являются объекты ресурсов шейдера: __m\_sphereTexture__, __m\_cylinderTexture__, __m\_ceilingTexture__, __m\_floorTexture__, __m\_wallsTexture__.
+    * В этом примере игры объекты ресурсов шейдера: __m\_сферетекстуре__, __m\_цилиндертекстуре__, __m\_цеилингтекстуре__, __m\_флуртекстуре__, __m\_валлстекстуре__.
 * Объекты шейдера определены в этом классе для расчета наших примитивов и текстур. 
-    * В этот пример, шейдер объекты являются __m\_vertexShader__, __m\_vertexShaderFlat__, и __m\_pixelShader__, __m\_pixelShaderFlat__.
+    * В этом примере игры объекты шейдеров имеют уровень __m\_вертексшадер__, __m\_вертексшадерфлат__и __m\_pixelShader__, __m\_пикселшадерфлат__.
     * Вершинный шейдер обрабатывает примитивы и базовое освещение, а построитель текстуры (иногда называемый фрагментным шейдером) обрабатывает текстуры и все пиксельные эффекты.
     * Есть две версии этих шейдеров (обычные и плоские) для визуализации различных примитивов. Причина наличия различных версий в том, что плоские версии гораздо проще и не используют световые блики, как и любые попиксельные эффекты освещения. Они используются для текстур стен и ускоряют прорисовку на менее мощных устройствах.
 
@@ -157,8 +157,8 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 В нашем примере игры (и в шаблоне Visual Studio для __приложения DirectX 11 (Universal Windows)__ ) создание и загрузка ресурсов игры реализуются с помощью этих двух методов, которые вызываются из конструктора __GameRenderer__:
 
-* [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
+* [__креатедевицедепендентресаурцес__](#createdevicedependentresources-method)
+* [__креатевиндовсизедепендентресаурцес__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>Метод CreateDeviceDependentResources
 
@@ -168,7 +168,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 Что поступает в этот метод в нашем примере игры?
 
-* Экземпляр переменные (__m\_gameResourcesLoaded__ = false и __m\_levelResourcesLoaded__ = false), которые указывают, были ли загружены ресурсы перед перемещением вперед для подготовки к просмотру, поскольку мы загружаем их асинхронно. 
+* Экземпляры переменных (__m\_гамересаурцеслоадед__ = false и __m\_левелресаурцеслоадед__ = false), которые указывают, были ли загружены ресурсы перед переходом к просмотру, так как мы загружаем их асинхронно. 
 * Поскольку отрисовка наложения и элементов HUD производятся в отдельных объектах класса, здесь необходимо вызвать методы __GameHud::CreateDeviceDependentResources__ и __GameInfoOverlay::CreateDeviceDependentResources__.
 
 Ниже представлен код для __GameRenderer::CreateDeviceDependentResources__.
@@ -241,7 +241,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="creategamedeviceresourcesasync-method"></a>Метод CreateGameDeviceResourcesAsync
 
-__CreateGameDeviceResourcesAsync__ вызывается из __GameMain__ метод-конструктор в __создать\_задачи__ цикл, так как мы загружаем игр ресурсов асинхронно.
+__Креатегамедевицересаурцесасинк__ вызывается из метода конструктора __гамемаин__ в цикле __задач Create\___ , так как мы загружаем ресурсы игры асинхронно.
         
 __CreateDeviceResourcesAsync__ — метод, выполняющийся как отдельный набор асинхронных задач для загрузки ресурсов игры. Так как от него ожидается выполнение в отдельном потоке, у него есть доступ только к методам устройств Direct3D 11 (определенным __ID3D11Device__), но не методам контекста устройств (определенным на __ID3D11DeviceContext__); поэтому он не выполняет никакой визуализации.
 
@@ -254,13 +254,13 @@ __CreateDeviceResourcesAsync__ — метод, выполняющийся как
 * Используйте этот метод для загрузки текстур (например, DDS-файлов) и сведения шейдера (например, CSO-файлы) в [шейдеры](tutorial--assembling-the-rendering-pipeline.md#shaders).
 
 Этот метод используется в следующих целях:
-* Создание 4 [буферы констант](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_constantBufferNeverChanges__, __m\_constantBufferChangeOnResize__, __m \_constantBufferChangesEveryFrame__, __m\_constantBufferChangesEveryPrim__
+* Создайте 4 [буфера констант](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_константбуфферневерчанжес__, __m\_константбуфферчанжеонресизе__, __m\_константбуфферчанжесеверифраме__, __m\_constantBufferChangesEveryPrim__
 * Создание объекта [состояния дискретизатора](tutorial--assembling-the-rendering-pipeline.md#sampler-state), инкапсулирующего информацию о дискретизации для текстуры
 * Создание группы задач, включающей все асинхронные задачи, созданные методом. Она ожидает завершения всех этих асинхронных задач и вызывает __FinalizeCreateGameDeviceResources__.
 * Создание загрузчика с помощью [Basic Loader](tutorial--assembling-the-rendering-pipeline.md#basicloader). Добавление операций асинхронной загрузки загрузчика в виде задач в ранее созданную группу задач.
 * Такие методы, как __BasicLoader::LoadShaderAsync__ и __BasicLoader::LoadTextureAsync__, используются для загрузки следующих компонентов:
     * скомпилированные объекты шейдера (VertextShader.cso, VertexShaderFlat.cso, PixelShader.cso и PixelShaderFlat.cso). Дополнительные сведения см. в разделе [Различные форматы файлов шейдера](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats).
-    * игр конкретных текстур (активы\\seafloor.dds, metal_texture.dds, cellceiling.dds, cellfloor.dds, cellwall.dds).
+    * текстуры для определенной игры (активы\\сеафлур. DDS, metal_texture. DDS, целлцеилинг. DDS, целлфлур. DDS, целлвалл. DDS).
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -297,7 +297,7 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
     D3D11_SAMPLER_DESC sampDesc;
 
     // ZeroMemory fills a block of memory with zeros. 
-    // For API ref, go to: https://msdn.microsoft.com/en-us/library/windows/desktop/aa366920(v=vs.85).aspx
+    // For API ref, go to: https://msdn.microsoft.com/library/windows/desktop/aa366920(v=vs.85).aspx
     ZeroMemory(&sampDesc, sizeof(sampDesc));
 
     sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
@@ -363,8 +363,8 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
 В __FinalizeCreateGameDeviceResources__ и [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) есть похожие фрагменты кода для следующих элементов:
 * Используйте __SetProjParams__ для обеспечения того, что камера использует верную матрицу проекции. Подробнее см. в статье [Камера и пространство координат](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space).
 * Обрабатывайте поворот экрана путем последующего умножения матрицы 3D-вращения на матрицу проекции камеры. Затем обновите буфер констант __ConstantBufferChangeOnResize__, используя полученную матрицу проекции.
-* Задайте __m\_gameResourcesLoaded__ __логическое__ глобальной переменной, чтобы указать, что ресурсы загружаются теперь в буферах, все готово для выполнения следующего шага. Помните, что мы инициализировали эту переменную со значением __FALSE__ в методе-конструкторе __GameRenderer__ с помощью метода __GameRenderer::CreateDeviceDependentResources__. 
-* Когда это __m\_gameResourcesLoaded__ — __TRUE__, отрисовку сцены объекты могут иметь место. Это изложено в __платформу для отображения инструкции: Общие сведения о подготовке к просмотру__ статьи, в разделе [ __метод GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+* Чтобы указать, что ресурсы теперь загружены в буферы, будут готовы к следующему шагу, задайте переменную Гамересаурцеслоадед с __логическим значением__ __m\___ . Помните, что мы инициализировали эту переменную со значением __FALSE__ в методе-конструкторе __GameRenderer__ с помощью метода __GameRenderer::CreateDeviceDependentResources__. 
+* Если это __m\_гамересаурцеслоадед__ имеет __значение true__, может выполняться отрисовка объектов сцены. Это рассматривается в разделе __Платформа отрисовки I: введение в отрисовку__ в описании [__метода GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
 
 ```cpp
 // When creating this sample game using the DirectX 11 App template, this method needs to be created.
@@ -581,7 +581,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>Метод CreateWindowSizeDependentResource
 
-Методы CreateWindowSizeDependentResources вызываются при каждом изменении размера окна, ориентации, отрисовки в стереорежиме и разрешения. В образец игры, он обновляет матрицу проекции в __ConstantBufferChangeOnResize__.
+Методы CreateWindowSizeDependentResources вызываются при каждом изменении размера окна, ориентации, отрисовки в стереорежиме и разрешения. В демонстрационной игре она обновляет матрицу проекции в __константбуфферчанжеонресизе__.
 
 Ресурсы размера окна обновляются следующим образом. 
 * Платформа приложения получает одно из нескольких возможных событий, указывающих на изменение состояния окна. 
@@ -646,6 +646,6 @@ void GameRenderer::CreateWindowSizeDependentResources()
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Это базовый процесс реализации графической платформы отрисовки игры. Чем больше ваша игра, тем больше абстракций потребуется применить для обработки иерархии типов объектов и поведения анимации. Потребуется реализовать более сложные методы для загрузки и управления активами, такими как сетки и текстуры. Теперь посмотрим, как [добавить пользовательский интерфейс](tutorial--adding-a-user-interface.md).

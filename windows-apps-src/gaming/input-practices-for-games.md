@@ -1,19 +1,19 @@
 ---
-title: Способы ввода данных в играх
+title: Рекомендации по использованию устройств ввода для игр
 description: Узнайте о шаблонах и методиках эффективного использования устройств ввода.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634949"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684979"
 ---
-# <a name="input-practices-for-games"></a>Способы ввода данных в играх
+# <a name="input-practices-for-games"></a>Рекомендации по использованию устройств ввода для игр
 
 На этой странице приведены шаблоны и методики эффективного использования устройств ввода в играх универсальной платформы Windows (UWP).
 
@@ -41,7 +41,7 @@ ms.locfileid: "57634949"
 
 Однако что произойдет, если пользователь отключит свой контроллер или подключит новый? Эти события необходимо обрабатывать и соответствующим образом обновлять список. Подробнее см. в разделе [Добавление и удаление геймпадов](gamepad-and-vibration.md#adding-and-removing-gamepads) (снова-таки, в статье о каждом типе контроллеров есть раздел с аналогичным названием).
 
-Поскольку события добавления и удаления вызываются асинхронно, при работе со списком контроллеров есть возможность получить неверные результаты. Поэтому всякий раз, когда вы обращаетесь к своему списку контроллеров, вы должны установить для него блокировку, чтобы к нему одновременно мог обращаться только один поток. Это можно сделать с помощью [параллельной среды выполнения](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), а именно [класса critical_section](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), который находится в **&lt;ppl.h&gt;**.
+Поскольку события добавления и удаления вызываются асинхронно, при работе со списком контроллеров есть возможность получить неверные результаты. Поэтому всякий раз, когда вы обращаетесь к своему списку контроллеров, вы должны установить для него блокировку, чтобы к нему одновременно мог обращаться только один поток. Это можно сделать с помощью [параллельной среды выполнения](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), а именно [класса critical_section](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), который находится в **&lt;ppl.h&gt;** .
 
 Еще один момент, который нужно учитывать, — это то, что список подключенных контроллеров изначально будет пустым, и его заполнение займет одну-две секунды. Поэтому, если вы только назначаете текущий геймпад в методе запуска, он будет иметь значение **null**!
 
@@ -166,7 +166,7 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>Отслеживание пользователей и их устройств
 
-Все устройства ввода связаны с классом [User](https://docs.microsoft.com/uwp/api/windows.system.user), чтобы удостоверение пользователя можно было сопоставить с игровыми моментами, достижениями, изменениями параметров и другими действиями. Пользователи могут входить в устройство ввода и выходить из него в любое время. Часто случается, что после выхода первого пользователя в устройство ввода, подключенное к системе, входит другой пользователь. Когда пользователь выполняет вход или выход, возникает событие [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged). Вы можете зарегистрировать обработчик событий для этого события, чтобы отслеживать игроков и устройства, которые они используют.
+Все устройства ввода связаны с классом [User](https://docs.microsoft.com/uwp/api/windows.system.user), чтобы удостоверение пользователя можно было сопоставить с игровыми моментами, достижениями, изменениями параметров и другими действиями. Пользователи могут входить в устройство ввода и выходить из него в любое время. Часто случается, что после выхода первого пользователя в устройство ввода, подключенное к системе, входит другой пользователь. При входе или выходе пользователя возникает событие [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged). Вы можете зарегистрировать обработчик событий для этого события, чтобы отслеживать игроков и используемые устройства.
 
 Удостоверение пользователя — еще один элемент, который связывает устройство ввода с соответствующим [контроллером навигации в пользовательском интерфейсе](ui-navigation-controller.md).
 
@@ -231,7 +231,7 @@ bool ButtonJustReleased(GamepadButtons selection)
 
 ## <a name="detecting-complex-button-arrangements"></a>Определение сложных схем положений кнопок
 
-Каждая кнопка на устройстве ввода предоставляет цифровые данные, указывающие на ее состояние: нажата (down) или отпущена (up). В целях обеспечения эффективности эти показания кнопок не указываются в виде отдельных логических значений. Вместо этого все они упаковываются в битовые поля, представляемые соответствующими перечислениями, например [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) (в зависимости от устройства). Чтобы можно было считать данные с конкретных кнопок, для изоляции значения кнопки, сведения о которой вам интересны, используется побитовая маскировка. Кнопка нажата, когда установлен соответствующий бит (состояние down); в противном случае кнопка отпущена (состояние up).
+Каждая кнопка на устройстве ввода предоставляет цифровые данные, указывающие на ее состояние: нажата (down) или отпущена (up). В целях обеспечения эффективности эти показания кнопок не указываются в виде отдельных логических значений. Вместо этого все они упаковываются в битовые поля, представляемые соответствующими перечислениями, например [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) (в зависимости от устройства). Для считывания данных с конкретных кнопок используется побитовая маскировка, позволяющая изолировать нужные значения. Кнопка нажата, когда установлен соответствующий бит (состояние down); в противном случае кнопка отпущена (состояние up).
 
 Вспомним, как определяется положение отдельных кнопок (нажата или отпущена). Пример основан на геймпадах, однако для аркадного джойстика, гоночного руля и других устройств ввода действуют такие же принципы.
 
@@ -294,17 +294,17 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-Это правило можно применять для проверки любого количества кнопок с любой схемой их состояний.
+Это правило можно применять для проверки любого количества кнопок с любой схемой состояний.
 
 ## <a name="get-the-state-of-the-battery"></a>Получение состояния аккумулятора
 
-Для любого игрового устройства управления, реализующего интерфейс [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo), можно вызвать метод [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) в экземпляре устройства управления, чтобы получить объект [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport), который предоставляет информацию об аккумуляторе в устройстве. Можно получить такие свойства, как скорость зарядки ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), предполагаемую энергоемкость нового аккумулятора ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) и энергоемкость текущего аккумулятора при полной зарядке ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
+Для любого игрового устройства управления, реализующего интерфейс [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo), можно вызвать метод [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) в экземпляре устройства управления, чтобы получить объект [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport), который предоставляет информацию об аккумуляторе в устройстве. Можно получить такие свойства, как скорость зарядки ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), предполагаемую энергоемкость нового аккумулятора ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) и энергоемкость текущего аккумулятора при полной зарядке ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
 
 Для игровых устройств управления, поддерживающих подробную отчетность по аккумуляторам, можно получить эту и другую информацию об аккумуляторе, как описано в разделе [Получение сведений об аккумуляторе](../devices-sensors/get-battery-info.md). Тем не менее большинство игровых устройств управления не поддерживают такой уровень отчетности по аккумуляторам, т. к. в них используются недорогие аппаратные элементы. Для таких контроллеров необходимо помнить следующее:
 
 * **ChargeRateInMilliwatts** и **DesignCapacityInMilliwattHours** всегда будут иметь значение **NULL**.
 
-* Вы можете получить процент заряда аккумулятора путем следующего расчета: [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Значения этих свойств следует игнорировать и использовать только вычисленный процент.
+* Вы можете получить процент заряда аккумулятора путем следующего расчета: [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Значения этих свойств следует игнорировать и использовать только вычисленный процент.
 
 * Процент в предыдущем пункте всегда будет иметь одно из следующих значений:
 
@@ -315,8 +315,8 @@ if (buttonArrangement == buttonSelection)
 
 Если ваш код выполняет какое-либо действие (например, рисует пользовательский интерфейс) на основании оставшегося уровня заряда аккумулятора, следите за тем, чтобы он соответствовал значениям выше. Например, если вы хотите предупреждать игрока о низком заряде аккумулятора в контроллере, делайте это тогда, когда заряд опустится до 10%.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
-* [Класс Windows.System.User](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Интерфейс Windows.Gaming.Input.IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Перечисление Windows.Gaming.Input.GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Класс Windows. System. пользователь](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Интерфейс Windows. Gaming. input. Игамеконтроллер](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Перечисление Windows. Gaming. input. Гамепадбуттонс](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

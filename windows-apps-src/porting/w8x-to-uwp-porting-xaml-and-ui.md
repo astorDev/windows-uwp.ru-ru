@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 879dee0c8c4c3ad9004c11fa488d32eae8936510
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259108"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684657"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Перенос XAML среды выполнения Windows 8.x и пользовательского интерфейса в UWP
 
@@ -109,7 +109,7 @@ ms.locfileid: "74259108"
 | **мессажедиалог** | Рекомендуется вместо **MessageDialog** использовать более гибкий [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). См. также пример [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). |
 | **ListPickerFlyout**, **PickerFlyout**  | **Листпиккерфлйоут** и **пиккерфлйоут** являются устаревшими для приложений Windows 10. Для простого всплывающего элемента используйте [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout). Для более сложных элементов используйте [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | Свойство [**PasswordBox. испассвордревеалбуттоненаблед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) является устаревшим в приложении Windows 10, и его установка не оказывает никакого влияния. Вместо этого используйте [**PasswordBox. пассвордревеалмоде**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) , который по умолчанию **просматривает** (в котором отображается глиф глаза, например в приложении среда выполнения Windows 8. x). См. также раздел [Руководство по полям паролей](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box). |
-| [**Сводка**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Элемент управления [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) теперь универсален; его использование больше не ограничивается мобильными устройствами. |
+| [**Сводка**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Элемент управления [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) теперь универсален, его использование больше не ограничивается мобильными устройствами. |
 | [**сеарчбокс**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Хотя [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах. См. раздел [SearchBox заменен на AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
 | **SemanticZoom** | Сведения о **SemanticZoom** см. в разделе [Изменения SemanticZoom](#semanticzoom-changes). |
 | [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | Некоторые свойства [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) по умолчанию изменились. [**Хоризонталскроллмоде**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) — **Auto**, [**Вертикалскроллмоде**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) — **Auto**, а [**параметр ZoomMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode) — **отключено**. Если новые значения по умолчанию не подходят для вашего приложения, вы можете изменить их в стиле и как локальные значения в самом элементе управления.  |
@@ -122,7 +122,7 @@ ms.locfileid: "74259108"
 
 ##  <a name="design-language-in-windows10"></a>Язык разработки в Windows 10
 
-Существуют небольшие, но важные различия в языке разработки между универсальными приложениями 8,1 и приложениями Windows 10. Все сведения см. в разделе [Дизайн](https://developer.microsoft.com/en-us/windows/apps/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
+Существуют небольшие, но важные различия в языке разработки между универсальными приложениями 8,1 и приложениями Windows 10. Все сведения см. в разделе [Дизайн](https://developer.microsoft.com/windows/apps/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Эффективные пиксели, расстояние от экрана и коэффициенты масштабирования
 
@@ -194,13 +194,13 @@ ListViewItemPresenter с наложенным флажком
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [недоступно]       |
-|                     | Отключено                |                   | [недоступно]       |
+|                     | Отключен                |                   | [недоступно]       |
 |                     | [недоступно]           |                   | PointerOverSelected |
 |                     | [недоступно]           |                   | Selected            |
 |                     | [недоступно]           |                   | PressedSelected     |
 | [недоступно]       |                         | DisabledStates    |                     |
-|                     | [недоступно]           |                   | Отключено            |
-|                     | [недоступно]           |                   | Enabled             |
+|                     | [недоступно]           |                   | Отключен            |
+|                     | [недоступно]           |                   | Включен             |
 | SelectionHintStates |                         | [недоступно]     |                     |
 |                     | VerticalSelectionHint   |                   | [недоступно]       |
 |                     | HorizontalSelectionHint |                   | [недоступно]       |
@@ -213,7 +213,7 @@ ListViewItemPresenter с наложенным флажком
 |                     | Unselected              |                   | [недоступно]       |
 |                     | UnselectedPointerOver   |                   | [недоступно]       |
 |                     | UnselectedSwiping       |                   | [недоступно]       |
-|                     | Selecting               |                   | [недоступно]       |
+|                     | Выделение               |                   | [недоступно]       |
 |                     | Selected                |                   | [недоступно]       |
 |                     | SelectedSwiping         |                   | [недоступно]       |
 |                     | SelectedUnfocused       |                   | [недоступно]       |
@@ -235,7 +235,7 @@ ListViewItemPresenter с наложенным флажком
 
 ## <a name="localization-and-globalization"></a>Локализация и глобализация
 
-Вы можете повторно использовать файл Resources.resw из проекта универсального приложения для версии 8.1 в проекте приложения UWP. После копирования файла добавьте его в проект и задайте для параметра **Действие при сборке** значение **PRIResource**, а для параметра **Копировать в выходной каталог** — **Не копировать**. В разделе [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) описывается загрузка ресурсов для определенного семейства устройств с учетом коэффициента выбора ресурсов для семейств устройств.
+Вы можете повторно использовать файл Resources.resw из проекта универсального приложения для версии 8.1 в проекте приложения UWP. После копирования файла добавьте его в проект и задайте для параметра **Действие при сборке** значение **PRIResource**, а для параметра **Копировать в выходной каталог** — **Не копировать**. В разделе [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) описывается загрузка ресурсов для определенного семейства устройств на основе коэффициента выбора ресурсов для семейств устройств.
 
 ## <a name="play-to"></a>Воспроизведение на устройстве
 
@@ -247,7 +247,7 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 В других случаях ключи ресурсов больше не поддерживаются. Редактор разметки XAML в Visual Studio выделяет ссылки на ключи ресурсов, которые не могут быть разрешены. Например, редактор разметки XAML подчеркнет ссылку к ключу стиля `ListViewItemTextBlockStyle` волнистой линией красного цвета. Если она не будет исправлена, приложение немедленно завершит работу при попытке развернуть его в эмуляторе или на устройстве. Поэтому важно обращать внимание на правильность разметки XAML. И вы увидите, что Visual Studio — это отличный инструмент для нахождения подобных проблем.
 
-Для ключей, которые по-прежнему поддерживаются, изменения языка дизайна означают, что изменились свойства, заданные некоторыми стилями. Например, `TitleTextBlockStyle` устанавливает размер **FontSize** равным 14.667 px в приложении среда выполнения Windows 8. x и 18.14 px в приложении для Магазина Windows Phone. Но тот же стиль устанавливает размер **шрифта** , превышающий большой 24px в приложении Windows 10. Проверьте свои разработки и макеты и используйте соответствующие стили в нужных местах. Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) и [Оформление приложений UWP](https://developer.microsoft.com/en-us/windows/apps/design).
+Для ключей, которые по-прежнему поддерживаются, изменения языка дизайна означают, что изменились свойства, заданные некоторыми стилями. Например, `TitleTextBlockStyle` устанавливает размер **FontSize** равным 14.667 px в приложении среда выполнения Windows 8. x и 18.14 px в приложении для Магазина Windows Phone. Но тот же стиль устанавливает размер **шрифта** , превышающий большой 24px в приложении Windows 10. Проверьте свои разработки и макеты и используйте соответствующие стили в нужных местах. Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) и [Оформление приложений UWP](https://developer.microsoft.com/windows/apps/design).
 
 Далее приведен полный список ключей, которые больше не поддерживаются.
 
@@ -428,7 +428,7 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 ## <a name="semanticzoom-changes"></a>Изменения SemanticZoom
 
-Жест уменьшения масштаба для [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) упрощен в модели Windows Phone. Теперь для уменьшения масштаба нужно коснуться заголовка группы или щелкнуть его (поэтому на настольных компьютерах больше не отображается кнопка со знаком минус, которая использовалась для уменьшения масштаба). Теперь мы бесплатно получаем одинаковое поведение на всех устройствах. Одно незначительное отличие от модели Windows Phone состоит в том, что уменьшенное представление (список переходов) заменяет увеличенное представление, а не накладывается на него. По этой причине вы можете удалить все полупрозрачные фоны из уменьшенных представлений.
+Жест уменьшения масштаба для [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) упрощен на модели Windows Phone. Теперь для уменьшения масштаба нужно коснуться заголовка группы или щелкнуть его (поэтому на настольных компьютерах больше не отображается кнопка со знаком минус, которая использовалась для уменьшения масштаба). Теперь мы бесплатно получаем одинаковое поведение на всех устройствах. Одно незначительное отличие от модели Windows Phone состоит в том, что уменьшенное представление (список переходов) заменяет увеличенное представление, а не накладывается на него. По этой причине вы можете удалить все полупрозрачные фоны из уменьшенных представлений.
 
 В приложении для Магазина Windows Phone масштабное представление расширяется до размера экрана. В приложении среда выполнения Windows 8. x и в приложении Windows 10 размер масштабного представления ограничивается границами элемента управления **семантикзума** .
 
@@ -438,7 +438,7 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 В приложении для Магазина Windows Phone и в приложении Windows 10 уменьшенное представление закрывается при нажатии кнопки "назад". Для приложения среда выполнения Windows 8. x нет встроенной обработки кнопок назад, поэтому вопрос не применяется.
 
-## <a name="settings"></a>Параметры
+## <a name="settings"></a>"Параметры"
 
 Класс среда выполнения Windows 8. x **сеттингспане** не подходит для Windows 10. Вместо этого, в дополнение к построению страницы параметров, необходимо предоставить пользователям способ получать доступ к ней из вашего приложения. Рекомендуется представить страницу параметров приложения на верхнем уровне, как последний закрепленный элемент на панели навигации, но ниже приводится полный набор доступных вариантов.
 
@@ -450,11 +450,11 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 Страница параметров должна полностью заполнять окно приложения и также располагаться в разделе сведений о приложении и отзывов. Рекомендации по проектированию страницы параметров см. в разделе [Рекомендации по параметрам приложений](https://docs.microsoft.com/windows/uwp/app-settings/guidelines-for-app-settings).
 
-## <a name="text"></a>Текста
+## <a name="text"></a>Текст
 
 Текст (или шрифтовое оформление) является важным аспектом для приложения UWP. Во время переноса, возможно, необходимо будет пересмотреть визуальные элементы в представлениях, чтобы они соответствовали новому языку дизайна. Используйте эти иллюстрации, чтобы найти доступные стили системы UWP **TextBlock**. Найдите те из них, которые соответствуют используемым вами стилям Windows Phone Silverlight. Кроме того, можно создать собственные универсальные стили и скопировать свойства из стилей системы Windows Phone Silverlight в них.
 
-![стили системы textblock для приложений для windows 10](images/label-uwp10stylegallery.png) <br/>Системные стили TextBlock для приложений Windows 10
+![Стили системы TextBlock для приложений для Windows 10](images/label-uwp10stylegallery.png) <br/>Системные стили TextBlock для приложений Windows 10
 
 В среда выполнения Windows приложений 8. x и приложений для Магазина Windows Phone, семейство шрифтов по умолчанию является глобальным пользовательским интерфейсом. В приложении Windows 10 семейство шрифтов по умолчанию Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести вид текста 8.1, то можно настроить собственную метрику с помощью свойств, например, [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) и [**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy).
 
@@ -476,7 +476,7 @@ API-интерфейсы в пространстве имен [**Windows. Media.
 
 ## <a name="window-size"></a>Размер окна
 
-Для универсальных приложений версии 8.1 элемент манифеста приложения [**ApplicationView**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema2013/element-applicationview) используется для объявления минимальной ширины окна. В приложении UWP можно задать минимальный размер окна (ширину и высоту) с помощью императивного кода. Стандартный минимальный размер — 500 x 320 эфф. пикселей. Это также самый маленький из допустимых минимальных размеров. Самый большой из допустимых минимальных размеров — 500 x 500 эффективных пикселей.
+Для универсальных приложений версии 8.1 элемент манифеста приложения [**ApplicationView**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema2013/element-applicationview) используется для объявления минимальной ширины окна. В приложении UWP можно задать минимальный размер окна (ширину и высоту) с помощью императивного кода. Стандартный минимальный размер — 500 x 320 эфф. пикселей. Это также самый маленький из допустимых минимальных размеров. Самый большой из допустимых минимальных размеров — 500 x 500 эфф. пикселей.
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize

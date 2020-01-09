@@ -3,14 +3,14 @@ title: Уведомления близких людей
 description: В этой статье описывается, как создавать и использовать уведомления близких людей — новый вид всплывающих уведомлений.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061893"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683502"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -20,8 +20,8 @@ ms.locfileid: "73061893"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Знание основ C# или схожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Как это работает
 
@@ -59,7 +59,7 @@ experienceType="shoulderTap"
     + Кадров в секунду (FPS). Требуются только для анимаций Spritesheet. Поддерживаются только значения от 1 до 120.
 + **спритешит — Стартингфраме**
     + Номер начального кадра анимации. Используется только для анимаций Spritesheet. Если параметр отсутствует, используется значение по умолчанию (0).
-+ **мещающий**
++ **alt**
     + Текстовая строка, используемая для экранного диктора.
 
 > [!NOTE]
@@ -75,7 +75,7 @@ experienceType="shoulderTap"
     + Например: remoteid:1234
 
 > [!NOTE]
-> Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
+> Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
 > Если уникальность и стабильность удаленных идентификаторов, используемых вашим приложением, нельзя гарантировать, то можно использовать класс [RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass), показанный ниже в этом разделе, чтобы добавить ко всем вашим удаленным идентификаторам уникальный тег перед добавлением их к системе. Или можно вовсе отказаться от использования свойства RemoteId и создать собственное расширенное свойство, в котором будут храниться удаленные идентификаторы для ваших контактов.
 
 Помимо второй привязки и полезных данных необходимо включить другие полезные данные в первую привязку для резервного всплывающего уведомления. Оно будет использоваться, если потребуется вернуться к обычному уведомлению (описание приведено в [конце данной статьи](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
@@ -93,7 +93,7 @@ experienceType="shoulderTap"
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -113,8 +113,8 @@ experienceType="shoulderTap"
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
-                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
@@ -150,8 +150,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 Если уведомление функции "Близкие люди" возвращается к всплывающему уведомлению, вторая привязка игнорируется, а для отображения всплывающего уведомления используется только первая привязка. Именно поэтому крайне важно предоставить резервные полезные данные в первой привязке всплывающего уведомления.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 + [Пример уведомлений "Мои люди"](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Добавление поддержки пользователей](my-people-support.md)
 + [Адаптивные всплывающие уведомления](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [Класс Тоастнотификатион](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [Класс Тоастнотификатион](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)

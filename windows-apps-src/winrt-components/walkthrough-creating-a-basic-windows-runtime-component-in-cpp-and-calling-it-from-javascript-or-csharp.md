@@ -1,24 +1,24 @@
 ---
 title: Пошаговое руководство C++по созданию компонента Среда выполнения Windows/CX и его вызову из JavaScript илиC#
-description: В этом пошаговом руководстве показано, как создать базовую библиотеку DLL компонента среда выполнения Windows, C#которая будет вызываться из JavaScript, или Visual Basic.
+description: В этом пошаговом руководстве описано, как создать простой компонент среды выполнения Windows, являющийся библиотекой DLL, которую можно вызвать с помощью JavaScript, C# или Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.date: 05/14/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b12dd09251d8d8a93869ff2f4318233d89fa0e89
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 6dd0a011b4f71f5aefe111eae1900971d3353bf2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393650"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684706"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Пошаговое руководство C++по созданию компонента Среда выполнения Windows/CX и его вызову из JavaScript илиC#
 
 > [!NOTE]
-> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Сведения о создании среда выполнения Windows компонента с помощью C++/WinRT см. в разделе Создание [событий в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным интерфейсам API Windows. Сведения о создании среда выполнения Windows компонента с помощью C++/WinRT см. в разделе Создание [событий в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-В этом пошаговом руководстве показано, как создать базовую библиотеку DLL компонента среда выполнения Windows, C#которая будет вызываться из JavaScript, или Visual Basic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в разделе [Среда выполнения Windows Components with/CX C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+В этом пошаговом руководстве описано, как создать простой компонент среды выполнения Windows, являющийся библиотекой DLL, которую можно вызвать с помощью JavaScript, C# или Visual Basic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в разделе [Среда выполнения Windows Components with/CX C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ## <a name="creating-the-c-component-dll"></a>Создание библиотеки DLL компонента C++
 В этом примере сначала создается проект компонента, но можно сначала создать проект JavaScript. Порядок не имеет значения.
@@ -30,14 +30,14 @@ ms.locfileid: "70393650"
 
 2. В левой области диалогового окна **Новый проект** разверните узел **Visual C++** и выберите узел универсальных приложений для Windows.
 
-3. В центральной области выберите **Среда выполнения Windows компонент** и назовите проект WinRT\_cpp.
+3. В центральной области выберите **Среда выполнения Windows компонент** и назовите проект WINRT\_cpp.
 
 4. Нажмите кнопку **ОК**.
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**Добавление класса активируемого в компонент**
 Активируемый класс — это класс, который может создаваться в клиентском коде с помощью выражения **new** (**New** в Visual Basic и **ref new** в C++). В вашем компоненте он объявляется как **public ref class sealed**. В действительности файлы Class1.h и Class1.cpp уже содержат ссылочный класс. Имя можно изменить, однако в данном примере мы будет использовать имя по умолчанию Class1. При необходимости в компоненте можно задать дополнительные ссылочные классы или регулярные классы. Дополнительные сведения о ссылочных классах см. в статье [Система типов (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
-Добавьте следующие \#директивы include в Class1. h:
+Добавьте эти директивы \#include в Class1. h:
 
 ```cpp
 #include <collection.h>
@@ -116,7 +116,7 @@ IVector<double>^ Class1::ComputeResult(double input)
     float numbers[] = { 1.0, 10.0, 60.0, 100.0, 600.0, 10000.0 };
     array_view<float, 1> logs(6, numbers);
 
-    // See http://msdn.microsoft.com/en-us/library/hh305254.aspx
+    // See http://msdn.microsoft.com/library/hh305254.aspx
     parallel_for_each(
         logs.extent,
         [=] (index<1> idx) restrict(amp)
@@ -480,7 +480,7 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 ```
 
 ## <a name="to-add-the-event-handlers-for-the-buttons"></a>Добавление обработчиков событий к кнопкам
-В Обозревателе решений откройте файл MainPage.xaml.cs (Файл может быть вложен в MainPage. XAML.) Добавьте директиву using для System. Text, а затем добавьте обработчик событий для вычисления логарифма в классе MainPage.
+В Обозревателе решений откройте файл MainPage.xaml.cs (Файл может быть вложен в mainpage.xaml). Добавьте директиву using для System.Text, а затем добавьте обработчик событий для вычисления логарифма в классе MainPage.
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -588,7 +588,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ### <a name="to-inspect-a-component"></a>**Проверка компонента**
 1. В строке меню выберите **Вид, Обозреватель объектов** (Ctrl+Alt+J).
 
-2. В левой области обозревателя объектов разверните узел WinRT\_cpp, чтобы отобразить типы и методы, определенные в компоненте.
+2. В левой области обозревателя объектов разверните узел WinRT\_CPP, чтобы отобразить типы и методы, определенные в компоненте.
 
 ## <a name="debugging-tips"></a>Советы по отладке
 Для более эффективной отладки скачайте символы отладки с открытых серверов символов Майкрософт.
@@ -610,5 +610,5 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 При удалении проекта компонента среды выполнения Windows C++ из решения необходимо также вручную удалить ссылку на проект из проекта JavaScript. Невыполнение этого требования приведет к невозможности последующей отладки и сборки. При необходимости можно добавить ссылку на сборку в библиотеку DLL.
 
-## <a name="related-topics"></a>См. также
-* [Среда выполнения Windows компонентов с C++помощью/CX](creating-windows-runtime-components-in-cpp.md)
+## <a name="related-topics"></a>Связанные темы
+* [Создание компонентов среды выполнения Windows с помощью C++/CX](creating-windows-runtime-components-in-cpp.md)

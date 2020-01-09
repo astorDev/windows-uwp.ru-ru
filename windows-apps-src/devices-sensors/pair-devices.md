@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1dbf843d9a45cbf31e5ec5c1a538e6e5e2b53ee2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258647"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684686"
 ---
 # <a name="pair-devices"></a>Связывание устройств
 
@@ -20,7 +20,7 @@ ms.locfileid: "74258647"
 
 **Важные API**
 
-- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) поддерживает три разных способа связывания устройств.
 
@@ -46,7 +46,7 @@ ms.locfileid: "74258647"
 
 Чтобы попытаться выполнить базовое связывание, сначала необходимо получить объект [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) для устройства, которое вас интересует. Получив этот объект, вы сможете взаимодействовать со свойством [**DeviceInformation.Pairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing), являющимся объектом [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing). Чтобы выполнить связывание, просто вызовите [**DeviceInformationPairing.PairAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationpairing.pairasync). Вам необходимо будет **подождать** результат, чтобы предоставить приложению время попытаться завершить действие связывания. Будет возвращен результат действия связывания, и при отсутствии ошибок устройство будет связано.
 
-В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) и вам известно о возможности связывания устройства ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation).
+В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) и вам известно о возможности связывания устройства ([**CanPair**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation).
 
 ## <a name="custom-pairing"></a>Пользовательское связывание
 
