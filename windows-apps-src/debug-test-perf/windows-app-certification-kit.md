@@ -6,20 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, сертификация приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: 4772edb9c99426396b7fa3a8734e2f45391c3a0f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 346639a222228ce74d68735d2223815585d1ca08
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257834"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681915"
 ---
 # <a name="windows-app-certification-kit"></a>Комплект сертификации приложений для Windows
 
 
 
-Чтобы приложение было [сертифицировано](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) или подготовлено для [публикации в Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), необходимо сначала проверить и проверить его локально. В этом разделе показано, как установить и запустить [Комплект сертификации приложений для Windows](https://msdn.microsoft.com/en-US/windows/apps/bg127575) , чтобы обеспечить безопасность и эффективность работы приложения.
+Чтобы приложение было [сертифицировано](https://docs.microsoft.com/windows/win32/win_cert/windows-certification-portal) или подготовлено для [публикации в Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions), необходимо сначала проверить и проверить его локально. В этом разделе показано, как установить и запустить [Комплект сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) , чтобы обеспечить безопасность и эффективность работы приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые условия
 
 Необходимые условия для тестирования универсального приложения для Windows:
 
@@ -92,7 +92,7 @@ ms.locfileid: "74257834"
 
 Так как маломощные компьютеры совершенствуются, со временем их рабочие характеристики могут меняться. Ознакомьтесь с самыми последними [политиками Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) и протестируйте приложение с последней версией комплекта сертификации приложений для Windows, чтобы убедиться, что приложение соответствует последним требованиям к производительности.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Тесты набора сертификации приложений Windows](windows-app-certification-kit-tests.md)
 * [Политики для Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)
