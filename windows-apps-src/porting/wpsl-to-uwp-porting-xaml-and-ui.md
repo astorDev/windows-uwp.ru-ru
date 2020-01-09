@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259073"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684621"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Перенос Windows Phone XAML и пользовательский интерфейс Silverlight в UWP
 
@@ -76,7 +76,7 @@ ms.locfileid: "74259073"
 
 Иногда правка императивного кода требует всего лишь изменения типа параметров. В других случаях для приложений среда выполнения Windows 8. x необходимо использовать API-интерфейсы UWP вместо API-интерфейсов .NET. Чтобы узнать, какие интерфейсы API поддерживаются, используйте оставшуюся часть этого руководство по переносу в сочетании с [.NET для приложений среда выполнения Windows 8. x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) , а также [ссылку на среда выполнения Windows](https://docs.microsoft.com/uwp/api/).
 
-А если вы просто хотите дойти до этапа сборки проекта, можно закомментировать или снабдить заглушками фрагменты ненужного кода. Затем последовательно устраняйте неполадку за неполадкой и см. следующие темы в данном разделе (включая предыдущий раздел [Устранение неполадок](wpsl-to-uwp-troubleshooting.md)), пока любые проблемы сборки и выполнения не будут решены и перенос не будет завершен.
+А если вы просто хотите дойти до этапа, на котором ваш проект собирается, можно закомментировать или снабдить заглушками фрагменты ненужного кода. Затем последовательно устраняйте неполадку за неполадкой и см. следующие темы в данном разделе (включая предыдущий раздел [Устранение неполадок](wpsl-to-uwp-troubleshooting.md)), пока любые проблемы сборки и выполнения не будут решены и перенос не будет завершен.
 
 ## <a name="adaptiveresponsive-ui"></a>Адаптивный пользовательский интерфейс с быстрым откликом
 
@@ -84,11 +84,11 @@ ms.locfileid: "74259073"
 
 ## <a name="alarms-and-reminders"></a>Предупреждения и напоминания
 
-Код, использующий классы **Alarm** или **Reminder**, необходимо перенести, чтобы использовать класс [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для создания и регистрации фоновой задачи и отображения всплывающих уведомлений в соответствующее время. См. разделы [Фоновая обработка](wpsl-to-uwp-business-and-data.md) и [Всплывающие уведомления](#toasts).
+Код, использующий классы **Alarm** или **Reminder**, должен быть перенесен, чтобы использовать класс [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для создания и регистрации фоновой задачи и отображения всплывающих уведомлений в соответствующее время. См. разделы [Фоновая обработка](wpsl-to-uwp-business-and-data.md) и [Всплывающие уведомления](#toasts).
 
 ## <a name="animation"></a>Анимация
 
-Теперь приложениям UWP доступна библиотека анимаций UWP в качестве предпочитаемой альтернативы анимации по ключевым кадрам и анимации "из/в". Эти анимации разработаны и настроены так, чтобы плавно выполняться, отлично выглядеть и придавать вашему приложению единый с Windows вид как у встроенных приложений. См. раздел [Краткое руководство: Анимация пользовательского интерфейса с использованием библиотеки анимаций](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10)).
+Теперь в качестве предпочитаемой альтернативы анимации по ключевым кадрам и анимации "из/в" приложениям UWP доступна библиотека анимаций UWP. Эти анимации разработаны и настроены так, чтобы плавно выполняться, отлично выглядеть и придавать вашему приложению единый с Windows вид как у встроенных приложений. См. раздел [Краткое руководство: Анимация пользовательского интерфейса с использованием библиотеки анимаций](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10)).
 
 Если вы используете в своих приложениях UWP анимацию по ключевым кадрам и анимацию "из/в", вы, возможно, захотите понять разницу между независимой и зависимой анимацией, которую представляет новая платформа. См. раздел [Оптимизация анимаций и мультимедиа](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-animations-and-media). Анимации, которые выполняются в потоке пользовательского интерфейса (те, которые анимируют свойства макета, например), известны как зависимые анимации, и при запуске на новой платформе они не будут работать, если вы не выполните одно из двух действий. Вы можете задать им для анимирования различные свойства, например [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), таким образом делая их независимыми. Или вы можете установить `EnableDependentAnimation="True"` для элемента анимации, чтобы подтвердить ваше намерение выполнить анимацию, работа которой не может быть гарантированно плавной. Если вы используете Blend для Visual Studio для создания новых анимаций, это свойство будет установлено для вас там, где это необходимо.
 
@@ -167,7 +167,7 @@ Windows Phone панели приложений Silverlight и кнопки па
 
 ## <a name="binding-an-image-to-a-view-model"></a>Привязка изображения к модели представления
 
-Свойство [**Image.Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) можно привязать к любому свойству модели представления типа [**ImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageSource). Ниже приведена типичная реализация такого свойства в Windows Phone приложении Silverlight:
+Вы можете привязать свойство [**Image.Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) к любому свойству модели представления типа [**ImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageSource). Ниже приведена типичная реализация такого свойства в Windows Phone приложении Silverlight:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -205,15 +205,15 @@ Windows Phone приложения Silverlight используют элемен
 
 ##  <a name="design-language-in-windows10"></a>Язык разработки в Windows 10
 
-Существуют некоторые отличия языка разработки от Windows Phone приложений Silverlight и приложений Windows 10. Все сведения см. в разделе [Дизайн](https://developer.microsoft.com/en-us/windows/apps/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
+Существуют некоторые отличия языка разработки от Windows Phone приложений Silverlight и приложений Windows 10. Все сведения см. в разделе [Дизайн](https://developer.microsoft.com/windows/apps/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
 
 ## <a name="localization-and-globalization"></a>Локализация и глобализация
 
-Для локализованных строк можно повторно использовать RESX-файл из проекта Windows Phone Silverlight в проекте приложения UWP. Скопируйте файл, добавьте его в проект и измените его расширение на Resources.resw, чтобы механизм поиска находил его по умолчанию. Установите **Действие при сборке** на **PRIResource**, а **Копировать в выходной каталог** на **Не копировать**. Затем можно использовать строки в разметке, указывая атрибут **x:Uid** в элементах XAML. См. [Краткое руководство: использование строковых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
+Для локализованных строк можно повторно использовать RESX-файл из проекта Windows Phone Silverlight в проекте приложения UWP. Скопируйте файл, добавьте его в проект и измените его расширение на Resources.resw, чтобы механизм поиска находил его по умолчанию. Установите **Действие при сборке** на **PRIResource**, а **Копировать в выходной каталог** на **Не копировать**. Затем можно использовать строки в разметке, указывая атрибут **x: Uid** в элементах XAML. См. [Краткое руководство: использование строковых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
 Windows Phone приложения Silverlight используют класс **CultureInfo** для упрощения глобализации приложения. Приложения UWP используют современную технологию ресурсов (MRT), которая поддерживает динамическую загрузку ресурсов приложения (локализации, масштабирования и темы) и в среду выполнения и в рабочую область конструирования Visual Studio. Дополнительные сведения см. в разделе [Руководство по файлам, данным и глобализации](https://docs.microsoft.com/windows/uwp/design/usability/index).
 
-В разделе [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) описывается загрузка ресурсов для определенного семейства устройств с учетом коэффициента выбора ресурсов для семейств устройств.
+В разделе [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) описывается загрузка ресурсов для определенного семейства устройств на основе коэффициента выбора ресурсов для семейств устройств.
 
 ## <a name="media-and-graphics"></a>Мультимедиа и графика
 
@@ -291,7 +291,7 @@ Windows Phone Silverlight имеет свойство **System. Windows. UIEleme
     if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
 ```
 
-Сопоставление URI и навигация по фрагментам — это методы навигации URI, поэтому они неприменимы к навигации UWP, которая не базируется на URI. Сопоставление URI существует в ответ на слабо типизированную природу определения страницы назначения с помощью строки URI, что может привести к проблемам хрупкости и поддержки, если страница переместится в другую папку и, соответственно, на другой относительный путь. Приложения UWP Windows используют навигацию на основе типов, которая строго типизирована и проверяется компилятором, а также не имеет проблемы, которую решает сопоставление URI. Вариант использования для навигации по фрагментам — передать определенный контекст на странице назначения, чтобы страница могла представлять определенный фрагмент содержимого для прокрутки или отображать его иным образом. Альтернативным способом является передача параметра навигации при вызове метода [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate).
+Сопоставление URI и навигация по фрагментам — это методы навигации URI, поэтому они неприменимы к навигации UWP, которая не базируется на URI. Сопоставление URI существует в ответ на слабо типизированную природу определения страницы назначения с помощью строки URI, что может привести к проблемам хрупкости и поддержки, если страница переместится в другую папку и, соответственно, на другой относительный путь. Приложения UWP Windows используют навигацию на основе типов, которая строго типизирована и проверяется компилятором, а также не имеет проблемы, которую решает сопоставление URI. Вариант использования для навигации по фрагментам — передать определенный контекст на странице назначения, чтобы страница могла представлять определенный фрагмент содержимого для прокрутки или отображать его иным образом. Та же цель может быть достигнута путем передачи параметра навигации при вызове метода [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate).
 
 Подробнее: [Навигация](https://docs.microsoft.com/windows/uwp/layout/navigation-basics).
 
@@ -305,15 +305,15 @@ Windows Phone Silverlight имеет свойство **System. Windows. UIEleme
 
 Панель задач (установленная в разметке XAML с `shell:SystemTray.IsVisible`) теперь называется строкой состояния и отображается по умолчанию. Вы можете контролировать ее видимость в императивном коде, вызывая методы [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.showasync) и [**HideAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.statusbar.hideasync).
 
-## <a name="text"></a>Текста
+## <a name="text"></a>Текст
 
 Текст (или шрифтовое оформление) является важным аспектом для приложения UWP. Во время переноса, возможно, необходимо будет пересмотреть визуальные элементы в представлениях, чтобы они соответствовали новому языку дизайна. Используйте эти иллюстрации, чтобы найти стили системы UWP  **TextBlock**, которые доступны. Найдите те из них, которые соответствуют используемым вами стилям Windows Phone Silverlight. Кроме того, можно создать собственные универсальные стили и скопировать свойства из стилей системы Windows Phone Silverlight в них.
 
-![стили системы textblock для приложений для windows 10](images/label-uwp10stylegallery.png)
+![Стили системы TextBlock для приложений для Windows 10](images/label-uwp10stylegallery.png)
 
 Системные стили TextBlock для приложений Windows 10
 
-В Windows Phone приложении Silverlight семейство шрифтов по умолчанию — Segoe WP. В приложении Windows 10 семейство шрифтов по умолчанию Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести внешний вид Windows Phoneного текста Silverlight, можно задать собственные метрики с помощью таких свойств, как [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) и [**линестаккингстратеги**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) и [Оформление приложений UWP](https://developer.microsoft.com/en-us/windows/apps/design).
+В Windows Phone приложении Silverlight семейство шрифтов по умолчанию — Segoe WP. В приложении Windows 10 семейство шрифтов по умолчанию Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести внешний вид Windows Phoneного текста Silverlight, можно задать собственные метрики с помощью таких свойств, как [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) и [**линестаккингстратеги**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) и [Оформление приложений UWP](https://developer.microsoft.com/windows/apps/design).
 
 ## <a name="theme-changes"></a>Изменения тем
 
@@ -356,7 +356,7 @@ Windows Phone Silverlight имеет свойство **System. Windows. UIEleme
 
 ## <a name="toasts"></a>Всплывающие уведомления
 
-Код, отображающий всплывающее уведомление с помощью класса **Microsoft.Phone.Shell.ShellToast**, должен быть перенесен для использования класса [**ToastNotificationManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationManager), [**ToastNotifier**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier), [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) или [**ScheduledToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification). Обратите внимание, что на мобильных устройствах общеупотребительным синонимом "всплывающего уведомления" является "баннер".
+Код, отображающий всплывающее уведомление с помощью класса **Microsoft.Phone.Shell.ShellToast**, должен быть перенесен для использования класса [**ToastNotificationManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationManager), [**ToastNotifier**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier), [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) или [**ScheduledToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification). Обратите внимание, что на мобильных устройствах ориентированный на потребителя термин для "всплывающего уведомления" — "баннер".
 
 См. раздел [Работа с плитками, индикаторами событий и всплывающими уведомлениями](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)).
 
@@ -384,7 +384,7 @@ Windows Phone приложения Silverlight и приложения Windows 1
 
 ## <a name="window-size"></a>Размер окна
 
-В приложении UWP можно задать минимальный размер окна (ширину и высоту) с помощью императивного кода. Стандартный минимальный размер — 500 x 320 эфф. пикселей. Это также самый маленький из допустимых минимальных размеров. Самый большой из допустимых минимальных размеров — 500 x 500 эффективных пикселей.
+В приложении UWP можно задать минимальный размер окна (ширину и высоту) с помощью императивного кода. Стандартный минимальный размер — 500 x 320 эфф. пикселей. Это также самый маленький из допустимых минимальных размеров. Самый большой из допустимых минимальных размеров — 500 x 500 эфф. пикселей.
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
@@ -393,6 +393,6 @@ Windows Phone приложения Silverlight и приложения Windows 1
 
 Следующий раздел называется [Перенос для ввода-вывода, устройства и модели приложения](wpsl-to-uwp-input-and-sensors.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Сопоставления пространств имен и классов](wpsl-to-uwp-namespace-and-class-mappings.md)

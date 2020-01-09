@@ -1,21 +1,21 @@
 ---
 title: Гоночный руль и обратная связь по усилию
-description: Используйте API-интерфейсы Windows.Gaming.Input гоночного руля для определения возможностей гоночных рулей, а также считывания с них данных и отправки на них команд обратной связи по усилию.
+description: Используйте API-интерфейсы Windows.Gaming.Input гоночного руля для обнаружения гоночных рулей и определения их возможностей, а также считывания с гоночных рулей данных и отправки на них команд обратной связи по усилию.
 ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
 ms.date: 05/09/2018
 ms.topic: article
 keywords: Windows 10, uwp, игры, гоночный руль, обратная связь по усилию
 ms.localizationpriority: medium
-ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 12b28284fcc459a5d4f155ec7b5fc7cedc0ed8ca
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608839"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685177"
 ---
-# <a name="racing-wheel-and-force-feedback"></a>Гоночный руль и принудительная обратная связь
+# <a name="racing-wheel-and-force-feedback"></a>Гоночный руль и обратная связь по усилию
 
-На этой странице описываются основы программирования для Xbox One racing колеса с помощью [Windows.Gaming.Input.RacingWheel] [ racingwheel] и соответствующими API для универсальной платформы Windows (UWP).
+На этой странице описаны основы программирования для одноэлементных колес Xbox с помощью [Windows. Gaming. input. раЦингвхил][racingwheel] и связанных API-интерфейсов для универсальная платформа Windows (UWP).
 
 Изучив информацию на этой странице, вы узнаете:
 
@@ -27,13 +27,13 @@ ms.locfileid: "57608839"
 
 ## <a name="racing-wheel-overview"></a>Обзор гоночного руля
 
-Гоночные рули — это устройства ввода, которые позволяют ощутить эффект присутствия в кабине настоящего гоночного автомобиля. Гоночные рули — это идеальные устройства ввода как для аркадных гоночных игр, так и для гоночных симуляторов легковых или грузовых автомобилей. Поддержка гоночных рулей в приложениях UWP для Windows 10 и Xbox One реализована с помощью пространства имен [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input).
+Гоночные рули — это устройства ввода, которые позволяют ощутить эффект присутствия в кабине настоящего гоночного автомобиля. Гоночные рули — это идеальные устройства ввода как для аркадных гоночных игр, так и для гоночных симуляторов легковых или грузовых автомобилей. Поддержка гоночных рулей в приложениях UWP для Windows 10 и Xbox One реализована с помощью пространства имен [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input).
 
 Гоночные рули для Xbox One доступны в разных ценовых категориях, а дорогие модели, как правило, обладают большим количеством улучшенных возможностей ввода и обратной связи по усилию. Все гоночные рули оснащаются аналоговым рулевым колесом, аналоговыми элементами управления газом и тормозом, а также кнопками, расположенными на руле. Некоторые гоночные рули, также оснащаются аналоговыми элементами управления сцеплением и ручным тормозом, рычагом переключения передач, а также поддерживают обратную связь по усилию. Не все гоночные рули оснащаются одинаковым набором функций, а также отличаются друг от друга наличием или отсутствием поддержки определенных возможностей. Например, рулевые колеса могут поддерживать разные диапазоны вращения, а рычаги переключения передач — разное количество передач.
 
-### <a name="device-capabilities"></a>Возможности устройства
+### <a name="device-capabilities"></a>Возможности устройств
 
-Разные Xbox One колес гоночную предлагают разные наборы возможностей необязательно устройства и различные уровни поддержки для этих возможностей; Этот уровень различия между вид устройство ввода является уникальным среди всех устройств, поддерживаемых [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API. Кроме того, большинство устройств, с которыми вам придется работать, будут поддерживать по крайней мере некоторые дополнительные возможности или другой функционал. По этой причине важно определить возможности каждого подключенного гоночного руля и обеспечить поддержку всего разнообразия возможностей, которые могут быть реализованы в вашей игре.
+Различные колеса, которые применяют Xbox, предлагают различные наборы дополнительных возможностей устройств и различные уровни поддержки этих возможностей. Этот уровень вариации между одним типом входного устройства уникален среди устройств, поддерживаемых API [Windows. Gaming. Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) . Кроме того, большинство устройств, с которыми вам придется работать, будут поддерживать по крайней мере некоторые дополнительные возможности или другой функционал. По этой причине важно определить возможности каждого подключенного гоночного руля и обеспечить поддержку всего разнообразия возможностей, которые могут быть реализованы в вашей игре.
 
 Дополнительные сведения см. в разделе [Определение возможностей гоночного руля](#determining-racing-wheel-capabilities).
 
@@ -47,47 +47,47 @@ ms.locfileid: "57608839"
 
 Чтобы облегчить задачу обеспечения поддержки разных устройств ввода для навигации в пользовательском интерфейсе и сохранить единообразие используемых для этого элементов управления в разных играх и на разных устройствах, большинство _физических_ устройств ввода параллельно выполняют функцию отдельного _логического_ устройства ввода под названием [контроллер навигации в пользовательском интерфейсе](ui-navigation-controller.md). Контроллер навигации в пользовательском интерфейсе предоставляет стандартный набор элементов управления для команд навигации в пользовательском интерфейсе на разных устройствах ввода.
 
-В силу того, что способ управления в них продиктован использованием исключительно аналоговых средств управления, и в силу некоторой степени различий между разными гоночными рулями, они, как правило, оснащаются цифровой крестовиной, кнопками **View (Вид)**, **Menu (Меню)**, **A**, **B**, **X** и **Y**, напоминающими кнопки на [геймпаде](gamepad-and-vibration.md). Эти кнопки изначально не предназначены для выполнения игровых команд и возможности их использования в качестве кнопок гоночного руля ограничены.
+В силу того, что способ управления в них продиктован использованием исключительно аналоговых средств управления, и в силу некоторой степени различий между разными гоночными рулями, они, как правило, оснащаются цифровой крестовиной, кнопками **View (Вид)** , **Menu (Меню)** , **A**, **B**, **X** и **Y**, напоминающими кнопки на [геймпаде](gamepad-and-vibration.md). Эти кнопки изначально не предназначены для выполнения игровых команд и возможности их использования в качестве кнопок гоночного руля ограничены.
 
 Если рассматривать гоночный руль в качестве контроллера навигации в пользовательском интерфейсе, то в нем реализован [необходимый набор](ui-navigation-controller.md#required-set) навигационных команд, заданных левому джойстику, крестовине, кнопкам **View**, **Menu**, **A** и **B**.
 
 | Команда навигации | Кнопки на гоночном руле |
 | ------------------:| ------------------ |
-|                 Вверх | D-клавиша вверх           |
-|               Вниз | D-клавиша вниз         |
-|               Влево | D-клавиша влево         |
-|              Вправо | D-клавиша вправо        |
-|               Просмотр | Кнопка просмотра        |
-|               Меню | Кнопка меню        |
-|             Принять | Кнопка A           |
-|             Отмена | кнопка B           |
+|                 Up | Крестовина вверх           |
+|               Down | Крестовина вниз         |
+|               Влево | Крестовина влево         |
+|              Вправо | Крестовина вправо        |
+|               "Вид" | Кнопка просмотра        |
+|               Menu | Кнопка меню        |
+|             Accept | Кнопка A           |
+|             "Отмена" | Кнопка B           |
 
 Кроме того, в некоторых гоночных рулях может быть реализовано сопоставление некоторых [дополнительных наборов](ui-navigation-controller.md#optional-set) навигационных команд с другими поддерживаемыми ими типами ввода, однако соответствие этих команд друг другу может быть разным на различных устройствах. Рассмотрите возможность реализации поддержки в том числе и этих команд, сначала убедившись в том, что они не будут использоваться в качестве важных команд для навигации в интерфейсе вашей игры.
 
 | Команда навигации | Кнопки на гоночном руле    |
 | ------------------:| --------------------- |
-|            PAGE UP | _зависит от_              |
-|          PAGE DOWN | _зависит от_              |
-|          PAGE LEFT | _зависит от_              |
-|         PAGE RIGHT | _зависит от_              |
-|          Прокрутка вверх | _зависит от_              |
-|        Прокрутка вниз | _зависит от_              |
-|        Прокрутка влево | _зависит от_              |
-|       Прокрутить вправо | _зависит от_              |
+|            PAGE UP | _различать_              |
+|          PAGE DOWN | _различать_              |
+|          PAGE LEFT | _различать_              |
+|         PAGE RIGHT | _различать_              |
+|          Прокрутка вверх | _различать_              |
+|        Прокрутка вниз | _различать_              |
+|        Прокрутка влево | _различать_              |
+|       Прокрутить вправо | _различать_              |
 |          Контекстный вызов 1 | Кнопка "X" (_как правило_) |
 |          Контекстный вызов 2 | Кнопка "Y" (_как правило_) |
-|          Контекстный вызов 3 | _зависит от_              |
-|          Контекстный вызов 4 | _зависит от_              |
+|          Контекстный вызов 3 | _различать_              |
+|          Контекстный вызов 4 | _различать_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>Обнаружение и отслеживание гоночных рулей
 
-Обнаружение и отслеживание гоночных рулей происходит точно так же, как в случае геймпадов, за тем исключением, что вместо класса [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) используется класс [RacingWheel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel). Подробнее см. в статье [Геймпад и вибрация](gamepad-and-vibration.md).
+Обнаружение и отслеживание гоночных рулей происходит точно так же, как в случае геймпадов, за тем исключением, что вместо класса [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) используется класс [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel). Подробнее см. в статье [Геймпад и вибрация](gamepad-and-vibration.md).
 
 <!-- Racing wheels are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected racing wheels and events to notify you when a racing wheel is added or removed.
 
 ### The racing wheels list
 
-The [RacingWheel](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel) class provides a static property, [RacingWheels](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheels#Windows_Gaming_Input_RacingWheel_RacingWheels), which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
+The [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel) class provides a static property, [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheels#Windows_Gaming_Input_RacingWheel_RacingWheels), which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
 
 The following example copies all connected racing wheels into a new collection.
 ```cpp
@@ -102,7 +102,7 @@ for (auto racingwheel : RacingWheel::RacingWheels)
 
 ### Adding and removing racing wheels
 
-When a racing wheel is added or removed the [RacingWheelAdded](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheeladded) and [RacingWheelRemoved](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.racingwheelremoved) events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
+When a racing wheel is added or removed the [RacingWheelAdded](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheeladded) and [RacingWheelRemoved](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheelremoved) events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
 
 The following example starts tracking an racing wheels that's been added.
 ```cpp
@@ -138,7 +138,7 @@ Each racing wheel can be associated with a user account to link their identity t
 
 В ходе опроса сохраняется моментальный снимок гоночного руля в конкретный момент времени. Такой подход к сбору входных данных отлично подходит для большинства игр, потому что их логика, как правило, выполняется в детерминированном цикле и не зависит от событий; кроме того, проще интерпретировать игровые команды из входных данных, собранных в один момент, чем из многочисленных единичных входных данных, собранных за определенный период.
 
-Опрашивание гоночного руля выполняется путем вызова функции [GetCurrentReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.getcurrentreading#Windows_Gaming_Input_RacingWheel_GetCurrentReading), которая возвращает структуру [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading), содержащую состояние гоночного руля.
+Опрашивание гоночного руля выполняется путем вызова функции [GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.getcurrentreading#Windows_Gaming_Input_RacingWheel_GetCurrentReading), которая возвращает структуру [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading), содержащую состояние гоночного руля.
 
 В следующем примере кода выполняется опрос гоночного руля на предмет его текущего состояния.
 
@@ -154,7 +154,7 @@ RacingWheelReading reading = racingwheel->GetCurrentReading();
 
 Многие элементы управления гоночного руля являются дополнительными (необязательными) или поддерживают различные варианты использования даже применительно к основным (обязательным) элементам управления, поэтому перед тем как можно будет обработать данные ввода, собранные в ходе каждого события считывания данных с гоночного руля, вам необходимо определить возможности каждого гоночного руля по отдельности.
 
-К дополнительным элементам управления относятся ручной тормоз, сцепление и рычаг переключения передач. Вы можете определить, поддерживает ли подключенный руль эти элементы управления, выполнив считывание свойств [HasHandbrake](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.hashandbrake#Windows_Gaming_Input_RacingWheel_HasHandbrake), [HasClutch](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.hasclutch#Windows_Gaming_Input_RacingWheel_HasClutch) и [HasPatternShifter](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.haspatternshifter#Windows_Gaming_Input_RacingWheel_HasPatternShifter) гоночного руля. Элемент управления поддерживается, если значением свойства является **true**; в противном случае поддержка отсутствует.
+К дополнительным элементам управления относятся ручной тормоз, сцепление и рычаг переключения передач. Вы можете определить, поддерживает ли подключенный руль эти элементы управления, выполнив считывание свойств [HasHandbrake](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.hashandbrake#Windows_Gaming_Input_RacingWheel_HasHandbrake), [HasClutch](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.hasclutch#Windows_Gaming_Input_RacingWheel_HasClutch) и [HasPatternShifter](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.haspatternshifter#Windows_Gaming_Input_RacingWheel_HasPatternShifter) гоночного руля. Элемент управления поддерживается, если значением свойства является **true**; в противном случае поддержка отсутствует.
 
 ```cpp
 if (racingwheel->HasHandbrake)
@@ -180,7 +180,7 @@ auto maxWheelDegrees = racingwheel->MaxWheelAngle;
 auto maxShifterGears = racingwheel->MaxPatternShifterGear;
 ```
 
-Наконец, некоторые гоночные рули поддерживают обратную связь по усилию на рулевом колесе. Вы можете определить, поддерживает ли подключенный гоночный руль обратную связь по усилию, выполнив считывание свойства [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) гоночного руля. Обратная связь по усилию поддерживается, если значение `WheelMotor` не равно **нулю**; в противном случае поддержка отсутствует.
+Наконец, некоторые гоночные рули поддерживают обратную связь по усилию на рулевом колесе. Вы можете определить, поддерживает ли подключенный гоночный руль обратную связь по усилию, выполнив считывание свойства [WheelMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) гоночного руля. Обратная связь по усилию поддерживается, если значение `WheelMotor` не равно **нулю**; в противном случае поддержка отсутствует.
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -193,12 +193,12 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="reading-the-buttons"></a>Чтение кнопок
 
-Все кнопки гоночного руля — четыре направления крестовины, **Previous Gear** (предыдущая передача) и **Next Gear** (следующая передача), а также 16 дополнительных кнопок — предоставляют цифровые данные, указывающие на то, нажата ли кнопка (вниз) или отпущена (вверх). В целях обеспечения эффективности эти показания кнопок не указываются в виде отдельных логических значений. Вместо этого все они упаковываются в одно битовое поле, представляемое перечислением [RacingWheelButtons](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelbuttons).
+Все кнопки гоночного руля — четыре направления крестовины, **Previous Gear** (предыдущая передача) и **Next Gear** (следующая передача), а также 16 дополнительных кнопок — предоставляют цифровые данные, указывающие на то, нажата ли кнопка (вниз) или отпущена (вверх). В целях обеспечения эффективности эти показания кнопок не указываются в виде отдельных логических значений. Вместо этого все они упаковываются в одно битовое поле, представляемое перечислением [RacingWheelButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelbuttons).
 
 > [!NOTE]
-> Гоночные рули оснащаются дополнительными кнопками, используемыми для навигации в пользовательском интерфейсе, такими как кнопки **View** и **Menu**. Эти кнопки не являются частью перечисления `RacingWheelButtons` и данные с них можно считать, только если войти в гоночный руль как в устройство навигации в пользовательском интерфейсе. Дополнительные сведения см. в разделе [Устройство навигации в пользовательском интерфейсе](ui-navigation-controller.md).
+> Гоночные рули оснащаются дополнительными кнопками, используемыми для навигации в пользовательском интерфейсе, такими как кнопки **View** и **Menu**. Эти кнопки не являются частью перечисления `RacingWheelButtons` и данные с них можно считать, только если войти в гоночный руль как в устройство навигации в пользовательском интерфейсе. Дополнительные сведения см. в разделе [Устройство навигации по пользовательскому интерфейсу](ui-navigation-controller.md).
 
-Значения кнопок считываются из свойства `Buttons` структуры [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading). Так как это свойство представляет собой битовое поле, для изоляции значения кнопки, сведения о которой вам интересны, используется побитовая маскировка. Кнопка нажата (вниз), когда установлен соответствующий бит; в противном случае кнопка отпущена (вверх).
+Значения кнопок считываются из свойства `Buttons` структуры [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading). Так как это свойство представляет собой битовое поле, для изоляции значения кнопки, сведения о которой вам интересны, используется побитовая маскировка. Кнопка нажата (вниз), когда установлен соответствующий бит; в противном случае кнопка отпущена (вверх).
 
 Следующий пример кода определяет, нажата ли кнопка **Next Gear**.
 
@@ -218,11 +218,11 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 }
 ```
 
-Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе — некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как обнаруживать эти условия, см. в разделах [Обнаружение переходов состояний кнопок](input-practices-for-games.md#detecting-button-transitions) и [Обнаружение сложных расположений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
+Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе — некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить эти условия, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ### <a name="reading-the-wheel"></a>Считывание данных с рулевого колеса
 
-Рулевое колесо является основным элементом управления и позволяет считывать с него аналоговые данные в диапазоне от -1,0 до +1,0. Значение, равное -1,0, соответствует крайнему левому положению рулевого колеса; значение +1,0 соответствует крайнему правому положению. Значение положения рулевого колеса считывается из свойства `Wheel` структуры [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading).
+Рулевое колесо является основным элементом управления и позволяет считывать с него аналоговые данные в диапазоне от -1,0 до +1,0. Значение, равное -1,0, соответствует крайнему левому положению рулевого колеса; значение +1,0 соответствует крайнему правому положению. Значение положения рулевого колеса считывается из свойства `Wheel` структуры [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading).
 
 ```cpp
 float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
@@ -232,7 +232,7 @@ float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
 
 ### <a name="reading-the-throttle-and-brake"></a>Считывание данных с элементов управления газом и тормозом
 
-Газ и тормоз являются основными элементами управления и позволяют считывать с них аналоговые данные в диапазоне от 0,0 (полностью отпущен) до 1,0 (полностью нажат), представляемые значениями с плавающей запятой. Значение элемента управления газом считывается из свойства `Throttle` структуры [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading), а значение элемента управления тормозом считывается из свойства `Brake`.
+Газ и тормоз являются основными элементами управления и позволяют считывать с них аналоговые данные в диапазоне от 0,0 (полностью отпущен) до 1,0 (полностью нажат), представляемые значениями с плавающей запятой. Значение элемента управления газом считывается из свойства `Throttle` структуры [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading), а значение элемента управления тормозом считывается из свойства `Brake`.
 
 ```cpp
 float throttle = reading.Throttle;  // returns a value between 0.0 and 1.0
@@ -241,7 +241,7 @@ float brake    = reading.Brake;     // returns a value between 0.0 and 1.0
 
 ### <a name="reading-the-handbrake-and-clutch"></a>Считывание данных с элементов управления ручным тормозом и сцеплением
 
-Ручной тормоз и сцепление являются дополнительными элементами управления и позволяют считывать с них аналоговые данные в диапазоне от 0,0 (полностью отпущен) до 1,0 (полностью нажат), представляемые значениями с плавающей запятой. Значение элемента управления ручным тормозом считывается из свойства `Handbrake` структуры [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading), а значение элемента управления сцеплением считывается из свойства `Clutch`.
+Ручной тормоз и сцепление являются дополнительными элементами управления и позволяют считывать с них аналоговые данные в диапазоне от 0,0 (полностью отпущен) до 1,0 (полностью нажат), представляемые значениями с плавающей запятой. Значение элемента управления ручным тормозом считывается из свойства `Handbrake` структуры [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading), а значение элемента управления сцеплением считывается из свойства `Clutch`.
 
 ```cpp
 float handbrake = 0.0;
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>Считывание данных с рычага переключения передач
 
-Рычаг переключения передач является дополнительным элементом управления и позволяет считывать с него цифровые данные в диапазоне от -1 до [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear), представляемые целым значением со знаком. Значение, равное -1 или 0, соответствует _заднему ходу_ и _нейтральной_ передаче соответственно; увеличивающиеся положительные значения соответствуют более высоким передним передачам до значения **MaxPatternShifterGear** включительно. Значение смещение шаблон считывается из [PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear) свойство [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading) структуры.
+Рычаг переключения передач является дополнительным элементом управления и позволяет считывать с него цифровые данные в диапазоне от -1 до [MaxPatternShifterGear](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear), представляемые целым значением со знаком. Значение, равное -1 или 0, соответствует _заднему ходу_ и _нейтральной_ передаче соответственно; увеличивающиеся положительные значения соответствуют более высоким передним передачам до значения **MaxPatternShifterGear** включительно. Значение смещения шаблона считывается из свойства [паттерншифтержеар](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear) структуры [раЦингвхилреадинг](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading) .
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -274,11 +274,11 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="run-the-inputinterfacing-sample"></a>Запуск примера кода InputInterfacing
 
-В примере кода [InputInterfacingUWP _(в центре GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) показано, как использовать гоночные рули и разные типы устройств ввода вместе, а также представлено, как эти устройства ввода работают в качестве контроллеров навигации в пользовательском интерфейсе.
+В примере кода [InputInterfacingUWP _(в центре GitHub)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) показано, как использовать гоночные рули и разные типы устройств ввода вместе, а также представлено, как эти устройства ввода работают в качестве контроллеров навигации в пользовательском интерфейсе.
 
 ## <a name="force-feedback-overview"></a>Обзор обратной связи по усилию
 
-Многие гоночные рули поддерживают обратную связь по усилию, обеспечивающую более глубокое погружение в игру, и усложняя процесс вождения, делая его более реалистичным. Гоночные рули, поддерживающие обратную связь по усилию, как правило, оснащены одним моторчиком, который применяет усилие к рулевому колесу вдоль одной оси, а именно оси вращения колеса. Реакция поддерживается в приложениях Windows 10 и UWP один Xbox, [Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback) пространства имен.
+Многие гоночные рули поддерживают обратную связь по усилию, обеспечивающую более глубокое погружение в игру, и усложняя процесс вождения, делая его более реалистичным. Гоночные рули, поддерживающие обратную связь по усилию, как правило, оснащены одним моторчиком, который применяет усилие к рулевому колесу вдоль одной оси, а именно оси вращения колеса. Принудительная обратная связь поддерживается в Windows 10 и Xbox One в приложениях UWP с помощью пространства имен [Windows. Gaming. input. форцефидбакк](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback) .
 
 > [!NOTE]
 > API-интерфейсы обратной связи по усилию могут поддерживать работу с несколькими осями усилия, однако в настоящий момент все гоночные рули для Xbox One поддерживают обратную связь по усилию применительно только к оси вращения рулевого колеса.
@@ -289,7 +289,7 @@ if (racingwheel->HasPatternShifter)
 
 ### <a name="determining-force-feedback-capabilities"></a>Определение возможностей обратной связи по усилию
 
-Вы можете определить, поддерживает ли подключенный гоночный руль обратную связь по усилию, выполнив считывание свойства [WheelMotor](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) гоночного руля. Обратная связь по усилию не поддерживается, если свойство `WheelMotor` имеет значение **ноль**. В противном случае обратная связь по усилию поддерживается и вы можете определить конкретные возможности обратной связи моторчика (например, оси, на которые он воздействует).
+Вы можете определить, поддерживает ли подключенный гоночный руль обратную связь по усилию, выполнив считывание свойства [WheelMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) гоночного руля. Обратная связь по усилию не поддерживается, если свойство `WheelMotor` имеет значение **ноль**. В противном случае обратная связь по усилию поддерживается и вы можете определить конкретные возможности обратной связи моторчика (например, оси, на которые он воздействует).
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>Загрузка эффектов обратной связи по усилию
 
-Эффекты обратной связи по усилию загружаются в устройство обратной связи, в котором они в "автономном режиме" воспроизводятся по команде игры. Ряд основных эффекты предоставляются; Пользовательские эффекты могут создаваться с помощью класса, реализующего [IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect) интерфейс.
+Эффекты обратной связи по усилию загружаются в устройство обратной связи, в котором они в "автономном режиме" воспроизводятся по команде игры. Предоставляется ряд основных эффектов. пользовательские эффекты можно создавать с помощью класса, реализующего интерфейс [ифорцефидбаккеффект](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect) .
 
 | Класс эффекта         | Описание эффекта                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -369,11 +369,11 @@ else
 
 Наконец, когда это необходимо, можно асинхронно включать, отключать или перезагружать всю систему обратной связи по усилию на конкретном гоночном руле.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
-* [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
-* [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
-* [Входной и рекомендации для игр](input-practices-for-games.md)
+* [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows. Gaming. input. Игамеконтроллер](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Рекомендации по вводу для игр](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx

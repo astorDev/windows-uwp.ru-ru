@@ -4,14 +4,14 @@ description: Узнайте, как запускать приложение по
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ms.date: 06/26/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b4df662b990f64adcbfe2e7e03dc5303b2962e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0d636b5689d604c0eaa3b66763709251a2445deb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340426"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685214"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -37,7 +37,7 @@ ms.locfileid: "71340426"
 |[MS-чат:](#messaging-app-uri-scheme) | Приложение «Сообщения» |
 |[MS-люди:](#people-app-uri-scheme) | Приложение «Люди» |
 |[MS-Photos:](#photos-app-uri-scheme) | Приложение "Фотографии" |
-|[Параметры MS:](#settings-app-uri-scheme) | Приложение "Параметры" |
+|[Параметры MS:](#settings-app-uri-scheme) | Приложение «Параметры» |
 |[MS-Store:](#store-app-uri-scheme)  | Приложение «Магазин» |
 |[MS-тонепиккер:](#tone-picker-uri-scheme) | Средство выбора звуковых сигналов |
 |[MS-елловпаже:](#nearby-numbers-app-uri-scheme) | Приложения «Телефоны мест по соседству» |
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 Кроме того, рекомендации полезны при регистрации нескольких приложений для обработки схемы URI. Порекомендовав конкретное приложение, Windows откроет это приложение, при условии что оно уже установлено.
 
-Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/en-us/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
+Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 ```cs
 // Set the recommended app
@@ -167,7 +167,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ![Пример приложения Карты Windows.](images/mapnyc.png)
 
-Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](launch-maps-app.md). Подробнее об использовании элемента управления картой в приложении описано в статье [Отображение карт с двухмерными и трехмерными представлениями, а также с представлениями Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
+Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](launch-maps-app.md). Подробнее об использовании элемента управления картой в приложении описано в статье [Отображение карт с двухмерными и трехмерными представлениями, а также с представлениями Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
 
 ### <a name="messaging-app-uri-scheme"></a>Схема URI приложения «Сообщения»
 
@@ -206,7 +206,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="photos-app-uri-scheme"></a>Схема URI приложения «Фотографии»
 
-Используйте схему URI **ms-photos:** для запуска приложения "Фотографии", чтобы просмотреть изображение или редактировать видео. Например:  
+Используйте схему URI **ms-photos:** для запуска приложения "Фотографии", чтобы просмотреть изображение или редактировать видео. Пример  
 Просмотр изображения: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Или, чтобы изменить видео: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -230,7 +230,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 Дополнительные сведения см. в разделе: [Запуск приложения «Параметры» для Windows](launch-settings-app.md) и [Руководство по приложениям, учитывающим требования конфиденциальности](https://docs.microsoft.com/windows/uwp/security/index).
 
-### <a name="store-app-uri-scheme"></a>Схема URI приложения «Магазин»
+### <a name="store-app-uri-scheme"></a>Схема URI для приложения Store
 
 Используйте схему URI **ms-windows-store:** для [запуска приложения UWP](launch-store-app.md). Открытие страниц с подробным описанием продукта, страниц с обзором продукта, страниц поиска и др. Например, следующий URI открывает приложение UWP и запускает домашнюю страницу Store.
 
