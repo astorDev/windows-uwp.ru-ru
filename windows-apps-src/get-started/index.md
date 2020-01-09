@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: начало работы, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
-ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
+ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898524"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684891"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Приступая к работе с приложениями для Windows 10
 
@@ -110,7 +110,7 @@ ms.locfileid: "74898524"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Примеры</h3>
+                    <h3>примеры</h3>
                     <p>Научитесь на личном опыте работать с платформой Windows 10 и оцените возможности интерфейсов API в действии.</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Использование примеров приложений UWP</a></p>
@@ -132,7 +132,7 @@ ms.locfileid: "74898524"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Что нового</h3>
+                    <h3>Новые возможности</h3>
                     <p>Расширьте свои возможности и изучите последние изменения в Windows 10.</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">Что интересного в последней версии Windows 10?</a></p>
@@ -155,7 +155,7 @@ ms.locfileid: "74898524"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Оформление и пользовательский интерфейс</h3>
+                                <h3>Проектирование и пользовательский интерфейс</h3>
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ ms.locfileid: "74898524"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Перенесите свои приложения в Windows</h3>
+                                <h3>Перенос приложения в Windows</h3>
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ ms.locfileid: "74898524"
                         <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Набор средств сообщества Windows</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Виртуальные машины</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash для Ubuntu в Windows</a>.</p>
+                        <p><a href="//docs.microsoft.com/windows/wsl/about">Использование Bash в Ubuntu и Windows</a></p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@ ms.locfileid: "74898524"
                 <div class="card">
                     <div class="cardText">
                         <h3>Только начинаете знакомство с разработкой?</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows в Microsoft Learn</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows в Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>

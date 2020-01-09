@@ -88,7 +88,7 @@
           href: python/scripting.md
         - name: Приступая к работе с базами данных
           href: python/databases.md
-        - name: Вопросы и ответы
+        - name: Частые вопросы
           href: python/faqs.md
         - name: Ресурсы
           href: python/resources.md
@@ -96,8 +96,10 @@
       items:
         - name: Обзор
           href: nodejs/index.yml
-        - name: Настройка среды разработки
+        - name: Настройка с использованием WSL2 (Linux)
           href: nodejs/setup-on-wsl2.md
+        - name: Настройка с использованием Windows (для начинающих)
+          href: nodejs/setup-on-windows.md
         - name: 'Как приступить к работе: инструкции для начинающих'
           href: nodejs/beginners.md
         - name: Приступая к работе с платформами веб-приложений

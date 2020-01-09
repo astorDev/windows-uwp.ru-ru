@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, анонс, видео, снимок экрана, изображение, значок, описание в Store, изображения для описания в Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dd6ffe698ae8141a02381d5ca45df31377599b
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125237"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684614"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Снимки экрана, изображения и трейлеры приложения
 
@@ -161,16 +161,16 @@ ms.locfileid: "74125237"
 
 #### <a name="mov"></a>MOV
 
-| Видео | Звук | 
+| Видео | звук; | 
 | --- | --- | 
 | <ul><li>ProRes, 1080p (при необходимости в высоком качестве)</li><li>Собственная частота кадров (желательно 29,97 к/с)</li></ul> | <ul><li>Стерео</li><li>Рекомендуемый уровень звука: от -16 LKFS/LUFS</li></ul> |
 
 
 #### <a name="mp4"></a>MP4
 
-| Видео | Звук |
+| Видео | звук; |
 | --- | --- |
-| <ul><li>Кодек: [H. 264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Прогрессивная развертка (не чересстрочная)</li><li>Высокий профиль</li><li>Два последовательных B-кадра</li><li>Закрытый протокол GOP Протокол GOP с половинной частотой кадров</li><li>CABAC</li><li>50 Мбит/с </li><li>Цветовое пространство: 4.2.0</li></ul> | <ul><li>Кодек: AAC-LC</li><li>Каналы: стерео или объемный звук</li><li>Частота дискретизации: 48 кГц</li><li>Скорость передачи звука: 384 кбит/с (для стерео) и 512 кбит/с (для объемного звука)</li></ul> |
+| <ul><li>Кодек: [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Прогрессивная развертка (не чересстрочная)</li><li>Высокий профиль</li><li>Два последовательных B-кадра</li><li>Закрытый протокол GOP Протокол GOP с половинной частотой кадров</li><li>CABAC</li><li>50 Мбит/с </li><li>Цветовое пространство: 4.2.0</li></ul> | <ul><li>Кодек: AAC-LC</li><li>Каналы: стерео или объемный звук</li><li>Частота дискретизации: 48 кГц</li><li>Скорость передачи звука: 384 кбит/с (для стерео) и 512 кбит/с (для объемного звука)</li></ul> |
 
 > [!WARNING]
 > Клиенты могут не слышать звук для файлов MP4, закодированных с помощью кодеков, отличных от AVC1.

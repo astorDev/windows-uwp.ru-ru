@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c7b876cff994f775b770d22c103d27271047b269
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257353"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683637"
 ---
 # <a name="connect-to-remote-cameras"></a>Подключение к удаленным камерам
 
@@ -33,9 +33,9 @@ ms.locfileid: "74257353"
 > Вспомогательный метод [**медиафрамесаурцеграуп. жетдевицеселектор**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) ВОЗВРАЩАЕТ строку АКС, которая будет отслеживать локально подключенные и удаленные сетевые камеры. Чтобы отслеживать только сетевые камеры, следует использовать строку АКС, показанную выше.
 
 
-При запуске возвращенного **девицеватчер** путем вызова метода [**Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) будет вызвано [**Добавление**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) события для каждой доступной в данный момент сетевой камеры. Пока наблюдатель не будет приостановлен с помощью вызова функции " [**Завершение**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)", **добавленное** событие будет вызвано, когда становятся доступными новые устройства сетевой камеры, а [**Удаленное**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed) событие будет вызвано при недоступности устройства камеры.
+При запуске возвращенного **девицеватчер** путем вызова метода [**Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) будет вызвано [**Добавление**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) события для каждой доступной в данный момент сетевой камеры. Пока наблюдатель не будет приостановлен с помощью вызова функции " [**Завершение**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)", **добавленное** событие будет вызвано, когда становятся доступными новые устройства сетевой камеры, а [**Удаленное**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed) событие будет вызвано при недоступности устройства камеры.
 
-Аргументы события, передаваемые в обработчики событий **добавления** и **удаления** , — это объект [**девицеинформатион**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) или [**девицеинформатионупдате**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate) , соответственно. У каждого из этих объектов есть свойство **ID** , которое является идентификатором сетевой камеры, для которой было запущено событие. Передайте этот идентификатор в метод [**медиафрамесаурцеграуп. фромидасинк**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) , чтобы получить объект [**медиафрамесаурцеграуп**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) , который можно использовать для получения кадров от камеры.
+Аргументы события, передаваемые в обработчики событий **добавления** и **удаления** , — это объект [**девицеинформатион**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) или [**девицеинформатионупдате**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationupdate) , соответственно. У каждого из этих объектов есть свойство **ID** , которое является идентификатором сетевой камеры, для которой было запущено событие. Передайте этот идентификатор в метод [**медиафрамесаурцеграуп. фромидасинк**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) , чтобы получить объект [**медиафрамесаурцеграуп**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) , который можно использовать для получения кадров от камеры.
 
 ## <a name="remote-camera-pairing-helper-class"></a>Вспомогательный класс для связывания камер удаленной камеры
 
@@ -46,7 +46,7 @@ ms.locfileid: "74257353"
 [!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
 
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Камера](camera.md)
 * [Базовая фотография, видео и запись звука с помощью Медиакаптуре](basic-photo-video-and-audio-capture-with-MediaCapture.md)

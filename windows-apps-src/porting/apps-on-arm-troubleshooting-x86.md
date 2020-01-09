@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, эмуляция x86 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: a71f33438a336aba67afbb30b19987b0e0aef83b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282349"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683937"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Устранение неполадок в классических приложениях x86
 >[!IMPORTANT]
@@ -18,9 +18,9 @@ ms.locfileid: "72282349"
 
 Если классическое приложение x86 не работает так, как на компьютере x86, вот несколько советов по диагностике неполадок.
 
-|Проблемы|Решение|
+|Проблема|Решение|
 |-----|--------|
-| Приложение использует драйвер, который не предназначен для ARM. | Перекомпилируйте свой драйвер x86 в ARM64. См. раздел [Создание драйверов ARM64 с помощью WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
+| Приложение использует драйвер, который не предназначен для ARM. | Перекомпилируйте свой драйвер x86 в ARM64. См. раздел [Создание драйверов ARM64 с помощью WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers). |
 | Ваше приложение доступно только для версии x64. | Если выполняется разработка для Microsoft Store, отправьте ARM-версию вашего приложения. Дополнительные сведения см. в разделе [Архитектуры пакета приложения](/windows/msix/package/device-architecture). Если вы являетесь разработчиком для Win32, мы рекомендуем перекомпилировать приложение для ARM64. Дополнительные сведения см. в разделе [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Ваше приложение использует версию OpenGL выше 1.1 или требует OpenGL с аппаратным ускорением. | Используйте режим приложения DirectX, если доступно. Приложения x86, использующие DirectX 9, DirectX 10, DirectX 11 и DirectX 12, будут работать в ARM. Дополнительные сведения см. в разделе [Графика и игры DirectX](https://docs.microsoft.com/windows/desktop/directx). |
 | Приложение x86 не работает должным образом. | Попробуйте использовать средство устранения проблем с совместимостью, выполнив следующие инструкции из раздела [Средство устранения проблем с совместимостью программ в ARM](apps-on-arm-program-compat-troubleshooter.md). Некоторые другие действия для устранения неполадок изложены в статье [Устранение неполадок с приложениями x86 в ARM](apps-on-arm-troubleshooting-x86.md). |
@@ -43,7 +43,7 @@ ms.locfileid: "72282349"
 Приложения, которые пытаются перехватить компоненты Windows или загрузить их DLL-файлы в процессы Windows, должны будут перекомпилировать эти DLL, чтобы они соответствовали архитектуре системы, например ARM64. Обычно они используются редакторами методов ввода (IME), вспомогательными технологиями и приложениями расширения оболочки (например, для отображения значков облачного хранилища в обозревателе или в контекстном меню щелчка правой кнопкой мыши). Чтобы узнать, как перекомпилировать приложения или библиотеки DLL для ARM64, см. запись блога [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Отладка
-Чтобы более тщательно проанализировать поведение вашего приложения, см. раздел [Отладка в ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) — это позволит узнать больше об инструментах и стратегиях отладки в ARM.
+Чтобы более тщательно проанализировать поведение вашего приложения, см. раздел [Отладка в ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) — это позволит узнать больше об инструментах и стратегиях отладки в ARM.
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 Платформа гипервизора Windows не поддерживается на платформе мобильных ПК Qualcomm Snapdragon 835. Следовательно, запуск виртуальных машин с помощью Hyper-V не сработает. Мы продолжим развивать эти технологии в будущих микросхемах Qualcomm. 
@@ -51,4 +51,4 @@ ms.locfileid: "72282349"
 ## <a name="dynamic-code-generation"></a>Динамическое создание кода
 Классическое приложение x86 эмулируется на ARM64 системой, создающей инструкции ARM64 во время выполнения. Это означает, что если классическое приложение x86 не предотвращает создание или изменение динамического кода в процессе, это приложение не может выполняться как x86 в ARM64. 
 
-Это позволяет снизить уровень безопасности. Некоторые приложения позволяют использовать в своем процессе использование API [сетпроцессмитигатионполици](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) с флагом `ProcessDynamicCodePolicy`. Чтобы успешно запуститься в ARM64 как процесс x86, необходимо отключить эту политику защиты. 
+Это позволяет снизить безопасность, так как некоторые приложения разрабатываются с помощью [сетпроцессмитигатионполици](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API с флагом `ProcessDynamicCodePolicy`. Чтобы успешно запуститься в ARM64 как процесс x86, необходимо отключить эту политику защиты. 

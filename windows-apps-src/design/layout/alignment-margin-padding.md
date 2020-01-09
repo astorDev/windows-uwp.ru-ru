@@ -1,17 +1,17 @@
 ---
-Description: Используйте выравнивание, поля и свойства заполнения для размещения элементов на странице.
+Description: Используйте свойства выравнивания, поля и заполнения, чтобы расположить макет элементов на странице.
 title: Выравнивание, поля и заполнение в макетах
 ms.date: 03/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3c7ca724279a6a4d41b1f7757428af8eab403549
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0d7f702d145740703b9fbc4ca2e7fd8eba8957cc
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600939"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684465"
 ---
 # <a name="alignment-margin-padding"></a>Выравнивание, поле и заполнение
 
@@ -22,30 +22,30 @@ ms.locfileid: "57600939"
 
 ![Схема, показывающая размеры](images/dimensions.svg)
 
-- [**Высота** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) и [ **ширины** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) указать размер элемента. Значения по умолчанию с точки зрения математики являются NaN (не числами). Можно использовать статические значения, измеренные в [эффективных пикселях](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), функцию **автоматического** выбора размера либо [пропорциональный размер](layout-panels.md#grid) для динамичного поведения.
+- [**Высота**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) и [**Ширина**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) укажите размер элемента. Значения по умолчанию с точки зрения математики являются NaN (не числами). Можно использовать статические значения, измеренные в [эффективных пикселях](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), функцию **автоматического** выбора размера либо [пропорциональный размер](layout-panels.md#grid) для динамичного поведения.
 
-- [**ActualHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight) и [ **ActualWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) доступны только для чтения, содержащих размер элемента во время выполнения. Если гибкие макеты увеличиваются или уменьшаются в размерах, меняются значения в событии [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Обратите внимание, что [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) не меняет значения ActualHeight и ActualWidth.
+- [**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight) и [**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) — это свойства только для чтения, которые предоставляют размер элемента во время выполнения. Если гибкие макеты увеличиваются или уменьшаются в размерах, меняются значения в событии [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Обратите внимание, что [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) не меняет значения ActualHeight и ActualWidth.
 
-- [**MinWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minwidth)/[**MaxWidth** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxwidth) и [ **MinHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minheight) / [ **MaxHeight** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) укажите значения, которые ограничивают размер элемента, обеспечивая плавность изменения размера.
+- [**MinWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minwidth)/[**MaxWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxwidth) и [**MinHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.minheight)/[**MaxHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) указывают значения, которые ограничивают размер элемента, допуская изменение размера.
 
-- [**FontSize** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.fontsize) и другие свойства text элемента управления размер макета для текстовых элементов. Хотя текстовые элементы не имеют явно объявленных размеров, у них есть вычисляемые ActualWidth и ActualHeight. 
+- Размеры [**шрифта**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.fontsize) и других свойств текста имеют размер макета элемента управления для текстовых элементов. Хотя текстовые элементы не имеют явно объявленных размеров, у них есть вычисляемые ActualWidth и ActualHeight. 
 
-## <a name="alignment"></a>Выравнивание
+## <a name="alignment"></a>Соответствие
 Выравнивание делает внешний вид пользовательского интерфейса аккуратным и сбалансированным, а также может использоваться для создания визуальной иерархию и связей между элементами.
 
 ![схема, показывающая выравнивание](images/alignment.svg)
 
-- [**HorizontalAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) и [ **VerticalAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) укажите, как элемент должен быть размещен в родительском контейнере.
+- [**HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) и [**VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) указывают, как элемент должен располагаться в родительском контейнере.
     - Значения для **HorizontalAlignment**: **Left**, **Center**, **Right** и **Stretch**.
     - Значения для **VerticalAlignment**: **Top**, **Center**, **Bottom** и **Stretch**.
 
 - Значение **Stretch** используется по умолчанию для обоих свойств, при этом элементы занимают все место в соответствии с родительским контейнером. Реальное числовое значение Height и Width отменяет выравнивание Stretch, которое будет действовать как значение Center. Некоторые элементы управления, например Button, перезаписывают значение Stretch в своем стиле по умолчанию.
 
-- [**HorizontalContentAlignment** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) и [ **verticalcontentalignment определяют** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.verticalcontentalignment) укажите расположение дочерних элементов в контейнере.
+- [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) и [**VerticalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.verticalcontentalignment) указывают, как домещаются дочерние элементы в контейнере.
 
 - Выравнивание может влиять на обрезку в рамках панели макета. Например, при выравнивании `HorizontalAlignment="Left"` правая часть элемента обрезается, если содержимое больше по размеру, чем ActualWidth.
 
-- Текстовые элементы используют свойство [**TextAlignment**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.textalignment). Как правило, рекомендуется использовать выравнивание по левому краю, которое является значением по умолчанию. Дополнительные сведения об оформлении текста см. в разделе [Оформление текста](../style/typography.md).
+- Текстовые элементы используют свойство [**TextAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment). Как правило, рекомендуется использовать выравнивание по левому краю, которое является значением по умолчанию. Дополнительные сведения об оформлении текста см. в разделе [Оформление текста](../style/typography.md).
 
 ## <a name="margin-and-padding"></a>Поле и заполнение
 Свойства полей и заполнения помогают избежать перегруженности или излишней разреженности пользовательского интерфейса, а также упростить использование некоторых типов ввода, таких как перо и сенсорный ввод. На рисунке ниже показаны поля и заполнение для контейнера и его содержимого.
@@ -53,7 +53,7 @@ ms.locfileid: "57600939"
 ![схема полей и заполнения XAML](images/xaml-layout-margins-padding.svg)
 
 ### <a name="margin"></a>Margin
-[**Поле** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) определяет объем пустого пространства вокруг элемента. Margin не добавляет пиксели к ActualHeight и ActualWidth и не считается частью элемента для проведения проверок и событий ввода источников.
+[**Поле**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) управляет размером пустого пространства вокруг элемента. Margin не добавляет пиксели к ActualHeight и ActualWidth и не считается частью элемента для проведения проверок и событий ввода источников.
 
 - Значения свойства Margin могут быть универсальными или определенными. При значении `Margin="20"` к элементу будет применено универсальное поле в 20 пикселей слева, сверху, справа и снизу. При значении `Margin="0,10,5,25"` значения применяются слева, сверху, справа и снизу (в указанном порядке). 
 
@@ -64,14 +64,14 @@ ms.locfileid: "57600939"
 - Значения полей ограничиваются последними, поэтому будьте осторожны с полями, так как контейнеры могут обрезать элементы или ограничивать их размер. Значение Margin может стать причиной того, что элемент не будет поддаваться отрисовке, поскольку одно из его измерений было ограничено до 0 после применения поля.
 
 ### <a name="padding"></a>Заполнение
-[**Заполнение** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.padding) управляет объемом расстояние между внутренним границей элемента и его дочерний тип содержимого элемента или элементов. Положительное значение Padding уменьшает область содержимого элемента. 
+[**Заполнение**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.padding) управляет объемом пространства между внутренней границей элемента и его дочерним содержимым или элементами. Положительное значение Padding уменьшает область содержимого элемента. 
 
 В отличие от Margin Padding не является свойством FrameworkElement. Существует несколько классов, определяющих собственное свойство Padding:
 
--   [**Control.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding): наследует ко всем [ **управления** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls) производных классов. Не во всех элементах управления имеется содержимое, поэтому для таких элементов задание свойства ни на что не влияет. Если элемент управления имеет границу, заполнение применяется внутри этой границы.
--   [**Border.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding): Определяет пространство между прямоугольник строки, созданные [ **BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) и [ **дочерних** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child) элемент.
--   [**ItemsPresenter.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding): помогает реализовать внешний вид элементов в элементах управления элемента, поместив указанного заполнения вокруг каждого элемента.
--   [**TextBlock.Padding** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) и [ **RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding): разверните узел ограничивающий прямоугольник вокруг текста текстового элемента. Эти текстовые элементы не имеют параметра **Background**, поэтому его визуально трудно различить. По этой причине лучше использовать параметры [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) для контейнеров [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block).
+-   [**Control. Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding): наследуется на все производные от [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls) классы. Не во всех элементах управления имеется содержимое, поэтому для таких элементов задание свойства ни на что не влияет. Если элемент управления имеет границу, заполнение применяется внутри этой границы.
+-   [**Border. Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding): определяет пробел между линией прямоугольника, созданной с помощью [**BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) и [**дочернего**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child) элемента.
+-   [**ItemsPresenter. Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding): участвует в отображении элементов элементов управления "элемент", помещая заданное заполнение вокруг каждого элемента.
+-   [**TextBlock. Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) и [**RichTextBlock. Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding): разверните ограничивающий прямоугольник вокруг текста текстового элемента. Эти текстовые элементы не имеют параметра **Background**, поэтому его визуально трудно различить. По этой причине лучше использовать параметры [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) для контейнеров [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block).
 
 В каждом из этих случаев элементы также имеют свойство Margin. Если одновременно используются свойства Margin и Padding, они дополняют друг друга: очевидное расстояние между внешним контейнером и внутренним содержимым складывается из ширины поля и заполнения.
 
@@ -92,7 +92,7 @@ ms.locfileid: "57600939"
 
 
 ## <a name="style-resources"></a>Ресурсы стиля
-Вам не придется задавать значения свойства по отдельности для элемента управления. Обычно такой способ более эффективен для группировки значений свойств в ресурс [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) и применения Style к элементу управления. Это в первую очередь касается случаев, когда необходимо применить одинаковые значения свойства к многочисленным элементам управления. Подробнее об использовании стилей см. в разделе [Стили XAML](../controls-and-patterns/xaml-styles.md).
+Вам не придется задавать значение свойства по отдельности для элемента управления. Обычно такой способ более эффективен для группировки значений свойств в ресурс [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) и применения Style к элементу управления. Это особенно актуально, когда необходимо применить одинаковые значения свойства к многочисленным элементам управления. Подробнее об использовании стилей см. в разделе [Стили XAML](../controls-and-patterns/xaml-styles.md).
 
 ## <a name="general-recommendations"></a>Общие рекомендации
 - Применяйте значения размеров только к определенным ключевым элементам, а для других элементов используйте поведение гибкого макета. Это обеспечивает [быстрый отклик интерфейса](responsive-design.md) при изменении ширины окна.
@@ -103,10 +103,10 @@ ms.locfileid: "57600939"
 
 ![рекомендуемые внутренние поля](images/12-gutter.svg)
 
-## <a name="related-topics"></a>Статьи по теме
-* [**FrameworkElement.Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height)
-* [**FrameworkElement.Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width)
-* [**FrameworkElement.HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)
-* [**FrameworkElement.VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment)
-* [**FrameworkElement.Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)
-* [**Control.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding)
+## <a name="related-topics"></a>Связанные темы
+* [**FrameworkElement. Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height)
+* [**FrameworkElement. Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width)
+* [**FrameworkElement. HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)
+* [**FrameworkElement. VerticalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment)
+* [**FrameworkElement. Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)
+* [**Элемент управления. Заполнение**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding)

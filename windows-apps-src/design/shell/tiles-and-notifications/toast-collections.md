@@ -1,5 +1,5 @@
 ---
-Description: Узнайте, как группировать уведомления центра поддержки с помощью коллекций.
+Description: Узнайте, как группировать уведомления в центре уведомлений с помощью коллекций.
 title: Коллекции всплывающих уведомлений
 label: Toast Collections
 template: detail.hbs
@@ -7,21 +7,21 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, уведомления, коллекций, коллекция, группы уведомлений, группировка уведомлений, группа, упорядочивание, центр уведомлений, всплывающее уведомление
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d5edb662b180571aa10f8a7b0ad533cf28a689
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320788"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684179"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Группирование всплывающих уведомлений с помощью коллекций
 Коллекции можно использовать для упорядочивания всплывающих уведомлений вашего приложения в центре уведомлений. Коллекции помогают пользователям проще находить сведения в центре уведомлений, а разработчикам — лучше управлять своими уведомлениями.  API-интерфейсы ниже позволяют удалять, создавать и обновлять коллекции уведомлений.
 
 > [!IMPORTANT]
-> **Требуется Creators Update**: Должен быть предназначен для пакета SDK 15063 и выполняться сборка 15063 или более поздней версии, следует использовать коллекции всплывающее уведомление. Связанные с API: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) и [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Требуется обновление Creators Update**. Обратите внимание, что для использования коллекций всплывающих уведомлений необходим пакет SDK 15063 и сборка 15063 или более поздней версии. Связанные с API: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) и [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 В примере ниже представлено приложение для обмена сообщениями, разделяющее уведомления на основании группы чатов. Каждый чат (чат Comp Sci 160A Project, чат Direct Messages, чат Lacrosse Team) является отдельной коллекцией.  Обратите внимание, на четкую группировку уведомлений, как если бы все они принадлежали отдельному приложению, несмотря на то, что все они являются уведомлениями из одного и того же приложения.  Если вам нужен более тонкий способ упорядочивания уведомлений, см. раздел [Всплывающие заголовки](toast-headers.md).  
-![Пример коллекции с помощью двух разных групп уведомлений](images/toast-collection-example.png)
+Пример коллекции ![с двумя разными группами уведомлений](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>Создание коллекций
 При создании каждой коллекции необходимо указать отображаемое имя и значок, которые будут отображаться в центре уведомлений в рамках названия коллекции, как показано на рисунке выше. Для коллекций также необходим аргумент запуска, который будет помогать приложению переходить в правильное положение в рамках приложения, когда пользователь будет щелкать название коллекции.  
@@ -186,8 +186,8 @@ collectionHistory.Clear();
 ## <a name="other-details"></a>Дополнительные сведения
 Создаваемые вами коллекции всплывающих уведомлений также отражаются в параметрах уведомлений пользователя.  Пользователи могут переключать параметры каждой отдельной коллекции, чтобы включать или отключать эти подгруппы.  При отключении уведомлений на верхнем уровне приложения также отключаются все уведомления коллекций.  Кроме того, каждая коллекция по умолчанию будет отображать 3 уведомления в центре уведомлений, и пользователь сможет развернуть его, чтобы отобразить до 20 уведомлений.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
-* [Содержимое всплывающего](adaptive-interactive-toasts.md)
-* [Заголовки всплывающее уведомление](toast-headers.md)
-* [Библиотека уведомлений на сайте GitHub (часть набора средств сообщества Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Содержимое всплывающего уведомления](adaptive-interactive-toasts.md)
+* [Заголовки всплывающих уведомлений](toast-headers.md)
+* [Библиотека уведомлений на GitHub (входит в состав набора средств сообщества Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 28974fea7861022c383efa5bf61565c4f18b5f8d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d758a19800f52284011b3260f83826f7cde300f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254334"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683907"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
@@ -28,14 +28,14 @@ ms.locfileid: "74254334"
 
 **Добавление возможностей в манифест приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
 
 
 ## <a name="initialize-the-mediacapture-object"></a>Инициализация объекта MediaCapture
-Для всех методов захвата, описанных в этой статье, сначала требуется инициализировать объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), вызвав конструктор и затем — [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Так как доступ к объекту **MediaCapture** будет осуществляться из различных областей приложения, объявите переменную класса для размещения объекта.  Реализуйте обработчик для свойстваFailed[**объекта**MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed), чтобы получить уведомление, если операция захвата завершится ошибкой.
+Для всех методов захвата, описанных в этой статье, сначала требуется инициализировать объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), вызвав конструктор и затем — [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Так как доступ к объекту **MediaCapture** будет осуществляться из различных областей приложения, объявите переменную класса для размещения объекта.  Реализуйте обработчик для свойства [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) объекта **MediaCapture**, чтобы получить уведомление, если операция захвата завершится ошибкой.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
@@ -59,7 +59,7 @@ ms.locfileid: "74254334"
 
 Дополнительные сведения о задании контрольных значений устройства захвата см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
 
-Начиная с Windows 10 версии 1803, вы можете получить метаданные, такие как EXIF, для фотографий, записанных в формате без сжатия, использовав свойство [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) свойство объекта **CapturedFrame**, возвращаемого **MediaCapture**. В предыдущих выпусках эти данные были доступны только в заголовке фотографий, записанных в файловых форматах со сжатием. Эти данные можно передать в [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) при записи файла изображения вручную. Дополнительные сведения про запись растровых изображений см. в статье [Создание, редактирование и запись растровых изображений](imaging.md).  Можно также получить доступ к контрольным значениям кадра, например, параметрам экспозиции и вспышки, которые применялись при записи кадра, обратившись к свойству [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues). Дополнительные сведения см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
+Начиная с Windows 10 версии 1803, вы можете получить метаданные, такие как EXIF, для фотографий, записанных в формате без сжатия, использовав свойство [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) свойство объекта **CapturedFrame**, возвращаемого **MediaCapture**. В предыдущих выпусках эти данные были доступны только в заголовке фотографий, записанных в файловых форматах со сжатием. Эти данные можно передать в [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) при записи файла изображения вручную. Дополнительные сведения про запись растровых изображений см. в статье [Создание, редактирование и запись растровых изображений](imaging.md).  Можно также получить доступ к контрольным значениям кадра, например, параметрам экспозиции и вспышки, которые применялись при записи кадра, обратившись к свойству [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues). Дополнительные сведения см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
 
 ## <a name="capture-a-photo-to-a-file"></a>Фотозахват в файл
 Типичное фотоприложение сохраняет полученные фотографии на диск или в облачное хранилище, а также добавляет метаданные, например сведения об ориентации фотографии, в файл. В следующем примере показано, как записать фотографию в файл. Вы по-прежнему сможете создать объект **SoftwareBitmap** на основе изображения позже. 
@@ -91,7 +91,7 @@ ms.locfileid: "74254334"
 
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-Вы можете продолжить вызывать методы **StartAsync** и **StopAsync** для записи дополнительных видео. Закончив захват видео, вызовите метод [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанса захват перед вызовом **StartAsync**.
+Вы можете продолжить вызывать методы **StartAsync** и **StopAsync** для записи дополнительных видео. Закончив захват видео, вызовите метод [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанс захвата перед вызовом **StartAsync**.
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
@@ -134,12 +134,12 @@ ms.locfileid: "74254334"
 
 Вызовите метод [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync), чтобы остановить запись звука.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Камера](camera.md)  
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-Вы можете вызвать методы **StartAsync** и **StopAsync** несколько раз, чтобы записать множество звуковых файлов. Закончив захват звука, вызовите метод [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанса захват перед вызовом **StartAsync**.
+Вы можете вызвать методы **StartAsync** и **StopAsync** несколько раз, чтобы записать несколько звуковых файлов. Закончив захват звука, вызовите метод [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанс захвата перед вызовом **StartAsync**.
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 

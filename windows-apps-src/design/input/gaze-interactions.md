@@ -1,6 +1,6 @@
 ---
 title: Взаимодействие с помощью взгляда
-Description: Узнайте, как проектировать и оптимизации приложений универсальной платформы Windows для предоставления наилучшее взаимодействие для пользователей, которые зависят от взгляда из средства отслеживания глаз и head.
+Description: Узнайте, как проектировать и оптимизировать приложения UWP, чтобы обеспечить наилучшее удобство работы для пользователей, которые используют входные данные взгляда от глазных и головных датчиков.
 label: Gaze interactions
 template: detail.hbs
 keywords: взгляд, отслеживание движения глаз, отслеживание движения головы, точка взгляда, ввод, взаимодействие с пользователем, специальные возможности, удобство использования
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6176bdce1a725c1024af9f4ecf0c37cabb0f5376
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317330"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684236"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Взаимодействие с помощью взгляда и отслеживание движения глаз в приложениях UWP
 
@@ -27,7 +27,7 @@ ms.locfileid: "67317330"
 > [!NOTE]
 > Сведения об использовании взгляда для ввода в [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) см. в разделе [Взгляд](https://docs.microsoft.com/windows/mixed-reality/gaze).
 
-**Важные API**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Важные API-интерфейсы**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Обзор
 
@@ -36,15 +36,15 @@ ms.locfileid: "67317330"
 Кроме того, ввод взглядом также предоставляет привлекательным возможности для игр (в том числе обнаружение и отслеживание цели) и традиционных офисных приложений, киосков и других интерактивных сценариев, в которых традиционные устройства ввода (клавиатура, мышь, сенсорный экран) недоступны или в которых может быть полезно освободить руки пользователя для других задач, например для удерживания сумок для покупок.
 
 > [!NOTE]
-> Поддержка оборудования для отслеживания движения глаз впервые появилась в **Windows 10 Fall Creators Update** вместе с [управлением глазами](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), встроенной функцией, которая позволяет использовать глаза для управления указателем на экране, ввода с помощью экранной клавиатуры и общения с пользователями с помощью преобразования текста в речь. Набор интерфейсов API универсальной платформы Windows ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) для создания приложений, которые могут взаимодействовать с изображением глаза отслеживания оборудования входит в состав **Windows 10 апреля 2018 г. обновления (версии 1803, сборка 17134)** и более поздних версиях.
+> Поддержка оборудования для отслеживания движения глаз впервые появилась в **Windows 10 Fall Creators Update** вместе с [управлением глазами](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), встроенной функцией, которая позволяет использовать глаза для управления указателем на экране, ввода с помощью экранной клавиатуры и общения с пользователями с помощью преобразования текста в речь. Набор API-интерфейсов UWP ([Windows. Devices. input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) для создания приложений, которые могут взаимодействовать с аппаратным обеспечением отслеживания взгляда, доступен в **обновлении Windows 10 от апреля 2018 (версия 1803, сборка 17134)** и более поздние версии.
 
-## <a name="privacy"></a>Конфиденциальность
+## <a name="privacy"></a>"Конфиденциальность"
 
 Из-за потенциально конфиденциального характера личных данных, собираемых устройствами для отслеживания движения глаз, необходимо объявить возможность `gazeInput` в манифесте приложения UWP (см. в следующий раздел **Настройка**). Если эта возможность объявлена, Windows автоматически предлагает пользователям предоставить согласие (при первом запуске приложения) в диалоговом окне, в котором им необходимо дать приложению разрешение на связь с устройством для отслеживания глаз и на доступ к этим данным.
 
 Кроме того, если ваше приложение собирает, хранит или передает данные по отслеживанию глаз передачи, вам необходимо описать это в заявлении о конфиденциальности приложения и выполнить все другие требования, связанные с **личными сведениями**, описанные в [соглашении с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и [политиках Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Установка
+## <a name="setup"></a>"Настройка"
 
 Для использования API-интерфейсов ввода взглядом в приложении UWP необходимо следующее. 
 
@@ -70,9 +70,9 @@ ms.locfileid: "67317330"
 
 ![Пример отслеживания взгляда с таймером](images/gaze/gaze-input-timed2.gif)
 
-*Помощи отслеживания с помощью примера таймера*
+*Отслеживание взгляда с помощью примера таймера*
 
-**Загрузить этот образец из [пример входной привязки взглядом (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
+**Скачайте этот пример из [примера входных данных взгляда (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. Сначала мы настраиваем пользовательский интерфейс (MainPage.xaml).
 
@@ -154,7 +154,7 @@ ms.locfileid: "67317330"
 
 2. Затем мы инициализируем наше приложение.
 
-    В этом фрагменте кода мы объявляем глобальные объекты и переопределяем событие страницы [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) для запуска [наблюдателя за устройством отслеживания взгляда](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) и событие страницы [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) для остановки [этого наблюдателя](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
+    В этом фрагменте кода мы объявляем глобальные объекты и переопределяем событие страницы [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) для запуска [наблюдателя за устройством отслеживания взгляда](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) и событие страницы [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) для остановки [этого наблюдателя](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview).
 
     ```csharp
     using System;
@@ -499,9 +499,9 @@ ms.locfileid: "67317330"
     ```
 6. Наконец, вот методы, используемые для управления таймером фокусировки взгляда для этого приложения.
 
-    `DoesElementContainPoint` проверяет, является ли указатель взглядом на индикатор выполнения. Если это так, запускается таймер взгляда и увеличивается индикатор выполнения на каждый ход таймера взгляд.
+    `DoesElementContainPoint` проверяет, находится ли указатель указателя мыши над индикатором выполнения. Если это так, запускается таймер взгляда и увеличивается индикатор выполнения на каждый ход таймера взгляд.
 
-    `SetGazeTargetLocation` Задает начальное расположение индикатора хода выполнения и, если индикатор хода выполнения завершает работу (в зависимости от таймер взглядом фокус), перемещает индикатор хода выполнения в произвольное расположение.
+    `SetGazeTargetLocation` задает начальное расположение индикатора выполнения и, при завершении индикатора выполнения (в зависимости от таймера фокуса), перемещает индикатор выполнения в случайное расположение.
 
     ```csharp
     /// <summary>
@@ -596,12 +596,12 @@ ms.locfileid: "67317330"
     }
     ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 ### <a name="resources"></a>Ресурсы
 
-- [Библиотека Windows Community Toolkit помощи](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Библиотека взгляда на набор средств Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
-### <a name="topic-samples"></a>Примеры в разделе
+### <a name="topic-samples"></a>Примеры в статье
 
-- [При помощи образца (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [Взгляните на пример (базовыйC#) ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

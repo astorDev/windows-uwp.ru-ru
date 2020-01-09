@@ -1,16 +1,16 @@
 ---
 title: Использование MRT для преобразованных классических приложений и игр
-description: Упаковав свое приложение или игру .NET или Win32 в виде пакета AppX, можно использовать Систему управления ресурсами для загрузки ресурсов приложения, адаптированных к контексту во время выполнения. В этой статье подробно рассматриваются соответствующие методы.
+description: Упаковав свое приложение или игру .NET или Win32 в виде пакета AppX, можно использовать систему управления ресурсами для загрузки ресурсов приложения, адаптированных к контексту времени выполнения. В этой статье подробно рассматриваются соответствующие методы.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ресурсы, игры, centennial, desktop app converter, mui, вспомогательная сборка
 ms.localizationpriority: medium
-ms.openlocfilehash: 3367cfafb2f3a8e307fd26dc6d6c19f1ece0d17e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254751"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683917"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Использование Системы управления ресурсами Windows 10 в устаревшем приложении или игре
 
@@ -26,14 +26,14 @@ ms.locfileid: "74254751"
 
 <table>
 <tr>
-<th>Work</th>
+<th>Рабочее</th>
 <th>Преимущество</th>
 <th>Расчетные затраты</th>
 </tr>
 <tr>
 <td>Локализация манифеста пакета</td>
 <td>Требуется совсем немного усилий, чтобы ваше локализованное содержимое отобразилось в оболочке Windows и в Microsoft Store</td>
-<td>Небольшой</td>
+<td>Небольшое</td>
 </tr>
 <tr>
 <td>Использование MRT для определения и поиска ресурсов</td>
@@ -43,7 +43,7 @@ ms.locfileid: "74254751"
 <tr>
 <td>Создание пакетов ресурсов</td>
 <td>Последний шаг к минимизации размеров загрузки и установки</td>
-<td>Небольшой</td>
+<td>Небольшое</td>
 </tr>
 <tr>
 <td>Переход к форматам и интерфейсам API ресурсов MRT</td>
@@ -148,7 +148,7 @@ ms.locfileid: "74254751"
 </Package>
 ```
 
-Дополнительные сведения о файле манифеста пакета и разметке пакета см. в разделе [манифест пакета приложения](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
+Дополнительные сведения о файле манифеста пакета и разметке пакета см. в разделе [манифест пакета приложения](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest).
 
 Наконец, если вы используете Visual Studio для создания нового проекта и переноса существующего кода в, см. статью [Создание приложения "Hello, World"](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Существующий код можно включить в новый проект, но, скорее всего, потребуется внести значительные изменения в код (особенно в пользовательском интерфейсе), чтобы работать как чистое приложение UWP. Эти изменения выходят за рамки данного документа.
 
@@ -349,7 +349,7 @@ add-appxpackage contoso_demo.appx
 3. Выберите `Local Machine` и щелкните `Next`
 4. Примите запрос на повышение прав администратора контроля учетных записей, если он отображается, и нажмите кнопку `Next`
 5. Введите пароль для закрытого ключа (если он есть) и нажмите кнопку `Next`
-6. Выберите `Place all certificates in the following store`
+6. Выберите `Place all certificates in the following store`.
 7. Нажмите кнопку `Browse` и выберите папку `Trusted People` (**не** "Доверенные издатели")
 8. Щелкните `Next`, а затем `Finish`
 
@@ -431,13 +431,13 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 Для проверки новых локализованных изменений просто добавьте новый предпочтительный язык пользовательского интерфейса в Windows. Нет необходимости загружать языковые пакеты, перезагружать систему или давать команду всему пользовательскому интерфейсу Windows отобразиться на иностранном языке. 
 
 1. Запустите приложение `Settings` (`Windows + I`)
-2. Переход к `Time & language`
-3. Переход к `Region & language`
-4. Щелкните `Add a language`
+2. Перейдите на страницу `Time & language`.
+3. Перейдите на страницу `Region & language`.
+4. Щелкните `Add a language`.
 5. Введите (или выберите) нужный язык (например, `Deutsch` или `German`)
  * Если имеются вложенные языки, выберите нужный вариант (например, `Deutsch / Deutschland`)
 6. Выберите новый язык в списке языков
-7. Щелкните `Set as default`
+7. Щелкните `Set as default`.
 
 Теперь откройте меню "Пуск" и найдите свое приложение. Вы должны увидеть локализованные значения для выбранного языка (другие приложения также могут отображаться локализованными). Если вы не видите локализованное имя уже сейчас, подождите несколько минут до обновления кэша меню "Пуск". Чтобы вернуться к своему родному языку, просто сделайте его языком по умолчанию в списке языков. 
 
@@ -541,11 +541,11 @@ MRT требует изменить только первые два этапа 
 
 Переключение кода на использования MRT для поиска ресурсов не составляет труда. Для этого требуется использовать ряд типов WinRT и несколько строк кода. Ниже приведены основные типы, которые будут использоваться:
 
-* [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), который инкапсулирует активный в данное время набор значений квалификатора (язык, коэффициент масштабирования и т. д.)
-* [ResourceManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (версия WinRT, а не версия .NET), который предоставляет доступ ко всем ресурсам из PRI-файла
-* [ResourceMap](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemap), который представляет конкретное подмножество ресурсов в PRI-файле (в этом примере файловые ресурсы в сравнении со строковыми ресурсами)
-* [NamedResource](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), представляющий логический ресурс и все его возможные кандидаты
-* [ResourceCandidate](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), представляющий одного конкретного ресурса-кандидата 
+* [ResourceContext](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), который инкапсулирует активный в данное время набор значений квалификатора (язык, коэффициент масштабирования и т. д.)
+* [ResourceManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemanager) (версия WinRT, а не версия .NET), который предоставляет доступ ко всем ресурсам из PRI-файла
+* [ResourceMap](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap), который представляет конкретное подмножество ресурсов в PRI-файле (в этом примере файловые ресурсы в сравнении со строковыми ресурсами)
+* [NamedResource](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), представляющий логический ресурс и все его возможные кандидаты
+* [ResourceCandidate](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), представляющий одного конкретного ресурса-кандидата 
 
 В псевдокоде способ, которым вы разрешаете данное имя файла ресурсов (например, `UICommands\ui.txt` в примере выше), выглядит следующим образом:
 
@@ -724,7 +724,7 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 
 Чтобы использовать средство создания пакетов, необходимо вручную обновить PRI-файл конфигурации, созданный для пакета, чтобы удалить раздел `<packaging>`.
 
-Если вы используете Visual Studio, ознакомьтесь с разрядом [, чтобы убедиться, что ресурсы установлены на устройстве независимо от того, требуются ли им устройства](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) для получения сведений о том, как создать все языки в основном пакете, создав файлы `priconfig.packaging.xml` и `priconfig.default.xml`.
+Если вы используете Visual Studio, ознакомьтесь с разрядом [, чтобы убедиться, что ресурсы установлены на устройстве независимо от того, требуются ли им устройства](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)) для получения сведений о том, как создать все языки в основном пакете, создав файлы `priconfig.packaging.xml` и `priconfig.default.xml`.
 
 При редактировании файлов вручную выполните следующие действия. 
 
@@ -807,6 +807,6 @@ signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundl
 
 Это создаст подписанный файл `.appxbundle`, содержащий основной пакет и все пакеты языковых ресурсов. Его можно дважды щелкнуть так же, как файл пакета, чтобы установить приложение и любые необходимые языки на основе языковых настроек Windows пользователя.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](tailor-resources-lang-scale-contrast.md)

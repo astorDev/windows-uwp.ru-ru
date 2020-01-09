@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 170452443588399e0257bb49f3c63604bc0a7830
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256665"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683887"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 
@@ -28,7 +28,7 @@ ms.locfileid: "74256665"
 
 **Добавление возможностей в манифест приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -72,9 +72,9 @@ ms.locfileid: "74256665"
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-Вы можете использовать объект [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) для передачи аудиоданных, записанных источником кадров мультимедиа объекту [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Передайте кадр в методу [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) объекта [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). Дополнительные сведения об использовании аудиографов для записи, обработки и смешивания звуковых сигналов см. в разделе [Звуковые графы](audio-graphs.md).
+Вы можете использовать объект [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) для передачи аудиоданных, записанных источником кадров мультимедиа объекту [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Передайте кадр в методу [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) объекта [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode). Дополнительные сведения об использовании аудиографов для записи, обработки и смешивания звуковых сигналов см. в разделе [Звуковые графы](audio-graphs.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Обработка кадров мультимедиа с помощью Медиафрамереадер](process-media-frames-with-mediaframereader.md)
 * [Камера](camera.md)

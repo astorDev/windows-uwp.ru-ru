@@ -1,17 +1,17 @@
 ---
-Description: Приложение может загружать файлы ресурсов изображений, содержащие изображения, адаптированные по контексту коэффициента масштабирования дисплея, темы, высокой контрастности и другим аспектам.
+Description: Приложение может загружать файлы ресурсов изображений, содержащие изображения, адаптированные к коэффициенту масштабирования дисплея, теме, высокой контрастности и другим параметрам времени выполнения.
 title: Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+keywords: Windows 10, uwp, ресурс, изображение, актив, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 236365bc729bb6b9a2615720c4b69aea21296e5f
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339463"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683647"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам
 Приложение может загружать файлы ресурсов изображений (или другие файлы ресурсов), адаптированные по контексту [коэффициента масштабирования дисплея](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. На эти изображения можно ссылаться из императивного кода или разметки XAML, например в виде свойства **Source** объекта **Image**. Они также могут появляться в исходном файле манифеста пакета приложения (файле `Package.appxmanifest`) — например, в качестве значения для App Icon на вкладке Visual Assets в конструкторе манифеста Visual Studio — или на плитке и всплывающих уведомлениях. Используя квалификаторы в именах файлов изображений при необходимости динамической их загрузке с помощью [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), можно обеспечить загрузку наиболее подходящего файла изображения, который наилучшим образом соответствует параметрам среды выполнения пользователя для масштабирования дисплея, темы, высокой контрастности, языку и другим аспектам.
@@ -86,12 +86,12 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Для любых сценариев, показанных в этих примерах, используйте перегрузку [конструктора Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_), которая выводит [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind). Укажите допустимый абсолютный URI, включая схему и полномочия, или просто оставьте для полномочий значение по умолчанию для пакета приложения, как показано в примере выше.
+Для любых сценариев, показанных в этих примерах, используйте перегрузку [конструктора Uri](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_), которая выводит [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind). Укажите допустимый абсолютный URI, включая схему и полномочия, или просто оставьте для полномочий значение по умолчанию для пакета приложения, как показано в примере выше.
 
 Обратите внимание, как в кодах URI в этом примере за схемой (`ms-appx` или `ms-appx-web`) следует `://`, а далее указан абсолютный путь. В абсолютном пути начальный символ `/` обеспечивает его интерпретацию из корневого каталога пакета.
 
 > [!NOTE]
-> @No__t-0 (для [строковых ресурсов](localize-strings-ui-manifest.md)) и `ms-appx(-web)` (для образов и других ресурсов) схемы URI выполняют автоматическое сопоставление квалификаторов для поиска ресурса, наиболее подходящего для текущего контекста. Схема URI `ms-appdata` (которая используется для загрузки данных приложения) не выполняет никакое автоматическое сопоставление, но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) и явно загружать соответствующие ресурсы из данных приложения, используя полное имя физического файла в URI. Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md). Веб-схемы URI (например, `http`, `https` и `ftp`) также не выполняют автоматическое сопоставление. Сведения о том, что делать в этом случае, см. в разделе [Размещение и загрузка изображений в облаке](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> `ms-resource` (для [строковых ресурсов](localize-strings-ui-manifest.md)) и `ms-appx(-web)` (для образов и других ресурсов) схемы URI выполняют автоматическое сопоставление квалификаторов для поиска ресурса, наиболее подходящего для текущего контекста. Схема URI `ms-appdata` (которая используется для загрузки данных приложения) не выполняет никакое автоматическое сопоставление, но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) и явно загружать соответствующие ресурсы из данных приложения, используя полное имя физического файла в URI. Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md). Веб-схемы URI (например, `http`, `https` и `ftp`) также не выполняют автоматическое сопоставление. Сведения о том, что делать в этом случае, см. в разделе [Размещение и загрузка изображений в облаке](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Абсолютные пути удобны, если файлы изображений остаются там, где они находятся в структуре проекта. Если вы хотите иметь возможность перемещать файл изображения, но следите за тем, чтобы он оставался в том же расположении относительно ссылающегося на него файла разметки XAML, то вместо абсолютного пути вам может потребоваться использовать путь, который задается относительно файла, содержащего разметку. Если применяется такой способ, использовать схему URI не требуется. В этом случае вы по-прежнему сможете использовать преимущества автоматического сопоставления квалификаторов, но только потому, что используете относительный путь в разметке XAML.
 
@@ -208,7 +208,7 @@ private void RefreshUIImages()
 * [Ресаурцеконтекст. Сетглобалкуалифиервалуе](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [мапчанжед](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 * [Адаптация ресурсов для языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
