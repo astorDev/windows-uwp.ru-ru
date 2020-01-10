@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, расширенное выполнение, свернутый, ExtendedExecutionSession, фоновая задача, жизненный цикл приложения, экран блокировки
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d2c9937b02d60bb8509aedaf6277512a4e0c4a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fdb47a7c57ff8ef719b819253ab768c0d836be14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371427"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684554"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Задержка приостановки приложения с помощью расширенного сеанса выполнения
 
@@ -23,7 +23,7 @@ ms.locfileid: "66371427"
 
 Если требуется, чтобы приложение продолжало работу, это может обеспечить операционная система либо приложение может отправить запрос, чтобы продолжить выполнение. Например, при воспроизведении звука в фоновом режиме операционная система может поддерживать работу приложения дольше, если выполнить шаги из раздела [Воспроизведение мультимедиа в фоновом режиме](../audio-video-camera/background-audio.md). В противном случае необходимо вручную запросить больше времени для выполнения приложения. Количество времени, которое может быть получено для фонового выполнения, может составлять несколько минут, но вы должны быть готовы обработать сеанс, который может быть отозван в любое время. Эти ограничения времени жизненного цикла приложения отключены, пока приложение работает в режиме отладки. По этой причине важно проверить средство расширенного сеанса выполнения и другие инструменты, использующиеся для откладывания приостановки приложения не в режиме отладки, или путем использования событий жизненного цикла, доступных в Visual Studio. 
  
-Для этого требуется создать класс [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession), чтобы запросить больше времени на завершение работы приложения в фоновом режиме. Тип создаваемого класса **ExtendedExecutionSession** определяется перечислением [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason), которое вы предоставляете при создании класса. Существует три **ExtendedExecutionReason** значения перечислений: **Этот атрибут не задан, LocationTracking** и **SavingData**. Только один сеанс **ExtendedExecutionSession**можно запросить в любое время. Попытка создать другой сеанс, когда другой сеанс активен, вызовет исключение 0x8007139F в конструкторе **ExtendedExecutionSession** с сообщением о том, что состояние группы или ресурса является неподходящим для выполнения запрошенной операции. Не используйте [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) и [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason). Они требуют ограниченных возможностей и не доступны для использования в приложениях Магазина.
+Для этого требуется создать класс [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession), чтобы запросить больше времени на завершение работы приложения в фоновом режиме. Тип создаваемого класса **ExtendedExecutionSession** определяется перечислением [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason), которое вы предоставляете при создании класса. У перечисления **ExtendedExecutionReason** есть три значения: **Unspecified, LocationTracking** и **SavingData**. Только один сеанс **ExtendedExecutionSession**можно запросить в любое время. Попытка создать другой сеанс, когда другой сеанс активен, вызовет исключение 0x8007139F в конструкторе **ExtendedExecutionSession** с сообщением о том, что состояние группы или ресурса является неподходящим для выполнения запрошенной операции. Не используйте [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) и [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason). Они требуют ограниченных возможностей и не доступны для использования в приложениях Магазина.
 
 ## <a name="run-while-minimized"></a>Выполнение при сворачивании
 
@@ -81,7 +81,7 @@ switch (result)
         break;
 }
 ```
-[Пример кода см. в разделе](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[См. пример кода](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 При вызове метода **RequestExtensionAsync** выполняется проверка операционной системы на предмет того, подтвердил ли пользователь работу приложения в фоновом режиме, а также достаточно ли в системе ресурсов для активации выполнения приложения в фоновом режиме. Только один сеанс будет одобрен для приложения в любой момент времени, из-за чего поступление последующих вызовов к **RequestExtensionAsync** будет приводить к отклонению сеанса.
 
@@ -119,9 +119,9 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[Пример кода см. в разделе](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[См. пример кода](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
-### <a name="dispose"></a>Ликвидация
+### <a name="dispose"></a>Метод Dispose
 
 Последний шаг — это ликвидация расширенного сеанса выполнения. Сеансы, а также любые другие потребляющие память ресурсы, необходимо ликвидировать, чтобы электроэнергия, используемая приложением во время ожидания закрытия сеанса, не шла в зачет квоты на электроэнергию для работы самого приложения. С целью сохранения как можно большего объема квоты на электроэнергию для приложения, необходимо ликвидировать сеанс, когда работа с ним завершена, чтобы приложение смогло быстрее перейти в состояние **Suspended (Приостановка)** .
 
@@ -140,7 +140,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[Пример кода см. в разделе](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[См. пример кода](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
 Для одного приложения одновременно может быть запущен только один расширенный сеанс выполнения класса **ExtendedExecutionSession**. Многие приложения используют асинхронные задачи для выполнения сложных процессов, которым требуется доступ к таким ресурсам, как память, сеть или сетевые службы. Если для выполнения процесса требуется несколько асинхронных задач, необходимо учитывать состояние каждой из этих задач, перед тем как ликвидировать сеанс **ExtendedExecutionSession** и приостановить приложение. Для этого необходимо установить ссылку для подсчета количества задач, которые все еще выполняются, и не ликвидировать сеанс, пока это значение не достигнет нуля.
 
@@ -247,7 +247,7 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[Пример кода см. в разделе](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[См. пример кода](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>Проверка использования ресурсов приложением
 
@@ -255,13 +255,13 @@ static class ExtendedExecutionHelper
 
 Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 [Пример расширенного выполнения](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Жизненный цикл приложения](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[Жизненный цикл приложения — сохранение приложений в активном состоянии с помощью фоновых задач и расширенного сеанса выполнения](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
+[Жизненный цикл приложения — сохранение приложений в активном состоянии с помощью фоновых задач и расширенного сеанса выполнения](https://msdn.microsoft.com/magazine/mt590969.aspx)
 [Управление памятью при переходе приложения в фоновый режим](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
-[Фоновая передача](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
-[Контроль состояния батареи и фоновая обработка](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[Класс MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
+[Фоновые передачи](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
+[Осведомленность о батарее и фоновые действия](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[Класс Мемориманажер](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
 [Воспроизведение мультимедиа в фоновом режиме](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

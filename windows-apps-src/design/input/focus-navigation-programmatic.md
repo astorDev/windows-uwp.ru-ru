@@ -1,5 +1,5 @@
 ---
-Description: Узнайте, как программно управлять навигации с фокусом клавиатуры, игровой и специальные возможности в приложении UWP.
+Description: Узнайте, как программно управлять навигацией фокуса с помощью клавиатуры, планшета и специальных возможностей в приложении UWP.
 title: Перемещение фокуса программным путем с помощью клавиатуры, геймпада и средств специальных возможностей
 label: Programmatic focus navigation
 keywords: клавиатура, игровое устройство управления, пульт дистанционного управления, стратегия навигации, ввод, взаимодействие с пользователем, специальные возможности, удобство использования
@@ -10,14 +10,14 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662719"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684503"
 ---
-# <a name="programmatic-focus-navigation"></a>Перемещение фокуса программным путем
+# <a name="programmatic-focus-navigation"></a>Программное перемещение фокуса
 
 ![Клавиатура, пульт управления и крестовина](images/dpad-remote/dpad-remote-keyboard.png)
 
@@ -123,7 +123,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-Используйте [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.findnextelementoptions) для дополнительной настройки определения кандидатов для фокуса. Этот объект имеет следующие свойства.
+Используйте [FindNextElementOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions) для дополнительной настройки определения кандидатов для фокуса. Этот объект имеет следующие свойства.
 
 - [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) — определение области поиска кандидатов для перемещения фокуса на дочерние элементы этого DependencyObject. Значение NULL указывает на запуск поиска из корневого элемента визуального дерева.
 
@@ -143,19 +143,19 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ![Настройка поведения перемещения фокуса с помощью подсказок для навигации](images/keyboard/navigation-hints.png)
 
-*Фокус пользовательского поведения навигации, с помощью ссылки навигации*
+*Пользовательское поведение навигации по фокусу с помощью подсказок навигации*
 
 ## <a name="navigation-focus-events"></a>События перемещения фокуса
 
 ### <a name="nofocuscandidatefound-event"></a>Событие NoFocusCandidateFound
 
-Событие [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) возникает при нажатии клавиши табуляции или клавиш со стрелками и нет ни одного возможного кандидата в указанном направлении. Это событие не возникает для [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
+Событие [UIElement.NoFocusCandidateFound](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) возникает при нажатии клавиши табуляции или клавиш со стрелками и нет ни одного возможного кандидата в указанном направлении. Это событие не возникает для [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
 Поскольку это перенаправленное событие, оно передается от сфокусированного элемента наверх через последующие родительские объекты в корневой элемент дерева объектов. Таким образом можно обработать событие там, где это уместно.
 
 <a name="split-view-code-sample"></a>
 
-Здесь показано, как элемент Grid открывает [SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview), когда пользователь пытается переместить фокус на левый или крайний левый фокусируемый элемент управления (см. раздел [Проектирование для Xbox и телевизора](../devices/designing-for-tv.md#navigation-pane)).
+Здесь показано, как элемент Grid открывает [SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview), когда пользователь пытается переместить фокус на левый или крайний левый фокусируемый элемент управления (см. раздел [Проектирование для Xbox и телевизора](../devices/designing-for-tv.md#navigation-pane)).
 
 ```xaml
 <Grid NoFocusCandidateFound="OnNoFocusCandidateFound">
@@ -180,40 +180,40 @@ private void OnNoFocusCandidateFound (
 ```
 
 ### <a name="gotfocus-and-lostfocus-events"></a>События GotFocus и LostFocus
-События [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) возникают, когда элемент получает или, соответственно, теряет фокус. Это событие не возникает для [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
+События [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) возникают, когда элемент получает или, соответственно, теряет фокус. Это событие не возникает для [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
 Поскольку это перенаправленные события, они передаются от сфокусированного элемента наверх через последующие родительские объекты в корневой элемент дерева объектов. Таким образом можно обработать событие там, где это уместно.
 
 ### <a name="gettingfocus-and-losingfocus-events"></a>События GettingFocus и LosingFocus
 
-События [UIElement.GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [UIElement.LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) возникают перед соответствующими событиями [UIElement.GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [UIElement.LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus). 
+События [UIElement.GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [UIElement.LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) возникают перед соответствующими событиями [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus). 
 
 Поскольку это перенаправленные события, они передаются от сфокусированного элемента наверх через последующие родительские объекты в корневой элемент дерева объектов. Так как это происходит до изменения фокуса, можно перенаправить или отменить изменение фокуса.
 
-События [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) являются синхронными событиями, поэтому фокус не будет перемещаться, когда эти события передаются. Но события [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) асинхронные, и поэтому нет гарантии, что фокус не будет перемещаться снова перед выполнением обработчика.
+События [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) являются синхронными событиями, поэтому фокус не будет перемещаться, когда эти события передаются. Но события [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) и [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) асинхронные, и поэтому нет гарантии, что фокус не будет перемещаться снова перед выполнением обработчика.
 
-При перемещении фокуса из-за вызова приложением метода [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) событие [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) возникает во время вызова, а событие [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) возникает через некоторое время после вызова.
+При перемещении фокуса из-за вызова приложением метода [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) событие [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) возникает во время вызова, а событие [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) возникает через некоторое время после вызова.
 
-Целевой элемент перемещения фокуса можно изменить во время возникновения событий [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) (до перемещения фокуса) с помощью свойства [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement). Даже если целевой объект был изменен, событие по-прежнему передается и целевой объект может быть изменен снова.
+Целевой элемент перемещения фокуса можно изменить во время возникновения событий [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) (до перемещения фокуса) с помощью свойства [GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement). Даже если целевой объект был изменен, событие по-прежнему передается и целевой объект может быть изменен снова.
 
-Чтобы избежать проблем с повторным входом, создается исключение при попытке переместить фокус (с помощью [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) или [Control.Focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)) во время передачи этих событий.
+Чтобы избежать проблем с повторным входом, создается исключение при попытке переместить фокус (с помощью [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) или [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_)) во время передачи этих событий.
 
 Такие события возникают независимо от причины перемещения фокуса (включая навигацию с помощью клавиши табуляции, направленную навигацию и программную навигацию).
 
 Ниже приведен порядок выполнения для событий фокуса:
 
-1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
-2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
-3.  [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [Получение фокуса](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+1.  [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
+2.  [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
+3.  [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
+4.  [Фокус](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 На следующем рисунке показано, как при перемещении вправо от элемента A XYFocus выбирает элемент B4 в качестве кандидата. B4 затем запускает событие GettingFocus, в котором у ListView есть возможность для переназначения фокуса на B3.
 
 ![Изменение цели перемещения фокуса при возникновении события GettingFocus](images/keyboard/focus-events.png)
 
-*Изменение цели навигации фокус при событии GettingFocus*
+*Изменение целевого объекта навигации фокуса в событии Жеттингфокус*
 
-Здесь мы покажем, как обрабатывать событие [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и перенаправлять фокус.
+Здесь мы покажем, как обрабатывать событие [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и перенаправлять фокус.
 
 ```XAML
 <StackPanel Orientation="Horizontal">
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-Здесь мы покажем, как обрабатывать событие [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) для [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) и установить фокус, когда меню закрыто.
+Здесь мы покажем, как обрабатывать событие [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) для [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) и установить фокус, когда меню закрыто.
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -282,7 +282,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="find-the-first-and-last-focusable-element"></a>Поиск первого и последнего фокусируемого элемента
 
-Методы [FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) и [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) позволяют перемещать фокус к первому или последнему фокусируемому элементу в рамках объекта (дерево элементов [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) или дерево текста [TextElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.documents.textelement)). Область задается в вызове метода (если аргумент имеет значение null, область является текущим окном).
+Методы [FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) и [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) позволяют перемещать фокус к первому или последнему фокусируемому элементу в рамках объекта (дерево элементов [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) или дерево текста [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement)). Область задается в вызове метода (если аргумент имеет значение null, область является текущим окном).
 
 Если в области не удается определить кандидатов для фокуса, будет возвращено значение null.
 
@@ -325,8 +325,8 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Смежные разделы
 
-- [Навигации с фокусом клавиатуры, игровой, удаленное управление и специальные возможности](focus-navigation.md)
-- [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
+- [Навигация по клавиатуре, планшету, удаленному управлению и специальным возможностям](focus-navigation.md)
+- [Взаимодействие с клавиатурой](keyboard-interactions.md)
 - [Специальные возможности клавиатуры](../accessibility/keyboard-accessibility.md)

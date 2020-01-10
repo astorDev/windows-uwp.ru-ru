@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48fea83560655b02909b302225f44fa3e9713f00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258373"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684496"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
 
@@ -87,7 +87,7 @@ ms.locfileid: "74258373"
 
 Явным образом задайте место и ориентацию панели инструментов, используя свойства [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) и [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation).
 
-| По умолчанию | Задано явным образом |
+| Default | Задано явным образом |
 | --- | --- |
 | ![Расположение и ориентация панели инструментов рукописного ввода по умолчанию](./images/ink/location-default-small.png) | ![Расположение и ориентация панели инструментов рукописного ввода, заданные явно](./images/ink/location-explicit-small.png) |
 | *Расположение и ориентация по умолчанию на панели инструментов рукописного ввода Windows* | *Панель инструментов рукописного ввода Windows — явное расположение и ориентация* |
@@ -172,7 +172,7 @@ public MainPage()
 
     1. Добавьте два логических свойства в класс InkToolbarSnippetHostViewModel: свойство **LeftHandedLayout** (функционал аналогичен предыдущему примеру только на основе XAML) и свойство **PortraitLayout** (ориентация устройства).
         >[!NOTE] 
-        > Свойство PortraitLayout является настраиваемым и содержит определение события [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
+        > Свойство PortraitLayout является настраиваемым и содержит определение события [PropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 
         ```csharp
         public bool LeftHandedLayout
@@ -214,7 +214,7 @@ public MainPage()
     1. Добавьте два новых класса в папку Converters (в этом примере мы назвали их **HorizontalAlignmentFromHandednessConverter.cs** и **VerticalAlignmentFromAppViewConverter.cs**).
     1. Добавьте пространства имен `using Windows.UI.Xaml` и `using Windows.UI.Xaml.Data` в каждый файл.
     1. Задайте для каждого класса значение `public` и укажите, что он реализует интерфейс [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter).
-    1. Добавьте методы [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) и [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) в каждый файл, как показано здесь (метод ConvertBack оставлен нереализованным).
+    1. Добавьте методы [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) и [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) в каждый файл, как показано здесь (метод ConvertBack оставлен нереализованным).
         - Класс HorizontalAlignmentFromHandednessConverter размещает панель инструментов рукописного ввода в правой части приложения для пользователей-правшей и в левой части приложения — для пользователей-левшей.
         ```csharp
         using System;
@@ -1119,11 +1119,11 @@ namespace Ink_Basic_InkToolbar
 > Пользовательская сушка и [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
 > Если ваше приложение переопределяет поведение по умолчанию для отрисовки рукописных данных объекта [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) пользовательской реализацией сушки, отрисованные росчерки пера более недоступны для InkToolbar, а встроенные команды стирания InkToolbar не работают должным образом. Для реализации функции стирания необходимо обрабатывать все события указателя, выполнять проверку нажатия для каждого штриха и переопределить встроенную команду «Удалить все рукописные данные».
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Смежные разделы
 
 - [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
-### <a name="topic-samples"></a>Примеры в разделе
+### <a name="topic-samples"></a>Примеры в статье
 
 - [Пример расположения и ориентации панели инструментов для рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
 - [Пример расположения и ориентации панели инструментов для рукописного ввода (динамический)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)

@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2d05c87f4f7b6164afe1fcbcb62323eef3bdf1
-ms.sourcegitcommit: 5f80bfc3ba04ad0a0853f83917d6a0ef3da24fa3
+ms.openlocfilehash: d180621736e79daec91a11a6932e80633962d6c7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72302248"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684524"
 ---
 # <a name="globalization-and-localization"></a>Глобализация и локализация
 
@@ -38,7 +38,7 @@ Windows используется во всем мире пользователя
 - Правила сортировки
 
 >[!NOTE]
-> Список поддерживаемых имен языковых стандартов по версии операционной системы Windows см. в столбце тег языка таблицы в [приложении а. поведение продукта](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) в [справочнике по идентификатору кода языка Windows (LCID)](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
+> Список поддерживаемых имен языковых стандартов по версии операционной системы Windows см. в столбце тег языка таблицы в [приложении а. поведение продукта](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) в [справочнике по идентификатору кода языка Windows (LCID)](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
 
 **Возможность локализации** — это процесс подготовки глобализованного приложения к локализации и/или проверка приложения на предмет готовности к локализации. Правильная подготовка приложения к локализации обеспечивает отсутствие выявления каких-либо функциональных неисправностей в приложении во время локализации. Самой важной особенностью локализуемого приложения является то, что его исполняемый код четко отделен от локализуемых ресурсов приложения.
 
