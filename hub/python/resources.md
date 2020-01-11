@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, учебники, онлайн-курсы, блоги, события
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309163"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683667"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ресурсы для разработки с использованием Python в Windows
 
@@ -41,13 +41,13 @@ ms.locfileid: "74309163"
 
 - [Python API Browser](https://docs.microsoft.com/python/api/?view=azure-python). Универсальный магазин всех API-интерфейсов на основе Python от корпорации Майкрософт.
 
-- [Просмотр примеров кода](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0). Узнайте, как взаимодействовать со службами Azure с использованием кода Python.
+- [Просмотр примеров кода](https://azure.microsoft.com/resources/samples/?platform=python&sort=0). Узнайте, как взаимодействовать со службами Azure с использованием кода Python.
 
 - [Python in Visual Studio Code](https://code.visualstudio.com/docs/languages/python) (Использование Python в Visual Studio Code). Общие сведения об использовании Python с VS Code.
 
 ## <a name="online-courses"></a>Онлайн-курсы
 
-- [Введение в Python на Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/). Попробуйте интерактивную платформу Microsoft Learn и получите навыки выполнения этого модуля, охватывающего основы написания базового кода Python, объявления переменных и работы с входными и выходными данными консоли. Интерактивная среда песочницы предоставляет эту отличную возможность начать пользователям, у которых еще не настроена среда разработки Python.
+- [Введение в Python на Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-python/). Попробуйте интерактивную платформу Microsoft Learn и получите навыки выполнения этого модуля, охватывающего основы написания базового кода Python, объявления переменных и работы с входными и выходными данными консоли. Интерактивная среда песочницы предоставляет эту отличную возможность начать пользователям, у которых еще не настроена среда разработки Python.
 
 - [Python на Pluralsight: 8 курсов, 29 часов](https://app.pluralsight.com/paths/skills/python). Схема обучения Python на Pluralsight предлагает онлайн-курсы, охватывающие различные темы, связанные с Python, включая средство для измерения навыков и поиска пробелов в знаниях.
 

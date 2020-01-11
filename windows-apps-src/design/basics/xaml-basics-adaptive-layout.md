@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680754"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684153"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Руководство: Создание адаптивных макетов
 
@@ -30,7 +30,7 @@ ms.locfileid: "72680754"
 
 * Visual Studio 2019: [скачать Visual Studio Community 2019 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии):  [скачать последнюю версию Windows SDK (бесплатно)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Эмулятор Windows Mobile: [скачать эмулятор Windows 10 Mobile (бесплатно)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Эмулятор Windows Mobile: [скачать эмулятор Windows 10 Mobile (бесплатно)](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>Часть 0. Получение начального кода на GitHub
 
@@ -45,17 +45,17 @@ ms.locfileid: "72680754"
 
     **Если вы не знакомы с GitHub:**
     
-    а) Нажмите кнопку **Скачать ZIP-файл** и сохраните его локально. Будет выполнено скачивание ZIP-файла с необходимыми файлами проекта.
+    a. Нажмите кнопку **Скачать ZIP-файл** и сохраните его локально. Будет выполнено скачивание ZIP-файла с необходимыми файлами проекта.
 
-    б. Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...** . 
+    b. Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...** . 
 
-    в. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
+    c. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
 
     **Если вы знакомы с GitHub:**
 
-    а) Клонируйте основную ветвь репозитория локально.
+    a. Клонируйте основную ветвь репозитория локально.
 
-    б. Перейдите к каталогу `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`.
+    b. Перейдите к каталогу `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`.
 
 3. Откройте проект, щелкнув `Photolab.sln`.
 
