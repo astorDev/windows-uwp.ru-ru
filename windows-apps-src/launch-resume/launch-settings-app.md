@@ -4,15 +4,15 @@ description: Узнайте, как запустить приложение "П�
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: c67d359120b738458d7397c9558f19b4794888f6
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302668"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123846"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения "Параметры" для Windows
 
@@ -132,13 +132,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| Универсальный код ресурса (URI) |
 |-------------|-----|
-| Звук | ms-settings:easeofaccess-audio |
+| звук; | ms-settings:easeofaccess-audio |
 | Скрытые субтитры | ms-settings:easeofaccess-closedcaptioning |
-| Фильтры цвета | MS-Settings: еасеофакцесс-колорфилтер |
-| Размер указателя & курсора | MS-Settings: еасеофакцесс-курсорандпоинтерсизе |
-| Display | ms-settings:easeofaccess-display |
+| Цветовые фильтры | MS-Settings: еасеофакцесс-колорфилтер |
+| Размеры курсора и указателя | MS-Settings: еасеофакцесс-курсорандпоинтерсизе |
+| Дисплей | ms-settings:easeofaccess-display |
 | Управление глазами | ms-settings:easeofaccess-eyecontrol |
-| Шрифты | ms-settings:fonts |
+| Fonts | ms-settings:fonts |
 | Высокая контрастность | ms-settings:easeofaccess-highcontrast |
 | Клавиатура | ms-settings:easeofaccess-keyboard |
 | Экранная лупа | ms-settings:easeofaccess-magnifier |
@@ -181,7 +181,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Звук и голосовые функции | ms-settings:holographic-audio |
 | Среда | MS-Settings: privacy-holographic-среда |
 | Отображение гарнитуры | MS-Settings: holographic-головной телефон |
-| Удалить | MS-Settings: holographic-управление |
+| Uninstall | MS-Settings: holographic-управление |
 
 ## <a name="network--internet"></a>Сеть и Интернет
 
@@ -206,7 +206,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| Универсальный код ресурса (URI) |
 |-------------|-----|
-| Фон | ms-settings:personalization-background |
+| История | ms-settings:personalization-background |
 | Выберите, какие папки будут отображаться на начальном экране | ms-settings:personalization-start-places |
 | Цвета | ms-settings:personalization-colors<br/>MS-Settings: цвета |
 | Заставка | MS-Settings: Персонализация — краткий обзор (**не рекомендуется в Windows 10, версия 1809 и более поздние**) |
@@ -238,22 +238,23 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Журнал вызовов | ms-settings:privacy-callhistory |
 | Камера | ms-settings:privacy-webcam |
 | Контакты | ms-settings:privacy-contacts |
-| Документы | ms-settings:privacy-documents |
+| Documents | ms-settings:privacy-documents |
 | Электронная почта | ms-settings:privacy-email |
 | Устройство отслеживания взгляда | ms-settings:privacy-eyetracker (требуется оборудование для отслеживания взгляда) |
 | Отзывы и диагностика | ms-settings:privacy-feedback |
 | Файловая система | ms-settings:privacy-broadfilesystemaccess |
-| "Общие" | ms-settings:privacy-general |
-| Местоположение | ms-settings:privacy-location |
+| "Общие" | MS-Settings: privacy или MS-Settings: privacy-General |
+| Ввод рукописного ввода & |ms-settings:privacy-speechtyping |
+| Расположение | ms-settings:privacy-location |
 | Messaging | ms-settings:privacy-messaging |
-| Microphone | ms-settings:privacy-microphone |
+| микрофон | ms-settings:privacy-microphone |
 | Движение | ms-settings:privacy-motion |
 | Уведомления | ms-settings:privacy-notifications |
 | Другие устройства | ms-settings:privacy-customdevices |
-| Изображения | ms-settings:privacy-pictures |
 | Телефонные звонки | MS-Settings: privacy-фонекаллс |
+| Изображения | ms-settings:privacy-pictures |
 | Радиомодули | ms-settings:privacy-radios |
-| Голосовые функции, рукописный ввод и ввод с клавиатуры |ms-settings:privacy-speechtyping |
+| "Голосовые функции" | MS-Settings: конфиденциальность — речь |
 | Задачи | ms-settings:privacy-tasks |
 | Просмотр видео | ms-settings:privacy-videos |
 | Активация голоса | MS-Settings: privacy-воицеактиватион |
@@ -279,9 +280,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Параметры экономии заряда | ms-settings:batterysaver-settings (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Использование аккумулятора | ms-settings:batterysaver-usagedetails (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Буфер обмена | MS-Settings: буфер обмена |
-| Display | ms-settings:display |
+| Дисплей | ms-settings:display |
 | Места сохранения по умолчанию | ms-settings:savelocations |
-| Display | ms-settings:screenrotation |
+| Дисплей | ms-settings:screenrotation |
 | Дублирование дисплея | ms-settings:quietmomentspresentation |
 | В эти часы | ms-settings:quietmomentsscheduled |
 | Шифрование | ms-settings:deviceencryption |
@@ -300,7 +301,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Phone | MS-Settings: Phone (**не рекомендуется в Windows 10, версия 1809 и более поздние**) |
 | Питание и спящий режим | ms-settings:powersleep |
 | "Звук" | MS-Settings: звук |
-| Хранилище | ms-settings:storagesense |
+| Хранение | ms-settings:storagesense |
 | Контроль памяти | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>Время и язык
@@ -333,7 +334,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Параметры Windows Update-Restart | ms-settings:windowsupdate-restartoptions |
 | Журнал обновлений Windows Update-View | ms-settings:windowsupdate-history |
 
-## <a name="user--accounts"></a>Ученые записи пользователей
+## <a name="user-accounts"></a>"Ученые записи пользователей"
 
 |Страница параметров| Универсальный код ресурса (URI) |
 |-------------|-----|
