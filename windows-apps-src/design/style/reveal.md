@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0810365eeb0023a31862d31213862e2b3bce8db8
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930350"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685082"
 ---
 # <a name="reveal-highlight"></a>Подсвечивание
 
@@ -23,7 +23,7 @@ ms.locfileid: "70930350"
 
 Подсвечивание — это световой эффект, выделяющий интерактивные элементы, такие как панели команд, когда пользователь наводит на них указатель. 
 
-> **Важные API**: [класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [класс RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [класс RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [класс VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState).
+> **Важные API**: [класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [класс RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [класс RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [класс VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState).
 
 ## <a name="how-it-works"></a>Принцип работы
 Подсвечивание привлекает внимание к интерактивным элементам, подсвечивая контейнер элемента, когда указатель находится рядом, как показано на следующем рисунке:
@@ -76,9 +76,9 @@ ms.locfileid: "70930350"
 
 Для этих элементов управления подсвечивание не используется по умолчанию, так как они не относятся к основным и обычно выполняют роль вспомогательных элементов управления для центральных пунктов приложения. Однако каждое приложение уникально, и если эти элементы активно используются в вашем приложении, мы подготовили для вас несколько подходящих стилей.
 
-| Название элемента управления   | Resource Name |
+| Название элемента управления   | Имя ресурса |
 |----------|:-------------:|
-| Button |  ButtonRevealStyle |
+| Кнопка |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -261,7 +261,7 @@ ms.locfileid: "70930350"
 * Для элементов управления, которые часто отключаются и включаются: поместите кисть подсвечивания при приближении к границе на основы элементов, а также на их границы, чтобы привлечь внимание к состоянию элемента.
 * Для смежных элементов управления, которые касаются друг друга: добавьте границу в 1 пиксель между двумя элементами. 
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 ### <a name="do"></a>Рекомендуется
 - Используйте эффект подсвечивания для элементов, позволяющих пользователю выполнять много действий (панели команд, меню навигации).
 - Используйте эффект подсвечивания в группах интерактивных элементов, которые не имеют видимых разделителей по умолчанию (списки, ленты).
@@ -276,7 +276,7 @@ ms.locfileid: "70930350"
 - Не используйте подсвечивание для элементов, связанных с вопросами безопасности. Это может отвлечь внимание от самого сообщения, которое нужно донести до пользователя.
 
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
@@ -284,7 +284,7 @@ ms.locfileid: "70930350"
 
  Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Эффект подсвечивания — это компонент системы проектирования Fluent, добавляющий свет в ваше приложение. Дополнительные сведения см. в [обзоре системы Fluent Design для UWP](/windows/apps/fluent-design-system).
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Акрил](acrylic.md)

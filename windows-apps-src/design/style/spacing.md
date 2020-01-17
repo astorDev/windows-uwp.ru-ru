@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061937"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684872"
 ---
 # <a name="control-size-and-density"></a>Размер и плотность элемента управления
 
@@ -72,7 +72,7 @@ ms.locfileid: "71061937"
 
 ### <a name="examples"></a>Примеры
 
-Размеры Compact реализуются с помощью специального словаря ресурсов, который может быть указан в приложении на уровне страницы или в определенном макете. Словарь ресурсов доступен в пакете Nuget [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
+Размеры Compact реализуются с помощью специального словаря ресурсов, который может быть указан в приложении на уровне страницы или в определенном макете. Словарь ресурсов доступен в пакете Nuget [WinUI](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 В следующих примерах показано, как стиль `Compact` можно применить к странице и отдельному элементу управления "Сетка".
 
@@ -94,13 +94,13 @@ ms.locfileid: "71061937"
 </Grid>
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Рекомендации для целевых объектов сенсорного ввода](../input/guidelines-for-targeting.md)
-- [Ссылки на ресурсы ResourceDictionary и XAML](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-- [Словарь ресурсов](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.resourcedictionary)
-- [Стили XAML](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [Ссылки на ресурсы ResourceDictionary и XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
+- [Словарь ресурсов](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary)
+- [Стили XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) 

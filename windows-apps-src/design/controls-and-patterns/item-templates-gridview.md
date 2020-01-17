@@ -5,21 +5,21 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: edd9f5e56f78a4fef34f5ddff85f64ada73dc68a
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 17c14d7147cafa17e78bd13bf6684a99d87cbdfd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282297"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684410"
 ---
 # <a name="item-templates-for-grid-view"></a>Шаблоны элементов для представления сетки
 
-В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов.
+В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов.
 
 Для демонстрации связывания данных эти шаблоны связывают тип **GridViewItems** с примером класса записи из раздела о [привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
+> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Значок и текст
 Эти шаблоны используются для отображения коллекции приложений в сетке со значком и текстом.
@@ -155,8 +155,8 @@ ms.locfileid: "72282297"
 </GridView>
 ```
 
-## <a name="related-articles"></a>Связанные статьи
-- [Класс GridView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
+## <a name="related-articles"></a>Похожие статьи
+- [Класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
 - [Общие сведения о специальных возможностях](../accessibility/accessibility-overview.md)
 - [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

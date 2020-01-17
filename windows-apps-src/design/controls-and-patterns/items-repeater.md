@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364759"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684397"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -78,7 +78,7 @@ ItemsRepeater не содержит встроенную коллекцию эл
 
 ## <a name="create-an-itemsrepeater"></a>Создание ItemsRepeater
 
-Чтобы использовать [**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), необходимо предоставить ему данные для отображения, задав свойство **ItemsSource**. Затем, определите порядок отображения элементов, задав свойство [ **ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate).
+Чтобы использовать [**ItemsRepeater**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), необходимо предоставить ему данные для отображения, задав свойство **ItemsSource**. Затем, определите порядок отображения элементов, задав свойство [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate).
 
 ### <a name="itemssource"></a>ItemsSource
 
@@ -91,7 +91,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Свойство **ItemsSource** можно также связать с коллекцией в среде XAML. Подробнее о концепциях привязки данных см. в разделе [Общие сведения о привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Свойство **ItemsSource** можно также связать с коллекцией в среде XAML. См.сведения о [привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
 
 ```xaml
@@ -189,7 +189,7 @@ itemsRepeater1.ItemsSource = Items;
 
     Включает элемент управления для доступа к элементам с помощью индекса и позволяет избежать избыточных внутренних копий.
 
-    **Предупреждение**: Изменения в списке/векторе без реализации [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) не будут отражены в пользовательском интерфейсе.
+    **Предупреждение.** Изменения в списке/векторе без реализации [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) не будут отражены в пользовательском интерфейсе.
 
 - [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged)(.NET)
 
@@ -203,7 +203,7 @@ itemsRepeater1.ItemsSource = Items;
 
     Как и интерфейс **INotifyCollectionChanged**, он позволяет элементу управления наблюдать за изменениями в источнике данных и реагировать на них.
 
-    **Предупреждение**: Windows.Foundation.IObservableVector\<T> не поддерживает действие "Перемещение". Это может вызвать потерю визуального состояния пользовательского интерфейса для элемента.  Например элемент, выбранный в данный момент, и/или который фокусируется на месте, в котором сделано перемещение, при использовании команды "Удалить", а затем "Добавить" теряет фокус и не поддается выбору.
+    **Предупреждение.** Windows.Foundation.IObservableVector\<T> не поддерживает действие "Перемещение". Это может вызвать потерю визуального состояния пользовательского интерфейса для элемента.  Например элемент, выбранный в данный момент, и/или который фокусируется на месте, в котором сделано перемещение, при использовании команды "Удалить", а затем "Добавить" теряет фокус и не поддается выбору.
 
     The Platform.Collections.Vector\<T> использует IObservableVector\<T> и имеет то же ограничение. Если необходима поддержка для действия "Перемещение", используйте интерфейс **INotifyCollectionChanged**.  Класс ObservableCollection .NET\<T> использует **INotifyCollectionChanged**.
 
@@ -264,7 +264,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) выравнивает элементы в одну линию, которую можно размещать по горизонтали или вертикали.
 
-Вы можете задать свойство [интервала](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing), чтобы отрегулировать величину пространства между элементами. Интервал применяется в направлении [ориентации](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) макета.
+Вы можете задать свойство [интервала](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing), чтобы отрегулировать величину пространства между элементами. Интервал применяется в направлении [ориентации](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) макета.
 
 ![Интервал макета стека](images/stack-layout.png)
 
@@ -300,7 +300,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 В списке содержатся доступные значения. Определения предполагают, что для параметра **Orientation** задано по умолчанию **Horizontal** (по горизонтали).
 
-- **Нет**. Неиспользованное дополнительное пространство содержится в конце строки. Это значение используется по умолчанию.
+- **Нет.** Неиспользованное дополнительное пространство содержится в конце строки. Это значение по умолчанию.
 - **Заполнение**: Ширина элементов увеличивается, чтобы израсходовать все доступное пространство (высота, если по вертикали).
 - **Однородный элемент**: Увеличивается ширина элементов, чтобы израсходовать все доступное пространство, а также высота — чтобы сохранить пропорции (высота и ширина меняются местами, если по вертикали).
 
@@ -312,7 +312,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 В списке содержатся доступные значения. Определения предполагают, что для параметра **Orientation** задано по умолчанию **Horizontal** (по горизонтали).
 
-- **Start** (С начала). Элементы выравниваются с начала строки. Неиспользованное дополнительное пространство содержится в конце строки. Это значение используется по умолчанию.
+- **Start** (С начала). Элементы выравниваются с начала строки. Неиспользованное дополнительное пространство содержится в конце строки. Это значение по умолчанию.
 - **Center** (По центру). Элементы выравниваются по центру строки. Дополнительное пространство делится поровну в начало и конец строки.
 - **End** (К концу). Элементы выравниваются с конца строки. Неиспользованное дополнительное пространство содержится в начале строки.
 - **SpaceAround** (Равномерно дополнить). Элементы распределяются равномерно. Равное количество места добавляется до и после каждого элемента.
@@ -642,6 +642,12 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +656,7 @@ public sealed class MediaCollectionView : Control
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +669,11 @@ public sealed class MediaCollectionView : Control
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-В этом примере показан макет для приложения, содержащий различные категории, которые можно изменить с помощью предпочтений пользователя и которые представлены в виде горизонтальных списков с прокруткой, как показано ниже.
+На следующем рисунке показан базовый макет, созданный с использованием приведенного выше примера в качестве рекомендации.
 
 ![Вложенный макет с повторением элементов](images/items-repeater-nested-layout.png)
+
+В следующем примере показан макет для приложения, содержащий разные категории, которые можно изменить с помощью предпочтений пользователя и которые представлены в виде горизонтальных списков с прокруткой. Макет этого примера также представлен на рисунке выше.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -777,7 +784,7 @@ ItemsRepeater автоматически гарантирует, что стан
 > [!NOTE]
 > ItemsRepeater не запоминает последний выбранный элемент автоматически.  Это означает, что при использовании клавиш Shift + Tab, их можно использовать для последнего реализованного элемента.
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>Объявление "Элемент _X_ из _Y_" в устройствах чтения с экрана
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>Объявление "Элемент _X_ из _Y_" в устройствах чтения с экрана
 
 Необходимо управлять настройкой соответствующих свойств автоматизации, таких как значения для **PositionInSet** и **SizeOfSet**, и обеспечивать их актуальность при добавлении, перемещении, удалении и т. д.
 
@@ -819,7 +826,7 @@ internal sealed class CardControl : CardControlBase
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Списки](lists.md)
 - [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)

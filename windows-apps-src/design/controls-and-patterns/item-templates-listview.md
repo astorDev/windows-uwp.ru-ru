@@ -5,21 +5,21 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 491489c0a6462c1bcbee2015027403ae359c47a2
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 9328c3f156acd13fd8947e01e924bf0d6849c0a6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282270"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684407"
 ---
 # <a name="item-templates-for-list-view"></a>Шаблоны элементов для представления списка
 
-В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов. 
+В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов. 
 
 Для демонстрации связывания данных эти шаблоны связывают тип **ListViewItems** с примером класса записи из раздела о [привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
+> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Однострочный элемент списка
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и одной текстовой строки.
@@ -128,8 +128,8 @@ ms.locfileid: "72282270"
 </ListView>
 ```
 
-## <a name="related-articles"></a>Связанные статьи
-- [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
+## <a name="related-articles"></a>Похожие статьи
+- [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
 - [Общие сведения о специальных возможностях](../accessibility/accessibility-overview.md)
 - [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

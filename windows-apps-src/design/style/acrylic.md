@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed9feb6edae58b906d4f37f0e1f011d4fa42ee9
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 55d8ed5fa1e3c4a7ffffaf47583eca3796f081cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867736"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683987"
 ---
 # <a name="acrylic-material"></a>Акриловый материал
 
 ![Главное изображение](images/header-acrylic.svg)
 
-Акрил — это тип [кисти](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush), создающий прозрачную текстуру. Акрил можно применять в приложениях к поверхностям, чтобы добавить эффект глубины и поддержать визуальную иерархию.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Акрил — это тип [кисти](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush), создающий прозрачную текстуру. Акрил можно применять в приложениях к поверхностям, чтобы добавить эффект глубины и поддержать визуальную иерархию.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **Важные API**: [класс AcrylicBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [свойство Background](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Важные API**: [класс AcrylicBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush), [свойство Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -38,7 +38,7 @@ ms.locfileid: "68867736"
 
  Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Акрил — это компонент системы проектирования Fluent Design, добавляющий физическую текстуру (материал) и глубину в приложение. Подробные сведения см. в статье [The Fluent Design System for Windows app creators](/windows/apps/fluent-design-system) (Система проектирования Fluent Design для разработчиков приложений Windows).
 
- ## <a name="video-summary"></a>Видео с кратким описанием
+ ## <a name="video-summary"></a>Краткий видеообзор
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev002/player]
 
@@ -131,7 +131,7 @@ ms.locfileid: "68867736"
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowBrush, SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush, SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush, SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush, SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush, SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush, SystemControlAltLowAcrylicElementBrush </td>
-        <td align="center"> 80% </td>
+        <td align="center"> 80 % </td>
         <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
     </tr>
     </tr>
@@ -147,7 +147,7 @@ ms.locfileid: "68867736"
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
-        <td align="center"> 60 % </td>
+        <td align="center"> 60 % </td>
         <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
     </tr>
     <tr>
@@ -169,7 +169,7 @@ ms.locfileid: "68867736"
     </tr>
     <tr>
         <td> SystemControlAccentDark1AcrylicWindowAccentDark1Brush, SystemControlAccentDark1AcrylicElementAccentDark1Brush  </td>
-        <td align="center"> 80% </td>
+        <td align="center"> 80 % </td>
         <td> SystemAccentColorDark1 </td>
     </tr>
     <tr>
@@ -314,7 +314,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 Кроме того, заголовок приложения (который обычно отображается в строке заголовка автоматически) придется отрисовать в TextBlock с помощью `CaptionTextBlockStyle`. Более подробную информацию см. в статье [Title bar customization](../shell/title-bar.md) (Настройка заголовка окна).
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 * Используйте акрил в качестве фонового материала для неосновных поверхностей приложения, например для панелей навигации.
 * Расположите акриловую поверхность вдоль хотя бы одного края приложения. Оно будет выглядеть гармоничнее на окружающем фоне, слегка сливаясь с ним.
 * Не помещайте акрил рабочего стола на больших фоновых поверхностях приложения — это нарушает логику использования акрила в первую очередь для временных поверхностей.
@@ -330,10 +330,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 <br/>Состав акрила: фон, размытие, наложение путем исключения, цвет/оттенок, шум
 
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 [**Эффект подсвечивания**](reveal.md)

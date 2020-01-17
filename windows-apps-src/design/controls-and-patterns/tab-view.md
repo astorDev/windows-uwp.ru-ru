@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: acad94c0697f930235af809cc3e2826e4c5befde
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71144964"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684301"
 ---
 # <a name="tabview"></a>TabView
 
@@ -31,7 +31,7 @@ TabView обеспечивает вкладки документов для пр
 - пользователи должны иметь возможность открывать документы или веб-страницы непосредственно на вкладках;
 - пользователи должны иметь возможность перетаскивать вкладки между окнами.
 
-Если TabView не подходит для вашего приложения, рассмотрите возможность использования таких элементов управления, как [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) или [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview).
+Если TabView не подходит для вашего приложения, рассмотрите возможность использования таких элементов управления, как [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) или [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview).
 
 ## <a name="anatomy"></a>Структура
 
@@ -91,7 +91,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 Так как пользователь может перетаскивать окно за строку заголовка, важно, чтобы строка заголовка не была полностью заполнена вкладками. Поэтому при отображении вкладок в строке заголовка необходимо указать часть заголовка, которая будет зарезервирована в качестве области для перетаскивания. Если вы не укажете область для перетаскивания, то для перетаскивания будет использоваться вся строка заголовка, что не позволит вкладкам обрабатывать события ввода. Если TabView будет отображаться в строке заголовка окна, то в TabView следует всегда добавлять элемент TabStripFooter и помечать его как область для перетаскивания.
 
-Дополнительные сведения см. в статье [Настройка заголовка окна](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar).
+Дополнительные сведения см. в статье [Настройка заголовка окна](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
 
 ![Вкладки в строке заголовка](images/tabview/tab-extend-to-title.png)
 
@@ -291,8 +291,8 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [Сводка](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [Сводка](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258706"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681965"
 ---
 # <a name="reveal-focus"></a>Обозначение фокуса
 
@@ -74,7 +74,7 @@ ms.locfileid: "74258706"
 
 Но перед началом пользовательской настройки было бы полезно узнать больше о компонентах, составляющих обозначение фокуса.
 
-Визуальные элементы обозначения фокуса по умолчанию состоят из трех частей: основная граница, дополнительная граница и свечение обозначения. Основная рамка толщиной **2 пикселя** проходит вдоль *внешней* стороны дополнительной рамки. Дополнительная рамка толщиной **1 пиксель** проходит вдоль *внутренней* стороны основной рамки. Свечение обозначения фокуса имеет толщину, пропорциональную толщине основной границы и циркулирует с *внешней стороны* основной границы.
+Визуальные элементы обозначения фокуса по умолчанию состоят из трех частей: основная граница, дополнительная граница и свечение обозначения. Основная рамка толщиной **2 пикселя** проходит вдоль *внешней* стороны дополнительной рамки. Дополнительная рамка толщиной **1 пиксель** проходит вдоль *внутренней* стороны основной рамки. Свечение обозначения фокуса имеет толщину, пропорциональную толщине основной границы и циркулирует с *внешней стороны* основной границы.
 
 Помимо статических элементов, визуальные элементы обозначения фокуса содержат анимированный свет, который пульсирует, если фокус не двигается, и перемещается в направлении перемещения фокуса.
 
@@ -108,7 +108,7 @@ ms.locfileid: "74258706"
 
 ## <a name="customize-the-color"></a>Настройка цвета
 
-Чтобы изменить цвет визуального элемента обозначения фокуса, используйте свойства [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) и [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
+Чтобы изменить цвет визуального элемента обозначения фокуса, используйте свойства [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) и [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
 
 | Свойство | Ресурс по умолчанию | Значение ресурса по умолчанию |
 | ---- | ---- | --- | 
@@ -170,10 +170,10 @@ ms.locfileid: "74258706"
 
 Обозначение фокуса — это компонент системы проектирования Fluent Design, добавляющий свечение в ваше приложение. Дополнительные сведения о системе проектирования Fluent Design и ее компонентах см. в [обзоре системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal) (Подсвечивание)
-- [Проектирование для Xbox и телевизора](/windows/uwp/design/devices/designing-for-tv)
+- [Проектирование для Xbox и ТВ](/windows/uwp/design/devices/designing-for-tv)
 - [Взаимодействие с помощью геймпада и пульта дистанционного управления](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 - [Composition Effects](https://docs.microsoft.com/windows/uwp/graphics/composition-effects) (Эффекты композиции)

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
-ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
+ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835639"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684110"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -28,9 +28,9 @@ ms.locfileid: "68835639"
 
 [Расширяемый язык разметки для приложений XAML](../../xaml-platform/xaml-overview.md) предоставляет стандартный и несколько специализированных элементов управления "Кнопка".
 
-Элемент управления | Описание
+Элемент | Описание
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Кнопка, инициирующая немедленное действие. Может использоваться в связке со свойством [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) или событием [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
+[Кнопка](/uwp/api/windows.ui.xaml.controls.button) | Кнопка, инициирующая немедленное действие. Может использоваться в связке со свойством [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) или событием [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая в нажатом состоянии постоянно вызывает событие [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click).
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Стилизованная под гиперссылку кнопка, которая используется для навигации. См. подробнее о [гиперссылках](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка со значком шеврона, которая открывает прикрепленное всплывающее меню.
@@ -85,7 +85,7 @@ ms.locfileid: "68835639"
 
 ## <a name="create-a-button"></a>Создание кнопки
 
-В этом примере рассматривается реакция кнопки на щелчок.
+В этом примере рассматривается кнопка, которая реагирует на щелчок.
 
 Создайте кнопку в XAML.
 
@@ -129,7 +129,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 Обрабатывать низкоуровневые события [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) с помощью объекта **Button** обычно нельзя, поскольку для него предусмотрено поведение **Click**. Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-Порядок вызова кнопкой события **Click** можно менять путем изменения свойства [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). Значением по умолчанию для **ClickMode** является **Release**, но для него также можно задать значения **Hover** или **Press**. Если для **ClickMode** задано значение **Hover**, событие **Click** невозможно вызвать нажатием клавиши или касанием.
+Порядок вызова кнопкой события **Click** можно менять путем изменения свойства [ClickMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.clickmode). Значением по умолчанию для **ClickMode** является **Release**, но для него также можно задать значения **Hover** или **Press**. Если для **ClickMode** задано значение **Hover**, событие **Click** невозможно вызвать нажатием клавиши или касанием.
 
 
 ### <a name="button-content"></a>Содержимое кнопки
@@ -217,7 +217,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Создание раскрывающейся кнопки
 
-> Для создания раскрывающейся кнопки **DropDownButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10 версии 1809 (пакет SDK 17763) или последующей. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+> Для создания раскрывающейся кнопки **DropDownButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10 версии 1809 (пакет SDK 17763) или последующей. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) — это кнопка, использующая шеврон в качестве визуального индикатора прикрепленного всплывающего меню, которое содержит дополнительные варианты. Она действует как и стандартный элемент управления**Button** со всплывающим меню, но ее внешний вид отличается.
 
@@ -278,7 +278,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## <a name="create-a-split-button"></a>Создание разворачивающейся кнопки
 
  > [!IMPORTANT]
- > Для создания кнопки **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+ > Для создания кнопки **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 Элемент управления [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть представляет собой стандартную кнопку, которая вызывает немедленное действие. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
@@ -388,7 +388,7 @@ public sealed partial class MainPage : Page
 ## <a name="create-a-toggle-split-button"></a>Создание разворачивающейся кнопки с переключателем
 
 > [!NOTE]
-> Для создания разворачивающейся кнопки с переключателем **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+> Для создания разворачивающейся кнопки с переключателем **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/windows/downloads/sdk-archive).
 
 Элемент управления [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть выполняет функцию переключателя. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
@@ -524,7 +524,7 @@ private void ApplyListStyle(string listStyle)
     - [Не выполнять]/Нет
     - Отмена
 
-- Сделайте одновременно доступными пользователю только одну или две кнопки, например **Принять** и **Отмена**. Если требуется предоставить пользователю больше действий, введите в интерфейс [флажки](checkbox.md) или [переключатели](radio-button.md), с помощью которых пользователь сможет выбрать нужные действия, а затем путем нажатия одной кнопки начать выполнение всех этих действий.
+- Сделайте одновременно доступными пользователю только одну или две кнопки, например **Принять** и **Отмена**. Если требуется предоставить пользователю больше действий, используйте в интерфейсе [флажки](checkbox.md) или [переключатели](radio-button.md), с помощью которых пользователь сможет выбрать нужные действия, а затем путем нажатия одной кнопки начать выполнение всех этих действий.
 
 - Для действия, которое требуется выполнить над множеством страниц вашего приложения, лучше использовать [нижнюю панель приложения](app-bars.md), а не повторять соответствующую кнопку на каждой странице.
 
@@ -548,15 +548,15 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="back-buttons"></a>Кнопки "Назад"
 
-Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через обратный стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в руководству по [журналу навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
+Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в руководству по [журналу навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
 
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery). Пример, демонстрирующий работу всех элементов управления XAML в интерактивном формате.
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Класс Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
 - [Переключатели](radio-button.md)
