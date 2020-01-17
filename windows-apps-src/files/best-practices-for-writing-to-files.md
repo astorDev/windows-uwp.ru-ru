@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369513"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685239"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Рекомендации по записи в файлы
 
@@ -44,7 +44,7 @@ ms.locfileid: "66369513"
 Понимание этой концепции пригодится при выполнении операций ввода-вывода с **StorageFile**. Например, в разделе [Запись в файл](quickstart-reading-and-writing-files.md#writing-to-a-file) представлены три способа записи в файл:
 
 * с помощью метода [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync);
-* путем создания буфера и последующего вызова метода [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync);
+* путем создания буфера и последующего вызова метода [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync);
 * посредством модели из четырех шагов с помощью потока:
   1. [открытие](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) файла для получения потока;
   2. [получение](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) потока вывода;
@@ -82,7 +82,7 @@ ms.locfileid: "66369513"
 |  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19–20  |  Исходный файл (file.txt) не может быть заменен, так как он используется. Другой процесс или операция получила доступ к файлу, прежде чем его удалось заменить.  |  Попробуйте повторить операцию.</br>Обеспечьте синхронизацию доступа к файлу.  |
 |  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Транзакционная модель создает дополнительный файл, и это требует дополнительного места на диске.  |    |
 |  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Это может произойти из-за нескольких незавершенных операций ввода-вывода или большого размера файлов.  |  Более детальный подход с контролем потока может устранить эту ошибку.  |
-|  E_FAIL (0x80004005) |  Любой  |  Прочее  |  Попробуйте повторить операцию. Если проблема не исчезла, возможно, это ошибка платформы, и приложение должно быть завершено, так как оно находится в несогласованном состоянии. |
+|  E_FAIL (0x80004005) |  Любые  |  Прочее  |  Попробуйте повторить операцию. Если проблема не исчезла, возможно, это ошибка платформы, и приложение должно быть завершено, так как оно находится в несогласованном состоянии. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Дополнительные рекомендации по состояниям файлов, которые могут привести к ошибкам
 
@@ -194,6 +194,6 @@ else
 
 [Блог по параллельному программированию для .NET](https://devblogs.microsoft.com/pfxteam/) является превосходным источником рекомендаций по параллельному программированию. В частности, в [записи блога о AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) описывается, как обеспечить монопольный доступ к файлу для записи, предоставляя параллельный доступ для чтения. Следует помнить, что сериализация операций ввода-вывода будет влиять на производительность.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Создание, запись и чтение файла](quickstart-reading-and-writing-files.md)

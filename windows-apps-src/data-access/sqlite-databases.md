@@ -5,15 +5,15 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, базы данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9c26710dfc5f71a9709fa93de4b369f6281e8c
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 7e10dc35464472a16f64ec94cd0fdd78c41eb484
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560689"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302728"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Использование базы данных SQLite в приложении UWP
-SQLite можно использовать для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. Это руководство содержит соответствующие инструкции.
+SQLite можно использовать для хранения и извлечения данных из упрощенной базы данных на устройстве пользователя. Это руководство содержит соответствующие инструкции.
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>Некоторые преимущества использования SQLite для локального хранения данных
 
@@ -317,7 +317,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-Вот и все. Изучите [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) чтобы узнать, что еще можно сделать с вашей базой данных SQLite. Перейдите по ссылкам ниже, чтобы узнать о других способах использования данных в приложении UWP.
+Готово! Изучите [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) чтобы узнать, что еще можно сделать с вашей базой данных SQLite. Перейдите по ссылкам ниже, чтобы узнать о других способах использования данных в приложении UWP.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260526"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685151"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
@@ -29,7 +29,7 @@ ms.locfileid: "74260526"
 
 * [Основы C# для абсолютных новичков](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
 * [Основы VB для абсолютных новичков](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
-* [Руководство разработчика для Windows 10](https://docs.microsoft.com/learn/)
+* [Руководство для разработчика Windows 10](https://docs.microsoft.com/learn/)
 
 Если вы готовы попробовать что-нибудь поинтереснее, чем приложение Hello World, попробуйте эти руководства:
 
@@ -61,7 +61,7 @@ ms.locfileid: "74260526"
 Расширяйте свои навыки работы с JavaScript и HTML помимо UWP для создания веб-приложений или изучения виртуальной реальности в Интернете с помощью WebVR.
 
 * [Документация по Microsoft Edge для разработчиков](https://docs.microsoft.com/microsoft-edge/)
-* [Использование WebVR с Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Использование WebVR с Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Веб-приложения можно легко упаковать в платформу UWP в виде размещенных веб-приложений, а затем начать их продвижение в Microsoft Store.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ddc46c80c0ed9a9999ec7c8e67ab9034803a3d
-ms.sourcegitcommit: deb1cdecf34feaa92b0342adc61a5d08f3f10687
+ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68332823"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685051"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Создание игры UWP на двухмерной платформе MonoGame
 
@@ -25,9 +25,9 @@ ms.locfileid: "68332823"
 MonoGame — это упрощенная платформа для разработки игр. В этом руководстве объясняются основы разработки игр в MonoGame, в том числе как загружать содержимое, рисовать спрайты и анимировать их, а также настраивать взаимодействие с пользователем. Также рассматриваются некоторые более сложные задачи, такие как обнаружение столкновений и масштабирование для экранов с высоким числом точек на дюйм. Работа с этим руководством занимает 30–60 минут.
 
 ## <a name="prerequisites"></a>Предварительные условия
-+   Windows 10 и Microsoft Visual Studio 2019.  [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++   Windows 10 и Microsoft Visual Studio 2019.  [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio.](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
 + Платформа разработки классических приложений .NET. Если у вас еще не установлена эта платформа, ее можно установить, повторно запустив установщик Visual Studio и изменив установку Visual Studio 2019.
-+   Знание основ C# или схожих объектно-ориентированных языков программирования. [Щелкните здесь, чтобы узнать, как приступить к программированию на C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++   Знание основ C# или схожих объектно-ориентированных языков программирования. [Щелкните здесь, чтобы узнать, как приступить к программированию на C#](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +   Не помешает также знакомство с базовыми понятиями в области вычислительной техники, такими как классы, методы и переменные.
 
 ## <a name="why-monogame"></a>Почему MonoGame?
@@ -40,7 +40,7 @@ MonoGame — это упрощенная платформа для разраб
 
 Если вы уже сделали это, пропустите следующий раздел о настройке MonoGame, чтобы увидеть пошаговое описание кода.
 
-**Примечание.** Этот пример не претендует на то, чтобы считаться завершенной (или даже забавной) игрой. Его единственная цель — продемонстрировать все базовые понятия, необходимые для разработки двухмерных игр в MonoGame. Вы можете использовать этот код, чтобы сделать что-то намного лучшее. Или же, освоив основы, создайте свою игру с чистого листа!
+**Примечание**. Этот пример не претендует на то, чтобы считаться завершенной (или даже забавной) игрой. Его единственная цель — продемонстрировать все базовые понятия, необходимые для разработки двухмерных игр в MonoGame. Вы можете использовать этот код, чтобы сделать что-то намного лучшее. Или же, освоив основы, создайте свою игру с чистого листа!
 
 ## <a name="set-up-monogame-project"></a>Настройка проекта MonoGame
 1. Установите **MonoGame 3.6** для Visual Studio с сайта [MonoGame.net](https://www.monogame.net/).
@@ -692,10 +692,10 @@ if (gameOver)
 ## <a name="publish-to-the-microsoft-store"></a>Публикация в Microsoft Store
 Так как мы создали эту игру как приложение UWP, ее можно опубликовать в Microsoft Store. Для этого нужно выполнить несколько шагов.
 
-[Зарегистрируйтесь](https://developer.microsoft.com/en-us/store/register) в качестве разработчика приложений для Windows.
+[Зарегистрируйтесь](https://developer.microsoft.com/store/register) в качестве разработчика приложений для Windows.
 
-Заполните [контрольный список](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) для отправки приложения.
+Заполните [контрольный список](https://docs.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
 
-Отправьте приложение на [сертификацию](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
+Отправьте приложение на [сертификацию](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 
 Дополнительные сведения см. в разделе [Публикация приложений и игр для Windows](https://docs.microsoft.com/windows/uwp/publish/).

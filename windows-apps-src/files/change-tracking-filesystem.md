@@ -5,12 +5,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ec7762fd64f0f0b8de65faa1aaf079bdaba3a3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1cef2fb660681d3e382eb8ca7dcb92456756f627
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63807010"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685236"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Отслеживание изменений файловой системы в фоновом режиме
 
@@ -56,8 +56,8 @@ videoTracker.Enable();
 
 Несколько важных замечаний:
 
-- Убедитесь, что у приложения в манифесте есть разрешение для соответствующей библиотеки, прежде чем создавать объект [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary). Дополнительные сведения см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions).
-- Метод [**Enable** ](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) является потокобезопасным и не приведет к сбросу указателя. Его можно вызывать сколько угодно раз (мы рассмотрим его подробнее позже).
+- Убедитесь, что у приложения в манифесте есть разрешение для соответствующей библиотеки, прежде чем создавать объект [**StorageLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary). Дополнительные сведения см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+- Метод [**Enable**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) является потокобезопасным и не приведет к сбросу указателя. Его можно вызывать сколько угодно раз (мы рассмотрим его подробнее позже).
 
 ![Включение пустого средства отслеживания изменений](images/changetracker-enable.png)
 

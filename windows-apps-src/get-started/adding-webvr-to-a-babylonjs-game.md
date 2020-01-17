@@ -5,25 +5,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, веб-разработка, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f212e4e06035134b0ac5b5ea69381ed0d985783
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321165"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685203"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Добавление поддержки WebVR в трехмерную игру Babylon.js
 
 Если вы создали трехмерную игру с помощью Babylon.js и считаете, что она может отлично смотреться в виртуальной реальности (VR), выполните простые действия, описанные в этом руководстве, чтобы воплотить это в реальность.
 
-Мы добавим поддержку WebVR для игры, показанной ниже. Продолжайте и включите контроллер Xbox, чтобы опробовать ее!
-
-
-<iframe height='300' scrolling='no' title='Игра про динозавров Babylon.js с использованием Babylon.GUI' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Ознакомьтесь с записью <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>Babylon.js dino game using Babylon.GUI</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-Это игра с трехмерной графикой, которая хорошо подходит для плоских экранов, но как обстоят дела с виртуальной реальностью?
-В этом руководстве мы рассмотрим несколько шагов, необходимых, чтобы это работало с WebVR. Мы будем использовать гарнитуру [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality), способную использовать поддержку WebVR в Microsoft Edge. После применения этих изменений к игре можно ожидать, что она также будет работать в других комбинациях браузера и гарнитуры, которые поддерживают WebVR.
+В этом руководстве описано, как настроить и запустить трехмерную игру с использованием WebVR. Мы будем использовать гарнитуру [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality), способную использовать поддержку WebVR в Microsoft Edge. После применения этих изменений к игре можно ожидать, что она также будет работать в других комбинациях браузера и гарнитуры, которые поддерживают WebVR.
 
 
 
@@ -32,7 +25,7 @@ ms.locfileid: "67321165"
 - Текстовый редактор (например, [Visual Studio Code](https://code.visualstudio.com/download)).
 - Контроллер Xbox, подключенный к компьютеру.
 - Windows 10 Creators Update.
-- Компьютер с [минимальными требуемыми характеристиками для запуска Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup).
+- Компьютер с [минимальными требуемыми характеристиками для запуска Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/immersive_headset_setup).
 - Устройство Windows Mixed Reality (необязательно). 
 
 
@@ -204,9 +197,6 @@ navigator.getVRDisplays().then(function (displays) {
 
 Если мы откроем **index.html** с помощью гарнитуры и подключенного геймпада, то можем щелкнуть левой кнопки мыши голубое окно игры, чтобы переключить ее в режим виртуальной реальности. Продолжите и наденьте гарнитуру, чтобы проверить результаты. 
 
-
-<iframe height='300' scrolling='no' title='Игра про динозавров Babylon.js с использованием Babylon.GUI: WebVR' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/RjgpJd/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Ознакомьтесь с записью <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/RjgpJd/'>Babylon.js dino game using Babylon.GUI - WebVR</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
-</iframe>
 
 
 ## <a name="conclusion"></a>Заключение

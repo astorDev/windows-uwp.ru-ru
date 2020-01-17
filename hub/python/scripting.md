@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Майкрософт, Системное администрирование Python, Автоматизация файлов Python, скрипты Python в Windows, Настройка Python в Windows, среда разработчика Python в Windows, среда разработки Python в Windows, Python с PowerShell, скрипты Python для задачи файловой системы
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3f8a17de8121fed27e69442d5560f702a04c8e42
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314868"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683657"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Начало работы с Python в Windows для создания сценариев и автоматизации
 
@@ -24,7 +24,7 @@ ms.locfileid: "72314868"
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-При использовании Python для написания скриптов, выполняющих операции файловой системы, рекомендуется [установить Python из Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). При установке из Microsoft Store используется базовый интерпретатор Python3, но в дополнение к автоматическому обновлению также настраиваются параметры пути для текущего пользователя (без необходимости доступа администратора).
+При использовании Python для написания скриптов, выполняющих операции файловой системы, рекомендуется [установить Python из Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). При установке из Microsoft Store используется базовый интерпретатор Python3, но в дополнение к автоматическому обновлению также настраиваются параметры пути для текущего пользователя (без необходимости доступа администратора).
 
 Если вы используете Python для **веб-разработки** в Windows, рекомендуем использовать другую установку с помощью подсистемы Windows для Linux. Ознакомьтесь с пошаговыми инструкциями в нашем руководстве: [Начало работы с Python для разработки веб-приложений в Windows](./web-frameworks.md). Если вы новичок в Python, ознакомьтесь с нашим руководством: [Get started using Python on Windows for beginners](./beginners.md) (Приступая к работе с Python в Windows для начинающих). В некоторых сложных сценариях (например, при необходимости модификации или доступа к установленным файлам Python, создания копий двоичных файлов или непосредственного использования библиотек DLL Python) может потребоваться загрузить определенный выпуск Python непосредственно с сайта [python.org](https://www.python.org/downloads/) или установить [альтернативное средство](https://www.python.org/download/alternatives), например Anaconda, Jython, PyPy, WinPython, IronPython и т. д. Мы рекомендуем это только в том случае, если вы более продвинутый программист на Python и у вас есть конкретная причина выбрать альтернативную реализацию.
 
@@ -48,7 +48,7 @@ ms.locfileid: "72314868"
 
 ## <a name="install-the-microsoft-python-extension"></a>Установка расширения Microsoft Python
 
-Установите расширение Microsoft Python, чтобы воспользоваться преимуществами функций поддержки VS Code. [Подробнее](https://code.visualstudio.com/docs/languages/python).
+Установите расширение Microsoft Python, чтобы воспользоваться преимуществами функций поддержки VS Code. [Подробнее.](https://code.visualstudio.com/docs/languages/python)
 
 1. Откройте окно расширения VS Code с помощью **CTRL+SHIFT+X** (или используйте меню, чтобы перейти к **Вид** > **Расширения**).
 

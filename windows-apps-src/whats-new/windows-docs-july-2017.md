@@ -5,18 +5,18 @@ keywords: what's new, update, features, developer guidance, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa773cdb174369e14c12c4f805f3a57e2ff6eef
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258827"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684741"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Дополнение документации для разработчиков Windows в июле 2017 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Недавно стали доступны следующие обзоры функций, руководства для разработчиков и примеры кода, содержащие новые и обновленные сведения для разработчиков Windows.
+Документация для разработчиков Windows постоянно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Недавно стали доступны следующие обзоры функций, руководства для разработчиков и примеры кода, содержащие новые и обновленные сведения для разработчиков Windows.
 
-[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -106,7 +106,7 @@ ms.locfileid: "74258827"
 
 ### <a name="scoped-search"></a>Поиск по ограниченным областям
 
-Область UWP была добавлена в документацию [Концептуальные аспекты UWP](../get-started/universal-application-platform-guide.md) и [Справочник по API](https://docs.microsoft.com/en-us/uwp/api/) на сайте docs.microsoft.com. Если эта область не отключена, поиск в этих областях будет возвращать только документы UWP.
+Область UWP была добавлена в документацию [Концептуальные аспекты UWP](../get-started/universal-application-platform-guide.md) и [Справочник по API](https://docs.microsoft.com/uwp/api/) на сайте docs.microsoft.com. Если эта область не отключена, поиск в этих областях будет возвращать только документы UWP.
 
 ![Поиск по ограниченным областям](images/scoped-search.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "74258827"
 
 Протестируйте приложение Windows, чтобы убедиться, что оно будет работать правильно на устройствах под управлением Windows S. Используйте [это новое руководство](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) для получения инструкций.
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 
 ### <a name="annotated-audio-app-sample"></a>Пример приложения Annotated Audio
 
@@ -132,12 +132,12 @@ ms.locfileid: "74258827"
 
 ### <a name="accessibility"></a>Специальные возможности
 
-Добавление специальных возможностей в ваши приложения делает их доступными для гораздо более широкой аудитории. [Посмотрите видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility) и узнайте больше о [разработке приложений со специальными возможностями](https://developer.microsoft.com/en-us/windows/accessible-apps).
+Добавление специальных возможностей в ваши приложения делает их доступными для гораздо более широкой аудитории. [Посмотрите видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility) и узнайте больше о [разработке приложений со специальными возможностями](https://developer.microsoft.com/windows/accessible-apps).
 
 ### <a name="payments-request-api"></a>API запроса оплаты
 
 API запроса оплаты помогает клиентам и продавцам легко выполнять процесс оформления заказа в Интернете. [Посмотрите это видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API), а затем изучите [документацию по запросу оплаты](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API).
 
-### <a name="windows-10-iot-core"></a>Windows 10 IoT Базовая
+### <a name="windows-10-iot-core"></a>Windows 10 IoT Базовая
 
-В Windows 10 IoT Базовая и на универсальной платформе Windows можно быстро создавать прототипы и разрабатывать проекты с подключениями видения и компонентов, такими как Pet Recognition Door. [Посмотрите это видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core) и узнайте больше о том, как [начать работу с Windows 10 IoT Базовая](https://developer.microsoft.com/en-us/windows/iot).
+В Windows 10 IoT Базовая и на универсальной платформе Windows можно быстро создавать прототипы и разрабатывать проекты с подключениями видения и компонентов, такими как Pet Recognition Door. [Посмотрите это видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core) и узнайте больше о том, как [начать работу с Windows 10 IoT Базовая](https://developer.microsoft.com/windows/iot).

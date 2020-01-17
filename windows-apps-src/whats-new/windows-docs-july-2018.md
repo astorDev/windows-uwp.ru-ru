@@ -5,18 +5,18 @@ keywords: what's new, update, features, developer guidance, Windows 10, july
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258798"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684708"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Дополнение документации для разработчиков Windows в июле 2018 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В июле появились приведенные ниже обзоры функций, руководства для разработчиков, видео и примеры.
+Документация для разработчиков Windows постоянно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В июле появились приведенные ниже обзоры функций, руководства для разработчиков, видео и примеры.
 
-[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -29,7 +29,7 @@ ms.locfileid: "74258798"
 Ознакомьтесь с нашими руководствами по PWA:
 
 * [Создание простого веб-приложения как приложения PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [Улучшение приложения PWA с помощью среды выполнения Windows ](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
+* [Улучшение приложения PWA с помощью среды выполнения Windows ](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 * [Публикация приложения PWA в Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### <a name="notepad"></a>Блокнот
@@ -89,7 +89,7 @@ Project Personality Chat позволяет добавлять настраив�
 * [Why don't we let developers change the default audio device?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be) (Почему мы не позволяем разработчикам изменять звуковое устройство по умолчанию?)
 * [Why are so many UWP functions async?](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be) (Почему такое так много функций универсальной платформы Windows выполняются асинхронно?)
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 
 ### <a name="photo-editor-cwinrt"></a>Редактор фотографий C++/WinRT
 

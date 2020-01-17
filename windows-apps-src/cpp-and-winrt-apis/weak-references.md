@@ -1,17 +1,17 @@
 ---
 description: Среда выполнения Windows — это система с учетом ссылок. В подобной системе очень важно знать о значении сильных и слабых ссылок, а также о различиях между ними.
-title: Слабые ссылки в C++/WinRT
+title: Сильные и слабые ссылки в C++/WinRT
 ms.date: 05/16/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 781b63f9f32a0fdf7edee6479b60fd82822cc745
+ms.sourcegitcommit: e1bd1d9b2598e40b5d788338a07e12f4e4c58495
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870324"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75585397"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Сильные и слабые ссылки в C++/WinRT
 

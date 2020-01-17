@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259180"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684976"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
@@ -996,7 +996,7 @@ private:
     }
 ```
 
-## <a name="background-operations-and-the-socket-broker"></a>Фоновые операции и посредник сокета
+## <a name="background-operations-and-the-socket-broker"></a>Фоновые операции и брокер сокета
 Можно использовать посредник сокетов и контролировать триггеры канала, чтобы убедиться, что приложение должным образом получает подключения или данные в сокетах, не находясь на переднем плане. Дополнительные сведения см. в статье [о сетевом взаимодействии в фоновом режиме](network-communications-in-the-background.md).
 
 ## <a name="batched-sends"></a>Пакетные отправки
@@ -1274,10 +1274,10 @@ private:
 
 Существуют некоторые важные ограничения, связанные с использованием пакетных отправок в вашем коде.
 
--   Вы не можете изменять содержимое экземпляров **IBuffer**, написанных до завершения асинхронной записи.
--   Шаблон **FlushAsync** работает только на **StreamSocket.OutputStream** и **DatagramSocket.OutputStream**.
+-   Вы не можете изменять содержимое экземпляров **IBuffer**, записанных до завершения асинхронной записи.
+-   Шаблон **FlushAsync** работает только с **StreamSocket.OutputStream** и **DatagramSocket.OutputStream**.
 -   Шаблон **FlushAsync** работает только в Windows 10 и более поздних версиях.
--   В других случаях следует использовать [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) вместо шаблона **FlushAsync**.
+-   В других случаях следует использовать [**Task.WaitAll**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) вместо шаблона **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Совместное использование порта для DatagramSocket
 Можно настроить сокет [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) для совместного существования с другими многоадресными сокетами Win32 или UWP, связанными с тем же адресом/портом. Для этого необходимо задать для [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) значение `true`, прежде чем привязывать или подключать сокет. Доступ к экземпляру **DatagramSocketControl** осуществляется из объекта **DatagramSocket** через свойство [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control).
@@ -1377,11 +1377,11 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Связь между приложениями](/windows/uwp/app-to-app/index)
+## <a name="related-topics"></a>Связанные темы
+* [Обмен данными между приложениями](/windows/uwp/app-to-app/index)
 * [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
 * [How to set network capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
 * [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 * [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

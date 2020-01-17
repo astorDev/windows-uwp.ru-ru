@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: eb083b0d8ed0aedfc6e14be9bed9647daa2bb950
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260171"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684963"
 ---
 # <a name="websockets"></a>WebSockets
 Протокол WebSocket предоставляет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через HTTP(S) и поддерживает и UTF-8, и двоичные сообщения.
@@ -22,7 +22,7 @@ ms.locfileid: "74260171"
 
 **Примечание**. Клиент не может использовать WebSocket для передачи данных, если сервер не использует протокол WebSocket. Если сервер не поддерживает WebSocket, вам придется использовать другой метод передачи данных.
 
-Универсальная платформа Windows (UWP) поддерживает использование WebSocket как клиентами, так и серверами. Пространство имен [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) определяет два класса WebSocket для использования клиентами &mdash; [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) и [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Вот сравнение этих двух классов WebSocket.
+Универсальная платформа Windows (UWP) поддерживает использование WebSocket как клиентами, так и серверами. Пространство имен [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) определяет два класса WebSocket для использования клиентами &mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) и [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Вот сравнение этих двух классов WebSocket.
 
 | [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) | [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) |
 | - | - |
@@ -39,7 +39,7 @@ ms.locfileid: "74260171"
 | wss: | Используется для защищенных соединений, которые должны быть зашифрованы. |
 | ws: | Используется для незашифрованных соединений. |
 
-Чтобы зашифровать подключение WebSocket, воспользуйтесь схемой URI `wss:`. Рассмотрим пример.
+Чтобы зашифровать подключение WebSocket, воспользуйтесь схемой URI `wss:`. Пример.
 
 ```csharp
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -298,7 +298,7 @@ private:
 Событие **MessageReceived** создается при получении данных. Доступ к данным осуществляется через [**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs). Событие **Closed** создается, когда клиент или сервер закрывает сокет.
  
 ### <a name="send-data-on-a-messagewebsocket"></a>Отправка данных в MessageWebSocket
-После установки подключения можно отправлять данные на сервер. Это можно сделать с помощью свойства [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) и [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) для записи данных. 
+После установки подключения можно отправлять данные на сервер. Это можно сделать с помощью свойства [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) и [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) для записи данных. 
 
 **Примечание**. **DataWriter** становится владельцем потока вывода. Когда **DataWriter** выходит за пределы области, если к нему прикреплен поток вывода, **DataWriter** освобождает поток вывода. После этого все последующие попытки использовать поток вывода будут неудачными со значением HRESULT 0x80000013. Но можно вызвать метод [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream), чтобы отсоединить поток вывода от **DataWriter** и вернуть владение потоком событию **MessageWebSocket**.
 
@@ -564,12 +564,12 @@ private:
 Прежде чем устанавливать подключение и отправлять данные с помощью **StreamWebSocket**, необходимо подписаться на событие [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed). Событие **Closed** создается, когда клиент или сервер закрывает сокет.
  
 ### <a name="send-data-on-a-streamwebsocket"></a>Отправка данных в StreamWebSocket
-После установки подключения можно отправлять данные на сервер. Это можно сделать с помощью свойства [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) и [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) для записи данных.
+После установки подключения можно отправлять данные на сервер. Это можно сделать с помощью свойства [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) и [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) для записи данных.
 
 **Примечание**. Если вы хотите записать больше данных в один сокет, не забудьте вызвать метод [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream), чтобы отсоединить поток вывода от **DataWriter** до того, как **DataWriter** выйдет за пределы области. В результате владельцем потока становится **MessageWebSocket**.
 
 ### <a name="receive-data-on-a-streamwebsocket"></a>Получение данных в StreamWebSocket
-Используйте свойство [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) и [**DataReader**](/uwp/api/windows.storage.streams.datareader) для чтения данных.
+Используйте свойство [**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) и [**DataReader**](/uwp/api/windows.storage.streams.datareader) для чтения данных.
 
 ## <a name="advanced-options-for-messagewebsocket-and-streamwebsocket"></a>Дополнительные параметры для MessageWebSocket и StreamWebSocket
 Прежде чем устанавливать подключение, можно задать дополнительные параметры в сокете, задав свойства в [**MessageWebSocketControl**](/uwp/api/windows.networking.sockets.messagewebsocketcontrol) или [**StreamWebSocketControl**](/uwp/api/windows.networking.sockets.streamwebsocketcontrol). Вы осуществляете доступ к экземпляру этих классов из самого объекта сокета через его свойство [**MessageWebSocket.Control**](/uwp/api/windows.networking.sockets.messagewebsocket.control) или [**StreamWebSocket.Control**](/uwp/api/windows.networking.sockets.streamwebsocket.control) в зависимости от ситуации.
@@ -814,7 +814,7 @@ protected:
 * [MessageWebSocket.Control](/uwp/api/windows.networking.sockets.messagewebsocket.control)
 * [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Information)
 * [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.MessageReceived)
-* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
+* [MessageWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
 * [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl)
 * [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl.MessageType)
 * [MessageWebSocketInformation](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation)
@@ -825,17 +825,17 @@ protected:
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
 * [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocket.control)
 * [StreamWebSocket.Information](/uwp/api/windows.networking.sockets.streamwebsocket.Information)
-* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
-* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
+* [StreamWebSocket.InputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
+* [StreamWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
 * [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl)
 * [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation)
 * [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 
 * [WebSocketError.GetStatus](/uwp/api/windows.networking.sockets.websocketerror.getstatus)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Протокол WebSocket](https://tools.ietf.org/html/rfc6455)
 * [Сокеты](sockets.md)
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 * [Пример WebSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebSocket)

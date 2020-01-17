@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Специальные возможности в Windows 10, специальные возможности, создание приложений win32 со специальными возможностями, создание приложений UWP со специальными возможностями, создание приложений WPF со специальными возможностями, создание приложений WinForms со специальными возможностями
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987188"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681895"
 ---
 # <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 
@@ -27,7 +27,7 @@ ms.locfileid: "70987188"
 
 На этой странице содержатся сведения о том, как различные платформы разработки Windows обеспечивают поддержку специальных возможностей для разработчиков, создающих приложения Windows, разработчиков вспомогательных технологий, создающих такие инструменты, как средства чтения с экрана и экранные увеличители, а также для инженеров тестирования программного обеспечения, создающих автоматизированные сценарии для тестирования приложений.
 
-## <a name="platform-specific-documentation"></a>Документация для определенных платформ
+## <a name="platform-specific-documentation"></a>Документация по определенным платформам
 
 :::row:::
    :::column:::
@@ -43,7 +43,7 @@ ms.locfileid: "70987188"
 
       [Проверка специальных возможностей](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-      [Специальные возможности в Магазине](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Специальные возможности в Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Приложения платформы Win32](images/platform-win32.png)
@@ -129,13 +129,13 @@ ms.locfileid: "70987188"
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 
 Загрузите и запустите полные примеры Windows, демонстрирующие различные компоненты и функции специальных возможностей.
 
 :::row:::
    :::column:::
-      [Браузер с примером кода](https://docs.microsoft.com/en-us/samples/browse/)
+      [Браузер с примером кода](https://docs.microsoft.com/samples/browse/)
 
       Новый браузер примеров заменяет коллекцию кода MSDN.
    :::column-end:::
