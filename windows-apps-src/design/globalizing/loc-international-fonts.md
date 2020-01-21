@@ -30,7 +30,7 @@ ms.locfileid: "74258080"
 | Азербайджанский (латиница) | az-Latn-AZ | Segoe UI |
 | Бенгальский (Бангладеш) | bn-BD | Nirmala UI |
 | Бенгальский (Индия) | bn-IN | Nirmala UI |
-| Баскский (Баскония) | eu-ES | Segoe UI |
+| Баскский | eu-ES | Segoe UI |
 | Белорусский | be-BY | Segoe UI |
 | Боснийский (латиница) | bs-Latn-BA | Segoe UI |
 | Болгарский | bg-BG | Segoe UI |
