@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
+ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660151"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75928819"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование компонентов COM с помощью C++/WinRT
 
@@ -18,7 +18,7 @@ ms.locfileid: "67660151"
 
 В конце этой статьи вы найдете полный список исходного кода минимального приложения Direct2D. Мы возьмем выдержки из этого кода и рассмотрим, как использовать компоненты COM вместе с C++/WinRT, применяя различные средства библиотеки C++/WinRT.
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 Когда вы программируете с помощью COM, вы работаете непосредственно с интерфейсами, а не с объектами (это также верно для API-интерфейсов среды выполнения Windows, которые являются развитием COM). Например, чтобы вызвать функцию в классе COM, вы активируете класс, получите интерфейс обратно, а затем вызовете функции для этого интерфейса. Чтобы получить доступ к состоянию объекта, вы не можете напрямую обращаться к его элементам данных. Вместо этого вы вызываете функцию доступа и функцию-мутатор в интерфейсе.
 
@@ -81,7 +81,7 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>Повторное размещение **winrt::com_ptr**
+## <a name="re-seat-a-winrtcom_ptr"></a>Повторное размещение **winrt::com_ptr**
 
 > [!IMPORTANT]
 > Если вы уже разместили [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) (у его внутреннего необработанного указателя уже есть цель) и хотите переместить его, чтобы он указывал на другой объект, сначала нужно присвоить ему `nullptr`, как показано в примере кода ниже. Если вы этого не сделаете, то уже установленный **com_ptr** вызовет проблему (при вызове [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) или [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)), утверждая, что его внутренний указатель не равен нулю.
@@ -169,7 +169,11 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Полный список исходного кода минимального приложения Direct2D
 
-Если вы хотите создать и запустить этот пример исходного кода, сначала в Visual Studio создайте **приложение основных компонентов (C++/WinRT)** . `Direct2D` — подходящее имя для проекта, но вы можете назвать его как угодно. Откройте файл `App.cpp`, удалите все его содержимое и вставьте список ниже.
+Если вы хотите создать и запустить этот пример исходного кода, сначала в Visual Studio создайте **приложение основных компонентов (C++/WinRT)** . `Direct2D` — подходящее имя для проекта, но вы можете назвать его как угодно.
+
+Откройте `pch.h` и добавьте `#include <unknwn.h>` сразу после включения `windows.h`.
+
+Откройте файл `App.cpp`, удалите все его содержимое и вставьте список ниже.
 
 В приведенном ниже коде используется функция [winrt::com_ptr::capture](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) там, где это возможно. `WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
@@ -491,7 +495,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="avoiding-namespace-collisions"></a>Предотвращение конфликтов пространств имен
 
-Произвольное использование директив using — распространенная практика в C++/WinRT,&mdash;как показано в коде, приведенном в этомразделе&mdash;. В некоторых случаях это может привести к проблеме, при которой конфликтующие имена импортируются в глобальное пространство имен. Рассмотрим пример.
+Произвольное использование директив using — распространенная практика в C++/WinRT,&mdash;как показано в коде, приведенном в этомразделе&mdash;. В некоторых случаях это может привести к проблеме, при которой конфликтующие имена импортируются в глобальное пространство имен. Пример.
 
 C++/ WinRT содержит тип с именем [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). При этом COM определяет тип с именем [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown). Поэтому в проекте C++/WinRT с применением заголовков COM рекомендуем использовать следующий код:
 
