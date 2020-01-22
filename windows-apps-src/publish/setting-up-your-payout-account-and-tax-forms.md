@@ -2,18 +2,21 @@
 Description: Чтобы получить деньги из продаж приложений в Microsoft Store, необходимо настроить счет выплата и заполнить необходимые налоговые формы.
 title: Настройка счета для выплат и налоговых форм
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
-ms.date: 12/14/2017
+ms.date: 1/17/2020
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a56630a0a2f0acdc71241ac0234cad463e45ace
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259902"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294833"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Настройка счета для выплат и налоговых форм
+
+> [!NOTE]
+> Если вы ищете поддержку по поводу выплат, включая настройку счетов выплата, отсутствие выпусков, выдача выпусков или что-либо еще, обратитесь в [службу поддержки.](https://partner.microsoft.com/support)
 
 Чтобы получить деньги из продаж приложений в Microsoft Store, необходимо настроить счет выплата и заполнить необходимые налоговые формы в [центре партнеров](https://partner.microsoft.com/dashboard).
 
