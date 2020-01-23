@@ -182,7 +182,7 @@
           href: controls-and-patterns/pivot.md
         - name: Вкладки
           href: controls-and-patterns/tab-view.md
-    - name: People
+    - name: Пользователи
       items:
         - name: Карточка контакта
           href: controls-and-patterns/contact-card.md
@@ -208,7 +208,7 @@
           href: controls-and-patterns/scroll-controls.md
         - name: Контекстное масштабирование
           href: controls-and-patterns/semantic-zoom.md
-    - name: Поиск
+    - name: Найти
       href: controls-and-patterns/search.md
     - name: Состояние и сведения
       items:
@@ -240,6 +240,8 @@
           href: controls-and-patterns/content-links.md
         - name: Представление рукописного ввода
           href: controls-and-patterns/text-handwriting-view.md
+    - name: Представление с двумя панелями
+      href: controls-and-patterns/two-pane-view.md
 - name: Стиль
   items:
     - name: Обзор
@@ -306,9 +308,9 @@
           href: motion/storyboarded-animations.md
         - name: Анимации по ключевым кадрам и на основе функций для реалистичной анимации
           href: motion/key-frame-and-easing-function-animations.md
-- name: Оболочка
+- name: Shell
   items:
-    - name: Плитки
+    - name: Tiles
       href: shell/tiles-and-notifications/creating-tiles.md
       items:
         - name: Вспомогательные плитки
@@ -423,7 +425,7 @@
           href: input/save-and-load-ink.md
         - name: Добавление InkToolbar
           href: input/ink-toolbar.md
-    - name: Сенсорный ввод
+    - name: Touch
       href: input/touch-interactions.md
     - name: Мышь
       href: input/mouse-interactions.md
@@ -446,7 +448,7 @@
           href: input/use-input-scope-to-change-the-touch-keyboard.md
     - name: Геймпад и пульт дистанционного управления
       href: input/gamepad-and-remote-interactions.md
-    - name: Сенсорная панель
+    - name: Touchpad
       href: input/touchpad-interactions.md
     - name: Surface Dial
       href: input/windows-wheel-interactions.md
@@ -505,7 +507,7 @@
       href: input/guidelines-for-rotation.md
     - name: Выделение текста и изображений
       href: input/guidelines-for-textselection.md
-    - name: Нацеливание
+    - name: Целевая настройка
       href: input/guidelines-for-targeting.md
     - name: Визуальная обратная связь
       href: input/guidelines-for-visualfeedback.md
