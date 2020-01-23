@@ -1,19 +1,19 @@
 ---
 description: В этой статье описывается размещение пользовательского интерфейса XAML UWP в приложении Win32 C++ для настольных систем.
 title: Использование API размещения XAML платформы UWP в приложении Win32 на C++
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, Win32, о-ва XAML
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683687"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520429"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
 
@@ -55,7 +55,7 @@ API хостинга UWP XAML предоставляет низкую инфра
     1. Установите пакет SDK для Windows 10 версии 1903 (версия 10.0.18362) или более поздней версии.
     2. Упакуйте приложение в пакет MSIX, добавив [проект упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в решение и добавив ссылку на проект C++/Win32.
 
-* **Установите пакет Microsoft. Toolkit. Win32. UI. SDK**. Если вы не хотите упаковывать приложение в пакет MSIX, можно установить [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0-preview7 или более поздней версии). Этот пакет предоставляет несколько ресурсов для сборки и времени выполнения, которые позволяют работать в приложении по работе с XAML. Убедитесь, что выбран параметр **включить предварительные выпуски** , чтобы можно было увидеть последние предварительные версии этого пакета.
+* **Установите пакет Microsoft. Toolkit. Win32. UI. SDK**. Если вы не хотите упаковывать приложение в пакет MSIX, можно установить [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0 или более поздней версии). Этот пакет предоставляет несколько ресурсов для сборки и времени выполнения, которые позволяют работать в приложении по работе с XAML.
 
 > [!NOTE]
 > В предыдущих версиях этих инструкций был добавлен элемент `maxversiontested` в манифест приложения в проекте. Пока вы используете один из перечисленных выше параметров, вам больше не нужно добавлять этот элемент в манифест.
@@ -125,7 +125,7 @@ API размещения платформы UWP XAML включает следу
 4. Установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) :
 
     1. В окне **Диспетчер пакетов NuGet** установите флажок **включить предварительные выпуски** .
-    2. Перейдите на вкладку **Обзор** , найдите пакет [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) и установите версию v 6.0.0-preview7 (или более позднюю) этого пакета.
+    2. Перейдите на вкладку **Обзор** , найдите пакет [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) и установите версию v 6.0.0 (или более позднюю) этого пакета.
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>Использование API размещения XAML для размещения элемента управления UWP
 

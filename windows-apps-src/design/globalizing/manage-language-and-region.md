@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edf30733f7bca443c5fd12103fbd5d93909732
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1642f8ccc989ce224ff0b3250fa1b79c954167b1
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258070"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520419"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Обзор языков профиля пользователя и языков манифеста приложения
 Пользователь Windows может использовать раздел **Параметры** > **Время и язык** > **Язык и региональные стандарты** для настройки упорядоченного списка предпочтительных языков интерфейса или только одного основного языка интерфейса. У языка может быть региональный вариант. Например, можно выбрать испанский язык в качестве разговорного языка в Испании, в Мексике, в Соединенных Штатах и другие варианты.
@@ -126,7 +126,7 @@ ms.locfileid: "74258070"
 
 Использование класса [**GeographicRegion**](/uwp/api/windows.globalization.geographicregion?branch=live) позволяет получить подробные сведения о конкретном регионе, такие как его отображаемое и исходное имя, а также используемые валюты.
 
-## <a name="examples"></a>Примеры
+## <a name="examples"></a>Примеры.
 В следующей таблице приводятся примеры того, как пользователь мог бы увидеть различные параметры языка и региона в пользовательском интерфейсе приложения.
 
 <table border="1">
@@ -150,35 +150,35 @@ ms.locfileid: "74258070"
 <tr>
 <td align="left">Английский (Великобритания) (по умолчанию); немецкий (Германия)</td>
 <td align="left">Английский (Великобритания)</td>
-<td align="left">none</td>
+<td align="left">отсутствуют</td>
 <td align="left">Английский (Великобритания)</td>
 <td align="left">Пользовательский интерфейс: английский (Великобритания)<br>Даты/время/числа: английский (Великобритания)</td>
 </tr>
 <tr>
 <td align="left">Немецкий (Германия) (по умолчанию); французский (Франция); итальянский (Италия)</td>
 <td align="left">Французский (Австрия)</td>
-<td align="left">none</td>
+<td align="left">отсутствуют</td>
 <td align="left">Французский (Австрия)</td>
 <td align="left">Пользовательский интерфейс: французский (Франция) (запасной вариант для французского языка (Австрия))<br>Даты/время/числа: французский (Австрия)</td>
 </tr>
 <tr>
 <td align="left">Английский (США) (по умолчанию); французский (Франция); английский (Великобритания)</td>
 <td align="left">Английский (Канада); французский (Канада)</td>
-<td align="left">none</td>
+<td align="left">отсутствуют</td>
 <td align="left">Английский (Канада); французский (Канада)</td>
 <td align="left">Пользовательский интерфейс: английский (США) (запасной вариант для английского языка (Канада))<br>Даты/время/числа: английский (Канада)</td>
 </tr>
 <tr>
 <td align="left">Испанский (Испания) (по умолчанию); испанский (Мексика); испанский (Латинская Америка); португальский (Бразилия)</td>
 <td align="left">Английский (США)</td>
-<td align="left">none</td>
+<td align="left">отсутствуют</td>
 <td align="left">Испанский (Испания)</td>
 <td align="left">Пользовательский интерфейс: испанский (Испания) (используется язык по умолчанию, так как запасного варианта для английского языка нет)<br>Даты/время/числа: испанский (Испания)</td>
 </tr>
 <tr>
 <td align="left">Каталанский (по умолчанию); испанский (Испания); французский (Франция)</td>
 <td align="left">Каталанский; французский (Франция)</td>
-<td align="left">none</td>
+<td align="left">отсутствуют</td>
 <td align="left">Каталанский; французский (Франция)</td>
 <td align="left">Пользовательский интерфейс: в основном каталанский, местами французский (Франция), так как не все строки представлены на каталанском языке<br>Даты/время/числа: каталанский</td>
 </tr>
@@ -193,7 +193,7 @@ ms.locfileid: "74258070"
 </table>
 
 >[!NOTE]
-> Список стандартных кодов стран и регионов, используемых корпорацией Майкрософт, см. в [официальном списке стран или регионов](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Список стандартных кодов стран и регионов, используемых корпорацией Майкрософт, см. в [официальном списке стран или регионов](/windows/uwp/publish/supported-languages).
 
 ## <a name="important-apis"></a>Важные API
 * [Глобализатионпреференцес. Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -207,7 +207,7 @@ ms.locfileid: "74258070"
 * [Глобализатионпреференцес. Хомежеографикрегион](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [жеографикрегион](/uwp/api/windows.globalization.geographicregion?branch=live)
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 * [Тег языка BCP-47](https://tools.ietf.org/html/bcp47)
 * [Реестр языка IANA субтаг](https://www.iana.org/assignments/language-subtag-registry)
 * [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
@@ -215,5 +215,5 @@ ms.locfileid: "74258070"
 * [Глобализация форматов даты, времени и чисел](use-global-ready-formats.md)
 * [Как система управления ресурсами сопоставляет языковые теги](../../app-resources/how-rms-matches-lang-tags.md)
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 * [Примеры ресурсов приложения и локализации](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
