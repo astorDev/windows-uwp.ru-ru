@@ -68,6 +68,8 @@
       href: apps/fluent-design-system.md
     - name: Специальные возможности
       href: apps/accessibility.md
+    - name: Speech
+      href: apps/speech.md
     - name: Функции и технологии
       href: apps/features-and-technologies.md
     - name: Последние обновления документации

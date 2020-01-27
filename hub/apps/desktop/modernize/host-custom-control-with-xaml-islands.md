@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520399"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725987"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение пользовательского элемента управления UWP в приложении WPF с помощью XAML-островов
 
@@ -258,36 +258,7 @@ ms.locfileid: "76520399"
 
 2. В проекте упаковки щелкните правой кнопкой мыши узел **приложения** и выберите команду **Добавить ссылку**. В списке проектов выберите проект WPF в решении и нажмите кнопку **ОК**.
 
-3. Измените файл проекта упаковки. В настоящее время эти изменения необходимы для упаковки приложений WPF, предназначенных для .NET Core 3, и для которых требуются основные острова XAML.
-
-    1. В обозреватель решений щелкните правой кнопкой мыши узел проект упаковки и выберите пункт **изменить файл проекта**.
-    2. Найдите в этом файле элемент `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />`. Замените этот элемент следующим XML-кодом. В настоящее время эти изменения необходимы для упаковки приложений WPF, предназначенных для .NET Core 3, и для размещения элементов управления UWP.
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. Сохраните файл проекта и закройте его.
-
-4. Измените файл проекта WPF. В настоящее время эти изменения необходимы для упаковки приложений WPF, в которых размещаются настраиваемые элементы управления UWP.
+3. Измените файл проекта WPF. В настоящее время эти изменения необходимы для упаковки приложений WPF, в которых размещаются настраиваемые элементы управления UWP.
 
     1. В обозреватель решений щелкните правой кнопкой мыши узел проекта WPF и выберите команду **Выгрузить проект**.
     2. Щелкните правой кнопкой мыши узел проекта WPF и выберите пункт **изменить**.
@@ -302,7 +273,7 @@ ms.locfileid: "76520399"
     4. Сохраните файл проекта и закройте его.
     5. Щелкните правой кнопкой мыши узел проекта WPF и выберите **Перезагрузить проект**.
 
-5. Создайте и запустите проект упаковки. Убедитесь, что WPF выполняется и пользовательский элемент управления UWP отображается ожидаемым образом.
+4. Создайте и запустите проект упаковки. Убедитесь, что WPF выполняется и пользовательский элемент управления UWP отображается ожидаемым образом.
 
 ## <a name="related-topics"></a>Связанные темы
 

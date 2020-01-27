@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683997"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520449"
 ---
 # <a name="forms"></a>Формы
 Форма — это группа элементов управления, которые собирают данные пользователей и отправляют их. Формы обычно используются для страниц параметров, опросов, создания учетных записей и многого другого. 
@@ -127,7 +127,7 @@ ms.locfileid: "75683997"
 ### <a name="lists"></a>Списки
 Элемент | Используйте | Пример
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Начните с состояния сжатия и разверните, чтобы отобразить список выбираемых элементов | Выберите из длинного списка элементов, таких как штаты или страны
+[ComboBox](combo-box.md) | Начните с состояния сжатия и разверните, чтобы отобразить список выбираемых элементов | Выберите из длинного списка элементов, таких как штаты или страны
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Позволяет упорядочивать элементы и назначать заголовки групп, а также перетаскивать элементы, организовывать содержимое и изменять порядок элементов | Параметры ранга
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Позволяет упорядочивать и просматривать коллекции на основе изображений | Выберите фотографию, цвет, тему отображения
 

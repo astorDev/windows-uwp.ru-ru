@@ -2,22 +2,22 @@
 description: В этом руководстве показано, как добавлять пользовательские интерфейсы XAML UWP, создавать пакеты MSIX и внедрять в приложение WPF другие современные компоненты.
 title: Упаковка и развертывание с помощью MSIX
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, о-ва XAML
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6f5c01b23f02bb9c116ddaaec698612aa539539d
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979353"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76726017"
 ---
-# <a name="part-5-package-and-deploy-with-msix"></a>Часть 5. Упаковка и развертывание с помощью MSIX
+# <a name="part-5-package-and-deploy-with-msix"></a>Часть 5. Упаковка и развертывание с помощью MSIX
 
-Это заключительная часть учебника, в котором показано, как модернизировать пример классического приложения WPF с именем Contoso расходы. Общие сведения о руководстве, предварительных требованиях и инструкциях по скачиванию примера приложения см [. в разделе Учебник. Модернизировать приложение](modernize-wpf-tutorial.md)WPF. В этой статье предполагается, что вы уже выполнили [часть 4](modernize-wpf-tutorial-4.md).
+Это заключительная часть учебника, в котором показано, как модернизировать пример классического приложения WPF с именем Contoso расходы. Общие сведения о руководстве, предварительных требованиях и инструкциях по скачиванию примера приложения см. [в разделе Учебник. модернизировать a WPF App](modernize-wpf-tutorial.md). В этой статье предполагается, что вы уже выполнили [часть 4](modernize-wpf-tutorial-4.md).
 
 В [части 4](modernize-wpf-tutorial-4.md) вы узнали, что для некоторых API-интерфейсов WinRT, включая API уведомлений, требуется удостоверение пакета, прежде чем их можно будет использовать в приложении. Удостоверение пакета можно получить путем упаковки расходов contoso с помощью [MSIX](https://docs.microsoft.com/windows/msix), формата упаковки, представленного в Windows 10, для упаковки и развертывания приложений Windows. MSIX предоставляет преимущества для разработчиков и ИТ-специалистов, в том числе:
 
@@ -36,11 +36,11 @@ Visual Studio 2019 предоставляет простой способ упа
 
     ![Добавить новый проект](images/wpf-modernize-tutorial/AddNewProject.png)
 
-3. В диалоговом окне **Добавление нового проекта** найдите `packaging`и выберите шаблон проект **упаковки приложений Windows** в C# категории и нажмите кнопку **Далее**.
+3. В диалоговом окне **Добавление нового проекта** выполните поиск по фразе `packaging`, выберите шаблон проекта **упаковки приложений Windows** в C# категории и нажмите кнопку **Далее**.
 
     ![Проект упаковки приложений Windows](images/wpf-modernize-tutorial/WAP.png)
 
-4. Присвойте новому проекту `ContosoExpenses.Package` имя и нажмите кнопку **создать**.
+4. Назовите новый проект `ContosoExpenses.Package` и нажмите кнопку **создать**.
 
 5. Выберите **Windows 10, версия 1903 (10,0; Сборка 18362)** для **целевой версии** и **минимальной версии** и нажмите кнопку **ОК**.
 
@@ -54,42 +54,12 @@ Visual Studio 2019 предоставляет простой способ упа
 
 8. Щелкните правой кнопкой мыши проект **контосоекспенсес. Package** и выберите команду **Назначить запускаемым проектом**.
 
-9. В обозреватель решений щелкните правой кнопкой мыши узел проекта **контосоекспенсес. Package** и выберите пункт **изменить файл проекта**.
-
-10. Найдите в этом файле элемент `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />`.
-
-11. Замените этот элемент следующим XML-кодом.
-
-    ``` xml
-    <ItemGroup>
-        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-        <Implicit>true</Implicit>
-        </SDKReference>
-    </ItemGroup>
-    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-        <ItemGroup>
-        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject></SourceProject>
-            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-        </_FilteredNonWapProjProjectOutput>
-        </ItemGroup>
-    </Target>
-    ```
-
-12. Сохраните файл проекта и закройте его.
-
-13. Нажмите клавишу **F5** , чтобы запустить упакованное приложение в отладчике.
+9. Нажмите клавишу **F5** , чтобы запустить упакованное приложение в отладчике.
 
 На этом этапе можно заметить некоторые изменения, которые указывают, что приложение теперь выполняется как упакованное:
 
 - Значок на панели задач или в меню "Пуск" теперь является ресурсом по умолчанию, включенным в каждый **проект упаковки приложений Windows**.
-- Если щелкнуть правой кнопкой мыши приложение **контосоекспенсе. Package** , указанное в меню "Пуск", можно заметить параметры, которые обычно зарезервированы для приложений, скачанных из Microsoft Store, таких как **Параметры приложения**, **Частота, обзор** и **общий доступ.** .
+- Если щелкнуть правой кнопкой мыши приложение **контосоекспенсе. Package** , указанное в меню "Пуск", можно заметить параметры, которые обычно зарезервированы для приложений, скачанных из Microsoft Store, таких как **Параметры приложения**, **Частота, обзор** и **общий доступ**.
 
     ![Контосоекспенсес в меню "Пуск"](images/wpf-modernize-tutorial/StartMenu.png)
 
@@ -99,7 +69,7 @@ Visual Studio 2019 предоставляет простой способ упа
 
 Теперь, когда вы выполнили упаковку приложения "расходы Contoso" с помощью MSIX, вы можете протестировать сценарий уведомления, который не работал в конце [части 4](modernize-wpf-tutorial-4.md).
 
-1. В приложении "расходы Contoso" выберите сотрудника из списка и нажмите кнопку **Добавить новый расход** . 
+1. В приложении "расходы Contoso" выберите сотрудника из списка и нажмите кнопку **Добавить новый расход** .
 2. Заполните все поля в форме и нажмите кнопку **сохранить**.
 3. Убедитесь, что отображается уведомление ОС.
 
