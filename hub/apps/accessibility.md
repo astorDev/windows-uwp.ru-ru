@@ -6,16 +6,16 @@ ms.date: 09/12/2019
 keywords: Специальные возможности в Windows 10, специальные возможности, создание приложений win32 со специальными возможностями, создание приложений UWP со специальными возможностями, создание приложений WPF со специальными возможностями, создание приложений WinForms со специальными возможностями
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681895"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725937"
 ---
 # <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Главное изображение специальных возможностей](images/hero-accessibility-bar-smaller.png)
 
 ## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Встраивание специальных возможностей в приложения, чтобы они были доступны для каждого пользователя
 
@@ -256,7 +256,6 @@ ms.locfileid: "75681895"
       [Блоги по автоматизации пользовательского интерфейса Windows](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **Сообщество и поддержка**
