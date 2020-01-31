@@ -1,19 +1,19 @@
 ---
 description: В этой статье показано, как разместить стандартный элемент управления UWP в приложении WPF с помощью XAML-островов.
 title: Размещение стандартного элемента управления UWP в приложении WPF с помощью XAML-островов
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, острова XAML, обтекаемые элементы управления, стандартные элементы управления, InkCanvas, Инктулбар
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 47998d9c79dbbb41060b4fbd52fe3ee805aecc52
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: e7fa4a3d97354efdfe4514ea69230883fffdb3cd
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520389"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814024"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение стандартного элемента управления UWP в приложении WPF с помощью XAML-островов
 
@@ -23,16 +23,23 @@ ms.locfileid: "76520389"
 
 * Здесь также показано, как разместить элемент управления UWP [календарвиев](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) с помощью элемента управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) в наборе средств сообщества Windows. Поскольку в качестве упакованных элементов управления доступны только небольшие наборы элементов управления UWP, можно использовать [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) для размещения любого другого стандартного элемента управления UWP.
 
-Для размещения элемента управления UWP в приложении WPF потребуются следующие компоненты. В этой статье приводятся инструкции по созданию каждого из этих компонентов.
-
-* Проект и исходный код для приложения WPF.
-* Проект приложения UWP, определяющий экземпляр класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` из набора средств сообщества Windows.
-  > [!NOTE]
-  > Чтобы обеспечить хорошую работу приложения во всех сценариях использования XAML, проект WPF (или Windows Forms) должен иметь доступ к объекту `XamlApplication`. Этот объект выступает в качестве корневого поставщика метаданных для загрузки метаданных для типов XAML UWP в сборках в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект WPF (или Windows Forms), и изменить класс `App` по умолчанию в этом проекте на производный от `XamlApplication`.
-  >
-  > Хотя этот шаг не требуется для упрощенных сценариев остров XAML, таких как размещение основного элемента управления UWP, приложению WPF требуется этот `XamlApplication` объект для поддержки всего спектра сценариев остров XAML, включая размещение пользовательских элементов управления UWP. Рекомендуется всегда добавлять проект UWP и определять объект `XamlApplication` в любом решении, в котором используются острова XAML. Решение может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления UWP в приложении совместно используют один и тот же объект `XamlApplication`.
-
 Хотя в этой статье показано, как разместить элементы управления UWP в приложении WPF, процесс аналогичен для Windows Forms приложения.
+
+## <a name="required-components"></a>Необходимые компоненты
+
+Для размещения элемента управления UWP в приложении WPF (или Windows Forms) в решении потребуются следующие компоненты. В этой статье приводятся инструкции по созданию каждого из этих компонентов.
+
+* **Проект и исходный код приложения**. Использование элемента управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) для размещения стандартных первичных элементов управления UWP поддерживается в приложениях, предназначенных для .NET Framework или .NET Core 3.
+
+* **Проект приложения UWP, определяющий класс корневого приложения, производного от ксамлаппликатион**. Проект WPF или Windows Forms должен иметь доступ к экземпляру класса [Microsoft. Toolkit. Win32. UI. ксамлхост. ксамлаппликатион](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) , предоставляемого набором средств сообщества Windows. Этот объект выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения.
+
+    Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект WPF или Windows Forms, изменить класс `App` по умолчанию в этом проекте на производный от `XamlApplication`, а затем создать экземпляр этого объекта в коде точки входа для вашего приложения.
+
+    > [!NOTE]
+    > Хотя этот компонент не требуется для упрощенных сценариев остров XAML, таких как размещение основного элемента управления UWP, приложению требуется этот `XamlApplication` объект для поддержки всего спектра сценариев остров XAML, включая размещение пользовательских элементов управления UWP. Поэтому рекомендуется всегда определять объект `XamlApplication` в любом решении, в котором используются острова XAML.
+
+    > [!NOTE]
+    > Решение может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления UWP в приложении совместно используют один и тот же объект `XamlApplication`. Проект, определяющий объект `XamlApplication`, должен включать ссылки на все другие библиотеки и проекты UWP, используемые для размещения элементов управления UWP в области XAML.
 
 ## <a name="create-a-wpf-project"></a>Создание проекта WPF
 
@@ -60,9 +67,9 @@ ms.locfileid: "76520389"
     3. В диалоговом окне **Новая платформа решения** выберите **x64** или **x86** и нажмите кнопку **ОК**. 
     4. Закройте открытые диалоговые окна.
 
-## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>Создание объекта Ксамлаппликатион в проекте приложения UWP
+## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Определение класса Ксамлаппликатион в проекте приложения UWP
 
-Затем добавьте проект приложения UWP в то же решение, что и проект WPF. Вы измените класс `App` по умолчанию в этом проекте, чтобы он был производным от класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Хотя этот шаг не требуется для упрощенных сценариев остров XAML, таких как размещение одного первого элемента управления UWP, приложению WPF требуется этот `XamlApplication` объект для поддержки всего спектра сценариев остров XAML. Рекомендуется всегда добавлять этот проект в любое решение, в котором используются острова XAML.
+Затем добавьте проект приложения UWP в то же решение, что и проект WPF. Вы измените класс `App` по умолчанию в этом проекте, чтобы он был производным от класса [Microsoft. Toolkit. Win32. UI. ксамлхост. ксамлаппликатион](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) , предоставляемого набором средств сообщества Windows. Дополнительные сведения о назначении этого класса см. в [этом разделе](#required-components).
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши узел решения и выберите **Добавить** -> **Новый проект**.
 2. Добавьте проект **Пустое приложение (универсальная платформа Windows)** в свое решение. Убедитесь, что для целевой версии и минимальной версии задано значение **Windows 10, версия 1903** или более поздняя.
@@ -98,11 +105,43 @@ ms.locfileid: "76520389"
 7. Создайте проект приложения UWP.
 8. В проекте WPF щелкните правой кнопкой мыши узел **зависимости** и добавьте ссылку на проект приложения UWP.
 
+## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Создание экземпляра объекта Ксамлаппликатион в точке входа приложения WPF
+
+Затем добавьте код в точку входа для приложения WPF, чтобы создать экземпляр класса `App`, который вы только что определили в проекте UWP (это класс, который теперь является производным от `XamlApplication`). Дополнительные сведения о назначении этого объекта см. в [этом разделе](#required-components).
+
+1. В проекте WPF щелкните правой кнопкой мыши узел проекта, выберите **добавить** -> **новый элемент**, а затем выберите **класс**. Назовите **программу** класса и нажмите кнопку **Добавить**.
+
+2. Замените созданный класс `Program` следующим кодом, а затем сохраните файл. Замените `MyUWPApp` пространством имен проекта приложения UWP и замените `MyWPFApp` пространством имен проекта приложения WPF.
+
+    ```csharp
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                MyWPFApp.App app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+    ```
+
+3. Щелкните правой кнопкой мыши узел проекта и выберите пункт **Свойства**.
+
+4. На вкладке **приложение** свойств щелкните раскрывающийся список **начальный объект** и выберите полное имя класса `Program`, добавленного на предыдущем шаге. 
+    > [!NOTE]
+    > По умолчанию проекты WPF определяют `Main` функцию точки входа в созданном файле кода, который не предназначен для изменения. Этот шаг изменяет точку входа для проекта на метод `Main` нового класса `Program`, который позволяет добавить код, который выполняется как можно раньше в процессе запуска приложения. 
+
+5. Сохраните изменения в свойствах проекта.
+
 ## <a name="host-an-inkcanvas-and-inktoolbar-by-using-wrapped-controls"></a>Размещение InkCanvas и Инктулбар с помощью упакованных элементов управления
 
 Теперь, когда вы настроили проект для использования островов XAML UWP, теперь все готово к добавлению в приложение элементов управления UWP с оболочкой класса [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) и [инктулбар](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) .
 
-1. В **обозревателе решений**откройте файл **MainWindow.xaml** .
+1. В **Обозреватель решений**откройте файл **MainWindow. XAML** .
 
 2. В элементе **Window** в верхней части файла XAML добавьте следующий атрибут. Он ссылается на пространство имен XAML для элемента управления UWP с оболочкой [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) и [инктулбар](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) .
 
@@ -144,7 +183,7 @@ ms.locfileid: "76520389"
 
 4. Сохраните файл **MainWindow. XAML** .
 
-    Если у вас есть устройство, которое поддерживает цифровое перо, например поверхность, и вы используете эту лабораторную работу на физическом компьютере, теперь можно создать и запустить приложение и нарисовать цифровой рукописный ввод на экране с помощью пера. Однако если у вас нет устройства, поддерживающего перо, и вы пытаетесь подписаться с помощью мыши, ничего не произойдет. Это происходит потому, что элемент управления **InkCanvas** включен по умолчанию только для цифровых перьев. Однако можно изменить это поведение.
+    Если у вас есть устройство, которое поддерживает цифровое перо, например поверхность, и вы используете эту лабораторную работу на физическом компьютере, теперь можно создать и запустить приложение и нарисовать цифровой рукописный ввод на экране с помощью пера. Однако если у вас нет устройства, поддерживающего перо, и вы пытаетесь подписаться с помощью мыши, ничего не произойдет. Это происходит потому, что элемент управления **InkCanvas** включен по умолчанию только для цифровых перьев. Однако это поведение можно изменить.
 
 5. Откройте файл **MainWindow.XAML.CS** .
 
@@ -171,7 +210,7 @@ ms.locfileid: "76520389"
 > [!NOTE]
 > Элемент управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) предоставляется пакетом [Microsoft. Toolkit. WPF. UI. ксамлхост](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) . Этот пакет включен в пакет [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) , который вы установили ранее.
 
-1. В **обозревателе решений**откройте файл **MainWindow.xaml** .
+1. В **Обозреватель решений**откройте файл **MainWindow. XAML** .
 
 2. В элементе **Window** в верхней части файла XAML добавьте следующий атрибут. Он ссылается на пространство имен XAML для элемента управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) .
 
@@ -256,36 +295,7 @@ ms.locfileid: "76520389"
 
 2. В проекте упаковки щелкните правой кнопкой мыши узел **приложения** и выберите команду **Добавить ссылку**. В списке проектов выберите проект WPF в решении и нажмите кнопку **ОК**.
 
-3. Если проект WPF предназначен для .NET Core 3, необходимо изменить файл проекта упаковки. В настоящее время эти изменения необходимы для упаковки приложений WPF, предназначенных для .NET Core 3, и для размещения элементов управления UWP.
-
-    1. В обозреватель решений щелкните правой кнопкой мыши узел проект упаковки и выберите пункт **изменить файл проекта**.
-    2. Найдите в этом файле элемент `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />`. Замените этот элемент следующим XML-кодом.
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. Сохраните файл проекта и закройте его.
-
-4. Настройте решение для конкретной платформы, например x86 или x64. Это необходимо для сборки приложения WPF в пакет MSIX с помощью проекта упаковки приложений Windows.
+3. Настройте решение для конкретной платформы, например x86 или x64. Это необходимо для сборки приложения WPF в пакет MSIX с помощью проекта упаковки приложений Windows.
 
     1. В **Обозреватель решений**щелкните правой кнопкой мыши узел решения и выберите **свойства** -> **Свойства конфигурации** -> **Configuration Manager**.
     2. В разделе **Активная платформа решения**выберите **x64** или **x86**.
@@ -297,7 +307,8 @@ ms.locfileid: "76520389"
 
 ## <a name="related-topics"></a>Связанные темы
 
-* [Элементы управления UWP в классических приложениях](xaml-islands.md)
+* [Размещение элементов управления XAML UWP в классических приложениях (острова XAML)](xaml-islands.md)
+* [Примеры кода островов XAML](https://github.com/microsoft/Xaml-Islands-Samples)
 * [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)
 * [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)
 * [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

@@ -1,19 +1,19 @@
 ---
 description: В этой статье описывается размещение пользовательского интерфейса XAML UWP в приложении Win32 C++ для настольных систем.
 title: Использование API размещения XAML платформы UWP в приложении Win32 на C++
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, Win32, о-ва XAML
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 7574fb5920433f894819ffd3d94e31fef03d30b3
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520429"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814034"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
 
@@ -95,9 +95,9 @@ API размещения платформы UWP XAML включает следу
 
 В следующих примерах показано, как использовать API размещения UWP XAML в приложении C++ Win32:
 
-* [Пример простой XAML](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp). В этом примере демонстрируется Базовая реализация размещения элемента управления UWP в неупакованном приложении C++ Win32 (то есть приложение, которое не встроено в пакет MSIX).
+* [Пример простой XAML](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App). В этом примере демонстрируется Базовая реализация размещения элемента управления UWP в неупакованном приложении C++ Win32 (то есть приложение, которое не встроено в пакет MSIX).
 
-* [Остров XAML с примером пользовательского элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App). В этом примере демонстрируется полная реализация размещения пользовательского элемента управления UWP в неупакованном приложении C++ Win32, а также обработка других поведений, таких как ввод с клавиатуры и Навигация по фокусу. 
+* [Остров XAML с примером пользовательского элемента управления](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32). В этом примере демонстрируется полная реализация размещения пользовательского элемента управления UWP в упакованном приложении C++ Win32, а также обработка других поведений, таких как ввод с клавиатуры и Навигация по фокусу.
 
 ### <a name="wpf-and-windows-forms"></a>WPF и Windows Forms
 
@@ -109,7 +109,7 @@ API размещения платформы UWP XAML включает следу
 
 ## <a name="host-a-standard-uwp-control"></a>Размещение стандартного элемента управления UWP
 
-В этом разделе описывается процесс использования API хостинга UWP XAML для размещения стандартного элемента управления UWP (то есть элемента управления, предоставляемого Windows SDK или библиотеки Винуи) в новом C++ приложении Win32. Код основан на [простой образце острова XAML](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp), и в этом разделе обсуждаются некоторые из наиболее важных частей кода. При наличии существующего C++ проекта приложения Win32 можно адаптировать эти шаги и примеры кода для проекта.
+В этом разделе описывается процесс использования API хостинга UWP XAML для размещения стандартного элемента управления UWP (то есть элемента управления, предоставляемого Windows SDK или библиотеки Винуи) в новом C++ приложении Win32. Код основан на [простой образце острова XAML](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), и в этом разделе обсуждаются некоторые из наиболее важных частей кода. При наличии существующего C++ проекта приложения Win32 можно адаптировать эти шаги и примеры кода для проекта.
 
 ### <a name="configure-the-project"></a>Настройка проекта
 
@@ -119,7 +119,7 @@ API размещения платформы UWP XAML включает следу
 
 3. Установите пакет NuGet [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) :
 
-    1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
+    1. Щелкните правой кнопкой мыши проект в **Обозреватель решений** и выберите пункт **Управление пакетами NuGet**.
     2. Перейдите на вкладку **Обзор** , найдите пакет [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) и установите последнюю версию этого пакета.
 
 4. Установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) :
@@ -341,9 +341,8 @@ API размещения платформы UWP XAML включает следу
 Полные примеры, демонстрирующие эти задачи, см. в следующих файлах кода:
 
 * **C++Платформа**
-  * См. файл [хелловиндовсдесктоп. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp) в [примере простого XAML](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp).
-  * См. файл [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) в [острове XAML с примером пользовательского элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
-
+  * См. файл [хелловиндовсдесктоп. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) .
+  * См. файл [ксамлбридже. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) .
 * **WPF:** См. файлы [WindowsXamlHostBase.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.  
 
 * **Windows Forms:** См. файлы [WindowsXamlHostBase.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.
@@ -358,27 +357,29 @@ API размещения платформы UWP XAML включает следу
 
 * **Пользовательский элемент управления UWP**. Вам потребуется исходный код для пользовательского элемента управления UWP, который вы хотите разместить, чтобы его можно было скомпилировать с приложением. Как правило, Пользовательский элемент управления определяется в проекте библиотеки классов UWP, на который вы ссылаетесь в том же решении C++ , что и проект Win32.
 
-* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, и исправить класс `App` по умолчанию в этом проекте.
+* **Проект приложения UWP, определяющий объект ксамлаппликатион**. Проект C++ Win32 должен иметь доступ к экземпляру класса [Microsoft. Toolkit. Win32. UI. ксамлхост. ксамлаппликатион](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) , предоставляемого набором средств сообщества Windows. Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных пользовательских типов универсального кода пользователя UWP в сборки в текущем каталоге приложения.
+
+  Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект C++ Win32, изменить класс `App` по умолчанию в этом проекте на производный от `XamlApplication`, а затем создать экземпляр этого объекта в коде точки входа для приложения C++ Win32.
+
   > [!NOTE]
   > Решение может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления UWP в приложении совместно используют один и тот же объект `XamlApplication`. Проект, определяющий объект `XamlApplication`, должен включать ссылки на все другие библиотеки и проекты UWP, используемые для размещения элементов управления UWP в области XAML.
 
 Чтобы разместить пользовательский элемент управления UWP в приложении C++ Win32, выполните следующие общие действия.
 
-1. В решении, которое содержит проект C++ классического приложения Win32, добавьте **пустой проект приложения (универсальное приложение для Windows)** и настройте его, следуя подробным инструкциям в [этом разделе](host-custom-control-with-xaml-islands.md#create-a-xamlapplication-object-in-a-uwp-app-project) в пошаговом руководстве по связанным WPF.
+1. В решении, содержащем проект классического приложения C++ Win32, добавьте пустой проект **приложения (универсальное приложение Windows)** и определите в нем класс `XamlApplication`, следуя подробным инструкциям в [этом разделе](host-custom-control-with-xaml-islands.md#define-a-xamlapplication-class-in-a-uwp-app-project) в пошаговом руководстве по связанным WPF. 
 
 2. В том же решении добавьте проект, содержащий исходный код для пользовательского элемента управления XAML UWP (обычно это проект библиотеки классов UWP), и создайте проект.
 
 3. В проекте приложения UWP добавьте ссылку на проект библиотеки классов UWP.
 
-4. В проекте C++ Win32 добавьте ссылку на проект приложения UWP и проект библиотеки классов UWP в свое решение.
+4. В проекте C++ Win32:
+
+  * Добавьте ссылку на проект приложения UWP и проект библиотеки классов UWP в свое решение.
+  * В функции `WinMain` или другом коде точки входа создайте экземпляр класса `XamlApplication`, который вы определили ранее в проекте приложения UWP. Например, см. [эту строку кода](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) из примера C++ Win32 в примерах [о языке XAML](https://github.com/microsoft/Xaml-Islands-Samples).
 
 5. Выполните процедуру, описанную в разделе [Использование API хостинга XAML для размещения раздела управления UWP](#use-the-xaml-hosting-api-to-host-a-uwp-control) для размещения пользовательского элемента управления в приложении XAML. Назначьте экземпляр пользовательского элемента управления для размещения свойства [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) объекта **десктопвиндовксамлсаурце** в коде.
 
-Полный пример для приложения C++ Win32 см. в следующих проектах в разделе [остров XAML с примером настраиваемого элемента управления](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
-
-* [Самплеусерконтрол](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): этот проект реализует настраиваемый элемент управления XAML UWP с именем `MyUserControl`, содержащий текстовое поле, несколько кнопок и поле со списком.
-* [MyApp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): проект приложения UWP с описанными выше изменениями.
-* [Самплекппапп](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): это проект приложения C++ Win32, в котором размещается пользовательский элемент управления XAML UWP в области XAML.
+Полный пример для приложения C++ Win32 см. в [примере кода XAML C++ Win32](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Desktop_Win32App).
 
 ## <a name="handle-keyboard-layout-and-dpi"></a>Работа с клавиатурой, макетом и DPI
 
@@ -393,7 +394,7 @@ API размещения платформы UWP XAML включает следу
 
 Чтобы правильно обрабатывать ввод с клавиатуры для каждого острова XAML, приложение должно передать все сообщения Windows в платформу XAML UWP, чтобы определенные сообщения могли обрабатываться правильно. Для этого в каком-то месте приложения, которое может получить доступ к циклу обработки сообщений, приведите объект **десктопвиндовксамлсаурце** для каждого острова XAML к интерфейсу **IDesktopWindowXamlSourceNative2** com. Затем вызовите метод **претранслатемессаже** этого интерфейса и передайте текущее сообщение.
 
-  * Win32:: приложение может вызывать **претранслатемессаже** непосредственно в основном цикле обработки сообщений. **C++** Пример см. в файле [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * Win32:: приложение может вызывать **претранслатемессаже** непосредственно в основном цикле обработки сообщений. **C++** Пример см. в файле [ксамлбридже. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) .
 
   * **WPF:** Приложение может вызвать **претранслатемессаже** из обработчика событий для события [компонентдиспатчер. среадфилтермессаже](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) . Пример см. в файле [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) в наборе средств сообщества Windows.
 
@@ -411,7 +412,7 @@ API хостинга UWP XAML предоставляет несколько ти
 
 Примеры, демонстрирующие, как это сделать в контексте рабочего примера приложения, см. в следующих файлах кода:
 
-  * /Win32. см. файл [ксамлбридже. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).  **C++**
+  * /Win32: см. файл [ксамлбридже. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) .  **C++**
 
   * **WPF:** См. файл [WindowsXamlHostBase.Focus.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) в наборе средств сообщества Windows.  
 
@@ -421,7 +422,7 @@ API хостинга UWP XAML предоставляет несколько ти
 
 Когда пользователь изменяет размер родительского элемента пользовательского интерфейса, необходимо выполнить все необходимые изменения макета, чтобы элементы управления UWP отображались должным образом. Ниже приведены некоторые важные сценарии, которые следует учитывать.
 
-* В приложении C++ Win32, когда приложение обрабатывает WM_SIZE сообщение, оно может переместить размещенный остров XAML с помощью функции [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) . Пример см. в файле кода [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) в [ C++ примере Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* В приложении C++ Win32, когда приложение обрабатывает WM_SIZE сообщение, оно может переместить размещенный остров XAML с помощью функции [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) . Пример см. в файле кода [SampleApp. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) .
 
 * Когда родительский элемент пользовательского интерфейса должен получить размер прямоугольной области, необходимой для размещения элемента **Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**, вызовите метод [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) элемента **Windows. UI. XAML. UIElement**. Пример
 
@@ -480,5 +481,5 @@ API хостинга UWP XAML предоставляет несколько ти
 
 ## <a name="related-topics"></a>Связанные темы
 
-* [Элементы управления UWP в классических приложениях](xaml-islands.md)
-* [C++Пример XAML-островов Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [Размещение элементов управления XAML UWP в классических приложениях (острова XAML)](xaml-islands.md)
+* [C++Пример XAML-островов Win32](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

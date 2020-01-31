@@ -2,18 +2,18 @@
 description: В этом руководстве показано, как добавлять пользовательские интерфейсы XAML UWP, создавать пакеты MSIX и внедрять в приложение WPF другие современные компоненты.
 title: Добавление элемента управления InkCanvas универсальной платформы Windows с помощью XAML Islands
 ms.topic: article
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, о-ва XAML
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 1ed4fa54b9987ef0ab5f3dd89aa9d11a00ae695c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 945cc2f1cf225c194e5820990bdbeda584069e4c
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520439"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814044"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Часть 2. Добавление элемента управления UWP InkCanvas с помощью XAML-островов
 
@@ -22,7 +22,7 @@ ms.locfileid: "76520439"
 В вымышленном сценарии в рамках этого руководства группа разработки Contoso хочет добавить поддержку цифровых подписей в приложение contoso "расходы". Элемент управления UWP **InkCanvas** является отличным вариантом для этого сценария, так как он поддерживает цифровые рукописные и AI-функции, такие как возможность распознавания текста и фигур. Для этого вы будете использовать элемент управления UWP, упакованный с помощью [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) , доступный в наборе средств сообщества Windows. Этот элемент управления заключает интерфейс и функциональные возможности элемента управления UWP **InkCanvas** для использования в приложении WPF. Дополнительные сведения о упакованных элементах управления UWP см. [в разделе Размещение элементов управления XAML в классических приложениях (острова XAML)](xaml-islands.md).
 
 > [!NOTE]
-> В этом руководстве приложение WPF будет размещать только первые элементы управления UWP из Windows SDK. Для поддержки других сценариев остров XAML, включая пользовательские элементы управления UWP, проект приложения должен иметь доступ к экземпляру класса `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`, предоставляемого набором средств сообщества Windows. Для этого рекомендуется добавить **пустой проект приложения (универсальное приложение Windows)** в то же решение, что и проект WPF (или Windows Forms), и исправить класс `App` по умолчанию в этом проекте. Поскольку этот шаг не требуется для основного сценария размещения основных элементов управления UWP из Windows SDK, этот шаг пропускается в этом руководстве. Дополнительные сведения см. в [этой статье](host-standard-control-with-xaml-islands.md).
+> В этом руководстве приложение WPF будет размещать только первые элементы управления UWP из Windows SDK. Поэтому в этом учебнике не рассматриваются шаги определения экземпляра класса [Microsoft. Toolkit. Win32. UI. ксамлхост. ксамлаппликатион](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) , как описано [здесь](host-standard-control-with-xaml-islands.md#required-components).
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>Настройка проекта для использования островов XAML
 
