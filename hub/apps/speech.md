@@ -52,9 +52,9 @@ ms.locfileid: "76726554"
 
       Разрабатывайте приложения с поддержкой речи для настольных систем и Windows Server с помощью средств, сведений и примеров модулей и приложений, предоставляемых здесь.
 
-      [Платформа Microsoft Speech Platform — пакет средств разработки программного обеспечения (SDK) (версия 11)](https://www.microsoft.com/download/details.aspx?id=27226)
+      [Платформа Microsoft Speech Platform — пакет средств разработки программного обеспечения (SDK) (версия 11)](https://www.microsoft.com/download/details.aspx?id=27226)
       
-      [Microsoft Speech SDK, версия 5,1](https://www.microsoft.com/download/details.aspx?id=10121)
+      [Пакет SDK для Microsoft Speech, версия 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -65,7 +65,7 @@ ms.locfileid: "76726554"
 
       Разрабатывайте приложения и средства со специальными возможностями на установленной платформе для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
 
-      [Инструкции по программированию System. Speech для .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [Руководство по программированию System.Speech для .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Службы распознавания речи Azure](images/platform-azure-speech.png)
@@ -105,7 +105,7 @@ ms.locfileid: "76726554"
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>примеры
+## <a name="samples"></a>Примеры
 
 Загрузите и запустите полные примеры Windows, демонстрирующие различные компоненты и функции специальных возможностей.
 
@@ -128,13 +128,13 @@ ms.locfileid: "76726554"
       В этих примерах демонстрируются шаблоны использования API для универсальной платформы Windows (UWP) в пакете средств разработки программного обеспечения (SDK) для Windows 10.
    :::column-end:::
    :::column:::
-      [Коллекция элементов управления XAML](https://github.com/microsoft/Xaml-Controls-Gallery)
+      [XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery)
 
       В этом приложении демонстрируются различные элементы управления Xaml, поддерживаемые в системе Fluent Design.
    :::column-end:::
 :::row-end:::
 
-## <a name="videos"></a>Просмотр видео
+## <a name="videos"></a>Видео
 
 Различные видеоматериалы, посвященные созданию приложений Windows, которые включают речевое взаимодействие.
 
