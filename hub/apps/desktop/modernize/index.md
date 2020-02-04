@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7403c0a3fd9f822ee24411aa88d8fd91994748dd
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: fb6d2bebda31ed768309b23d18b3b47e4487b058
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142515"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929249"
 ---
 # <a name="modernize-your-desktop-apps"></a>Модернизация классических приложений
 
@@ -24,7 +24,7 @@ ms.locfileid: "73142515"
 
 ## <a name="msix-packages"></a>Пакеты MSIX
 
-MSIX — это современный универсальный формат пакетов для упаковки любых приложений для Windows, включая приложения UWP, WPF, Windows Forms и Win32. Этот безопасный и надежный формат упаковки сочетает в себе преимущества технологий установки с использованием MSI-файлов, APPX-файлов, App-V и ClickOnce.
+MSIX — это современный универсальный формат пакетов для упаковки любых приложений для Windows, включая приложения UWP, WPF, Windows Forms и Win32. Этот современный надежный процесс упаковки сочетает в себе преимущества технологий установки MSI, AppX, App-V и ClickOnce.
 
 Упаковав классические приложения для Windows в MSIX-пакеты, вы получаете доступ к надежным возможностям установки и обновления, управляемой модели безопасности с гибкой системой возможностей, поддержке Microsoft Store, возможностям управления предприятием и многим пользовательским моделям распространения.
 
@@ -69,7 +69,7 @@ MSIX — это современный универсальный формат 
 
 Приведенные ниже новые и обновленные элементы управления UWP предоставляют средства рабочего стола как часть [системы Fluent Design](/windows/uwp/design/fluent-design-system/index). Эти возможности можно применять, независимо от того, создаете ли вы приложение UWP, предназначенное только для компьютеров, или хотите использовать элементы управления UWP в классическом приложении WPF, Windows Forms или C++ Win32. Эти элементы управления появились в Windows 10 версии 1809, (обновление за октябрь 2018 г. или версия 10.0.17763).
 
-| Элемент управления |  Описание |
+| Элемент |  Описание |
 |------ |--------------|
 | [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Обеспечивает простой и быстрый способ выводить набор команд в приложениях, которым могут понадобиться дополнительные функции упорядочения или группирования, недоступные в **CommandBar**. |
 | [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Отображение шеврона в качестве визуального индикатора, который свидетельствует о наличии вложенного всплывающего меню с дополнительными параметрами.  |
