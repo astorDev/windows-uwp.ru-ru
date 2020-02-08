@@ -3,27 +3,6 @@
   items:
     - name: "Добавления API в Windows\_10 (сборка\_18362)"
       href: ../whats-new/windows-10-build-18362-api-diff.md
-- name: "Что нового в документации для Windows, январь 2019\_г."
-  href: ../whats-new/windows-docs-january-2019.md
-  items:
-    - name: "Что нового в документации для Windows, сентябрь 2018\_г."
-      href: ../whats-new/windows-docs-september-2018.md
-    - name: "Что нового в документации для Windows, август 2018\_г."
-      href: ../whats-new/windows-docs-august-2018.md
-    - name: "Что нового в документации для Windows, июль 2018\_г."
-      href: ../whats-new/windows-docs-july-2018.md
-    - name: "Что нового в документации для Windows, май 2018\_г."
-      href: ../whats-new/windows-docs-may-2018.md
-    - name: "Что нового в документации для Windows, февраль 2018\_г."
-      href: ../whats-new/windows-docs-february-2018.md
-    - name: "Что нового в документации для Windows, декабрь 2017\_г."
-      href: ../whats-new/windows-docs-december-2017.md
-    - name: "Что нового в документации для Windows, сентябрь 2017\_г."
-      href: ../whats-new/windows-docs-september-2017.md
-    - name: "Что нового в документации для Windows, август 2017\_г."
-      href: ../whats-new/windows-docs-august-2017.md
-    - name: "Что нового в документации для Windows, июль 2017\_г."
-      href: ../whats-new/windows-docs-july-2017.md
 - name: "Предыдущие версии Windows\_10"
   items:
     - name: "Новые возможности для разработчиков в Windows\_10, сборка\_17763"
@@ -55,5 +34,27 @@
       href: ../whats-new/windows-10-build-10586.md
     - name: "Что нового в Windows\_10, сборка\_10240"
       href: ../whats-new/windows-10-build-10240.md
+- name: Предыдущие сводки по обновлениям документов
+  items:
+    - name: "Что нового в документации для Windows, январь 2019\_г."
+      href: ../whats-new/windows-docs-january-2019.md
+    - name: "Что нового в документации для Windows, сентябрь 2018\_г."
+      href: ../whats-new/windows-docs-september-2018.md
+    - name: "Что нового в документации для Windows, август 2018\_г."
+      href: ../whats-new/windows-docs-august-2018.md
+    - name: "Что нового в документации для Windows, июль 2018\_г."
+      href: ../whats-new/windows-docs-july-2018.md
+    - name: "Что нового в документации для Windows, май 2018\_г."
+      href: ../whats-new/windows-docs-may-2018.md
+    - name: "Что нового в документации для Windows, февраль 2018\_г."
+      href: ../whats-new/windows-docs-february-2018.md
+    - name: "Что нового в документации для Windows, декабрь 2017\_г."
+      href: ../whats-new/windows-docs-december-2017.md
+    - name: "Что нового в документации для Windows, сентябрь 2017\_г."
+      href: ../whats-new/windows-docs-september-2017.md
+    - name: "Что нового в документации для Windows, август 2017\_г."
+      href: ../whats-new/windows-docs-august-2017.md
+    - name: "Что нового в документации для Windows, июль 2017\_г."
+      href: ../whats-new/windows-docs-july-2017.md
 - name: Экспериментальные интерфейсы API
   href: ../whats-new/experimental-apis.md
