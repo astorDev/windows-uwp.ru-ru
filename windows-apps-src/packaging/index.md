@@ -6,19 +6,19 @@ ms.date: 07/22/2019
 ms.topic: article
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
-ms.openlocfilehash: d067511e4ceb5aaf072aabf8f74ccf186a7787dc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682671"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089480"
 ---
 # <a name="packaging-apps"></a>Создание пакетов приложений
 
-В этом разделе содержатся ссылки на статьи об упаковке приложений универсальной платформы Windows (UWP) в пакеты MSIX и AppX для развертывания и установки. Некоторые из этих ссылок ведут на соответствующие статьи в [документации по MSIX](https://docs.microsoft.com/windows/msix/).
+В этом разделе содержатся ссылки на статьи об упаковке приложений универсальной платформы Windows (UWP) в пакеты приложений MSIX и APPX для развертывания и установки. Некоторые из этих ссылок ведут на соответствующие статьи в [документации по MSIX](https://docs.microsoft.com/windows/msix/).
 
 > [!NOTE]
-> Изначально формат упаковки для приложений UWP в Windows 10 назывался AppX. Начиная с Windows 10 версии 1809, этот формат упаковки был переименован в MSIX и расширен для поддержки всех типов приложений Windows, включая классические приложения .NET и C++/Win32. Поддержка MSIX также распространяется на более ранние версии Windows. Дополнительные сведения см. в [документации по MSIX](https://docs.microsoft.com/windows/msix/).
+> Изначально формат упаковки для приложений UWP в Windows 10 назывался APPX. Начиная с Windows 10 версии 1809 этот формат упаковки был переименован в MSIX, и в него была добавлена поддержка всех типов приложений Windows, включая классические приложения .NET и C++/Win32. Поддержка MSIX также распространяется на более ранние версии Windows. Дополнительные сведения см. в [документации по MSIX](https://docs.microsoft.com/windows/msix/).
 
 | Раздел | Описание |
 |-------|-------------|

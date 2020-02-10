@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, UWP, Windows Forms, WPF, о-ва XAML
+keywords: Windows 10, UWP, Windows Forms, WPF, объекты XAML Island
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683817"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089310"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Учебник. модернизировать приложения WPF 
 
@@ -51,12 +51,12 @@ Contoso хочет модернизировать это приложение с
 * Интегрируйте адаптивные карты и уведомления Windows 10 в приложение.
 * Упакуйте приложение с помощью MSIX и настройте конвейер CI/CD в Azure DevOps, чтобы можно было автоматически предоставлять новые версии приложения тестерам и пользователям, как только это станет доступно.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого учебника на компьютере разработчика должны быть установлены следующие компоненты:
 
 * Windows 10, версия 1903 (сборка 18362) или более поздняя версия.
-* [Visual Studio 2019](https://www.visualstudio.com).
+* [Visual Studio 2019](https://www.visualstudio.com).
 * [Пакет SDK для .NET Core 3](https://dotnet.microsoft.com/download/dotnet-core/3.0) (установите последнюю версию).
 
 Убедитесь, что в Visual Studio 2019 установлены следующие рабочие нагрузки и дополнительные компоненты:
@@ -98,9 +98,9 @@ Contoso хочет модернизировать это приложение с
 
 ### <a name="msix-packaging"></a>Упаковка MSIX
 
-[MSIX](/windows/msix/) (прежнее название — appx) — это современная модель упаковки для приложений Windows. MSIX поддерживает приложения UWP, а также настольные приложения, использующие такие технологии, как Win32, WPF, Windows Forms, Java, электронными и др. При упаковке классического приложения в пакет MSIX можно опубликовать приложение на Microsoft Store. При установке классическое приложение также получает удостоверение пакета, что позволяет классическому приложению использовать более широкий набор API-интерфейсов WinRT.
+[MSIX](/windows/msix/) — это современная модель упаковки для приложений Windows. MSIX поддерживает приложения UWP, а также настольные приложения, использующие такие технологии, как Win32, WPF, Windows Forms, Java, электронными и др. При упаковке классического приложения в пакет MSIX можно опубликовать приложение на Microsoft Store. При установке классическое приложение также получает удостоверение пакета, что позволяет классическому приложению использовать более широкий набор API-интерфейсов WinRT.
 
-Дополнительные сведения см. в следующих статьях.
+Дополнительные сведения см. в следующих статьях:
 
 * [Упаковка классических приложений](/windows/uwp/porting/desktop-to-uwp-root)
 * [За сценой упакованного классического приложения](/windows/uwp/porting/desktop-to-uwp-behind-the-scenes)

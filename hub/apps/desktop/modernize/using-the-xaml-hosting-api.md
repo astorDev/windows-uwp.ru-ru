@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7574fb5920433f894819ffd3d94e31fef03d30b3
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 84a41b4dd77a451a79e607e5ad5cb7df548419a9
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814034"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089420"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
 
@@ -22,11 +22,11 @@ ms.locfileid: "76814034"
 API хостинга для UWP XAML предоставляет основу для более широкого набора элементов управления, предоставляемых разработчиками для того, чтобы разработчики получили доступ к классским приложениям, не относящимся к UWP. Эта функция называется *островами XAML*. Общие сведения об этой функции см. [в разделе Размещение элементов управления XAML UWP в классических приложениях (острова XAML)](xaml-islands.md).
 
 > [!NOTE]
-> Если у вас есть отзывы о островах XAML, создайте новую ошибку в [репозитории Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) и оставьте свои комментарии. Если вы предпочитаете отправить отзыв в частном порядке, его можно отправить в XamlIslandsFeedback@microsoft.com. Ваши ценные сведения и сценарии критически важны для нас.
+> Если вы хотите поделиться мнением об XAML Island, создайте запрос в [репозитории Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) и оставьте свои комментарии. Вы также можете отправить частное письмо по адресу XamlIslandsFeedback@microsoft.com. Ваши идеи и сценарии использования очень важны для нас.
 
-## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>Следует ли использовать API размещения UWP XAML?
+## <a name="is-the-uwp-xaml-hosting-api-the-right-choice-for-your-desktop-app"></a>Является ли API размещения кода UWP XAML правильным выбором для классического приложения?
 
-API хостинга UWP XAML предоставляет низкую инфраструктуру для размещения элементов управления UWP в классических приложениях. Некоторые типы классических приложений имеют возможность использовать альтернативные, более удобные API для выполнения этой задачи.  
+API хостинга UWP XAML предоставляет низкую инфраструктуру для размещения элементов управления UWP в классических приложениях. Некоторые типы классических приложений имеют возможность использовать альтернативные, более удобные API для выполнения этой задачи.
 
 * Если у вас есть C++ классическое приложение Win32 и вы хотите разместить элементы управления UWP в своем приложении, необходимо использовать API хостинга для UWP XAML. Для таких типов приложений нет альтернативы.
 
@@ -34,35 +34,9 @@ API хостинга UWP XAML предоставляет низкую инфра
 
 Так как мы рекомендуем использовать C++ только приложения Win32, использующие API размещения UWP XAML, в этой статье в первую очередь приводятся инструкции и примеры для C++ приложений Win32. Однако можно использовать API размещения UWP XAML в WPF и Windows Forms приложениях, если вы решили. В этой статье рассматривается соответствующий исходный код для [элементов управления ведущего приложения](xaml-islands.md#host-controls) для WPF и Windows Forms в наборе средств сообщества Windows, поэтому можно увидеть, как именно API размещения UWP XAML используются этими элементами управления.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для всех островов XAML требуется Windows 10, версия 1903 (или более поздняя) и соответствующая сборка Windows SDK. Чтобы использовать острова XAML в приложении C++ Win32, необходимо сначала настроить проект.
-
-### <a name="support-for-cwinrt"></a>Поддержка C++/WinRT
-
-Убедитесь, что проект поддерживает [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis):
-
-* Для новых проектов можно установить [ C++расширение Visual Studio/WinRT (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) и использовать один из шаблонов проектов C++/WinRT, входящих в это расширение.
-* Для существующих проектов пакет NuGet [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) можно установить в проекте.
-
-Дополнительные сведения об этих параметрах см. в [этой статье](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
-
-### <a name="configure-your-project-for-app-deployment"></a>Настройка проекта для развертывания приложений
-
-Выберите один из следующих параметров, чтобы подготовить проект к развертыванию.
-
-* **Упакуйте приложение в пакет MSIX**. Упаковка приложения в [пакет MSIX](https://docs.microsoft.com/windows/msix/) предоставляет множество преимуществ при развертывании и запуске.
-    1. Установите пакет SDK для Windows 10 версии 1903 (версия 10.0.18362) или более поздней версии.
-    2. Упакуйте приложение в пакет MSIX, добавив [проект упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в решение и добавив ссылку на проект C++/Win32.
-
-* **Установите пакет Microsoft. Toolkit. Win32. UI. SDK**. Если вы не хотите упаковывать приложение в пакет MSIX, можно установить [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0 или более поздней версии). Этот пакет предоставляет несколько ресурсов для сборки и времени выполнения, которые позволяют работать в приложении по работе с XAML.
-
-> [!NOTE]
-> В предыдущих версиях этих инструкций был добавлен элемент `maxversiontested` в манифест приложения в проекте. Пока вы используете один из перечисленных выше параметров, вам больше не нужно добавлять этот элемент в манифест.
-
-### <a name="additional-requirements-for-custom-uwp-controls"></a>Дополнительные требования для пользовательских элементов управления UWP
-
-Если вы размещаете пользовательский элемент управления UWP (например, Пользовательский элемент управления, состоящий из нескольких элементов управления UWP, которые работают вместе), необходимо выполнить дополнительные инструкции в [этом разделе](#host-a-custom-uwp-control). Кроме того, необходимо иметь исходный код для пользовательского элемента управления, чтобы его можно было скомпилировать в приложении.
+Для всех островов XAML требуется Windows 10, версия 1903 (или более поздняя) и соответствующая сборка Windows SDK. Чтобы использовать острова XAML в приложении C++ Win32, необходимо настроить проект, как описано в [этом разделе](#configure-the-project).
 
 ## <a name="architecture-of-the-api"></a>Архитектура API
 
@@ -107,6 +81,9 @@ API размещения платформы UWP XAML включает следу
 
 * Для Windows Forms версии элемента управления [перейдите сюда](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). Версия Windows Forms является производной от [System. Windows. Forms. Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
+> [!NOTE]
+> Мы настоятельно рекомендуем использовать [элементы управления .NET на языке XAML](xaml-islands.md#wpf-and-windows-forms-applications) в наборе средств сообщества Windows, а не использовать API размещения класса UWP XAML непосредственно в WPF и Windows Forms приложениях. Примеры ссылок WPF и Windows Forms в этой статье приведены только в демонстрационных целях.
+
 ## <a name="host-a-standard-uwp-control"></a>Размещение стандартного элемента управления UWP
 
 В этом разделе описывается процесс использования API хостинга UWP XAML для размещения стандартного элемента управления UWP (то есть элемента управления, предоставляемого Windows SDK или библиотеки Винуи) в новом C++ приложении Win32. Код основан на [простой образце острова XAML](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), и в этом разделе обсуждаются некоторые из наиболее важных частей кода. При наличии существующего C++ проекта приложения Win32 можно адаптировать эти шаги и примеры кода для проекта.
@@ -117,15 +94,36 @@ API размещения платформы UWP XAML включает следу
 
 2. В **Обозреватель решений**щелкните правой кнопкой мыши узел решения, выберите пункт **перенацелить решение**, выберите **10.0.18362.0** или более поздний выпуск пакета SDK и нажмите кнопку **ОК**.
 
-3. Установите пакет NuGet [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) :
+3. Установите пакет NuGet [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) , чтобы включить поддержку [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis) в проекте:
 
     1. Щелкните правой кнопкой мыши проект в **Обозреватель решений** и выберите пункт **Управление пакетами NuGet**.
     2. Перейдите на вкладку **Обзор** , найдите пакет [Microsoft. Windows. кппвинрт](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) и установите последнюю версию этого пакета.
 
+    > [!NOTE]
+    > Для новых проектов можно также установить [ C++расширение Visual Studio/WinRT (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) и использовать один из шаблонов проектов C++/WinRT, входящих в это расширение. Дополнительные сведения см. в [этой статье](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
 4. Установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) :
 
     1. В окне **Диспетчер пакетов NuGet** установите флажок **включить предварительные выпуски** .
-    2. Перейдите на вкладку **Обзор** , найдите пакет [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) и установите версию v 6.0.0 (или более позднюю) этого пакета.
+    2. Перейдите на вкладку **Обзор** , найдите пакет **Microsoft. Toolkit. Win32. UI. SDK** и установите версию v 6.0.0 (или более позднюю) этого пакета. Этот пакет предоставляет несколько ресурсов для сборки и времени выполнения, которые позволяют работать в приложении по работе с XAML.
+
+5. Задайте значение `maxVersionTested` в [манифесте сборки](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) , чтобы указать, что приложение совместимо с Windows 10, 1903 или более поздней версии.
+
+    1. Если в проекте еще нет манифеста сборки, добавьте новый XML-файл в проект и назовите его **app. manifest**.
+    2. В манифест сборки добавьте элемент **Compatibility** и дочерние элементы, показанные в следующем примере. Замените атрибут **ID** элемента **maxversiontested укажите установленную** на номер версии Windows 10 для целевой платформы (это должна быть windows 10, версия 1903 или более поздняя).
+
+        ```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+                <application>
+                    <!-- Windows 10 -->
+                    <maxversiontested Id="10.0.18362.0"/>
+                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+                </application>
+            </compatibility>
+        </assembly>
+        ```
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>Использование API размещения XAML для размещения элемента управления UWP
 
@@ -353,7 +351,7 @@ API размещения платформы UWP XAML включает следу
 
 Для размещения пользовательского элемента управления UWP потребуются следующие проекты и компоненты:
 
-* **Проект и исходный код приложения**. Убедитесь, что проект настроен в соответствии с [предварительными требованиями](#prerequisites) для размещения островов XAML.
+* **Проект и исходный код приложения**. Убедитесь, что вы [настроили проект](#configure-the-project) на размещение островов XAML.
 
 * **Пользовательский элемент управления UWP**. Вам потребуется исходный код для пользовательского элемента управления UWP, который вы хотите разместить, чтобы его можно было скомпилировать с приложением. Как правило, Пользовательский элемент управления определяется в проекте библиотеки классов UWP, на который вы ссылаетесь в том же решении C++ , что и проект Win32.
 
@@ -374,8 +372,8 @@ API размещения платформы UWP XAML включает следу
 
 4. В проекте C++ Win32:
 
-  * Добавьте ссылку на проект приложения UWP и проект библиотеки классов UWP в свое решение.
-  * В функции `WinMain` или другом коде точки входа создайте экземпляр класса `XamlApplication`, который вы определили ранее в проекте приложения UWP. Например, см. [эту строку кода](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) из примера C++ Win32 в примерах [о языке XAML](https://github.com/microsoft/Xaml-Islands-Samples).
+    * Добавьте ссылку на проект приложения UWP и проект библиотеки классов UWP в свое решение.
+    * В функции `WinMain` или другом коде точки входа создайте экземпляр класса `XamlApplication`, который вы определили ранее в проекте приложения UWP. Например, см. [эту строку кода](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) из примера C++ Win32 в примерах [о языке XAML](https://github.com/microsoft/Xaml-Islands-Samples).
 
 5. Выполните процедуру, описанную в разделе [Использование API хостинга XAML для размещения раздела управления UWP](#use-the-xaml-hosting-api-to-host-a-uwp-control) для размещения пользовательского элемента управления в приложении XAML. Назначьте экземпляр пользовательского элемента управления для размещения свойства [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) объекта **десктопвиндовксамлсаурце** в коде.
 
@@ -424,13 +422,13 @@ API хостинга UWP XAML предоставляет несколько ти
 
 * В приложении C++ Win32, когда приложение обрабатывает WM_SIZE сообщение, оно может переместить размещенный остров XAML с помощью функции [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) . Пример см. в файле кода [SampleApp. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) .
 
-* Когда родительский элемент пользовательского интерфейса должен получить размер прямоугольной области, необходимой для размещения элемента **Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**, вызовите метод [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) элемента **Windows. UI. XAML. UIElement**. Пример
+* Когда родительский элемент пользовательского интерфейса должен получить размер прямоугольной области, необходимой для размещения элемента **Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**, вызовите метод [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) элемента **Windows. UI. XAML. UIElement**. Например:
 
     * В приложении WPF это можно сделать из метода [MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) , на котором размещена **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHostBase.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
     * В Windows Forms приложении это можно сделать из метода [Жетпреферредсизе](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) [элемента управления](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) , размещающего **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHostBase.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
-* При изменении размера родительского элемента пользовательского интерфейса вызовите метод [упорядочения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) корневого **интерфейса Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**. Пример
+* При изменении размера родительского элемента пользовательского интерфейса вызовите метод [упорядочения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) корневого **интерфейса Windows. UI. XAML. UIElement** , который вы размещаете в **десктопвиндовксамлсаурце**. Например:
 
     * В приложении WPF это можно сделать из метода [ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) объекта [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) , в котором размещается **десктопвиндовксамлсаурце**. Пример см. в файле [WindowsXamlHost.Layout.CS](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) в наборе средств сообщества Windows.
 
@@ -453,7 +451,19 @@ API хостинга UWP XAML предоставляет несколько ти
 </assembly>
 ```
 
-## <a name="troubleshooting"></a>"Устранение неполадок"
+## <a name="package-the-app"></a>Упаковка приложения
+
+При необходимости можно упаковать приложение в [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания. MSIX — это современная технология упаковки приложений для Windows, которая основана на сочетании технологий установки MSI, appx, App-V и ClickOnce.
+
+В следующих инструкциях показано, как упаковать все компоненты в решении в пакете MSIX с помощью [проекта упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в Visual Studio 2019. Эти действия необходимы только в том случае, если требуется упаковать приложение в пакет MSIX.
+
+1. Добавьте новый [проект упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в решение. При создании проекта выберите **Windows 10, версия 1903 (10,0; Сборка 18362)** для **целевой версии** и **минимальной версии**.
+
+2. В проекте упаковки щелкните правой кнопкой мыши узел **приложения** и выберите команду **Добавить ссылку**. В списке проектов выберите в решении проект классического приложения C++/Win32 и нажмите кнопку **ОК**.
+
+3. Создайте и запустите проект упаковки. Убедитесь, что приложение запущено и отображает элементы управления UWP, как ожидалось.
+
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>Ошибка при использовании API размещения UWP XAML в приложении UWP
 
@@ -465,7 +475,7 @@ API хостинга UWP XAML предоставляет несколько ти
 
 | Проблема | Разрешение |
 |-------|------------|
-| Приложение получает исключение со следующим сообщением: "Виндовсксамлманажер и Десктопвиндовксамлсаурце поддерживаются для приложений, предназначенных для Windows версии 10.0.18226.0 и более поздних версий. Проверьте манифест приложения или манифест пакета и убедитесь, что свойство Макстестедверсион Обновлено. " | Эта ошибка означает, что приложение попыталось использовать типы **виндовсксамлманажер** или **десктопвиндовксамлсаурце** в API размещения UWP XAML, но операционная система не может определить, было ли приложение создано для Windows 10 версии 1903 или более поздней. API размещения на языке UWP XAML впервые появился в виде предварительной версии в более ранней версией Windows 10, но поддерживается только начиная с Windows 10, версия 1903.</p></p>Чтобы устранить эту проблему, создайте пакет MSIX для приложения и запустите его из пакета или установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) в проект. Дополнительные сведения см. в [этом разделе](#configure-your-project-for-app-deployment). |
+| Приложение получает исключение со следующим сообщением: "Виндовсксамлманажер и Десктопвиндовксамлсаурце поддерживаются для приложений, предназначенных для Windows версии 10.0.18226.0 и более поздних версий. Проверьте манифест приложения или манифест пакета и убедитесь, что свойство Макстестедверсион Обновлено. " | Эта ошибка означает, что приложение попыталось использовать типы **виндовсксамлманажер** или **десктопвиндовксамлсаурце** в API размещения UWP XAML, но операционная система не может определить, было ли приложение создано для Windows 10 версии 1903 или более поздней. API размещения на языке UWP XAML впервые появился в виде предварительной версии в более ранней версией Windows 10, но поддерживается только начиная с Windows 10, версия 1903.</p></p>Чтобы устранить эту проблему, создайте пакет MSIX для приложения и запустите его из пакета или установите пакет NuGet [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) в проект. Дополнительные сведения см. [в этом разделе](#configure-the-project). |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>Ошибка при присоединении к окну в другом потоке
 
@@ -479,7 +489,7 @@ API хостинга UWP XAML предоставляет несколько ти
 |-------|------------|
 | Приложение получает **COMException** со следующим сообщением: "сбой метода аттачтовиндов, так как указанный HWND находится в порядке от другого окна верхнего уровня, чем HWND, который ранее был передан в аттачтовиндов в том же потоке". | Эта ошибка означает, что приложение вызвало метод **идесктопвиндовксамлсаурценативе:: аттачтовиндов** и передало ему HWND окна, которое отличается от окна верхнего уровня, чем окно, указанное в предыдущем вызове этого метода в том же потоке.</p></p>После того как приложение вызовет **аттачтовиндов** в определенном потоке, все остальные объекты [десктопвиндовксамлсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) в том же потоке могут присоединяться к Windows, которые являются потомками того же окна верхнего уровня, которое было передано при первом вызове **аттачтовиндов**. Когда все объекты **десктопвиндовксамлсаурце** закрываются для конкретного потока, следующий **десктопвиндовксамлсаурце** затем может быть снова подключен к любому окну.</p></p>Чтобы устранить эту проблему, закройте все объекты **десктопвиндовксамлсаурце** , привязанные к другим окнам верхнего уровня в этом потоке, или создайте новый поток для этого **десктопвиндовксамлсаурце**. |
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Размещение элементов управления XAML UWP в классических приложениях (острова XAML)](xaml-islands.md)
 * [C++Пример XAML-островов Win32](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

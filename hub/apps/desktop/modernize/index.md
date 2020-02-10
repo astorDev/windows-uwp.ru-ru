@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: fb6d2bebda31ed768309b23d18b3b47e4487b058
-ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
+ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76929249"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089400"
 ---
 # <a name="modernize-your-desktop-apps"></a>Модернизация классических приложений
 
@@ -24,7 +24,7 @@ ms.locfileid: "76929249"
 
 ## <a name="msix-packages"></a>Пакеты MSIX
 
-MSIX — это современный универсальный формат пакетов для упаковки любых приложений для Windows, включая приложения UWP, WPF, Windows Forms и Win32. Этот современный надежный процесс упаковки сочетает в себе преимущества технологий установки MSI, AppX, App-V и ClickOnce.
+MSIX — это современный универсальный формат пакетов для упаковки любых приложений для Windows, включая приложения UWP, WPF, Windows Forms и Win32. Этот современный надежный процесс упаковки сочетает в себе преимущества технологий установки MSI, APPX, App-V и ClickOnce.
 
 Упаковав классические приложения для Windows в MSIX-пакеты, вы получаете доступ к надежным возможностям установки и обновления, управляемой модели безопасности с гибкой системой возможностей, поддержке Microsoft Store, возможностям управления предприятием и многим пользовательским моделям распространения.
 

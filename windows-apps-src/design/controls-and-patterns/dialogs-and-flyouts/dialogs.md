@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
+ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468989"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071256"
 ---
 # <a name="dialog-controls"></a>Диалоговые элементы управления
 
@@ -252,7 +252,7 @@ private async void DisplaySubscribeDialog()
 
 ## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog в объектах AppWindow или XAML Island
 
-> ПРИМЕЧАНИЕ. Этот раздел относится только к приложениям, предназначенным для Windows 10 версии 1903 или более поздней версии. Объекты AppWindow и XAML Island недоступны в более ранних версиях. Дополнительные сведения об управлении версиями см. в статье [Приложения с адаптивным к версии кодом](../../../debug-test-perf/version-adaptive-apps.md).
+> ПРМЕЧАНИЕ. Этот раздел относится только к приложениям, предназначенным для Windows 10 версии 1903 или более поздней версии. Объекты AppWindow и XAML Island недоступны в более ранних версиях. Дополнительные сведения об управлении версиями см. в статье [Приложения с адаптивным к версии кодом](../../../debug-test-perf/version-adaptive-apps.md).
 
 По умолчанию диалоговые окна содержимого модально связаны с корневым объектом [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании ContentDialog в объекте [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) или [XAML Island](/windows/apps/desktop/modernize/xaml-islands) необходимо вручную задать [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) для диалогового окна, указав корень узла XAML.
 
@@ -282,11 +282,11 @@ private async void DisplayNoWifiDialog()
 > [!WARNING]
 > В потоке может существовать только один элемент ContentDialog одновременно. Попытка открыть два элемента ContentDialogs породит исключение, даже если они пытаются открыться в отдельных объектах AppWindow.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 - [Подсказки](../tooltips.md)
 - [Меню и контекстное меню](../menus.md)
 - [Класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
