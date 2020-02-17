@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 9adc872554e0823eb0a4e1fdbebef19b876b6198
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6a14a011971d8cea7b05758dc1a8a91ccab37edd
+ms.sourcegitcommit: b0930dfeb45e696fe4fa14bdb547de13ba5ade89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321408"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77146374"
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
@@ -167,6 +167,7 @@ ms.locfileid: "67321408"
 Невозможно получить доступ к локальной, перемещаемой и временной папкам с помощью средства выбора файлов.
 
 ### <a name="removable-devices"></a>Съемные устройства
+
 Кроме того, ваше приложение по умолчанию имеет доступ к некоторым файлам на подключенных устройствах. Этот вариант подходит, если ваше приложение использует [расширение "Автозапуск"](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)), чтобы запускаться автоматически при подключении к системе устройства, например камеры или USB-устройства флэш-памяти. Доступ вашего приложения к файлам ограничен определенными типами файлов, указанными с помощью объявлений сопоставлений типов файлов в манифесте приложения.
 
 Конечно, вы также можете получить доступ к файлам и папкам на съемном устройстве, вызвав средство выбора файлов (с помощью [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) и [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)) и позволив пользователю выбирать файлы или папки, предоставляя приложению доступ к ним. Сведения об использовании средства выбора файлов см. в статье [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md).
@@ -175,6 +176,7 @@ ms.locfileid: "67321408"
 > Подробнее о доступе к SD-карте или другим съемным устройствам рассказывается в статье [Доступ к SD-карте](access-the-sd-card.md).
 
 ## <a name="locations-that-uwp-apps-can-access"></a>Расположения, доступные приложениям UWP
+
 ### <a name="users-downloads-folder"></a>Папка скачиваемых файлов пользователя
 
 Папка, в которой по умолчанию сохраняются скачиваемые файлы.
@@ -251,27 +253,27 @@ ms.locfileid: "67321408"
 
 ## <a name="accessing-additional-locations"></a>Доступ к дополнительным расположениям
 
-Кроме расположений по умолчанию, приложение может получить доступ к дополнительным файлам и папкам с помощью объявления возможностей в манифесте приложения (см. статью [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)) или с помощью вызова средства выбора файлов, что позволяет пользователю выбирать файлы и папки, предоставляя приложению доступ к ним (см. статью [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md)).
+Кроме расположений по умолчанию, приложение может получить доступ к дополнительным файлам и папкам с помощью [объявления возможностей в манифесте приложения](../packaging/app-capability-declarations.md) или с помощью [вызова средства выбора файлов](quickstart-using-file-and-folder-pickers.md), что позволяет пользователю выбирать файлы и папки, предоставляя приложению доступ к ним.
 
-Приложения, объявляющие расширение [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias), имеют разрешения файловой системы начиная с каталога, откуда они запускаются в консольном окне, и далее вниз.
+Приложения, объявляющие расширение [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias), имеют разрешения файловой системы начиная с каталога, откуда они запускаются в консольном окне, и далее вниз по иерархии.
 
 В таблице ниже перечислены дополнительные расположения, к которым можно получить доступ, объявив возможности и используя связанные API [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage).
 
-| Location | Возможности | API Windows.Storage |
+| Расположение | Возможности | API Windows.Storage |
 |----------|------------|---------------------|
-| Все файлы, к которым у пользователя имеется доступ. Например: документы, изображения, фотографии, скачанные файлы, рабочий стол, OneDrive и т. д. | broadFileSystemAccess<br><br>Это ограниченная возможность. Доступ настраивается в разделе **Параметры** > **Конфиденциальность** > **Файловая система**. Так как пользователи могут предоставить или отменить разрешение в любой момент в разделе **Параметры**, следует убедиться, что приложение устойчиво к этим изменениям. Если вы обнаружили, что у приложения нет доступа, вы можете предложить пользователю изменить этот параметр, предоставив ссылку на статью [Доступ к файловой системе и конфиденциальность в Windows 10](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy). Обратите внимание на то, что пользователь должен закрыть приложение, изменить параметр и перезапустить приложение. Если он изменит параметр во время работы приложения, платформа приостановит ваше приложение, чтобы можно было сохранить состояние, а затем принудительно завершит его, чтобы применить новый параметр. В обновлении за апрель 2018 года по умолчанию это разрешение включено. В обновлении октябрь 2018 по умолчанию оно отключено.<br /><br />Если приложение отправляется в Store, объявляющий эту возможность, потребуется дополнительно обосновать, зачем приложению нужна эта возможность и как планируется ее использовать.<br>Эта возможность подходит для интерфейсов API в пространстве имен [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage). В разделе **Пример** в конце этой статьи показано, как включить эту возможность в приложении. | Неприменимо |
-| Документы | DocumentsLibrary <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>- автоматически сохраняет открытые файлы в OneDrive пользователя при работе в автономном режиме. | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
-| Музыка     | MusicLibrary <br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
-| Изображения  | PicturesLibrary<br> См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
-| Видео    | VideosLibrary<br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
-| Съемные устройства  | RemovableDevices <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>См. также статью [Получение доступа к SD-карте](access-the-sd-card.md) | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
-| Библиотеки домашней группы  | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
-| Устройства сервера мультимедиа (DLNA) | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
-| Папки UNC | Требуется комбинация следующих возможностей: <br><br>Возможность домашней и рабочей сетей: <br>- PrivateNetworkClientServer. <br><br>Добавьте по меньшей мере одну возможность общедоступных сетей и Интернета: <br>- InternetClient, <br>- InternetClientServer. <br><br>Если применимо, добавьте возможность учетных данных домена:<br>- EnterpriseAuthentication. <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. | Получение папки с помощью: <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>Получение файла с помощью: <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
+| Все файлы, к которым у пользователя имеется доступ. Например: документы, изображения, фотографии, скачанные файлы, рабочий стол, OneDrive и т. д. | **broadFileSystemAccess**<br><br>Это ограниченная возможность. Доступ настраивается в разделе **Параметры** > **Конфиденциальность** > **Файловая система**. Так как пользователи могут предоставить или отменить разрешение в любой момент в разделе **Параметры**, следует убедиться, что приложение устойчиво к этим изменениям. Если вы обнаружили, что у приложения нет доступа, вы можете предложить пользователю изменить этот параметр, предоставив ссылку на статью [Доступ к файловой системе и конфиденциальность в Windows 10](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy). Обратите внимание на то, что пользователь должен закрыть приложение, изменить параметр и перезапустить приложение. Если он изменит параметр во время работы приложения, платформа приостановит ваше приложение, чтобы можно было сохранить состояние, а затем принудительно завершит его, чтобы применить новый параметр. В обновлении за апрель 2018 года по умолчанию это разрешение включено. В обновлении октябрь 2018 по умолчанию оно отключено.<br /><br />Если приложение отправляется в Store, объявляющий эту возможность, потребуется дополнительно обосновать, зачем приложению нужна эта возможность и как планируется ее использовать.<br/><br/>Эта возможность подходит для интерфейсов API в пространстве имен [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage). В разделе **Пример** в конце этой статьи показано, как включить эту возможность в приложении.<br/><br/>**Примечание**. Эта возможность не поддерживается в Xbox. | Неприменимо |
+| Documents | **documentsLibrary**<br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>- автоматически сохраняет открытые файлы в OneDrive пользователя при работе в автономном режиме. | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
+| Музыка     | **musicLibrary** <br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
+| Изображения  | **picturesLibrary**<br> См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
+| Видео    | **videosLibrary**<br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
+| Съемные устройства  | **removableStorage**  <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>См. также статью [Получение доступа к SD-карте](access-the-sd-card.md) | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
+| Библиотеки домашней группы  | Требуется по меньшей мере одна из следующих возможностей: <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
+| Устройства сервера мультимедиа (DLNA) | Требуется по меньшей мере одна из следующих возможностей: <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
+| Папки UNC | Требуется комбинация следующих возможностей: <br><br>Возможность домашней и рабочей сетей: <br>- **privateNetworkClientServer** <br><br>Добавьте по меньшей мере одну возможность общедоступных сетей и Интернета: <br>- **internetClient** <br>- **internetClientServer** <br><br>Если применимо, добавьте возможность учетных данных домена:<br>- **enterpriseAuthentication** <br><br>**Примечание**. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. | Получение папки с помощью: <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>Получение файла с помощью: <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
 
-**Пример**
+### <a name="example"></a>Пример
 
-Этот пример добавляет ограниченную возможность `broadFileSystemAccess`. Нужно не только указать возможность, но и добавить пространство имен `rescap`, а также добавить его в `IgnorableNamespaces`.
+В этом примере добавляется возможность с ограниченным доступом **broadFileSystemAccess**. Нужно не только указать возможность, но и добавить пространство имен `rescap`, а также добавить его в `IgnorableNamespaces`.
 
 ```xaml
 <Package
