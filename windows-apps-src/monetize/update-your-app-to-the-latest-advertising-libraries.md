@@ -1,19 +1,22 @@
 ---
 description: Узнайте, как обновить ваше приложение для использования последних поддерживаемых версий библиотек Microsoft Advertising, чтобы приложение продолжало получать рекламные баннеры.
 title: Использование последних библиотек рекламных объявлений для рекламы баннеров
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, AdControl, AdMediatorControl, переход
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ac8499e673cacad897455c7065dd3386103406
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735049"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463886"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Обновление приложения для использования последних рекламных библиотек для баннеров
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 С 1 апреля 2017 г. мы больше не предоставляем баннеры для приложений, использующих неподдерживаемый выпуск пакета SDK для рекламы. Если вы используете **AdControl** для показа рекламных баннеров в приложении универсальной платформы Windows (UWP), используйте сведения в этой статье, чтобы определить, используете ли вы неподдерживаемый рекламный SDK, и перевести ваше приложение на поддерживаемый пакет SDK.
 
@@ -31,12 +34,12 @@ ms.locfileid: "74735049"
 
 * Баннеры тоже больше не будут предоставляться для любой группы объявлений, которая используется более чем в одном приложении. Убедитесь, что каждая ваша группа объявлений используется только в одном приложении.
 
-Если у вас есть приложение (уже находящееся в Microsoft Store или на стадии разработки), отображающее баннеры с помощью **AdControl**, и вы не можете точно определить, какой пакет SDK используется вашим приложением, следуйте инструкциям из этой статьи, чтобы выяснить, нужно ли вам обновлять приложение до поддерживаемого пакета SDK. Если у вас возникнут какие-либо проблемы или понадобится помощь, [обратитесь в службу поддержки](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&supportregion=EN-US&ccfcode=US&ln=EN-US&pesid=14654&oaspworkflow=start_1.0.0.0&tenant=store&supporttopic_L1=32136151).
+Если у вас есть приложение (уже находящееся в Microsoft Store или на стадии разработки), отображающее баннеры с помощью **AdControl**, и вы не можете точно определить, какой пакет SDK используется вашим приложением, следуйте инструкциям из этой статьи, чтобы выяснить, нужно ли вам обновлять приложение до поддерживаемого пакета SDK. В случае каких-либо проблем или если вам нужна помощь, [обратитесь в службу поддержки](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&supportregion=EN-US&ccfcode=US&ln=EN-US&pesid=14654&oaspworkflow=start_1.0.0.0&tenant=store&supporttopic_L1=32136151).
 
 > [!NOTE]
 > Если ваше приложение уже использует [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (для приложений UWP), вам не требуется вносить изменения в приложение.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Полный исходный код и файлы проекта Visual Studio для приложения, в котором используются элементы управления **AdControl**.
 * Пакет AppX для приложения.

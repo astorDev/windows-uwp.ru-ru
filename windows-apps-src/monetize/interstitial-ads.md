@@ -2,18 +2,21 @@
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Узнайте, как включить межстраничные объявления в приложение UWP для Windows 10 с помощью Microsoft Advertising SDK.
 title: Межстраничные объявления
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, межстраничные
 ms.localizationpriority: medium
-ms.openlocfilehash: 98800f1a9a94de20910e932032d8b949bac52dde
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b953fe0aca3d0ab9b8ce27f2b068c3bf1b869c83
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259277"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463956"
 ---
 # <a name="interstitial-ads"></a>Межстраничные объявления
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 В этом пошаговом руководстве показано, как включить межстраничные объявления в приложения универсальной платформы Windows (UWP) и игры для Windows 10. Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 
@@ -52,7 +55,7 @@ ms.locfileid: "74259277"
 
 В этом разделе приводятся примеры кода на C#, однако Visual Basic и C++ также поддерживаются для создания проектов XAML/.NET. Полный пример кода на C# см. в разделе [Пример кода промежуточной рекламы в C#](interstitial-ad-sample-code-in-c.md).
 
-1. Откройте проект в Visual Studio.
+1. Откройте свой проект в Visual Studio.
     > [!NOTE]
     > Если вы используете существующий проект, откройте файл Package.appxmanifest в проекте и убедитесь, что возможность **Интернет (клиент)** выбрана. Вашему приложению эта возможность требуется для получения тестовых объявлений и настоящей рекламы.
 
@@ -105,7 +108,7 @@ ms.locfileid: "74259277"
 
 В приведенных ниже инструкциях подразумевается, что вы уже создали проект универсального приложения для JavaScript в Visual Studio и для конкретного процессора. Полный пример кода см. в разделе [Пример кода промежуточной рекламы в JavaScript](interstitial-ad-sample-code-in-javascript.md).
 
-1. Откройте проект в Visual Studio.
+1. Откройте свой проект в Visual Studio.
 
 2. Если ваш проект направлен на работу на **Любом ЦП**, обновите его, чтобы он использовал результаты сборки, предназначенные для определенной архитектуры (например **x86**). Если ваш проект направлен на работу на **Любом ЦП**, вам не удастся надлежащим образом добавить ссылку на Microsoft Advertising в приведенных ниже шагах. Дополнительные сведения см. в разделе [Ошибки, вызванные указанием Любого ЦП как целевого в вашем проекте](known-issues-for-the-advertising-libraries.md#reference_errors).
 
@@ -160,7 +163,7 @@ ms.locfileid: "74259277"
 
 В этом примере предполагается, что вы уже создали проект **приложения DirectX и XAML (универсальное приложение для Windows)** на C++ в Visual Studio и для определенной архитектуры ЦП.
  
-1. Откройте проект в Visual Studio.
+1. Откройте свой проект в Visual Studio.
 
 3. Добавьте ссылку на Microsoft Advertising SDK в свой проект.
 
@@ -234,7 +237,7 @@ ms.locfileid: "74259277"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Рекомендации по внутреннего AD](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [Пример кода внутреннего AD вC#](interstitial-ad-sample-code-in-c.md)

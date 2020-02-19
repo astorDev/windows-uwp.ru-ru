@@ -2,19 +2,21 @@
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: Узнайте, как использовать класс AdControl для показа баннеров в приложении на XAML для Windows 10 (UWP).
 title: AdControl в XAML и .NET
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, объявления, реклама, AdControl, элемент управления рекламным объявлением, XAML, .net, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: beafc002888605ddebac99a67ae1cdac9715de14
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 55a67d3f0c74492fdf00110c28cb15eb3167a81a
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259310"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463486"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl в XAML и .NET
 
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для показа баннерной рекламы в приложении UWP на XAML для Windows 10, реализованном с использованием C#.
 
@@ -145,7 +147,7 @@ ms.locfileid: "74259310"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Рекомендации по баннерам](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Пошаговое руководство по обработке ошибок XAML/C#](error-handling-in-xamlc-walkthrough.md).

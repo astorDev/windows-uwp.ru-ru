@@ -2,18 +2,21 @@
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: Узнайте, как перехватывать ошибки AdControl в приложении.
 title: Пошаговое руководство по обработке ошибок в JavaScript
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b68979bfa6b1f661ca7765ebc2598b201f013e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 01b9949a17d5653bf121018dc40058b99af21719
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260292"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463856"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Пошаговое руководство по обработке ошибок в JavaScript
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 В этом руководстве рассматривается перехват связанных с рекламой ошибок в приложении на JavaScript. В этом руководстве используется элемент управления [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для отображения баннера, но изложенные в нем общие принципы также применимы к межстраничным и собственным объявлениям.
 
@@ -64,6 +67,6 @@ ms.locfileid: "74260292"
 
 5.  Сборка и запуск файла. Вы увидите первоначальное рекламное объявление из созданного ранее примера приложения и текст под этим объявлением с описанием ошибки. Вы не увидите рекламное объявление с идентификатором **liveAd**.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

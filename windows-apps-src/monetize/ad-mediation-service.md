@@ -1,18 +1,21 @@
 ---
 description: Служба рекламного посредника Майкрософт позволяет увеличить прибыль от рекламы и рекламные возможности приложений путем показа объявлений из множества популярных рекламных сетей.
 title: Служба рекламного посредника (Майкрософт)
-ms.date: 06/05/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, рекламный посредник
 ms.localizationpriority: medium
-ms.openlocfilehash: 700a80aff4c991f4fa3bff681ba995b113025fec
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259324"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463986"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Служба рекламного посредника (Майкрософт)
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 При использовании [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) для [показа рекламы в приложениях](display-ads-in-your-app.md) можно дополнительно использовать службу рекламного посредника Майкрософт для повышения прибыли от рекламы. В этой статье представлен обзор службы рекламного посредника и ее целей.
 
@@ -53,7 +56,7 @@ ms.locfileid: "74259324"
 
 Служба рекламного посредника работает с различными рекламными сетями для показа наиболее актуальной рекламы каждому пользователю. Это достигается путем отправки более подробных сигналов о пользователе и приложении в рекламную сеть с учетом требований к конфиденциальности.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Параметры исправления](../publish/in-app-ads.md#mediation-settings)

@@ -2,18 +2,21 @@
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: Узнайте, как использовать класс AdControl для показа баннеров в приложении на HTML или JavaScript для Windows 10 (UWP).
 title: AdControl в HTML 5 и JavaScript
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, рекламный элемент управления, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ce2eb259f26135f2fc5525e10673d1feb78184
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3bb6a804cbf7fa2b46020178d8a90e38d76607f1
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260347"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463506"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>AdControl в HTML 5 и JavaScript
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для показа баннерной рекламы в приложении UWP на JavaScript или HTML для Windows 10.
 
@@ -136,7 +139,7 @@ ms.locfileid: "74260347"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Рекомендации по баннерам](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

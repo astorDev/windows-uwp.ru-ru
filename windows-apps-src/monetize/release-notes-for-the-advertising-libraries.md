@@ -2,21 +2,21 @@
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Обзор заметок о выпуске библиотек Microsoft Advertising.
 title: Заметки о выпуске библиотек Microsoft Advertising
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d3554620cde44fc9907845a7765d023e1ed03e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50eea90dcf8ed59f420953eec5da5b7a0fe6b4b2
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260209"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463916"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 
-
-
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising. Эти библиотеки поддерживают приложения XAML и JavaScript и HTML для Windows 10, Windows 8.1, Windows Phone 8,1 и Windows Phone 8.
 

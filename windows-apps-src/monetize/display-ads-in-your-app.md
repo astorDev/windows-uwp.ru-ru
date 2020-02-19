@@ -2,18 +2,21 @@
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK предоставляет несколько способов монетизации приложения с помощью рекламы.
 title: Показ рекламы в приложении с помощью Microsoft Advertising SDK
-ms.date: 06/20/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
-ms.openlocfilehash: 48aacf03d6e424b7b53052e2c292d4a8589a8d9f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5f318a68a97e98d3da24da16778988ee40c4e1dd
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684575"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463786"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа AD монетизацию предлагает разнообразные форматы рекламы, которые можно легко интегрировать в свои приложения и поддерживать множество популярных сетей ad. Наша платформа соответствует стандартам OpenRTB, VAST 2.x, MRAID 2 и VPAID 3, а также MOAT и IAS. 
 
@@ -112,14 +115,14 @@ Microsoft Advertising SDK предоставляет несколько разл
 |----------|-------|
 | Сообщить об ошибке или получить техническую поддержку по вопросам рекламы     | Посетите [страницу поддержки](https://developer.microsoft.com/windows/support) и выберите **Реклама в приложениях**.        |
 | Получить поддержку сообщества     | Посетите [форум](https://go.microsoft.com/fwlink/?LinkID=401264).       |
-| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и межстраничные объявления в приложения.     | См. [примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
+| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и промежуточную видеорекламу в приложения.     | См. [примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Сведения о последних возможностях получения дохода из приложений для Windows     | Посетите раздел [Монетизация приложений](https://developer.microsoft.com/store/monetize).        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Приложения для Windows 8.1 и Windows Phone 8.x
 
 Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/previous-versions/windows/apps/dn792120(v=win.10)).
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Отчет о результативности рекламы](../publish/advertising-performance-report.md)

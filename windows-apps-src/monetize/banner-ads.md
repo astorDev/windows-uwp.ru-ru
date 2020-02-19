@@ -1,18 +1,21 @@
 ---
 description: Узнайте, как использовать баннеры в приложении UWP.
 title: Рекламные баннеры
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, баннеры
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3e4715dee6c1e182ed195288cba7b96612b743b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260338"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463526"
 ---
 # <a name="banner-ads"></a>Рекламные баннеры
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Статьи в этом разделе поясняют, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) в пакете Microsoft Advertising SDK для добавления рекламных баннеров в приложение UWP.
 
@@ -29,7 +32,7 @@ ms.locfileid: "74260338"
 | [Поддерживаемые размеры рекламных объявлений](supported-ad-sizes-for-banner-ads.md)    |  Проверка поддерживаемых размеров рекламных баннеров в приложениях UWP.        |
 
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 * [Примеры рекламы на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
 * [Настройка единиц AD для приложения](set-up-ad-units-in-your-app.md)

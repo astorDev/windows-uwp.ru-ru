@@ -2,18 +2,21 @@
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Узнайте о том, как устанавливать Microsoft Advertising SDK.
 title: Установить пакет Microsoft Advertising SDK
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f3b63ac40041b93372544d586d3feb23940fccc5
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260270"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463390"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установить пакет Microsoft Advertising SDK
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
 
@@ -80,7 +83,7 @@ ms.locfileid: "74260270"
 
 После установки пакета Microsoft Advertising SDK следуйте этим инструкциям, чтобы создать ссылку на SDK в своем проекте и иметь возможность использовать рекламные API-интерфейсы.
 
-1. Откройте проект в Visual Studio.
+1. Откройте свой проект в Visual Studio.
     > [!NOTE]
     > Если ваш проект направлен на работу на **Любом ЦП**, обновите его, чтобы он использовал результаты сборки, предназначенные для определенной архитектуры (например **x86**). Если ваш проект направлен на работу на **Любом ЦП**, вам не удастся надлежащим образом добавить ссылку на Microsoft Advertising SDK в приведенных ниже шагах. Дополнительные сведения см. в разделе [Ошибки, вызванные указанием Любого ЦП как целевого в вашем проекте](known-issues-for-the-advertising-libraries.md#reference_errors).
 

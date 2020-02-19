@@ -2,23 +2,25 @@
 Description: Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу собственной.
 title: О собственной рекламе
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b93682b6d1d154a393a0f0af1e09708ad08a05b9
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649849"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463426"
 ---
 # <a name="about-house-ads"></a>О собственной рекламе
 
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу *собственной*.
 
-Дом реклама будет отображаться только в приложениях, которые настроены для [Показывать рекламу от корпорации Майкрософт](../monetize/display-ads-in-your-app.md).
+Рекламные объявления будут отображаться только в собственных приложениях, которые настроены на [Отображение баннеров от корпорации Майкрософт](../monetize/display-ads-in-your-app.md).
 
 Чтобы настроить собственную рекламу, выберите значение **Собственное объявление (бесплатно)** для параметра **Тип кампании** при [создании рекламной кампании](create-an-ad-campaign-for-your-app.md). Реклама автоматически появится в любом вашем приложении, соответствующем следующим критериям:
 
@@ -32,8 +34,8 @@ ms.locfileid: "57649849"
 
  
 
-### <a name="related-topics"></a>Статьи по теме
+### <a name="related-topics"></a>Связанные разделы
 
 
-* [Создайте рекламную кампанию для своего приложения](create-an-ad-campaign-for-your-app.md)
-* [Часто задаваемые вопросы](common-questions.md)
+* [Создать кампанию AD для приложения](create-an-ad-campaign-for-your-app.md)
+* [Распространенные вопросы](common-questions.md)

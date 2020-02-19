@@ -2,30 +2,33 @@
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Сведения о решении распространенных проблем разработки при использовании библиотек Microsoft Advertising в приложениях XAML.
 title: Руководство по устранению неполадок в XAML и C#
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 9783036d00fc56b904e6d362f55ddaaf8375a872
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334662"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463746"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 В этом разделе содержится описание решений распространенных проблем разработки, связанных с библиотеками Microsoft Advertising, в приложениях XAML.
 
 * [XAML](#xaml)
-  * [AdControl не отображаются](#xaml-notappearing)
-  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#xaml-blackboxblinksdisappears)
-  * [ADS не обновляется](#xaml-adsnotrefreshing)
+  * [Адконтрол не отображается](#xaml-notappearing)
+  * [Черный ящик мигает и исчезает](#xaml-blackboxblinksdisappears)
+  * [Реклама не обновляется](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl не отображаются](#csharp-adcontrolnotappearing)
-  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#csharp-blackboxblinksdisappears)
-  * [ADS не обновляется](#csharp-adsnotrefreshing)
+  * [Адконтрол не отображается](#csharp-adcontrolnotappearing)
+  * [Черный ящик мигает и исчезает](#csharp-blackboxblinksdisappears)
+  * [Реклама не обновляется](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -35,9 +38,9 @@ ms.locfileid: "58334662"
 
 ### <a name="adcontrol-not-appearing"></a>Элемент AdControl не отображается
 
-1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
+1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)** .
 
-2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с ИДЕНТИФИКАТОРом приложения и ИДЕНТИФИКАТОРом единицы AD, полученными в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -160,20 +163,20 @@ ms.locfileid: "58334662"
 
 <span id="csharp"/>
 
-## <a name="c"></a>C\# #
+## <a name="c"></a>\# в C #
 
 <span id="csharp-adcontrolnotappearing"/>
 
 ### <a name="adcontrol-not-appearing"></a>Элемент AdControl не отображается
 
-1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
+1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)** .
 
 2.  Убедитесь, что создан экземпляр элемента **AdControl**. Если экземпляр элемента **AdControl** не создан, он будет недоступен.
 
     > [!div class="tabbedCodeSnippets"]
     [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с ИДЕНТИФИКАТОРом приложения и ИДЕНТИФИКАТОРом единицы AD, полученными в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

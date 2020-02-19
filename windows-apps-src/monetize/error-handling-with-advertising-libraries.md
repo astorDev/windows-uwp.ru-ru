@@ -2,18 +2,21 @@
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: Изучите процесс обработки ошибок, формируемых классом AdControl, в библиотеках Microsoft Advertising.
 title: Обработка ошибок рекламы
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b98dc583b8f7d77aa582b4c69b87c726a83129
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1804bc6b44069dccdd92d0a33fcfd48567363a33
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371814"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463846"
 ---
 # <a name="handle-ad-errors"></a>Обработка ошибок рекламы
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
 
 Классы [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol), [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) и [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) имеют событие **ErrorOccurred**, которое возникает при возникновении связанной с рекламой ошибки. Код приложения может обрабатывать это событие и изучать свойства [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) и [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) объекта аргументов события для определения причины ошибки.
 
@@ -45,7 +48,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 }
 ```
 
-См. пошаговые инструкции по обработке ошибок **AdControl** в XAML и C# в разделе [Пошаговое руководство по обработке ошибок в XAML/C#](error-handling-in-xamlc-walkthrough.md).
+См. пошаговые инструкции по обработке ошибок [AdControl](error-handling-in-xamlc-walkthrough.md) в XAML и C# в разделе **Пошаговое руководство по обработке ошибок в XAML/C#** .
 
 <span id="bkmk-javascript"/>
 
@@ -82,4 +85,4 @@ window.errorLogger = function (sender, evt) {
 });
 ```
 
-См. пошаговое руководство по обработке ошибки **AdControl** в JavaScript в разделе [Пошаговое руководство по обработке ошибок в JavaScript](error-handling-in-javascript-walkthrough.md).
+См. пошаговое руководство по обработке ошибки [AdControl](error-handling-in-javascript-walkthrough.md) в JavaScript в разделе **Пошаговое руководство по обработке ошибок в JavaScript**.

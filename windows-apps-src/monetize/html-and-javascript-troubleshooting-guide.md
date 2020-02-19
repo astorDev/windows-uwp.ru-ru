@@ -2,30 +2,33 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Сведения о решениях распространенных проблем разработки, связанными с библиотеками Microsoft Advertising в приложениях JavaScript и HTML.
 title: Руководство по устранению неполадок для HTML и JavaScript
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb804c312962fc349607b9d55176bfd7279cf8e9
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633239"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463796"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Руководство по устранению неполадок для HTML и JavaScript
 
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+
 В этом разделе содержится описание решений для распространенных проблем разработки, связанных с библиотеками Microsoft Advertising в приложениях JavaScript и HTML.
 
-* [HTML](#html)
-  * [AdControl не отображаются](#html-notappearing)
-  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#html-blackboxblinksdisappears)
-  * [ADS не обновляется](#html-adsnotrefreshing)
+* [ЭЛЕМЕНТОВ](#html)
+  * [Адконтрол не отображается](#html-notappearing)
+  * [Черный ящик мигает и исчезает](#html-blackboxblinksdisappears)
+  * [Реклама не обновляется](#html-adsnotrefreshing)
 
-* [JavaScript](#js)
-  * [AdControl не отображаются](#js-adcontrolnotappearing)
-  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#js-blackboxblinksdisappears)
-  * [ADS не обновляется](#js-adsnotrefreshing)
+* [Скриптов](#js)
+  * [Адконтрол не отображается](#js-adcontrolnotappearing)
+  * [Черный ящик мигает и исчезает](#js-blackboxblinksdisappears)
+  * [Реклама не обновляется](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -33,7 +36,7 @@ ms.locfileid: "57633239"
 
 ### <a name="adcontrol-not-appearing"></a>Элемент AdControl не отображается
 
-1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
+1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)** .
 
 2.  Убедитесь в наличии ссылки JavaScript. При отсутствии ссылки ad.js в разделе &lt;head&gt; (после ссылки default.js) элемент **AdControl** не будет отображаться и в ходе сборки произойдет ошибка.
 
@@ -46,7 +49,7 @@ ms.locfileid: "57633239"
     </head>
     ```
 
-3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с ИДЕНТИФИКАТОРом приложения и ИДЕНТИФИКАТОРом единицы AD, полученными в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -223,7 +226,7 @@ ms.locfileid: "57633239"
 
 ### <a name="adcontrol-not-appearing"></a>Элемент AdControl не отображается
 
-1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
+1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)** .
 
 2.  Убедитесь, что создан экземпляр элемента **AdControl**. Если экземпляр элемента **AdControl** не создан, он будет недоступен.
 
@@ -271,7 +274,7 @@ ms.locfileid: "57633239"
     });  
     ```
 
-4.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с ИДЕНТИФИКАТОРом приложения и ИДЕНТИФИКАТОРом единицы AD, полученными в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
