@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089400"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521345"
 ---
 # <a name="modernize-your-desktop-apps"></a>Модернизация классических приложений
 
@@ -20,7 +20,7 @@ ms.locfileid: "77089400"
 В этой статье описаны функции Windows 10 и UWP, которые можно использовать в классических приложениях уже сегодня. Инструкции по модернизации существующего приложения для использования многих из функций, описанных в этой статье, приведены в руководстве по [модернизации приложения WPF](modernize-wpf-tutorial.md).
 
 > [!NOTE]
-> Нужна помощь в миграции классических приложений в Windows 10? [Служба Assure для классических приложений](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) предоставляет прямую бесплатную поддержку для разработчиков при миграции приложений в Windows 10. Эта программа доступна для всех независимых поставщиков программного обеспечения и соответствующих предприятий. Дополнительные сведения о соответствии критериям, а также о самой программе см. здесь: [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). Чтобы начать работу прямо сейчас, [отправьте запрос](https://aka.ms/DesktopAppAssureRequest).
+> Нужна помощь в миграции классических приложений в Windows 10? [Служба Assure для классических приложений](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) предоставляет прямую бесплатную поддержку для разработчиков при миграции приложений в Windows 10. Эта программа доступна для всех независимых поставщиков программного обеспечения и соответствующих предприятий. Дополнительные сведения о соответствии критериям, а также о самой программе см. здесь: [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). Чтобы начать работу прямо сейчас, [отправьте запрос](https://fasttrack.microsoft.com/dl/daa).
 
 ## <a name="msix-packages"></a>Пакеты MSIX
 
