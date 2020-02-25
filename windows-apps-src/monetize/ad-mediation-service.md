@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, рекламный посредник
 ms.localizationpriority: medium
-ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 13cdba15e73028e0bf0560dc373e6f06bd0e86d5
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463986"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507198"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Служба рекламного посредника (Майкрософт)
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 При использовании [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) для [показа рекламы в приложениях](display-ads-in-your-app.md) можно дополнительно использовать службу рекламного посредника Майкрософт для повышения прибыли от рекламы. В этой статье представлен обзор службы рекламного посредника и ее целей.
 

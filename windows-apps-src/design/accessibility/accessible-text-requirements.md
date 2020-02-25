@@ -6,14 +6,14 @@ label: Accessible text requirements
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f794cc6f23cf3f4beaf5bc3c9558ceaf2ccc8a6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257794"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521316"
 ---
 # <a name="accessible-text-requirements"></a>Требования к специальным возможностям отображения текста  
 
@@ -181,11 +181,11 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>См. также  
+## <a name="related-topics"></a>Связанные разделы  
 
 * [Масштабирование текста](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Специальные возможности](accessibility.md)
 * [Основные сведения о специальных возможностях](basic-accessibility-information.md)
-* [Пример вывода текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
-* [Пример редактирования текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-* [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 
+* [Пример вывода текста XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
+* [Пример редактирования текста XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+* [Пример специальных возможностей XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) 

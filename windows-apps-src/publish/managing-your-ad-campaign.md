@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d79e65b2937e7ec6db57e00b31b44b1796203a50
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463976"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507028"
 ---
 # <a name="manage-your-ad-campaign"></a>Управление рекламной кампанией
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Чтобы управлять рекламными кампаниями для приложения в [центре партнеров](https://partner.microsoft.com/dashboard), **раскройте в** меню навигации слева, а затем выберите **рекламные кампании**. Вы увидите все рекламные кампании, связанные с вашими приложениями, вместе с числом показов, нажатий и установок для каждой из них. Подробнее о показах, нажатиях и установках см. в разделе [Отчет о рекламной кампании](promote-your-app-report.md).
 

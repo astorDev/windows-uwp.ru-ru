@@ -6,14 +6,14 @@ label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0065ecd39244d9cbb48bf75d474217aae249e45b
-ms.sourcegitcommit: ae288e85be682f74109510b9f52787fdc3dd2ecd
+ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76860545"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521285"
 ---
 # <a name="accessibility-overview"></a>Обзор специальных возможностей
 
@@ -200,9 +200,9 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Поддержка специальных возможностей в приложениях, поддерживающих межпрограммное взаимодействие XAML и Microsoft DirectX
 
-Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) или [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
+Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) или [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Связанные разделы
 
 * [**Windows. UI. XAML. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
 * [Разработка для специальных возможностей](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)

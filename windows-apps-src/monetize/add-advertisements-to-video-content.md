@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные материалы, видео, планировщик, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3287af2164457f37b5f148289d4d9f9b833595
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 2b07b24de9d89d8021090312f62df4f0fb1e78dc
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463468"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507178"
 ---
 # <a name="show-ads-in-video-content"></a>Показ рекламы в видеосодержимом
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 В этом пошаговом руководстве показано, как использовать класс **AdScheduler** для показа рекламы в видеосодержимом в приложении универсальной платформы Windows (UWP), написанном с использованием JavaScript и HTML.
 

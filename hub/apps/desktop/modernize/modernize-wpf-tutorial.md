@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, объекты XAML Island
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089310"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521293"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Учебник. модернизировать приложения WPF 
 
@@ -69,7 +69,7 @@ Contoso хочет модернизировать это приложение с
 
 Перед началом работы с руководством Скачайте исходный код приложения "расходы Contoso" и убедитесь, что вы можете создать код в Visual Studio.
 
-1. Скачайте исходный код приложения со вкладки " **выпуски** " [репозитория аппконсулт винаппсмодернизатион Workshop](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). Прямая ссылка [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Скачайте исходный код приложения со вкладки " **выпуски** " [репозитория аппконсулт винаппсмодернизатион Workshop](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop). Прямая ссылка [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Откройте ZIP-файл и извлеките все содержимое в корневую папку диска **C:\\** . Будет создана папка с именем **к:\винаппсмодернизатионворкшоп**.
 3. Откройте Visual Studio 2019 и дважды щелкните файл **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** , чтобы открыть решение.
 4. Убедитесь, что вы можете выполнять сборку, запуск и отладку проекта WPF по расходам Contoso, нажав кнопку **Пуск** или клавиши CTRL + F5.

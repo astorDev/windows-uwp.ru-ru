@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, собственная реклама
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2022db39c27453dd3c1e9e1eb63914b25a637b
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 692a532320203fb5348db7c3dd008ddfb6c3b887
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463936"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506838"
 ---
 # <a name="native-ads"></a>Собственные объявления
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Собственные объявления — это формат на основе рекламных компонентов, где каждая часть рекламного объявления (например, заголовок, изображение, описание и призыв к действию) доставляется приложение в виде отдельного элемента. Эти элементы можно интегрировать в приложение с использованием собственных шрифтов, цветов, анимации и других компонентов пользовательского интерфейса, чтобы предоставлять пользователям цельную ненавязчивую рекламу, соответствующую вашему приложению по внешнему виду и общему впечатлению, а также получать высокий доход от рекламы.
 

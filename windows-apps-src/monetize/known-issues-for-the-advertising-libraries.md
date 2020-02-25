@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463966"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506733"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 В этом разделе содержится перечень известных проблем текущего выпуска Microsoft Advertising SDK. Дополнительные рекомендации по устранению неполадок содержатся в следующих разделах.
 
@@ -51,7 +51,7 @@ ms.locfileid: "77463966"
 
 Если вы видите тестовые объявления в приложении, то ваш код работает и может отображать рекламу. Если проблемы сохраняются, обратитесь в [службу поддержки по продукту](https://developer.microsoft.com/windows/support). На этой странице выберите **связаться с нами**.
 
-Можно также опубликовать вопрос на [форуме](https://go.microsoft.com/fwlink/?LinkID=401264).
+Можно также опубликовать вопрос на [форуме](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>В приложении отображается тестовая реклама, а не реальные объявления
 
@@ -94,7 +94,7 @@ ms.locfileid: "77463966"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с Microsoft Advertising SDK, см. на [форуме](https://go.microsoft.com/fwlink/?LinkID=401264).
+Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с Microsoft Advertising SDK, см. на [форуме](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps).
 
  
 

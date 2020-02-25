@@ -4,14 +4,14 @@ title: Сведения об НДС
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258957"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507148"
 ---
 # <a name="vat-info"></a>Сведения об НДС
 
@@ -21,7 +21,7 @@ ms.locfileid: "74258957"
 ## <a name="understanding-vat-numbers"></a>Номера плательщиков НДС
 
 
-Номер плательщика НДС — это идентификатор, используемый в странах и регионах ЕС. Дополнительные сведения см. на официальном сайте ЕС [VIES](https://go.microsoft.com/fwlink/p/?LinkId=181246).
+Номер плательщика НДС — это идентификатор, используемый в странах и регионах ЕС. Дополнительные сведения см. на официальном сайте ЕС [VIES](http://ec.europa.eu/taxation_customs/vies/vieshome.do).
 
 ## <a name="accepted-formats-for-vat-numbers"></a>Допустимые форматы номеров НДС
 
@@ -70,7 +70,7 @@ ms.locfileid: "74258957"
 <li>Пример: 12345678, 123456789 или 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Чешская республика</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Чешская Республика</td><td data-th="VAT info">
 <ul>
 <li>Формат номера: 8, 9 или 10 цифр</li>
 <li>Код страны или региона: CZ</li>
@@ -98,7 +98,7 @@ ms.locfileid: "74258957"
 <li>Пример: 12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Франция</td><td data-th="VAT info">
+<tr><td data-th="Country/region">France</td><td data-th="VAT info">
 <ul>
 <li>Формат номера: 11 цифр</li>
 <li>Код страны или региона: FR</li>
@@ -106,7 +106,7 @@ ms.locfileid: "74258957"
 <li>Примечания. Может содержать алфавитные символы, за исключением I и Q, в качестве первого или второго символа, а также в качестве первого и второго символа, за которыми следуют 9 цифр.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Германия</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
 <ul>
 <li>Формат номера: 9 цифр</li>
 <li>Код страны или региона: DE</li>

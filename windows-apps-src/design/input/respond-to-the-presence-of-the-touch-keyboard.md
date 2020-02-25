@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: клавиатура, специальные возможности, навигация, фокус, текст, ввод, взаимодействия с пользователем
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: c752a5df96c22b945865c0c3a465f22391aa54bc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e26bbe00bba8b3d91d7ee842cb4d9c984a941f2b
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258272"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521365"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Реакция на наличие сенсорной клавиатуры
 
@@ -66,7 +66,7 @@ ms.locfileid: "74258272"
 
     ![Форма с сенсорной клавиатурой и без нее](images/touch-keyboard-pan1.png)
 
-    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Пример:
+    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Например:
 
     ![Форма, содержащая области, которые всегда должны быть в поле зрения](images/touch-keyboard-pan2.png)
 
@@ -220,7 +220,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 **Примеры из архива**
 
-- [Входные данные: пример сенсорной клавиатуры](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+- [Входные данные: пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 - [Ответ на внешний вид образца экранной клавиатуры](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
 - [Пример редактирования текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-- [Пример специальных возможностей XAML](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+- [Пример специальных возможностей XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама
 ms.localizationpriority: medium
-ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06421b92106baec5a846db5fc7adf8ef3b742bff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463756"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507078"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Премиальная программа для издателей рекламы в Windows
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 В рамках нашей непрерывной работы по оказанию поддержки Windows-разработчикам в целях получения ими дохода от своих приложений с помощью рекламы мы предлагаем [Премиальную программу для издателей рекламы в Windows](https://www.windowspremiumapps.com). Это коллекция отборных приложений игр с включенной рекламой, которые являются лучшими в своем в классе с точки зрения использования, интереса и взаимодействия пользователей. Эти приложения и игры проверены на предмет возможностей просмотра и отличаются распределенной по всему миру аудиторией идентифицируемых пользователей, проявляющих повышенный интерес.
 

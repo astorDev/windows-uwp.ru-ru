@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, объявления, реклама, размеры, баннеры
 ms.localizationpriority: medium
-ms.openlocfilehash: c3836c2d4b0c7f522db936906e2eae3ed2862b68
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463896"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506858"
 ---
 # <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры баннеров
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Для приложений универсальной платформы Windows (UWP) поддерживаются следующие размеров рекламных баннеров. При создании экземпляра объекта **адконтрол** в приложении убедитесь, что свойства Width и Height установлены в соответствии с одним из поддерживаемых размеров.
 

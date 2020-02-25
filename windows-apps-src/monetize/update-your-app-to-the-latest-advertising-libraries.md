@@ -6,17 +6,17 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, AdControl, AdMediatorControl, переход
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 2fa57e02574850704b6c43853980dde32c388557
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463886"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507088"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Обновление приложения для использования последних рекламных библиотек для баннеров
 
 >[!WARNING]
-> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://aka.ms/ad-monetization-shutdown)
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 С 1 апреля 2017 г. мы больше не предоставляем баннеры для приложений, использующих неподдерживаемый выпуск пакета SDK для рекламы. Если вы используете **AdControl** для показа рекламных баннеров в приложении универсальной платформы Windows (UWP), используйте сведения в этой статье, чтобы определить, используете ли вы неподдерживаемый рекламный SDK, и перевести ваше приложение на поддерживаемый пакет SDK.
 
