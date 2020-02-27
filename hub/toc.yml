@@ -71,7 +71,27 @@
     - name: Speech
       href: apps/speech.md
     - name: Функции и технологии
-      href: apps/features-and-technologies.md
+      items:
+        - name: Обзор
+          href: apps/features-and-technologies.md
+        - name: Обработка трассировок трассировки событий Windows в .NET
+          items:
+            - name: Обзор
+              href: apps/trace-processing/overview.md
+            - name: Обработка первой трассировки
+              href: apps/trace-processing/quickstart.md
+            - name: Получение доступа к данным трассировки
+              href: apps/trace-processing/tutorial.md
+            - name: Расширение TraceProcessor
+              href: apps/trace-processing/extensibility.md
+            - name: Отправка символов
+              href: apps/trace-processing/symbols.md
+            - name: Использование потоковой передачи
+              href: apps/trace-processing/streaming.md
+            - name: примеры
+              href: 'https://github.com/microsoft/eventtracing-processing-samples'
+            - name: Ссылка
+              href: apps/trace-processing/reference.md
     - name: Последние обновления документации
       href: apps/whats-new/latest-doc-updates.md
 - name: Создание решений с помощью Windows

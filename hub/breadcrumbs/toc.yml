@@ -16,6 +16,9 @@
             - name: Модернизация классических приложений
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/
+            - name: Обработка трассировок трассировки событий Windows в .NET
+              tocHref: /windows/apps/trace-processing/
+              topicHref: /windows/apps/trace-processing/overview
         - name: Среда разработки
           tocHref: /windows/dev-environment/
           topicHref: /windows/dev-environment/

@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: Документация по .NET TraceProcessing
+summary: .NET TraceProcessing — это пакет NuGet, обеспечивающий простой доступ к данным в файлах трассировки событий Windows (ETW).
+metadata:
+  title: Документация по .NET TraceProcessing
+  description: .NET TraceProcessing — это пакет NuGet, обеспечивающий простой доступ к данным в файлах трассировки событий Windows (ETW).
+  ms.prod: traceprocessor
+  ms.topic: landing-page
+  author: maiak
+  ms.author: maiak
+  ms.date: 02/20/2020
+  ms.openlocfilehash: e518ba18d21fce24f58b2dca6a28d3b48b40b06d
+  ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/26/2020
+  ms.locfileid: "77629125"
+landingContent:
+- title: Сведения о .NET TraceProcessing
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое .NET TraceProcessing?
+      url: overview.md
+- title: Приступая к работе
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Обработка первой трассировки
+      url: quickstart.md
+- title: Разработка
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Доступ к данным трассировки
+      url: tutorial.md
+    - text: Расширение TraceProcessor
+      url: extensibility.md
+    - text: Загрузка символов
+      url: symbols.md
+    - text: Использование потоковой передачи
+      url: streaming.md
+- title: примеры
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Поиск примера
+      url: https://github.com/microsoft/eventtracing-processing-samples
+- title: Ссылка
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Справочник по API
+      url: reference.md
