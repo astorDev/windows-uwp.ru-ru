@@ -5,18 +5,21 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: bf5f7a7c1bb007b7f1a19508fa0ee7bbaf298654
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
+ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629145"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77903291"
 ---
 # <a name="extend-traceprocessor"></a>Расширение Трацепроцессор
 
 Многие виды данных трассировки имеют встроенную поддержку в [трацепроцессор](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), но если у вас есть другие поставщики, которые вы хотели бы проанализировать (включая собственные поставщики), эти данные также доступны из трассировки в режиме реального времени при обработке.
 
-Например, вот простой способ получения списка идентификаторов поставщиков в трассировке:
+> [!NOTE]
+> Эта часть API находится на этапе предварительной версии и находится под активной разработкой. В будущих выпусках она может измениться.
+
+Например, вот простой способ получения списка идентификаторов поставщиков в трассировке.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -34,7 +37,7 @@ static void Run(ITraceProcessor trace)
 }
 ```
 
-В следующем примере показан упрощенный пользовательский источник данных:
+В следующем примере показан упрощенный пользовательский источник данных.
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...

@@ -5,14 +5,14 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 1283a6b183673cbfb0d3d27290fc24ae6b020302
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: bc2ec3035e097a8cab15b556d1b1793385b8aeb9
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629077"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705759"
 ---
-# <a name="process-event-tracing-for-windows-etw-traces-in-net"></a>Обработка трассировки событий Windows (ETW) в .NET
+# <a name="process-etw-traces-in-net"></a>Обработка трассировок трассировки событий Windows в .NET
 
 [Трассировка событий Windows (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal) — это мощная система сбора трассировки, встроенная в операционную систему Windows. Windows имеет глубокую интеграцию с ETW, включая данные о поведении системы в ядро для таких событий, как переключение контекста, выделение памяти, процесс создания и выхода, а также многое другое. Данные на уровне системы, доступные в трассировке событий Windows, прекрасно подходят для комплексного анализа производительности и других вопросов, требующих рассмотрения взаимодействия между многими компонентами в системе.
 
@@ -28,7 +28,7 @@ ms.locfileid: "77629077"
 
 Следующим шагом является [Обработка первой трассировки](quickstart.md).
 
-## <a name="in-this-section"></a>В этом разделе
+## <a name="related-topics"></a>Связанные разделы
 
 * [Доступ к данным трассировки](tutorial.md)
 * [Расширение Трацепроцессор](extensibility.md)
