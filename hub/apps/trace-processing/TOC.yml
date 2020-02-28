@@ -1,0 +1,19 @@
+- name: Документация по .NET TraceProcessing
+  href: index.yml
+  items:
+    - name: Обзор
+      href: overview.md
+    - name: Обработка первой трассировки
+      href: quickstart.md
+    - name: Получение доступа к данным трассировки
+      href: tutorial.md
+    - name: Расширение TraceProcessor
+      href: extensibility.md
+    - name: Отправка символов
+      href: symbols.md
+    - name: Использование потоковой передачи
+      href: streaming.md
+    - name: примеры
+      href: 'https://github.com/microsoft/eventtracing-processing-samples'
+    - name: Ссылка
+      href: reference.md

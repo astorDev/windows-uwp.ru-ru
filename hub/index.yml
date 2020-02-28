@@ -1,6 +1,6 @@
 ### YamlMime:Hub
-title: Документация по Windows
-summary: Сведения для разработчиков программного обеспечения, инженеров аппаратного обеспечения и специалистов по ИТ.
+title: Техническая документация по Windows
+summary: Сведения для разработчиков приложений, аппаратных средств и специалистов по ИТ.
 brand: windows
 metadata:
   title: Документация по Windows | Документация Майкрософт
@@ -9,61 +9,27 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 50a82a07d74e44746858e0800e2ff2007b5385e8
-  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
+  ms.openlocfilehash: 588fb1ddf7581867d705d531c3459a6962f07d56
+  ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72777258"
-highlightedContent:
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77903321"
+productDirectory:
   items:
-  - title: Получение Visual Studio и пакета SDK для Windows
-    itemType: download
-    url: https://developer.microsoft.com/windows/downloads
-  - title: Скачивание WDK
-    itemType: download
-    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
-  - title: Присоединяйтесь к программе предварительной оценки
-    itemType: overview
-    url: https://docs.microsoft.com/windows-insider
-  - title: Улучшение навыков
-    itemType: learn
-    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
-additionalContent:
-  sections:
-  - items:
-    - title: Разработка приложений
-      links:
-      - text: Создание первых приложений для Windows 10
-        url: https://docs.microsoft.com/windows/apps
-      - text: Добавление компонентов Windows 10 в приложения
-        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: Создание классических приложений
-        url: https://docs.microsoft.com/windows/apps/desktop/
-      - text: Разработка с помощью Python, Node.js и подсистемы Windows для Linux
-        url: https://docs.microsoft.com/windows/dev-environment/
-      - text: Поиск примеров кода
-        url: https://developer.microsoft.com/windows/samples
-    - title: Разработка аппаратного обеспечения
-      links:
-      - text: Изучение создания устройств
-        url: https://docs.microsoft.com/windows-hardware/get-started/index
-      - text: Разработка драйверов устройств
-        url: https://docs.microsoft.com/windows-hardware/drivers
-      - text: Создание образов Windows
-        url: https://docs.microsoft.com/windows-hardware/manufacture/
-      - text: Тестирование производительности и совместимости
-        url: https://docs.microsoft.com/windows-hardware/test
-      - text: Поиск примеров драйверов
-        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
-    - title: Администрирование ИТ-инфраструктуры
-      links:
-      - text: Настройка и развертывание Windows 10
-        url: https://docs.microsoft.com/windows/windows-10/
-      - text: Поиск сведений о выпуске Windows 10
-        url: https://docs.microsoft.com/windows/release-information/
-      - text: Управление Windows Server
-        url: https://docs.microsoft.com/windows-server/
-      - text: Приступая к работе с Microsoft Store для бизнеса
-        url: https://docs.microsoft.com/microsoft-store/
-  footer: '[Блоги](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [Сообщество разработчиков](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
+  - title: Разработчики приложений
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Проектирование, разработка, а также развертывание приложений и других решений для компьютеров и других устройств с Windows.
+    url: /windows/apps/
+  - title: Разработчики аппаратного обеспечения
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Проектирование, разработка, а также развертывание драйверов оборудования и устройств для компьютеров и других устройств с Windows.
+    url: https://docs.microsoft.com/windows-hardware/drivers/
+  - title: Windows 10 для ИТ-специалистов
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Оценка, планирование, развертывание, защита и администрирование устройств под управлением Windows 10.
+    url: https://docs.microsoft.com/windows/windows-10/
+  - title: Windows Server для ИТ-специалистов
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Создание и развертывание приложений, сети и веб-служб, подключенных к Интернету, в Windows Server.
+    url: https://docs.microsoft.com/windows-server/
