@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414062"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521225"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Участие в создании концептуальной документации для UWP
 
@@ -56,4 +56,4 @@ ms.locfileid: "67414062"
 
 Если вы хотите оставить отзыв о документации, но не вносить изменения самостоятельно, вы можете [Создать вопрос в общедоступном репозитории](https://github.com/MicrosoftDocs/windows-uwp/issues). Нажмите вкладку **Issues** (Вопросы), а затем нажмите кнопку **New issue** (Новый вопрос). Не забудьте указать заголовок раздела и URL-адрес страницы. Ваш вопрос будет передан членам группы документации UWP на рассмотрение.
 
-* Для внутренних проблем используйте инструмент [WDG Content Request Tool](https://aka.ms/pubrequest).
+* Для внутренних проблем используйте инструмент [WDG Content Request Tool](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx).

@@ -1,18 +1,17 @@
 ---
 title: Политики для Microsoft Store
 description: Продукты в Store должны соответствовать нашим стандартам сертификации, предоставлять пользователям по-настоящему удобные и привлекательные функции, а также соблюдать требования Store.
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258979"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607246"
 ---
 # <a name="microsoft-store-policies"></a>Политики для Microsoft Store
 
@@ -474,7 +473,7 @@ ms.locfileid: "74258979"
 ---
 <sup>1</sup> "Store", или "Microsoft Store", означает платформу, принадлежащую корпорации Майкрософт или управляемую ею, с тем или иным названием, через которую приложения могут предлагаться клиентам и приобретаться ими. Если не указано иное, термин "Microsoft Store" включает в себя Microsoft Store, Магазин Xbox, Microsoft Store для бизнеса и Microsoft Store для образования.
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>См. также статью
 
 - [Журнал изменений политик для Microsoft Store](store-policies-change-history.md)
 - [Политики и правила поведения при использовании Microsoft Store](store-policies-and-code-of-conduct.md)

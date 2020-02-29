@@ -1,18 +1,17 @@
 ---
 title: Политики и правила поведения для Microsoft Store
 description: В данный раздел включены политики для Microsoft Store и критерии оценки качества приложений, касающиеся приложений и содержимого Microsoft Store, а также правила поведения, которые должны соблюдать разработчики.
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 02/25/2020
 ms.topic: article
 keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: 9DA14ADF-B4FB-4EC8-8D63-4B9152476BE0
-ms.openlocfilehash: 624b40fd5980fe66bbdf538845d81082e91c5aec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a58ccb4ae9af163b84cc1f5b05a7b4784ac3749c
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826441"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607267"
 ---
 # <a name="store-policies-and-code-of-conduct"></a>Политики и правила поведения для Microsoft Store
 

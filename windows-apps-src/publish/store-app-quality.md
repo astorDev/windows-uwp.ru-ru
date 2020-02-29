@@ -1,18 +1,17 @@
 ---
 title: Качество приложений
 description: И пользователям, и разработчикам важно, чтобы приложения в Microsoft Store были удобными, приятными и полезными. Чтобы помочь разработчикам добиться этого, мы предоставляем обзор некоторых ключевых критериев оценки качества приложения.
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 07/25/2017
 ms.topic: article
 keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826421"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607251"
 ---
 # <a name="app-quality"></a>Качество приложений
 
@@ -86,7 +85,7 @@ ms.locfileid: "66826421"
 - Дополнительные сведения см. в статье [Привлечение клиентов](https://developer.microsoft.com/store/engage).
 
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>См. также статью
 
 - [Политики и правила поведения при использовании Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
