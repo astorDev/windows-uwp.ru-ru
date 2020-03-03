@@ -6,12 +6,12 @@ ms.date: 05/08/2019
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: ac779bf57e51b13051fa25293606daab05540fd1
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726027"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705779"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>Функции и технологии для приложений для Windows
 
@@ -87,6 +87,12 @@ Windows предоставляет множество способов для и
 |  UWP  |  Win32 (API Windows) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [Перечисление устройств](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[Получение сведений об аккумуляторе](/windows/uwp/devices-sensors/get-battery-info)<br/><br/>[Потоки и асинхронное программирование](/windows/uwp/threading-async/)<br/><br/>[Сетевые и веб-службы](/windows/uwp/networking/) | [Системные службы](/windows/desktop/system-services)<br/><br/>[Управление памятью](/windows/desktop/memory/memory-management)<br/><br/>[Управление питанием](/windows/desktop/power/power-management-portal)<br/><br/>[Процессы и потоки](/windows/desktop/procthread/processes-and-threads)<br/><br/>[Сеть и Интернет](/windows/desktop/networking)<br/><br/>[Сведения о системе Windows](/windows/desktop/sysinfo/windows-system-information) |  [Модель потоков](https://docs.microsoft.com/dotnet/framework/wpf/advanced/threading-model)<br/><br/>[Сетевое программирование в .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/)  |  [Информация о системе](https://docs.microsoft.com/dotnet/framework/winforms/advanced/system-information-and-windows-forms)<br/><br/>[Управление питанием](https://docs.microsoft.com/dotnet/framework/winforms/advanced/power-management-in-windows-forms)<br/><br/>[Сетевое программирование в .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/)<br/><br/>[Использование сети в приложениях Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/advanced/networking-in-windows-forms-applications)  |
+
+### <a name="debugging-and-performance"></a>Отладка и производительность
+
+|  UWP  |  Win32 (API Windows) |  WPF и Windows Forms  |
+|-------|----------------------|-------|-----------------|
+| [Средства отладки, тестирования и повышения производительности](/windows/uwp/debug-test-perf)<br/><br/>[Развертывание и отладка приложений UWP](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)<br/><br/>[Комплект сертификации приложений для Windows](/windows/uwp/debug-test-perf/windows-app-certification-kit)<br/><br/>[Производительность](/windows/uwp/debug-test-perf/performance-and-xaml-ui)| [Отладка и обработка ошибок](https://docs.microsoft.com/windows/win32/debugging-and-error-handling)<br/><br/>[Средства отладки для Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/)<br/><br/>[Трассировка событий Windows (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)<br/><br/>[API .NET TraceProcessing](/windows/apps/trace-processing/)<br/><br/>[TraceLogging](https://docs.microsoft.com/windows/win32/tracelogging/trace-logging-portal)<br/><br/>[Счетчики производительности](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal) |  [Отладка, трассировка и профилирование](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/)<br/><br/>[Трассировка и инструментирование приложений](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)<br/><br/>[Диагностика ошибок с использованием помощников по отладке управляемого кода ](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants)<br/><br/>[Профилирование во время выполнения](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/runtime-profiling)<br/><br/>[Счетчики производительности](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/performance-counters)<br/><br/>[Развертывание ClickOnce для форм Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)  |
 
 ### <a name="packaging-and-deployment"></a>Упаковка и развертывание
 

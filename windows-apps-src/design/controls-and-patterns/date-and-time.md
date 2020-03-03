@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e489aa8cbf8b63885f039847b291404393444e9
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 13901e044cbf6a14ac0ede6e9ed0f451859e49a1
+ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339385"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77629155"
 ---
 # <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
@@ -87,7 +87,7 @@ ms.locfileid: "71339385"
 
 ### <a name="time-picker"></a>Управляющий элемент выбора времени
 
-Элемент управления **TimePicker** используется для выбора одного значения времени (например, времени встречи или времени отъезда). Это статический отображаемый элемент, задаваемый пользователем или посредством программного кода. Он не обновляется для отображения текущего времени. 
+Элемент управления **TimePicker** используется для выбора одного значения времени (например, времени встречи или времени отъезда). Это статический отображаемый элемент, задаваемый пользователем или посредством программного кода. Он не обновляется для отображения текущего времени.
 
 Точка входа отображает выбранное время, и при выборе пользователем точки входа поверхность выбора разворачивается вертикально из середины, чтобы пользователь мог сделать выбор. Элемент выбора времени перекрывает другие элементы пользовательского интерфейса, но не вытесняет их.
 
@@ -110,10 +110,10 @@ ms.locfileid: "71339385"
 
 Элемент управления "Выбор времени" поддерживает все системы часов, определенные в классе [Windows.Globalization.ClockIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.ClockIdentifiers). Вы можете задать значение свойства [ClockIdentifier](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier), чтобы использовать 12- или 24-часовой формат отображения времени. Значение свойства имеет строковый тип, но следует использовать значения, соответствующие статическим строковым свойствам класса ClockIdentifiers. Эти способы перечислены ниже. TwelveHour (строка 12HourClock) и TwentyFourHour (строка 24HourClock). По умолчанию используется значение 12HourClock.
 
-
 ### <a name="datetime-and-calendar-values"></a>Значения DateTime и Calendar
 
-Объекты даты, используемые в элементах управления выбором даты и времени в XAML, имеют другое представление в зависимости от применяемого вами языка программирования. 
+Объекты даты, используемые в элементах управления выбором даты и времени в XAML, имеют другое представление в зависимости от применяемого вами языка программирования.
+
 - Языки C# и Visual Basic используют структуру [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset), которая предоставляется в .NET. 
 - Языки C++ и CX используют структуру [Windows::Foundation::DateTime](https://docs.microsoft.com/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime). 
 
@@ -121,15 +121,19 @@ ms.locfileid: "71339385"
 
 .NET также поддерживает тип [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime), который неявно преобразуется в [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. См. подробнее об отличиях между типами DateTime и DateTimeOffset в разделе "Примечания" в описании класса [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset).
 
-> **Примечание**&nbsp;&nbsp;Свойствам, которые принимают объекты даты в качестве значений, нельзя присвоить строку атрибута XAML, так как анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение [расширения разметки \{Binding\}](../../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
+> [!NOTE]
+> Свойствам, которые принимают объекты даты в качестве значений, нельзя присвоить строку атрибута XAML, так как анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение [расширения разметки \{Binding\}](../../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
-* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+## <a name="get-the-sample-code"></a>Получение примера кода
 
+- [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+- [Пример календаря](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
+- [Пример форматирования даты и времени](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
-**Разработчикам (XAML)**
+### <a name="for-developers-xaml"></a>Для разработчиков (XAML)
+
 - [Класс CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
 - [Класс CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
 - [Класс DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)

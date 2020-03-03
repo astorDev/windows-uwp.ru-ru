@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
-ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
+ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286944"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463766"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -27,17 +27,17 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![navigation example 1](images/nav/nav-1.svg)
+        ![Пример навигации 1](images/nav/nav-1.svg)
 
 Требовать от пользователей просматривать ряд страниц по порядку.
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
+        ![Пример навигации 2](images/nav/nav-2.svg)
 
 Создать меню, которое позволит пользователям переходить непосредственно к любой странице.
     :::column-end:::
     :::column:::
-        ![navigation example 3](images/nav/nav-3.svg)
+        ![Пример навигации 3](images/nav/nav-3.svg)
 
 Поместить все на одной странице и предоставить механизмы фильтрации для просмотра содержимого.
     :::column-end:::
@@ -67,16 +67,16 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![пример исполнения](images/nav/do.svg)
 
-        ![navview good](images/nav/navview-good.svg)
+        ![Хорошее представление навигации](images/nav/navview-good.svg)
 
 Представляйте элементы навигации в знакомом меню навигации.
     :::column-end:::
     :::column:::
-        ![don't example](images/nav/dont.svg)
+        ![Пример того, как не надо делать](images/nav/dont.svg)
 
-        ![navview bad](images/nav/navview-bad.svg)
+        ![Плохое представление навигации](images/nav/navview-bad.svg)
 
 Не перегружайте пользователя различными параметрами навигации.
     :::column-end:::
@@ -106,10 +106,10 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
+        ![Страницы, упорядоченные в виде плоской структуры](images/nav/flat-lateral-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Flat/lateral
+        ### <a name="flatlateral"></a>Плоская или боковая
 
 В плоской или боковой структуре страницы располагаются рядом друг с другом. Вы можете переходить от одной страницы к другой в любом порядке.
 
@@ -125,10 +125,10 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
+        ![Иерархическая организация страниц](images/nav/hierarchical-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Hierarchical
+        ### <a name="hierarchical"></a>Иерархическая
 
 В иерархической структуре страницы организованы в древовидную структуру. У каждой дочерней страницы имеется одна родительская, но одна родительская страница может иметь одну или несколько дочерних. Чтобы попасть на дочернюю страницу, сначала необходимо обратиться к родительской.
 
@@ -145,10 +145,10 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![an app with a hybrid structure](images/nav/combining-structures.svg)
+        ![приложение с гибридной структурой](images/nav/combining-structures.svg)
     :::column-end:::
     :::column span="2":::
-        ### Combining structures
+        ### <a name="combining-structures"></a>Объединение структур
 
 Вам не нужно выбирать какую-то конкретную структуру. Многие хорошо разработанные приложения одновременно используют плоскую и иерархическую структуры. В приложении могут использоваться плоские структуры для страниц верхнего уровня, которые можно просматривать в любом порядке, и иерархические структуры для страниц, которые имеют более сложные связи.
 
@@ -165,39 +165,51 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![Frame image](images/nav/thumbnail-frame.svg)
+        ![Изображение кадра](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Кадр**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 С некоторыми исключениями любое приложение, которое состоит из нескольких страниц, использует кадры. Как правило, приложение имеет главную страницу, содержащую кадр, и элемент первичной навигации, например элемент управления представлением навигации. Когда пользователь выбирает страницу, кадр загружает и отображает ее.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![Вкладки и изображение сводки](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**Верхняя панель навигации**](../controls-and-patterns/navigationview.md)
 
-Отображают горизонтальный список ссылок на страницы одного уровня. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) реализует шаблоны вкладок и верхней панели навигации.
+Отображают горизонтальный список ссылок на страницы одного уровня. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) реализует шаблоны верхней панели навигации.
         
 Используйте верхнюю панель навигации, если:
 
 - вы хотите отобразить все параметры навигации на экране;
 - вам требуется больше места для содержимого приложения;
 - значки не четко описывают категории навигации.
-        
-Используйте вкладки, если:
-
-- вы хотите сохранить историю навигации и состояние страницы;
-- предполагается, что пользователи будут часто переключаться между страницами.
 
 :::row-end:::
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![Вкладки и изображение сводки](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    :::column span="2":::
+        [**Вкладки**](../controls-and-patterns/tab-view.md)
+
+Отображает горизонтальный набор вкладок и соответствующее содержимое. Элементы управления [TabView](../controls-and-patterns/tab-view.md) удобно использовать, чтобы отображать несколько страниц (или документов). С их помощью пользователь может изменять порядок вкладок, а также открывать и закрывать их.
+    
+Используйте вкладки, если:
+
+- пользователи должны иметь возможность динамически открывать, закрывать или переупорядочивать вкладки;
+- предполагается, что одновременно может быть открыто большое количество вкладок;
+- предполагается, что пользователи смогут легко перемещать вкладки между окнами в приложении, которое использует вкладки, как и другие веб-браузеры, например Microsoft Edge.
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+         ![Вкладки и изображение сводки](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
         :::column span="2":::
     [**Сводка**](../controls-and-patterns/pivot.md)
@@ -213,10 +225,10 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![navview image](images/nav/thumbnail-navview.svg)
+        ![Изображение представления навигации](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**Левая панель навигации**](../controls-and-patterns/navigationview.md)
 
 Отображает вертикальный список ссылок на страницы верхнего уровня. Используется, когда:
         
@@ -228,10 +240,10 @@ ms.locfileid: "67286944"
         
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![Изображение с основными сведениями](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**Основные и подробные сведения**](../controls-and-patterns/master-details.md)
 
 Отображает список (основное представление) элементов. При выборе элемента отображается соответствующая ему страница в разделе сведений. Используется, когда:
         
@@ -243,10 +255,10 @@ ms.locfileid: "67286944"
 
 :::row:::
     :::column:::
-        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Гиперссылки и изображения кнопок](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
+        [**Гиперссылки**](../controls-and-patterns/hyperlinks.md)
 
 Встроенные элементы навигации могут отображаться в содержимом страницы. В отличие от других элементов навигации, которые должны сохранять единообразие на страницах, элементы управления, встроенные в содержимое, различаются от страницы к странице.
 :::row-end:::
