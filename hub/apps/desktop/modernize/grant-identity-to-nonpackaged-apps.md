@@ -1,19 +1,19 @@
 ---
 Description: Узнайте, как предоставить удостоверение для неупакованных классических приложений, чтобы в этих приложениях можно было использовать современные функции Windows 10.
 title: Предоставление идентификаторов для неупакованных классических приложений
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: Windows 10, Настольный компьютер, пакет, удостоверение, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
+ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521355"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78222030"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Предоставление идентификаторов для неупакованных классических приложений
 
@@ -137,7 +137,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Добавление метаданных удостоверения пакета в манифест приложения для настольных систем
 
-Кроме того, необходимо включить в классическое приложение [Манифест параллельного приложения](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) и включить элемент **\<msix\>** с атрибутами, которые объявляют атрибуты удостоверения приложения. Значения этих атрибутов используются операционной системой для определения удостоверения приложения при запуске исполняемого файла.
+Кроме того, необходимо включить в классическое приложение [Манифест параллельного приложения](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) и включить элемент [&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) с атрибутами, которые объявляют атрибуты удостоверения приложения. Значения этих атрибутов используются операционной системой для определения удостоверения приложения при запуске исполняемого файла.
 
 В следующем примере показан параллельный манифест приложения с элементом **\<msix\>** .
 
