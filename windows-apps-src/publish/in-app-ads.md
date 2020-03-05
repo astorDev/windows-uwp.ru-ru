@@ -4,16 +4,19 @@ title: Реклама в приложении
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 03/25/2019
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e12641695dd72cddcfb6b51f6cd2f20fa66ddf41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258998"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290348"
 ---
 # <a name="in-app-ads"></a>Реклама в приложении
+
+>[!WARNING]
+> Начиная с 1 июня 2020 г. платформа Microsoft AD монетизацию для приложений Windows UWP будет выключена. [Подробнее](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Используйте страницу **монетизации** &gt; **в приложении ADS** в [центре партнеров](https://partner.microsoft.com/dashboard) для создания и управления единицами AD для:
 
@@ -147,7 +150,7 @@ ms.locfileid: "74258998"
 | Revcontent | Бразилия, Великобритания, Германия, Испания, Италия, Канада, Соединенные Штаты, Франция и Япония  |
 | Smaato | Бразилия, Великобритания, Германия, Испания, Италия, Канада, Соединенные Штаты, Франция и Япония |
 | smartclip | Австрия, Бельгия, Дания, Германия, Италия, Нидерланды, Норвегия, Финляндия, Швейцария и Швеция  |
-| ундертоне | США |
+| ундертоне | Соединенные Штаты |
 
 <span id="coppa" />
 
