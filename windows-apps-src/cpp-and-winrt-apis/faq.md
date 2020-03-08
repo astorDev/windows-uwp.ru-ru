@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ec2c5a05e7c4e9309311fa22ad863d06597a53
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254993"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853415"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -71,10 +71,10 @@ ms.locfileid: "74254993"
 
 Чтобы создать локально реализуемый экземпляр среды выполнения, который *не* требует универсального создания, воспользуйтесь инструкциями из статьи [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md).
 
-## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, то каким образом?
+## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, то каким образом?
 Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки применения вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) или их обоих. **IClosable::Close** можно вызывать произвольное число раз.
 
-## <a name="do-i-need-to-call-iclosablecloseuwpapiwindowsfoundationiclosableclose-on-runtime-classes-that-i-consume"></a>Нужно ли вызывать [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) для классов среды выполнения, которые я использую?
+## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>Нужно ли вызывать [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) для классов среды выполнения, которые я использую?
 **IClosable** существует для поддержки языков, в которых отсутствует детерминированная финализация. Таким образом, не следует вызывать метод **IClosable::Close** из C++/WinRT, за исключением очень редких случаев состязания завершения работы или полувзаимной блокировки. К примеру, если вы используете типы **Windows.UI.Composition**, может возникнуть ситуация, в которой вам понадобится удалить объекты в установленной последовательности, а не оставлять задачу их уничтожения программе-оболочке C++/WinRT.
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>Можно ли использовать LLVM/Clang для компиляции с C++/WinRT?
