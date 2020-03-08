@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329577"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852497"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -79,6 +79,6 @@ C++/WinRT работает лучше и создает двоичные фай�
 ## <a name="important-apis"></a>Важные API
 * [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Библиотека шаблонов C++ для среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

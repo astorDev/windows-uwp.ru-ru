@@ -4,14 +4,14 @@ title: Настройка счета для выплат и налоговых �
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294833"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853499"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Настройка счета для выплат и налоговых форм
 
