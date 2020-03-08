@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72586720"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853271"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
 
@@ -304,7 +304,7 @@ void GetSample(_Out_ ISample** pp);
 static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
 ```
 
-| Операция | Способ выполнения | Заметки |
+| Операция | Способ выполнения | Примечания |
 |-|-|-|
 | Извлечение **ISample\*** из **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* по-прежнему является владельцем объекта. |
 | Отсоединение **ISample\*** от **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* больше не является владельцем объекта. |
@@ -333,7 +333,7 @@ GUID abiguid;
 
 ## <a name="interoperating-with-the-abis-hstring"></a>Взаимодействие с HSTRING ABI
 
-В следующей таблице показано, как выполнять преобразования **winrt::hstring** и [ **HSTRING**](/windows/win32/winrt/hstring), а также другие операции. Предполагается, что в коде используются следующие объявления.
+В следующей таблице показано, как выполнять преобразования **winrt::hstring** и [**HSTRING**](/windows/win32/winrt/hstring), а также другие операции. Предполагается, что в коде используются следующие объявления.
 
 ```cppwinrt
 winrt::hstring s;
@@ -342,7 +342,7 @@ HSTRING h;
 void GetString(_Out_ HSTRING* value);
 ```
 
-| Операция | Способ выполнения | Заметки |
+| Операция | Способ выполнения | Примечания |
 |-|-|-|
 | Извлечение **HSTRING** из **hstring** | `h = static_cast<HSTRING>(get_abi(s));` | *s* по-прежнему является владельцем строки. |
 | Отсоединение **HSTRING** от **hstring** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* больше не является владельцем строки. |
