@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70304521"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853289"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя*. В этом разделе показано, как реализовывать отслеживаемые свойства в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и привязывать к ним элементы управления XAML (вводные сведения см. в разделе [Привязка данных](/windows/uwp/data-binding)).
@@ -352,6 +352,6 @@ runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
 * [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)
