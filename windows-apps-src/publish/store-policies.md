@@ -7,18 +7,18 @@ keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
-ms.translationtype: HT
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77607246"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853450"
 ---
 # <a name="microsoft-store-policies"></a>Политики для Microsoft Store
 
 
-**Версия документа: 7.12**
+**Версия документа: 7,12**
 
-**Дата документа: 1 октября 2019 г.**
+**Дата документа: 1 октября 2019 г.**
 
 > [!NOTE]
 > Сводку последних изменений этого соглашения см. в разделе [Журнал изменений](store-policies-change-history.md).
@@ -38,7 +38,7 @@ ms.locfileid: "77607246"
 Если вы хотите сообщить свой отзыв о данных политиках, оставьте соответствующий комментарий на [нашем форуме](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). Мы рассматриваем все комментарии.
 
 
-## <a name="table-of-contents"></a>Содержание
+## <a name="table-of-contents"></a>Cодержание
 
 **Политики продуктов:**
 
@@ -473,7 +473,7 @@ ms.locfileid: "77607246"
 ---
 <sup>1</sup> "Store", или "Microsoft Store", означает платформу, принадлежащую корпорации Майкрософт или управляемую ею, с тем или иным названием, через которую приложения могут предлагаться клиентам и приобретаться ими. Если не указано иное, термин "Microsoft Store" включает в себя Microsoft Store, Магазин Xbox, Microsoft Store для бизнеса и Microsoft Store для образования.
 
-### <a name="see-also"></a>См. также статью
+### <a name="see-also"></a>См. также:
 
 - [Журнал изменений политик для Microsoft Store](store-policies-change-history.md)
 - [Политики и правила поведения при использовании Microsoft Store](store-policies-and-code-of-conduct.md)
