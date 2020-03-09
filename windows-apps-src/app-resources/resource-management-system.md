@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598629"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853129"
 ---
 # <a name="resource-management-system"></a>Система управления ресурсами
 Система управления ресурсами имеет функции, работающие во время сборки и во время выполнения. Во время построения система создает индекс всех различных вариантов ресурсов, которые упакованы с вашим приложением. Этот индекс называется индексом ресурсов пакета или PRI и также включается в пакет вашего приложения. Во время выполнения система определяет текущие параметры пользователя и компьютера, проверяет информацию в PRI и автоматически загружает ресурсы, которые лучше всего подходят для этих параметров.
@@ -24,7 +24,7 @@ ms.locfileid: "57598629"
 - Файл resources.pri, расположенный в корне каждого пакета, автоматически загружается при создании экземпляра [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live).
 - Создавать и выгружать PRI-файлы можно с помощью [MakePRI.exe](compile-resources-manually-with-makepri.md).
 - Для разработки приложений MakePRI.exe обычно не требуется, так как он уже интегрирован в рабочий процесс компиляции Visual Studio. И Visual Studio поддерживает редактирование файлов PRI в выделенном пользовательском интерфейсе. Однако ваши локализаторы и средства, которые они используют, могут опираться на MakePRI.exe.
-- Каждый PRI-файл содержит именованный набор ресурсов — карту ресурсов. Во время загрузки PRI-файла из пакета имя карты ресурсов сопоставляется с именем идентификатора пакета.
+- Каждый PRI-файл содержит именованную коллекцию ресурсов, которая называется картой ресурсов. Во время загрузки PRI-файла из пакета имя карты ресурсов сопоставляется с именем идентификатора пакета.
 - PRI-файлы содержат только данные, поэтому они не используют переносимый исполняемый формат (PE). Эти файлы специально предназначены для хранения данных в формате ресурсов для Windows. Они заменяют ресурсы, которые в модели приложений Microsoft Win32 содержатся в библиотеках DLL.
 - Ограничение на размер PRI-файла — 64 КБ.
 
@@ -62,9 +62,9 @@ API [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) проз
 
 ## <a name="important-apis"></a>Важные API
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
-* [Диспетчер ресурсов](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
+* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Загрузка изображений и ресурсов, адаптированных по масштабу, теме, высокой контрастности и другим аспектам](images-tailored-for-scale-theme-contrast.md)
