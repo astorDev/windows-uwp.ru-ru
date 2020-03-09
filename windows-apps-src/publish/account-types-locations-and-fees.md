@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, учетная запись разработчика, отдельное лицо, компания, бизнес
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260055"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853498"
 ---
 # <a name="account-types-locations-and-fees"></a>Типы, доступность и стоимость учетных записей
 
@@ -93,14 +93,14 @@ ms.locfileid: "74260055"
 | Кот-д'Ивуар                     | 19 USD              | 99 USD           |  
 | Хорватия                           | 107 HRK             | 500 HRK          |  
 | Кипр                            | 14 EUR              | 75 EUR           |  
-| Чешская республика                    | 365 CZK             | 1720 CZK         |  
+| Чешская Республика                    | 365 CZK             | 1720 CZK         |  
 | Дания                           | 106 DKK             | 530 DKK          |  
 | Джибути                          | 19 USD              | 99 USD           | 
 | Доминика                          | 19 USD              | 99 USD           | 
-| Доминиканская Республика                | 19 USD              | 99 USD           |  
+| Доминиканская республика                | 19 USD              | 99 USD           |  
 | Эквадор                           | 19 USD              | 99 USD           |  
 | Египет                             | 133 EGP             | 600 EGP          |  
-| Эль-Сальвадор                       | 19 USD              | 99 USD           |  
+| Сальвадор                       | 19 USD              | 99 USD           |  
 | Экваториальная Гвинея                 | 19 USD              | 99 USD           |  
 | Эритрея                           | 19 USD              | 99 USD           |  
 | Эстония                           | 14 EUR              | 75 EUR           |  
@@ -108,11 +108,11 @@ ms.locfileid: "74260055"
 | Фарерские острова                     | 19 USD              | 99 USD           |  
 | Фиджи                              | 19 USD              | 99 USD           |  
 | Финляндия                           | 14 EUR              | 75 EUR           |  
-| Франция                            | 14 EUR              | 75 EUR           |  
+| France                            | 14 EUR              | 75 EUR           |  
 | Габон                             | 19 USD              | 99 USD           |  
 | Гамбия                        | 19 USD              | 99 USD           |  
-| Грузия                           | 19 USD              | 99 USD           |  
-| Германия                           | 14 EUR              | 75 EUR           |  
+| Джорджия                           | 19 USD              | 99 USD           |  
+| Germany                           | 14 EUR              | 75 EUR           |  
 | Гана                             | 19 USD              | 99 USD           |  
 | Греция                            | 14 EUR              | 75 EUR           |  
 | Гренландия                         | 19 USD              | 99 USD           |  
@@ -123,7 +123,7 @@ ms.locfileid: "74260055"
 | Гайана                            | 19 USD              | 99 USD           |  
 | Гаити                             | 19 USD              | 99 USD           |  
 | Гондурас                          | 19 USD              | 99 USD           |  
-| Гонконг (специальный административный район)                     | 147 HKD             | 760 HKD          |  
+| Гонконг (САР)                     | 147 HKD             | 760 HKD          |  
 | Венгрия                           | 4237 HUF            | 18 800 HUF        |  
 | Исландия                           | 2319 ISK            | 11 929 ISK        |
 | Индия                             | 1201 INR            | 4500 INR         |  
@@ -138,7 +138,7 @@ ms.locfileid: "74260055"
 | Казахстан                        | 2897 KZT            | 15 038 KZT        |  
 | Кения                             | 1900 KES            | 9999 KES         |  
 | Кирибати                          | 19 USD              | 99 USD           |  
-| Корея                             | 21 216 KRW           | 108 000 KRW       |  
+| Korea                             | 21 216 KRW           | 108 000 KRW       |  
 | Кувейт                            | 5 KWD               | 28 KWD           |  
 | Киргизия                        | 19 USD              | 99 USD           |  
 | Лаос                              | 19 USD              | 99 USD           |  
@@ -208,14 +208,14 @@ ms.locfileid: "74260055"
 | Словения                          | 14 EUR              | 75 EUR           |  
 | Соломоновы Острова                   | 19 USD              | 99 USD           |  
 | Сомали                           | 19 USD              | 99 USD           |  
-| Южно-Африканская Республика                      | 193 ZAR             | 700 ZAR          |  
+| Южная Африка                      | 193 ZAR             | 700 ZAR          |  
 | Испания                             | 14 EUR              | 75 EUR           |  
 | Шри-Ланка                         | 19 USD              | 99 USD           |  
 | Суринам                          | 19 USD              | 99 USD           |  
 | Свазиленд                         | 19 USD              | 99 USD           |  
 | Швеция                            | 123 SEK             | 700 SEK          |  
 | Швейцария                       | 17 CHF              | 90 CHF           |  
-| Тайвань (Китай)                            | 568 TWD             | 2840 TWD         |  
+| Тайвань                            | 568 TWD             | 2840 TWD         |  
 | Таджикистан                        | 19 USD              | 99 USD           |  
 | Танзании                          | 19 USD              | 99 USD           |  
 | Таиланд                          | 601 THB             | 3000 THB         |  
@@ -231,7 +231,7 @@ ms.locfileid: "74260055"
 | Украина                           | 156 UAH             | 800 UAH          |  
 | ОАЭ              | 19 USD              | 99 USD           |  
 | Соединенное Королевство                    | 12 GBP              | 65 GBP           |  
-| США                     | 19 USD              | 99 USD           |  
+| Соединенные Штаты                     | 19 USD              | 99 USD           |  
 | Уругвай                           | 19 USD              | 99 USD           |  
 | Узбекистан                        | 19 USD              | 99 USD           |  
 | Вануату                           | 19 USD              | 99 USD           |  

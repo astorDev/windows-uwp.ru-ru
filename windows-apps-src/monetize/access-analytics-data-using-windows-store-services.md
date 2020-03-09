@@ -8,11 +8,11 @@ keywords: windows 10, uwp, службы Store, API аналитики для Mi
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
-ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954068"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853361"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -30,7 +30,7 @@ ms.locfileid: "74954068"
 
 Перед тем как начать писать код для вызова API аналитики для Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть катало Azure AD. В противном случае вы можете [создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо связать приложение Azure AD с учетной записью центра партнеров, получить идентификатор клиента и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в API аналитики для Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -50,7 +50,7 @@ ms.locfileid: "74954068"
 
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>Шаг 2. Получение маркера доступа Azure AD
 
-Перед тем как можно будет вызвать любой из методов в API аналитики для Microsoft Store, сначала необходимо получить маркер доступа Azure AD и передать его в заголовок **Авторизация** каждого метода в API. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера вы можете обновить его, чтобы дальше использовать в последующих вызовах к API.
+Перед тем как можно будет вызвать любой из методов в API аналитики для Microsoft Store, сначала необходимо получить маркер доступа Azure AD и передать его в заголовок **Авторизация** каждого метода в API. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия маркера вы можете обновить его, чтобы дальше использовать в последующих вызовах к API.
 
 Для получения маркера доступа следуйте инструкциям в разделе [Вызовы между службами с помощью учетных данных клиентов](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), чтобы отправить HTTP-запрос POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
@@ -73,7 +73,7 @@ grant_type=client_credentials
 
 ## <a name="step-3-call-the-microsoft-store-analytics-api"></a>Шаг 3. Вызов API аналитики для Microsoft Store
 
-После получения маркера доступа Azure AD вы можете вызвать API аналитики для Microsoft Store. Необходимо передать маркер доступа в заголовок **Authorization** каждого метода.
+После получения маркера доступа Azure AD вы можете вызвать API аналитики для Microsoft Store. Необходимо передать токен доступа в заголовок **Authorization** каждого метода.
 
 ### <a name="methods-for-uwp-apps-and-games"></a>Методы для приложений и игр UWP
 Следующие методы доступны для приобретения приложений и игр и дополнительных приобретений. 
@@ -99,9 +99,9 @@ grant_type=client_credentials
 
 | Сценарий       | Методы      |
 |---------------|--------------------|
-| Установки |  <ul><li>[Получение установок для настольных приложений](get-desktop-app-installs.md)</li></ul> |
+| Установка... |  <ul><li>[Получение установок для настольных приложений](get-desktop-app-installs.md)</li></ul> |
 | Blocks |  <ul><li>[Получение блоков обновления для классического приложения](get-desktop-block-data.md)</li><li>[Получение сведений о блоке обновления для классического приложения](get-desktop-block-data-details.md)</li></ul> |
-| Ошибки приложений |  <ul><li>[Получение данных отчетов об ошибках для приложения для настольных систем](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении для настольных систем](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека для ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачайте CAB-файл для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| Ошибки приложений. |  <ul><li>[Получение данных отчетов об ошибках для приложения для настольных систем](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении для настольных систем](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека для ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачайте CAB-файл для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 | Аналитика | <ul><li>[Получение данных аналитики для настольного приложения](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
