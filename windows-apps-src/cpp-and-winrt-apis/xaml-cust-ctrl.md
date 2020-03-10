@@ -7,18 +7,18 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom,
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
-ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578174"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853412"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Создание пользовательских (на основе шаблона) элементов управления XAML с помощью C++/WinRT
 
 > [!IMPORTANT]
 > Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md)и [Создание API-интерфейсов в C++/WinRT](author-apis.md).
 
-Одним из наиболее мощных компонентов универсальной платформы Windows (UWP) является гибкость, которую обеспечивает стек пользовательского интерфейса (UI), чтобы создать пользовательские элементы управления в соответствии с типом [ **элемента управления**](/uwp/api/windows.ui.xaml.controls.control) XAML. Платформа пользовательского интерфейса XAML предоставляет функции, такие как [пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties), [присоединенные свойства](/windows/uwp/xaml-platform/custom-attached-properties) и [шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates), которые упрощают создание многофункциональных и настраиваемых элементов управления. В этом разделе рассматриваются этапы создания пользовательского (шаблонного) элемента управления с помощью C++/WinRT.
+Одним из наиболее мощных компонентов универсальной платформы Windows (UWP) является гибкость, которую обеспечивает стек пользовательского интерфейса (UI), чтобы создать пользовательские элементы управления в соответствии с типом [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control) XAML. Платформа пользовательского интерфейса XAML предоставляет функции, такие как [пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties), [присоединенные свойства](/windows/uwp/xaml-platform/custom-attached-properties) и [шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates), которые упрощают создание многофункциональных и настраиваемых элементов управления. В этом разделе рассматриваются этапы создания пользовательского (шаблонного) элемента управления с помощью C++/WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Создайте пустое приложение (BgLabelControlApp)
 Начните с создания проекта в Microsoft Visual Studio. Создайте проект **Пустое приложение (C++/WinRT)** и назовите его *BgLabelControlApp*. В следующем разделе этой статьи, вы будете перенаправлены, чтобы создать проект (не создавайте до тех пор).
@@ -113,7 +113,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 В этом пошаговом руководстве мы не будем использовать **OnLabelChanged**. Но здесь все происходит таким образом, что вы можете увидеть, как зарегистрировать свойство зависимости с помощью обратного вызова с измененным свойством. Реализация **OnLabelChanged** также демонстрирует, как получить производный тип проекции от базового (в данном случае базовый тип проекции **DependencyObject**). В ней также показано, как потом получить указатель на тип, реализующий тип проекции. Вторая операция естественно может быть доступной только в проекте, который реализует тип проекции (то есть проект, реализующий класс среды выполнения).
 
 > [!NOTE]
-> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) в свойстве зависимости измененного обработчика события выше, вместо [ **winrt::get_ SELF**](/uwp/cpp-ref-for-winrt/get-self).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) в свойстве зависимости измененного обработчика события выше, вместо [**winrt::get_ SELF**](/uwp/cpp-ref-for-winrt/get-self).
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>Спроектируйте для **BgLabelControl** стиль по умолчанию
 
@@ -142,7 +142,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 </ResourceDictionary>
 ```
 
-В этом случае единственным свойством, которое задает стиль по умолчанию является шаблон элемента управления. Шаблон состоит из квадрата (фон которого привязан к свойству **Фон**, который имеет все экземпляры типа [ **элементов управления**](/uwp/api/windows.ui.xaml.controls.control) XAML) и текстового элемента (текст которого привязан к свойству зависимости **BgLabelControl::Label**).
+В этом случае единственным свойством, которое задает стиль по умолчанию является шаблон элемента управления. Шаблон состоит из квадрата (фон которого привязан к свойству **Фон**, который имеет все экземпляры типа [**элементов управления**](/uwp/api/windows.ui.xaml.controls.control) XAML) и текстового элемента (текст которого привязан к свойству зависимости **BgLabelControl::Label**).
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>Добавьте экземпляр **BgLabelControl** на главную страницу пользовательского интерфейса
 
@@ -167,7 +167,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 ## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>Реализуя *переопределяемые* функции, такие как **MeasureOverride** и **OnApplyTemplate**
 
-Вы получаете пользовательский элемент управления из класса среды выполнения [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control), который в дальнейшем сам является производным от классов базовой среды выполнения. Здесь также есть переопределяемые методы **элемента управления**, [ **FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement), и [ **UIElement** ](/uwp/api/windows.ui.xaml.uielement), которые можно переопределить в производном классе. Этот пример кода демонстрирует, как это сделать.
+Вы получаете пользовательский элемент управления из класса среды выполнения [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control), который в дальнейшем сам является производным от классов базовой среды выполнения. Здесь также есть переопределяемые методы **элемента управления**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement), и [**UIElement**](/uwp/api/windows.ui.xaml.uielement), которые можно переопределить в производном классе. Этот пример кода демонстрирует, как это сделать.
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
@@ -194,6 +194,6 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [Класс FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
 * [Класс UIElement](/uwp/api/windows.ui.xaml.uielement)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties)

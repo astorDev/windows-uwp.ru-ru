@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проецируемый, проекция, обработка, событие, делегат
 ms.localizationpriority: medium
 ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270106"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853413"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 
@@ -275,7 +275,7 @@ winrt::hstring f(ListView listview)
 * [Функция winrt::implements::get_weak](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [Функция winrt::implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Создание событий в C++/WinRT](author-events.md)
 * [Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT](concurrency.md)
 * [Сильные и слабые ссылки в C++/WinRT](weak-references.md)
