@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0066abb2a6eb15f1d31aaf930ed2c0f0faf81a
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372717"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256177"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT
 
@@ -21,7 +21,9 @@ ms.locfileid: "68372717"
 
 ## <a name="create-a-blank-app-hellowinuicppwinrt"></a>Создание пустого приложения (HelloWinUICppWinRT)
 
-В Visual Studio создайте проект с помощью шаблона проекта **Пустое приложение (C++/WinRT)** и назовите его *HelloWinUICppWinRT*.
+В Visual Studio создайте проект с помощью шаблона проекта **Пустое приложение (C++/WinRT)** . Убедитесь, что вы используете шаблон **(C++/WinRT)** , а не **(Универсальное приложение для Windows)** .
+
+Задайте для нового проекта имя *HelloWinUICppWinRT* и (чтобы структура папок соответствовала структуре, приведенной в руководстве) снимите флажок **Поместить решение и проект в одном каталоге**.
 
 ## <a name="install-the-microsoftuixaml-nuget-package"></a>Установка пакета Microsoft.UI.Xaml NuGet
 
@@ -39,7 +41,7 @@ ms.locfileid: "68372717"
 
 ## <a name="add-a-winui-control-to-mainpage"></a>Добавление элемента управления WinUI в MainPage
 
-Откройте `MainPage.xaml`. В открывающем теге **Application** есть объявления пространств имен XML. Добавьте `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"` объявления пространства имен XML. Затем вставьте следующую разметку между открывающим и закрывающим тегами **Page**, чтобы перезаписать существующий элемент **StackPanel**.
+Откройте `MainPage.xaml`. В открывающем теге **Page** есть объявления пространств имен XML. Добавьте `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"` объявления пространства имен XML. Затем вставьте следующую разметку между открывающим и закрывающим тегами **Page**, чтобы перезаписать существующий элемент **StackPanel**.
 
 ```xaml
 <muxc:NavigationView PaneTitle="Welcome">
@@ -47,11 +49,11 @@ ms.locfileid: "68372717"
 </muxc:NavigationView>
 ```
 
-## <a name="edit-mainpageh-and-cpp-as-necessary"></a>Изменение MainPage.h и .cpp (при необходимости)
+## <a name="edit-mainpagecpp-and-h-as-necessary"></a>При необходимости измените MainPage.cpp и .h.
 
-Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Чтобы поместить эти файлы с заголовками в свой проект и чтобы ссылки на эти новые типы работали, нужно включить такие файлы в проект.
+В `MainPage.cpp` удалите код внутри реализации **MainPage::ClickHandler**, так как *myButton* больше не находится в разметке XAML.
 
-Поэтому в `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже. Если вам нужно использовать WinUI из нескольких страниц XAML, можно перейти к файлу предкомпилированных заголовков (обычно это `pch.h`) и включить в нем требуемые файлы.
+В `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже. Если вам нужно использовать WinUI из нескольких страниц XAML, можно перейти к файлу предкомпилированных заголовков (обычно это `pch.h`) и включить в нем требуемые файлы.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -59,11 +61,13 @@ ms.locfileid: "68372717"
 #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
 ```
 
-И, наконец, в `MainPage.cpp` удалите код внутри реализации **MainPage::ClickHandler**, так как *MyButton* больше не находится в разметке XAML.
+Теперь создайте проект.
 
-Теперь выполните сборку и запустите проект.
+Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) и создаете проект, средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Если вы выполнили инструкции из руководства, теперь у вас должна быть папка `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Изменения, внесенные в `MainPage.h` выше, приводят к тому, что эти файлы заголовков проекции включаются в проект. И это требуется для разрешения ссылок на типы в пакете NuGet.
+
+Теперь вы можете запустить проект.
 
 ![Снимок экрана: простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT](images/winui.png)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Начало работы с библиотекой пользовательского интерфейса Windows](/uwp/toolkits/winui/getting-started)
