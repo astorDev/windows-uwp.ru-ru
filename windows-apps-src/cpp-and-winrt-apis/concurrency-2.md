@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816672"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853411"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT
 
@@ -458,7 +458,7 @@ int main()
 
 Выполнение отмены, конечно же, происходит при приостановке соподпрограммы. Соподпрограмма будет проверять наличие отмены только при возобновлении работы или выполнении другой операции `co_await`. Проблема заключается в потенциально слишком большой задержке при отмене.
 
-Однако есть другой вариант — выполнить явный опрос на отмену в пределах соподпрограммы. Обновите приведенный выше пример указанным ниже кодом. В этом примере **ExplicitCancellationAsync** извлекает объект, возвращенный функцией [ **winrt::get_cancellation_token** ](/uwp/cpp-ref-for-winrt/get-cancellation-token), и использует его, чтобы периодически проверять, была ли отменена соподпрограмма. До тех пор, пока соподпрограмма не отменена, она выполняется в бесконечном цикле; после отмены, цикл и функция завершаются как обычно. Результат будет таким же, как и для предыдущего примера, но завершение работы осуществляется явным образом и контролируется.
+Однако есть другой вариант — выполнить явный опрос на отмену в пределах соподпрограммы. Обновите приведенный выше пример указанным ниже кодом. В этом примере **ExplicitCancellationAsync** извлекает объект, возвращенный функцией [**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token), и использует его, чтобы периодически проверять, была ли отменена соподпрограмма. До тех пор, пока соподпрограмма не отменена, она выполняется в бесконечном цикле; после отмены, цикл и функция завершаются как обычно. Результат будет таким же, как и для предыдущего примера, но завершение работы осуществляется явным образом и контролируется.
 
 ```cppwinrt
 IAsyncAction ExplicitCancellationAsync()
@@ -538,7 +538,7 @@ int main()
 
 ## <a name="reporting-progress"></a>Отчеты о ходе выполнения
 
-Если соподпрограмма возвращает [ **IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_) или [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), можно извлечь объект, возвращенный функцией [ **winrt::get_progress_token** ](/uwp/cpp-ref-for-winrt/get-progress-token), и использовать его для отправки отчета о ходе выполнения в обработчик хода выполнения. Приведем пример кода.
+Если соподпрограмма возвращает [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_) или [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), можно извлечь объект, возвращенный функцией [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token), и использовать его для отправки отчета о ходе выполнения в обработчик хода выполнения. Приведем пример кода.
 
 ```cppwinrt
 // main.cpp
@@ -614,7 +614,7 @@ double pi{ co_await async_op_with_progress };
 
 ## <a name="fire-and-forget"></a>Принцип "Выполнил и забыл"
 
-В некоторых случаях у вас может быть задача, которую можно выполнить одновременно с другой работой. При этом не нужно ждать завершения этой задачи (от нее не зависит никакая другая работа) и не требуется возвращать значение. В этом случае для нее можно воспользоваться принципом "Выполнил и забыл". Это можно сделать, написав соподпрограмму с типом возвращаемого значения [ **winrt :: fire_and_forget** ](/uwp/cpp-ref-for-winrt/fire-and-forget) (вместо одного из типов асинхронных операций среды выполнения Windows или **concurrency :: task**).
+В некоторых случаях у вас может быть задача, которую можно выполнить одновременно с другой работой. При этом не нужно ждать завершения этой задачи (от нее не зависит никакая другая работа) и не требуется возвращать значение. В этом случае для нее можно воспользоваться принципом "Выполнил и забыл". Это можно сделать, написав соподпрограмму с типом возвращаемого значения [**winrt :: fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) (вместо одного из типов асинхронных операций среды выполнения Windows или **concurrency :: task**).
 
 ```cppwinrt
 // main.cpp
@@ -844,6 +844,6 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 * [winrt::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
 * [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Параллельная обработка и асинхронные операции](concurrency.md)
 * [Обработка событий с помощью делегатов в C++/WinRT](handle-events.md)
