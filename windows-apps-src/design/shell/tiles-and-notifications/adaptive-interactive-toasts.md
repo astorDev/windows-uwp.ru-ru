@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125247"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209860"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 
@@ -88,7 +88,7 @@ ToastContent content = new ToastContent()
 ![структура всплывающего уведомления](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Объект класса Visual
+## <a name="visual"></a>Визуальный элемент
 
 Для каждого всплывающего уведомления следует задать графическую часть — указать общую привязку, в которой может быть текст, изображения и другие элементы. Эти элементы будут отображаться на различных устройствах с Windows, включая настольные компьютеры, телефоны, планшеты и Xbox.
 
@@ -544,7 +544,7 @@ ToastContent content = new ToastContent()
 Обработка активации дополнительных элементов контекстного меню выполняется точно так же, как в случае с кнопками.
 
 
-## <a name="inputs"></a>Элементы ввода данных
+## <a name="inputs"></a>Входные данные
 
 Элементы ввода указываются в разделе действий области toast всплывающего уведомления, это значит, что они отображаются только в развернутом окне уведомления.
 
@@ -877,7 +877,7 @@ ToastContent content = new ToastContent()
 ## <a name="handling-activation"></a>Обработка активации
 Чтобы узнать, как для обработки активации всплывающих уведомлений (нажатия всплывающего уведомления или кнопок на всплывающего уведомления), в разделе [отправить локального всплывающих](send-local-toast.md).
  
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Отправка локального всплывающего уведомления и работа с активацией](send-local-toast.md)
 * [Библиотека уведомлений на GitHub (входит в состав набора средств сообщества UWP)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

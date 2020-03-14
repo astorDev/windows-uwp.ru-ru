@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Эти методы можно используете в интерфейсе API отправки Microsoft Store, управление надстройками для приложений, зарегистрированных для учетной записи центра партнеров.
+description: Используйте эти методы в API отправки Microsoft Store, чтобы управлять надстройками для приложений, зарегистрированных в учетной записи центра партнеров.
 title: Управление надстройками
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e06f8e915466f116692c63df5c53c2a0f97447f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372492"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209660"
 ---
 # <a name="manage-add-ons"></a>Управление надстройками
 
@@ -36,22 +36,22 @@ ms.locfileid: "66372492"
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="get-all-add-ons.md">Получить все надстройки для приложений</a></td>
+<td align="left"><a href="get-all-add-ons.md">Получение всех надстроек для приложений</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="get-an-add-on.md">Возвращение конкретной надстройки</a></td>
+<td align="left"><a href="get-an-add-on.md">Получить определенную надстройку</a></td>
 </tr>
 <tr>
-<td align="left">ПОМЕСТИТЬ</td>
+<td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
-<td align="left"><a href="create-an-add-on.md">Создать надстройку</a></td>
+<td align="left"><a href="create-an-add-on.md">Создание надстройки</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
-<td align="left"><a href="delete-an-add-on.md">Удалить надстройку</a></td>
+<td align="left"><a href="delete-an-add-on.md">Удаление надстройки</a></td>
 </tr>
 </tbody>
 </table>
@@ -99,12 +99,12 @@ ms.locfileid: "66372492"
 
 | Значение      | Тип   | Описание        |
 |------------|--------|--------------|
-| Приложения      | Массив  | Массив, содержащий один [ресурс приложения](#application-object), который представляет приложение, с которым связана эта надстройка. Этот массив поддерживает только один элемент.  |
-| id | строка  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.  |
-| productId | строка  | Код продукта этой надстройки. Это идентификатор, предоставленный разработчиком при создании надстройки. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | строка  | Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |
-| lastPublishedInAppProductSubmission       | Объект | [Ресурс отправки](#submission-object), который предоставляет сведения о последней опубликованной отправке для надстройки.         |
-| pendingInAppProductSubmission        | Объект  |  [Ресурс отправки](#submission-object), который предоставляет сведения о текущей ожидающей отправке для надстройки.  |   |
+| приложения      | array  | Массив, содержащий один [ресурс приложения](#application-object), который представляет приложение, с которым связана эта надстройка. Этот массив поддерживает только один элемент.  |
+| id | string  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.  |
+| productId | string  | Код продукта этой надстройки. Это идентификатор, предоставленный разработчиком при создании надстройки. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
+| productType | string  | Тип продукта этой надстройки. Поддерживаются следующие значения: **Durable** и **Consumable**.  |
+| lastPublishedInAppProductSubmission       | object | [Ресурс отправки](#submission-object), который предоставляет сведения о последней опубликованной отправке для надстройки.         |
+| pendingInAppProductSubmission        | object  |  [Ресурс отправки](#submission-object), который предоставляет сведения о текущей ожидающей отправке для надстройки.  |   |
 
 <span id="application-object" />
 
@@ -130,8 +130,8 @@ ms.locfileid: "66372492"
 
 | Значение           | Тип    | Описание        |
 |-----------------|---------|-----------|
-| value            | Объект  |  Объект, содержащий следующие значения: <br/><br/> <ul><li>*id*. Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для приложения.</li></ul>   |
-| totalCount   | ssNoversion  | Количество объектов приложения в массиве *applications* тела ответа.                                                                                                                                                 |
+| value            | object  |  Объект, содержащий следующие значения: <br/><br/> <ul><li>*id*. Код продукта в Store для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для приложения.</li></ul>   |
+| totalCount   | int  | Количество объектов приложения в массиве *applications* тела ответа.                                                                                                                                                 |
 
 <span id="submission-object" />
 
@@ -152,16 +152,16 @@ ms.locfileid: "66372492"
 
 | Значение           | Тип    | Описание     |
 |-----------------|---------|------------------|
-| id            | строка  | Идентификатор отправки.    |
-| resourceLocation   | строка  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.     |
+| id            | string  | Идентификатор отправки.    |
+| resourceLocation   | string  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.     |
  
 <span/>
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
-* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Управление отправкой надстройки с помощью API отправки Microsoft Store](manage-add-on-submissions.md)
+* [Создание отправок и управление ими с помощью служб Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправкой надстроек с помощью API отправки Microsoft Store](manage-add-on-submissions.md)
 * [Получение всех надстроек](get-all-add-ons.md)
-* [Получения надстройки](get-an-add-on.md)
-* [Создать надстройку](create-an-add-on.md)
-* [Удалить надстройку](delete-an-add-on.md)
+* [Получить надстройку](get-an-add-on.md)
+* [Создание надстройки](create-an-add-on.md)
+* [Удаление надстройки](delete-an-add-on.md)

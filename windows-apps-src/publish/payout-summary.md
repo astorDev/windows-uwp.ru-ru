@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, сводка по выплатам, выписка, платежи, прибыль, выплаты, платеж, доход
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8727a48cd68b304d515fe34082b4c4f632b4b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853461"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210530"
 ---
 # <a name="payout-reports"></a>Отчеты о выплатах
 

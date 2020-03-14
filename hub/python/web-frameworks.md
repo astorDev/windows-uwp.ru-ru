@@ -9,11 +9,11 @@ keywords: python, windows 10, microsoft, python в windows, python web с wsl, 
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853081"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208979"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Начало работы с Python для разработки веб-приложений в Windows
 
