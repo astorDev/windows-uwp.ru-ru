@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8fda22a565972e4157777c1db537a8f8d9ba20
-ms.sourcegitcommit: 20af365ce85d3d7d3a8d07c4cba5d0f1fbafd85d
+ms.openlocfilehash: d148df8de9086aaaec004525c3ee4865e4320c4e
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77034005"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79453364"
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки x:Bind
 
@@ -30,7 +30,7 @@ ms.locfileid: "77034005"
 
 -   [{КС:бинд} пример](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [Основы пользовательского интерфейса XAML — пример](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+-   [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
@@ -85,8 +85,7 @@ ms.locfileid: "77034005"
 
 В случае использования языков C++/CX **{x:Bind}** нельзя привязать к частным полям и свойствам в модели страницы или данных — вам потребуется открытое свойство для выполнения привязки. Контактную зону для привязки необходимо предоставлять в качестве классов/интерфейсов CX, чтобы можно было получить соответствующие метаданные. Атрибут **\[bind\]** не требуется.
 
-При использовании **x:Bind** вам не нужно применять **ElementName=xxx** как часть выражения привязки. Вместо этого можно использовать имя элемента в качестве первой части пути для привязки, так как именованные элементы становятся полями в пределах страницы или пользовательского элемента управления, представляющего корневой источник привязки. 
-
+При использовании **x:Bind** вам не нужно применять **ElementName=xxx** как часть выражения привязки. Вместо этого можно использовать имя элемента в качестве первой части пути для привязки, так как именованные элементы становятся полями в пределах страницы или пользовательского элемента управления, представляющего корневой источник привязки.
 
 ### <a name="collections"></a>Коллекции
 
@@ -104,10 +103,80 @@ ms.locfileid: "77034005"
 
 ### <a name="casting"></a>Приведение
 
-Скомпилированные привязки строго типизированы и распознают тип каждого этапа в пути. Если возвращаемый тип не содержит элемент, во время компиляции будет возвращена ошибка. Можно сообщать привязке реальный тип объекта, определив приведение. В следующем случае **obj** является свойством объекта типа, но содержит текстовое поле, что позволяет использовать **Text="{x:Bind ((TextBox)obj).Text}"** или **Text="{x:Bind obj.(TextBox.Text)}"** .
+Скомпилированные привязки строго типизированы и распознают тип каждого этапа в пути. Если возвращаемый тип не содержит элемент, во время компиляции будет возвращена ошибка. Можно сообщать привязке реальный тип объекта, определив приведение.
+
+В следующем случае **obj** является свойством объекта типа, но содержит текстовое поле, что позволяет использовать **Text="{x:Bind ((TextBox)obj).Text}"** или **Text="{x:Bind obj.(TextBox.Text)}"** .
+
 Поле **groups3** в **тексте = "{x:bind ((Data: SampleDataGroup) groups3\[0\]). Title} "** — это словарь объектов, поэтому его необходимо привести к типу **данных: SampleDataGroup**. Обратите внимание на то, как используется префикс пространства имен XML **data:** для сопоставления типа объектов с пространством имен кода, не являющимся частью пространства имен XAML по умолчанию.
 
 _Примечание. синтаксис C#приведения в стиле является более гибким, чем синтаксис присоединенного свойства, и является рекомендуемым синтаксисом._
+
+#### <a name="pathless-casting"></a>Приведение неявного пути
+
+Машинный синтаксический анализатор привязки не предоставляет ключевое слово, представляющее `this` как параметр функции, но поддерживает приведение без пути (например, `{x:Bind (x:String)}`), которое можно использовать в качестве параметра функции. Таким образом, `{x:Bind MethodName((namespace:TypeOfThis))}` является допустимым способом выполнения, что концептуально эквивалентно `{x:Bind MethodName(this)}`.
+
+Пример.
+
+`Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}"`
+
+```xaml
+<Page
+    x:Class="AppSample.MainPage"
+    ...
+    xmlns:local="using:AppSample">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind Songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:SongItem">
+                    <TextBlock
+                        Margin="12"
+                        FontSize="40"
+                        Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+```
+
+```csharp
+namespace AppSample
+{
+    public class SongItem
+    {
+        public string TrackName { get; private set; }
+        public string ArtistName { get; private set; }
+
+        public SongItem(string trackName, string artistName)
+        {
+            ArtistName = artistName;
+            TrackName = trackName;
+        }
+    }
+
+    public sealed partial class MainPage : Page
+    {
+        public List<SongItem> Songs { get; }
+        public MainPage()
+        {
+            Songs = new List<SongItem>()
+            {
+                new SongItem("Track 1", "Artist 1"),
+                new SongItem("Track 2", "Artist 2"),
+                new SongItem("Track 3", "Artist 3")
+            };
+
+            this.InitializeComponent();
+        }
+
+        public static string GenerateSongTitle(SongItem song)
+        {
+            return $"{song.TrackName} - {song.ArtistName}";
+        }
+    }
+}
+```
 
 ## <a name="functions-in-binding-paths"></a>Функции в путях привязки
 
