@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 3951a34501b24483fb47b97450ad172a93e168e0
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852882"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209940"
 ---
 # <a name="app-capability-declarations"></a>Объявления возможностей приложения
 
@@ -75,7 +75,7 @@ ms.locfileid: "78852882"
 | **Близлежащ** | Возможность **proximity** позволяет нескольким близко расположенным устройствам взаимодействовать друг с другом. Эта возможность обычно используется в многопользовательских играх и в приложениях, которые обмениваются данными. Устройства стремятся использовать технологии связи, предоставляющие наилучшее из возможных подключений, включая Bluetooth, Wi-Fi и Интернет. Эта возможность используется только для того, чтобы начать взаимодействие между устройствами. |
 | **Бесед** | Возможность **webcam** предоставляет доступ к видеоканалу встроенной камеры или внешней веб-камеры, благодаря чему приложение может захватывать фотографии и видео. В Windows приложения должны справляться с ситуациями, когда пользователь отключает камеру с помощью чудо-кнопки **Параметры**.<br/>Возможность **webcam** предоставляет доступ только к потоку видео. Для предоставления доступа и к потоку аудио, нужно добавить возможность **microphone**. |
 | **USB** | Возможность устройства **usb** разрешает доступ к API в пространстве имен Windows.Devices.Usb. Дополнительные сведения см. в разделе [Обновление пакета манифеста приложения для устройства USB](https://msdn.microsoft.com/library/windows/hardware/dn303351(v=vs.85).aspx). |
-| **Устройство с HID-интерфейсом** | Возможность устройства **humaninterfacedevice** разрешает доступ к API в пространстве имен Windows.Devices.HumanInterfaceDevice. Подробнее: [Определение возможностей устройств для HID](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid). |
+| **Устройство с HID-интерфейсом** | Возможность устройства **humaninterfacedevice** разрешает доступ к API в пространстве имен Windows.Devices.HumanInterfaceDevice. Подробнее: [Определение возможностей устройств для HID.](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid). |
 | **Точка обслуживания (POS)** | Возможность устройства **pointOfService** разрешает доступ к API в пространстве имен [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService). Это пространство имен обеспечивает доступ к сканерам штрихкодов и считывателям магнитных карт на терминалах точек обслуживания (POS). Пространство имен предоставляет независимый от поставщика интерфейс для доступа из приложения UWP к POS-устройствам разных изготовителей. |
 | **Bluetooth** | Возможность устройства **bluetooth** позволяет приложениям обмениваться данными со связанными Bluetooth-устройствами по протоколам Generic Attribute (GATT) и Classic Basic Rate (RFCOMM).<br/>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth). |
 | **Сеть Wi-Fi** | Возможность устройства **wiFiControl** позволяет приложениям сканировать сети Wi-Fi и подключаться к ним.<br/>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Devices.WiFi**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFi). |
