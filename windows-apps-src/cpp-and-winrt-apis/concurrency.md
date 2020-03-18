@@ -5,18 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 949f8c407e0a49c87cbb45c01117a7e2e1525010
+ms.sourcegitcommit: 5f22e596443ff4645ebf68626d8a4d275d8a865f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816677"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083175"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT
 
-В этом разделе показаны способы, которыми можно создавать и использовать асинхронные объекты среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+> [!IMPORTANT]
+> В этой статье содержится описание *соподпрограмм* и оператора `co_await`, которые рекомендуется использовать в приложениях с пользовательским интерфейсом *и* без него. Для простоты большинство примеров кода в этой ознакомительной статье связаны с проектом **консольного приложения для Windows (C++/WinRT)** . В примерах кода, приведенных в этой статье, используются соподпрограммы, но для удобства в примерах консольного приложения мы продолжим использовать вызов блокирующей функции **get** прямо перед выходом, чтобы приложение не завершало работу до окончания печати выходных данных. Вы не будете вызывать блокирующую функцию **get** из потока пользовательского интерфейса. Вместо этого будет использоваться оператор `co_await`. Описание методов, которые вы будете использовать в приложениях пользовательского интерфейса, см. в статье [Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT](concurrency-2.md).
 
-После прочтения этой статьи ознакомьтесь с дополнительными сведениями о [более сложных сценариях параллелизма и асинхронности](concurrency-2.md).
+В этой ознакомительной статье показаны некоторые способы создания и использования асинхронных объектов среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). После прочтения этой статьи, в частности описания методов, которые вы будете использовать в приложениях пользовательского интерфейса, ознакомьтесь со статьей [Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT](concurrency-2.md).
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>Асинхронные операции и функции "Async" среды выполнения Windows
 
@@ -29,7 +30,9 @@ ms.locfileid: "72816677"
 
 Каждый из этих типов асинхронной операции проецируется в соответствующий тип в пространстве имен C++/WinRT **winrt::Windows::Foundation**. C++/WinRT также содержит внутреннюю структуру адаптера ожидания. Она не используется напрямую, но благодаря этой структуре вы можете добавить оператор `co_await` для совместного ожидания результата любой функции, которая возвращает один из этих типов асинхронной операции. И вы можете создавать свои собственные соподпрограммы, возвращающие эти типы.
 
-Пример асинхронной функции Windows — функция [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), которая возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Рассмотрим сперва некоторые &mdash;блокирующие, а затем не блокирующие&mdash; способы использования C++/WinRT для вызова подобного API.
+Пример асинхронной функции Windows — функция [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), которая возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
+
+Рассмотрим сперва некоторые &mdash;блокирующие, а затем не блокирующие&mdash; способы использования C++/WinRT для вызова подобного API. Для иллюстрации основных идей в следующих нескольких примерах кода мы будем использовать проект **консольного приложения для Windows (C++/WinRT)** . Методы, более подходящие для приложения пользовательского интерфейса, описаны в статье [Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT](concurrency-2.md).
 
 ## <a name="block-the-calling-thread"></a>Блокировка вызывающего потока
 
@@ -111,6 +114,8 @@ int main()
 Соподпрограммы можно объединять в другие соподпрограммы. Или можно вызвать **get** для блокировки и дождаться завершения (а также получить результат, если таковой имеется). Кроме того, можно передать соподпрограмму в другой язык программирования, который поддерживает среду выполнения Windows.
 
 Также можно обрабатывать завершенные и (или) текущие события из асинхронных действий и операций с помощью делегатов. Подробные сведения и примеры кода см. в разделе [Типы делегатов для асинхронных действий и операций](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
+
+Как видно, в приведенном выше примере кода мы продолжаем использовать вызов блокирующей функции **get** непосредственно перед выходом из **main**. Но это необходимо лишь для того, чтобы приложение не завершило работу до окончания печати выходных данных.
 
 ## <a name="asynchronously-return-a-windows-runtime-type"></a>Асинхронное возвращение типа среды выполнения Windows
 
@@ -293,7 +298,7 @@ IASyncAction DoWorkAsync(Param const& value)
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Класс SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Более сложные сценарии параллельной обработки и асинхронности](concurrency-2.md)
 * [Обработка событий с помощью делегатов в C++/WinRT](handle-events.md)
 * [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md)

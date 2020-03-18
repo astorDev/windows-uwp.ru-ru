@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e93a1806d1d2add4b3b1c3ee02417a43d574d3c
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
-ms.translationtype: MT
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853510"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209039"
 ---
 # <a name="media-player"></a>Проигрыватель мультимедиа
 
@@ -24,7 +24,7 @@ ms.locfileid: "78853510"
 
 ![Элемент проигрывателя мультимедиа с элементами управления транспортировкой](images/controls/mtc_double_video_inprod.png)
 
-> **Важные API-интерфейсы**: [класс MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [класс MediaTransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
+> **Важные API**: [класс MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [класс MediaTransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
 
 > [!NOTE]
@@ -91,7 +91,7 @@ ms.locfileid: "78853510"
 
 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) автоматически интегрируется с системными элементами управления транспортировкой мультимедиа. Системные элементы управления транспортировкой мультимедиа открываются при нажатии клавиши на мультимедийном оборудовании, например, клавиш мультимедиа на клавиатуре. Дополнительные сведения см. в разделе [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls).
 
-> **Обратите внимание** ,&nbsp;&nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) не интегрируется с элементами управления транспортом системных носителей автоматически, поэтому их необходимо подключать самостоятельно. Дополнительные сведения см. в разделе [System Media Transport Controls](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls).
+> **Примечание.** &nbsp;&nbsp; Элемент [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) не интегрируется автоматически с системными элементами управления транспортировкой мультимедиа, поэтому их нужно подключить самостоятельно. Дополнительные сведения см. в разделе [System Media Transport Controls](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls).
 
 
 ### <a name="set-the-media-source"></a>Задание источника мультимедиа
@@ -390,11 +390,11 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 Элементы управления по умолчанию были оптимизированы для воспроизведения мультимедиа, однако вы можете добавить в проигрыватель мультимедиа пользовательские параметры, необходимые для оптимальной работы вашего приложения. Дополнительные сведения о добавлении пользовательских элементов управления см. на странице [Создание пользовательских элементов управления транспортом](custom-transport-controls.md).
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Основы проектирования команд в приложениях UWP](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 - [Основы проектирования содержимого для приложений UWP](https://docs.microsoft.com/windows/uwp/layout/content-basics)

@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958974"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935363"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
@@ -21,14 +21,14 @@ ms.locfileid: "74958974"
 Если вам нужно постепенно переносить код C++/CX на C++/WinRT, то вы сможете это сделать. Код C++/CX и C++/WinRT может сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компонентов среды выполнения Windows. Для этих двух исключений необходимо выбрать либо C++/CX, либо C++/WinRT в одном и том же проекте.
 
 > [!IMPORTANT]
-> Если проект создает приложение XAML, рекомендуем сначала создать новый проект в Visual Studio с помощью одного из шаблонов проектов C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Затем начните копировать исходный код и разметку из проекта C++/CX. Вы можете добавить новые страницы XAML с помощью команды **Проект** \> **Добавить новый элемент...** \> **Visual C++**   >  **Пустая страница (C++/WinRT)** .
+> Если проект создает приложение XAML, рекомендуем сначала создать новый проект в Visual Studio с помощью одного из шаблонов проектов C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Затем начните копировать исходный код и разметку из проекта C++/CX. Вы можете добавить новые страницы XAML с помощью команды **Проект** \> **Добавить новый элемент...** \> **Visual C++**  > **Пустая страница (C++/WinRT)** .
 >
 > Кроме того, можно использовать компонент среды выполнения Windows для идентификации кода из проекта XAML C++/CX во время его портирования. Либо перенесите в компонент как можно больше кода C++/CX, а затем измените проект XAML на C++/WinRT. Или же оставьте проект XAML в C++/CX, создайте новый компонент C++/WinRT и начните переносить код C++/CX из проекта XAML в новый компонент. Также имея проект компонента C++/CX вместе с проектом компонента C++/WinRT в рамках одного решения, можно ссылаться на них из проекта приложения и постепенно переносить из одного в другой. Дополнительные сведения об использовании двух языковых проекций в рамках одного проекта см. в статье [Взаимодействия между C++/WinRT и C++/CX](interop-winrt-cx.md).
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) и Windows SDK объявляют типы в корневом пространстве имен **Windows**. Тип Windows, спроецированный в C++/WinRT, имеет такое же полное имя, что и тип Windows, но он помещен в пространство имен C++ **winrt**. Эти различные пространства имен позволяют выполнять перенос из C++/CX в C++/WinRT в удобном для вас темпе.
 
-С учетом вышеупомянутых исключений, первым шагом при переносе проекта C++/CX на C++/WinRT является ручное добавление в него поддержки C++/WinRT (см. статью [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого в свой проект следует установить [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта. Одним из последствий этого изменения является отключение поддержки для C++/CX в проекте. Рекомендуется оставить поддержку отключенной, чтобы сообщения сборки помогли вам найти (и перенести) все зависимости на C++ CX. Либо можно снова включить поддержку (в свойствах проекта **C/C++** \> **Общие** \> **Использование расширения среды выполнения Windows** \> **Да (/ZW)** ), и выполнить постепенный перенос.
+С учетом вышеупомянутых исключений, первым шагом при переносе проекта C++/CX на C++/WinRT является ручное добавление в него поддержки C++/WinRT (см. статью [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого в свой проект следует установить [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта. Одним из последствий этого изменения является отключение поддержки для C++/CX в проекте. Рекомендуется оставить поддержку отключенной, чтобы сообщения сборки помогли вам найти (и перенести) все зависимости на C++/CX. Либо можно снова включить поддержку (в свойствах проекта **C/C++**  \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)** ) и выполнить постепенный перенос.
 
 В качестве альтернативы вы можете вручную добавить следующее свойство в файл `.vcxproj` на странице свойств проекта C++/WinRT в Visual Studio. Список похожих параметров настройки (которые управляют поведением средства `cppwinrt.exe`) см. в [файле сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 
@@ -40,7 +40,7 @@ ms.locfileid: "74958974"
 </syntaxhighlight>
 ```
 
-Далее убедитесь, что для свойства проекта **Общие** \> **Версия целевой платформы** установлено значение 10.0.17134.0 (Windows 10, версия 1803) или выше.
+Далее убедитесь, что для свойства проекта **Общие** \> **Версия целевой платформы** установлено значение 10.0.17134.0 (Windows 10, версия 1803) или выше.
 
 В предварительно скомпилированный файл заголовка (обычно это `pch.h`) добавьте `winrt/base.h`.
 
@@ -234,7 +234,7 @@ record.UserState(newValue);
 
 ## <a name="creating-an-instance-of-a-class"></a>Создание экземпляра класса
 
-Работа с объектом C++/CX через дескриптор, обычно именуемый ссылкой шляпкой (\^). Создайте новый объект с помощью ключевого слова `ref new`, которое, в свою очередь, вызывает [ **RoActivateInstance** ](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) для активации нового экземпляра класса среды выполнения.
+Работа с объектом C++/CX через дескриптор, обычно именуемый ссылкой шляпкой (\^). Создайте новый объект с помощью ключевого слова `ref new`, которое, в свою очередь, вызывает [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) для активации нового экземпляра класса среды выполнения.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -309,7 +309,18 @@ private:
 | Массив пустых ссылок | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Пара | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-Быстро создать массив пустых ссылок нельзя. Вам нужно повторно использовать `nullptr` для каждого элемента в массиве. Если их слишком мало, конструктор по умолчанию создаст дополнительные элементы.
+### <a name="more-about-collections-of-empty-references"></a>Дополнительные сведения о коллекциях пустых ссылок
+
+Каждый раз при наличии **Platform::Array\^** (см. раздел [Перенос **Platform::Array\^** ](#port-platformarray)) в C++/CX вы можете переносить его в **std::vector** в C++/WinRT (на самом деле в любой непрерывный контейнер), а не оставлять его в виде массива. Выбор **std::vector** имеет ряд преимуществ.
+
+Например, несмотря на наличие сокращения для создания вектора пустых ссылок фиксированного размера (см. таблицу выше), для создания *массива* пустых ссылок такого же сокращения не существует. Вам нужно повторно использовать `nullptr` для каждого элемента в массиве. Если их слишком мало, конструктор по умолчанию создаст дополнительные элементы.
+
+Для вектора их можно заполнить пустыми ссылками при инициализации (как описано в таблице выше) или пустыми ссылками после инициализации с помощью приведенного ниже кода.
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>Подробнее о примере с **std::map**
 
@@ -531,7 +542,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>Перенос **Platform::Array\^**
 
-Для вас доступны использование списка инициализатора, **std::array** или **std::vector**. Дополнительные сведения и примеры кода см. в статьях [Стандартные списки инициализаторов](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) и [Стандартные массивы и векторы](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+Если для C++/CX требуется использование массива, C++/WinRT разрешает использовать любой непрерывный контейнер. Описание причины выбора **std::vector** см. в разделе [Влияние конструктора по умолчанию на коллекции](#how-the-default-constructor-affects-collections).
+
+Таким образом, каждый раз при наличии **Platform::Array\^** в C++/CX для вас доступно использование списка инициализатора для **std::array** или **std::vector**. Дополнительные сведения и примеры кода см. в статьях [Стандартные списки инициализаторов](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) и [Стандартные массивы и векторы](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>Перенесите **Platform::Exception\^\^** в **winrt::hresult_error**
 
@@ -646,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 В C++/WinRT также поддерживается [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) для ограниченного числа типов. Вам нужно добавить перегрузки для любых дополнительных типов, к которым необходимо применить метод stringify.
 
-| Язык | Stringify int | Stringify enum |
+| Language | Stringify int | Stringify enum |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
@@ -712,7 +725,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 * [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Создание событий в C++/WinRT](author-events.md)
 * [Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT](concurrency.md)

@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256177"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200982"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT
 
@@ -53,7 +53,7 @@ ms.locfileid: "78256177"
 
 В `MainPage.cpp` удалите код внутри реализации **MainPage::ClickHandler**, так как *myButton* больше не находится в разметке XAML.
 
-В `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже. Если вам нужно использовать WinUI из нескольких страниц XAML, можно перейти к файлу предкомпилированных заголовков (обычно это `pch.h`) и включить в нем требуемые файлы.
+В `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -63,7 +63,10 @@ ms.locfileid: "78256177"
 
 Теперь создайте проект.
 
-Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) и создаете проект, средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Если вы выполнили инструкции из руководства, теперь у вас должна быть папка `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Изменения, внесенные в `MainPage.h` выше, приводят к тому, что эти файлы заголовков проекции включаются в проект. И это требуется для разрешения ссылок на типы в пакете NuGet.
+Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) и создаете проект, средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Если вы выполнили инструкции из руководства, теперь у вас должна быть папка `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. В результате изменений, внесенных в `MainPage.h` выше, эти файлы заголовков проекции для WinUI становятся видимыми для **MainPage**. Это необходимо для разрешения ссылки на тип **Microsoft::UI::Xaml::Controls::NavigationView** в **MainPage**.
+
+> [!IMPORTANT]
+> В реальном приложении необходимо, чтобы файлы заголовков проекции WinUI были видимыми для *всех* страниц XAML в проекте, а не только для **MainPage**. В этом случае необходимо переместить включения двух файлов заголовков проекции WinUI в файл предкомпилированного заголовка (обычно это `pch.h`). Затем в любой части проекта будут разрешены ссылки на типы в пакете NuGet. Для минимального одностраничного приложения, создаваемого в этом пошаговом руководстве, не нужно использовать `pch.h`. Подходящим вариантом является включение заголовков в `MainPage.h`.
 
 Теперь вы можете запустить проект.
 

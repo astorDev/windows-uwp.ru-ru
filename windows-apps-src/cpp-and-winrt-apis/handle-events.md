@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проецируемый, проекция, обработка, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853413"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295717"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 
@@ -38,6 +38,9 @@ ms.locfileid: "78853413"
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
@@ -59,6 +62,22 @@ MainPage::MainPage()
 
 > [!IMPORTANT]
 > При регистрации делегата приведенный выше пример кода передает необработанный указатель *this* (указывающий на текущий объект). Сведения о том, как установить сильную или слабую ссылку на текущий объект, см. в разделе [Использование функции-члена в качестве делегата](weak-references.md#if-you-use-a-member-function-as-a-delegate).
+
+Ниже приведен пример, в котором используется статическая функция-член. Обратите внимание на более простой синтаксис.
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    Button().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+```
 
 Существуют другие способы создания **RoutedEventHandler**. Ниже приведен блока синтаксиса, взятый из раздела документации для [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (выберите *C++/WinRT* из раскрывающегося списка **Язык** в правом верхнем углу веб-страницы). Обратите внимание на различные конструкторы: один принимает лямбда-функцию; другой — свободную функцию, а третий (который мы использовали выше) принимает объект и указатель на функцию-член.
 
