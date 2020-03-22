@@ -2,16 +2,16 @@
 title: Использование служб и расширений приложения
 description: В этом разделе описывается, как интегрировать службы приложений с приложением UWP, чтобы разрешить общий доступ к данным и функциям между приложениями.
 ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
-ms.date: 10/04/2017
+ms.date: 02/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 236b5ab54de4224cccfc72a68c95c8160f148986
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fec1b7d9f64a79b7e5db81aedee9628debe4bf8a
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605629"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080653"
 ---
 # <a name="use-app-services-and-extensions"></a>Использование служб и расширений приложения
 
@@ -22,9 +22,10 @@ ms.locfileid: "57605629"
 | [Создание и использование службы приложений](how-to-create-and-consume-an-app-service.md) | Узнайте, как написать приложение универсальной платформы Windows (UWP), которое может предоставлять службы другим приложениям UWP, и как использовать эти службы. |
 | [Преобразование службы приложений для запуска в одном процессе с ведущим приложением](convert-app-service-in-process.md) | Преобразуйте код службы приложений, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложений. |
 | [Расширение возможностей приложения за счет его служб, расширений и пакетов](extend-your-app-with-services-extensions-packages.md) | Определите, какую технологию следует использовать для расширения и разбиения приложения на компоненты, и получите краткий обзор каждого метода. |
-| [Создание и размещение расширение приложения](how-to-create-an-extension.md) | Создавайте и размещайте расширения приложений универсальной платформы Windows (UWP) расширяющие приложение с помощью пакетов, которые пользователи могут установить через Microsoft Store. |
+| [Создание и размещение расширения приложения](how-to-create-an-extension.md) | Создавайте и размещайте расширения приложений универсальной платформы Windows (UWP) расширяющие приложение с помощью пакетов, которые пользователи могут установить через Microsoft Store. |
+| [Создание размещенных приложений](hosted-apps.md) | Создайте упакованный компонент (например, приложение или файл скрипта), который ведет себя как автономное приложение Windows 10, но для выполнения требуется отдельное ведущее приложение (UWP или упакованное классическое приложение). |
 
 
 ## <a name="related-topics"></a>Связанные разделы
 * [Обмен данными с удаленной службой приложений](communicate-with-a-remote-app-service.md)
-* [Примеры приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+* [Примеры приложений универсальная платформа Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

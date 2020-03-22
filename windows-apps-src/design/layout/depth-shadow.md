@@ -3,19 +3,18 @@ author: knicholasa
 description: Z-глубина, или относительная глубина и тень — это два способа включить глубину в приложение, чтобы помочь пользователям сосредоточиться на естественном и эффективном уровне.
 title: Z-глубина и тень для приложений UWP
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282413"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081389"
 ---
 # <a name="z-depth-and-shadow"></a>Глубина трехмерной сцены и тени
 
@@ -39,7 +38,7 @@ Z-глубина — это термин, используемый в сочет
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-Тип Семешадов можно применить к любому элементу XAML для отображения теней соответствующим образом на основе координат x, y и z. Семешадов также автоматически корректирует другие характеристики окружающей среды:
+Тип [семешадов](/uwp/api/windows.ui.xaml.media.themeshadow) можно применить к любому элементу XAML для отображения теней соответствующим образом на основе координат x, y и z. Семешадов также автоматически корректирует другие характеристики окружающей среды:
 
 - Адаптируется к изменениям в освещении, пользовательской теме, среде приложений и оболочке.
 - Автоматически применяет тени к элементам на основе z-глубины. 
@@ -65,7 +64,7 @@ Z-глубина — это термин, используемый в сочет
 - [Управление транспортным носителем](../controls-and-patterns/media-playback.md#media-transport-controls), [инктулбар](../controls-and-patterns/inking-controls.md)
 - [Подключенная анимация](../motion/connected-animation.md)
 
-Примечание. Всплывающие окна будут применять Семешадов только при компиляции с Windows 10 версии 1903 или более поздней версией пакета SDK.
+Примечание. всплывающие окна будут применять только Семешадов при компиляции с Windows 10 версии 1903 или более поздней версией пакета SDK.
 
 ### <a name="themeshadow-in-popups"></a>Семешадов в всплывающих окнах
 
@@ -99,7 +98,7 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 Элементы управления, основанные на [всплывающих](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout)окнах, [датепиккерфлйоут](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [менуфлйоут](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) или [тимепиккерфлйоут](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) , автоматически используют семешадов для приведения тени.
 
-Если тень по умолчанию не будет отображаться в содержимом элемента управления, ее можно отключить, задав для свойства [исдефаултшадовенаблед](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) значение `false` на связанном флйоутпресентер.
+Если тень по умолчанию не будет отображаться в содержимом элемента управления, ее можно отключить, задав для свойства [исдефаултшадовенаблед](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) значение `false` на связанном флйоутпресентер:
 
 ```xaml
 <Flyout>
@@ -153,14 +152,14 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 4. Если несколько элементов будут приводить к одному и тому же типу тени на одни и те же элементы приемника, добавьте тень в качестве общего ресурса и используйте его повторно.
 
-## <a name="drop-shadow"></a>Тень
+## <a name="drop-shadow"></a>Отбрасывание тени
 
 DropShadow не реагирует на среду автоматически и не использует источники освещения. Примеры реализации см. в разделе [класс dropshadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
 
 ## <a name="which-shadow-should-i-use"></a>Какую тень использовать?
 
 | Свойство | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **Минимальный пакет SDK** | Windows 10, версия 1903 | 14393 |
 | **Адаптируемости** | Да | Нет |
 | **Индивидуальн** | Нет | Да |
