@@ -8,22 +8,22 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ecf82294614114e711483dfdc58cfad36591369
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319563"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081713"
 ---
-# <a name="controls-for-uwp-apps"></a>Элементы управления для приложений UWP 
+# <a name="controls-for-uwp-apps"></a>Элементы управления для приложений UWP
 
 ![Элементы управления](../images/controls-2x.png)
 
 В разработке приложений UWP <i>элемент управления</i> — это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Элементы управления — это основа пользовательского интерфейса. <i>Шаблон</i> — это макет для объединения нескольких элементов управления, позволяющий получить что-то новое.
 
-Мы предоставляем более 45 элементов управления — от простых кнопок до мощных элементов управления данными, таких как представление сетки.  Эти элементы управления являются частью системы Fluent Design и помогают создавать удобный и масштабируемый пользовательский интерфейс, который прекрасно выглядит на всех устройствах и экранах разного размера. 
+Мы предоставляем более 45 элементов управления — от простых кнопок до мощных элементов управления данными, таких как представление сетки.  Эти элементы управления являются частью системы Fluent Design и помогают создавать удобный и масштабируемый пользовательский интерфейс, который прекрасно выглядит на всех устройствах и экранах разного размера.
 
-В статьях в этом разделе представлены инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение UWP. 
+В статьях в этом разделе представлены инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение UWP.
 
 ## <a name="intro"></a>Вступление
 
@@ -41,85 +41,92 @@ ms.locfileid: "67319563"
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Получение библиотеки пользовательского интерфейса Windows
-Некоторые элементы управления доступны только в библиотеке пользовательского интерфейса Windows. Чтобы получить ее, ознакомьтесь с [общими сведениями и инструкциями по установке библиотеки пользовательского интерфейса Windows](/uwp/toolkits/winui/).
 
-## <a name="alphabetical-index"></a>Алфавитный указатель 
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Некоторые элементы управления доступны только в библиотеке пользовательского интерфейса Windows (WinUI). Это пакет NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса. Чтобы получить ее, ознакомьтесь с [общими сведениями и инструкциями по установке библиотеки пользовательского интерфейса Windows](/uwp/toolkits/winui/).<br/>Начиная с версии WinUI 2.2 стиль по умолчанию для многих элементов управления обновлен для использования скругленных углов. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). |
 
-Подробные сведения о конкретных элементах управления и шаблонах. (Список, отсортированный по функциям, см. в разделе <a href="controls-by-function.md">Элементы управления по функциям</a>.)
+## <a name="alphabetical-index"></a>Алфавитный указатель
 
-<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
-<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
-<li style="list-style-type: none;"><a href="auto-suggest-box.md">Поле автозаполнения</a></li>
+Подробные сведения о конкретных элементах управления и шаблонах. (Список, отсортированный по функциям, см. в разделе [Элементы управления по функциям](controls-by-function.md).)
 
-<li style="list-style-type: none;"><a href="app-bars.md">Панели</a></li>
+:::row:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="buttons.md">Кнопки</a></li>
+- Анимированный визуальный проигрыватель (см. сведения о [Lottie](/windows/communitytoolkit/animations/lottie)) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Поле автозаполнения](auto-suggest-box.md)
+- [Кнопка](buttons.md)
+- [Выбор даты в календаре](calendar-date-picker.md)
+- [Представление календаря](calendar-view.md)
+- [Флажок](checkbox.md)
+- [Палитра](color-picker.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Поле со списком](combo-box.md)
+- [Панель команд](app-bars.md)
+- [Всплывающее меню панели команд](command-bar-flyout.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Карточка контакта](contact-card.md)
+- [Диалоговое окно содержимого](dialogs-and-flyouts/dialogs.md)
+- [Ссылка на содержимое](content-links.md)
+- [Контекстное меню](menus.md)
+- [Выбор даты](date-picker.md)
+- [Диалоговые окна и всплывающие элементы](dialogs-and-flyouts/index.md)
+- [Кнопка раскрывающегося списка](buttons.md#create-a-drop-down-button) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Представление пролистывания](flipview.md)
+- [Flyout](dialogs-and-flyouts/flyouts.md)
+- [Формы](forms.md) (шаблон)
+- [Представление в виде сетки](listview-and-gridview.md)
+- [Гиперссылка](hyperlinks.md)
+- [Кнопка с гиперссылкой](hyperlinks.md#create-a-hyperlinkbutton)
+- [Изображения и кисти изображений](images-imagebrushes.md)
+- [Элементы управления рукописным вводом](inking-controls.md)
+- [Представление списка](listview-and-gridview.md)
+- [Элемент управления картой](../../maps-and-location/controls-map.md)
+- [Основные и подробные данные](master-details.md) (шаблон)
+- [Воспроизведение мультимедиа](media-playback.md)
+- [Строка меню](menus.md#create-a-menu-bar) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Всплывающее меню](menus.md)
+- [Представление навигации](navigationview.md) ![Логотип WinUI](images/winui-logo-16x16.png)
 
-<li style="list-style-type: none;"><a href="checkbox.md">Флажок</a></li>
+    :::column-end:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="color-picker.md">Палитра</a></li>
+- [Поле ввода номера](number-box.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Представление параллакса](..\motion\parallax.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Поле ввода пароля](password-box.md)
+- [Изображение пользователя](person-picture.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Сводка](pivot.md)
+- [Индикатор выполнения](progress-controls.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Кольцевой индикатор выполнения](progress-controls.md)
+- [Переключатель](radio-button.md)
+- [Элемент управления "Оценка"](rating.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Кнопка повтора](buttons.md#create-a-repeat-button)
+- [Поле форматируемого текста](rich-edit-box.md)
+- [Блок форматированного текста](rich-text-block.md)
+- [Средство прокрутки](scroll-controls.md)
+- [Поиск](search.md) (шаблон)
+- [Контекстное масштабирование](semantic-zoom.md)
+- [Фигуры](shapes.md)
+- [Ползунок](slider.md)
+- [Кнопка разделения](buttons.md#create-a-split-button) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Комбинированный режим](split-view.md)
+- [Элемент управления для сдвига](swipe.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Представление вкладки](tab-view.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Совет по обучению](dialogs-and-flyouts/teaching-tip.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Блок текста](text-block.md)
+- [Текстовое поле](text-box.md)
+- [Выбор времени](time-picker.md)
+- [Тумблер](toggles.md)
+- [Выключатель](buttons.md)
+- [Выключатель с разделением](buttons.md#create-a-toggle-split-button)
+- [Подсказки](tooltips.md)
+- [Представление дерева](tree-view.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Представление с двумя панелями](two-pane-view.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Представление веб-страницы](web-view.md)
 
-<li style="list-style-type: none;"><a href="contact-card.md">Карточка контакта</a></li>
-
-<li style="list-style-type: none;"><a href="date-and-time.md">Элементы управления датой и временем</a></li>
-
-<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Диалоговые окна и всплывающие элементы</a></li>
-
-<li style="list-style-type: none;"><a href="flipview.md">Представление пролистывания</a></li>
-
-<li style="list-style-type: none;"><a href="forms.md">Формы</a></li>
-
-<li style="list-style-type: none;"><a href="hyperlinks.md">Гиперссылки</a></li>
-
-<li style="list-style-type: none;"><a href="images-imagebrushes.md">Изображения и кисти изображений</a></li>
-
-<li style="list-style-type: none;"><a href="inking-controls.md">Элементы управления рукописным вводом</a></li>
-
-<li style="list-style-type: none;"><a href="lists.md">Списки</a></li>
-
-<li style="list-style-type: none;"><a href="../../maps-and-location/controls-map.md">Элемент управления картой</a></li>
-
-<li style="list-style-type: none;"><a href="master-details.md">Основные и подробные данные</a></li>
-
-<li style="list-style-type: none;"><a href="media-playback.md">Воспроизведение мультимедиа</a></li>
-
-<li style="list-style-type: none;"><a href="menus.md">Меню и контекстные меню</a></li>
-
-<li style="list-style-type: none;"><a href="navigationview.md">Представление навигации</a></li>
-
-<li style="list-style-type: none;"><a href="person-picture.md">Изображение пользователя</a></li>
-
-<li style="list-style-type: none;"><a href="pivot.md">Сводка</a></li>
-
-<li style="list-style-type: none;"><a href="progress-controls.md">Элементы управления "Ход выполнения"</a></li>
-
-<li style="list-style-type: none;"><a href="radio-button.md">Переключатель</a></li>
-
-<li style="list-style-type: none;"><a href="rating.md">Элемент управления "Оценка"</a></li>
-
-<li style="list-style-type: none;"><a href="scroll-controls.md">Элементы управления прокруткой и панорамированием</a></li>
-
-<li style="list-style-type: none;"><a href="search.md">Поиск</a></li>
-
-<li style="list-style-type: none;"><a href="semantic-zoom.md">Контекстное масштабирование</a></li>
-
-<li style="list-style-type: none;"><a href="shapes.md">Фигуры</a></li>
-
-<li style="list-style-type: none;"><a href="slider.md">Slider</a></li>
-
-<li style="list-style-type: none;"><a href="split-view.md">Комбинированный режим</a></li>
-
-<li style="list-style-type: none;"><a href="text-controls.md">Текстовые элементы управления</a></li>
+    :::column-end:::
+:::row-end:::
 
 
-<li style="list-style-type: none;"><a href="toggles.md">Переключение</a></li>
-<li style="list-style-type: none;"><a href="tooltips.md">Подсказки</a></li>
 
-<li style="list-style-type: none;"><a href="tree-view.md">Представление в виде дерева</a></li>
-
-<li style="list-style-type: none;"><a href="web-view.md">Представление веб-страницы</a></li>
-</ul>
-</div>
 
 ## <a name="xaml-controls-gallery"></a>XAML Controls Gallery
 
@@ -133,6 +140,4 @@ ms.locfileid: "67319563"
 
 ## <a name="additional-controls"></a>Дополнительные элементы управления
 
-Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.  
-
-Если вы хотите подробнее узнать об этих элементах управления, ознакомьтесь с примером кода <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">базы данных Customer Orders</a> на сайте GitHub. В этом примере используется элемент управления сеткой данных и выполняется проверка вводимых данных средствами Telerik, которые являются частью пользовательского интерфейса для набора UWP. Пользовательский интерфейс для набора UWP — это коллекция из более чем 20 элементов управления, доступная в качестве проекта с открытым исходным кодом в фонде .NET.
+Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.

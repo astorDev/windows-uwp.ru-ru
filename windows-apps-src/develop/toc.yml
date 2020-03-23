@@ -743,13 +743,13 @@
       items:
         - name: Введение
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Начало работы
+        - name: Приступая к работе
           href: ../cpp-and-winrt-apis/get-started.md
-        - name: Что нового
+        - name: Новые возможности
           href: ../cpp-and-winrt-apis/news.md
         - name: Вопросы и ответы
           href: ../cpp-and-winrt-apis/faq.md
-        - name: Поиск и устранение неисправностей
+        - name: Диагностика
           href: ../cpp-and-winrt-apis/troubleshooting.md
         - name: Пример приложения Photo Editor
           href: ../cpp-and-winrt-apis/photo-editor-sample.md
@@ -830,7 +830,7 @@
                   href: ../security/microsoft-passport-login.md
                 - name: Создание службы входа Windows Hello
                   href: ../security/microsoft-passport-login-auth-service.md
-            - name: Смарт-карты
+            - name: смарт-карты;
               href: ../security/smart-cards.md
             - name: Общие сертификаты
               href: ../security/share-certificates.md
@@ -1024,7 +1024,7 @@
               href: ../contacts-and-calendar/my-people-notifications.md
         - name: Выбор контактов
           href: ../contacts-and-calendar/selecting-contacts.md
-        - name: Отправка сообщения электронной почты
+        - name: Отправить электронное письмо
           href: ../contacts-and-calendar/sending-email.md
         - name: Отправка SMS-сообщения
           href: ../contacts-and-calendar/sending-an-sms-message.md
@@ -1113,7 +1113,7 @@
             - name: Сканер штрихкодов на базе камеры
               href: ../devices-sensors/pos-camerabarcode.md
               items:
-                - name: Системные требования
+                - name: Требования к системе
                   href: ../devices-sensors/pos-camerabarcode-system-requirements.md
                 - name: Начало работы
                   href: ../devices-sensors/pos-camerabarcode-get-started.md
@@ -1204,7 +1204,7 @@
       items:
         - name: Перенос проекта
           href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
-        - name: Поиск и устранение неисправностей
+        - name: Диагностика
           href: ../porting/w8x-to-uwp-troubleshooting.md
         - name: Перенос XAML и пользовательского интерфейса
           href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
@@ -1249,7 +1249,7 @@
           href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
         - name: Перенос проекта
           href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-        - name: Поиск и устранение неисправностей
+        - name: Диагностика
           href: ../porting/wpsl-to-uwp-troubleshooting.md
         - name: Перенос XAML и пользовательского интерфейса
           href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
@@ -1354,6 +1354,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Создание и размещение расширения приложения
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Создание размещенных приложений
+              href: ../launch-resume/hosted-apps.md
         - name: Поддержка приложения с помощью фоновых задач
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:
