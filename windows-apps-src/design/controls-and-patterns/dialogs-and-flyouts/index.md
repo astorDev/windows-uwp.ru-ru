@@ -4,28 +4,25 @@ title: Диалоговые окна и всплывающие элементы
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867439"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081007"
 ---
 # <a name="dialogs-and-flyouts"></a>Диалоговые окна и всплывающие элементы
 
-
-
 Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
 
-> **Важные API**: [класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-
+> **API платформы:** [класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 :::row:::
     :::column:::
@@ -59,7 +56,7 @@ ms.locfileid: "68867439"
     :::column:::
    <p><b>Используйте диалоговое окно в следующих целях.</b> <br/>
 <ul>
-<li>Чтобы сообщить важную информацию, которую пользователь <b>должен</b> прочитать и осознать перед продолжением работы. Ниже перечислены примеры таких данных.
+<li>Чтобы сообщить важную информацию, которую пользователь <b>должен</b> прочитать и осознать перед продолжением работы. Пример.
 <ul>
   <li>угроза безопасности пользователя;</li>
   <li>намерение изменить ценные данные без возможности отмены действия;</li>
@@ -103,7 +100,7 @@ ms.locfileid: "68867439"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы открыть его и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
     <ul>
