@@ -9,11 +9,11 @@ keywords: Python, Windows 10, Майкрософт, Системное адми
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683657"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208999"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Начало работы с Python в Windows для создания сценариев и автоматизации
 

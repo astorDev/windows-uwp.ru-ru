@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281790"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209319"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Введение в проектирование приложений UWP
 
@@ -112,7 +112,7 @@ UWP можно использовать на разных устройствах
 
 ![gif с цветами элементов](images/intro-style.gif)
 
-## <a name="shell"></a>Оболочка
+## <a name="shell"></a>Shell
 
 :::row:::
     :::column:::
@@ -127,7 +127,7 @@ UWP можно использовать на разных устройствах
     :::column-end:::
 :::row-end:::
 
-## <a name="inputs"></a>Ввод данных
+## <a name="inputs"></a>Входные данные
 
 :::row:::
     :::column:::
@@ -174,7 +174,7 @@ UWP можно использовать на разных устройствах
 
 Если вы хотите узнать о принципах проектирования с помощью Fluent Design (системы проектирования корпорации Майкрософт) и ознакомиться с дополнительными компонентами, которые можно добавить в собственное приложение UWP, см. раздел [Система Fluent Design](/windows/apps/fluent-design-system).
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Что такое приложение UWP?](../../get-started/universal-application-platform-guide.md)
 - [Система проектирования Fluent Design](/windows/apps/fluent-design-system)

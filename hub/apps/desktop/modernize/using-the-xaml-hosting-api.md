@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 84a41b4dd77a451a79e607e5ad5cb7df548419a9
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 9f6ba075a8dba048c9a11cc415734d040d953079
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089420"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935375"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
 
@@ -60,6 +60,9 @@ API размещения платформы UWP XAML включает следу
 * Наконец, на верхнем уровне находится элемент управления UWP, который требуется разместить в классическом приложении. Это может быть любой объект UWP, производный от [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), включая любой элемент управления UWP, предоставляемый Windows SDK, а также настраиваемые пользовательские элементы управления.
 
 ![Архитектура Десктопвиндовксамлсаурце](images/xaml-islands/xaml-hosting-api-rev2.png)
+
+> [!NOTE]
+> При размещении островов XAML в классическом приложении можно одновременно использовать несколько деревьев содержимого XAML, выполняющихся в одном и том же потоке. Для доступа к корневому элементу дерева содержимого XAML в острове XAML и получения связанных сведений о контексте, в котором она размещена, используйте класс [ксамлрут](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) . API-интерфейсы [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [аппликатионвиев](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)и [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) не предоставляют правильную информацию о островах XAML. Дополнительные сведения см. [в этом разделе](xaml-islands.md#window-host-context-for-xaml-islands).
 
 ## <a name="related-samples"></a>Связанные примеры
 

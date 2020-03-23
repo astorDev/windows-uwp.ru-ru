@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
-ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
+ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75928819"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511007"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование компонентов COM с помощью C++/WinRT
 
@@ -18,7 +18,7 @@ ms.locfileid: "75928819"
 
 В конце этой статьи вы найдете полный список исходного кода минимального приложения Direct2D. Мы возьмем выдержки из этого кода и рассмотрим, как использовать компоненты COM вместе с C++/WinRT, применяя различные средства библиотеки C++/WinRT.
 
-## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 Когда вы программируете с помощью COM, вы работаете непосредственно с интерфейсами, а не с объектами (это также верно для API-интерфейсов среды выполнения Windows, которые являются развитием COM). Например, чтобы вызвать функцию в классе COM, вы активируете класс, получите интерфейс обратно, а затем вызовете функции для этого интерфейса. Чтобы получить доступ к состоянию объекта, вы не можете напрямую обращаться к его элементам данных. Вместо этого вы вызываете функцию доступа и функцию-мутатор в интерфейсе.
 
@@ -127,7 +127,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Функции COM, которые принимают указатель интерфейса типа **IUnknown**
 
-Вы можете вызвать свободную функцию [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function), чтобы передать **com_ptr** в функцию, которая принимает указатель интерфейса типа **IUnknown**.
+Вы можете вызвать свободную функцию [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), чтобы передать **com_ptr** в функцию, которая принимает указатель интерфейса типа **IUnknown**.
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(

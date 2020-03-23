@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701488"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209279"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание интерфейсов API с помощью C++/WinRT
 
@@ -314,9 +314,9 @@ iclosable.Close();
 В случае, когда у вас есть объект интерфейса, который гарантированно является интерфейсом в вашей реализации, вы можете вернуться к реализации с помощью шаблона функции [**from_abi**](/uwp/cpp-ref-for-winrt/get-self). Этот метод также позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
 
 > [!NOTE]
-> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [ **winrt::from_abi** ](/uwp/cpp-ref-for-winrt/from-abi) вместо [ **winrt::get_ SELF**](/uwp/cpp-ref-for-winrt/get-self).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_ SELF**](/uwp/cpp-ref-for-winrt/get-self).
 
-Рассмотрим пример. Еще один пример вы найдете в статье о [реализации пользовательского класса управления **BgLabelControl**](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
+Пример. Еще один пример вы найдете в статье о [реализации пользовательского класса управления **BgLabelControl**](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -459,7 +459,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-Конструктор базового класса ожидает **ToggleButton**. При этом **MySpecializedToggleButton** *имеет тип* **ToggleButton**.
+Конструктор базового класса ожидает **ToggleButton**. А **MySpecializedToggleButton** *является* **ToggleButton**.
 
 До внесения изменений, описанных выше (для передачи параметра конструктора базовому классу), компилятор пометит конструктор укажет на отсутствие подходящего конструктора по умолчанию, доступного для типа под названием (в данном случае) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** . Фактически, это базовый класс базового класса вашего типа реализации.
 
@@ -489,24 +489,24 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 Ниже указано, где функции C++/WinRT ожидают передачи типа и какие именно типы требуются (тип проекции, тип реализации или оба типа).
 
-|Функция|Принимает|Заметки|
+|Функция|Принимает|Примечания|
 |-|-|-|
 |`T` (представляет смарт-указатель)|Проекция|См. предупреждение из раздела [Пространства имен: типы проекции, типы реализации и фабрики](#namespaces-projected-types-implementation-types-and-factories) об ошибочном использовании типа реализации.|
-|`agile_ref<T>`|Устройства обоих типов|Если вы используете тип реализации, аргумент конструктора должен быть `com_ptr<T>`.|
+|`agile_ref<T>`|Оба|Если вы используете тип реализации, аргумент конструктора должен быть `com_ptr<T>`.|
 |`com_ptr<T>`|Реализация|Если вы используете тип проекции, возникает ошибка: `'Release' is not a member of 'T'`.|
-|`default_interface<T>`|Устройства обоих типов|Если вы используете тип реализации, возвращается первый реализованный интерфейс.|
+|`default_interface<T>`|Оба|Если вы используете тип реализации, возвращается первый реализованный интерфейс.|
 |`get_self<T>`|Реализация|Если вы используете тип проекции, возникает ошибка: `'_abi_TrustLevel': is not a member of 'T'`.|
-|`guid_of<T>()`|Устройства обоих типов|Возвращает идентификатор GUID интерфейса по умолчанию.|
+|`guid_of<T>()`|Оба|Возвращает идентификатор GUID интерфейса по умолчанию.|
 |`IWinRTTemplateInterface<T>`<br>|Проекция|Если вы используете тип реализации, компиляция выполняется, но возникает ошибка. См. предупреждение из раздела [Пространства имен: типы проекции, типы реализации и фабрики](#namespaces-projected-types-implementation-types-and-factories).|
 |`make<T>`|Реализация|Если вы используете тип проекции, возникает ошибка: `'implements_type': is not a member of any direct or indirect base class of 'T'`.|
-| `make_agile(T const&amp;)`|Устройства обоих типов|Если вы используете тип реализации, аргумент должен быть `com_ptr<T>`.|
+| `make_agile(T const&amp;)`|Оба|Если вы используете тип реализации, аргумент должен быть `com_ptr<T>`.|
 | `make_self<T>`|Реализация|Если вы используете тип проекции, возникает ошибка: `'Release': is not a member of any direct or indirect base class of 'T'`.|
 | `name_of<T>`|Проекция|Если вы используете тип реализации, вы получаете преобразованный в строку идентификатор GUID интерфейса по умолчанию.|
-| `weak_ref<T>`|Устройства обоих типов|Если вы используете тип реализации, аргумент конструктора должен быть `com_ptr<T>`.|
+| `weak_ref<T>`|Оба|Если вы используете тип реализации, аргумент конструктора должен быть `com_ptr<T>`.|
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>Предоставление согласия на использование универсального создания и прямого обращения к реализации
 
-В этом разделе описана возможность C++/WinRT 2.0, которая предоставляется только по согласию, хотя она включена по умолчанию для новых проектов. Для существующего проекта вам нужно предоставить согласие путем настройки средства `cppwinrt.exe`. В Visual Studio задайте для свойства проекта **Общие свойства** > **C++/WinRT** > **Оптимизировано значение** *Да*. Это действие аналогично добавлению `<CppWinRTOptimized>true</CppWinRTOptimized>` в файл проекта. Кроме того, оно аналогично добавлению параметра при вызове `cppwinrt.exe` из командной строки.
+В этом разделе описана возможность C++/WinRT 2.0, которая предоставляется только по согласию, хотя она включена по умолчанию для новых проектов. Для существующего проекта вам нужно предоставить согласие путем настройки средства `cppwinrt.exe`. В Visual Studio задайте для свойства проекта **Общие свойства** > **C++/WinRT** > **Оптимизировано значение***Да*. Это действие аналогично добавлению `<CppWinRTOptimized>true</CppWinRTOptimized>` в файл проекта. Кроме того, оно аналогично добавлению параметра при вызове `cppwinrt.exe` из командной строки.
 
 Параметр `-opt[imize]` включает возможность, которая часто называется *универсальным созданием*. Благодаря универсальному (или *унифицированному*) созданию вы можете непосредственно использовать проекцию языка C++/WinRT для создания и использования своих типов реализации (реализованных вашим компонентом типов для потребления приложениями) с высокой эффективностью и без каких-либо проблем с загрузчиком.
 
@@ -716,7 +716,7 @@ namespace winrt::MyNamespace::implementation
 }
 ```
 
-Иерархия имеет вид [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. Метод **BasePage::OnNavigatedFrom** корректно переопределяет [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom), но **DerivedPage::OnNavigatedFrom** не переопределяет **BasePage::OnNavigatedFrom**.
+Иерархия имеет вид [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. Метод **BasePage::OnNavigatedFrom** корректно переопределяет [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom), но **DerivedPage::OnNavigatedFrom** не переопределяет **BasePage::OnNavigatedFrom**.
 
 Здесь **DerivedPage** повторно использует виртуальную таблицу **IPageOverrides** из **BasePage**, то есть метод **IPageOverrides::OnNavigatedFrom** не переопределяется. Одно из возможных решений заключается в том, что класс **BasePage** должен быть классом шаблона для самого себя, а также иметь реализацию, которая полностью находится в файле заголовка, но это сильно усложняет ситуацию.
 
@@ -750,6 +750,6 @@ namespace winrt::MyNamespace::implementation
 * [шаблон функции winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
 * [функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66364111"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209049"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -65,7 +65,7 @@ ms.locfileid: "66364111"
 
 В этой таблице перечислены раздел, простое имя и строковое представление цвета (в формате \#aarrggbb) для ресурсов Light и Dark, предоставляемых платформой XAML. Этот раздел используется для ссылки на ресурс в приложении. "Простое имя Light/Dark" используется в рамках соглашения об именовании кистей, о котором будет рассказано позже.
 
-| Раздел                             | Простое имя Light/Dark | Светлая      | Темная       |
+| Клавиши                             | Простое имя Light/Dark | Легкий      | Темный       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -94,32 +94,32 @@ ms.locfileid: "66364111"
 
 :::row:::
     :::column:::
-        #### Light theme
+        #### <a name="light-theme"></a>Светлая тема
     :::column-end:::
     :::column:::
-        #### Dark theme
-    :::column-end:::
-:::row-end:::
-
-#### <a name="base"></a>Base
-
-:::row:::
-    :::column:::
-        ![The base light theme](images/themes/light-base.png)
-    :::column-end:::
-    :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
+        #### <a name="dark-theme"></a>Темная тема
     :::column-end:::
 :::row-end:::
 
-#### <a name="alt"></a>Альтернативная
+#### <a name="base"></a>Основной
 
 :::row:::
     :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
+        ![Базовая светлая тема](images/themes/light-base.png)
     :::column-end:::
     :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
+        ![Базовая темная тема](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
+
+#### <a name="alt"></a>ALT
+
+:::row:::
+    :::column:::
+        ![Альтернативная светлая тема](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![Альтернативная темная тема](images/themes/dark-alt.png)
     :::column-end:::
 :::row-end:::
 
@@ -127,10 +127,10 @@ ms.locfileid: "66364111"
 
 :::row:::
     :::column:::
-        ![The list light theme](images/themes/light-list.png)
+        ![Светлая тема списков](images/themes/light-list.png)
     :::column-end:::
     :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
+        ![Темная тема списков](images/themes/dark-list.png)
     :::column-end:::
 :::row-end:::
 
@@ -138,10 +138,10 @@ ms.locfileid: "66364111"
 
 :::row:::
     :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
+        ![Светлая тема хрома](images/themes/light-chrome.png)
     :::column-end:::
     :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
+        ![Темная тема хрома](images/themes/dark-chrome.png)
     :::column-end:::
 :::row-end:::
 
@@ -151,11 +151,11 @@ ms.locfileid: "66364111"
 
 В этой таблице перечислены системные цвета, предоставляемые XAML в форме объектов ресурса, полученных из палитры Windows. В столбце "Имя специальной возможности" указана метка цвета в пользовательском интерфейсе параметров Windows. В столбце "Простое имя HighContrast" указано слово-описание того, как данный цвет применяется к общим элементам управления XAML. Оно используется в рамках соглашения о наименовании кистей, о котором мы расскажем позже. В столбце "Первоначальное стандартное значение" указаны значения, которые вы получите, если система вообще не работает с высокой контрастностью.
 
-| Раздел                           | Имя специальной возможности            | Простое имя HighContrast | Первоначальное стандартное значение |
+| Клавиши                           | Имя специальной возможности            | Простое имя HighContrast | Первоначальное стандартное значение |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Текст на кнопке** (фон)   | Фон               | \#FFF0F0F0      |
+| SystemColorButtonFaceColor    | **Текст на кнопке** (фон)   | История               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Текст на кнопке** (передний план)   | Передний план               | \#FF000000      |
-| SystemColorGrayTextColor      | **Отключенный текст**              | Отключено                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **Отключенный текст**              | Отключен                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **Выделенный текст** (фон) | Выделить                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **Выделенный текст** (передний план) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Гиперссылки**                 | Гиперссылка                | \#FF0066CC      |
@@ -191,9 +191,9 @@ Windows предоставляет разные тем с высокой кон�
 
 | Тема        | Простое имя цвета | Ресурс цвета             | Значение выполнения                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Светлая        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| Темная         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Фон        | SystemColorButtonFaceColor | Цвет, указанный в параметрах для фона кнопки. |
+| Легкий        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Темный         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| HighContrast | История        | SystemColorButtonFaceColor | Цвет, указанный в параметрах для фона кнопки. |
 
 Можно использовать схему имен `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`, чтобы определить, какую кисть применить к вашим собственным элементам XAML.
 
@@ -402,7 +402,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**: [Кнопка](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 Этот стиль [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) предоставляет полный шаблон для элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), который может использоваться как кнопка навигации "Назад" для приложения навигации. Размер по умолчанию: 40 x 40 пикселей. Для настройки стиля можно либо явным образом задать [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) и другие свойства кнопки **Button**, либо создать производный стиль, используя [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon).
 
@@ -418,7 +418,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**: [Кнопка](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 Этот стиль [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) предоставляет полный шаблон для элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30 x 30 пикселей.
 

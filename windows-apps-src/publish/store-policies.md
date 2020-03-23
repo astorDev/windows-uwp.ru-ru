@@ -7,11 +7,11 @@ keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77607246"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209359"
 ---
 # <a name="microsoft-store-policies"></a>Политики для Microsoft Store
 
