@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
-ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844313"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448561"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
 
@@ -159,23 +159,25 @@ WINRT_ASSERT(w == L"Hello, World!");
 Идея состоит в том, что вы можете по большей части игнорировать особенности управления строками среды выполнения Windows и просто эффективно работать с тем, что вам известно. Это важно, учитывая, насколько активно строки используются в среде выполнения Windows.
 
 ## <a name="formatting-strings"></a>Форматирование строк
-Одно из средств форматирования строк — **std::wstringstream**. Вот пример, который форматирует и отображает простое сообщение отладочной трассировки.
+Одно из средств форматирования строк — **std::wstringstream**. Вот пример, который форматирует и отображает простое сообщение отладочной трассировки.
 
 ```cppwinrt
 #include <sstream>
+#include <winrt/Windows.UI.Input.h>
+#include <winrt/Windows.UI.Xaml.Input.h>
 ...
-void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
+void MainPage::OnPointerPressed(winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    winrt::Windows::Foundation::Point const point{ e.GetCurrentPoint(nullptr).Position() };
+    std::wostringstream wostringstream;
+    wostringstream << L"Pointer pressed at (" << point.X << L"," << point.Y << L")" << std::endl;
+    ::OutputDebugString(wostringstream.str().c_str());
 }
 ```
 
 ## <a name="the-correct-way-to-set-a-property"></a>Правильный способ задать свойство
 
-Для установки свойств значение передается в функцию задания. Рассмотрим пример.
+Для установки свойств значение передается в функцию задания. Пример.
 
 ```cppwinrt
 // The right way to set the Text property.
