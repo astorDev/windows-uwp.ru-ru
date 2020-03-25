@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209800"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218604"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение пользовательского элемента управления UWP в приложении WPF с помощью XAML-островов
 
-В этой статье показано, как использовать элемент управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) в наборе средств сообщества Windows для размещения пользовательского элемента управления UWP в приложении WPF, предназначенном для .NET Core 3. Пользовательский элемент управления содержит несколько первых элементов управления UWP из Windows SDK и привязывает свойство в одном из элементов управления UWP к строке в приложении WPF. В этой статье также показано, как разместить первый элемент управления UWP из [библиотеки винуи](https://docs.microsoft.com/uwp/toolkits/winui/).
+В этой статье показано, как использовать элемент управления [виндовсксамлхост](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) в наборе средств сообщества Windows для размещения пользовательского элемента управления UWP в приложении WPF, предназначенном для .NET Core 3. Пользовательский элемент управления содержит несколько первых элементов управления UWP из Windows SDK и привязывает свойство в одном из элементов управления UWP к строке в приложении WPF. В этой статье также показано, как разместить элемент управления UWP из [библиотеки винуи](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Хотя в этой статье показано, как это сделать в приложении WPF, процесс аналогичен для Windows Forms приложения. Общие сведения о размещении элементов управления UWP в приложениях WPF и Windows Forms см. в [этой статье](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -231,7 +231,7 @@ ms.locfileid: "79209800"
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Добавление элемента управления из библиотеки Винуи в пользовательский элемент управления
 
-Традиционно элементы управления UWP были выпущены как часть ОС Windows 10 и стали доступны разработчикам с помощью Windows SDK. [Библиотека винуи](https://docs.microsoft.com/uwp/toolkits/winui/) является альтернативным подходом, в котором обновленные версии элементов управления универсальной платформы Windows (UWP) из Windows SDK распределяются в пакете NuGet, который не привязан к выпускам Windows SDK. Эта библиотека также включает новые элементы управления, которые не являются частью Windows SDK и платформы UWP по умолчанию. Дополнительные сведения см. в нашей [стратегии винуи Library](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
+Традиционно элементы управления UWP были выпущены как часть ОС Windows 10 и стали доступны разработчикам с помощью Windows SDK. [Библиотека винуи](https://docs.microsoft.com/uwp/toolkits/winui/) является альтернативным подходом, в котором обновленные версии элементов управления UWP из Windows SDK распространяются в пакете NuGet, который не привязан к выпускам Windows SDK. Эта библиотека также включает новые элементы управления, которые не являются частью Windows SDK и платформы UWP по умолчанию. Дополнительные сведения см. в нашей [стратегии винуи Library](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
 
 В этом разделе показано, как добавить элемент управления UWP из библиотеки Винуи в пользовательский элемент управления, чтобы можно было разместить этот элемент управления в приложении WPF.
 
@@ -286,6 +286,9 @@ ms.locfileid: "79209800"
 При необходимости можно упаковать приложение WPF в [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания. MSIX — это современная технология упаковки приложений для Windows, которая основана на сочетании технологий установки MSI, appx, App-V и ClickOnce.
 
 В следующих инструкциях показано, как упаковать все компоненты в решении в пакете MSIX с помощью [проекта упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в Visual Studio 2019. Эти действия необходимы только в том случае, если требуется упаковать приложение WPF в пакет MSIX. Обратите внимание, что в настоящее время эти шаги включают некоторые обходные пути, характерные для сценария размещения пользовательских элементов управления UWP.
+
+> [!NOTE]
+> Если вы решили не упаковать приложение в [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания, на компьютерах, где выполняется приложение, должна быть установлена [Среда выполнения C++ Visual](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) .
 
 1. Добавьте новый [проект упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в решение. При создании проекта выберите **Windows 10, версия 1903 (10,0; Сборка 18362)** для **целевой версии** и **минимальной версии**.
 

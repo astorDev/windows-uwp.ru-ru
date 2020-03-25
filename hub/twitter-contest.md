@@ -6,12 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.date: 03/19/2020
-ms.openlocfilehash: ae86947b461e3fb748b67043827ffeebfc5cb0d2
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2a7a5983dcc7e330a30cf53b93c73f36f811d17d
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108107"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218474"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>Вносите изменения в документы Windows и вводите их, чтобы выиграть некоторое сущность
 
@@ -27,7 +27,7 @@ ms.locfileid: "80108107"
     - [Средства и драйверы](https://docs.microsoft.com/windows-hardware/drivers/) - **разработчика оборудования Windows**
 3. Внесите исправления на странице документов, нажав кнопку **изменить** в верхней части страницы. Вы перейдете к исходному файлу Markdown в GitHub.
 4. После внесения изменений. Файл с запросом на вытягивание (PR).
-5. Посетите учетную запись [@WindowsDocs](https://twitter.com/WindowsDocs) Twitter и ответьте на запрос конкурса, указав ссылку на ваш запрос на вытягивание.
+5. Ответьте на [@WindowsDocs конкурс](https://twitter.com/WindowsDocs/status/1242088720209268736) , указав ссылку на ваш запрос на вытягивание.
 
 Благодарим вас за сообщество участников!
 

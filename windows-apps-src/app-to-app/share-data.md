@@ -4,19 +4,22 @@ title: Предоставление общего доступа к данным
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2be088edd732a22acb11be5fc209ff25c84bae17
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317706"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218354"
 ---
 # <a name="share-data"></a>Предоставление общего доступа к данным
 
 
 В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP). Контракт отправки данных — это простой способ, которым приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже.
+
+> [!NOTE]
+> Примеры кода, приведенные в этой статье, написаны для приложений UWP. Приложения WPF, Windows Forms и C++/Win32 должны использовать интерфейс [идататрансферманажеринтероп](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) , чтобы получить объект [дататрансферманажер](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) для определенного окна. Дополнительные сведения см. в примере [шаресаурце](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) .
 
 ## <a name="set-up-an-event-handler"></a>Настройка обработчика событий
 
@@ -93,15 +96,15 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также: 
 
-* [Связь между приложениями](index.md)
+* [Обмен данными между приложениями](index.md)
 * [Получение данных](receive-data.md)
 * [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)
-* [DataPackagePropertySet](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertyset)
-* [DataRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest)
-* [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)
-* [FailWithDisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
-* [ShowShareUi](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
+* [датапаккажепропертисет](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertyset)
+* [Запрос на](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest)
+* [Запрос только для запроса](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)
+* [фаилвисдисплайтекст](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
+* [шовшареуи](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
  
 

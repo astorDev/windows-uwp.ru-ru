@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4bc474c3414969f27468a8daf262df0ae6e3b57e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3f2a0a6ee6b22fa7d08e7fc746c4ec2ad4ebffa7
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209790"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218594"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение стандартного элемента управления UWP в приложении WPF с помощью XAML-островов
 
-В этой статье показано два способа размещения стандартного элемента управления UWP (то есть первого элемента управления UWP, предоставляемого Windows SDK или библиотеки Винуи) в приложении WPF с помощью [XAML-островов](xaml-islands.md):
+В этой статье показано два способа размещения стандартного элемента управления UWP (то есть первого элемента управления UWP, предоставляемого Windows SDK) в приложении WPF с использованием [островов XAML](xaml-islands.md):
 
 * Здесь показано, как разместить элементы управления UWP [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и [инктулбар](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) с помощью [упакованных элементов управления](xaml-islands.md#wrapped-controls) в наборе средств сообщества Windows. Эти элементы управления заключают интерфейс и функциональные возможности небольшого набора полезных элементов управления UWP. Их можно добавить непосредственно в область конструктора проекта WPF или Windows Forms, а затем использовать их как любой другой элемент управления WPF или Windows Forms в конструкторе.
 
@@ -291,6 +291,9 @@ ms.locfileid: "79209790"
 При необходимости можно упаковать приложение WPF в [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания. MSIX — это современная технология упаковки приложений для Windows, которая основана на сочетании технологий установки MSI, appx, App-V и ClickOnce.
 
 В следующих инструкциях показано, как упаковать все компоненты в решении в пакете MSIX с помощью [проекта упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в Visual Studio 2019. Эти действия необходимы только в том случае, если требуется упаковать приложение WPF в пакет MSIX.
+
+> [!NOTE]
+> Если вы решили не упаковать приложение в [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания, на компьютерах, где выполняется приложение, должна быть установлена [Среда выполнения C++ Visual](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) .
 
 1. Добавьте новый [проект упаковки приложений Windows](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) в решение. При создании проекта выберите **Windows 10, версия 1903 (10,0; Сборка 18362)** для **целевой версии** и **минимальной версии**.
 
