@@ -1,28 +1,28 @@
 ---
-description: Получите новейшие загружаемые файлы и инструменты для создания макета пользовательского интерфейса приложений UWP и проектирования элементов управления.
-keywords: макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp
-title: Наборы средств для проектирования и примеры приложений UWP
-ms.date: 10/11/2018
+description: Получите новейшие загружаемые файлы и инструменты для создания макета пользовательского интерфейса приложений для Windows и проектирования элементов управления.
+keywords: макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp, макет приложения для windows, средства пользовательского интерфейса windows
+title: Наборы средств для проектирования и примеры приложений для Windows
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 44e6f65b38faa7bd80c277d999f4e18b398bd11b
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 9d683b73b64ef1cf2bd8d267aa40e2e1c419ac92
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463876"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218494"
 ---
-# <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы средств для проектирования и примеры приложений UWP
+# <a name="design-toolkits-and-samples-for-windows-apps"></a>Наборы средств для проектирования и примеры приложений для Windows
 
 ![Основы оформления](../images/downloads-2x.png)
 
-Скачиваемые файлы, связанные с проектированием и пользовательским интерфейсом, для приложений UWP и Fluent Design. Дополнительные средства, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/windows/downloads">на главной странице скачиваемых файлов</a>.
+Скачиваемые файлы, связанные с проектированием и пользовательским интерфейсом, для приложений для Windows и Fluent Design. Дополнительные средства, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/windows/downloads">на главной странице скачиваемых файлов</a>.
 
 ## <a name="design-toolkits"></a>Наборы инструментов для проектирования
 
-Эти наборы средств предоставляют элементы управления и макеты для проектирования приложений UWP.
+Эти наборы средств предоставляют элементы управления и макеты для проектирования приложений для Windows.
 
 :::row:::
     :::column:::
@@ -68,7 +68,7 @@ WinUI 2.3, февраль 2020 г.<br>
     :::column:::
 ![эскиз для библиотеки WinUI](images/WinUI-library.png)
 <b>Библиотека пользовательского интерфейса Windows</b><br>
-Элементы управления и другие элементы пользовательского интерфейса для приложений UWP.<br/>
+Элементы управления и другие элементы пользовательского интерфейса для приложений для Windows.<br/>
 <a href="/uwp/toolkits/winui/getting-started">Инструкции по установке</a><br/>
     :::column-end:::
     :::column:::
@@ -102,22 +102,22 @@ WinUI 2.3, февраль 2020 г.<br>
 
 ![Изображение редактора тем Fluent XAML](images/XamlThemeEditor_screenshot.png)
 **Редактор тем Fluent XAML**<br>
-Редактор тем Fluent XAML — это инструмент, который позволяет продемонстрировать гибкость системы Fluent Design. Он поддерживает процесс разработки приложений путем создания разметки XAML для платформы ResourceDictionary, используемой в приложениях универсальной платформы Windows (UWP).
+Редактор тем Fluent XAML — это инструмент, который позволяет продемонстрировать гибкость системы Fluent Design. Он поддерживает процесс разработки приложений путем создания разметки XAML для платформы ResourceDictionary, используемой в приложениях для Windows.
 <a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">Скачать пример инструмента</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">Ознакомиться с инструментом на сайте GitHub</a>
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Полный пример приложения UWP Van Arsdel, Ltd. был разработан, чтобы продемонстрировать следующее поколение системы Microsoft Fluent Design. В нем широко используется повышенная плотность и новые элементы управления из <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">библиотеки пользовательского интерфейса Windows</a>, а также мощные базовые функции платформы и компоновки пользовательского интерфейса. В примере показано, как создать многофункциональный и эффективный пользовательский интерфейс для приобретения устройств Интернета вещей и управления ими (в данном случае это лампы).<br>
+Полный пример приложения для Windows Van Arsdel, Ltd. был разработан, чтобы продемонстрировать следующее поколение системы Microsoft Fluent Design. В нем широко используется повышенная плотность и новые элементы управления из <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">библиотеки пользовательского интерфейса Windows</a>, а также мощные базовые функции платформы и компоновки пользовательского интерфейса. В примере показано, как создать многофункциональный и эффективный пользовательский интерфейс для приобретения устройств Интернета вещей и управления ими (в данном случае это лампы).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Ознакомиться с примером VanArsdel на сайте GitHub</a>
 
 ![Изображение BuildCast](images/buildcast.png)
 **BuildCast**<br>
-BuildCast — это полный пример, созданный для демонстрации возможностей системы Fluent Design и универсальной платформы Windows. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
+BuildCast — это полный пример, созданный для демонстрации возможностей системы Fluent Design и Windows. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Скачать пример BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Ознакомиться с примером BuildCast на сайте GitHub</a>
 
 ![Lunch Scheduler](images/lunchscheduler.png)
 **Lunch Scheduler**<br>
-Пример приложения UWP для планирования обедов с друзьями и коллегами. Вы создаете обед, приглашаете друзей в интересующий вас ресторан, а приложение управляет всеми остальными аспектами для всех участников. Это приложение UWP содержит элементы системы Fluent Design, такие как акрил, эффект отображения и подключенные анимации. <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">Скачать пример Lunch Scheduler</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">Ознакомиться с примером Lunch Scheduler на сайте GitHub</a></p>  
+Пример приложения для Windows для планирования обедов с друзьями и коллегами. Вы создаете обед, приглашаете друзей в интересующий вас ресторан, а приложение управляет всеми остальными аспектами для всех участников. Это приложение для Windows содержит элементы системы Fluent Design, такие как акрил, эффект отображения и подключенные анимации. <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">Скачать пример Lunch Scheduler</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">Ознакомиться с примером Lunch Scheduler на сайте GitHub</a></p>  
 
 ![XAML Controls Gallery](images/xaml-controls-gallery.png)
 **XAML Controls Gallery**<br>
@@ -125,4 +125,4 @@ BuildCast — это полный пример, созданный для дем
 
 ## <a name="want-more-code"></a>Вам нужно больше примеров кода?
 
-Полный список всех наших примеров приложений UWP вы можете найти на странице примеров Windows. <a href="https://developer.microsoft.com/windows/samples">Перейти на портал примеров</a>
+Полный список всех наших примеров приложений для Windows вы можете найти на странице примеров Windows. <a href="https://developer.microsoft.com/windows/samples">Перейти на портал примеров</a>

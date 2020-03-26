@@ -1,42 +1,35 @@
-items:
 - name: Обзор
   href: index.md
-- name: Что такое приложение UWP?
+- name: Что такое приложение для Windows?
   href: ../get-started/universal-application-platform-guide.md
 - name: Подготовка
   href: ../get-started/get-set-up.md
   items:
-  - name: Подготовка устройства к разработке
-    href: ../get-started/enable-your-device-for-development.md
-  - name: Создание учетной записи разработчика
-    href: ../get-started/sign-up.md
+    - name: Подготовка устройства к разработке
+      href: ../get-started/enable-your-device-for-development.md
+    - name: Создание учетной записи разработчика
+      href: ../get-started/sign-up.md
 - name: Начало разработки
   href: ../get-started/create-uwp-apps.md
   items:
-  - name: Создание формы
-    href: construct-form-learning-track.md
-  - name: Отображение пользователей в виде списка
-    href: display-customers-in-list-learning-track.md
-  - name: Загрузка и сохранение параметров
-    href: settings-learning-track.md
-  - name: Работа с файлами
-    href: fileio-learning-track.md
-  - name: Ваше первое приложение
-    href: ../get-started/your-first-app.md
-    items:
-    - name: Создание приложения "Hello, world" (C#)
-      href: ../get-started/create-a-hello-world-app-xaml-universal.md
-    - name: Создание приложения "Hello, world" (C++)
-      href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: Создание приложения "Hello, world" (JS)
-      href: ../get-started/create-a-hello-world-app-js-uwp.md
-  - name: Создание сложного приложения
-    href: ../get-started/plan-your-app.md
-- name: Получение примеров приложений UWP
+    - name: Создание формы
+      href: construct-form-learning-track.md
+    - name: Отображение пользователей в виде списка
+      href: display-customers-in-list-learning-track.md
+    - name: Загрузка и сохранение параметров
+      href: settings-learning-track.md
+    - name: Работа с файлами
+      href: fileio-learning-track.md
+    - name: Ваше первое приложение
+      href: ../get-started/your-first-app.md
+      items:
+        - name: 'Создание приложения "Hello, world" (C#)'
+          href: ../get-started/create-a-hello-world-app-xaml-universal.md
+        - name: 'Создание приложения "Hello, world" (C++)'
+          href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
+        - name: 'Создание приложения "Hello, world" (JS)'
+          href: ../get-started/create-a-hello-world-app-js-uwp.md
+    - name: Создание сложного приложения
+      href: ../get-started/plan-your-app.md
+- name: Примеры приложений для Windows
   href: ../get-started/get-uwp-app-samples.md
-ms.openlocfilehash: 6d2635bec653e5c9f409ff6a5249ee0215276225
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583511"

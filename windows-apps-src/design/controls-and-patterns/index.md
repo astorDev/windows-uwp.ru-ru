@@ -1,29 +1,29 @@
 ---
-description: Здесь вы найдете инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение UWP. Свыше 45 функциональных элементов управления для использования с приложением.
-title: Элементы управления и шаблоны UWP — разработка приложений для Windows
-keywords: элементы управления uwp, пользовательский интерфейс, элементы управления приложения
+description: Здесь вы найдете инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение для Windows. Свыше 45 функциональных элементов управления для использования с приложением.
+title: Элементы управления и шаблоны Windows — разработка приложений для Windows
+keywords: элементы управления uwp, пользовательский интерфейс, элементы управления приложения, элементы управления windows
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081713"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218454"
 ---
-# <a name="controls-for-uwp-apps"></a>Элементы управления для приложений UWP
+# <a name="controls-for-windows-apps"></a>Элементы управления приложений для Windows
 
 ![Элементы управления](../images/controls-2x.png)
 
-В разработке приложений UWP <i>элемент управления</i> — это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Элементы управления — это основа пользовательского интерфейса. <i>Шаблон</i> — это макет для объединения нескольких элементов управления, позволяющий получить что-то новое.
+В разработке приложений для Windows <i>элемент управления</i> — это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Элементы управления — это основа пользовательского интерфейса. <i>Шаблон</i> — это макет для объединения нескольких элементов управления, позволяющий получить что-то новое.
 
 Мы предоставляем более 45 элементов управления — от простых кнопок до мощных элементов управления данными, таких как представление сетки.  Эти элементы управления являются частью системы Fluent Design и помогают создавать удобный и масштабируемый пользовательский интерфейс, который прекрасно выглядит на всех устройствах и экранах разного размера.
 
-В статьях в этом разделе представлены инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение UWP.
+В статьях в этом разделе представлены инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение для Windows.
 
 ## <a name="intro"></a>Вступление
 
@@ -140,4 +140,4 @@ ms.locfileid: "80081713"
 
 ## <a name="additional-controls"></a>Дополнительные элементы управления
 
-Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.
+Дополнительные элементы управления для разработки для Windows предлагают такие компании, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.

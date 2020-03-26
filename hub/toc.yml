@@ -22,12 +22,22 @@
           items:
             - name: Обзор
               href: apps/desktop/modernize/xaml-islands.md
-            - name: Добавление стандартного элемента управления UWP в приложение WPF
-              href: apps/desktop/modernize/host-standard-control-with-xaml-islands.md
-            - name: Добавление пользовательского элемента управления UWP в приложение WPF
-              href: apps/desktop/modernize/host-custom-control-with-xaml-islands.md
-            - name: Использование API размещения XAML платформы UWP в приложении Win32 на C++
-              href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+            - name: XAML Islands в приложениях WPF и Windows Forms
+              items:
+                - name: Размещение стандартного элемента управления UWP
+                  href: apps/desktop/modernize/host-standard-control-with-xaml-islands.md
+                - name: Размещение настраиваемого элемента управления UWP
+                  href: apps/desktop/modernize/host-custom-control-with-xaml-islands.md
+            - name: XAML Islands в приложениях C++ Win32
+              items:
+                - name: Использование API размещения UWP XAML
+                  href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+                - name: Размещение стандартного элемента управления UWP
+                  href: apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                - name: Размещение настраиваемого элемента управления UWP
+                  href: apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                - name: Расширенные сценарии
+                  href: apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
         - name: Использование визуального уровня (Windows.UI.Composition)
           items:
             - name: Обзор
