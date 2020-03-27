@@ -793,6 +793,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Переход на C++/WinRT с WRL
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: 'Перенос примера приложения из C#'
+          href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: 'Переход на C++/WinRT с C#'
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Взаимодействие с ABI
