@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061949"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081613"
 ---
 # <a name="pull-to-refresh"></a>Обновление путем оттягивания
 
@@ -38,7 +38,7 @@ ms.locfileid: "71061949"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/PullToRefresh">открыть это приложение и увидеть PullToRefresh в действии</a>.</p>
     <ul>
@@ -349,11 +349,11 @@ public class ListItemData
 }
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Взаимодействия с помощью сенсорного ввода](../input/touch-interactions.md)
 - [Представления списка и сетки](listview-and-gridview.md)

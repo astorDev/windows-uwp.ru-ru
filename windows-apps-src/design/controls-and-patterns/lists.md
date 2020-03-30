@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cd49ce68de6f1c7a7a29b94c80f0a004a2eca3
-ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
+ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74478536"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081736"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
@@ -47,7 +47,7 @@ ms.locfileid: "74478536"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, то вы можете увидеть в действии элементы <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/FlipView">FlipView</a>, <a href="xamlcontrolsgallery:/item/TreeView">TreeView</a> и <a href="xamlcontrolsgalley:/item/ItemsRepeater">ItemsRepeater</a>.</p>
     <ul>
@@ -84,7 +84,7 @@ ms.locfileid: "74478536"
 
 ![Перевернутое представление списка](images/listview-inverted-2.png)
 
-### <a name="related-articles"></a>Связанные статьи
+### <a name="related-articles"></a>Похожие статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -149,7 +149,7 @@ ms.locfileid: "74478536"
 
 ![Пример библиотеки содержимого](images/gridview-simple-example-final.png)
 
-### <a name="related-articles"></a>Связанные статьи
+### <a name="related-articles"></a>Похожие статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -203,7 +203,7 @@ ms.locfileid: "74478536"
 
 ![Вертикальное представление пролистывания](images/controls_flipview_vertical.jpg)
 
-### <a name="related-articles"></a>Связанные статьи
+### <a name="related-articles"></a>Похожие статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -242,7 +242,7 @@ ms.locfileid: "74478536"
 
 ![Представление в виде дерева со значками](images/treeview-icons.png)
 
-### <a name="related-articles"></a>Связанные статьи
+### <a name="related-articles"></a>Похожие статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -281,7 +281,7 @@ ItemsRepeater отличается от остальных элементов у
 ![ItemsRepeater с вертикальными полосами](images/itemsrepeater-2.png)
 ![ItemsRepeater с круговым представлением](images/itemsrepeater-3.png)
 
-### <a name="related-articles"></a>Связанные статьи
+### <a name="related-articles"></a>Похожие статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -316,11 +316,11 @@ ItemsRepeater отличается от остальных элементов у
 </tr>
 </table>
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 **Рекомендации по проектированию и пользовательскому интерфейсу**
 - [Основные и подробные данные](master-details.md)

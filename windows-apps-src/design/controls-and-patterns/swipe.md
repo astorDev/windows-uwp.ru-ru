@@ -11,12 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9a9ff0acd46ef7efa92239b0a3ef07b507850a66
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63774698"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081524"
 ---
 # <a name="swipe"></a>Swipe
 
@@ -42,7 +42,7 @@ ms.locfileid: "63774698"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SwipeControl">открыть приложение и увидеть SwipeControl в действии</a>.</p>
     <ul>
@@ -233,11 +233,11 @@ ms.locfileid: "63774698"
 - Используйте горизонтальный сдвиг на широких элементах, а вертикальный сдвиг — на вертикальных элементах.
 - Используйте краткие и точные текстовые метки.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Представления списка и сетки](listview-and-gridview.md)
 - [Контейнеры и шаблоны элементов](item-containers-templates.md)

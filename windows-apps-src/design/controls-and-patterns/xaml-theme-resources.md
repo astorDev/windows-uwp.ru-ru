@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
+ms.sourcegitcommit: 378693fe9b655fe14814d683e8d8cb2dd1380fd7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209049"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249858"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -177,7 +177,7 @@ Windows предоставляет разные тем с высокой кон�
 
 ### <a name="theme-dependent-brushes"></a>Кисти, зависимые от темы
 
-Ресурсы цвета, рассмотренные в предыдущих разделах, используются для определения свойства [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) ресурсов [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) в словарях ресурсов темы системы. Ресурсы кисти используются для применения цвета к элементам XAML. Разделы ресурсов кисти должны иметь следующий формат имени: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Например, `SystemControlBackroundAltHighBrush`.
+Ресурсы цвета, рассмотренные в предыдущих разделах, используются для определения свойства [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) ресурсов [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) в словарях ресурсов темы системы. Ресурсы кисти используются для применения цвета к элементам XAML. Разделы ресурсов кисти должны иметь следующий формат имени: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Например, `SystemControlBackgroundAltHighBrush`.
 
 Рассмотрим, как определяется значение цвета для этой кисти во время выполнения. В словарях ресурсов Light и Dark эта кисть определена следующим образом:
 

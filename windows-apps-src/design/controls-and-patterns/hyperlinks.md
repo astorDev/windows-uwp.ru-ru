@@ -12,20 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: fa4ff0cbc2bd361b241f660f9c6b28f03bc7c24c
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362762"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080904"
 ---
 # <a name="hyperlinks"></a>Гиперссылки
 
- 
-
 Гиперссылки используются для перехода в другую часть приложения, в другое приложение либо по указанному универсальному коду ресурса (URI) в отдельном приложении браузера. Существует два способа добавления гиперссылки в приложение XAML: текстовый элемент **гиперссылки** и элемент управления **HyperlinkButton**.
 
-> **Важные API**: [текстовый элемент гиперссылки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink) и [элемент управления HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **API платформы**: [текстовый элемент гиперссылки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink) и [элемент управления HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
 
@@ -45,7 +43,7 @@ ms.locfileid: "66362762"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/HyperlinkButton">открыть приложение и увидеть HyperlinkButton в действии</a>.</p>
     <ul>
@@ -173,11 +171,11 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 -   Располагайте отдельные гиперссылки на значительном расстоянии друг от друга, чтобы пользователю было удобно отличать их и делать выбор между ними.
 -   Добавляйте к гиперссылкам подсказки, которые информируют о том, куда будет перенаправлен пользователь. Если пользователь будет перенаправляться на внешний сайт, включите в подсказку указание доменного имени верхнего уровня и выделите текст с помощью дополнительного цвета шрифта.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Текстовые элементы управления](text-controls.md)
 - [Руководство по использованию подсказок](tooltips.md)

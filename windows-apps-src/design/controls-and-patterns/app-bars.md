@@ -13,18 +13,18 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c32b60b3d9e717a916b5424f3b8bd78102439f30
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257746"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081969"
 ---
 # <a name="command-bar"></a>Панель команд
 
 Панели команд предоставляют пользователям удобный доступ к самым распространенным задачам приложения. Панели команд могут предоставлять доступ к командам приложения или страниц, работая с любым шаблоном навигации.
 
-> **Важные API**: [класс CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [класс AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **API платформы:** [класс CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [класс AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![Пример панели команд со значками](images/controls_appbar_icons.png)
 
@@ -40,7 +40,7 @@ CommandBar — это гибкий облегченный элемент упр�
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CommandBar">открыть приложение и увидеть CommandBar в действии</a>.</p>
     <ul>
@@ -275,12 +275,12 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 >**Сенсорные устройства**. Если панель команд должна оставаться видимой пользователю при появлении сенсорной клавиатуры или панели функционального ввода (SIP), вы можете присвоить панель команд в качестве значения свойству [BottomAppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.bottomappbar) объекта Page, и тогда панель будет перемещаться и сохранять видимость при появлении SIP. В противном случае следует встроить панель команд и позиционировать ее относительно содержимого приложения.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 - [Пример команд XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 * [Основы проектирования команд в приложениях UWP](../basics/commanding-basics.md)
 * [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) (Класс CommandBar)

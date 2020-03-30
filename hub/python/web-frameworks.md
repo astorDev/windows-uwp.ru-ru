@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python в windows, python web с wsl, веб-приложение python с подсистемой windows для linux, веб-разработка python в windows, приложение flask в windows, приложение django в windows, python web, веб-разработка flask в windows, веб-разработка django в windows, веб-разработка windows с помощью python, веб разработка с помощью python vs code, удаленное расширение wsl, ubuntu, wsl, venv, pip, расширение microsoft python, запуск python в windows, использование python в windows, сборка с помощью python в windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79208979"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218484"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Начало работы с Python для разработки веб-приложений в Windows
 
@@ -325,7 +325,7 @@ Python — это интерпретируемый язык, поддержив
 
 16. Сохраните все измененные файлы.
 
-17. В окне терминала VS Code запустите сервер разработки с `python manage.py runserver` и откройте браузер `http://127.0.0.1:8000/`, чтобы увидеть страницу, которая отображает "Hello, Django".
+17. В окне терминала VS Code запустите сервер разработки с `python3 manage.py runserver` и откройте браузер `http://127.0.0.1:8000/`, чтобы увидеть страницу, которая отображает "Hello, Django".
 
 Поздравляем, вы создали веб-приложение Django с помощью VS Code и подсистемы Windows для Linux! Более подробное руководство по использованию VS Code и Django см. в разделе [Руководство по Django в Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django).
 

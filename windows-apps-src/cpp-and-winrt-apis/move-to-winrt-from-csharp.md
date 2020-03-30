@@ -1,20 +1,20 @@
 ---
-description: В этом разделе объясняется, как перенести код C# в его эквивалент на C++/WinRT.
+description: В этой статье описаны технические особенности переноса исходного кода из проекта [C#](/visualstudio/get-started/csharp) в его эквивалент в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Переход на C++/WinRT с C#
 ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: f7cd35dbf211b14dfb886fc9ba4305cd7ce56e5e
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958964"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290057"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Переход на C++/WinRT с C#
 
-В этом разделе показано, как перенести код из проекта [C#](/visualstudio/get-started/csharp) в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+В этой статье описаны технические особенности переноса исходного кода из проекта [C#](/visualstudio/get-started/csharp) в его эквивалент в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## <a name="register-an-event-handler"></a>Регистрация обработчика событий
 
@@ -193,7 +193,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 В C++/WinRT также поддерживается [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) для ограниченного числа типов. Вам нужно добавить перегрузки для любых дополнительных типов, к которым необходимо применить метод stringify.
 
-| Язык | Stringify int | Stringify enum |
+| Language | Stringify int | Stringify enum |
 | - | - | - |
 | C# | `string result = "hello, " + intValue.ToString();`<br>`string result = $"hello, {intValue}";` | `string result = "status: " + status.ToString();`<br>`string result = $"status: {status}";` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
@@ -335,7 +335,7 @@ namespace winrt::MyNamespace::implementation
 * [Шаблон функции winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
 * [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Руководства по C#](/visualstudio/get-started/csharp)
 * [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
 * [Подробно о привязке данных](/windows/uwp/data-binding/data-binding-in-depth)

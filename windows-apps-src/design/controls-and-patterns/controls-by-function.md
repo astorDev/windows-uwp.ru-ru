@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57639fc370ed7e10a427af4808e2a8a6de91b554
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
+ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257705"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80301459"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -90,7 +90,7 @@ ms.locfileid: "74257705"
 
 ## <a name="buttons"></a>Кнопки
 
-### <a name="button"></a>Button
+### <a name="button"></a>Кнопка
 Элемент управления, который реагирует на действия пользователя и вызывает событие **Click**.
 
 ![Обычная кнопка](images/controls/button.png)
@@ -100,7 +100,7 @@ ms.locfileid: "74257705"
         Click="Button_Click" />
 ```
 
-Справочные материалы. [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
+Справочные материалы. [Кнопка](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
 
 Проектирование и инструкции. [Кнопки](buttons.md) 
 
@@ -313,7 +313,7 @@ ms.locfileid: "74257705"
 
 ## <a name="images"></a>образы,
 
-### <a name="image"></a>Изображение
+### <a name="image"></a>ОС контейнера
 Элемент управления, представляющий изображение.
 
 ```xaml
@@ -515,7 +515,7 @@ ms.locfileid: "74257705"
 
 ## <a name="media-controls"></a>Элементы управления мультимедиа
 
-### <a name="audio"></a>Звук
+### <a name="audio"></a>звук;
 См. "Элемент мультимедиа".
 
 ### <a name="media-element"></a>Элемент мультимедиа
@@ -724,10 +724,10 @@ ms.locfileid: "74257705"
 ### <a name="text-box"></a>Текстовое поле
 Поле для однострочного или многострочного ввода обычного текста.
 
-![Элемент управления "Текстовое поле"](images/controls/text-box.png) 
+![Элемент управления "Текстовое поле"](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
@@ -779,9 +779,9 @@ ms.locfileid: "74257705"
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
          SelectionChanged="ListBox_SelectionChanged">
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
+    <x:String>List item 1</x:String>
+    <x:String>List item 2</x:String>
+    <x:String>List item 3</x:String>
 </ListBox>
 ```
 
@@ -816,7 +816,7 @@ ms.locfileid: "74257705"
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-Справочные материалы. [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
+Справочные материалы. [Ползунок](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
 
 Проектирование и инструкции. [Ползунки](slider.md) 
 

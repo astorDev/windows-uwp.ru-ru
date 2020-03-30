@@ -1,20 +1,20 @@
 ---
-description: В этом разделе объясняется, как перенести код C++/CX в его эквивалент на C++/WinRT.
+description: В этой статье описаны технические особенности переноса исходного кода из проекта [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в его эквивалент в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Переход на C++/WinRT из C++/CX
 ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
-ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
+ms.openlocfilehash: a554a46d73053c2b6a01a0b10dbc78c87b743052
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78935363"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290036"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
-В этом разделе показано, как перенести код в [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) проекте на его эквивалент в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+В этой статье описаны технические особенности переноса исходного кода из проекта [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в его эквивалент в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## <a name="porting-strategies"></a>Стратегии переноса
 
