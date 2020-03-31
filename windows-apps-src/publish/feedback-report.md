@@ -4,16 +4,19 @@ title: Отчет об отзывах
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50ffec5beafd88ddc852e4d9b2fb995fb12bd939
+ms.sourcegitcommit: 56d777134bc85f049e281e34660de612ac938a01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259018"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417429"
 ---
 # <a name="feedback-report"></a>Отчет об отзывах
+
+> [!WARNING]
+> Устаревший отчет о отзывах 15 апреля 2020. Этот отчет больше не будет поддерживаться после 15 апреля 2020. Данные этого отчета не будут обновляться после этой даты, и отчет будет удален в будущем без предварительного уведомления. Вы можете по-прежнему просматривать Отзывы, полученные от клиентов, непосредственно в центре обратной связи.
 
 **Отчет о отзывах** в центре партнеров позволяет просматривать проблемы, предложения и отзывы, которые клиенты Windows 10 отправили через центр обратной связи. Вы можете просмотреть эти данные в центре партнеров или экспортировать данные для просмотра в автономном режиме.
 
