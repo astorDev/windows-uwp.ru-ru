@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновая задача, служба приложений, подключенные устройства, удаленные системы
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9280a240f35c2fdf5290c94d837e2fafc008dbfd
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371725"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80483011"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Запуск, возобновление и фоновые задачи
 
@@ -95,9 +95,10 @@ ms.locfileid: "66371725"
 | Раздел | Описание |
 |-------|-------------|
 | [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)                                       | Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач. |
-| [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)   | [ **DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) позволяет приложению UWP получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда приложение переднего плана приостановлено. |
+| [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) позволяет приложению UWP получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда приложение переднего плана приостановлено. |
 | [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)       | Создание и регистрация фоновой задачи, которая запускается в том же процессе, что и приложение переднего плана. |
 | [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)           | Создание и регистрация фоновой задачи, которая запускается в виде отдельного процесса из вашего приложения, и регистрация ее для выполнения, когда приложение находится не на переднем плане. |
+| [Создание и регистрация фоновой задачи COM для приложения WinMain](create-and-register-a-winmain-background-task.md) | Создайте фоновую задачу COM, которая может выполняться в основном процессе или вне процесса, когда упакованное приложение WinMain не запущено. |
 | [Перенос фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса](convert-out-of-process-background-task.md) | Узнайте, как преобразовать выполняемую вне процесса фоновую задачу в фоновую задачу внутри процесса, выполняемую в том же процессе, что и ваше приложение переднего плана.|
 | [Отладка фоновой задачи](debug-a-background-task.md)                                                       | Узнайте, как отладить фоновую задачу, выполнив в том числе активацию фоновой задачи и трассировку отладки в журнале событий Windows. |
 | [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md) | Вы можете разрешить использование фоновых задач, объявив их как расширения в манифесте приложения. |
