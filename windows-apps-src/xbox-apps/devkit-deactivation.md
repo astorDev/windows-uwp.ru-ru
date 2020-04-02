@@ -3,15 +3,15 @@ title: Деактивация режима разработчика Xbox One
 description: Сведения о выключении режима разработчика.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6e7b96e3b8b0cd6f47fdd97008aa8d90dc032fc4
+ms.sourcegitcommit: bee98f7a468c97c707de76afc14e1707c25f74f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651779"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80531466"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Деактивация режима разработчика Xbox One
 
@@ -70,11 +70,11 @@ ms.locfileid: "57651779"
    
     ![Сброс параметров и удаление всего](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>Отключение вашей консоли, с помощью центра партнеров
+## <a name="deactivate-your-console-using-partner-center"></a>Деактивация консоли с помощью центра партнеров
 
-Если вы не сможете получить доступ к вашей консоли по любой причине, можно отключить режим разработчика на консоли с помощью центра партнеров.
+Если вам не удается получить доступ к консоли по какой-либо причине, можно также отключить режим разработчика в консоли с помощью центра партнеров.
 
-1. Перейдите к [консолей управления Xbox One](https://partner.microsoft.com/xboxdevices) страницы в центре партнеров. Может быть предложено войти.
+1. Перейдите на страницу [Управление одними консолями Xbox](https://partner.microsoft.com/xboxconfig/devices) в центре партнеров. Возможно, вам будет предложено выполнить вход.
 
 2. Найдите в списке консолей консоль, которую необходимо деактивировать, уточнив ее серийный номер, идентификатор консоли или идентификатор устройства.  
 
@@ -84,6 +84,6 @@ ms.locfileid: "57651779"
 
 Если ранее вы не вернули консоль Xbox One в коммерческий режим, сделайте это прямо сейчас, как описано в разделе [Переключиться на коммерческий режим](#switch-to-retail-mode).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 - [Активация режима разработчика Xbox One](devkit-activation.md)
 - [Приложения UWP для Xbox One](index.md)

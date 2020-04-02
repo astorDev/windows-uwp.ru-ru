@@ -7,12 +7,12 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: df2fad68fd1aab9b3b056e962736f3d37f749e63
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: f2700f0e5ffa8c2d1c9f0500e967096763757cd9
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393536"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538191"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
@@ -114,7 +114,7 @@ namespace BackgroundTasks
             // Create a tile notification for each feed item.
             foreach( var item in feed.Items )
             {
-                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWideText03 );
+                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWide310x150Text03 );
 
                 var title = item.Title;
                 string titleText = title.Text == null ? String.Empty : title.Text;
@@ -213,8 +213,8 @@ namespace ContosoApp
         private async void RegisterBackgroundTask()
         {
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
-            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity )
+            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedSubjectToSystemPolicy ||
+                backgroundAccessStatus == BackgroundAccessStatus.AlwaysAllowed )
             {
                 foreach( var task in BackgroundTaskRegistration.AllTasks )
                 {
@@ -253,7 +253,7 @@ namespace ContosoApp
 8.  Для остановки отладки нажмите клавиши SHIFT+F5 или выберите элемент **Debug &gt; Stop Debugging** (Отладка &gt; Остановить отладку).
 9.  Вернитесь к плитке приложения на начальном экране. Через несколько секунд на плитке вашего приложения появится уведомление.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 
 * [**баккграундтаскбуилдер**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
