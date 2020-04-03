@@ -12,20 +12,22 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ab37c49115acbccaf81725b74def85891fd73219
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735069"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614082"
 ---
 # <a name="parallax"></a>Параллакс
 
 Параллакс — это визуальный эффект, при котором элементы, расположенные ближе к зрителю, перемещаются быстрее элементов фона. Эффект параллакса создает ощущение глубины, перспективы и движения. В приложении UWP для создания эффекта параллакса можно использовать элемент управления ParallaxView.  
 
-> **Важные API**: [класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [свойство HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [класс параллаксвиев](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [свойство вертикалшифт](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [свойство хоризонталшифт](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+>
+> **API-интерфейсы платформы**: [класс параллаксвиев](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство вертикалшифт](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [свойство хоризонталшифт](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
@@ -43,11 +45,11 @@ ms.locfileid: "74735069"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Параллакс и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс — это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Дополнительные сведения см. в [обзоре системы Fluent Design для UWP](/windows/apps/fluent-design-system).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс — это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Подробные сведения см. в статье [The Fluent Design System for Windows app creators](/windows/apps/fluent-design-system) (Система проектирования Fluent Design для разработчиков приложений Windows).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Как это работает в пользовательском интерфейсе
 
-В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Чтобы продемонстрировать это, давайте рассмотрим пример с двумя уровнями содержимого: списком и фоновым изображением.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Для достижения эффекта параллакса нужно, чтобы объект, расположенный ближе к нам, двигался "быстрее" расположенного дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
+В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Для демонстрации рассмотрим два уровня содержимого: список и фоновое изображение.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Теперь, чтобы добиться фокусировкиного воздействия, мы хотим, чтобы объект, ближайший к нам, переходился в направлении "быстрее", чем объект, который находится дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
 
  ![Пример эффекта параллакса со списком и фоновым изображением](images/_Parallax_v2.gif)
 
@@ -80,7 +82,7 @@ ms.locfileid: "74735069"
        <x:String>Item 2</x:String> 
        <x:String>Item 3</x:String> 
        <x:String>Item 4</x:String> 
-       <x:String>Item 5</x:String>  
+       <x:String>Item 5</x:String>     
        <x:String>Item 6</x:String> 
        <x:String>Item 7</x:String> 
        <x:String>Item 8</x:String> 
@@ -98,9 +100,9 @@ ms.locfileid: "74735069"
        <x:String>Item 21</x:String>        
     </ListView>
 </Grid>
-``` 
+```    
 
-ParallaxView автоматически подстраивает размер изображения для операции параллакса, так что вы можете не беспокоиться, что при прокрутке изображение выйдет из поля зрения.
+Параллаксвиев автоматически корректирует размер образа, чтобы он работал для операции фокусировки, чтобы не беспокоиться о прокрутке изображения.
 
 ## <a name="customizing-the-parallax-effect"></a>Настройка эффекта параллакса 
 
@@ -113,13 +115,13 @@ ParallaxView автоматически подстраивает размер и
 
 Полный перечень способов настройки эффекта параллакса приведен в разделе "Класс ParallaxView". 
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 - Используйте параллакс для списков с фоновым изображением.
 - Можно использовать эффект параллакса в ListViewItems, если там содержится изображение.
-- Не используйте его везде, злоупотребление может ослабить впечатление.
+- Не используйте его везде, что чрезмерно сказывается на его влиянии
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
 - [Класс Параллаксвиев](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design для UWP](/windows/apps/fluent-design-system)
