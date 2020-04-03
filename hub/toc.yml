@@ -74,6 +74,10 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
         - name: Предоставление идентификаторов для неупакованных классических приложений
           href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: "Разработка для Windows\_10X"
+      items:
+        - name: "Часто задаваемые вопросы о разработке для Windows\_10X"
+          href: apps/10x/faq.md
     - name: Система Fluent Design
       href: apps/fluent-design-system.md
     - name: Специальные возможности

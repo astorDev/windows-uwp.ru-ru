@@ -2,18 +2,17 @@
 description: Узнайте, как сделать ваше приложение доступным для людей во всем мире.
 keywords: специальные возможности приложений uwp, глобализация, приложения с конструированием, требования к приложению со специальными возможностями
 title: Удобство использования в приложениях UWP — разработка приложений для Windows
-layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c725839a29c093c78eb977538da4c43d906051c6
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076392"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614949"
 ---
 # <a name="usability-for-uwp-apps"></a>Удобство использования приложений UWP
 
@@ -179,13 +178,24 @@ ms.locfileid: "70076392"
 
 Параметры позволяют пользователям настраивать приложение, оптимизируя его в соответствии с индивидуальными потребностями и предпочтениями. Предоставление подходящих параметров и их хранение сделают отличный процесс взаимодействия с пользователем еще лучше.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">Руководства</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Рекомендации по созданию и отображению параметров приложения.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">Сохранение и получение данных приложения</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Хранение и извлечение локальных, перемещаемых и временных данных приложений.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/guidelines-for-app-settings.md">Руководство</a></b><br/>Рекомендации по созданию и отображению параметров приложения.</p>
+<p><b><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></b><br/>Best practices for creating and displaying app settings.</p>
                     </div>
                 </div>
             </div>
@@ -196,13 +206,13 @@ ms.locfileid: "70076392"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Сохранение и получение данных приложения</a></b><br/>Хранение и извлечение локальных, перемещаемых и временных данных приложений.</p>
+<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-</ul>
+</ul> -->
 
 ## <a name="globalization-and-localization"></a>Глобализация и локализация
 
@@ -213,13 +223,34 @@ Windows используется во всем мире пользователя
 ## <a name="in-app-help"></a>Справка в приложении
 Как бы хорошо вы ни спроектировали приложение, некоторым пользователям может понадобиться дополнительная помощь.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">Руководство по справке для приложений</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Приложения могут быть сложными, поэтому предоставление пользователям эффективной справки может существенно улучшить работу с приложением.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">Пользовательский интерфейс со специальными возможностями</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Иногда бывает полезно обучить пользователя работе с неочевидными функциями вашего приложения, например с сенсорными методами взаимодействия. В этих случаях необходимо предоставить пользователю инструкции в пользовательском интерфейсе, чтобы он мог найти и воспользоваться функциями, о наличии которых он, возможно, и не подозревал.</p>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">Справка в приложении</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">В большинстве случаев оптимальным является отображение справки внутри приложения тогда, когда пользователь сам решит к ней обратиться. Рассмотрите следующие рекомендации при создании справки в приложении.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">Внешняя справка</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">В большинстве случаев оптимальным является отображение справки внутри приложения тогда, когда пользователь сам решит к ней обратиться. Рассмотрите следующие рекомендации при создании справки в приложении.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">Руководство по справке для приложений</a></b><br/>Приложения могут быть сложными, поэтому предоставление пользователям эффективной справки может существенно улучшить работу с приложением.
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></b><br/>Applications can be complex, and providing effective help for your users can greatly improve their experience.
 </p>
                     </div>
                 </div>
@@ -231,7 +262,7 @@ Windows используется во всем мире пользователя
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/instructional-ui.md">Инструктивный пользовательский интерфейс</a></b><br/>Иногда бывает полезно обучить пользователя работе с неочевидными функциями вашего приложения, например с сенсорными методами взаимодействия. В этих случаях необходимо предоставить пользователю инструкции в пользовательском интерфейсе, чтобы он мог найти и воспользоваться функциями, о наличии которых он, возможно, и не подозревал.</p>
+<p><b><a href="../in-app-help/instructional-ui.md">Instructional UI</a></b><br/>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
                     </div>
                 </div>
             </div>
@@ -242,7 +273,7 @@ Windows используется во всем мире пользователя
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/in-app-help.md">Справка в приложении</a></b><br/>В большинстве случаев оптимальным является отображение справки внутри приложения тогда, когда пользователь сам решит к ней обратиться. Рассмотрите следующие рекомендации при создании справки в приложении.</p>
+<p><b><a href="../in-app-help/in-app-help.md">In-app help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
@@ -253,11 +284,11 @@ Windows используется во всем мире пользователя
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/external-help.md">Внешняя справка</a></b><br/>В большинстве случаев оптимальным является отображение справки внутри приложения тогда, когда пользователь сам решит к ней обратиться. Рассмотрите следующие рекомендации при создании справки в приложении.</p>
+<p><b><a href="../in-app-help/external-help.md">External help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>        
-</ul>
+</ul> -->
 

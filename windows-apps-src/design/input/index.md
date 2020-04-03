@@ -3,21 +3,21 @@ description: Оптимизируйте свое приложение для в�
 title: Методы ввода и взаимодействие
 keywords: входные данные приложения, настройка приложения UWP
 label: Input and interactions
-layout: LandingPage
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ca16eea1bb3b5ced72add427333e7e5988f876
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: c2d7db47a0731323cbbb45c471428a2496f8d479
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065285"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614943"
 ---
-![Значок входных данных](../images/inputs-2x.png)
 # <a name="input-and-interactions"></a>Методы ввода и взаимодействие
+
+![Значок входных данных](../images/inputs-2x.png)
 
 <!-- <div>
   <img src="images/keyboard/keyboard-hero.jpg" alt="" />
@@ -28,109 +28,54 @@ ms.locfileid: "65065285"
 
 Инструкции по проектированию и программированию в этом разделе помогут вам оптимизировать ваше приложение UWP для определенных методов ввода.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2" >
-                        <a href="input-primer.md">
-                            <img src="images/input-interactions/icons-inputdevices03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="input-primer.md">Азбука методов ввода</a></h3>
-                        <p>Ознакомьтесь с каждым типом устройства ввода, его поведением, возможностями и ограничениями в сочетании с определенными форм-факторами.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2">
-                        <a href="identify-input-devices.md">
-                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
-                            </a>
-                        </div>
-                    </div> -->
-                    <div class="cardText">
-                        <h3><a href="gaze-interactions.md">Новая функция! Ввод взглядом</a></h3>
-                        <p>Отслеживайте взгляд пользователя в зависимости от расположения и движения глаз и головы.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input-primer.md">Азбука методов ввода</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Ознакомьтесь с каждым типом устройства ввода, его поведением, возможностями и ограничениями в сочетании с определенными форм-факторами.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="gaze-interactions.md">Ввод взглядом</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Отслеживайте взгляд пользователя в зависимости от расположения и движения глаз и головы.</p>
+    :::column-end:::
+:::row-end:::
 
 <!-- 
 ## Input primer
 
 See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. -->
 
+:::row:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Ввод</h2>
+        <a href="/windows/uwp/design/input/identify-input-devices">Распознавание устройств ввода</a><br/>
+        <a href="/windows/uwp/design/input/handle-pointer-input">Указатель</a><br/>
+        <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Перо и Windows Ink</a><br/>
+        <a href="/windows/uwp/design/input/touch-interactions">Сенсорный ввод</a><br/>
+        <a href="/windows/uwp/design/input/mouse-interactions">Мышь</a><br/>
+        <a href="/windows/uwp/design/input/keyboard-interactions">Клавиатура</a><br/>
+        <a href="/windows/uwp/design/input/gamepad-and-remote-interactions">Геймпад и пульт дистанционного управления</a><br/>
+        <a href="/windows/uwp/design/input/touchpad-interactions">Сенсорная панель</a><br/>
+        <a href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a><br/>
+        <a href="/windows/uwp/design/input/multiple-input-design-guidelines">Несколько типов ввода</a><br/>
+        <a href="/windows/uwp/design/input/input-injection">Вставка ввода</a><br/>
+        <a href="/windows/uwp/design/input/custom-text-input">Пользовательский ввод текста</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Взаимодействия</h2>
+        <a href="/windows/uwp/design/input/drag-and-drop">Перетаскивание</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-panning">Сдвиг</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-rotation">Поворот</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-textselection">Выделение текста и изображений</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-targeting">Таргетинг</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Визуальная обратная связь</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Голосовые функции и искусственный интеллект</h2>
+        <a href="/windows/uwp/design/input/speech-interactions">Речь</a><br/>
+        <a href="/windows/uwp/design/input/cortana-interactions">Кортана</a><br/>
+    :::column-end:::
+:::row-end:::
 
-<ul class="panelContent cardsL" style="margin-left: 1px">
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Input</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Распознавание устройств ввода</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Указатель</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Перо и Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Сенсорный ввод</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Мышь</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Клавиатура</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Геймпад и пульт дистанционного управления</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Сенсорная панель</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Несколько типов ввода</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Вставка ввода</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Пользовательский ввод текста</a></p>                        
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>  
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Взаимодействия</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Перетаскивание</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Сдвиг</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Поворот</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Выделение текста и изображений</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Таргетинг</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">Визуальная обратная связь</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Голосовые функции и искусственный интеллект</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Речь</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Кортана</a></p>  
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>            
-       
-</ul>
 
 <!-- <div class="side-by-side">
 <div class="side-by-side-content">
