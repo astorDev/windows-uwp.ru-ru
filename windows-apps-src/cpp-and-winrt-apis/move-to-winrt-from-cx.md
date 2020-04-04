@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: a554a46d73053c2b6a01a0b10dbc78c87b743052
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80290036"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662407"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
@@ -30,7 +30,7 @@ ms.locfileid: "80290036"
 
 С учетом вышеупомянутых исключений, первым шагом при переносе проекта C++/CX на C++/WinRT является ручное добавление в него поддержки C++/WinRT (см. статью [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого в свой проект следует установить [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта. Одним из последствий этого изменения является отключение поддержки для C++/CX в проекте. Рекомендуется оставить поддержку отключенной, чтобы сообщения сборки помогли вам найти (и перенести) все зависимости на C++/CX. Либо можно снова включить поддержку (в свойствах проекта **C/C++**  \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)** ) и выполнить постепенный перенос.
 
-В качестве альтернативы вы можете вручную добавить следующее свойство в файл `.vcxproj` на странице свойств проекта C++/WinRT в Visual Studio. Список похожих параметров настройки (которые управляют поведением средства `cppwinrt.exe`) см. в [файле сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
+В качестве альтернативы вы можете вручную добавить следующее свойство в файл `.vcxproj` на странице свойств проекта C++/WinRT в Visual Studio. Список похожих параметров настройки (которые управляют поведением средства `cppwinrt.exe`) см. в [файле сведений](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 
 ```xml
 <syntaxhighlight lang="xml">

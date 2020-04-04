@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209139"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662402"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -62,7 +62,7 @@ C++/WinRT — это рекомендуемая корпорацией Майк
 
 С помощью C++/WinRT также можно реализовать собственные классы среды выполнения, используя стандартный язык C++, не прибегая к программированию в стиле COM. Для класса среды выполнения необходимо просто описать типы в IDL-файле, после чего средства `midl.exe` и `cppwinrt.exe` автоматически создадут файлы стандартного исходного кода. Можно также реализовать только интерфейсы на основе базового класса C++/WinRT. Дополнительные сведения см. в статье [Создание API-интерфейсов в C++/WinRT](author-apis.md).
 
-Список параметров настройки для средства `cppwinrt.exe`, заданных в разделе свойств проекта, см. в [файле сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
+Список параметров настройки для средства `cppwinrt.exe`, заданных в разделе свойств проекта, см. в [файле сведений](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 
 Вы можете определить проект, который использует поддержку MSBuild C++/WinRT, по наличию пакета NuGet **Microsoft.Windows.CppWinRT**, установленного в проекте.
 

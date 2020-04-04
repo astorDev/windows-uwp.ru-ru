@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 167286226adb6d26a6cdd4ee4a26bdcc58e4b5ed
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 592458c6e6157e8cef0d1312ebf6e5c9f15b7919
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448575"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662378"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -35,7 +35,7 @@ ms.locfileid: "79448575"
 
 ## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>Как можно настроить поддержку сборки в пакете NuGet?
 
-Поддержка сборки C++/WinRT (свойства и цели) описана в [файле сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
+Поддержка сборки C++/WinRT (свойства и цели) описана в [файле сведений](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Каковы требования для расширения Visual Studio (VSIX) C++/WinRT?
 Дополнительные сведения о версии 1.0.190128.4 расширения VSIX и более поздних версиях см. в разделе о [поддержке C++/WinRT в Visual Studio](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Дополнительные сведения о других версиях см. в разделе [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension) (Более ранние версии расширения VSIX).
