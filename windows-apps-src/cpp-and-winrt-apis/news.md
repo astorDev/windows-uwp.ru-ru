@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 734544a1294c6a97e70afcbf7ce6b5efc13cf841
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448582"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662404"
 ---
 # <a name="whats-new-in-cwinrt"></a>Что нового в C++/WinRT
 
@@ -89,7 +89,7 @@ ms.locfileid: "79448582"
 
 - Инструмент `cppwinrt.exe` теперь включен в пакет NuGet Microsoft.Windows.CppWinRT. Этот инструмент генерирует заголовки платформенной проекции для каждого проекта по запросу. Таким образом, инструмент `cppwinrt.exe` больше не зависит от пакета SDK для Windows (хотя для обеспечения совместимости инструмент по-прежнему поставляется в составе пакета SDK).
 - Чтобы включить параллельные сборки, `cppwinrt.exe` теперь генерирует заголовки проекции в каждой платформе или конкретной промежуточной папке конфигурации ($IntDir).
-- Поддержка сборки C++/WinRT (реквизитов/целей) теперь полностью задокументирована, на случай, если вы захотите вручную настроить файлы проекта. См. [файл сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
+- Поддержка сборки C++/WinRT (реквизитов/целей) теперь полностью задокументирована, на случай, если вы захотите вручную настроить файлы проекта. См. [файл сведений](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 - Исправлены многочисленные ошибки.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Изменения в C++/WinRT для версии 2.0
@@ -98,7 +98,7 @@ ms.locfileid: "79448582"
 
 Средство `cppwinrt.exe` принимает файл метаданных среды выполнения Windows (`.winmd`) и создает из него стандартную библиотеку на основе файла заголовка C++, которая *проецирует* API, описанные в метаданных. Таким образом, вы можете использовать эти API из кода C++/WinRT.
 
-Теперь этот инструмент — это проект с полностью открытым исходным кодом, доступный на GitHub. На странице [Microsoft\/xlang](https://github.com/Microsoft/xlang) перейдите в раздел **src** > **tool** > **cppwinrt**.
+Теперь этот инструмент — это проект с полностью открытым исходным кодом, доступный на GitHub. Перейдите на страницу [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt).
 
 #### <a name="xlang-libraries"></a>Библиотеки xlang
 

@@ -11,18 +11,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9ff0acd46ef7efa92239b0a3ef07b507850a66
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081524"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614095"
 ---
 # <a name="swipe"></a>Swipe
 
 Команды сдвига представляют собой акселератор действий в контекстных меню и позволяют пользователям устройств с сенсорным вводом легко получать доступ к частым действиям без изменения состояний в приложении.
 
-> **Важные API**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **API библиотеки пользовательского интерфейса Windows**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+>
+> **API платформы**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Execute и Reveal в светлой теме](images/LightThemeSwipe.png)
 

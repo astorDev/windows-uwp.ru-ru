@@ -1,14 +1,14 @@
 ---
 title: Адаптивный к версии код
-description: С помощью класса ApiInformation можно воспользоваться новыми API, при этом сохраняя совместимость с предыдущими версиями
+description: С помощью класса ApiInformation можно воспользоваться новыми API, при этом сохраняя совместимость с предыдущими версиями.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681985"
@@ -17,13 +17,13 @@ ms.locfileid: "75681985"
 
 Написание адаптивного кода аналогично созданию [адаптивного пользовательского интерфейса](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml). Вы можете спроектировать базовый интерфейс для самого небольшого экрана, а затем перемещать и добавлять элементы, если вы обнаружите, что приложение работает на устройстве с большим экраном. Для создания адаптивного кода вы пишите базовый код для самой ранней версии ОС и добавляете дополнительные функции, если обнаруживаете, что приложение работает в более поздней версии ОС, где эти функции доступны.
 
-Важные справочные сведения об ApiInformation, контрактах API и настройке Visual Studio доступны в разделе [Адаптивные к версии приложения](version-adaptive-apps.md).
+Важные справочные сведения об ApiInformation, контрактах API и настройке Visual Studio доступны в статье [Version adaptive apps: Use new APIs while maintaining compatibility with previous versions](version-adaptive-apps.md) (Приложения с адаптивным к версии кодом: используйте новые API, сохраняя совместимость с предыдущими версиями).
 
 ### <a name="runtime-api-checks"></a>Проверки API во время выполнения
 
-Используйте класс [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) в своем коде в условном выражении, чтобы проверить наличие API-интерфейса, который вы хотите вызвать. Это условие оценивается при каждом запуске приложения, но оно будет **истинным** только на устройствах, где этот API-интерфейс присутствует и, следовательно, доступен. Это позволяет писать адаптивный к версии код, чтобы создавать приложения, использующие API, доступные только в определенных версиях ОС.
+Используйте класс [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) в своем коде в условном выражении, чтобы проверить наличие API-интерфейса, который вы хотите вызвать. Это условие оценивается при каждом запуске приложения, но оно будет **истинным** только на устройствах, где этот API-интерфейс присутствует и, следовательно, доступен. Это позволяет писать адаптивный к версии код, чтобы создавать приложения, использующие API, которые доступны только в определенных версиях ОС.
 
-Рассмотрим конкретные примеры использования новых функций в Windows Insider Preview. Общий обзор использования класса **ApiInformation** см. в [Общие сведения о семействах устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) и записи блога [Динамическое определение компонентов с контрактами API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Рассмотрим конкретные примеры использования новых функций в Windows Insider Preview. Общий обзор использования класса **ApiInformation** см. в статье [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code) (Общие сведения о семействах устройств) и записи блога [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) (Динамическое определение компонентов с контрактами API).
 
 > [!TIP]
 > Многочисленные проверки API во время выполнения могут повлиять на производительность приложения. В этих примерах мы покажем проверки встроенными. В рабочем коде необходимо выполнить проверку только один раз и кэшировать результат, а затем использовать его во всем приложении. 
@@ -73,7 +73,7 @@ ms.locfileid: "75681985"
 
 ### <a name="example-1-new-enum-value"></a>Пример 1: новое значение перечисления
 
-В Windows 10 версии 1607 добавлено новое значение перечисления [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue): **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
+В Windows 10 версии 1607 добавлено новое значение перечисления [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue): **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
 
 В этом примере показано, как проверить, доступно ли значение перечисления **ChatWithoutEmoji**, и задать свойство [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) элемента **TextBox**, если это так. Если значение отсутствует в системе, где запущено приложение, для **InputScope** задается значение **Chat**. Показанный код можно разместить в конструкторе Page или обработчике событий Page.Loaded.
 
@@ -164,7 +164,7 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 В этом примере показано, как создать приложение, которое использует новый элемент MediaPlayerElement или старый элемент MediaElement в зависимости от того, имеется доступен ли тип MediaPlayerElement. В коде используйте класс [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol), чтобы разбить элементы управления, их интерфейс и код на компоненты и переключаться между ними зависимости от версии ОС. Кроме того, можно использовать настраиваемый элемент управления, который предоставляет дополнительные функции, но это выходит за рамки данного простого примера.
  
-**медиаплайерусерконтрол** 
+**MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` инкапсулирует элемент **MediaPlayerElement** и несколько кнопок, которые используются для перехода по мультимедиа кадр за кадром. UserControl позволяет обрабатывать эти элементы управления как единый объект и упрощает переключение на MediaElement в старых системах. Этот пользовательский элемент управления следует использовать только в системах, где MediaPlayerElement поддерживается, поэтому в коде внутри этого элемента управления проверки ApiInformation не выполняются.
 
@@ -240,7 +240,7 @@ namespace MediaApp
 }
 ```
 
-**медиаелементусерконтрол**
+**MediaElementUserControl**
  
 `MediaElementUserControl` инкапсулирует элемент управления **MediaElement**.
 
@@ -267,7 +267,7 @@ namespace MediaApp
 > [!NOTE]
 > Кодовая страница `MediaElementUserControl` содержит только сформированный код, поэтому она не показана.
 
-**Инициализация элемента управления на основе Истипепресент**
+**Инициализация элемента управления на основе IsTypePresent**
 
 Во время выполнения вы вызываете **ApiInformation.IsTypePresent**, чтобы проверить наличие MediaPlayerElement. Если элемент есть, вы загружаете `MediaPlayerUserControl`, если нет — загружается `MediaElementUserControl`.
 
@@ -443,7 +443,7 @@ class IsEnumPresentTrigger : StateTriggerBase
 </Grid>
 ```
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Похожие статьи
 
 - [Общие сведения о семействах устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [Динамическое обнаружение функций с помощью контрактов API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Динамическое обнаружение компонентов с контрактами API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

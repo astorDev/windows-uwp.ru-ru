@@ -4,11 +4,11 @@ title: Оптимизация доступа к файлам
 description: Создайте приложения универсальной платформы Windows (UWP), получающие эффективный доступ к файловой системе, избегая проблем с производительностью, связанных с задержкой диска и тактами запоминания данных в памяти и центральном процессоре.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681955"
@@ -133,7 +133,7 @@ ms.locfileid: "75681955"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Буферизация между потоками UWP и .NET
 
-Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) или [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) в поток .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы сделать это, интерфейсы API .NET для приложений UWP предоставляют методы расширения, позволяющие выполнять преобразование между типами потоков .NET и UWP. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions).
+Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) или [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) в поток .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это осуществить, API .NET для приложений UWP предоставляют методы расширения, которые позволяют вам преобразовывать потоки типа .NET в потоки типа UWP и наоборот. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions).
 
 Во время преобразования потока UWP в поток .NET вы создаете адаптер для основного потока UWP. При некоторых условиях требуются затраты времени, связанные с применением методов на потоках UWP. Это может повлиять на скорость вашего приложения, особенно в сценариях, где необходимо выполнять много маленьких и частых операций чтения или записи.
 
@@ -196,7 +196,7 @@ ms.locfileid: "75681955"
 
 При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
 
-> **Обратите внимание** ,   следует быть внимательными при задании размера буфера, превышающего приблизительно 80 КБ, так как это может привести к фрагментации кучи сборщика мусора (см. статью [улучшение производительности сборки мусора](improve-garbage-collection-performance.md)). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
+> **Примечание.**    Нужно соблюдать осторожность при установке размера буфера выше приблизительно 80 КБ, т. к. это может привести к фрагментации кучи сборщика мусора (см. статью [Improve garbage collection performance](improve-garbage-collection-performance.md) (Повышение производительности сборки мусора)). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

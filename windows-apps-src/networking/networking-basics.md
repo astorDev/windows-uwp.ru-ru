@@ -6,17 +6,17 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
+ms.sourcegitcommit: 4657ac3be576b1d6dcd938d73a2f6a7e060ab17b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259182"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80404908"
 ---
 # <a name="networking-basics"></a>Основы работы с сетями
 Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
 
-## <a name="capabilities"></a>Возможности
+## <a name="capabilities"></a>Характеристики
 Для работы в сети необходимо добавить соответствующие элементы возможности в манифест приложения. Если в манифесте приложения не указана возможность подключения к сети, то приложение не сможет подключаться к сети, а все попытки подключиться к сети будут неудачными.
 
 Ниже перечислены наиболее часто используемые возможности подключения к сети.
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 Если в исходном запросе от клиента этого значения нет или предоставленное значение не соответствует ожидаемому сервером, в случае ошибки подтверждения WebSocket ожидаемое значение отправляется сервером клиенту.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 Как предоставить учетные данные для проверки подлинности при подключении через сеть.
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Предоставление сертификата клиента с классом StreamSocket
-Класс [**Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows 10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
+Класс [**Windows.Networking.Sockets.StreamSocket**](/uwp/api/windows.networking.sockets.streamsocket) поддерживает возможность использования протокола SSL или TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows 10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
 
 Фрагмент кода, демонстрирующий данную операцию:
 
@@ -506,5 +506,5 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 -   Некоторые API предоставляют вспомогательный метод, который преобразовывает значение **HRESULT** из исключения в значение перечисления.
 -   Другие API предоставляют метод для получения фактического значения **HRESULT**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Публикация в блоге об улучшении сетевых API в Windows 10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

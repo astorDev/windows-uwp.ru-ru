@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259540"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80524087"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Создание приложения Hello world на C++/CX
 
@@ -45,7 +45,7 @@ ms.locfileid: "74259540"
 
 -   Для компиляции созданных вами приложений в машинный код так же используется компилятор Visual C++. Выполнение приложений UWP на C++/CX не поддерживается в управляемой среде выполнения.
 
-### <a name="whats-new"></a>Что нового?
+### <a name="whats-new"></a>Новые возможности
 
 -   Принципы разработки приложений UWP и универсальных приложений для Windows существенно отличаются от принципов разработки классических приложений. Утрачивают значение границы окон, подписи, диалоговые окна и прочее. Наибольшее значение приобретает содержимое. При создании универсальных приложений для Windows этим принципам необходимо следовать с самого начала стадии планирования.
 
@@ -255,7 +255,7 @@ MainPage::MainPage()
 
    Конструктор не сможет загрузиться, если во время отрисовки возникнет необработанное исключение. Отрисовка в конструкторе предусматривает запуск версии времени разработки страницы. Это может быть удобно для отключения запущенного кода пользователя. Это можно сделать, изменив значение параметра в диалоговом окне **"Сервис ", "Параметры"** . В разделе **Конструктор XAML** снимите флажок **Запускать код проекта в конструкторе XAML (если поддерживается)** .
 
-5.  В файле MainPage.xaml.cpp добавьте следующий код в обработчик событий **Button\_Click**, который вы только что создали. В этом коде вы получаете имя пользователя из элемента управления `nameInput`[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) и используете его, чтобы создать приветствие. `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) отображает результат.
+5.  В файле MainPage.xaml.cpp добавьте следующий код в обработчик событий **Button\_Click**, который вы только что создали. В этом коде вы получаете имя пользователя из элемента управления `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) и используете его, чтобы создать приветствие. `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) отображает результат.
 
     ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
