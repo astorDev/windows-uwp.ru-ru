@@ -1,25 +1,25 @@
 ---
-title: Отсутствующие API-интерфейсы .NET в Unity и UWP
+title: Отсутствуют интерфейсы API .NET в Unity и UWP
 description: Информация об отсутствующих API-интерфейсах .NET при сборке UWP-игр в Unity, а также возможные решения для распространенных проблем.
 ms.assetid: 28A8B061-5AE8-4CDA-B4AB-2EF0151E57C1
 ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
+ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368436"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80968060"
 ---
-# <a name="missing-net-apis-in-unity-and-uwp"></a>Отсутствующие API-интерфейсы .NET в Unity и UWP
+# <a name="missing-net-apis-in-unity-and-uwp"></a>Отсутствуют интерфейсы API .NET в Unity и UWP
 
 При создании UWP-игры с использованием .NET вы, вероятно, обнаружите, что некоторые API-интерфейсы, которые вы использовали в редакторе Unity или в игре для ПК, не представлены для UWP. Это вызвано тем, что .NET для приложений UWP включает в себя набор типов, предоставленных в полной платформе .NET Framework для каждого пространства имен.
 
-Кроме того, некоторые игровые движки используют разные версии .NET, которые не полностью совместимы с .NET для UWP, например Mono в Unity. Поэтому при создании игры, все может работать нормально в редакторе, но при переходе на построение для универсальной платформы Windows, могут возникнуть ошибки следующим образом: **Тип или пространство имен «модули форматирования» не существует в пространстве имен «System.Runtime.Serialization» (возможно, отсутствует ссылка на сборку?)**
+Кроме того, некоторые игровые движки используют разные версии .NET, которые не полностью совместимы с .NET для UWP, например Mono в Unity. Поэтому при написании игры все может отлично работать в редакторе, но при выполнении сборки для UWP возможно получение таких ошибок: **Тип или пространство имен Formatters не существует в пространстве имен System.Runtime.Serialization (отсутствует ссылка на сборку?)**
 
-К счастью, среда Unity предоставляет некоторые из этих отсутствующих API как методы расширения и замены типы, которые описаны в [универсальной платформы Windows: Отсутствуют типы .NET на сценариев серверной части .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Однако если требуемая функциональность не представлена, в [Обзоре приложений .NET для Windows 8.x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) рассматриваются способы преобразования кода для использования .NET или WinRT для API-интерфейсов UWP. (В нем рассматривается Windows 8, но это также относится к приложениям UWP для Windows 10.)
+К счастью, Unity предоставляет некоторые из этих отсутствующих API в виде методов расширения и заменяющих типов, которые описаны в разделе [Универсальная платформа Windows: отсутствующие типы .NET на сервере сценариев .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Однако если требуемая функциональность не представлена, в [Обзоре приложений .NET для Windows 8.x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) рассматриваются способы преобразования кода для использования .NET или WinRT для API-интерфейсов UWP. (В нем рассматривается Windows 8, но это также относится к приложениям UWP для Windows 10.)
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ ms.locfileid: "66368436"
 
 Как правило, для **Версии среды выполнения сценариев** и **Уровня совместимости Api** следует выбирать последнюю доступную версию, чтобы обеспечить дополнительную совместимость с .NET Framework и таким образом использовать дополнительные API-интерфейсы .NET.
 
-![Конфигурация: Создание сценариев версии среды выполнения; Создание сценариев серверной части; Уровень совместимости API](images/missing-dot-net-apis-in-unity-1.png)
+![Конфигурация: Версия среды выполнения сценариев; Сервер сценариев; Уровень совместимости API](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>Компиляция в зависимости от платформы
 
@@ -60,7 +60,7 @@ ms.locfileid: "66368436"
 ```
 
 > [!NOTE]
-> `NETFX_CORE` предназначена только для проверки, если компилируются C# кода для сценариев серверной части .NET. Если вы используете другой сервер сценариев, такой как IL2CPP, вместо этого используйте `UNITY_WSA_10_0`.
+> `NETFX_CORE` предназначен только для проверки компиляции C# кода в серверной части сценариев .NET. Если вы используете другую серверную часть сценариев, например IL2CPP, используйте вместо него [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) .
 
 Полный список директив компиляции в зависимости от платформы см. в разделе [Компиляция в зависимости от платформы](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html).
 
@@ -88,7 +88,7 @@ private void Save()
 }
 ```
 
-### <a name="io-operations"></a>Операции ввода-вывода
+### <a name="io-operations"></a>операции ввода-вывода
 
 Некоторые типы в пространстве имен [System.IO](https://docs.microsoft.com/dotnet/api/system.io), такие как [FileStream](https://docs.microsoft.com/dotnet/api/system.io.filestream), не доступны в предыдущих версиях .NET Standard. Однако Unity предоставляет типы [Directory](https://docs.microsoft.com/dotnet/api/system.io.directory), [File](https://docs.microsoft.com/dotnet/api/system.io.file) и **FileStream**, чтобы их можно было использовать в игре.
 
@@ -142,8 +142,8 @@ private async void GetCertificatesAsync(string certStoreName)
 
 В случае **System.Net.Mail** используйте пространство имен [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email). Подробнее: [Отправка сообщения электронной почты](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
-* [Платформа универсальных Windows: Отсутствуют типы .NET на сценариев серверной части .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [.NET для Обзор приложений универсальной платформы Windows](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
-* [Руководства по переносу UWP Unity](https://unity3d.com/partners/microsoft/porting-guides)
+* [Универсальная платформа Windows: отсутствующие типы .NET в серверной части сценариев .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [Обзор .NET для приложений UWP](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [Руководства по переносу UWP для Unity](https://unity3d.com/partners/microsoft/porting-guides)

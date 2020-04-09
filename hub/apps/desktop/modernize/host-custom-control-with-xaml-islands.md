@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: fa8dd744120d5751dcf8c10a090ccc31094000d2
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218604"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482501"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение настраиваемого элемента управления UWP в приложении WPF, использующем XAML Islands
 
@@ -29,7 +29,7 @@ ms.locfileid: "80218604"
 
 * **Настраиваемый элемент управления UWP**. Для настраиваемого элемента управления UWP, который необходимо разместить, необходим исходный код, чтобы скомпилировать его в приложение. Как правило, настраиваемый элемент управления определяется в проекте библиотеки классов UWP, на которую вы ссылаетесь в решении с проектом WPF или Windows Forms.
 
-* **Проект приложения UWP, определяющий корневой класс приложения, производный от XamlApplication**. В проекте WPF или Windows Forms должен быть доступ к экземпляру класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставленному в наборе средств сообщества Windows. Для этого рекомендуется определить объект в отдельном проекте приложения UWP, который является частью решения приложения WPF или Windows Forms. Этот объект выступает в качестве поставщика корневых метаданных для загрузки метаданных настраиваемых типов XAML UWP в сборках текущего каталога приложения.
+* **Проект приложения UWP, определяющий корневой класс приложения, производный от XamlApplication**. В проекте WPF или Windows Forms должен быть доступ к экземпляру класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставленному в наборе средств сообщества Windows, чтобы он мог обнаруживать и загружать настраиваемые элементы управления UWP XAML. Для этого рекомендуется определить объект в отдельном проекте приложения UWP, который является частью решения приложения WPF или Windows Forms. 
 
     > [!NOTE]
     > Решение может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления UWP в приложении используют один и тот же объект `XamlApplication`. Проект, определяющий объект `XamlApplication`, должен содержать ссылки на все другие библиотеки и проекты UWP, которые используются для размещения элементов управления UWP в XAML Islands.
@@ -67,7 +67,7 @@ ms.locfileid: "80218604"
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Определение класса XamlApplication в проекте приложения UWP
 
-Далее добавьте проект приложения UWP в решение и измените стандартный класс `App` в этом проекте, чтобы он был производным от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставленного в наборе средств сообщества Windows. Приложение будет использовать этот класс в качестве поставщика корневых метаданных для загрузки метаданных настраиваемых типов XAML UWP в сборках текущего каталога приложения.
+Далее добавьте проект приложения UWP в решение и измените стандартный класс `App` в этом проекте, чтобы он был производным от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставленного в наборе средств сообщества Windows. Этот класс поддерживает интерфейс [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider), который позволяет приложению обнаруживать и загружать метаданные для настраиваемых элементов управления UWP XAML в сборках в текущем каталоге приложения во время выполнения. Этот класс также инициализирует платформу UWP XAML для текущего потока. 
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши узел решения и выберите команду **Добавить** -> **Новый проект**.
 2. Добавьте проект **Пустое приложение (универсальная платформа Windows)** в свое решение. Убедитесь, что в качестве целевой и самой ранней версии используется **Windows 10 версии 1903** или более поздней.
@@ -105,7 +105,7 @@ ms.locfileid: "80218604"
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Создание объекта XamlApplication в точке входа приложения WPF
 
-Далее добавьте код к точке входа приложения WPF, чтобы создать экземпляр класса `App`, определенного в проекте UWP (это класс является производным от `XamlApplication`). Этот объект выступает в качестве поставщика корневых метаданных для загрузки метаданных настраиваемых типов XAML UWP в сборках текущего каталога приложения.
+Далее добавьте код к точке входа приложения WPF, чтобы создать экземпляр класса `App`, определенного в проекте UWP (это класс является производным от `XamlApplication`).
 
 1. В проекте WPF щелкните правой кнопкой мыши узел проекта, выберите **Добавить** -> **Новый элемент**, а затем щелкните **Класс**. Назовите класс **Program** и щелкните **Добавить**.
 

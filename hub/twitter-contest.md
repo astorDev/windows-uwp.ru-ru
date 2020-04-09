@@ -5,13 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
+ms.prod: uwp
+ms.technology: apps
 ms.date: 03/19/2020
-ms.openlocfilehash: 2a7a5983dcc7e330a30cf53b93c73f36f811d17d
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: b6cdab774389d4cbd41c53d6ca6a368eb182c339
+ms.sourcegitcommit: 4c7f1e5952ead9b9a71a8d13795d1771a5f3219e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218474"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80871017"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>Вносите изменения в документы Windows и вводите их, чтобы выиграть некоторое сущность
 
