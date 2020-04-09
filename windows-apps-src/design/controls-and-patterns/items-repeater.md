@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3b7eb2aa8f753c3e8b956ed722d1f807362bc204
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684397"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081724"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -22,11 +22,15 @@ ms.locfileid: "75684397"
 
 Концептуально [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) можно представить скорее как управляемую данными панель, чем как полное управление, подобное ListView. Вы указываете коллекцию отображаемых элементов данных, шаблон элемента, который создает элемент пользовательского интерфейса для каждого элемента данных, и макет, который определяет размер и положение элементов. Затем ItemsRepeater, на основе источника данных, создает дочерние элементы и отображает их в соответствии с шаблоном элемента и макетом. Поскольку ItemsRepeater может загрузить содержимое для представления элементов данных на основе критериев, указанных в селекторе шаблонов данных, отображаемые элементы не обязательно должны быть однородными.
 
-| **Получение библиотеки пользовательского интерфейса Windows** |
-| - |
-| Этот элемент управления является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзоре библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Получение библиотеки пользовательского интерфейса Windows**
 
-> **Важные API**: [Класс ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), [Класс ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ItemsRepeater** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+>
+> **API платформы:** [Класс ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -46,7 +50,7 @@ ItemsRepeater не содержит встроенную коллекцию эл
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a>в действии.</p>
     <ul>
@@ -203,7 +207,7 @@ itemsRepeater1.ItemsSource = Items;
 
     Как и интерфейс **INotifyCollectionChanged**, он позволяет элементу управления наблюдать за изменениями в источнике данных и реагировать на них.
 
-    **Предупреждение.** Windows.Foundation.IObservableVector\<T> не поддерживает действие "Перемещение". Это может вызвать потерю визуального состояния пользовательского интерфейса для элемента.  Например элемент, выбранный в данный момент, и/или который фокусируется на месте, в котором сделано перемещение, при использовании команды "Удалить", а затем "Добавить" теряет фокус и не поддается выбору.
+    **Предупреждение.** Windows.Foundation.IObservableVector\<T> не поддерживает действие "Перемещение". Это может вызвать потерю визуального состояния пользовательского интерфейса для элемента.  Например, элемент, выбранный в данный момент и/или который фокусируется на месте, куда выполнено перемещение, при использовании команды "Удалить", а затем "Добавить" теряет фокус и не поддается выбору.
 
     The Platform.Collections.Vector\<T> использует IObservableVector\<T> и имеет то же ограничение. Если необходима поддержка для действия "Перемещение", используйте интерфейс **INotifyCollectionChanged**.  Класс ObservableCollection .NET\<T> использует **INotifyCollectionChanged**.
 

@@ -7,21 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bcabe0867e21b20f97405d514b16bef2165821fb
-ms.sourcegitcommit: be25b7628b1ff22175a682e670539947db2fa85a
+ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852866"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081673"
 ---
 # <a name="number-box"></a>Поле ввода номера телефона
 
 Представляет элемент управления, который можно использовать для отображения и редактирования чисел. Он поддерживает верификацию, пошаговое добавление и последовательные вычисления основных уравнений, таких как умножение, деление, сложение и вычитание.
 
+![Пример типичного контекстного меню](images/contextmenu_rs2_icons.png)
 
-**Важные API:** [Класс NumberBox](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**Получение библиотеки пользовательского интерфейса Windows**
 
-## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления 
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **NumberBox** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+**API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс NumberBox](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Элемент управления NumberBox можно использовать, чтобы получать и отображать математические входные данные. Если вам нужно редактируемое текстовое поле, которое принимает больше цифр, используйте элемент управления [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Если вам нужно редактируемое текстовое поле, которое принимает пароли или другие важные данные, см. [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox). Если вам нужно текстовое поле для ввода поисковых запросов, см. [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Если вам нужно ввести или отредактировать отформатированный текст, см. [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox).
 
@@ -30,7 +37,7 @@ ms.locfileid: "74852866"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас есть установленное приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TextBox">открыть приложение и увидеть NumberBox в действии</a>.</p>
     <ul>

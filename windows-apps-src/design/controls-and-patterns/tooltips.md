@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e1e4874051554a8b725c7921a60a2c2429b18bc1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364024"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081455"
 ---
 # <a name="tooltips"></a>Подсказки
 
@@ -25,7 +25,13 @@ ms.locfileid: "66364024"
 
 ![Подсказка](images/controls/tool-tip.png)
 
-> **Важные API**: [Класс ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [Класс ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -59,7 +65,7 @@ ms.locfileid: "66364024"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ToolTip">открыть приложение и увидеть ToolTip в действии</a>.</p>
     <ul>
@@ -125,7 +131,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-Если подсказка загораживает содержимое, к которому она относится, то ее точное расположение можно настроить с помощью свойства **PlacementRect**. PlacementRect закрепляет положения ToolTip, а также является областью, которую всплывающая подсказка не будет закрывать, при условии,когда на экране достаточно места для отображения подсказки за пределами этой области. В качестве владельца подсказки вы можете указать источник прямоугольника, а также его высоту и ширину и области исключения. Свойство [Размещение](/uwp/api/windows.ui.xaml.controls.tooltip.placement) используется для определения того, должна ли подсказка появляться вверху, снизу, слева или справа от PlacementRect. 
+Если подсказка загораживает содержимое, к которому она относится, то ее точное расположение можно настроить с помощью свойства **PlacementRect**. PlacementRect закрепляет положения ToolTip, а также является областью, которую всплывающая подсказка не будет закрывать, при условии, когда на экране достаточно места для отображения подсказки за пределами этой области. В качестве владельца подсказки вы можете указать источник прямоугольника, а также его высоту и ширину области исключения. Свойство [Размещение](/uwp/api/windows.ui.xaml.controls.tooltip.placement) используется для определения того, должна ли подсказка появляться вверху, снизу, слева или справа от PlacementRect. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -147,10 +153,10 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 - Не добавляйте интерактивные элементы управления в подсказку.
 - Не добавляйте в подсказку изображения, которые могут показаться интерактивными.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [ToolTip Class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) (Класс ToolTip)

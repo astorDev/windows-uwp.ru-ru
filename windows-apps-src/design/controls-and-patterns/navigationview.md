@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100854"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081696"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -24,6 +24,12 @@ ms.locfileid: "71100854"
 
 ![верхняя панель навигации](images/nav-view-header.png)<br/>
 _Представление навигации поддерживает как верхнюю, так и левую панель или меню навигации_
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **NavigationView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API платформы**: [класс Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview).
 >
@@ -46,7 +52,7 @@ NavigationView — это адаптивный элемент управлен�
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">открыть приложение и увидеть NavigationView в действии</a>.</p>
     <ul>
@@ -65,7 +71,7 @@ NavigationView — это адаптивный элемент управлен�
 
 :::row:::
     :::column:::
-    ### <a name="top"></a>Первые
+    ### <a name="top"></a>Начало
     Панель расположена над содержимым.</br>
     `PaneDisplayMode="Top"`
     :::column-end:::
@@ -83,7 +89,7 @@ NavigationView — это адаптивный элемент управлен�
 
 :::row:::
     :::column:::
-    ### <a name="left"></a>Влево
+    ### <a name="left"></a>Левый
     Панель развернута и расположена слева от содержимого.</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
@@ -250,7 +256,7 @@ _Содержимое представления навигации_
 
 По умолчанию представление навигации автоматически изменяет режим отображения в зависимости от доступного экранного пространства. Свойства [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) и [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) определяют точки останова, в которых изменяется режим отображения. Вы можете изменить эти значения, чтобы настроить поведение адаптивного режима отображения.
 
-### <a name="default"></a>По умолчанию
+### <a name="default"></a>Значение по умолчанию
 
 Когда для параметра PaneDisplayMode задано значение по умолчанию **Auto**, адаптивное поведение должно отображать следующее:
 
@@ -379,12 +385,12 @@ NavigationView содержит встроенную кнопку возврат
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
-        _The back button in the left navigation pane_
+        ![Кнопка "Назад" в представлении навигации в левой области навигации](images/leftnav-back.png)<br/>
+        _Кнопка "Назад" в левой области навигации_
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
-        _The back button in the top navigation pane_
+        ![Кнопка "Назад" в верхней области навигации](images/topnav-back.png)<br/>
+        _Кнопка "Назад" в верхней области навигации_
     :::column-end:::
 :::row-end:::
 
@@ -658,9 +664,9 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 
 | Режим отображения | Ресурсы темы |
 | ------------ | -------------- |
-| Влево | NavigationViewExpandedPaneBackground |
+| Левый | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
-| Первые | NavigationViewTopPaneBackground |
+| Начало | NavigationViewTopPaneBackground |
 
 В этом примере показано, как переопределить ресурсы темы в файле App.xaml. При переопределении ресурсов темы всегда необходимо предоставлять как минимум словарь ресурсов по умолчанию и HighContrast, а также при необходимости словари для светлых или темных ресурсов. Дополнительные сведения см. в статье о свойстве [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
 
@@ -733,7 +739,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 
 Этот ресурс темы изменяет поля вокруг [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 - [NavigationView Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) (Класс NavigationView)
 - [Основные и подробные данные](master-details.md)

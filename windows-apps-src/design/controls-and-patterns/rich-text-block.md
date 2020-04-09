@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8298456b3c297994d6aa11d815a6b46ba7ff4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 9f90ce11c9a35200121722f3b0a0ac7d7047e819
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340361"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081559"
 ---
 # <a name="rich-text-block"></a>Блок форматированного текста
 
@@ -24,22 +24,22 @@ ms.locfileid: "71340361"
 
 Блоки форматированного текста предоставляют ряд функций для создания расширенного текстового макета, который можно использовать, чтобы обеспечить поддержку абзацев, встроенных элементов пользовательского интерфейса или сложных текстовых макетов.
 
-> **Важные API**: [класс RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [класс RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [класс Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [класс Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography).
+> **API платформы**: [класс RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [класс RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [класс Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [класс Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте **RichTextBlock**, если вам требуется поддержка нескольких абзацев, разметка с несколькими столбцами или другие сложные текстовые макеты либо встроенные элементы пользовательского интерфейса, например изображения.
 
-Для отображения в приложении текста «только для чтения», как правило, используется **TextBlock**. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием. TextBlock предоставляет более простую модель содержимого, поэтому данный элемент обычно проще использовать, и он может обеспечить лучшую отрисовку текста по сравнению с элементом RichTextBlock. Это предпочтительный способ для большинства текстов пользовательского интерфейса приложения. Хотя в текст можно поместить разрывы строк, элемент TextBlock разработан для отображения одного абзаца и не поддерживает отступ текста.
+Для отображения в приложении текста «только для чтения», как правило, используется **TextBlock**. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием. TextBlock предоставляет более простую модель содержимого, поэтому данный элемент обычно проще использовать и он может обеспечить лучшую отрисовку текста по сравнению с элементом RichTextBlock. Это предпочтительный способ для большинства текстов пользовательского интерфейса приложения. Хотя в текст можно поместить разрывы строк, элемент TextBlock разработан для отображения одного абзаца и не поддерживает отступ текста.
 
-Дополнительные сведения о выборе подходящего элемента управления текстом можно найти в статье [Элементы управления текстом](text-controls.md).
+Дополнительные сведения можно найти в статье об [элементах управления текстом](text-controls.md).
 
 ## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RichTextBlock">открыть приложение и увидеть RichTextBlock в действии</a>.</p>
     <ul>
@@ -52,7 +52,7 @@ ms.locfileid: "71340361"
 
 ## <a name="create-a-rich-text-block"></a>Создание блока форматированного текста
 
-Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении. Однако RichTextBlock предлагает несколько уникальных функций, которые недоступны в элементе TextBlock. 
+Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении. Однако RichTextBlock предусматривает несколько уникальных возможностей, которые недоступны с элементом TextBlock. 
 
 RichTextBlock поддерживает следующие функции.
 - Несколько абзацев. Установите отступ для абзацев, задав свойство [TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.textindent).
@@ -149,11 +149,11 @@ RichTextBlock поддерживает следующие функции.
 
 См. руководство по типографии и шрифтам.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 [Текстовые элементы управления](text-controls.md)
 

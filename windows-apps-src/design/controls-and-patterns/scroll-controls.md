@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3a2adee262a521bde77d657aa4f5283b68ddcf
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: a2123c8baa93356a0bb5adcfb2a32ac71af173cc
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603427"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081583"
 ---
 # <a name="scroll-viewer-controls"></a>Элементы управления "Средство прокрутки"
 
@@ -56,7 +56,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ScrollViewer">открыть приложение и увидеть ScrollViewer в действии</a>.</p>
     <ul>
@@ -135,7 +135,7 @@ ScrollViewer определяет следующие подключенные с
 В случаях, когда ScrollViewer подразумевается в вашем XAML, как показано в примере кода, вам не нужно использовать синтаксис подключенных свойств. Просто используйте синтаксис атрибута, например `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
 
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 - По возможности используйте вертикальную, а не горизонтальную прокрутку.
 - Применяйте сдвиг вдоль одной оси для областей содержимого, выходящих за одну из границ окна просмотра (вертикальную или горизонтальную). Применяйте сдвиг по двум осям для областей содержимого, которые выходят за обе границы окна просмотра (вертикальную и горизонтальную).
@@ -145,11 +145,11 @@ ScrollViewer определяет следующие подключенные с
 - Средство прокрутки должно содержать только один объект. Имейте в виду, что один объект может являться панелью макета, в свою очередь содержащей любое количество собственных объектов.
 - Не помещайте элемент управления [Сведение](pivot.md) внутрь средства просмотра прокрутки, чтобы избежать конфликтов с логикой прокрутки этого элемента управления.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 **Разработчикам (XAML)**
 

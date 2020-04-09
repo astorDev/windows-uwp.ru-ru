@@ -11,29 +11,36 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c73414e897cde652d03c9ebb92528b4504241ba3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684373"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081642"
 ---
 # <a name="person-picture-control"></a>Элемент управления "Аватар пользователя"
 
-Элемент управления аватаром пользователя отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы или универсальный глиф. Элемент управления можно использовать для отображения [объекта Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), который служит для управления контактными данными пользователя, или можно вручную указать контактные данные, такие как отображаемое имя и изображение профиля.  
+Элемент управления аватаром пользователя отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы или универсальный глиф. Элемент управления можно использовать для отображения [объекта Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), который служит для управления контактными данными пользователя, или можно вручную указать контактные данные, такие как отображаемое имя и изображение профиля.
 
-> **Важные API**: [класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [класс ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager).
-
-На этом рисунке показаны два элемента управления аватаром пользователя вместе с двумя элементами [блоков текста](text-block.md), в которых отображаются имена пользователей. 
 ![Элемент управления "Аватар пользователя"](images/person-picture/person-picture_hero.png)
 
+ > Два элемента управления аватаром пользователя дополнены двумя элементами [блоков текста](text-block.md), в которых отображаются имена пользователей.
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **PersonPicture** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [класс ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте аватар, когда необходимо представить пользователя и его контактные данные. Вот несколько примеров того, как можно использовать элемент управления:
+
 * для отображения текущего пользователя;
 * для отображения контактов в адресной книге;
-* для отображения отправителя сообщения; 
+* для отображения отправителя сообщения;
 * для отображения контакта в социальных сетях.
 
 На рисунке показан элемент управления аватаром в списке контактов: ![Элемент управления "Аватар пользователя"](images/person-picture/person-picture-control.png)
@@ -43,7 +50,7 @@ ms.locfileid: "75684373"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/PersonPicture">открыть приложение и увидеть PersonPicture в действии</a>.</p>
     <ul>
@@ -79,7 +86,7 @@ ms.locfileid: "75684373"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>Использование элемента управления аватаром пользователя для отображения объекта Contact
 
-Элемент управления выбором пользователя можно использовать для отображения объекта [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact): 
+Элемент управления выбором пользователя можно использовать для отображения объекта [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact):
 
 ```xaml
 <Page
@@ -95,7 +102,7 @@ ms.locfileid: "75684373"
 
         <PersonPicture
             Contact="{x:Bind CurrentContact, Mode=OneWay}" />
-            
+
         <Button Click="LoadContactButton_Click">Load contact</Button>
     </StackPanel>
 </Page>
@@ -127,7 +134,7 @@ namespace SampleApp
             this.InitializeComponent();
         }
 
-        private Windows.ApplicationModel.Contacts.Contact _currentContact; 
+        private Windows.ApplicationModel.Contacts.Contact _currentContact;
         public Windows.ApplicationModel.Contacts.Contact CurrentContact
         {
             get => _currentContact;
@@ -149,7 +156,7 @@ namespace SampleApp
             contact.LastName = "Sherman";
 
             // Get the app folder where the images are stored.
-            var appInstalledFolder = 
+            var appInstalledFolder =
                 Windows.ApplicationModel.Package.Current.InstalledLocation;
             var assets = await appInstalledFolder.GetFolderAsync("Assets");
             var imageFile = await assets.GetFileAsync("betsy.png");
@@ -167,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> Чтобы упростить код, в этом примере создается новый объект Contact. В реальном приложении для запроса списка контактов пользователь выбрал бы контакт или использовал [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager). Подробнее о получении и управлении контактами см. в статье ["Контакты", "Близкие люди" и "Календарь"](../../contacts-and-calendar/index.md). 
+> Чтобы упростить код, в этом примере создается новый объект Contact. В реальном приложении для запроса списка контактов пользователь выбрал бы контакт или использовал [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager). Подробнее о получении и управлении контактами см. в статье ["Контакты", "Близкие люди" и "Календарь"](../../contacts-and-calendar/index.md).
 
 ## <a name="determining-which-info-to-display"></a>Определение сведений для отображения
 
-Когда вы предоставляете объект [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), элемент управления аватарами оценивает его, чтобы определить, какие сведения могут отображаться. 
+Когда вы предоставляете объект [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), элемент управления аватарами оценивает его, чтобы определить, какие сведения могут отображаться.
 
 Если изображение доступно, элемент управления отображает первое изображение, которое находит, в следующем порядке:
 
@@ -181,7 +188,7 @@ namespace SampleApp
 
 Также можно изменить выбираемое изображение, установив для свойства PreferSmallImage значение true. Это придает SmallDisplayPicture более высокий приоритет, чем LargeDisplayPicture.
 
-Если изображение не существует, элемент управления отображает имя или инициалы контакта. Если нет данных об имени, этот элемент управления выводит контактные данные, например, электронный адрес или номер телефона. 
+Если изображение не существует, элемент управления отображает имя или инициалы контакта. Если нет данных об имени, этот элемент управления выводит контактные данные, например, электронный адрес или номер телефона.
 
 ## <a name="get-the-sample-code"></a>Получение примера кода
 

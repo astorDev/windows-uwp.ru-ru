@@ -10,25 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: edeebf177cf438931bb318ea19cd292a9c9b27c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690411"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081602"
 ---
 # <a name="rating-control"></a>Элемент управления "Оценка"
 
 Элемент управления "Оценка" позволяет пользователям просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами. Пользователи могут взаимодействовать с элементом управления "Оценка" с помощью сенсорного ввода, пера, мыши, игрового контроллера или клавиатуры. В следующем руководстве показано, как использовать функции элемента управления "Оценка", чтобы обеспечить гибкость и возможность настройки.
 
-> **Важные API**: [Класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **RatingControl** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **API платформы:** [Класс RatingControl](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RatingControl">открыть приложение и увидеть RatingControl в действии</a>.</p>
     <ul>
@@ -38,8 +48,6 @@ ms.locfileid: "72690411"
 </td>
 </tr>
 </table>
-
-![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>Редактируемая оценка со значением заполнителя
 
@@ -95,6 +103,6 @@ private void RatingChanged(RatingControl sender, object args)
 -   Отключение анимации роста
 -   Настройка количества звезд
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.

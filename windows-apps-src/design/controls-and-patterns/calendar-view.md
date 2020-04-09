@@ -12,24 +12,29 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 716f785ff6b2151913f57208068e783320292613
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 08fac0fedaa3f01ad362a57a6db3abf428771258
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339452"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081261"
 ---
 # <a name="calendar-view"></a>Представление календаря
 
-Представление календаря позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден. 
+Представление календаря позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден.
 
-> **Важные API**:  [класс CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) и [событие SelectedDatesChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
+**Получение библиотеки пользовательского интерфейса Windows**
 
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы:**  [класс CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) и [событие SelectedDatesChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 Используйте представление календаря, чтобы пользователь мог выбрать дату или диапазон дат в постоянно отображаемом календаре.
 
-Если необходимо предоставить пользователю возможность выбора нескольких дат одновременно, используйте представление календаря. \- Если необходимо предоставить пользователю возможность выбора одной даты и не нужно, чтобы календарь был виден всегда, рекомендуется использовать элементы управления [Выбор даты календаря](calendar-date-picker.md) или [Выбор даты](date-picker.md) .
+Если необходимо предоставить пользователю возможность выбора нескольких дат одновременно, используйте представление календаря. Если необходимо предоставить пользователю возможность выбора одной даты и не нужно, чтобы календарь был виден всегда, рекомендуется использовать элементы управления [Выбор даты календаря](calendar-date-picker.md) или [Выбор даты](date-picker.md).
 
 Дополнительные сведения о выборе правильного элемента см. в статье [Элементы управления датой и временем](date-and-time.md).
 
@@ -38,7 +43,7 @@ ms.locfileid: "71339452"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CalendarView">открыть приложение и увидеть CalendarView в действии</a>.</p>
     <ul>
@@ -53,7 +58,7 @@ ms.locfileid: "71339452"
 
 ![3 представления представления календаря](images/calendar-view-3-views.png)
 
-Пользователю необходимо нажать на заголовок в представлении месяца, чтобы открыть представление года, и нажать на заголовок в представлении года, чтобы открыть представление десятилетия. Чтобы вернуться в представление года, необходимо выбрать год в представление десятилетия, и выбрать месяц в представлении года, чтобы вернуться в представление месяца. С помощью двух стрелок возле заголовка можно перемещаться вперед или назад по месяцам, годам и десятилетиям. 
+Пользователю необходимо нажать на заголовок в представлении месяца, чтобы открыть представление года, и нажать на заголовок в представлении года, чтобы открыть представление десятилетия. Чтобы вернуться в представление года, необходимо выбрать год в представление десятилетия, и выбрать месяц в представлении года, чтобы вернуться в представление месяца. С помощью двух стрелок возле заголовка можно перемещаться вперед или назад по месяцам, годам и десятилетиям.
 
 ## <a name="create-a-calendar-view"></a>Создание представления календаря
 
@@ -69,7 +74,7 @@ ms.locfileid: "71339452"
 
 ### <a name="selecting-dates"></a>Выбора дат
 
-По умолчанию для свойства [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) задано значение **Single**. Это позволяет пользователю выбрать дату в календаре. Установите для SelectionMode значение **None**, чтобы отключить выбор даты. 
+По умолчанию для свойства [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) задано значение **Single**. Это позволяет пользователю выбрать дату в календаре. Установите для SelectionMode значение **None**, чтобы отключить выбор даты.
 
 Установите для SelectionMode значение **Multiple**, чтобы пользователь мог выбрать несколько дат. Чтобы программным способом выбрать несколько дат, добавьте объекты [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime)/[DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) в коллекцию [SelectedDates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates), как показано здесь:
 
@@ -87,8 +92,8 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 ### <a name="customizing-the-calendar-views-appearance"></a>Настройка вида представления календаря
 
-Представление календаря состоит как из элементов XAML , определенных в ControlTemplate, так и визуальных элементов, обработанных непосредственно элементом управления. 
-- Элементы XAML, определенные в шаблоне элементов управления, включают границу, которая содержит элемент управления, заголовок, кнопки "Назад" и "Далее", а также элементы DayOfWeek. Можно задать стиль и изменить шаблон этих элементов, как и любого другого элемента управления XAML. 
+Представление календаря состоит как из элементов XAML , определенных в ControlTemplate, так и визуальных элементов, обработанных непосредственно элементом управления.
+- Элементы XAML, определенные в шаблоне элементов управления, включают границу, которая содержит элемент управления, заголовок, кнопки "Назад" и "Далее", а также элементы DayOfWeek. Можно задать стиль и изменить шаблон этих элементов, как и любого другого элемента управления XAML.
 - Сетка календаря состоит из объектов [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem). Задать стиль и изменить шаблон этих элементов невозможно, но для настройки их внешнего вида предоставляются различные свойства.
 
 На данной диаграмме показаны элементы, которые составляют представление месяца в календаре. См. подробнее в разделе "Примечания" в описании класса [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem).
@@ -99,15 +104,15 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Элемент | Свойства
 --------|-----------
-DayOfWeek | [DayOfWeekFormat](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayofweekformat)  
-CalendarItem | [CalendarItemBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritembackground), [CalendarItemBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderbrush), [CalendarItemBorderThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderthickness), [CalendarItemForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemforeground)  
-DayItem | [DayItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontfamily), [DayItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontsize), [DayItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontstyle), [DayItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontweight), [HorizontalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment), [VerticalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticaldayitemalignment), [CalendarViewDayItemStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle)  
-MonthYearItem (в представлениях года и десятилетия эквивалентно DayItem) | [MonthYearItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily), [MonthYearItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontsize), [MonthYearItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle), [MonthYearItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontweight)  
-FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily), [FirstOfMonthLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize), [FirstOfMonthLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle), [FirstOfMonthLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight), [HorizontalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment), [VerticalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment), [IsGroupLabelVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isgrouplabelvisible)  
-FirstofYearDecadeLabel (в представлениях года и десятилетия эквивалентно FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily), [FirstOfYearDecadeLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize), [FirstOfYearDecadeLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle), [FirstOfYearDecadeLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)  
-Границы визуального состояния | [FocusBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.focusborderbrush), [HoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.hoverborderbrush), [PressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.pressedborderbrush), [SelectedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedborderbrush), [SelectedForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedforeground), [SelectedHoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush), [SelectedPressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush)  
-OutofScope | [IsOutOfScopeEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isoutofscopeenabled), [OutOfScopeBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopebackground), [OutOfScopeForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopeforeground)  
-Сегодня | [IsTodayHighlighted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.istodayhighlighted), [TodayFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayfontweight), [TodayForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayforeground)  
+DayOfWeek | [DayOfWeekFormat](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayofweekformat)
+CalendarItem | [CalendarItemBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritembackground), [CalendarItemBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderbrush), [CalendarItemBorderThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderthickness), [CalendarItemForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemforeground)
+DayItem | [DayItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontfamily), [DayItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontsize), [DayItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontstyle), [DayItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontweight), [HorizontalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment), [VerticalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticaldayitemalignment), [CalendarViewDayItemStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
+MonthYearItem (в представлениях года и десятилетия эквивалентно DayItem) | [MonthYearItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily), [MonthYearItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontsize), [MonthYearItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle), [MonthYearItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontweight)
+FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily), [FirstOfMonthLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize), [FirstOfMonthLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle), [FirstOfMonthLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight), [HorizontalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment), [VerticalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment), [IsGroupLabelVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isgrouplabelvisible)
+FirstofYearDecadeLabel (в представлениях года и десятилетия эквивалентно FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily), [FirstOfYearDecadeLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize), [FirstOfYearDecadeLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle), [FirstOfYearDecadeLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
+Границы визуального состояния | [FocusBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.focusborderbrush), [HoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.hoverborderbrush), [PressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.pressedborderbrush), [SelectedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedborderbrush), [SelectedForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedforeground), [SelectedHoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush), [SelectedPressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush)
+OutofScope | [IsOutOfScopeEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isoutofscopeenabled), [OutOfScopeBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopebackground), [OutOfScopeForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopeforeground)
+Сегодня | [IsTodayHighlighted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.istodayhighlighted), [TodayFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayfontweight), [TodayForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayforeground)
 
  По умолчанию в представлении месяца отображается одновременно 6 недель. Чтобы изменить количество отображаемых недель, задайте свойство [NumberOfWeeksInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.numberofweeksinview). Минимальное количество отображаемых недель — 2; максимальное — 8.
 
@@ -130,9 +135,9 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 Каждый день в календаре представлен объектом [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem). Для получения доступа к отдельному элементу дня и использования его свойств и методов, обработайте событие [CalendarViewDayItemChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging) и используйте свойство Item аргументов события для доступа к CalendarViewDayItem.
 
-Чтобы запретить выбор дня в представлении календаря, установите для свойства [CalendarViewDayItem.IsBlackout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) значение **true**. 
+Чтобы запретить выбор дня в представлении календаря, установите для свойства [CalendarViewDayItem.IsBlackout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) значение **true**.
 
-Чтобы отобразить контекстные данные о плотности событий дня, вызовите метод [CalendarViewDayItem.SetDensityColors](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.setdensitycolors). Можно отобразить от 0 до 10 шкал плотности для каждого дня и установить цвет для каждой шкалы. 
+Чтобы отобразить контекстные данные о плотности событий дня, вызовите метод [CalendarViewDayItem.SetDensityColors](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.setdensitycolors). Можно отобразить от 0 до 10 шкал плотности для каждого дня и установить цвет для каждой шкалы.
 
 Вот некоторые элементы дня в календаре. Дни 1 и 2 затемнены. Для дней 2, 3 и 4 установлены разные шкалы плотности.
 
@@ -142,10 +147,10 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 Представление календаря может содержать большое количество объектов CalendarViewDayItem. Чтобы обеспечить быстрое реагирование пользовательского интерфейса и плавные переходы в календаре, представление календаря поддерживает поэтапную отрисовку. Позволяет разбить обработку элемента дня на этапы. Если день перемещен из представления до завершения выполнения всех этапов, время на попытку обработки и отрисовки этого элемента больше тратиться не будет.
 
-Этот пример иллюстрирует поэтапную отрисовку представления календаря для планирования встреч. 
-- На этапе 0 отрисовывается элемент дня по умолчанию. 
-- На этапе 1 затемняются даты, которые нельзя забронировать. Сюда входят прошлые даты, воскресенья, а также полностью забронированные даты. 
-- На этапе 2 проверяется каждая встреча, забронированная на этот день. Для каждой подтвержденной встречи отображается зеленая шкала плотности, а для каждойнеподтвержденной встречи — синяя. 
+Этот пример иллюстрирует поэтапную отрисовку представления календаря для планирования встреч.
+- На этапе 0 отрисовывается элемент дня по умолчанию.
+- На этапе 1 затемняются даты, которые нельзя забронировать. Сюда входят прошлые даты, воскресенья, а также полностью забронированные даты.
+- На этапе 2 проверяется каждая встреча, забронированная на этот день. Для каждой подтвержденной встречи отображается зеленая шкала плотности, а для каждойнеподтвержденной встречи — синяя.
 
 Класс `Bookings` в этом примере взят из несуществующего приложения резервирования встреч и не отображается.
 
@@ -154,7 +159,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
 ```csharp
-private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, 
+private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
                                    CalendarViewDayItemChangingEventArgs args)
 {
     // Render basic day items.
@@ -165,7 +170,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
     }
     // Set blackout dates.
     else if (args.Phase == 1)
-    {   
+    {
         // Blackout dates in the past, Sundays, and dates that are fully booked.
         if (args.Item.Date < DateTimeOffset.Now ||
             args.Item.Date.DayOfWeek == DayOfWeek.Sunday ||
@@ -208,11 +213,11 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 }
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Элементы управления датой и временем](date-and-time.md)
 - [Выбор даты в календаре](calendar-date-picker.md)

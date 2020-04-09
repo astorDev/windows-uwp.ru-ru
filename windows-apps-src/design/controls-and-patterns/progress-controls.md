@@ -12,24 +12,26 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5ff5d0e9172432110d60a007228e59e48785b9
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830809"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081631"
 ---
 # <a name="progress-controls"></a>Элементы управления «Ход выполнения»
 
 Элемент управления "Ход выполнения" служит для уведомления пользователя о том, что выполняется длительная операция. Это может означать, что пользователь не сможет взаимодействовать с приложением, когда индикатор выполнения отображается. Также в зависимости от того, какой индикатор используется, он может отображать время ожидания.
 
-| **API платформы** | **API библиотеки пользовательского интерфейса Windows** |
-| - | - |
-| [класс ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [свойство IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive). | [Класс ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
+**Получение библиотеки пользовательского интерфейса Windows**
 
-| **Получение библиотеки пользовательского интерфейса Windows** |
-| - |
-| Этот элемент управления является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ProgressBar** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+>
+> **API платформы:** [класс ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [свойство IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive).
 
 > [!NOTE]
 > Существует две версии элемента управления ProgressBar: одна в платформе, представленная пространством имен Windows.UI.Xaml; другая в библиотеке пользовательского интерфейса Windows, пространство имен — Microsoft.UI.Xaml. Хотя API для ProgressBar один и тот же, внешний вид элемента управления в этих двух версиях отличается. В этом документе будут показаны изображения новой версии библиотеки пользовательского интерфейса Windows.
@@ -72,7 +74,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> или <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> в действии.</p>
     <ul>
@@ -98,7 +100,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **Ключевые слова**
 
-    Если ваша операция связана с этими ключевыми словами или если вы отображаете подобный текст вместе с индикацией хода выполнения, рекомендуется использовать ProgressBar.
+    Если ваша операция связана с этими ключевыми словами или если вы показываете подобный текст вместе с индикацией хода выполнения, которая соответствует этим ключевым словам, рекомендуется использовать ProgressBar:
 
     - *Загрузка...*
     - *Получение*
@@ -112,11 +114,11 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **Ожидает ли приложение, что пользователь завершит задачу?**
 
-    Если да, используйте ProgressRing, поскольку этот индикатор предназначен для отображения пользователю неизвестного времени ожидания.
+    Если да, используйте ProgressRing, так как этот индикатор предназначен для отображения пользователю неизвестного времени ожидания.
 
 -   **Ключевые слова**
 
-    Если ваша операция связана с этими ключевыми словами или если вы отображаете подобный текст вместе с индикацией хода выполнения, рекомендуется использовать ProgressRing.
+    Если ваша операция связана с этими ключевыми словами или если вы показываете подобный текст вместе с индикацией хода выполнения, которая соответствует этим ключевым словам, рекомендуется использовать ProgressRing:
 
     - *Обновление*
     - *Вход...*
@@ -159,7 +161,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ![Пример неопределенного состояния ProgressRing](images/PR_IndeterminateExample.png)
 
-Неопределенное состояние ProgressRing используется, когда любое дальнейшее взаимодействия пользователя с приложением прекращается или приложение ожидает ввода пользователя для продолжения работы. Приведенный выше пример "Вход..." является идеальным сценарием для использования ProgressRing; пользователь не может продолжить использование приложения, пока вход не выполнен.
+Неопределенное состояние ProgressRing используется, когда любое дальнейшее взаимодействие пользователя с приложением прекращается или приложение ожидает ввода пользователя для продолжения работы. "Вход..." является идеальным сценарием для использования ProgressRing; пользователь не может продолжить использование приложения, пока вход не выполнен.
 
 ## <a name="customizing-a-progress-control"></a>Настройка индикатора хода выполнения
 
@@ -203,11 +205,11 @@ progressRing.IsActive = true;
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Класс ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
 - [Класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)

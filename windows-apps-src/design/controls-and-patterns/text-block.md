@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c402b321c073b8b3450b14ca124e82b0fb9b1c
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340218"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081499"
 ---
 # <a name="text-block"></a>Блок текста
 
@@ -24,7 +24,7 @@ ms.locfileid: "71340218"
 
  Блок текста — это основной элемент управления для отображения текста в режиме "только для чтения" в приложениях. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием.
  
- > **Важные API**: [класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [свойство Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **API платформы**: [класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [свойство Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -32,14 +32,14 @@ ms.locfileid: "71340218"
 
 Хотя в текст можно поместить разрывы строк, блок текста разработан для отображения одного абзаца и не поддерживает отступ текста. Используйте **RichTextBlock**, если вам требуется поддержка нескольких абзацев, разметка текста с несколькими столбцами или другие сложные текстовые макеты либо встроенные элементы пользовательского интерфейса, например изображения.
 
-Дополнительные сведения о выборе подходящего элемента управления текстом можно найти в статье [Элементы управления текстом](text-controls.md).
+Дополнительные сведения можно найти в статье об [элементах управления текстом](text-controls.md).
 
 ## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TextBlock">открыть приложение и увидеть TextBlock в действии</a>.</p>
     <ul>
@@ -83,12 +83,12 @@ textBlock1.Text = "Hello, world!";
 Элементы, производные от класса Inline, например Bold, Italic, Run, Span и LineBreak, обеспечивают разное форматирование для разных частей текста. Дополнительные сведения см. в разделе [Форматирование текста](#formatting-text). Строковый элемент Hyperlink позволяет вам добавлять гиперссылку в свой текст. Однако, при использовании элементов Inlines также отключается отрисовка текста с помощью быстрого пути, что рассматривается в следующем разделе.
 
 
-## <a name="performance-considerations"></a>Вопросы производительности
+## <a name="performance-considerations"></a>Рекомендации по производительности
 
 Для размещения текста XAML использует более эффективный программный путь, когда это возможно. Этот быстрый путь уменьшает общее потребление памяти и значительно уменьшает время, которое необходимо ЦП на измерение и размещение текста. Этот быстрый путь используется только для объекта TextBlock, поэтому по возможности следует использовать этот объект вместо объекта RichTextBlock.
 
 В некоторых условиях для отрисовки текста объекту TextBlock приходится использовать более функциональный программный путь, потребляющий больше ресурсов ЦП. Чтобы функция отрисовки текста всегда использовала быстрый путь, при настройке перечисленных здесь свойств соблюдайте указанные ниже рекомендации.
-- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
+- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с использованием `<TextBlock>Inline text</TextBlock>`), быстрый путь будет выключен из-за потенциальной сложности, созданной использованием нескольких форматов.
 - [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): быстрому пути соответствует только значение 0, используемое по умолчанию.
 - [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): только значения **None**, **CharacterEllipsis** и **WordEllipsis** соответствуют быстрому пути. Значение **Clip** выключает быстрый путь.
 
@@ -188,11 +188,11 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 <TextBlock>12 x <Run Typography.Fraction="Slashed">1/3</Run> = 4.</TextBlock>
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Текстовые элементы управления](text-controls.md)
 - [Руководство по проверке орфографии](text-controls.md)

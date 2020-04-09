@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 31b3bcc2388a98941fc5e8aa44d18beee53de5c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163693"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081097"
 ---
 # <a name="combo-box-and-list-box"></a>Поле со списком и список
 
@@ -23,11 +23,17 @@ ms.locfileid: "72163693"
 
 Если поле со списком закрыто, отображается либо текущий выбор, либо пустое поле (если ни один из элементов не выбран). Когда пользователь развертывает поле со списком, оно отображает список элементов, доступных для выбора.
 
-> **Важные API**: [класс ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [свойство IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [свойство Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [событие TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-Поле со списком в компактном состоянии с заголовком.
-
 ![Пример раскрывающегося списка в компактном состоянии](images/combo_box_collapsed.png)
+
+> _Поле со списком в компактном состоянии с заголовком_
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы:** [класс ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [свойство IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [свойство Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [событие TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -41,7 +47,7 @@ ms.locfileid: "72163693"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ComboBox">открыть приложение и увидеть элемент ComboBox в действии</a>.</p>
     <ul>
@@ -210,7 +216,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 ### <a name="text-submitted"></a>Событие TextSubmitted
 
-Вы можете обработать событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, которое ввел пользователь. Как правило, в обработчике событий проверяется правильность введенного пользователем значения, после чего значение используется в приложении. В зависимости от ситуации, можно также добавить в список элементов поля со списком значений для будущего использования.
+Вы можете обработать событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, которое ввел пользователь. Как правило, в обработчике событий проверяется правильность введенного пользователем значения, после чего значение используется в приложении. В зависимости от ситуации, можно также добавить значение в поле списка вариантов для будущего использования.
 
 Событие TextSubmitted возникает при выполнении следующих условий:
 
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }
@@ -290,7 +296,7 @@ bool IsValid(string Text)
 }
 ```
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 - Ограничьте текстовое содержимое элементов полей со списком одной строкой.
 - Сортируйте элементы в поле со списком в логическом порядке. Группируйте связанные параметры и размещайте часто используемые параметры в начале списка. Названия сортируйте в алфавитном порядке, числа — по возрастанию, даты — по хронологии.
@@ -321,12 +327,12 @@ bool IsValid(string Text)
 - Используйте шрифт по умолчанию, если руководство по использованию корпоративного стиля не требует использования другого шрифта.
 - Не используйте окно с списком для выполнения команд или динамического скрытия либо отображения других элементов управления.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 - [Пример AutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Текстовые элементы управления](text-controls.md)
 - [Проверка орфографии](text-controls.md)

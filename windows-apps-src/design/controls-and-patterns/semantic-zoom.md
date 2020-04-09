@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258132"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081566"
 ---
 # <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -39,7 +39,7 @@ ms.locfileid: "74258132"
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
-Используйте элемент управления **SemanticZoom**, если необходимо отображать набор сгруппированных данных, который настолько большой, что его не возможно полностью показать на одной или двух страницах.
+Используйте элемент управления **SemanticZoom**, если необходимо показывать набор сгруппированных данных, который настолько большой, что его не возможно полностью показать на одной или двух страницах.
 
 Не путайте контекстное масштабирование с оптическим масштабированием. Хотя обе технологии используют одни и те же механизмы взаимодействия и базовое поведение (отображение более или менее детализированного представления с учетом коэффициента масштабирования), оптическим масштабированием называется настройка увеличения какой-либо области содержимого или объекта, например фотографии. Подробнее об элементах управления для визуального масштабирования см. в разделе об элементе управления [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
@@ -48,7 +48,7 @@ ms.locfileid: "74258132"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SemanticZoom">открыть приложение и увидеть SemanticZoom в действии</a>.</p>
     <ul>
@@ -73,7 +73,7 @@ ms.locfileid: "74258132"
 
 ## <a name="create-a-semantic-zoom"></a>Создание контекстного масштабирования
 
-Элемент управления **SemanticZoom** не имеет собственного визуального представления. Это размещающий элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) и [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) объекта SemanticZoom.
+У элемента управления **SemanticZoom** нет собственного визуального представления. Это размещаемый элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) и [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) объекта SemanticZoom.
 
 Для контекстного масштабирования необходимы три элемента:
 - Сгруппированный источник данных (группы задаются определением GroupStyle в масштабированном представлении).
@@ -193,12 +193,12 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 -   Применяйте упорядочение для коллекции несгруппированных, но упорядоченных элементов (например, хронологический порядок для дат и алфавитный порядок для списка имен).
 
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Основы проектирования навигации](../basics/navigation-basics.md)
 - [Представления списка и сетки](listview-and-gridview.md)

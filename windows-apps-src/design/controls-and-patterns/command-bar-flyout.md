@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257736"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081962"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -25,17 +25,24 @@ ms.locfileid: "74257736"
 
 ![Развернутое всплывающее меню панели команд для работы с текстом](images/command-bar-flyout-header.png)
 
-> Для использования всплывающего меню панели (CommandBarFlyout) требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
-
-> - **API платформы**: [класс CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [класс AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator).
->- **API библиотеки пользовательского интерфейса Windows**: [класс CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout).
-
 Как и элемент [CommandBar](app-bars.md), CommandBarFlyout содержит свойства **PrimaryCommands** и **SecondaryCommands**, которые можно использовать для добавления команд. Вы можете разместить команды в одной из коллекций или же в обеих. Условие и способ отображения основных и второстепенных команд зависит от режима отображения.
 
 Для всплывающего меню панели команд доступно два режима отображения: *свернутый* и *развернутый*.
 
-- В свернутом режиме отображаются только основные команды. Если всплывающее меню панели команд содержит основные и второстепенные команды, отображается кнопка "Показать больше" в виде многоточия \[•••\]. Нажав ее, пользователь может получить доступ к второстепенным командам путем перехода в развернутый режим.
+- В свернутом режиме отображаются только основные команды. Если всплывающее меню панели команд содержит основные и второстепенные команды, отображается кнопка "Показать больше" в виде многоточия \[***\]. Нажав ее, пользователь может получить доступ к второстепенным командам путем перехода в развернутый режим.
 - В развернутом режиме отображаются как основные, так и второстепенные команды. (Если элемент управления содержит только второстепенные элементы, они отображаются примерно так же, как в элементе управления MenuFlyout.)
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **CommandBarFlyout** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+>**API библиотеки пользовательского интерфейса Windows**: [класс CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout).
+>
+>**API платформы**: [класс CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [класс AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator).
+>
+> Для использования всплывающего меню панели (CommandBarFlyout) требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -56,7 +63,7 @@ TextCommandBarFlyout отображает команды для работы с 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CommandBarFlyout">открыть приложение и увидеть CommandBarFlyout в действии</a>.</p>
     <ul>
@@ -386,15 +393,15 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 | Команда | Условие отображения |
 | ------- | -------- |
-| Bold | Элемент управления текстом не является доступным только для чтения (только RichEditBox). |
-| Italic | Элемент управления текстом не является доступным только для чтения (только RichEditBox). |
+| Полужирный шрифт | Элемент управления текстом не является доступным только для чтения (только RichEditBox). |
+| Курсив | Элемент управления текстом не является доступным только для чтения (только RichEditBox). |
 | Underline | Элемент управления текстом не является доступным только для чтения (только RichEditBox). |
 | Проверка правописания | Для параметра IsSpellCheckEnabled задано значение **true**, и выбран текст с ошибкой. |
 | Вырезать | Элемент управления текстом не является доступным только для чтения, и текст выделен. |
 | Копировать | Выделен текст. |
-| Вставка | Элемент управления текстом не является доступным только для чтения, и в буфере обмена есть содержимое. |
-| Отменить | Наличие действия, которое можно отменить. |
-| Выделить все | Текст может быть выбран. |
+| Вставить | Элемент управления текстом не является доступным только для чтения, и в буфере обмена есть содержимое. |
+| Отмена | Наличие действия, которое можно отменить. |
+| Выбрать все | Текст может быть выбран. |
 
 ### <a name="custom-text-command-bar-flyouts"></a>Настраиваемые всплывающие меню панели команд для работы с текстом
 
@@ -403,12 +410,12 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - Чтобы заменить элемент TextCommandBarFlyout по умолчанию, отображаемый при выделении текста, вы можете создать настраиваемый элемент CommandBarFlyout (или другой тип всплывающего меню) и назначить его свойству **SelectionFlyout**. Если для SelectionFlyout установлено значение **null**, при выделении команды отображаться не будут.
 - Чтобы заменить элемент TextCommandBarFlyout по умолчанию, отображаемый в виде контекстного меню, назначьте настраиваемый элемент CommandBarFlyout (или другой тип всплывающего меню) свойству **ContextFlyout** в элементе управления текстом. Если для ContextFlyout установлено значение **null**, всплывающее меню, отображаемое в предыдущих версиях элемента управления текстом, отображается вместо TextCommandBarFlyout.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 - [Пример команд XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Основы проектирования команд в приложениях UWP](../basics/commanding-basics.md)
 - [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) (Класс CommandBar)

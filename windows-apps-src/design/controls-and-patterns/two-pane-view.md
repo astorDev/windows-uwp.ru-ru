@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a070a72324408746f67b8814554160a76ee0ce4
-ms.sourcegitcommit: e4b48989c91cd77ba73c90d9eb9cd67b88d52f21
+ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191697"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081444"
 ---
 # <a name="two-pane-view"></a>Представление с двумя панелями
 
@@ -25,13 +25,15 @@ ms.locfileid: "79191697"
 > [!NOTE]
 > _Двухэкранное устройство_ — это особый тип устройств с уникальными возможностями. Оно не эквивалентно компьютеру с несколькими мониторами. Дополнительные сведения о двухэкранных устройствах см. в [этой статье](/dual-screen/introduction). (Дополнительные сведения об оптимизации своего приложения для нескольких мониторов см. в [этой статье](/windows/uwp/design/layout/show-multiple-views).)
 
-| Получение библиотеки пользовательского интерфейса Windows |
-| - |
-| Этот элемент управления является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](/uwp/toolkits/winui/). |
+**Получение библиотеки пользовательского интерфейса Windows**
 
-| API платформы | API библиотеки пользовательского интерфейса Windows |
+|  |  |
 | - | - |
-| [Класс TwoPaneView](/uwp/api/windows.ui.xaml.controls.twopaneview) | [Класс TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TwoPaneView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+>
+> **API платформы:** [Класс TwoPaneView](/uwp/api/windows.ui.xaml.controls.twopaneview)
 
 В этом документе мы будем использовать в XAML псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page):
 

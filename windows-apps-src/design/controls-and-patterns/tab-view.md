@@ -7,20 +7,26 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
-ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
+ms.openlocfilehash: ce9e3775f4b0f78d17f0ffdf3d6381f2e8a233d9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890429"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081525"
 ---
 # <a name="tabview"></a>TabView
 
 Элемент управления TabView позволяет отобразить набор вкладок и их содержимое. Элементы TabView удобно использовать, чтобы отображать несколько страниц (или документов) содержимого, в то же время предоставляя пользователю возможность изменять порядок вкладок, а также открывать новые или закрывать имеющиеся вкладки.
 
-> **Важные API**: [класс TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [класс TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
-
 ![Пример элемента TabView](images/tabview/tab-introduction.png)
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TabView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API библиотеки пользовательского интерфейса Windows**: [класс TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [класс TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 

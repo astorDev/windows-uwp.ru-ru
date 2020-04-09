@@ -1,88 +1,88 @@
 ---
-title: С помощью на визуальном уровне с помощью WPF
-description: Ознакомьтесь с приемами с помощью API визуального слоя в сочетании с существующим содержимым WPF для создания дополнительных анимаций и эффектов.
+title: Использование визуального уровня с помощью WPF
+description: Изучите методы, позволяющие использовать интерфейсы API визуального уровня в сочетании с существующим содержимым WPF, чтобы создавать сложные анимации и эффекты.
 ms.date: 03/18/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f30ba67acc12d622acd09f9fae872ee2058a2f
 ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215157"
 ---
-# <a name="using-the-visual-layer-with-wpf"></a>С помощью на визуальном уровне с помощью WPF
+# <a name="using-the-visual-layer-with-wpf"></a>Использование визуального уровня с помощью WPF
 
-Вы можете использовать API композиции среды выполнения Windows (также называется [визуальный слой](/windows/uwp/composition/visual-layer)) в приложениях Windows Presentation Foundation (WPF) для создания современных приложений, света, для пользователей Windows 10.
+Вы можете использовать интерфейсы API Composition среды выполнения Windows (также называемые [визуальным уровнем](/windows/uwp/composition/visual-layer)) в приложениях Windows Presentation Foundation (WPF), чтобы создавать современные интерфейсы для пользователей Windows 10.
 
-Полный код для этого руководства можно найти в GitHub: [Пример WPF HelloComposition](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition).
+Полный код для этого руководства доступен на сайте GitHub: [Пример приложения WPF HelloComposition](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-XAML UWP, интерфейс API размещения имеет эти условия.
+Для использования API размещения XAML для UWP накладываются приведенные ниже предварительные требования.
 
-- Мы предполагаем, что у вас есть некоторый опыт работы с разработкой приложений, с помощью WPF и UWP. См. также:
+- Предполагается, что у вас есть опыт разработки приложений с помощью WPF и UWP. См. также:
   - [Приступая к работе (WPF)](/dotnet/framework/wpf/getting-started/)
-  - [Начало работы с приложениями Windows 10](/windows/uwp/get-started/)
-  - [Давайте расширим приложение рабочего стола для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
-- .NET framework 4.7.2 или более поздней версии
-- Windows 10 версии 1803 или более поздней версии
-- Пакет SDK Windows 10 17134 или более поздней версии
+  - [Приступая к работе с приложениями для Windows 10](/windows/uwp/get-started/)
+  - [Улучшение классического приложения для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+- .NET Framework 4.7.2 или более поздней версии.
+- Windows 10 версии 1803 или более поздней версии.
+- Пакет SDK для Windows 10 версии 17134 или более поздней версии.
 
-## <a name="how-to-use-composition-apis-in-wpf"></a>Как использовать интерфейсы API композиции в WPF
+## <a name="how-to-use-composition-apis-in-wpf"></a>Использование интерфейсов API Composition в WPF
 
-В этом руководстве создание простого пользовательского интерфейса приложения WPF и добавить к нему анимированных элементов композиции. Компоненты WPF и композиции хранятся простой, но взаимодействия кода, показанного не зависит от сложности компонентов. Готовое приложение выглядит следующим образом.
+При работе с этим руководством вы создадите пользовательский интерфейс приложения WPF и добавите в него анимированные элементы Composition. Компоненты WPF и компоненты Composition простые, но приведенный код взаимодействия одинаков независимо от сложности компонентов. Завершенное приложение выглядит следующим образом.
 
-![Выполняющееся приложение пользовательского интерфейса](images/visual-layer-interop/wpf-comp-interop-app-ui.png)
+![Пользовательский интерфейс выполняющегося приложения](images/visual-layer-interop/wpf-comp-interop-app-ui.png)
 
 ## <a name="create-a-wpf-project"></a>Создание проекта WPF
 
-Первым шагом является создание проекта приложения WPF, который включает в себя определение приложения и на странице XAML для пользовательского интерфейса.
+Первым шагом является создание проекта приложения WPF, включающего в себя определение приложения и страницу XAML для пользовательского интерфейса.
 
-Для создания нового проекта приложения WPF в визуальном элементе C# с именем _HelloComposition_:
+Чтобы создать проект приложения WPF на Visual C# с именем _HelloComposition_, сделайте следующее.
 
-1. Откройте Visual Studio и выберите **файл** > **New** > **проекта**.
+1. Откройте Visual Studio и выберите **Файл** > **Создать** > **Проект**.
 
-    **Новый проект** откроется диалоговое окно.
-1. В разделе **установленные** категории, разверните **Visual C#**  узел, а затем выберите **Windows Desktop**.
-1. Выберите **приложение WPF (.NET Framework)** шаблона.
-1. Введите имя _HelloComposition_, выбрать Framework **.NET Framework 4.7.2**, затем нажмите кнопку **ОК**.
+    Появится диалоговое окно **Создать проект**.
+1. В категории **Установлены** разверните узел **Visual C#** , а затем выберите **Windows Desktop**.
+1. Выберите шаблон **Приложение WPF (.NET Framework)** .
+1. Введите имя _HelloComposition_, выберите платформу **.NET Framework 4.7.2**, а затем нажмите кнопку **ОК**.
 
-    Visual Studio создаст проект и открывает конструктор для окна приложения по умолчанию с именем файла MainWindow.xaml.
+    Visual Studio создаст проект и откроет конструктор для окна приложения по умолчанию, MainWindow.xaml.
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Настройка проекта для использования API среды выполнения Windows
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Настройка проекта для использования интерфейсов API среды выполнения Windows
 
-Для использования среды выполнения Windows (WinRT) API-интерфейсов в приложении WPF, необходимо настроить проект Visual Studio для доступа к среде выполнения Windows. Кроме того векторы широко используются API композиции, поэтому необходимо добавить ссылки, необходимые для использования векторов.
+Чтобы использовать API среды выполнения Windows (WinRT) в приложении WPF, необходимо настроить проект Visual Studio для доступа к среде выполнения Windows. Кроме того, API Composition активно используют векторы, поэтому нужно добавить ссылки, необходимые для использования векторов.
 
-Пакеты NuGet доступны обратиться к обоим этим требованиям. Установите последние версии этих пакетов для добавления необходимых ссылок в проект.  
+Для решения этих задач предоставляются соответствующие пакеты NuGet. Установите последние версии этих пакетов, чтобы добавить необходимые ссылки в проект.  
 
-- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (требуется набор формат по умолчанию пакета управления для PackageReference.)
-- [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (требуется задать PackageReference в качестве формата управления пакетами по умолчанию).
+- [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/).
 
 > [!NOTE]
-> Хотя рекомендуется использовать пакеты NuGet для настройки проекта, можно добавить необходимые ссылки вручную. Дополнительные сведения см. в разделе [рабочего стола в приложении для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). В следующей таблице показаны файлы, которые необходимо добавить ссылки на.
+> Хотя мы рекомендуем использовать для настройки проекта пакеты NuGet, необходимые ссылки можно добавить вручную. Дополнительные сведения: [Улучшение классического приложения для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). В следующей таблице приведены файлы, на которые необходимо добавить ссылки.
 
-|Файл|Location|
+|Файл|Расположение|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*версия пакета SDK*>\Windows.Foundation.UniversalApiContract\<*версия*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*версия пакета SDK*>\Windows.Foundation.FoundationContract\<*версия*>|
 |System.Numerics.Vectors.dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
 |System.Numerics.dll|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2|
 
-## <a name="configure-the-project-to-be-per-monitor-dpi-aware"></a>Настройте проект, чтобы быть DPI для каждого монитора виду
+## <a name="configure-the-project-to-be-per-monitor-dpi-aware"></a>Настройка проекта для поддержки определения DPI для каждого монитора
 
-Визуальный слой содержимое, которое можно добавить в приложение не выполнено Автомасштабирование в соответствии с параметрами DPI для экрана, на котором они отображаются на. Необходимо включение поддержки определения DPI для каждого монитора для вашего приложения и убедитесь, что код, который используется для создания содержимого на визуальном уровне учитывает текущий масштаб DPI при запуске приложения. Здесь мы настраиваем DPI, получить проекта. В следующих разделах мы покажем, как использовать сведения о DPI для масштабирования содержимого визуального слоя.
+Содержимое визуального уровня, добавляемое в приложение, не масштабируется автоматически в соответствии с параметрами DPI экрана, на котором оно отображается. Для приложения необходимо включить определение DPI для каждого монитора, а затем убедиться, что код, используемый для создания содержимого визуального уровня, учитывает текущее количество точек на дюйм при запуске приложения. Сейчас мы настроим проект для поддержки определения DPI для каждого монитора. В последующих разделах мы покажем, как использовать сведения о DPI для масштабирования содержимого визуального уровня.
 
-Приложения WPF являются ДЮЙМ системы по умолчанию, но требуется объявлять себя, чтобы быть DPI для каждого монитора виду в файл app.manifest. Чтобы включить Windows уровня осведомленности DPI для каждого монитора в файле манифеста приложения:
+Приложения WPF по умолчанию поддерживают системное определение DPI, но для них необходимо объявить в файле app.manifest поддержку определения DPI для каждого монитора. Чтобы включить в файле манифеста приложения определение DPI для каждого монитора на уровне Windows, сделайте следующее.
 
-1. В **обозревателе решений**, щелкните правой кнопкой мыши _HelloComposition_ проекта.
-1. В контекстном меню выберите **добавить** > **новый элемент...** .
-1. В **Добавление нового элемента** диалоговое окно, выберите «Файл манифеста приложения», а затем нажмите кнопку **добавить**. (Можно оставить имя по умолчанию.)
-1. В файл app.manifest, найдите этот xml и отменить преобразование в комментарий его:
+1. В **обозревателе решений** щелкните проект _HelloComposition_ правой кнопкой мыши.
+1. В контекстном меню выберите **Добавить** > **Новый элемент**.
+1. В диалоговом окне **Добавление нового элемента** выберите "Файл манифеста приложения", а затем нажмите кнопку **Добавить**. (Можно оставить имя по умолчанию.)
+1. В файле app.manifest найдите приведенный ниже код XML и раскомментируйте его.
 
     ```xaml
     <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -92,15 +92,15 @@ XAML UWP, интерфейс API размещения имеет эти усло
       </application>
     ```
 
-1. Добавьте этот параметр после открывающего `<windowsSettings>` тега:
+1. Добавьте этот параметр после открывающего тега `<windowsSettings>`.
 
     ```xaml
           <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitor</dpiAwareness>
     ```
 
-1. Необходимо также задать **DoNotScaleForDpiChanges** в файле App.config.
+1. Также в файле app.config необходимо задать параметр **DoNotScaleForDpiChanges**.
 
-    Откройте файл App.Config и добавьте этот код xml внутри `<configuration>` элемент:
+    Откройте файл app.config и добавьте приведенный ниже код XML в элемент `<configuration>`.
 
     ```xml
     <runtime>
@@ -109,22 +109,22 @@ XAML UWP, интерфейс API размещения имеет эти усло
     ```
 
 > [!NOTE]
-> **AppContextSwitchOverrides** можно задать только один раз. Если приложение уже имеет одного набора, следует точка с запятой разделения этого коммутатора внутри значения атрибута.
+> Параметр **AppContextSwitchOverrides** можно задать только один раз. Если он уже задан в вашем приложении, необходимо отделить этот параметр точкой с запятой в атрибуте value.
 
-(Дополнительные сведения см. в разделе [разработчика руководство DPI каждого монитора и примеры](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) на сайте GitHub.)
+(Дополнительные сведения приведены в [руководстве для разработчиков и примерах определения DPI для каждого монитора](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) на сайте GitHub.)
 
-## <a name="create-an-hwndhost-derived-class-to-host-composition-elements"></a>Создание класса HwndHost производный узел композиции элементам
+## <a name="create-an-hwndhost-derived-class-to-host-composition-elements"></a>Создание производного класса HwndHost для размещения элементов композиции
 
-Чтобы разместить содержимое, созданного с использованием визуальном уровне, необходимо создать класс, производный от [HwndHost](/dotnet/api/system.windows.interop.hwndhost). Это, где выполняется большая часть конфигурации для размещения API композиции. В этом классе используется [службы вызова платформы (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code) и [COM-взаимодействия](/dotnet/api/system.runtime.interopservices.comimportattribute) приведение композиции API-интерфейсов в приложении WPF. Дополнительные сведения о PInvoke и COM-взаимодействия, см. в разделе [взаимодействие с неуправляемым кодом](/dotnet/framework/interop/index).
+Для размещения содержимого, созданного с помощью визуального уровня, необходимо создать класс, производный от [HwndHost](/dotnet/api/system.windows.interop.hwndhost). Здесь потребуется выполнить большую часть настройки для размещения интерфейсов API Composition. В этом классе для добавления интерфейсов API Composition в приложение WPF используются [службы вызова платформы (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code) и [взаимодействие COM](/dotnet/api/system.runtime.interopservices.comimportattribute). Дополнительные сведения о PInvoke и взаимодействии COM см. в разделе [Взаимодействие с неуправляемым кодом](/dotnet/framework/interop/index).
 
 > [!TIP]
-> Если вам нужно, проверьте полный код в конце учебника, чтобы убедиться, что весь код находится в нужных местах во время работы с учебником.
+> При необходимости сверьтесь с полным кодом в конце руководства, чтобы убедиться в том, что весь код добавлен в соответствующе места при работе с этим руководством.
 
-1. Добавьте новый файл класса в проект, который является производным от [HwndHost](/dotnet/api/system.windows.interop.hwndhost).
-    - В **обозревателе решений**, щелкните правой кнопкой мыши _HelloComposition_ проекта.
-    - В контекстном меню выберите **добавить** > **класс...** .
-    - В **Добавление нового элемента** диалоговое окно, имя класса _CompositionHost.cs_, затем нажмите кнопку **добавить**.
-1. В CompositionHost.cs, измените определение класса для наследования от **HwndHost**.
+1. Добавьте в проект файл нового класса, производного от [HwndHost](/dotnet/api/system.windows.interop.hwndhost).
+    - В **обозревателе решений** щелкните проект _HelloComposition_ правой кнопкой мыши.
+    - В контекстном меню выберите **Добавить** > **Класс**.
+    - В диалоговом окне **Добавление нового элемента** укажите имя класса, _CompositionHost.cs_, а затем щелкните **Добавить**.
+1. В CompositionHost.cs измените определение класса, чтобы сделать его производным от **HwndHost**.
 
     ```csharp
     // Add
@@ -138,7 +138,7 @@ XAML UWP, интерфейс API размещения имеет эти усло
     }
     ```
 
-1. Добавьте следующий код и конструктор в класс.
+1. Добавьте в класс приведенный ниже код и конструктор.
 
     ```csharp
     // Add
@@ -179,9 +179,9 @@ XAML UWP, интерфейс API размещения имеет эти усло
     }
     ```
 
-1. Переопределить **класса BuildWindowCore** и **DestroyWindowCore** методы.
+1. Переопределите методы **BuildWindowCore** и **DestroyWindowCore**.
     > [!NOTE]
-    > В класса BuildWindowCore, вы вызываете _InitializeCoreDispatcher_ и _InitComposition_ методы. При создании этих методов на следующих шагах.
+    > В BuildWindowCore вызываются методы _InitializeCoreDispatcher_ и _InitComposition_. Эти методы создаются на следующих шагах.
 
     ```csharp
     // Add
@@ -219,7 +219,7 @@ XAML UWP, интерфейс API размещения имеет эти усло
     }
     ```
 
-    - [CreateWindowEx](/windows/desktop/api/winuser/nf-winuser-createwindowexa) и [DestroyWindow](/windows/desktop/api/winuser/nf-winuser-destroywindow) требуется объявление PInvoke. Поместите это объявление в конце кода для класса.
+    - Для [CreateWindowEx](/windows/desktop/api/winuser/nf-winuser-createwindowexa) и [DestroyWindow](/windows/desktop/api/winuser/nf-winuser-destroywindow) требуется объявление PInvoke. Поместите это объявление в конец блока кода класса.
 
     ```csharp
     #region PInvoke declarations
@@ -242,8 +242,8 @@ XAML UWP, интерфейс API размещения имеет эти усло
     #endregion PInvoke declarations
     ```
 
-1. Инициализировать поток с [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher). Диспетчер core отвечает за обработку сообщений окна и диспетчеризации событий для WinRT API-интерфейсов. Новые экземпляры **CoreDispatcher** должны создаваться в потоке, который имеет CoreDispatcher.
-    - Создайте метод с именем _InitializeCoreDispatcher_ и добавьте код для настройки очереди диспетчера.
+1. Инициализируйте поток с помощью [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher). Основной диспетчер отвечает за обработку сообщений окон и диспетчеризацию событий интерфейсов API WinRT. Новые экземпляры **CoreDispatcher** должны создаваться в потоке с CoreDispatcher.
+    - Создайте метод _InitializeCoreDispatcher_ и добавьте код для настройки очереди диспетчера.
 
     ```csharp
     private object InitializeCoreDispatcher()
@@ -259,7 +259,7 @@ XAML UWP, интерфейс API размещения имеет эти усло
     }
     ```
 
-    - Очереди диспетчера также требует объявления PInvoke. Поместите это объявление внутри _объявлений PInvoke_ область, созданную на предыдущем шаге.
+    - Для очереди диспетчера также требуется объявление PInvoke. Поместите это объявление в область _объявлений PInvoke_, созданную на предыдущем шаге.
 
     ```csharp
     //typedef enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
@@ -314,9 +314,9 @@ XAML UWP, интерфейс API размещения имеет эти усло
                                             out object dispatcherQueueController);
     ```
 
-    Теперь у очереди диспетчера готовы и можно приступить к инициализации и создания содержимого композиции.
+    Теперь очередь диспетчера готова, и можно начать инициализацию и создание содержимого Composition.
 
-1. Инициализировать [композитор](/uwp/api/windows.ui.composition.compositor). Компоновщиком является фабрику, которая создает различные типы в [Windows.UI.Composition](/uwp/api/windows.ui.composition) пространства имен, охватывающих визуальные элементы, система эффектов и системы анимации. Класс композитор также управляет временем существования объектов, созданных из фабрики.
+1. Инициализируйте [Compositor](/uwp/api/windows.ui.composition.compositor). Compositor — это фабрика, которая создает разные типы в пространстве имен [Windows.UI.Composition](/uwp/api/windows.ui.composition), охватывающем визуальные элементы, систему эффектов и систему анимации. Класс Compositor также управляет временем существования объектов, созданных из фабрики.
 
     ```csharp
     private void InitComposition(IntPtr hwndHost)
@@ -336,7 +336,7 @@ XAML UWP, интерфейс API размещения имеет эти усло
     }
     ```
 
-    - **ICompositorDesktopInterop** и **ICompositionTarget** требуют COM imports. Поместите следующий код после _CompositionHost_ класса, но внутри объявления пространства имен.
+    - Для **ICompositorDesktopInterop** и **ICompositionTarget** требуется импорт COM. Поместите этот код после класса _CompositionHost_ внутри объявления пространства имен.
 
     ```csharp
     #region COM Interop
@@ -385,29 +385,29 @@ XAML UWP, интерфейс API размещения имеет эти усло
     #endregion COM Interop
     ```
 
-## <a name="create-a-usercontrol-to-add-your-content-to-the-wpf-visual-tree"></a>Создать пользовательский элемент управления, чтобы добавить свое содержимое для визуального дерева WPF
+## <a name="create-a-usercontrol-to-add-your-content-to-the-wpf-visual-tree"></a>Создание UserControl для добавления содержимого в визуальное дерево WPF
 
-Последний шаг для создания инфраструктуры требуемый узел композиции содержимое является добавление HwndHost визуального дерева WPF.
+Последним шагом в настройке инфраструктуры, необходимой для размещения содержимого Composition, является добавление HwndHost в визуальное дерево WPF.
 
-### <a name="create-a-usercontrol"></a>Создать объект UserControl
+### <a name="create-a-usercontrol"></a>Создание UserControl
 
-UserControl — удобный способ упаковки ваш код, который создает и управляет содержимым композиции и легко добавить содержимое в XAML.
+С помощью UserControl удобно упаковывать код, который создает содержимое Composition и управляет им, а также легко добавлять содержимое в код XAML.
 
-1. Добавьте новый файл пользовательского элемента управления в проект.
-    - В **обозревателе решений**, щелкните правой кнопкой мыши _HelloComposition_ проекта.
-    - В контекстном меню выберите **добавить** > **пользовательский элемент управления...** .
-    - В **Добавление нового элемента** диалоговом окне имя пользовательского элемента управления _CompositionHostControl.xaml_, затем нажмите кнопку **добавить**.
+1. Добавьте файл нового пользовательского элемента управления в проект.
+    - В **обозревателе решений** щелкните проект _HelloComposition_ правой кнопкой мыши.
+    - В контекстном меню выберите **Добавить** > **Пользовательский элемент управления**.
+    - В диалоговом окне **Добавление нового элемента** укажите имя пользовательского элемента управления, _CompositionHostControl.xaml_, а затем щелкните **Добавить**.
 
-    Файлы CompositionHostControl.xaml и CompositionHostControl.xaml.cs создаются и добавляются в проект.
-1. В CompositionHostControl.xaml, замените `<Grid> </Grid>` теги с этим **границы** элемент, который является контейнером XAML, который ваш HwndHost перейдут в.
+    Будут созданы файлы CompositionHostControl.xaml и CompositionHostControl.xaml.cs, которые добавляются в проект.
+1. В файле CompositionHostControl.xaml замените теги `<Grid> </Grid>` приведенным элементом **Border**. Это контейнер XAML, предназначенный для класса HwndHost.
 
     ```xaml
     <Border Name="CompositionHostElement"/>
     ```
 
-В коде пользовательского элемента управления, создайте экземпляр класса CompositionHost, созданный на предыдущем шаге и добавить его в качестве дочернего элемента _CompositionHostElement_, границы, созданный на странице XAML.
+В коде пользовательского элемента управления следует создать экземпляр класса CompositionHost, созданного на предыдущем шаге, и добавить его в качестве дочернего элемента _CompositionHostElement_ — элемента Border, созданного в странице XAML.
 
-1. В CompositionHostControl.xaml.cs добавьте закрытые переменные для объектов, которые будут использоваться в коде композиции. Добавьте следующие после определения класса.
+1. В CompositionHostControl.xaml.cs добавьте частные переменные для объектов, которые будут использоваться в коде Composition. Добавьте их после определения класса.
 
     ```csharp
     CompositionHost compositionHost;
@@ -416,9 +416,9 @@ UserControl — удобный способ упаковки ваш код, ко
     DpiScale currentDpi;
     ```
 
-1. Добавление обработчика для пользовательского элемента управления **Loaded** событий. Это предназначенный для настройки экземпляра CompositionHost.
+1. Добавьте обработчик для события **Loaded** пользовательского элемента управления. Здесь следует настроить экземпляр CompositionHost.
 
-    - В конструкторе, подключить обработчик событий следующим образом (`Loaded += CompositionHostControl_Loaded;`).
+    - В конструкторе подсоедините обработчик событий, как показано здесь (`Loaded += CompositionHostControl_Loaded;`).
 
     ```csharp
     public CompositionHostControl()
@@ -428,7 +428,7 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-    - Добавьте метод обработчика событий с именем *CompositionHostControl_Loaded*.
+    - Добавьте метод обработчика событий *CompositionHostControl_Loaded*.
     ```csharp
     private void CompositionHostControl_Loaded(object sender, RoutedEventArgs e)
     {
@@ -449,9 +449,9 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-    В этом методе настроить объекты, которые будут использоваться в коде композиции. Ниже приведен краткий обзор происходящее.
+    В этом методе следует настроить объекты, которые будут использоваться в коде Composition. Ниже коротко описано, что происходит.
 
-    - Во-первых убедитесь, что настройка выполняется только один раз, проверив ли экземпляр CompositionHost уже существует.
+    - Во-первых, убедитесь, что настройка выполняется только один раз, проверив, существует ли экземпляр CompositionHost.
 
     ```csharp
     // If the user changes the DPI scale setting for the screen the app is on,
@@ -463,13 +463,13 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-    - Получение текущего значения DPI. Это позволяет правильно масштабировать композиции элементов.
+    - Получите текущее значение DPI. Оно используется для правильного масштабирования элементов Composition.
 
     ```csharp
     currentDpi = VisualTreeHelper.GetDpi(this);
     ```
 
-    - Создайте экземпляр CompositionHost и назначить его в качестве дочернего элемента для границы, _CompositionHostElement_.
+    - Создайте экземпляр CompositionHost и назначьте его дочерним элементом Border, _CompositionHostElement_.
 
     ```csharp
     compositionHost =
@@ -477,26 +477,26 @@ UserControl — удобный способ упаковки ваш код, ко
     ControlHostElement.Child = compositionHost;
     ```
 
-    - Получите CompositionHost компоновщиком.
+    - Получите Compositor из CompositionHost.
 
     ```csharp
     compositor = compositionHost.Compositor;
     ```
 
-    - Позволяет создать контейнер visual компоновщиком. Это добавленный композиции элементов в контейнер композиции.
+    - Используйте Compositor для создания визуального элемента контейнера. Это контейнер Composition, в который добавляются элементы Composition.
 
     ```csharp
     containerVisual = compositor.CreateContainerVisual();
     compositionHost.Child = containerVisual;
     ```
 
-### <a name="add-composition-elements"></a>Добавьте элементы композиции
+### <a name="add-composition-elements"></a>Добавление элементов композиции
 
-С помощью инфраструктуры на месте можно приступить к созданию содержимого композиции, который вы хотите показать.
+Теперь, когда инфраструктура настроена, можно создать содержимое Composition, которое необходимо отобразить.
 
-В этом примере добавляется код, который создает и анимирует простой квадрат [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual).
+В этом примере вы добавите код, который создает и анимирует простой квадратный элемент [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual).
 
-1. Добавьте элемент композиции. В CompositionHostControl.xaml.cs добавьте в класс CompositionHostControl этих методов.
+1. Добавьте элемент композиции. В CompositionHostControl.xaml.cs добавьте приведенные ниже методы в класс CompositionHostControl.
 
     ```csharp
     // Add
@@ -546,17 +546,17 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-### <a name="handle-dpi-changes"></a>Обрабатывать изменения DPI
+### <a name="handle-dpi-changes"></a>Обработка изменений количества точек на дюйм
 
-Код для добавления и анимация элемента учитывает текущий масштаб DPI элементы создаются, когда необходимо также учесть изменения DPI во время работы приложения. Можно обрабатывать [HwndHost.DpiChanged](/dotnet/api/system.windows.interop.hwndhost.dpichanged) на основе событий для получения уведомлений об изменениях и изменения вычислений, на новых точек на ДЮЙМ.
+В коде для добавления и анимации элемента учитывается текущее значение DPI при создании элементов, но также необходимо учитывать изменения значения DPI во время работы приложения. Вы можете обрабатывать событие [HwndHost.DpiChanged](/dotnet/api/system.windows.interop.hwndhost.dpichanged), чтобы получать уведомления об изменениях и корректировать вычисления с учетом нового значения DPI.
 
-1. В методе CompositionHostControl_Loaded после последней строки, добавьте для подключения к обработчику событий DpiChanged.
+1. Добавьте приведенный ниже код в метод CompositionHostControl_Loaded (ниже последней строки), чтобы подключить обработчик событий DpiChanged.
 
     ```csharp
     compositionHost.DpiChanged += CompositionHost_DpiChanged;
     ```
 
-1. Добавьте метод обработчика событий с именем _CompositionHostDpiChanged_. Этот код изменяет масштаб и смещение каждого элемента и повторно вычисляет все анимации, которые не выполнены.
+1. Добавьте метод обработчика событий _CompositionHostDpiChanged_. Этот код корректирует масштаб и смещение каждого элемента, а также повторно вычисляет все незавершенные анимации.
 
     ```csharp
     private void CompositionHost_DpiChanged(object sender, DpiChangedEventArgs e)
@@ -577,12 +577,12 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-## <a name="add-the-user-control-to-your-xaml-page"></a>Добавить пользовательский элемент управления на страницу XAML
+## <a name="add-the-user-control-to-your-xaml-page"></a>Добавление пользовательского элемента управления на страницу XAML
 
-Теперь можно добавить пользовательский элемент управления для пользовательского интерфейса XAML.
+Теперь можно добавить пользовательский элемент управления в пользовательский интерфейс XAML.
 
-1. В файле MainWindow.xaml установите высоту окна — 600, то ширина 840 операций.
-1. Добавьте XAML для пользовательского интерфейса. В файле MainWindow.xaml, добавьте этот XAML между корнем `<Grid> </Grid>` теги.
+1. В файле MainWindow.xaml задайте для окна высоту 600 и ширину 840.
+1. Добавьте XAML для пользовательского интерфейса. В файле MainWindow.xaml добавьте этот код XAML между корневыми тегами `<Grid> </Grid>`.
 
     ```xaml
     <Grid.ColumnDefinitions>
@@ -608,9 +608,9 @@ UserControl — удобный способ упаковки ваш код, ко
                                   BorderThickness="3"/>
     ```
 
-1. Обработать нажатие кнопки для создания новых элементов. (Событие Click уже подключено в XAML.)
+1. Добавьте обработку нажатия кнопки для создания новых элементов. (Событие Click уже подсоединено в XAML.)
 
-    В файле MainWindow.xaml.cs добавьте это *Button_Click* метод обработчика событий. Этот код вызывает _CompositionHost.AddElement_ для создания нового элемента с размером случайным и смещение.
+    В MainWindow.xaml.cs добавьте метод обработчика событий *Button_Click*. Этот код вызывает _CompositionHost.AddElement_ для создания нового элемента со случайно заданным размером и смещением.
 
     ```csharp
     // Add
@@ -626,27 +626,27 @@ UserControl — удобный способ упаковки ваш код, ко
     }
     ```
 
-Теперь можно построить и запустить приложение WPF. Если вам нужно, проверьте полный код в конце учебника, чтобы убедиться, что весь код находится в нужных местах.
+Теперь выполните сборку приложения WPF и запустите его. При необходимости сверьтесь с полным кодом в конце руководства, чтобы убедиться в том, что весь код добавлен в соответствующе места.
 
-Когда вы запустите приложение и нажмите кнопку, вы увидите анимированных квадратов, добавляется к UI.
+Если запустить приложение и нажать кнопку, в пользовательском интерфейсе должны отобразиться анимированные квадраты.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Более полный пример, который основан на той же инфраструктуре, см. в разделе [WPF Visual образец уровня интеграции](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration) на сайте GitHub.
+Более полный [пример интеграции визуального уровня в WPF](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration), основанный на той же инфраструктуре, доступен на сайте GitHub.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Приступая к работе (WPF)](/dotnet/framework/wpf/getting-started/) (.NET)
 - [Взаимодействие с неуправляемым кодом](/dotnet/framework/interop/) (.NET)
-- [Начало работы с приложениями Windows 10](/windows/uwp/get-started/) (UWP)
-- [Давайте расширим приложение рабочего стола для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Приступая к работе с приложениями для Windows 10](/windows/uwp/get-started/) (UWP)
+- [Улучшение классического приложения для Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Пространство имен Windows.UI.Composition](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Полный код
 
 Ниже приведен полный код для этого руководства.
 
-### <a name="mainwindowxaml"></a>Файл MainWindow.xaml
+### <a name="mainwindowxaml"></a>MainWindow.xaml
 
 ```xaml
 <Window x:Class="HelloComposition.MainWindow"

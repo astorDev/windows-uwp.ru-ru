@@ -10,11 +10,11 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71340164"
@@ -25,7 +25,7 @@ ms.locfileid: "71340164"
 
 Информация о написании кода для пользовательского класса [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) путем реализации методов [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) и [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride), а также использования свойства [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.children). 
 
-> **Важные API**: [**Панель**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **Важные API**: [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride), [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride). 
 
 В данном примере кода показана реализация пользовательской панели, но не рассматриваются подробно понятия макета, которые влияют на настройку панели для различных сценариев макета. Дополнительную информацию об этих понятиях макета и их применимости к вашему конкретному сценарию макета см. в статье [Обзор пользовательских панелей XAML](custom-panels-overview.md).
 
@@ -134,7 +134,7 @@ protected override Size MeasureOverride(Size availableSize)
 Эта панель может использоваться, когда компонент Height значения *availableSize* не связан. Тогда высота панели, которую необходимо разделить, неизвестна. В этом случае логика для прохода Measure информирует каждый дочерний элемент о том, что связанная высота еще отсутствует. Для этого структура [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) передается вызову [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) для дочерних элементов, в которых свойство [**Size.Height**](https://docs.microsoft.com/uwp/api/windows.foundation.size.height) бесконечно. Это правомерно. Когда вызывается метод **Measure**, согласно логике для свойства [**DesiredSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.desiredsize) устанавливается наименьшее из следующих значений: значение, переданное методу **Measure**, либо естественный размер элемента, который определяется такими факторами, как явным образом заданные свойства [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) и [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width).
 
 > [!NOTE]
-> Внутренняя логика [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) также имеет такое поведение: **StackPanel** передает значение бесконечного измерения для [**измерения**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) дочерних элементов, указывая на отсутствие ограничения на дочерние элементы в измерении Orientation. Класс **StackPanel** обычно принимает размер динамически, чтобы разместить все дочерние элементы в стеке, который растет в этом измерении.
+> Внутренняя логика [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) ведет себя точно так же: **StackPanel** передает бесконечное значение измерения методу [**Measure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) для дочерних элементов, указывая, что у дочерних элементов нет ограничений в направлении ориентации. Класс **StackPanel** обычно принимает размер динамически, чтобы разместить все дочерние элементы в стеке, который растет в этом измерении.
 
 Однако сама панель не может вернуть структуру [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) с бесконечным значением из метода [**MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride); оно создает исключение во время построения структуры. Поэтому часть логики заключается в том, чтобы выяснить максимальную высоту, которую запрашивает какой-либо дочерний элемент, и использовать эту высоту в качестве высоты ячейки, если она еще не ясна из ограничений на собственный размер панели. Ниже показана вспомогательная функция `LimitUnboundedSize`, на которую ссылался ранее приведенный код и которая затем получает максимальную высоту ячейки и использует ее, чтобы предоставить панели конечную высоту для возврата, а также проверяет, что `cellheight` является конечным значением, до инициации прохода Arrange:
 
@@ -219,14 +219,14 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 Возможно, у вас возникнет вопрос, почему панель не выбрала для 10 элементов прямоугольник 5×2, в который аккуратно вошло бы это число элементов. Однако на практике размер панелей настраивается как прямоугольник, который часто не имеет жестко ориентированной пропорции. Прием наименьшего квадрата представляет собой способ настроить логику для работы с обычными фигурами макета; размеры, в которых формы ячеек имеют нестандартные пропорции, не рекомендуются.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 **Reference**
 
-* [**FrameworkElement. ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
-* [**FrameworkElement. MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-* [**Панели**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+* [**FrameworkElement.ArrangeOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)
+* [**FrameworkElement.MeasureOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
+* [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 **Концепции**
 
-* [Выравнивание, маржа и заполнение](alignment-margin-padding.md)
+* [Выравнивание, поля и отбивка](alignment-margin-padding.md)

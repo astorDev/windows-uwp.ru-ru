@@ -12,19 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8be583778ccbf47c61466033c58c784c4df4395
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: 0f32a22534bd79576c3c052853ce80f25da1da26
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603419"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081476"
 ---
 # <a name="time-picker"></a>Управляющий элемент выбора времени
  
 
-Применение элемента управления "Выбор времени" — это стандартизованный способ дать пользователям возможность выбирать значение времени с помощью сенсорного ввода, мыши или клавиатуры. 
+Применение элемента управления "Выбор времени" — это стандартизованный способ дать пользователям возможность выбирать значение времени с помощью сенсорного ввода, мыши или клавиатуры.
 
-> **Важные API**: [класс TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [свойство Time](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
+![Пример элемента выбора времени](images/time-picker-closed.png)
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [класс TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [свойство Time](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -37,7 +45,7 @@ ms.locfileid: "68603419"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TimePicker">открыть приложение и увидеть TimePicker в действии</a>.</p>
     <ul>
@@ -72,11 +80,11 @@ arrivalTimePicker.Header = "Arrival time";
 > [!NOTE]
 > Важные сведения о значениях даты и времени см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи *Элементы управления датой и временем*.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 - [Элементы управления датой и временем](date-and-time.md)
 - [Выбор даты в календаре](calendar-date-picker.md)

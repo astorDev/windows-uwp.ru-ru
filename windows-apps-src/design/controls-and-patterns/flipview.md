@@ -11,21 +11,24 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6031878b9189ca3794e2a9c68c85b76e5d21a7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ef17fdc69f7a9f25831c5c17419768ff32874f80
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257445"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080939"
 ---
 # <a name="flip-view"></a>Представление пролистывания
 
- 
-
 Используйте представление пролистывания для просмотра изображений или других элементов в коллекции, например фотографий в альбоме или элементов на странице описания продукта. Каждый раз отображается один элемент. В случае сенсорных устройств для прокрутки коллекции необходимо коснуться элемента и провести пальцем. Если используется мышь, кнопки навигации отображаются при наведении ее указателя. При использовании клавиатуры для перемещения по коллекции используются клавиши со стрелками.
 
-> **Важные API**: [класс FlipView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [свойство ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [свойство ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**Получение библиотеки пользовательского интерфейса Windows**
 
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы:** [класс FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [свойство ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [свойство ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -36,7 +39,7 @@ ms.locfileid: "74257445"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/FlipView">открыть приложение и увидеть FlipView в действии</a>.</p>
     <ul>
@@ -130,7 +133,7 @@ stackPanel1.Children.Add(flipView1);
 
 ### <a name="specify-the-look-of-the-items"></a>Указание вида элементов
 
-По умолчанию элемент данных отображается в представлении пролистывания в виде строки, представляющей объект данных, к которому он привязан. Как правило, хочется показать более сложно оформленное представление данных. Чтобы точно определить, как должны отображаться элементы в представлении пролистывания, вы создаете [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). В DataTemplate с помощью языка XAML задается макет и внешний вид элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь содержимое, задаваемое внутри кода. DataTemplate назначается свойству [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) элемента управления FlipView.
+По умолчанию элемент данных отображается в представлении пролистывания в виде строки, представляющей объект данных, к которому он привязан. Более интересным является сложно оформленное представление данных. Чтобы точно определить, как должны отображаться элементы в представлении пролистывания, вы создаете [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). В DataTemplate с помощью XAML определяется макет и внешний вид элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь содержимое, задаваемое внутри кода. DataTemplate назначается свойству [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) элемента управления FlipView.
 
 В данном примере свойство ItemTemplate представления FlipView является внутренне определяемым. Для отображения имени изображения добавляется перекрытие. 
 
@@ -206,7 +209,7 @@ stackPanel1.Children.Add(flipView1);
 
 Пример кода, показывающий, как добавить индикатор контекста в FlipView, см. в разделе [Пример XAML FlipView](https://code.msdn.microsoft.com/windowsapps/XAML-FlipView-control-0ae45312).
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 -   Представления пролистывания лучше всего подходят для коллекций до 25 элементов.
 -   Не используйте элемент пролистывания в более крупных коллекциях, поскольку непрерывное перелистывание элементов может быть утомительным. Исключение можно сделать для фотоальбомов, в которых могут содержаться сотни или тысячи изображений. Фотоальбомы почти всегда переключаются в режим пролистывания, после того как на сетке была выбрана фотография. Для других больших коллекций используйте [Представление списка или представление сетки](lists.md).
@@ -225,11 +228,11 @@ stackPanel1.Children.Add(flipView1);
 
 </table>
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Руководство по использованию списков](lists.md)
 - [**Класс FlipView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

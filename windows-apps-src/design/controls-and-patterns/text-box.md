@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302718"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081513"
 ---
 # <a name="text-box"></a>Текстовое поле
 
@@ -24,7 +24,13 @@ ms.locfileid: "75302718"
 
 Элемент TextBox имеет несколько компонентов, которые могут упростить ввод текста. В этом элементе работает привычное встроенное контекстное меню с поддержкой копирования и вставки текста. Кнопка "Очистить все" позволяет пользователю быстро удалить весь введенный текст. В нем также есть встроенные функции проверки орфографии, которые включены по умолчанию.
 
-> **Важные API**: [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text).
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -45,7 +51,7 @@ ms.locfileid: "75302718"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TextBox">открыть приложение и увидеть TextBox в действии</a>.</p>
     <ul>

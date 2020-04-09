@@ -12,22 +12,26 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339420"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081242"
 ---
 # <a name="check-boxes"></a>Флажки
 
- 
-
 Флажок используется для выбора или отмены выбора элементов действий. Его можно использовать для одного элемента или списка из нескольких элементов с возможностью выбора. Элемент управления предусматривает три состояния выделения: "не выбрано", "выбрано" и "не определено". Состояние "не определено" используется, когда в подсписке вариантов есть одновременно состояния "не выбрано" и "выбрано".
 
-> **Важные API**: [CheckBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) и [IsChecked property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
-
 ![Пример состояний флажка](images/templates-checkbox-states-default.png)
+
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы:** [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) и [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -54,7 +58,7 @@ ms.locfileid: "71339420"
 
 <table>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CheckBox">открыть приложение и увидеть CheckBox в действии</a>.</p>
     <ul>
@@ -185,7 +189,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 Элемент управления CheckBox наследует от [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) и может иметь три состояния: 
 
-Состояние | Свойство | Значение
+State | Свойство | Применение
 ------|----------|------
 установлен | IsChecked | **true** 
 снят | IsChecked | **false** 
@@ -277,7 +281,7 @@ private void SetCheckedState()
 }
 ```
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 -   Убедитесь, что цель применения флажка и его текущее состояние понятны.
 -   Длина текстового содержимого, связанного с флажком, не должна превышать двух строк
@@ -298,11 +302,11 @@ private void SetCheckedState()
 
     ![Переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".](images/spicyoptions.png)
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Класс CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [Переключатели](radio-button.md)

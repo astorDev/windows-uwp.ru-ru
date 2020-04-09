@@ -11,21 +11,28 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062219"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081207"
 ---
 # <a name="color-picker"></a>Палитра
 
 Палитра используется для просмотра и выбора цвета. По умолчанию она позволяет пользователю выбирать цвета из спектра или задать цвет в текстовых полях значений красного, зеленого и синего цветов формате RGB, значения насыщенности и оттенка (HSV) или значения цвета в шестнадцатеричном формате.
 
-> **Важные API**: [класс ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [событие ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
-
 ![Палитра по умолчанию](images/color-picker-default.png)
 
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ColorPicker** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [класс ColorPicker](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [свойство Color](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [событие ColorChanged](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **API платформы:** [класс ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство Color](/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [событие ColorChanged](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -38,7 +45,7 @@ ms.locfileid: "73062219"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ColorPicker">открыть приложение и увидеть ColorPicker в действии</a>.</p>
     <ul>
@@ -63,7 +70,7 @@ ms.locfileid: "73062219"
 
 Если выбранный цвет должен мгновенно вступить в действие, можно использовать привязку данных для привязки к свойству Color или обработать событие ColorChanged для обращения к выбранному цвету в коде.
 
-В этом примере привязывается свойство Color элемента SolidColorBrush, используемое для заливки прямоугольной области непосредственно выбранным на палитре цветом. Любые изменения на палитре в реальном времени изменяют связанное свойство.
+В этом примере привязывается свойство Color элемента SolidColorBrush, используемое для заливки прямоугольной области напрямую выбранным на палитре цветом. Любые изменения на палитре в реальном времени изменяют связанное свойство.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
@@ -207,11 +214,11 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
   - Предоставьте кнопки фиксации и отмены для применения или отмены выбора. Нажатие кнопки "Назад" или касание вне всплывающего элемента должно закрывать его без сохранения выбора пользователя.
   - Можно также фиксировать выбор после закрытия всплывающего элемента, когда пользователь коснется области за его пределами или нажмет кнопку "Назад".
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Взаимодействие с помощью пера в приложениях UWP](../input/pen-and-stylus-interactions.md)
 - [Рукописный ввод](inking-controls.md)

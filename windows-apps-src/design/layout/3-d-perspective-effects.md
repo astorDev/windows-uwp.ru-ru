@@ -4,11 +4,11 @@ title: Трехмерные эффекты для пользовательско
 description: C помощью преобразований перспективы можно применять объемные эффекты к содержимому ваших приложений среды выполнения Windows. Например, можно создать иллюзию, что объект повернут к вам или отвернут от вас, как показано здесь.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db56882833b9d3bd8a6d2932d04e07a72b205e2
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66365252"
@@ -89,7 +89,7 @@ C помощью преобразований перспективы можно 
 
 С помощью свойств [**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) и [**CenterOfRotationZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationz) можно переместить центр вращения. По умолчанию оси вращения проходят прямо через центр объекта, благодаря чему он вращается вокруг своего центра. Но если вы переместите центр вращения к внешнему краю объекта, он будет вращаться вокруг этого края. По умолчанию свойства **CenterOfRotationX** и **CenterOfRotationY** имеют значение 0,5, а значение по умолчанию для свойства **CenterOfRotationZ** — 0. Для свойств **CenterOfRotationX** и **CenterOfRotationY** значения от 0 до 1 устанавливают точку вращения в каком-либо месте в пределах объекта. Значение 0 обозначает один край объекта, а значение 1 — противоположный край. Значения вне данного диапазона разрешены и перемещают центр вращения соответственно. Так как ось Z, проходящая через центр вращения, проходит через плоскость объекта, можно переместить центр вращения за объект, используя отрицательное число, и разместить его перед объектом (по направлению к себе), используя положительное число.
 
-[**CenterOfRotationX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx) перемещает центр вращения по параллельным оси x для объекта при [ **CenterOfRotationY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) перемещает center или поворота по оси y из объект. На следующих иллюстрациях показано использование различных значений для **CenterOfRotationY**.
+[**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx) смещает центр вращения вдоль оси X параллельно объекту, а [**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) смещает центр вращения вдоль оси Y объекта. На следующих иллюстрациях показано использование различных значений для **CenterOfRotationY**.
 
 ```xml
 <Image Source="kid.png">
@@ -99,7 +99,7 @@ C помощью преобразований перспективы можно 
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = "0.5" (по умолчанию)**
 
 ![CenterOfRotationY равно 0,5](images/3drotatexminus35.png)
 ```xml
@@ -124,7 +124,7 @@ C помощью преобразований перспективы можно 
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = "0.5" (по умолчанию)**
 
 ![CenterOfRotationX равно 0,5](images/3drotateyminus35.png)
 ```xml
@@ -135,7 +135,7 @@ C помощью преобразований перспективы можно 
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX = "0.9" (правый край)**
 
 ![CenterOfRotationX равно 0,9](images/3dcenterofrotationx0point9.png)
 
@@ -145,12 +145,12 @@ C помощью преобразований перспективы можно 
 
 До этого момента вы учились вращать объект в пространстве. Используя следующие свойства, можно разместить повернутые объекты в пространстве относительно друг друга:
 
--   [**LocalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) перемещает объект вдоль оси x плоскости вращаемого объекта.
--   [**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) перемещает объект вдоль оси y плоскости вращаемого объекта.
--   [**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) перемещает объект вдоль оси z плоскости вращаемого объекта.
--   [**GlobalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx) перемещает объект вдоль оси x по краю экрана.
--   [**GlobalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) перемещает объект вдоль оси y по правому краю экрана.
--   [**GlobalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) перемещает объект вдоль оси z на краю экрана.
+-   [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) перемещает объект вдоль оси X плоскости повернутого объекта.
+-   [**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) перемещает объект вдоль оси Y плоскости повернутого объекта.
+-   [**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) перемещает объект вдоль оси Z плоскости повернутого объекта.
+-   [**GlobalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx) перемещает объект вдоль выровненной относительно экрана оси X.
+-   [**GlobalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) перемещает объект вдоль выровненной относительно экрана оси Y.
+-   [**GlobalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) перемещает объект вдоль выровненной относительно экрана оси Z.
 
 **Локальное смещение**
 
@@ -158,9 +158,9 @@ C помощью преобразований перспективы можно 
 
 Обратите внимание, что в предыдущем примере объект перемещается вдоль своей собственной оси X. В самом начале анимации, когда значение [**RotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationy) близко к нулю (параллельно экрану), объект перемещается вдоль экрана в направлении X, но по мере того как объект поворачивается в вашу сторону, он начинает перемещаться вдоль оси X плоскости объекта по направлению к вам. С другой стороны, если вы задали анимацию свойства **RotationY** до –65 градусов, объект будет удаляться от вас по кривой.
 
-[**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) действует аналогично [ **LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx), за исключением того, что он перемещается по вертикальной оси, поэтому изменение [ **RotationX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) влияет на направление **LocalOffsetY** перемещает объект. В следующем примере выполняется анимация **LocalOffsetY** в диапазоне от 0 до 400 градусов и анимация **RotationX** — от 0 до 65 градусов.
+[**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) действует аналогично свойству [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) за исключением того, что выполняет перемещение вдоль вертикальной оси, поэтому изменение свойства [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) влияет на направление, в котором **LocalOffsetY** перемещает объект. В следующем примере выполняется анимация **LocalOffsetY** в диапазоне от 0 до 400 градусов и анимация **RotationX** — от 0 до 65 градусов.
 
-[**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) преобразует объект перпендикулярно плоскости объекта так, будто вектор рисования непосредственно в центре из-за пределов объекта out к себе. Чтобы продемонстрировать, как работает свойство **LocalOffsetZ**, в следующем примере выполняется анимация **LocalOffsetZ** в диапазоне от 0 до 400 градусов и анимация [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) — от 0 до 65 градусов.
+[**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) перемещает объект перпендикулярно плоскости объекта, как если бы прямо через центр из задней части объекта наружу по направлению к вам был проведен вектор. Чтобы продемонстрировать, как работает свойство **LocalOffsetZ**, в следующем примере выполняется анимация **LocalOffsetZ** в диапазоне от 0 до 400 градусов и анимация [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) — от 0 до 65 градусов.
 
 В начале анимации, когда значение [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) близко к нулю (параллельно экрану), объект перемещается прямо наружу по направлению к вам, но по мере вращения лицевой части объекта вниз он начинает двигаться вниз.
 

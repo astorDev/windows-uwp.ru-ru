@@ -4,14 +4,14 @@ title: Справка по API Портала устройства для HoloLe
 description: Узнайте о портале устройств Windows для интерфейса HoloLens REST API. который можно использовать для доступа к данным и программного контроля вашего устройства.
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, uwp, портал устройств
+keywords: Windows 10, UWP, портал устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: 81511fddf1393dffcfc069c769bb149da99529b1
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59013341"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63801390"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Справка по API Портала устройства для HoloLens
 
@@ -38,7 +38,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -69,7 +69,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -100,7 +100,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -132,7 +132,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -153,7 +153,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/management/settings/https |
+| POST | /api/holographic/management/settings/https |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -168,7 +168,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -189,7 +189,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/os/settings/ipd |
+| POST | /api/holographic/os/settings/ipd |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -204,7 +204,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -242,7 +242,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -275,7 +275,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -283,7 +283,7 @@ ms.locfileid: "59013341"
 
 Возможные значения приведены в следующей таблице.
 
-| Значение | Описание |
+| Применение | Описание |
 | --- | --- |
 | 1 | Обычный |
 | 2 | Средний |
@@ -302,7 +302,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/control/stream |
+| POST | /api/holographic/simulation/control/stream |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -318,7 +318,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -349,7 +349,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -380,7 +380,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -392,7 +392,7 @@ ms.locfileid: "59013341"
 
 - Стандартные коды состояния.
 
-### <a name="get-the-simulation-mode"></a>Получение режима моделирования
+### <a name="get-the-simulation-mode"></a>Получение режима имитации
 
 **Запрос**
 
@@ -411,7 +411,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -423,7 +423,7 @@ ms.locfileid: "59013341"
 
 - Стандартные коды состояния.
 
-### <a name="set-the-simulation-mode"></a>Установить режим моделирования
+### <a name="set-the-simulation-mode"></a>Установка режима имитации
 
 **Запрос**
 
@@ -431,7 +431,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simluation/control/mode |
+| POST | /api/holographic/simluation/control/mode |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -446,7 +446,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -483,7 +483,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -514,7 +514,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -549,7 +549,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -580,7 +580,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -615,7 +615,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -635,7 +635,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/playback/session/file |
+| POST | /api/holographic/simulation/playback/session/file |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -650,7 +650,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -670,7 +670,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/playback/session/pause |
+| POST | /api/holographic/simulation/playback/session/pause |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -685,7 +685,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -705,7 +705,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/playback/session/play |
+| POST | /api/holographic/simulation/playback/session/play |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -720,7 +720,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -740,7 +740,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/playback/session/stop |
+| POST | /api/holographic/simulation/playback/session/stop |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -755,7 +755,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -790,7 +790,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -810,7 +810,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/playback/file |
+| POST | /api/holographic/simulation/playback/file |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -821,7 +821,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -854,7 +854,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -874,7 +874,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/recording/start |
+| POST | /api/holographic/simulation/recording/start |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -896,7 +896,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -916,7 +916,7 @@ ms.locfileid: "59013341"
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/simulation/recording/stop |
+| POST | /api/holographic/simulation/recording/stop |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -927,7 +927,7 @@ ms.locfileid: "59013341"
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -964,7 +964,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1000,7 +1000,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1031,7 +1031,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1062,7 +1062,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1093,7 +1093,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1113,7 +1113,7 @@ DELETE | /api/holographic/mrc/file |
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/mrc/settings |
+| POST | /api/holographic/mrc/settings |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -1124,7 +1124,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1144,7 +1144,7 @@ DELETE | /api/holographic/mrc/file |
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/mrc/video/control/start |
+| POST | /api/holographic/mrc/video/control/start |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -1155,7 +1155,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1175,7 +1175,7 @@ DELETE | /api/holographic/mrc/file |
  
 | Метод      | Универсальный код ресурса (URI) запроса |
 | :------     | :----- |
-| ПОМЕСТИТЬ | /api/holographic/mrc/video/control/stop |
+| POST | /api/holographic/mrc/video/control/stop |
 
 
 **Параметры универсального кода ресурса (URI)**
@@ -1186,7 +1186,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1217,7 +1217,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1257,7 +1257,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1295,7 +1295,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1333,7 +1333,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -1371,7 +1371,7 @@ DELETE | /api/holographic/mrc/file |
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 

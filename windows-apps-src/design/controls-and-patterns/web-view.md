@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de7a430248841722aedd960cd485ea24499fdd00
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 43d0471b6e7ebc36df4f80a1b214b0721ae25570
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684276"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081414"
 ---
 # <a name="web-view"></a>Представление веб-страницы
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684276"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/WebView">открыть это приложение и увидеть WebView в действии</a>.</p>
     <ul>
@@ -59,7 +59,7 @@ ms.locfileid: "75684276"
 
 Хотя элемент WebView не относится к подклассу Control, он получает фокус ввода с клавиатуры и участвует в порядке вкладок. Он предоставляет метод [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus), а также события [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) и [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus), но у него отсутствуют свойства, связанные с вкладками. Его положение в последовательности вкладок такое же, как его положение в порядке документов XAML. Последовательность вкладок включает все элементы в содержимом представления веб-страницы, которые могут получать фокус ввода. 
 
-Как показано в таблице "События" на странице класса [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), таких как [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown), [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Вместо этого вы можете использовать [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) с функцией JavaScript **eval**, чтобы использовать обработчики событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify).
+Как указано в таблице "События" на странице класса [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), таких как [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown), [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Вместо этого вы можете использовать [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) с функцией JavaScript **eval**, чтобы использовать обработчики событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify).
 
 ### <a name="navigating-to-content"></a>Переход к содержимому
 
@@ -88,7 +88,7 @@ webView1.Navigate("http://www.contoso.com");
 
 Для перехода к URI с запросом POST и заголовками HTTP, используйте метод [NavigateWithHttpRequestMessage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage). Этот метод поддерживает только [HttpMethod.Post](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.post) и [HttpMethod.Get](https://docs.microsoft.com/uwp/api/windows.web.http.httpmethod.get) для значения свойства [HttpRequestMessage.Method](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage.method). 
 
-Чтобы загрузить несжатое и незашифрованное содержимое хранилищ данных [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) или [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) вашего приложения, используйте метод **Navigate** с **Uri**, использующим [схему ms-appdata](/windows/uwp/app-resources/uri-schemes). Для поддержки представлений веб-страницы в этой схеме необходимо поместить содержимое во вложенную папку локальной или временной папки. Это позволяет переходить к таким URI, как ms-appdata:///local/*folder*/*file*.html и ms-appdata:///temp/*folder*/*file*.html. (Подробнее о загрузке сжатых или зашифрованных файлов см. в разделе [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
+Чтобы загрузить несжатое и незашифрованное содержимое хранилищ данных [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) или [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) вашего приложения, используйте метод **Navigate** с **Uri**, использующим схему [ms-appdata](/windows/uwp/app-resources/uri-schemes). Для поддержки представлений веб-страницы в этой схеме необходимо поместить содержимое во вложенную папку локальной или временной папки. Это позволяет переходить к таким URI, как ms-appdata:///local/*folder*/*file*.html и ms-appdata:///temp/*folder*/*file*.html. (Подробнее о загрузке сжатых или зашифрованных файлов см. в разделе [NavigateToLocalStreamUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
 
 Каждая из этих вложенных папок первого уровня изолирована от содержимого других вложенных папок первого уровня. Например, вы можете перейти к ms-appdata:///temp/folder1/file.html, но в этом файле не может быть ссылки на ms-appdata:///temp/folder2/file.html. Но в пакете приложения можно создать ссылку на HTML-содержимое с помощью **схемы ms-appx-web** и на веб-содержимое с помощью схем URI **http** и **https**.
 

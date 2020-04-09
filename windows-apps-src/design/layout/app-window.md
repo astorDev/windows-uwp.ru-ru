@@ -1,111 +1,111 @@
 ---
-Description: Используйте класс Аппвиндов для просмотра различных частей приложения в отдельных окнах.
-title: Использование класса Аппвиндов для отображения дополнительных окон для приложения
+Description: Для просмотра различных частей приложения в отдельных окнах следует использовать класс AppWindow.
+title: Использование класса AppWindow для отображения дополнительных окон приложения
 ms.date: 07/19/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
 ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68867462"
 ---
-# <a name="show-multiple-views-with-appwindow"></a>Отображение нескольких представлений с помощью Аппвиндов
+# <a name="show-multiple-views-with-appwindow"></a>Отображение нескольких представлений с помощью AppWindow
 
-[Аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) и связанные с ним интерфейсы API упрощают создание приложений с несколькими окнами, позволяя отображать содержимое приложения во вторичных окнах, одновременно работая в одном ПОТОКЕ пользовательского интерфейса в каждом окне.
+Класс [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) и связанные с ним интерфейсы API упрощает создание многооконных приложений, позволяя отображать содержимое приложения в дополнительных окнах и использовать один поток пользовательского интерфейса для всех окон.
 
 > [!NOTE]
-> Аппвиндов сейчас находится на этапе предварительной версии. Это означает, что вы можете отправлять приложения, использующие Аппвиндов, в магазин, но некоторые компоненты платформы и платформы не работают с Аппвиндов (см. раздел [ограничения](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
+> AppWindow сейчас находится на этапе предварительной версии. Это означает, что вы можете отправлять приложения, использующие AppWindow, в Store, но некоторые компоненты платформ не работают с AppWindow (см. раздел [Ограничения](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
 
-Здесь мы рассмотрим некоторые сценарии для нескольких окон с помощью примера приложения с именем `HelloAppWindow`. Пример приложения демонстрирует следующие функциональные возможности.
+Здесь показан ряд сценариев использования нескольких окон на основе примера приложения `HelloAppWindow`. Этот пример приложения демонстрирует следующие функциональные возможности:
 
-- Открепите элемент управления от главной страницы и откройте его в новом окне.
-- Открытие новых экземпляров страницы в новых окнах.
-- Программное изменение размера и расположения новых окон в приложении.
-- Свяжите Контентдиалог с соответствующим окном в приложении.
+- открепление элемента управления от главной страницы и его открытие в новом окне;
+- открытие новых экземпляров страницы в новых окнах;
+- программное изменение размера и расположения новых окон в приложении;
+- привязка ContentDialog к соответствующему окну в приложении.
 
 ![Пример приложения с одним окном](images/hello-app-window-single.png)
   
 > _Пример приложения с одним окном_
 
-![Пример приложения с незакрепленной палитрой цветов и дополнительным окном](images/hello-app-window-multi.png)
+![Пример приложения с открепленной палитрой и дополнительным окном](images/hello-app-window-multi.png)
 
-> _Пример приложения с незакрепленной палитрой цветов и дополнительным окном_
+> _Пример приложения с открепленной палитрой и дополнительным окном_
 
-> **Важные API**: [Пространство имен Windows. UI. виндовманажемент](/uwp/api/windows.ui.windowmanagement), [класс аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow)
+> **Важные API**: [пространство имен Windows.UI.WindowManagement](/uwp/api/windows.ui.windowmanagement), [класс AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow).
 
 ## <a name="api-overview"></a>Обзор языка API
 
-Класс [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) и другие интерфейсы API в пространстве имен [виндовманажемент](/uwp/api/windows.ui.windowmanagement) доступны начиная с Windows 10, версии 1903 (пакет SDK 18362). Если приложение предназначено для более ранних версий Windows 10, необходимо [использовать аппликатионвиев для создания вторичных Windows](application-view.md). API-интерфейсы Виндовманажемент все еще находятся в разработке и имеют [ограничения](/uwp/api/windows.ui.windowmanagement.appwindow#limitations) , описанные в документации по API.
+Класс [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) и другие интерфейсы API в пространстве имен [WindowManagement](/uwp/api/windows.ui.windowmanagement) доступны, начиная с Windows 10 версии 1903 (пакет SDK 18362). Если приложение нацелено на более ранние версии Windows 10, [для создания дополнительных окон необходимо использовать ApplicationView](application-view.md). Интерфейсы API WindowManagement все еще находятся в разработке и имеют [ограничения](/uwp/api/windows.ui.windowmanagement.appwindow#limitations), как описано в справочных материалах по API.
 
-Ниже приведены некоторые важные API, используемые для отображения содержимого в Аппвиндов.
+Ниже приведены некоторые важные API, используемые для отображения содержимого в AppWindow.
 
 ### <a name="appwindow"></a>AppWindow
 
-Класс [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) можно использовать для вывода части приложения среда выполнения Windows во вторичном окне. Он похож на концепцию [аппликатионвиев](/uwp/api/windows.ui.viewmanagement.applicationview), но не то же самое в поведении и времени жизни. Основной функцией Аппвиндов является то, что каждый экземпляр использует один и тот же поток обработки пользовательского интерфейса (в том числе диспетчер событий), из которого они были созданы, что упрощает приложения с несколькими окнами.
+Класс [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) можно использовать для вывода части приложения среды выполнения Windows в дополнительном окне. Его принцип действия схож с [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), но поведение и время существования отличаются. Основной функционально возможностью AppWindow является то, что каждый экземпляр использует тот же поток обработки пользовательского интерфейса (в том числе диспетчер событий), из которого он был создан, что упрощает многооконные приложения.
 
-Вы можете подключать содержимое XAML только к Аппвиндов, но не поддерживать собственное содержимое DirectX или Holographic. Однако можно отобразить [SWAPCHAINPANEL](/uwp/api/windows.ui.xaml.controls.swapchainpanel) XAML, где размещается содержимое DirectX.
+Вы можете подключить к AppWindow только содержимое XAML. Собственное содержимое DirectX или Holographic не поддерживается. Однако можно отобразить [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) XAML, в котором размещено содержимое DirectX.
 
 ### <a name="windowingenvironment"></a>WindowingEnvironment
 
-API [виндовинженвиронмент](/uwp/api/windows.ui.windowmanagement.windowingenvironment) позволяет узнать о среде, в которой представлено ваше приложение, чтобы адаптировать приложение по мере необходимости. В нем описывается тип окна, поддерживаемого средой. Например, `Overlapped` если приложение работает на компьютере или `Tiled` приложение работает на Xbox. Он также предоставляет набор объектов Дисплайрегион, описывающих области, в которых приложение может отображаться на логическом дисплее.
+API [WindowingEnvironment](/uwp/api/windows.ui.windowmanagement.windowingenvironment) позволяет узнать о среде, в которой представлено приложение, чтобы адаптировать приложение, если это необходимо. В нем описывается тип окна, поддерживаемого средой. Например, указывается `Overlapped`, если приложение работает на компьютере, или `Tiled`, если приложение работает на Xbox. Он также предоставляет набор объектов DisplayRegion, описывающих области, в которых приложение может отображаться на логическом дисплее.
 
 ### <a name="displayregion"></a>DisplayRegion
 
-API [дисплайрегион](/uwp/api/windows.ui.windowmanagement.displayregion) описывает область, в которой представление может отображаться для пользователя на логическом дисплее. Например, на настольном ПК это полный экран за вычетом области панели задач. Это необязательное сопоставление 1:1 с физической областью отображения резервного монитора. В одном мониторе может быть несколько областей отображения, или Дисплайрегион может быть настроен на несколько мониторов, если эти мониторы являются однородными во всех аспектах.
+API [DisplayRegion](/uwp/api/windows.ui.windowmanagement.displayregion) описывает область, в которой представление может отображаться для пользователя на логическом дисплее. Например, на компьютере это полный экран за вычетом области панели задач. Эта область не обязательно полностью совпадает с физической областью отображения используемого монитора. На одном мониторе может быть несколько областей отображения, или DisplayRegion можно настроить для охвата нескольких мониторов, если эти мониторы обладают одинаковыми характеристиками.
 
 ### <a name="appwindowpresenter"></a>AppWindowPresenter
 
-API [аппвиндовпресентер](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) позволяет легко переключать окна на заранее определенные конфигурации, такие `FullScreen` как `CompactOverlay`или. Эти конфигурации обеспечивают единообразную работу пользователей на любом устройстве, поддерживающем конфигурацию.
+API [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) позволяет легко включать для окон предварительно определенные конфигурации, такие как `FullScreen` и `CompactOverlay`. Эти конфигурации обеспечивают единообразный пользовательский интерфейс на любом устройстве, поддерживающем конфигурацию.
 
 ### <a name="uicontext"></a>UIContext
 
-[UIContext](/uwp/api/windows.ui.uicontext) — это уникальный идентификатор для окна приложения или представления. Он создается автоматически, и для получения UIContext можно использовать свойство [UIElement. UIContext](/uwp/api/windows.ui.xaml.uielement.uicontext) . Каждый UIElement в дереве XAML имеет одинаковый UIContext.
+[UIContext](/uwp/api/windows.ui.uicontext) — это уникальный идентификатор окна или представления приложения. Он создается автоматически, и для получения UIContext можно использовать свойство [UIElement.UIContext](/uwp/api/windows.ui.xaml.uielement.uicontext). Каждый UIElement в дереве XAML имеет одинаковый UIContext.
 
- UIContext важен, так как интерфейсы API, такие как [Window. Current](/uwp/api/Windows.UI.Xaml.Window.Current) и Pattern, `GetForCurrentView` полагаются на наличие одного аппликатионвиев или CoreWindow с одним деревом XAML на каждый поток для работы. Это не так при использовании Аппвиндов, поэтому вместо этого используется UIContext для обнаружения определенного окна.
+ UIContext важен, так как такие интерфейсы API, как [Window.Current](/uwp/api/Windows.UI.Xaml.Window.Current) и шаблон `GetForCurrentView`, используют для работы один экземпляр ApplicationView или CoreWindow с одним деревом XAML на поток. Это не так при использовании AppWindow, поэтому вместо этого для идентификации определенного окна используется UIContext.
 
 ### <a name="xamlroot"></a>XamlRoot
 
-Класс [ксамлрут](/uwp/api/windows.ui.xaml.xamlroot) содержит дерево элементов XAML, подключает его к объекту узла окна (например, [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) или [аппликатионвиев](/uwp/api/windows.ui.viewmanagement.applicationview)) и предоставляет такие сведения, как размер и видимость. Вы не создаете объект Ксамлрут напрямую. Вместо этого он создается при присоединении элемента XAML к Аппвиндов. Затем можно использовать свойство [UIElement. ксамлрут](/uwp/api/windows.ui.xaml.uielement.xamlroot) для получения ксамлрут.
+Класс [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) содержит дерево элементов XAML, подключает его к объекту размещения окна (например, [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) или [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)) и предоставляет такие сведения, как размер и видимость. Вы не создаете объект XamlRoot напрямую. Вместо этого он создается при подключении элемента XAML к AppWindow. Затем можно использовать свойство [UIElement.XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot), чтобы получить XamlRoot.
 
-Дополнительные сведения о UIContext и Ксамлрут см. в разделе [Создание переносимого кода в оконных узлах](show-multiple-views.md#make-code-portable-across-windowing-hosts).
+Дополнительные сведения о UIContext и XamlRoot см. в разделе [Создание кода, переносимого между окнами содержимого](show-multiple-views.md#make-code-portable-across-windowing-hosts).
 
-## <a name="show-a-new-window"></a>Отобразить новое окно
+## <a name="show-a-new-window"></a>Отображение нового окна
 
-Давайте взглянем на шаги по отображению содержимого в новом Аппвиндов.
+Давайте рассмотрим шаги по отображению содержимого в новом экземпляре AppWindow.
 
 **Отображение нового окна**
 
-1. Вызовите статический метод [аппвиндов. трикреатеасинк](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync) , чтобы создать новый [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow).
+1. Вызовите статический метод [AppWindow.TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync), чтобы создать новый экземпляр [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow).
 
     ```csharp
     AppWindow appWindow = await AppWindow.TryCreateAsync();
     ```
 
-1. Создание содержимого окна.
+1. Создайте содержимое окна.
 
-    Как правило, вы создаете [фрейм](/uwp/api/Windows.UI.Xaml.Controls.Frame)XAML, затем переходите по кадру на [страницу](/uwp/api/Windows.UI.Xaml.Controls.Page) XAML, где вы определили содержимое приложения. Дополнительные сведения о кадрах и страницах см. [в разделе одноранговая Навигация между двумя страницами](../basics/navigate-between-two-pages.md).
+    Как правило, сначала создается [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) XAML, а затем выполняется переход Frame в объект [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) XAML, в котором вы определили содержимое приложения. Подробные сведения о фреймах и страницах см. в статье [Реализация навигации между двумя страницами](../basics/navigate-between-two-pages.md).
 
     ```csharp
     Frame appWindowContentFrame = new Frame();
     appWindowContentFrame.Navigate(typeof(AppWindowMainPage));
     ```
 
-    Однако можно отобразить любое содержимое XAML в Аппвиндов, а не только кадр и страницу. Например, можно отобразить только один элемент управления, например [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), или [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) , где размещается содержимое DirectX.
+    Тем не менее, в AppWindow можно отобразить любое содержимое XAML, не только кадр и страницу. Например, можно отобразить только один элемент управления, например [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker), или можно отобразить [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) с содержимым DirectX.
 
-1. Вызовите метод [елементкомпоситионпревиев. сетаппвиндовконтент](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) , чтобы присоединить содержимое XAML к аппвиндов.
+1. Вызовите метод [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent), чтобы подключить содержимое XAML к AppWindow.
 
     ```csharp
     ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
     ```
 
-    Вызов этого метода создает объект [ксамлрут](/uwp/api/windows.ui.xaml.xamlroot) и задает его в качестве свойства [Ксамлрут](/uwp/api/windows.ui.xaml.uielement.xamlroot) для указанного UIElement.
+    Вызов этого метода создает объект [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) и задает его в качестве свойства [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) для указанного UIElement.
 
-    Этот метод можно вызвать только один раз для каждого экземпляра Аппвиндов. После задания содержимого дальнейшие вызовы Сетаппвиндовконтент для этого экземпляра Аппвиндов завершатся ошибкой. Кроме того, если вы попытаетесь отключить содержимое Аппвиндов, передав в него пустой объект UIElement, вызов завершится ошибкой.
+    Этот метод можно вызвать только один раз для каждого экземпляра AppWindow. После задания содержимого дальнейшие вызовы SetAppWindowContent для этого экземпляра AppWindow завершатся ошибкой. Кроме того, если вы попытаетесь отключить содержимое AppWindow, передав в него объект UIElement со значением NULL, вызов завершится ошибкой.
 
-1. Вызовите метод [аппвиндов. тришовасинк](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) , чтобы отобразить новое окно.
+1. Вызовите метод [AppWindow.TrySho](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync), чтобы отобразить новое окно.
 
     ```csharp
     await appWindow.TryShowAsync();
@@ -113,7 +113,7 @@ API [аппвиндовпресентер](/uwp/api/windows.ui.windowmanagement.
 
 ## <a name="release-resources-when-a-window-is-closed"></a>Освобождение ресурсов при закрытии окна
 
-Следует всегда выполнять обработку события [аппвиндов. Closed](/uwp/api/windows.ui.windowmanagement.appwindow.closed) , чтобы освободить ресурсы XAML (содержимое аппвиндов) и ссылаться на аппвиндов.
+Следует всегда обрабатывать событие [AppWindow.Closed](/uwp/api/windows.ui.windowmanagement.appwindow.closed), чтобы освободить ресурсы XAML (содержимое AppWindow) и ссылки на AppWindow.
 
 ```csharp
 appWindow.Closed += delegate
@@ -123,13 +123,13 @@ appWindow.Closed += delegate
 };
 ```
 
-## <a name="track-instances-of-appwindow"></a>Отслеживание экземпляров Аппвиндов
+## <a name="track-instances-of-appwindow"></a>Отслеживание экземпляров AppWindow
 
-В зависимости от того, как вы используете несколько окон в приложении, вы можете или не обязаны отследить созданные экземпляры Аппвиндов. В `HelloAppWindow` примере показаны некоторые различные способы использования [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow). Здесь мы рассмотрим, почему эти окна должны быть отслеживанием, и как это сделать.
+В зависимости от того, как вы используете несколько окон в приложении, вы можете отслеживать созданные экземпляры AppWindow или не делать этого. В примере `HelloAppWindow` показано несколько разных способов использования [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow). Здесь мы рассмотрим, почему эти окна нужно отслеживать, и как это сделать.
 
 ### <a name="simple-tracking"></a>Простое отслеживание
 
-В окне палитры цветов размещается один элемент управления XAML и код для взаимодействия с палитрой выбора цвета, расположенный в `MainPage.xaml.cs` файле. Окно выбора цвета допускает только один экземпляр и является, по сути, расширением `MainWindow`. Чтобы убедиться, что создан только один экземпляр, окно выбора цвета будет отслеживанием с помощью переменной уровня страницы. Прежде чем создавать новое окно палитры цветов, проверьте, существует ли экземпляр, и, если это так, пропустите шаги по созданию нового окна и просто вызовите [тришовасинк](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) в существующем окне.
+В окне палитры размещается один элемент управления XAML, и весь код для взаимодействия с палитрой находится в файле `MainPage.xaml.cs`. Окно палитры допускает только один экземпляр и является, по сути, расширением `MainWindow`. Чтобы убедиться, что создан только один экземпляр, окно палитры отслеживается с помощью переменной уровня страницы. Прежде чем создать новое окно палитры цветов, следует проверить, существует ли его экземпляр, и если это так, пропустить шаги по созданию окна и просто вызвать [TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) для существующего окна.
 
 ```csharp
 AppWindow colorPickerAppWindow;
@@ -151,17 +151,17 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 }
 ```
 
-### <a name="track-an-appwindow-instance-in-its-hosted-content"></a>Отслеживание экземпляра Аппвиндов в его размещенном содержимом
+### <a name="track-an-appwindow-instance-in-its-hosted-content"></a>Отслеживание экземпляра AppWindow в размещенном в нем содержимом
 
-В `AppWindowPage` этом окне размещается полная страница XAML, и код для взаимодействия со страницей находится в `AppWindowPage.xaml.cs`. Это позволяет создавать несколько экземпляров, каждая из которых является независимой.
+В окне `AppWindowPage` размещается полная страница XAML, а код для взаимодействия со страницей находится в `AppWindowPage.xaml.cs`. Это позволяет создать несколько экземпляров, каждый из которых работает независимо.
 
-Функциональные возможности страницы позволяют управлять окном, присвоив ему `FullScreen` значение или `CompactOverlay`, а также прослушивать события [аппвиндов. changes](/uwp/api/windows.ui.windowmanagement.appwindow.changed) для отображения сведений о окне. Для вызова этих API-интерфейсов `AppWindowPage` требуется ссылка на экземпляр аппвиндов, на котором он размещен.
+Функциональные возможности страницы позволяют управлять окном, устанавливать для него свойство `FullScreen` или `CompactOverlay`, а также ожидать передачи событий [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) для отображения сведений о окне. Чтобы вызвать эти API, `AppWindowPage` требуется ссылка на экземпляр AppWindow, в котором он размещен.
 
-Если это все, что вам нужно, можно создать свойство в `AppWindowPage` и присвоить ему экземпляр [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) при его создании.
+Если это все, что вам нужно, можно создать свойство в `AppWindowPage` и присвоить ему экземпляр [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) при создании.
 
 **AppWindowPage.xaml.cs**
 
-В `AppWindowPage`создайте свойство для хранения ссылки аппвиндов.
+В `AppWindowPage` создайте свойство для хранения ссылки на AppWindow.
 
 ```csharp
 public sealed partial class AppWindowPage : Page
@@ -174,7 +174,7 @@ public sealed partial class AppWindowPage : Page
 
 **MainPage.xaml.cs**
 
-В `MainPage`получите ссылку на экземпляр страницы и присвойте вновь созданную аппвиндов свойству в `AppWindowPage`.
+В `MainPage` получите ссылку на экземпляр страницы и присвойте вновь созданный экземпляр AppWindow свойству в `AppWindowPage`.
 
 ```csharp
 private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
@@ -195,15 +195,15 @@ private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="tracking-app-windows-using-uicontext"></a>Отслеживание окон приложений с помощью UIContext
+### <a name="tracking-app-windows-using-uicontext"></a>Отслеживание окон приложения с помощью UIContext
 
-Также может потребоваться доступ к экземплярам [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) из других частей приложения. Например, `MainPage` может иметь кнопку "закрыть все", которая закрывает все записанные экземпляры аппвиндов.
+Может также потребоваться обращаться к экземплярам [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) из других частей приложения. Например, на странице `MainPage` может быть кнопка "Закрыть все", которая закрывает все отслеженные экземпляры AppWindow.
 
-В этом случае следует использовать уникальный идентификатор [UIContext](/uwp/api/windows.ui.uicontext) для трассировки экземпляров окна в [словаре](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0).
+В этом случае следует использовать уникальный идентификатор [UIContext](/uwp/api/windows.ui.uicontext), чтобы отслеживать экземпляры окна в [Dictionary](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0).
 
 **MainPage.xaml.cs**
 
-В `MainPage`создайте словарь как статическое свойство. Затем добавьте страницу в словарь при ее создании и удалите ее при закрытии страницы. UIContext можно получить из [фрейма](/uwp/api/Windows.UI.Xaml.Controls.Frame) содержимого (`appWindowContentFrame.UIContext`) после вызова [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent).
+В `MainPage` создайте Dictionary как статическое свойство. Затем добавьте страницу в Dictionary при ее создании и удалите ее при закрытии страницы. Вы можете получить UIContext из содержимого [кадра](/uwp/api/Windows.UI.Xaml.Controls.Frame) (`appWindowContentFrame.UIContext`) после вызова [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent).
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -256,7 +256,7 @@ public sealed partial class MainPage : Page
 
 **AppWindowPage.xaml.cs**
 
-Чтобы использовать экземпляр [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) в `AppWindowPage` коде, используйте [UIContext](/uwp/api/windows.ui.uicontext) страницы, чтобы извлечь ее из статического словаря в `MainPage`. Это следует сделать в обработчике событий [загруженной](/uwp/api/windows.ui.xaml.frameworkelement.loaded) страницы, а не в конструкторе, чтобы UIContext не был равен null. UIContext можно получить на странице: `this.UIContext`.
+Чтобы использовать экземпляр [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) в коде `AppWindowPage`, используйте [UIContext](/uwp/api/windows.ui.uicontext) страницы, чтобы извлечь его из статического словаря в `MainPage`. Это необходимо сделать в обработчике событий [Loaded](/uwp/api/windows.ui.xaml.frameworkelement.loaded) страницы, а не в конструкторе, чтобы UIContext не имел значение NULL. UIContext можно получить из Page: `this.UIContext`.
 
 ```csharp
 public sealed partial class AppWindowPage : Page
@@ -284,29 +284,29 @@ public sealed partial class AppWindowPage : Page
 ```
 
 > [!NOTE]
-> В `HelloAppWindow` примере показаны оба способа отслеживании окна в `AppWindowPage`, но обычно используется одно или другое, а не оба.
+> В примере `HelloAppWindow` показаны оба способа отслеживания окна в `AppWindowPage`, но обычно используется один из способов, а не оба.
 
-## <a name="request-window-size-and-placement"></a>Размер и размещение окна запроса
+## <a name="request-window-size-and-placement"></a>Запрос размера и расположения окна
 
-Класс [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) имеет несколько методов, которые можно использовать для управления размером и размещением окна. Как предполагается именами методов, система может или не учитывать запрошенные изменения в зависимости от факторов среды.
+Класс [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) содержит несколько методов, которые можно использовать для управления размером и размещением окна. Как следует из имен методов, система может учитывать или не учитывать запрошенные изменения в зависимости от факторов среды.
 
-Вызовите [рекуестсизе](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize) , чтобы указать желаемый размер окна, например.
+Вызовите [RequestSize](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize), чтобы указать желаемый размер окна, как показано ниже.
 
 ```csharp
 colorPickerAppWindow.RequestSize(new Size(300, 428));
 ```
 
-Методы управления размещением окон называются _рекуестмове *_ : [Рекуестмовеаджаценттокуррентвиев](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview), [рекуестмовеаджаценттовиндов](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow), [рекуестмоверелативетодисплайрегион](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion), [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion).
+Методы управления размещением окон называются _RequestMove*_ : [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview), [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow), [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion), [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion).
 
-В этом примере код перемещает окно в главное представление, из которого порождено окно.
+В этом примере код помещает окно рядом с главным представлением, из которого это окно было порождено.
 
 ```csharp
 colorPickerAppWindow.RequestMoveAdjacentToCurrentView();
 ```
 
-Чтобы получить сведения о текущем размере и размещении окна, вызовите метод [onplace](/uwp/api/windows.ui.windowmanagement.appwindow.getplacement). Он возвращает объект [аппвиндовплацемент](/uwp/api/windows.ui.windowmanagement.appwindowplacement) , предоставляющий текущую [дисплайрегион](/uwp/api/windows.ui.windowmanagement.appwindowplacement.displayregion), [смещение](/uwp/api/windows.ui.windowmanagement.appwindowplacement.offset)и [Размер](/uwp/api/windows.ui.windowmanagement.appwindowplacement.size) окна.
+Чтобы получить сведения о текущих размере и расположении окна, вызовите [GetPlacement](/uwp/api/windows.ui.windowmanagement.appwindow.getplacement). Он возвращает объект [AppWindowPlacement](/uwp/api/windows.ui.windowmanagement.appwindowplacement), который предоставляет текущие значения [DisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindowplacement.displayregion), [Offset](/uwp/api/windows.ui.windowmanagement.appwindowplacement.offset) и [Size](/uwp/api/windows.ui.windowmanagement.appwindowplacement.size) окна.
 
-Например, можно вызвать этот код, чтобы переместить окно в правый верхний угол экрана. Этот код должен вызываться после отображения окна; в противном случае размер окна, возвращаемый вызовом метода Place, будет иметь значение 0, 0, а смещение будет неправильным.
+Например, можно вызвать этот код, чтобы переместить окно в правый верхний угол экрана. Этот код должен вызываться после отображения окна. В противном случае размер окна, возвращаемый вызовом метода GetPlacement, будет иметь значение 0,0, а смещение будет неправильным.
 
 ```csharp
 DisplayRegion displayRegion = window.GetPlacement().DisplayRegion;
@@ -318,15 +318,15 @@ window.RequestMoveRelativeToDisplayRegion(displayRegion, new Point(horizontalOff
 
 ## <a name="request-a-presentation-configuration"></a>Запрос конфигурации представления
 
-Класс [аппвиндовпресентер](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) позволяет показать [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) , используя предварительно определенную конфигурацию, подходящую для устройства, на котором оно показано. Можно использовать значение [аппвиндовпресентатионконфигуратион](/uwp/api/windows.ui.windowmanagement.appwindowpresentationconfiguration) для размещения окна в `FullScreen` режиме или. `CompactOverlay`
+Класс [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) позволяет показать окно [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow), используя предварительно определенную конфигурацию, подходящую для устройства, на котором оно отображается. Можно использовать значение [AppWindowPresentationConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresentationconfiguration), чтобы перевести окно в режим `FullScreen` или `CompactOverlay`.
 
-В этом примере показано, как выполнить следующие действия.
+Этот пример показывает, как сделать следующее.
 
-- Используйте событие [аппвиндов. Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) , чтобы получать уведомления при изменении доступных презентаций окон.
-- Используйте свойство [аппвиндов. Presenter](/uwp/api/windows.ui.windowmanagement.appwindow.presenter) для получения текущего [аппвиндовпресентер](/uwp/api/windows.ui.windowmanagement.appwindowpresenter).
-- Вызовите [испресентатионсуппортед](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.ispresentationsupported) , чтобы узнать, поддерживается ли конкретный [аппвиндовпресентатионкинд](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind) .
-- Вызовите метод [конфигурации](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.getconfiguration) , чтобы проверить, какой тип конфигурации используется в данный момент.
-- Вызовите [рекуестпресентатион](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation) , чтобы изменить текущую конфигурацию.
+- Используйте событие [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed), чтобы получать уведомления при изменении доступных представлений окна.
+- Используйте свойство [AppWindow.Presenter](/uwp/api/windows.ui.windowmanagement.appwindow.presenter), чтобы получить текущее значение [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter).
+- Вызовите [IsPresentationSupported](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.ispresentationsupported), чтобы узнать, поддерживается ли определенный тип [AppWindowPresentationKind](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind).
+- Вызовите [GetConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.getconfiguration), чтобы проверить, какой тип конфигурации используется в данный момент.
+- Вызовите [RequestPresentation](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation), чтобы изменить текущую конфигурацию.
 
 ```csharp
 private void Window_Changed(AppWindow sender, AppWindowChangedEventArgs args)
@@ -401,13 +401,13 @@ private void FullScreenButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="reuse-xaml-elements"></a>Повторное использование элементов XAML
+## <a name="reuse-xaml-elements"></a>Многократно использование элементов XAML
 
-[Аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) позволяет использовать несколько деревьев XAML с одним и тем же потоком пользовательского интерфейса. Однако элемент XAML может быть добавлен только один раз в дерево XAML. Если вы хотите переместить часть пользовательского интерфейса из одного окна в другое, необходимо управлять размещением в дереве XAML.
+Класс [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) позволяет использовать несколько деревьев XAML в одном потоке пользовательского интерфейса. Однако элемент XAML может быть добавлен в дерево XAML только один раз. Если вы хотите переместить часть пользовательского интерфейса из одного окна в другое, необходимо управлять ее размещением в дереве XAML.
 
-В этом примере показано, как повторно использовать элемент управления [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) , перемещая его между главным и дополнительным окнами.
+В этом примере показано, как повторно использовать элемент управления [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) при его перемещении между главным и дополнительным окнами.
 
-Средство выбора цвета объявляется в XAML для `MainPage`, который помещает его `MainPage` в дерево XAML.
+Палитра объявлена в коде XAML для `MainPage`, который помещает ее в дерево XAML `MainPage`.
 
 ```xaml
 <StackPanel x:Name="colorPickerContainer" Grid.Column="1" Background="WhiteSmoke">
@@ -420,14 +420,14 @@ private void FullScreenButton_Click(object sender, RoutedEventArgs e)
 </StackPanel>
 ```
 
-Когда палитра выбора цвета отсоединяется для размещения в новом аппвиндов, сначала необходимо удалить его из `MainPage` дерева XAML, удалив его из родительского контейнера. Хотя этот пример не является обязательным, он также скрывает родительский контейнер.
+Когда палитра отсоединяется для отображения в новом окне AppWindow, сначала необходимо удалить ее из дерева XAML `MainPage`, удалив ее из родительского контейнера. Хотя это не обязательно, этот пример также скрывает родительский контейнер.
 
 ```csharp
 colorPickerContainer.Children.Remove(colorPicker);
 colorPickerContainer.Visibility = Visibility.Collapsed;
 ```
 
-Затем его можно добавить в новое дерево XAML. Здесь сначала создается [Сетка](/uwp/api/windows.ui.xaml.controls.grid) , которая будет родительским контейнером для ColorPicker, и добавляется компонент ColorPicker в качестве дочернего элемента сетки. (Это позволяет легко удалить компонент ColorPicker из этого дерева XAML позже.) Затем вы установите сетку в качестве корневого элемента дерева XAML в новом окне.
+Затем его можно добавить в новое дерево XAML. Здесь сначала следует создать объект [Grid](/uwp/api/windows.ui.xaml.controls.grid), который будет родительским контейнером для ColorPicker, и добавить ColorPicker в качестве дочернего элемента Grid. (Это позволит легко удалить ColorPicker из этого дерева XAML позже.) Затем следует задать Grid в качестве корневого элемента дерева XAML в новом окне.
 
 ```csharp
 Grid appWindowRootGrid = new Grid();
@@ -440,7 +440,7 @@ colorPickerAppWindow = await AppWindow.TryCreateAsync();
 ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
 ```
 
-Когда [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow) закрывается, процесс выполняется в противоположном порядке. Сначала удалите компонент [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) из [сетки](/uwp/api/windows.ui.xaml.controls.grid), а затем добавьте его в качестве дочернего элемента для [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) в `MainPage`.
+Когда [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) закрывается, процесс выполняется в обратном порядке. Сначала удалите объект [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) из [Grid](/uwp/api/windows.ui.xaml.controls.grid), а затем добавьте его в качестве дочернего элемента [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) в `MainPage`.
 
 ```csharp
 // When the window is closed, be sure to release XAML resources
@@ -497,9 +497,9 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 
 ## <a name="show-a-dialog-box"></a>Отображение диалогового окна
 
-По умолчанию диалоговые окна содержимого модально связаны с корневым объектом [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании [контентдиалог](/uwp/api/windows.ui.xaml.controls.contentdialog) в [аппвиндов](/uwp/api/windows.ui.windowmanagement.appwindow)необходимо вручную задать ксамлрут в диалоговом окне в качестве корня узла XAML.
+По умолчанию диалоговые окна содержимого модально связаны с корневым объектом [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog) в объекте [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) необходимо вручную задать XamlRoot для диалогового окна, указав корень узла XAML.
 
-Для этого задайте для свойства [Ксамлрут](/uwp/api/windows.ui.xaml.uielement.xamlroot) контентдиалог тот же [ксамлрут](/uwp/api/windows.ui.xaml.xamlroot) , что и для элемента, который уже находится в аппвиндов. Здесь этот код находится внутри обработчика событий [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) кнопки, поэтому для получения ксамлрут можно использовать кнопку _отправитель_ (нажата кнопка).
+Для этого задайте для свойства [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) элемента ContentDialog то же значение [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot), что и у элемента, уже заданного в AppWindow. Здесь этот код находится в обработчике события [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), поэтому для получения XamlRoot можно использовать _отправитель_ (нажатую кнопку).
 
 ```csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
@@ -508,9 +508,9 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Если в дополнение к главному окну (Аппликатионвиев) открыто одно или несколько Аппвиндовс, то каждое окно может попытаться открыть диалоговое окно, так как модальное диалоговое окно блокирует только окно, в котором оно было основано. Однако одновременно может быть открыто только один [контентдиалог](/uwp/api/windows.ui.xaml.controls.contentdialog) для каждого потока. Попытка открыть два элемента ContentDialogs породит исключение, даже если они пытаются открыться в отдельных объектах AppWindow.
+Если в дополнение к главному окну (ApplicationView) открыт один или несколько экземпляров AppWindow, то каждый из них может попытаться открыть диалоговое окно, так как модальное диалоговое окно блокирует только окно, которым оно было порождено. Однако в потоке может существовать только один элемент [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog) одновременно. Попытка открыть два элемента ContentDialogs породит исключение, даже если они пытаются открыться в отдельных объектах AppWindow.
 
-Чтобы управлять этим, следует по крайней мере открыть диалоговое окно в `try/catch` блоке для перехвата исключения в случае, если другое диалоговое окно уже открыто.
+Для управления этим необходимо по крайней мере открыть диалоговое окно в блоке `try/catch`, чтобы перехватить исключение в случае, если уже открыто другое диалоговое окно.
 
 ```csharp
 try
@@ -523,7 +523,7 @@ catch (Exception)
 }
 ```
 
-Другим способом управления диалоговыми окнами является отслеживание открытого диалогового окна и его закрытие перед попыткой открыть новое диалоговое окно. Здесь для этой цели создается статическое свойство в `MainPage` методе `CurrentDialog` .
+Другим способом управления диалоговыми окнами является отслеживание открытого диалогового окна и его закрытие перед попыткой открыть новое диалоговое окно. Здесь для этой цели в `MainPage` создается статическое свойство `CurrentDialog`.
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -535,7 +535,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-Затем вы проверяете, открыто ли сейчас диалоговое окно, и, если есть, вызовите метод [Hide](/uwp/api/windows.ui.xaml.controls.contentdialog.hide) , чтобы закрыть его. Наконец, назначьте новое диалоговое окно `CurrentDialog`и попытайтесь отобразить его.
+Затем следует проверить, открыто ли сейчас диалоговое окно, и если открыто, — вызвать метод [Hide](/uwp/api/windows.ui.xaml.controls.contentdialog.hide), чтобы закрыть его. Наконец, назначьте новое диалоговое окно `CurrentDialog` и попытайтесь показать его.
 
 ```csharp
 private async void DialogButton_Click(object sender, RoutedEventArgs e)
@@ -572,7 +572,7 @@ private async void DialogButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Если нежелательно, чтобы диалоговое окно было закрыто программно, не присваивайте его как `CurrentDialog`. Здесь показано важное диалоговое окно, которое следует отменять только при нажатии кнопки `Ok`. `MainPage` Поскольку он не назначен в `CurrentDialog`качестве, попытки закрыть его программным способом не выполняются.
+Если нежелательно закрывать диалоговое окно программно, не назначайте его `CurrentDialog`. Здесь `MainPage` отображает важное диалоговое окно, которое следует закрыть, только если нажата кнопка `Ok`. Так как оно не назначено в качестве `CurrentDialog`, попытка закрыть его программным способом не выполняется.
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -805,7 +805,7 @@ namespace HelloAppWindow
 
 ```
 
-### <a name="appwindowpagexaml"></a>Аппвиндовпаже. XAML
+### <a name="appwindowpagexaml"></a>AppWindowPage.xaml
 
 ```xaml
 <Page
@@ -1004,7 +1004,7 @@ namespace HelloAppWindow
 }
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 - [Отображение нескольких представлений](show-multiple-views.md)
-- [Отображение нескольких представлений с помощью Аппликатионвиев](application-view.md)
+- [Отображение нескольких представлений с помощью ApplicationView](application-view.md)

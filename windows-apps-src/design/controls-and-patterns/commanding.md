@@ -1,16 +1,15 @@
 ---
 title: Использование команд в приложениях универсальной платформы Windows (UWP)
 description: Применение классов XamlUICommand и StandardUICommand (вместе с интерфейсом ICommand) для совместного использования команд и управления ими для различных типов элементов управления, независимо от устройства и типа используемого ввода.
-author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: cd34c9444c68b8e959f449124fe4ae294ec14fc4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257708"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081745"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях универсальной платформы Windows (UWP) с помощью классов StandardUICommand, XamlUICommand и ICommand
 
@@ -63,7 +62,7 @@ ms.locfileid: "74257708"
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Удалить элемент      | Контекстное меню   | Кнопка при наведении      | Клавиша DEL              | Провести, чтобы удалить   |
 | Отметить элемент        | Контекстное меню   | Кнопка при наведении      | CTRL+SHIFT+G         | Провести пальцем, чтобы пометить     |
-| Обновить данные     | Контекстное меню   | Нет данных               | Клавиша F5               | Обновление путем оттягивания   |
+| Обновить данные     | Контекстное меню   | Н/Д               | Клавиша F5               | Обновление путем оттягивания   |
 | Добавить элемент в избранное | Контекстное меню   | Кнопка при наведении      | F, CTRL+S            | Провести, чтобы добавить к избранному |
 
 **Всегда предоставляйте контекстное меню**. Мы рекомендуем включать все соответствующие контекстные команды в традиционное контекстное меню или меню CommandBarFlyout, так как они поддерживают все типы ввода. Например, если команда отображается только во время события наведения указателя, ее нельзя использовать на устройстве, работающем только с помощью сенсорного ввода.
@@ -1100,11 +1099,11 @@ namespace UICommand1
 
 Полный пример, демонстрирующий реализацию [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), приведен в [коллекции элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 [Элементы управления для приложений UWP](index.md)
 
-### <a name="samples"></a>Примеры
+### <a name="samples"></a>примеры
 
 #### <a name="topic-samples"></a>Примеры в статье
 

@@ -12,23 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de2f1cefc47e8740bfebbe7853ae317d25ab9d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 28248b3df4a3444441c7a4a19f1a360150170b1c
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363222"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081254"
 ---
 # <a name="calendar-date-picker"></a>Управляющий элемент выбора даты в календаре
 
- 
-
 Управляющий элемент выбора даты в календаре — это раскрывающийся элемент управления, оптимизированный для выбора отдельной даты в представлении календаря, когда важна контекстная информация, например день недели или заполненность календаря. Вы можете изменить календарь таким образом, чтобы обеспечить дополнительный контекст или ограничить доступные даты.
 
-> **Важные API**: [класс CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [свойство Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [событие DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+**Получение библиотеки пользовательского интерфейса Windows**
 
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [класс CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [свойство Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [событие DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
+
 Используйте **управляющий элемент выбора даты в календаре**, чтобы дать пользователю возможность выбрать одну дату в контекстном представлении календаря. Используйте этот элемент управления для таких действий, как выбор даты встречи или отъезда.
 
 Чтобы пользователь мог выбрать известную дату, например дату рождения, если контекст календаря не важен, можно использовать [управляющий элемент выбора даты](date-picker.md).
@@ -40,7 +44,7 @@ ms.locfileid: "66363222"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CalendarDatePicker">открыть приложение и увидеть CalendarDatePicker в действии</a>.</p>
     <ul>
@@ -104,11 +108,11 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
                     PlaceholderText="Choose your arrival date"/>
 ```
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Элементы управления датой и временем](date-and-time.md)
 - [Представление календаря](calendar-view.md)

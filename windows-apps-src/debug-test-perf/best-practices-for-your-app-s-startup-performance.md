@@ -4,11 +4,11 @@ title: Рекомендации по повышению производител
 description: Создавайте приложения универсальной платформы Windows (UWP) с оптимальными временем запуска, улучшив управление им, а также активацией.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254684"
@@ -32,7 +32,7 @@ ms.locfileid: "74254684"
 
 Следующая процедура описывает запуск Ngen.exe для предварительной компиляции приложения.
 
-**Запуск Ngen. exe**
+**Запуск Ngen.exe**
 
 1.  Запустите свое приложение хотя бы один раз, чтобы убедиться, что Ngen.exe его обнаруживает.
 2.  Откройте **планировщик заданий** одним из следующих способов.

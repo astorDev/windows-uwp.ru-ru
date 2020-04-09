@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
 ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/13/2020
 ms.locfileid: "79210210"
@@ -29,7 +29,7 @@ ms.locfileid: "79210210"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> установлено, см. раздел <a href="xamlcontrolsgallery:/item/RelativePanel">релативепанел</a>, <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>, <a href="xamlcontrolsgallery:/item/Grid">Grid</a>, <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">вариаблесизедврапгрид</a>и <a href="xamlcontrolsgallery:/item/Canvas">Canvas</a> в действии.</p>
+    <p>Если вы установили приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong>, вы можете испытать элементы <a href="xamlcontrolsgallery:/item/RelativePanel">RelativePanel</a>, <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>, <a href="xamlcontrolsgallery:/item/Grid">Grid</a>, <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a> и <a href="xamlcontrolsgallery:/item/Canvas">Canvas</a> в действии.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
@@ -38,9 +38,9 @@ ms.locfileid: "79210210"
 </tr>
 </table>
 
-## <a name="panel-properties"></a>Свойства панели
+## <a name="panel-properties"></a>Свойства панелей
 
-Прежде чем мы обсудим отдельные панели, давайте рассмотрим некоторые общие свойства, которые имеют все панели. 
+Прежде чем мы обсудим отдельные панели, давайте рассмотрим некоторые общие свойства, характерные для всех панелей. 
 
 ### <a name="panel-attached-properties"></a>Подключенные свойства панели
 
@@ -74,18 +74,18 @@ ms.locfileid: "79210210"
 
 ## <a name="relativepanel"></a>RelativePanel
 
-[**Релативепанел**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) позволяет разформатировать элементы пользовательского интерфейса, указывая, где они переходят по отношению к другим элементам и относительно панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) и [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) для переупорядочивания пользовательского интерфейса для разных размеров окон.
+Элемент [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) и [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) для изменения макета пользовательского интерфейса для разных размеров окон.
 
-В этой таблице показаны присоединенные свойства, которые можно использовать для выравнивания элемента относительно панели и других элементов.
+В этой таблице показаны присоединяемые свойства, которые можно использовать для выравнивания элемента относительно панели и других элементов.
 
 Согласование панели | Согласование с элементами одного уровня | Согласование с положением одного уровня
 ----------------|-------------------|-----------------
-[**алигнтопвиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**алигнтопвис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Упомянут**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
-[**алигнботтомвиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**алигнботтомвис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**См**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
-[**алигнлефтвиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel) | [**алигнлефтвис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**лефтоф**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
-[**алигнригхтвиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**алигнригхтвис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**Части**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
-[**алигнхоризонталцентервиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**алигнхоризонталцентервис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
-[**алигнвертикалцентервиспанел**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**алигнвертикалцентервис**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
+[**AlignTopWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
+[**AlignBottomWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**Below**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
+[**AlignLeftWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
+[**AlignRightWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
+[**AlignHorizontalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
+[**AlignVerticalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**AlignVerticalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
 
  
 Этот фрагмент XAML-кода демонстрирует расположение элементов в RelativePanel.
@@ -121,7 +121,7 @@ ms.locfileid: "79210210"
 
 ## <a name="stackpanel"></a>StackPanel
 
-[**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) упорядочивает свои дочерние элементы в одну строку, которая может быть ориентирована горизонтально или вертикально. StackPanel обычно используется для упорядочивания небольших подразделов пользовательского интерфейса на странице.
+Панель [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) упорядочивает дочерние элементы в одной строке, которую можно расположить по горизонтали или вертикали. StackPanel обычно используется для упорядочивания небольших подразделов пользовательского интерфейса на странице.
 
 Для указания направления дочерних элементов можно использовать свойство [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation). Ориентация по умолчанию — [**Vertical**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Orientation).
 
@@ -143,11 +143,11 @@ ms.locfileid: "79210210"
 
 В StackPanel, если размер дочернего элемента явным образом не задан, он растягивается на всю доступную ширину (или высоту, если ориентация — **Horizontal**). В этом примере ширина прямоугольников не задана. Прямоугольники растягиваются, заполняя всю ширину StackPanel.
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>Макет Grid
 
 Панель [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) поддерживает гибкие макеты и позволяет размещать элементы управления в несколько строк и столбцов. Вы можете определить строки и столбцы панели Grid с помощью свойств [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) и [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
-Объекты располагаются в определенных ячейках макета Grid с помощью присоединенных свойств [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) и [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row).
+Объекты располагаются в определенных ячейках макета Grid с использованием присоединенных свойств [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) и [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row).
 
 Присоединенные свойства [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) и [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan) позволяют распространить содержимое на несколько строк или столбцов.
 
@@ -173,7 +173,7 @@ ms.locfileid: "79210210"
 
 Результат выглядит так:
 
-![Grid](images/layout-panel-grid.png)
+![Макет Grid](images/layout-panel-grid.png)
 
 В этом примере показан принцип работы изменения размера. 
 - Вторая строка имеет точную высоту 44 эффективных пикселя. По умолчанию высота первой строки занимает оставшееся пространство.
@@ -182,7 +182,7 @@ ms.locfileid: "79210210"
 
 Функции назначения размера **Auto** или с помощью звезд позволяют распределить пространство столбца и строки. Функция автоматического выбора размера используется, чтобы разрешить элементам пользовательского интерфейса изменять размер по размеру своего содержимого или родительского контейнера. Можно также использовать функцию автоматического выбора размера со строками и столбцами сетки. Для использования функции автоматического выбора размеров установите для параметров Height и/или Width элементов пользовательского интерфейса значение **Auto**.
 
-Пропорциональное изменение размеров, также именуемое *задание размера с помощью звезды*, используется для распределения доступного пространства среди строк и столбцов сетки с помощью взвешенных пропорций. В XAML значения типа "звезда" выражаются как \* (или *n*\* для взвешенного размера Star). Например, чтобы указать, что один столбец двухстолбцового макета в пять раз шире, чем другой, используйте значения «5\*» и «\*» для свойств [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) в элементах [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition).
+Пропорциональное изменение размеров, также именуемое *задание размера с помощью звезды*, используется для распределения доступного пространства среди строк и столбцов сетки с помощью взвешенных пропорций. В языке XAML значения звезд выражены как \* (или *n*\* для пропорционального задания размера с помощью звезды). Например, чтобы указать, что один столбец двухстолбцового макета в пять раз шире, чем другой, используйте значения «5\*» и «\*» для свойств [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) в элементах [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition).
 
 В этом примере сочетаются фиксированный, автоматический и пропорциональный размер в элементе [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) с четырьмя столбцами.
 
@@ -213,7 +213,7 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 ## <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 
-[**Вариаблесизедврапгрид**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) — это панель макета в стиле сетки, в которой строки или столбцы автоматически переносятся в новую строку или столбец при достижении значения [**максимумровсорколумнс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns) . 
+Элемент [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) — это панель макета в виде сетки, где строки и столбцы обеспечивают автоматический перенос на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns). 
 
 Свойство [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) указывает, добавляет ли сетка свои элементы или столбцы перед переносом. Ориентация по умолчанию — **Vertical**. Это означает, что сетка добавляет элементы сверху вниз до заполнения столбца, а затем переносит данные в новый столбец. Если выбрано значение **Horizontal**, сетка добавляет элементы слева направо, а затем переносит данные в новую строку.
 
@@ -243,9 +243,9 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 В этом примере максимальное число строк в каждом столбце составляет 3. Первый столбец содержит только 2 элемента (красный и синий прямоугольники), поскольку размер синего прямоугольника составляет 2 строки. Затем зеленый прямоугольник переносит данные наверх следующего столбца.
 
-## <a name="canvas"></a>Canvas
+## <a name="canvas"></a>Элемент Canvas
 
-Панель [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) располагает свои дочерние элементы с помощью фиксированных точек координат и не поддерживает гибкие макеты. Эти точки указываются в индивидуальных дочерних элементах заданием присоединенных свойств [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) и [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) для каждого элемента. Родительский объект Canvas считывает значения этих присоединенных свойств со своих дочерних элементов во время этапа упорядочивания макета [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
+Панель [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) располагает свои дочерние элементы с помощью фиксированных точек координат и не поддерживает гибкие макеты. Эти точки указываются в индивидуальных дочерних элементах заданием присоединенных свойств [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) и [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) для каждого элемента. Родительский объект Canvas считывает значения этих присоединенных свойств со своих дочерних элементов во время упорядочивания макета [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
 
 Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное 0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
 
@@ -264,7 +264,7 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 Результат выглядит так:
 
-![Canvas](images/layout-panel-canvas.png)
+![Элемент Canvas](images/layout-panel-canvas.png)
 
 Используйте панель Canvas с осторожностью. Хотя точное определение положения элементов пользовательского интерфейса в некоторых случаях весьма удобно, фиксированное размещение панели макета приводит к тому, что область пользовательского интерфейса хуже приспосабливается к изменениям размера окна приложения в целом. Изменение размера окна приложения может быть вызвано изменением ориентации устройства, разделением окон приложения, сменой мониторов и множеством иных пользовательских сценариев.
 
@@ -272,6 +272,6 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 Существует несколько специальных панелей, которые можно использовать только в качестве [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) для отображения элементов в [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl). Это типы [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel), [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid), [**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) и [**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid). Эти панели невозможно использовать для общего макета пользовательского интерфейса.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.

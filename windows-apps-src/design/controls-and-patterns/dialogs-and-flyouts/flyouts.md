@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 320586fb8fe7f71eaea2d4b12c0dd731a1f721db
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793780"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080971"
 ---
 # <a name="flyouts"></a>Всплывающие элементы
 
@@ -24,20 +24,26 @@ ms.locfileid: "63793780"
 
 ![Контекстное меню внутри всплывающего элемента](../images/flyout-nested.png)
 
-> **Важные API**: [класс Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](../images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы:** [класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 * Не используйте всплывающий элемент вместо [подсказки](../tooltips.md) или [контекстного меню](../menus.md). Используйте подсказку, чтобы вывести краткое описание, которое исчезает через определенное время. Для контекстных действий, связанных с элементом пользовательского интерфейса, например копированием или вставкой, используйте контекстное меню.
 
-Рекомендации по целесообразности использования диалоговых окон и всплывающих элементов (аналогичных элементов управления) приведены в статье [Диалоговые окна и всплывающие элементы](index.md). 
+Рекомендации по целесообразности использования диалоговых окон и всплывающих элементов (аналогичных элементов управления) приведены в статье [Диалоговые окна и всплывающие элементы](index.md).
 
 ## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы открыть его и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
     <ul>
@@ -74,7 +80,7 @@ ms.locfileid: "63793780"
   <FlyoutBase.AttachedFlyout>
     <Flyout>
       <TextBlock Text="This is some text in a flyout."  />
-    </Flyout>        
+    </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
 ````
@@ -121,7 +127,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ````csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
-    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);  
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
 ````
 
@@ -157,10 +163,10 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="light-dismiss-behavior"></a>Поведение с исчезновением
 Всплывающие элементы можно закрыть с помощью таких действий исчезновения:
--   Коснитесь области за пределами всплывающего элемента.
--   Нажмите клавишу Escape на клавиатуре.
--   Нажмите аппаратную или программную системную кнопку "Назад".
--   Нажмите кнопку геймпада "B".
+-    Коснитесь области за пределами всплывающего элемента.
+-    Нажмите клавишу Escape на клавиатуре.
+-    Нажмите аппаратную или программную системную кнопку "Назад".
+-    Нажмите кнопку геймпада "B".
 
 При закрытии касанием этот жест обычно не передается пользовательскому интерфейсу под элементом. Например, если за открытым всплывающим элементом отображается кнопка, первое касание приведет к закрытию всплывающего элемента, но кнопка при этом не будет активирована. Для нажатия кнопки нужно второе касание.
 
@@ -177,7 +183,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
                 OverlayInputPassThroughElement="{x:Bind FavoritesBar}">
             <StackPanel>
                 <HyperlinkButton Content="Washington Trails Association"/>
-                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>  
+                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>
             </StackPanel>
         </Flyout>
     </Page.Resources>
@@ -188,7 +194,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="FavoritesBar" Orientation="Horizontal">
-            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>  
+            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>
             <Button x:Name="Folder1" Content="Travel" Flyout="{StaticResource TravelFlyout}"/>
             <Button x:Name="Folder2" Content="Entertainment" Click="Folder2_Click"/>
         </StackPanel>
@@ -208,11 +214,11 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 {
 ````
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 - [Подсказки](../tooltips.md)
 - [Меню и контекстное меню](../menus.md)
 - [Класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)

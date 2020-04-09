@@ -11,20 +11,24 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: d3acd69b2b0e3a1bd97b6aa917991d4b2c88d075
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399614"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081590"
 ---
 # <a name="rich-edit-box"></a>Блок форматируемого текста
 
- 
-
 Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение **true**.
 
-> **Важные API**: [класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [свойство Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [свойство IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [свойство IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled).
+**Получение библиотеки пользовательского интерфейса Windows**
+
+|  |  |
+| - | - |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API платформы**: [класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [свойство Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [свойство IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [свойство IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -33,14 +37,14 @@ ms.locfileid: "67399614"
 -   Если текст не предназначен для повторного отображения пользователям, используйте элементы управления для ввода обычного текста.
 -   Во всех остальных сценариях используйте элементы управления для ввода обычного текста.
 
-Дополнительные сведения о выборе подходящего элемента управления текстом можно найти в статье [Элементы управления текстом](text-controls.md).
+Дополнительные сведения можно найти в статье об [элементах управления текстом](text-controls.md).
 
 ## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RichEditBox">открыть приложение и увидеть RichEditBox в действии</a>.</p>
     <ul>
@@ -202,24 +206,24 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 
-Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста, чтобы он соответствовал типу данных, которые должен вводить пользователь. Раскладка клавиатуры по умолчанию обычно подходит для работы с документами RTF.
+Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста таким образом, чтобы элемент управления соответствовал типу данных, которые должен вводить пользователь. Раскладка клавиатуры по умолчанию обычно подходит для работы с документами RTF.
 
 Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 - При создании текстового поля в формате RTF следует предусмотреть кнопки стиля и реализовать их действия.
 - Используйте шрифт, соответствующий стилю вашего приложения.
-- Высота элемента управления должна быть достаточной для ввода стандартных записей.
+- Высота текстового элемента управления должна быть достаточной для ввода типичных записей.
 - При вводе пользователем текста элементы управления не должны увеличиваться по высоте.
 - Не используйте поле для многострочного текста там, где требуется ввести всего одну строку.
 - Не используйте поле с форматом там, где достаточно элемента управления обычного текста.
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Текстовые элементы управления](text-controls.md)
 - [Руководство по проверке орфографии](text-controls.md)
