@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
-ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
+ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
+ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78222030"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588706"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Предоставление идентификаторов для неупакованных классических приложений
 
@@ -124,7 +124,7 @@ ms.locfileid: "78222030"
 В следующем примере показано, как создать разреженный пакет в командной строке.  
 
 ```Console
-MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output path>\MyPackage.msix  /nv
+MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
 ```
 
 Чтобы установить разреженный пакет на конечном компьютере, необходимо подписать его с использованием сертификата, который является доверенным на конечном компьютере. Можно создать самозаверяющий сертификат для разработки и подписать разреженный пакет с помощью средства [SignTool](https://docs.microsoft.com/windows/msix/package/sign-app-package-using-signtool), которое доступно в Windows SDK.
@@ -132,7 +132,7 @@ MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output 
 В следующем примере показано, как подписать разреженный пакет из командной строки.
 
 ```Console
-SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <certificate password>  <path to sparse package>\MyPackage.msix
+SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to sparse package>\MyPackage.msix
 ```
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Добавление метаданных идентификатора пакета в манифест классического приложения
