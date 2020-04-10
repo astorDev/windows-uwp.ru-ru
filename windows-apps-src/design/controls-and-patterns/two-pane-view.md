@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081444"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614128"
 ---
 # <a name="two-pane-view"></a>Представление с двумя панелями
 
@@ -32,20 +32,11 @@ ms.locfileid: "80081444"
 | ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TwoPaneView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+
+> [!TIP]
+> В рамках этого документа в XAML мы используем псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page): `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`.
 >
-> **API платформы:** [Класс TwoPaneView](/uwp/api/windows.ui.xaml.controls.twopaneview)
-
-В этом документе мы будем использовать в XAML псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page):
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-В коде C# мы также будем использовать псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили оператор **using** в верхней части файла:
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
+>В коде C# мы также используем псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили оператор **using** в верхней части файла: `using muxc = Microsoft.UI.Xaml.Controls;`.
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 

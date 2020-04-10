@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2f34c9c56cf9db5dfcfd702b97f2d34273b86e6a
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226318"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482639"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Размещение настраиваемого элемента управления UWP в приложении Win32 на C++
 
@@ -45,20 +45,20 @@ ms.locfileid: "80226318"
 4. В окне **Manage NuGet Packages** (Управление пакетами NuGet) установите следующие дополнительные пакеты NuGet:
 
     * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (версии 6.0.0 или более поздней). Этот пакет включает несколько ресурсов сборки и времени выполнения, которые позволяют XAML Islands работать в приложении.
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (версии 6.0.0 или более поздней).
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (версии 6.0.0 или более поздней). Пакет определяет класс [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), который будет использоваться позднее в рамках этого пошагового руководства.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Запустите сборку решения и убедитесь, что она проходит успешно.
 
 ## <a name="create-a-uwp-app-project"></a>Создание проекта приложения UWP
 
-Теперь добавьте проект приложения **UWP (C++/WinRT)** в решение и внесите некоторые изменения в конфигурацию этого проекта. Далее в этом пошаговом руководстве вы добавите код в этот проект, чтобы внедрить настраиваемый элемент управления XAML UWP и определить экземпляр класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставляемого в наборе средств сообщества Windows. Приложение будет использовать этот класс в качестве поставщика корневых метаданных для загрузки метаданных для настраиваемых типов XAML UWP.
+Теперь добавьте проект приложения **UWP (C++/WinRT)** в решение и внесите некоторые изменения в конфигурацию этого проекта. Далее в этом пошаговом руководстве вы добавите код в этот проект, чтобы внедрить настраиваемый элемент управления XAML UWP и определить экземпляр класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication). 
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши узел решения и выберите команду **Добавить** -> **Новый проект**.
 
 2. Добавьте в решение проект **пустого приложения (C++/WinRT)** . Присвойте проекту имя **MyUWPApp** и убедитесь, что в качестве целевой и минимальной версии используется **Windows 10 версии 1903** или более поздней.
 
-3. Установите пакет NuGet [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) в проект **MyUWPApp**:
+3. Установите пакет NuGet [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) в проект **MyUWPApp**. Пакет определяет класс [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), который будет использоваться позднее в рамках этого пошагового руководства.
 
     1. Щелкните правой кнопкой мыши проект **MyUWPApp** и выберите пункт **Manage NuGet Packages** (Управление пакетами NuGet).
     2. Перейдите на вкладку **Обзор**, найдите пакет [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) и установите версию 6.0.0 или более позднюю версию этого пакета.
@@ -150,7 +150,7 @@ ms.locfileid: "80226318"
 Теперь вы готовы добавить код в проект **MyUWPApp**, чтобы выполнить следующие задачи:
 
 * внедрите настраиваемый элемент управления XAML UWP. Далее в этом пошаговом руководстве вы добавите код, который размещает этот элемент управления в проекте **MyDesktopWin32App**.
-* Определите тип, производный от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) в наборе средств сообщества Windows. Этот класс выступает в качестве поставщика корневых метаданных для загрузки метаданных для настраиваемых типов XAML UWP.
+* Определите тип, производный от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) в наборе средств сообщества Windows.
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>Определение настраиваемого элемента управления XAML UWP
 
@@ -181,7 +181,7 @@ ms.locfileid: "80226318"
 
 ### <a name="define-a-xamlapplication-class"></a>Определение класса XamlApplication
 
-Затем замените класс **App** по умолчанию в проекте **MyUWPApp** производным от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставляемым в наборе средств сообщества Windows. Далее в этом пошаговом руководстве вы обновите проект классического приложения, чтобы создать экземпляр этого класса в качестве поставщика корневых метаданных для загрузки метаданных для настраиваемых типов XAML UWP.
+Затем замените класс **App** по умолчанию в проекте **MyUWPApp** производным от класса [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), предоставляемым в наборе средств сообщества Windows. Этот класс поддерживает интерфейс [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider), который позволяет приложению обнаруживать и загружать метаданные для настраиваемых элементов управления UWP XAML в сборках в текущем каталоге приложения во время выполнения. Этот класс также инициализирует платформу UWP XAML для текущего потока. Позднее в рамках этого пошагового руководства вы обновите проект классического приложения, чтобы создать экзепляр этого класса.
 
   > [!NOTE]
   > Каждое решение, использующее XAML Islands, может содержать только один проект, определяющий объект `XamlApplication`. Все настраиваемые элементы управления XAML UWP в приложении используют один и тот же объект `XamlApplication`. 

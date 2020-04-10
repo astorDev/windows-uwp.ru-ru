@@ -181,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: Фоновая передача данных
           href: ../networking/background-transfers.md
+    - name: Предоставление общего доступа к именованным объектам
+      href: ../communication/sharing-named-objects.md
 - name: Данные и файлы
   items:
     - name: Ресурсы приложения

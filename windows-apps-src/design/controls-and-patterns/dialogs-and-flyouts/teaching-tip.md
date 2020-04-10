@@ -2,7 +2,7 @@
 Description: Совет по обучению является частично перманентным и многофункциональным всплывающим элементом, который предоставляет контекстную информацию.
 title: Советы по обучению
 template: detail.hbs
-ms.date: 04/19/2019
+ms.date: 04/01/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6276ef9bcb6b01fd557057d3d36939350314015b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 06734c854f0097db5fa96e35d4123dde8bda8a95
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081050"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614139"
 ---
 # <a name="teaching-tip"></a>Совет по обучению
 
@@ -27,16 +27,20 @@ ms.locfileid: "80081050"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](../images/winui-logo-64x64.png) | Элемент управления **TeachingTip** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](../images/winui-logo-64x64.png) | Элемент управления **TeachingTip** требует использовать библиотеку пользовательского интерфейса Windows, пакет NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TeachingTip](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+
+> [!TIP]
+> В рамках этого документа в XAML мы используем псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page): `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`.
+>
+>В коде C# мы также используем псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили оператор **using** в верхней части файла: `using muxc = Microsoft.UI.Xaml.Controls;`.
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте элемент управления **TeachingTip**, чтобы обратить внимание пользователя на новые или важные обновления или функции, напомнить ему о второстепенных параметрах, которые улучшат их взаимодействие, или обучить пользователя выполнению задач.
 
 Поскольку совет по обучению является временным элементом, не рекомендуется использовать его, чтобы запрашивать пользователей по поводу ошибок или важных изменений состояния.
-
 
 ## <a name="examples"></a>Примеры
 
@@ -68,14 +72,12 @@ ms.locfileid: "80081050"
 
 ![Пример приложения с советом по обучению с функцией исчезновения в правом нижнем углу. Название совета считывает строку "Автоматическое сохранение", а субтитр считывает строку "Мы сохраним изменения при переходе — Вы можете не делать ничего".](../images/teaching-tip-light-dismiss.png)
 
-
 ### <a name="create-a-teaching-tip"></a>Создание совета по обучению
 
 Ниже приведен XAML для элемента управления целевого совета по обучению, который демонстрирует стандартный вид TeachingTip с названием и субтитром.
 Обратите внимание, что совет по обучению может отображаться в любом месте дерева элементов или кода за его пределами. В поданном ниже примере он расположен в ResourceDictionary.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -87,8 +89,7 @@ XAML
 </Button>
 ```
 
-C#
-```C#
+```csharp
 public MainPage()
 {
     this.InitializeComponent();
@@ -109,8 +110,7 @@ public MainPage()
 
 Не все советы являются связанными с элементом на экране. В таких случаях целевое свойство не задается и вместо этого советы по обучению отображаются относительно краев корневого элемента XAML. Тем не менее совет по обучению может содержать удаленный конечный фрагмент, сохраняя размещение относительно элемента пользовательского интерфейса путем установки свойства TailVisibility, чтобы "свернуть". Следующий пример совета по обучению является нецелевым советом по обучению.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -131,8 +131,7 @@ XAML
 
 Целевой совет по обучению, для которого в свойстве PreferredPlacement задано значение BottomLeft, отобразится с конечным блоком по центру в нижней части экрана его целевого объекта с основным текстом совета по обучению, сдвинутым влево.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -147,11 +146,9 @@ XAML
 
 ![Пример приложения с кнопкой "Сохранить" с советом по обучению под левым углом. Название совета считывает строку "Автоматическое сохранение", а субтитр считывает строку "Мы сохраним изменения при переходе — Вы можете не делать ничего". В правом верхнем углу совета по обучению есть кнопка "Закрыть".](../images/teaching-tip-targeted-preferred-placement.png)
 
-
 Нецелевой совет по обучению, для которого в свойстве PreferredPlacement задано значение BottomLeft, отобразится в левом нижнем углу корневого элемента XAML.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -175,8 +172,7 @@ XAML
 
 В следующем примере показан нецелевой совет с PlacementMargin влево/верх или вправо/низ со значением 80 для всех.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -194,8 +190,7 @@ XAML
 
 Содержимое в совет по обучению можно добавить, используя свойство Content. Если содержимое, которое нужно отобразить, превышает размер дозволенного для совета по обучению, автоматически будет включено полосу прокрутки, чтобы позволить пользователю прокрутить содержимое области.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -221,8 +216,7 @@ XAML
 
 Кнопку "Настраиваемое действие" можно добавить, задав свойство ActionButtonContent (и при необходимости свойства ActionButtonCommand и ActionButtonCommandParameter).
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -230,7 +224,7 @@ XAML
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             ActionButtonContent="Disable"
-            ActionButtonCommand="DisableAutoSave"
+            ActionButtonCommand="{x:Bind DisableAutoSaveCommand}"
             CloseButtonContent="Got it!">
                 <StackPanel>
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
@@ -247,8 +241,7 @@ XAML
 
 Края для содержимого краев можно добавить к совету по обучению, задав свойство HeroContent. Расположение содержимого главного имиджевого баннера можно присвоить верхней или нижней части совета по обучению, задав свойство HeroContentPlacement.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -269,8 +262,7 @@ XAML
 
 Рядом с заголовком и субтитром можно добавить значок, используя свойство IconSource. Рекомендуемые размеры значка — 16 пикселей, 24 пикселя и 32 пикселя.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -293,8 +285,7 @@ XAML
 
 Кнопка "Закрыть" будет автоматически удалена с совета по обучению с функцией исчезновения, чтобы указать пользователю на автоматическое исчезновение совета.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -308,12 +299,11 @@ XAML
 
 ### <a name="escaping-the-xaml-root-bounds"></a>Переход границ корневого элемента XAML
 
-В Windows версии 19H1 и более поздних версий совет по обучению может переходить через границы корневого элемента XAML и экрана, задав свойство ShouldConstrainToRootBounds. Если это свойство включено, совет по обучению не будет оставаться в пределах корневого элемента XAML или экрана и всегда будет позиционирован в заданном режиме PreferredPlacement. Мы рекомендуем включить свойство IsLightDismissEnabled и задать режим PreferredPlacement как можно ближе к центру корневого элемента XAML, чтобы обеспечить максимальное удобство для пользователей.
+Начиная с Windows 10 версии 1903 (сборка 18362), совет по обучению можно разместить вне пределов корневого элемента XAML или экрана. Для этого нужно задать свойство `ShouldConstrainToRootBounds`. Если это свойство включено, совет по обучению не будет оставаться в пределах корневого элемента XAML или экрана и всегда будет позиционирован в заданном режиме `PreferredPlacement`. Мы рекомендуем включить свойство `IsLightDismissEnabled` и задать режим `PreferredPlacement` как можно ближе к центру корневого элемента XAML, чтобы обеспечить максимальное удобство для пользователей.
 
 В более ранних версиях Windows это свойство не учитывается и совет по обучению всегда остается в пределах границ корневого элемента XAML.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -331,10 +321,10 @@ XAML
 
 Событие закрытия можно использовать, чтобы отменить и/или отложить закрытые совета по обучению. Функцию можно использовать, чтобы содержать совет по обучению открытым или дождаться действия или "оживления" пользователя. При отмене закрытия совета по обучению IsOpen вернется к значению true, но, тем не менее, будет оставаться false во время отложения. Можно также отменить программное закрытие.
 
-**Примечание. Если полное отображение совета по обучению не поддерживается никаким параметром размещения, совет по обучению будет переработан с помощью жизненного цикла его события, чтобы принудительно его закрыть, вместо того чтобы отображать без наличия доступной кнопки "Закрыть". Если приложение отменяет событие закрытия, совет по обучению может оставаться открытым при отсутствии доступной кнопки "Закрыть".**
+> [!NOTE]
+> Если полное отображение совета по обучению не поддерживается никаким параметром размещения, совет по обучению будет переработан с помощью жизненного цикла его события, чтобы принудительно его закрыть, вместо того чтобы отображать без наличия доступной кнопки "Закрыть". Если приложение отменяет событие закрытия, совет по обучению может оставаться открытым при отсутствии доступной кнопки "Закрыть".
 
-XAML
-```XAML
+```xaml
 <muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
@@ -342,18 +332,18 @@ XAML
 </muxc:TeachingTip>
 ```
 
-C#
-```C#
-public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
+```csharp
+private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventArgs args)
 {
-    if (args.Reason == TeachingTipCloseReason.CloseButton)
+    if (args.Reason == muxc.TeachingTipCloseReason.CloseButton)
     {
         using(args.GetDeferral())
         {
-            bool success = await UpdateUserSettings(User thisUsersID);
+            bool success = UpdateUserSettings(User thisUsersID);
             if(!success)
             {
-                //We were not able to update the settings! Don't close the tip and display the reason why.
+                // We were not able to update the settings!
+                // Don't close the tip and display the reason why.
                 args.Cancel = true;
                 ShowLastErrorMessage();
             }
@@ -362,19 +352,18 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 }
 ```
 
-## <a name="remarks"></a>Замечания
+## <a name="recommendations"></a>Рекомендации
 
-### <a name="related-articles"></a>Похожие статьи
-
-* [Диалоговые окна и всплывающие элементы](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
-
-### <a name="recommendations"></a>Рекомендации
 * Советы являются временными и не должны содержать информацию или параметры, важные для работы приложения.
 * Старайтесь избегать слишком частого отображения советов по обучению. Советы по обучению наиболее востребованные для получения отдельного внимания, когда они располагаются на протяжении длительного времени или в нескольких сеансах.
 * Формируйте советы кратко, а их тему понятно. Исследование показало, что пользователи читают в среднем только 3–5 слов и воспринимают только 2–3 слова перед тем, как взаимодействовать с советом.
 * Доступность геймпада для совета по обучению не гарантируется. Приложения, которые определяют ввод с геймпада, см. в разделе [Взаимодействие с помощью геймпада и пульта дистанционного управления]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Рекомендуется проверять доступность геймпада для каждого совета по обучению, используя все возможные конфигурации для пользовательского интерфейса приложения.
 * При включении совета по обучению для перехода корневого элемента XAML мы рекомендуем включить свойство IsLightDismissEnabled и задать режим PreferredPlacement как можно ближе к центру корневого элемента XAML.
 
-### <a name="reconfiguring-an-open-teaching-tip"></a>Изменение конфигурации открытого совета по обучению
+## <a name="reconfiguring-an-open-teaching-tip"></a>Изменение конфигурации открытого совета по обучению
 
 Некоторое содержимое и свойства можно изменить во время того, как совет по обучению открыт. Эти изменения вступят в силу немедленно. Другое содержимое и свойства, такие как свойство значка, кнопки "Действие" и "Закрыть" и повторная настройка между функцией исчезновения и явным закрытием, требуют закрыть совет по обучению и повторно открыть его, чтобы изменения этих свойств вступили в силу. Обратите внимание, что изменение способа исчезновения с ручной настройки на автоматическое исчезновение во время того, как совет по обучению открыт, произведет к тому, что кнопка "Закрыть" будет удалена перед включением автоматического исчезновения и совет на экране может зависнуть.
+
+## <a name="related-articles"></a>Похожие статьи
+
+* [Диалоговые окна и всплывающие элементы](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
