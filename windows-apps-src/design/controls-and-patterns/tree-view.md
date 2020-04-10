@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
-ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
+ms.openlocfilehash: 9c451eba40b5c36843a32efbc80de40866f2f0dc
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616529"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081453"
 ---
 # <a name="treeview"></a>Представление в виде дерева
 
@@ -34,13 +34,15 @@ API **TreeView** поддерживают следующие функции:
 - Содержимое произвольного типа в элементе **TreeViewItem**.
 - Операции перетаскивания между представлениями в виде дерева.
 
-| **Получение библиотеки пользовательского интерфейса Windows** |
-| - |
-| Этот элемент управления является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Получение библиотеки пользовательского интерфейса Windows**
 
-| **API платформы** | **API библиотеки пользовательского интерфейса Windows** |
+|  |  |
 | - | - |
-| [Класс TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Класс TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TreeView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
+>
+> **API платформы:** [Класс TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
 В этом документе мы будем использовать в XAML псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page):
 
@@ -69,7 +71,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TreeView">открыть приложение и увидеть TreeView в действии</a>.</p>
     <ul>
@@ -94,7 +96,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 Вы можете создать представление в виде дерева, привязав [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) к иерархическому источнику данных, или создать объекты **TreeViewNode** и управлять ими самостоятельно.
 
-Для создания представления в виде дерева используйте элемент управления [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) и иерархию объектов [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Иерархия узла создается путем добавления одного или нескольких корневых узлов в коллекцию [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) элемента управления **TreeView**. В каждом элементе **TreeViewNode** может быть больше узлов, добавленных в его коллекцию [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children). Узлы представления в виде дерева можно вложить на любую необходимую глубину.
+Для создания представления в виде дерева используйте элемент управления [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) и иерархию объектов [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Иерархия узлов создается путем добавления одного или нескольких корневых узлов в коллекцию [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) элемента управления **TreeView**. В каждом элементе **TreeViewNode** может быть больше узлов, добавленных в его коллекцию [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children). Узлы представления в виде дерева можно вложить на любую необходимую глубину.
 
 Вы можете привязать иерархический источник данных к свойству [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) для предоставления содержимого представления в виде дерева так же, как в случае с элементом **ItemsSource** представления [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Аналогичным образом можно использовать свойство [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (и необязательное свойство [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) для предоставления [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) и выполнения визуализации элемента.
 
@@ -1351,7 +1353,7 @@ namespace TreeViewTest
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Класс TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
 - [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209309"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081369"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -33,18 +33,20 @@ ms.locfileid: "79209309"
 [Кнопка](/uwp/api/windows.ui.xaml.controls.button) | Кнопка, инициирующая немедленное действие. Может использоваться в связке со свойством [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) или событием [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая в нажатом состоянии постоянно вызывает событие [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click).
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Стилизованная под гиперссылку кнопка, которая используется для навигации. См. подробнее о [гиперссылках](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка со значком шеврона, которая открывает прикрепленное всплывающее меню.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Двухсторонняя кнопка. Одна сторона инициирует действие, а другая открывает меню.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Двухсторонняя кнопка переключения. Одна сторона выполняет функцию переключателя, а другая сторона открывает меню.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![Логотип WinUI](images/winui-logo-16x16.png) Кнопка со значком шеврона, которая открывает прикрепленное всплывающее меню.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![Логотип WinUI](images/winui-logo-16x16.png) Двухсторонняя кнопка. Одна сторона инициирует действие, а другая открывает меню.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![Логотип WinUI](images/winui-logo-16x16.png) Двухсторонняя кнопка переключения. Одна сторона выполняет функцию переключателя, а другая сторона открывает меню.
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | Кнопка, которая может быть включена или отключена.
 
-| **Получение библиотеки пользовательского интерфейса Windows** |
-| - |
-| **DropDownButton**, **SplitButton** и **ToggleSplitButton** являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+**Получение библиотеки пользовательского интерфейса Windows**
 
-| **API платформы** | **API библиотеки пользовательского интерфейса Windows** |
+|  |  |
 | - | - |
-| [Событие Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Свойство Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [Класс DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [Класс SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [Класс ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** и **ToggleSplitButton** являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [класс SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [класс ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
+>
+> **API платформы:** [Событие Сlick](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [свойство Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -68,7 +70,7 @@ ms.locfileid: "79209309"
 <table>
 <th align="left">XAML Controls Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Button">открыть приложение и увидеть кнопку в действии</a>.</p>
     <ul>

@@ -1,14 +1,14 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: Оптимизация макета XAML
-description: Макет может быть дорогостоящей частью приложения XAML &\#8212; оба в использовании и памяти нагрузку на ЦП. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML.
+description: Макет может быть ресурсоемкой частью приложения XAML как в плане загрузки ЦП, так и в плане использования памяти. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dca27a4cfb02f5d1bcb722683eca89ec16a6d6
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66362219"
@@ -18,7 +18,7 @@ ms.locfileid: "66362219"
 
 **Важные API**
 
--   [**Панель**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+-   [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 Определение макета — это процесс определения визуальной структуры для пользовательского интерфейса. Базовым механизмом описания макета в XAML является определение с помощью панелей, представляющих собой объекты-контейнеры, в которых можно помещать и соответствующим образом располагать элементы пользовательского интерфейса. Макет может быть затратной частью приложения XAML как в плане загрузки ЦП, так и в плане использования памяти. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML.
 
@@ -42,7 +42,7 @@ ms.locfileid: "66362219"
 
 В этих примерах показаны 3 способа реализации одного пользовательского интерфейса. Каждый вариант реализации обеспечивает примерно одинаковое количество пикселей на экране, но существенно отличается в плане способа реализации.
 
-Вариант 1. Вложенные [ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) элементов
+Вариант 1. Вложенные элементы [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)
 
 Хотя это наиболее простая модель, в ней используются элементы с 5 панелями, что приводит к значительным дополнительным затратам.
 
@@ -70,7 +70,7 @@ ms.locfileid: "66362219"
 </StackPanel>
 ```
 
-Вариант 2. Один [ **сетки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+Вариант 2. Отдельный элемент [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
 [  **Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) добавляет определенную сложность, но в этой модели используется элемент с одной панелью.
 
@@ -103,7 +103,7 @@ ms.locfileid: "66362219"
 </Grid>
 ```
 
-Вариант 3. Один [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel):
+Вариант 3. Отдельный элемент [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 Эта модель с одной панелью также немного более сложная, чем модель с использованием вложенных панелей, но она легче для понимания и обслуживания, чем [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid).
 
@@ -134,7 +134,7 @@ ms.locfileid: "66362219"
 
 Общее требование к пользовательскому интерфейсу заключается в том, чтобы в макете элементы накладывались друг на друга. Как правило, для размещения элементов подобным образом используют заполнение, поля, выравнивание и преобразование. Элемент управления XAML [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) оптимизирован для повышения производительности макета с накладывающимися элементами.
 
-**Важные**  для просмотра улучшение используйте одноячейковым [ **сетки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). Не задавайте [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
+**Важно!**   Чтобы добиться видимого улучшения, используйте элемент [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) с одной ячейкой. Не задавайте [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Примеры
 
@@ -160,7 +160,7 @@ ms.locfileid: "66362219"
 
 ## <a name="use-a-panels-built-in-border-properties"></a>Используйте свойства встроенной границы панели
 
-[**Сетка**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), и [  **ContentPresenter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) элементы управления имеют встроенные свойства, позволяющие рисования границы вокруг них без добавления дополнительного [ **границы** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) элемент для в XAML. Ниже приведены новые свойства, которые поддерживают встроенные границы. **BorderBrush**, **BorderThickness**, **CornerRadius**, и **Padding**. Каждое из этих свойств представляет собой [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty), в связи с чем их можно использовать с привязками и анимациями. Они предназначены для того, чтобы служить полной заменой отдельного элемента **Border**.
+Элементы управления [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) и [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) имеют свойства встроенной границы, позволяющие рисовать вокруг них границу без добавления дополнительного элемента [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border). Новые свойства, поддерживающие встроенную границу: **BorderBrush**, **BorderThickness**, **CornerRadius** и **Padding**. Каждое из этих свойств представляет собой [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty), в связи с чем их можно использовать с привязками и анимациями. Они предназначены для того, чтобы служить полной заменой отдельного элемента **Border**.
 
 Если ваш пользовательский интерфейс включает элементы [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) вокруг этих панелей, используйте вместо них встроенную границу, которая позволит сэкономить место для дополнительного элемента в структуре макета вашего приложения. Как упоминалось ранее, это может обеспечить значительную экономию, особенно в случае повторяемых пользовательских интерфейсов.
 
@@ -175,11 +175,11 @@ ms.locfileid: "66362219"
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>Используйте события **SizeChanged** в случае изменения макета
 
-[ **FrameworkElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) класс предоставляет два аналогичных событий за реагирование на изменения макета: [**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) и [ **SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Вы можете использовать одно из этих событий для получения уведомлений об изменении размера элемента во время редактирования макета. Семантика этих двух событий отличается, и при выборе одного из них важно учитывать производительность.
+Класс [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) предоставляет два аналогичных события для реагирования на изменения макета: [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) и [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Вы можете использовать одно из этих событий для получения уведомлений об изменении размера элемента во время редактирования макета. Семантика этих двух событий отличается, и при выборе одного из них важно учитывать производительность.
 
 Для обеспечения высокой производительности почти всегда лучше выбирать [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Событие **SizeChanged** имеет интуитивную семантику. Оно возникает во время редактирования макета в случае изменения размера [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement).
 
-[**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) также вызывается во время структурирования, но у него есть глобальный семантику — это событие возникает для каждого элемента при каждом обновлении любого элемента. Это событие, как правило, выбирают только для локальной обработки в обработчике событий; и в этом случае код запускается чаще, чем это необходимо. Используйте **LayoutUpdated** только в том случае, если вам необходимо получать уведомление о перемещении элемента без изменения размера (что происходит нечасто).
+Событие [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) также возникает при редактировании макета, но при этом оно имеет глобальную семантику, так как возникает при изменении любого элемента. Это событие, как правило, выбирают только для локальной обработки в обработчике событий; и в этом случае код запускается чаще, чем это необходимо. Используйте **LayoutUpdated** только в том случае, если вам необходимо получать уведомление о перемещении элемента без изменения размера (что происходит нечасто).
 
 ## <a name="choosing-between-panels"></a>Выбор панелей
 
