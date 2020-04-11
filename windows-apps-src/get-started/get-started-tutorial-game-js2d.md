@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 92a1567fe72d46e53bf218c033fc59e8c98a2981
-ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
+ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
+ms.sourcegitcommit: 74627903a18b14c1af68269b0a8c85840caa1898
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76929274"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80759448"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Создание игры UWP на языке JavaScript
 
@@ -30,7 +30,7 @@ ms.locfileid: "76929274"
 
 Этот проект создается на языке JavaScript с помощью Visual Studio. Если внести некоторые небольшие изменения, его также можно разместить на веб-сайте или адаптировать для других платформ. 
 
-**Примечание**. Этот пример не претендует на то, чтобы считаться завершенной (или хорошей) игрой. Его цель — продемонстрировать, как с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
+**Примечание**. Этот пример не претендует на то, чтобы считаться завершенной (или хорошей) игрой. Его цель — продемонстрировать, как с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store. 
 
 
 ## <a name="requirements"></a>Требования
@@ -42,6 +42,7 @@ ms.locfileid: "76929274"
 
 В этом проекте используется платформа CreateJS JavaScript. CreateJS — это бесплатный набор инструментов, выпущенный по лицензии MIT, который упрощает создание игр на основе спрайтов. Библиотеки CreateJS уже присутствуют в проекте (ищите *js/easeljs-0.8.2.min.js* и *js/preloadjs-0.6.2.min.js* в представлении обозревателя решений). Дополнительные сведения о CreateJS можно получить на [домашней странице CreateJS](https://www.createjs.com).
 
+**Примечание**. Разработка приложений UWP на JavaScript не поддерживается в Visual Studio 2019. Для разработки приложения UWP на JavaScript необходимо использовать Visual Studio 2017.
 
 ## <a name="getting-started"></a>Начало работы
 
