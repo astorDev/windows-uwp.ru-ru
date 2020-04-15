@@ -4,12 +4,12 @@ description: Применение классов XamlUICommand и StandardUIComm
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081745"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123607"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях универсальной платформы Windows (UWP) с помощью классов StandardUICommand, XamlUICommand и ICommand
 
@@ -37,7 +37,7 @@ ms.locfileid: "80081745"
 
 На следующем изображении показаны два интерфейса команд ([CommandBar](app-bars.md) и плавающий контекстный интерфейс [CommandBarFlyout](command-bar-flyout.md)), которые совместно используют некоторые команды.
 
-![Панель команд в Фотографиях (Майкрософт)](images/control-examples/command-bar-photos.png)<br>*Панель команд в Фотографиях (Майкрософт)*
+![Развернутое меню панели команд](images/control-examples/command-bar-photos.png)<br>*Панель команд*
 
 ![Контекстное меню в коллекции Фотографий (Майкрософт)](images/ContextMenu_example.png)<br>*Контекстное меню в коллекции Фотографий (Майкрософт)*
 

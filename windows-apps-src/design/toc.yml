@@ -362,6 +362,8 @@
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: Приложения C++/WRL
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Планирование всплывающих уведомлений
+              href: shell/tiles-and-notifications/scheduled-toast.md
             - name: Настраиваемый звук
               href: shell/tiles-and-notifications/custom-audio-on-toasts.md
             - name: Индикатор выполнения

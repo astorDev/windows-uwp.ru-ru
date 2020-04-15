@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, templated, control
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
+ms.sourcegitcommit: cfbcf0381ec11f6daef3fa82b36ecbff3f3b8450
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209099"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80760521"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Создание пользовательских (на основе шаблона) элементов управления XAML с помощью C++/WinRT
 
@@ -21,7 +21,9 @@ ms.locfileid: "79209099"
 Одним из наиболее мощных компонентов универсальной платформы Windows (UWP) является гибкость, которую обеспечивает стек пользовательского интерфейса (UI), чтобы создать пользовательские элементы управления в соответствии с типом [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control) XAML. Платформа пользовательского интерфейса XAML предоставляет функции, такие как [пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties), [присоединенные свойства](/windows/uwp/xaml-platform/custom-attached-properties) и [шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates), которые упрощают создание многофункциональных и настраиваемых элементов управления. В этом разделе рассматриваются этапы создания пользовательского (шаблонного) элемента управления с помощью C++/WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Создайте пустое приложение (BgLabelControlApp)
-Начните с создания проекта в Microsoft Visual Studio. Создайте проект **Пустое приложение (C++/WinRT)** и назовите его *BgLabelControlApp*. В следующем разделе этой статьи, вы будете перенаправлены, чтобы создать проект (не создавайте до тех пор).
+Начните с создания проекта в Microsoft Visual Studio. Создайте проект **пустого приложения (C++/WinRT)** , задайте для него имя *BgLabelControlApp* и (чтобы структура папок соответствовала структуре, приведенной в руководстве) убедитесь, что вы сняли флажок **Поместить решение и проект в одном каталоге**.
+
+В следующем разделе этой статьи, вы будете перенаправлены, чтобы создать проект (но не создавайте до тех пор).
 
 > [!NOTE]
 > Сведения об установке Visual Studio для разработки с использованием C++/WinRT, включая установку и использование расширения C++/WinRT для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки), приведены в разделе [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -52,62 +54,79 @@ namespace BgLabelControlApp
 
 Скопируйте файлы заглушек `BgLabelControl.h` и `BgLabelControl.cpp` из `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` в папку проекта `\BgLabelControlApp\BgLabelControlApp\`. В **Обозревателе решений**убедитесь, что функция **Показать все файлы** включена. Щелкните правой кнопкой мыши скопированные файлы заглушек и выберите **Включить в проект**.
 
+В верхней части `BgLabelControl.h` и `BgLabelControl.cpp` вы увидите оператор `static_assert`, который нужно удалить до сборки проекта.
+
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>Реализуйте пользовательский класс управления **BgLabelControl**
 Теперь давайте откроем `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` и `BgLabelControl.cpp` и реализуем класс среды выполнения. В `BgLabelControl.h`, измените конструктор, чтобы задать стандартный ключ стилей, реализуйте **метку** и **LabelProperty**, добавьте обработчик статического события с именем **OnLabelChanged**, чтобы выполнить изменения в значении свойства зависимостей, и добавить закрытый элемент для хранения резервного поля для **LabelProperty**.
 
-После их добавления ваш файл `BgLabelControl.h` будет выглядеть следующим образом.
+После их добавления ваш файл `BgLabelControl.h` будет выглядеть следующим образом. Вы можете скопировать и вставить этот листинг кода вместо содержимого `BgLabelControl.h`.
 
 ```cppwinrt
 // BgLabelControl.h
-...
-struct BgLabelControl : BgLabelControlT<BgLabelControl>
+#pragma once
+#include "BgLabelControl.g.h"
+
+namespace winrt::BgLabelControlApp::implementation
 {
-    BgLabelControl() { DefaultStyleKey(winrt::box_value(L"BgLabelControlApp.BgLabelControl")); }
-
-    winrt::hstring Label()
+    struct BgLabelControl : BgLabelControlT<BgLabelControl>
     {
-        return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
-    }
+        BgLabelControl() { DefaultStyleKey(winrt::box_value(L"BgLabelControlApp.BgLabelControl")); }
 
-    void Label(winrt::hstring const& value)
+        winrt::hstring Label()
+        {
+            return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
+        }
+
+        void Label(winrt::hstring const& value)
+        {
+            SetValue(m_labelProperty, winrt::box_value(value));
+        }
+
+        static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
+
+        static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
+
+    private:
+        static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+    };
+}
+namespace winrt::BgLabelControlApp::factory_implementation
+{
+    struct BgLabelControl : BgLabelControlT<BgLabelControl, implementation::BgLabelControl>
     {
-        SetValue(m_labelProperty, winrt::box_value(value));
-    }
-
-    static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
-
-    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
-
-private:
-    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
-};
-...
+    };
+}
 ```
 
-В `BgLabelControl.cpp`, определите такие статические элементы.
+В `BgLabelControl.cpp`, определите такие статические элементы. Вы можете скопировать и вставить этот листинг кода вместо содержимого `BgLabelControl.cpp`.
 
 ```cppwinrt
 // BgLabelControl.cpp
-...
-Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
-        L"Label",
-        winrt::xaml_typename<winrt::hstring>(),
-        winrt::xaml_typename<BgLabelControlApp::BgLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
-);
+#include "pch.h"
+#include "BgLabelControl.h"
+#include "BgLabelControl.g.cpp"
 
-void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+namespace winrt::BgLabelControlApp::implementation
 {
-    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
-    {
-        // Call members of the projected type via theControl.
+    Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
+        Windows::UI::Xaml::DependencyProperty::Register(
+            L"Label",
+            winrt::xaml_typename<winrt::hstring>(),
+            winrt::xaml_typename<BgLabelControlApp::BgLabelControl>(),
+            Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
+    );
 
-        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
-        // Call members of the implementation type via ptr.
+    void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+    {
+        if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+        {
+            // Call members of the projected type via theControl.
+
+            BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+            // Call members of the implementation type via ptr.
+        }
     }
 }
-...
 ```
 
 В этом пошаговом руководстве мы не будем использовать **OnLabelChanged**. Но здесь все происходит таким образом, что вы можете увидеть, как зарегистрировать свойство зависимости с помощью обратного вызова с измененным свойством. Реализация **OnLabelChanged** также демонстрирует, как получить производный тип проекции от базового (в данном случае базовый тип проекции **DependencyObject**). В ней также показано, как потом получить указатель на тип, реализующий тип проекции. Вторая операция естественно может быть доступной только в проекте, который реализует тип проекции (то есть проект, реализующий класс среды выполнения).
@@ -119,7 +138,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 В своем конструкторе **BgLabelControl** задает собственный стандартный ключ стиля. Но что *является* стилем по умолчанию? Пользовательский (шаблонный) элемент управления должен иметь стиль по умолчанию&mdash;содержащий стандартный шаблон элемента управления&mdash;, который можно использовать для визуализации в случае, если потребитель элемента управления не устанавливает стиль и/или шаблон. В этом разделе мы добавим файл разметки в проект, содержащий наш стиль по умолчанию.
 
-В узле проекта создайте папку (не фильтр, а папку) и назовите ее Themes. В разделе `Themes` добавьте новый элемент типа **Visual C++**  > **XAML** > **Представление XAML** и назовите его Generic.xaml. Имена папок и файлов должны быть такими, чтобы платформа XAML могла найти стиль по умолчанию для настраиваемого элемента управления. Удалите содержимое по умолчанию `Generic.xaml` и вставьте в разметке ниже.
+Убедитесь, что функция **Показать все файлы** все еще включена (в **обозревателе решений**). В узле проекта создайте папку (не фильтр, а папку) и назовите ее Themes. В разделе `Themes` добавьте новый элемент типа **Visual C++**  > **XAML** > **Представление XAML** и назовите его Generic.xaml. Имена папок и файлов должны быть такими, чтобы платформа XAML могла найти стиль по умолчанию для настраиваемого элемента управления. Удалите содержимое по умолчанию `Generic.xaml` и вставьте в разметке ниже.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->

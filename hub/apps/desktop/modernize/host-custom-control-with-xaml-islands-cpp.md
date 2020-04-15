@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
+ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482639"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986972"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Размещение настраиваемого элемента управления UWP в приложении Win32 на C++
 
@@ -377,9 +377,11 @@ ms.locfileid: "80482639"
 4. В **обозревателе решений** щелкните правой кнопкой мыши **MyDesktopWin32App (Unloaded)** (MyDesktopWin32App (Выгружен)) и выберите команду **Перезагрузить проект**.
 
 5. Щелкните правой кнопкой мыши **MyDesktopWin32App**, выберите пункт **Свойства** и щелкните узел **C/C++** на левой панели. Убедитесь, что макрос **Дополнительные каталоги включаемых файлов** определен на основе измененного на предыдущем шаге файла проекта.
+
     ![Параметры проекта C/C++](images/xaml-islands/xaml-island-cpp-7.png)
 
 6. В диалоговом окне **Страницы свойств** разверните **Инструмент манифеста** -> **Вход и выход**. Задайте для свойства **Поддержка DPI** значение **Поддержка высокого DPI по мониторам**. Если это свойство не задано, может возникнуть ошибка конфигурации манифеста в некоторых сценариях с высоким количеством точек на дюйм.
+
     ![Параметры проекта C/C++](images/xaml-islands/xaml-island-cpp-8.png)
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Размещение настраиваемого элемента управления XAML UWP в проекте классического приложения

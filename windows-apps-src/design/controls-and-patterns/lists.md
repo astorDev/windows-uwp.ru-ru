@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081736"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893484"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
@@ -38,6 +38,8 @@ ms.locfileid: "80081736"
 Каждый из этих элементов управления (за исключением ItemsRepeater) предоставляет встроенные стили и возможности взаимодействия. Однако для расширенной настройки внешнего вида представления коллекции и элементов в нем используется шаблон [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Подробные сведения о шаблонах данных и настройке внешнего вида представления коллекции можно найти на странице [Контейнеры и шаблоны элементов](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Каждый из этих элементов управления (за исключением ItemsRepeater) также имеет встроенный режим, позволяющей выбирать один или несколько элементов. Дополнительные сведения см. в разделе [Общие сведения о режиме выделения](selection-modes.md).
+
+Один из сценариев, не описанных в этой статье, — отображение коллекций в таблице или в нескольких столбцах. Если вам нужно отобразить коллекцию в таком формате, рекомендуем воспользоваться [элементом управления DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) из [набора средств сообщества Windows](https://docs.microsoft.com/windows/communitytoolkit/). 
 
 > **Windows 10 Fall Creators Update — изменения в поведении**. По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
 > Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения доступны в разделе справочных материалов по API, посвященном [классу ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
