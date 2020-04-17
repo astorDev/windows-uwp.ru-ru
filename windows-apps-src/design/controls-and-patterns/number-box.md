@@ -7,18 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eada4c65933151eb6d40b7e3cfdbf31369d6d35
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: d0e4a290da0d67560715f80bf20fc6ae4d44a8f6
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614121"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266962"
 ---
 # <a name="number-box"></a>Поле ввода номера телефона
 
 Представляет элемент управления, который можно использовать для отображения и редактирования чисел. Он поддерживает верификацию, пошаговое добавление и последовательные вычисления основных уравнений, таких как умножение, деление, сложение и вычитание.
-
-![Пример типичного контекстного меню](images/contextmenu_rs2_icons.png)
 
 **Получение библиотеки пользовательского интерфейса Windows**
 

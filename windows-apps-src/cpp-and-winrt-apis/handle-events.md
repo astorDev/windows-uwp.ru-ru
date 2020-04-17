@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проецируемый, проекция, обработка, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
-ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.openlocfilehash: fa97c99f14eee1cb76148c717b1e126a3f406fd1
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295717"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266922"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 
@@ -218,7 +218,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Типы делегатов для асинхронных действий и операций
 
-В примерах выше используется тип делегата **RoutedEventHandler**, но, безусловно, существует множество других типов делегатов. Например, асинхронные действия и операции (с отслеживанием хода выполнения и без) имеют события завершения и (или) выполнения, ожидающие делегаты соответствующего типа. Например, для события выполнения асинхронной операции с отслеживанием хода выполнения (которая представляет собой все, что реализует [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)) требуется делегат типа [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Вот пример кода для создания делегата такого типа с помощью лямбда-функции. В примере также показано, как создать делегат [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
+В примерах выше используется тип делегата **RoutedEventHandler**, но, безусловно, существует множество других типов делегатов. Например, асинхронные действия и операции (с отслеживанием хода выполнения и без) имеют события завершения и (или) выполнения, ожидающие делегаты соответствующего типа. Например, для события выполнения асинхронной операции с отслеживанием хода выполнения (которая представляет собой все, что реализует [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)) требуется делегат типа [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Вот пример кода для создания делегата такого типа с помощью лямбда-функции. В примере также показано, как создать делегат [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>

@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 6a14a011971d8cea7b05758dc1a8a91ccab37edd
-ms.sourcegitcommit: b0930dfeb45e696fe4fa14bdb547de13ba5ade89
+ms.openlocfilehash: b9529632fe582da438d6d17e31ffbdd963714a7c
+ms.sourcegitcommit: beebd7e361212a696070deaa22b0729c0b1515f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77146374"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81608649"
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
@@ -279,7 +279,7 @@ ms.locfileid: "77146374"
 <Package
   ...
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap mp uap5 rescap">
+  IgnorableNamespaces="uap mp rescap">
 ...
 <Capabilities>
     <rescap:Capability Name="broadFileSystemAccess" />

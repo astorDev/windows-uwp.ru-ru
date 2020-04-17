@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 949f8c407e0a49c87cbb45c01117a7e2e1525010
-ms.sourcegitcommit: 5f22e596443ff4645ebf68626d8a4d275d8a865f
+ms.openlocfilehash: 048d6fe455f7c3e77922ef8b937a9cb1d6cbb21c
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79083175"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266902"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT
 
@@ -24,13 +24,13 @@ ms.locfileid: "79083175"
 Любой API-интерфейс среды выполнения Windows, для выполнения которого может потребоваться более 50 миллисекунд, реализуется как асинхронная функция (с именем, оканчивающимся на "Async"). Реализация асинхронной функции инициирует работу в другом потоке и немедленно возвращает объект, представляющий асинхронную операцию. После выполнения асинхронной операции возвращаемый объект, содержит любое значение, которое является результатом работы. Пространство имен среды выполнения Windows **Windows::Foundation** содержит четыре типа объектов асинхронной операции.
 
 - [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
-- [**IAsyncActionWithProgress&lt;TProgress&gt;** ](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_),
-- [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) и
-- [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
+- [**IAsyncActionWithProgress&lt;TProgress&gt;** ](/uwp/api/windows.foundation.iasyncactionwithprogress-1),
+- [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) и
+- [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
 
 Каждый из этих типов асинхронной операции проецируется в соответствующий тип в пространстве имен C++/WinRT **winrt::Windows::Foundation**. C++/WinRT также содержит внутреннюю структуру адаптера ожидания. Она не используется напрямую, но благодаря этой структуре вы можете добавить оператор `co_await` для совместного ожидания результата любой функции, которая возвращает один из этих типов асинхронной операции. И вы можете создавать свои собственные соподпрограммы, возвращающие эти типы.
 
-Пример асинхронной функции Windows — функция [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), которая возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
+Пример асинхронной функции Windows — функция [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), которая возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
 
 Рассмотрим сперва некоторые &mdash;блокирующие, а затем не блокирующие&mdash; способы использования C++/WinRT для вызова подобного API. Для иллюстрации основных идей в следующих нескольких примерах кода мы будем использовать проект **консольного приложения для Windows (C++/WinRT)** . Методы, более подходящие для приложения пользовательского интерфейса, описаны в статье [Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT](concurrency-2.md).
 
@@ -158,7 +158,7 @@ int main()
 
 В приведенном выше примере **RetrieveBlogFeedAsync** возвращает **IAsyncOperationWithProgress** с данными о ходе выполнения и возвращаемым значением. Мы можем выполнять другую работу пока **RetrieveBlogFeedAsync** выполняет свою и получает канал. После этого мы вызываем **get** для этого объекта асинхронной операции с целью блокировки, дожидаемся его завершения, а затем получаем результаты операции.
 
-Если вы асинхронно возвращаете тип среды выполнения Windows, то вам необходимо возвращать [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation_tresult_) или [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Для этого подходит любой класс среды выполнения собственной или сторонней разработки, а также любой тип, который может передаваться в функцию среды выполнения Windows или из нее (например, `int` или **winrt::hstring**). Компилятор поможет вам, отобразив ошибку "*must be WinRT type*" ("Требуется тип WinRT"), если вы попытаетесь использовать один из этих типов асинхронных операций с типом, который не является типом среды выполнения Windows.
+Если вы асинхронно возвращаете тип среды выполнения Windows, то вам необходимо возвращать [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) или [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2). Для этого подходит любой класс среды выполнения собственной или сторонней разработки, а также любой тип, который может передаваться в функцию среды выполнения Windows или из нее (например, `int` или **winrt::hstring**). Компилятор поможет вам, отобразив ошибку "*must be WinRT type*" ("Требуется тип WinRT"), если вы попытаетесь использовать один из этих типов асинхронных операций с типом, который не является типом среды выполнения Windows.
 
 Если в соподпрограмме нет хотя бы одного оператора `co_await`, чтобы считаться соподпрограммой, в ней должен быть хотя бы один оператор `co_return` или `co_yield`. При этом будут возникать ситуации, в которых ваша соподпрограмма может возвращать значение без добавления какой-либо асинхронности и, соответственно, без блокировки и переключения контекста. Вот пример, в котором это реализовано (при втором и последующих вызовах) за счет кэширования значения.
 
@@ -292,9 +292,9 @@ IASyncAction DoWorkAsync(Param const& value)
 ## <a name="important-apis"></a>Важные API
 * [Класс concurrency::task](/cpp/parallel/concrt/reference/task-class)
 * [Интерфейс IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
-* [Интерфейс IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
-* [Интерфейс IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation_tresult_)
-* [Интерфейс IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
+* [Интерфейс IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [Интерфейс IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation-1)
+* [Интерфейс IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Класс SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
 
