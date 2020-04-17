@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507148"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545084"
 ---
 # <a name="vat-info"></a>Сведения об НДС
 
@@ -70,7 +70,7 @@ ms.locfileid: "77507148"
 <li>Пример: 12345678, 123456789 или 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Чешская Республика</td><td data-th="VAT info">
+<tr><td data-th="Country/region">кзечиа</td><td data-th="VAT info">
 <ul>
 <li>Формат номера: 8, 9 или 10 цифр</li>
 <li>Код страны или региона: CZ</li>

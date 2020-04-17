@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, учетная запись разработчика, отдельное лицо, компания, бизнес
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210910"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545094"
 ---
 # <a name="account-types-locations-and-fees"></a>Типы, доступность и стоимость учетных записей
 
@@ -93,7 +93,7 @@ ms.locfileid: "79210910"
 | Кот-д'Ивуар                     | 19 USD              | 99 USD           |  
 | Хорватия                           | 107 HRK             | 500 HRK          |  
 | Кипр                            | 14 EUR              | 75 EUR           |  
-| Чешская Республика                    | 365 CZK             | 1720 CZK         |  
+| кзечиа                           | 365 CZK             | 1720 CZK         |  
 | Дания                           | 106 DKK             | 530 DKK          |  
 | Джибути                          | 19 USD              | 99 USD           | 
 | Доминика                          | 19 USD              | 99 USD           | 
@@ -151,7 +151,7 @@ ms.locfileid: "79210910"
 | Литва                         | 14 EUR              | 75 EUR           |  
 | Люксембург                        | 14 EUR              | 75 EUR           |  
 | Макао, САР                         | 19 USD              | 99 USD           |  
-| Северная Македония                 | 19 USD              | 99 USD           |  
+| Македония, бывшая Югославская Республика                 | 19 USD              | 99 USD           |  
 | Мадагаскар                        | 19 USD              | 99 USD           |  
 | Малави                            | 19 USD              | 99 USD           |  
 | Малайзия                          | 62 MYR              | 300 MYR          |  

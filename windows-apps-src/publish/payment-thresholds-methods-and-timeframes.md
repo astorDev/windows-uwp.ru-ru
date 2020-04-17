@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
-ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
+ms.openlocfilehash: e9a6ce5dac2e6a8480b3c6e95472b437ad6f947c
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79434221"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545014"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Пороговые значения, методы и сроки оплаты
 
@@ -79,7 +79,7 @@ ms.locfileid: "79434221"
 | Кот Д'ивуар                    | Да               | Да                                      | Да    | Нет              |
 | Хорватия                          | Да               | Да                                      | Да    | Нет              |
 | Кипр                           | Да               | Да                                      | Да    | Да             |
-| Чешская Республика                   | Да               | Да                                      | Да    | Да             |
+| кзечиа                          | Да               | Да                                      | Да    | Да             |
 | Дания                          | Да               | Да                                      | Да    | Да             |
 | Доминика                         | Да               | Да                                      | Нет     | Да             |
 | Доминиканская республика               | Да               | Да                                      | Да    | Да             |
@@ -100,7 +100,7 @@ ms.locfileid: "79434221"
 | Гвинея                           | Да               | Да                                      | Да    | Нет              |
 | Гаити                            | Да               | Да                                      | Да    | Нет              |
 | Гондурас                         | Да               | Да                                      | Да    | Да             |
-| Гонконг (САР)                        | Да               | Да                                      | Да    | Да             |
+| Гонконг, САР                        | Да               | Да                                      | Да    | Да             |
 | Венгрия                          | Да               | Да                                      | Да    | Да             |
 | Исландия                          | Да               | Да                                      | Да    | Нет              |
 | Индия                            | Да               | Да                                      | Да    | Да             |

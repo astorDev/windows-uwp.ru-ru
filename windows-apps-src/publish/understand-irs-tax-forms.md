@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, налогообложение, irs, налоговое управление сша, налог, подоходный налог, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258968"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545074"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Общие сведения о налоговых формах IRS, создаваемых Майкрософт
 
@@ -34,7 +34,7 @@ ms.locfileid: "74258968"
 **Граждан США:**
 <table>
 <tr><th>Бизнес-Группа</th><th>Юридическое лицо</th><th>Адрес</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Корпорация Майкрософт</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
 <tr><td>Реклама</td><td>Microsoft Online Inc.</td><td>6100 Нил дорожная дорога<br>Рено, NV 89511 США</td></tr>
 <table> 
 
@@ -44,7 +44,7 @@ ms.locfileid: "74258968"
 <tr><td>Windows, Office, Azure</td><td>Ограниченные операции Microsoft Ирландии (оплата осуществляется корпорацией Майкрософт через Microsoft Ирландии, которая выступает в качестве квалифицированного посредника для корпорации Майкрософт)</td><td>Одно приложение Microsoft<br>Округ Южная&nbsp;район&nbsp;&nbsp;приостановки для бизнеса<br>Леопардстовн, Дублин 18 Ирландии</td></tr>
 <tr><td>Размещения</td><td>Ограниченные операции Microsoft Ирландии (оплата осуществляется корпорацией Майкрософт через Microsoft Ирландии, которая выступает в качестве агента выплатности для Microsoft Online Inc.)</td><td>Одно приложение Microsoft<br>Округ Южная&nbsp;район&nbsp;&nbsp;приостановки для бизнеса<br>Леопардстовн, Дублин 18 Ирландии</td></tr>
 <tr><td>Реклама</td><td>Microsoft Online Inc.</td><td>6100 Нил дорожная дорога<br>Рено, NV 89511 США</td></tr>
-<tr><td colspan="3">* В рамках следующих стран, которые применяют доходы в отношении рекламы, будут оплачиваться только операции Microsoft Ирландии: Австрия, Бельгия, Болгария, Хорватия, Кипр, Чешская Республика, Дания, Эстония, Финляндия, Франция, Германия, Греция, Венгрия, Ирландия, Остров Мэн, Италия, Латвия, Лихтенштейн, Литва, Люксембург, Мальта, Монако, Нидерланды, Норвегия, Польша, Португалия, Румыния, Словакия, Словения, Южная Африка, Испания, Швеция, Швейцария, Великобритания</td></tr>
+<tr><td colspan="3">* За рекламу в следующих странах доход от рекламы будет оплачиваться с ограниченными операциями Microsoft Ирландии: Австрия, Бельгия, Болгария, Хорватия, Кипр, Кзечиа, Дания, Эстония, Финляндия, Франция, Германия, Греция, Венгрия, Ирландия, остров Мэн, Италия, Латвия, Лихтенштейн, Литва, Люксембург, Португалия, ко, Нидерланды, Норвегия, Индия, Юго-Африканская, Британская, Республика, Словения, Южная Африка, Испания, Швеция, Швейцария, Великобритания</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>Для разработчиков, которые находятся в США
@@ -68,7 +68,7 @@ ms.locfileid: "74258968"
   </tr>
   <tr>
     <td valign="top">Ничего из вышеперечисленного не подходит.</td>
-    <td valign="top">None</td>
+    <td valign="top">Нет</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -84,7 +84,7 @@ ms.locfileid: "74258968"
   </tr>
   <tr> 
      <td valign="top">Я заработал(а) <b>менее 600 долларов</b> на рекламе в приложениях в соответствующем налоговом году</td>
-     <td valign="top">None</td>
+     <td valign="top">Нет</td>
   </tr>
 </table>
 
