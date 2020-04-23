@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
-ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
+ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
+ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80329505"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81441869"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Элементы управления UWP XAML в классических приложениях (XAML Island)
 
@@ -148,6 +148,8 @@ API-интерфейсы, представленные в нижней част�
 :no_entry_sign: Ввод текста в представлении рукописного ввода. Дополнительные сведения об этой возможности см. в [этой статье](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
 
 :no_entry_sign: Текстовые элементы управления, которые используют ссылки на содержимое `@Places` и `@People`. Дополнительные сведения об этой возможности см. в [этой статье](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
+
+:no_entry_sign: XAML Islands не поддерживают размещение класса [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), который содержит элемент управления, который принимает ввод текста, например [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) или [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). В этом случае элемент управления для ввода не будет правильно реагировать на нажатие клавиш. Для реализации подобной функциональности с помощью XAML Island мы рекомендуем разместить класс [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup), содержащий элемент управления для ввода.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Контекст узла с окном для объектов XAML Island
 
