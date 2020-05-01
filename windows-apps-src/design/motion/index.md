@@ -6,17 +6,17 @@ label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867406"
 ---
 # <a name="motion-for-uwp-apps"></a>Движение в приложениях UWP
@@ -74,21 +74,21 @@ ms.locfileid: "68867406"
 
 :::row:::
     :::column:::
-### <a name="timing-and-easingtiming-and-easingmd"></a>[Согласование по времени и реалистичная анимация](timing-and-easing.md)
+### <a name="timing-and-easing"></a>[Согласование по времени и реалистичная анимация](timing-and-easing.md)
 Согласование по времени и реалистичная анимация — это важные функции, позволяющие сделать движение естественным при попадании объектов в пользовательский интерфейс, выходе из него и перемещении в его пределах.
     :::column-end:::
     :::column:::
-### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[Направление и сила притяжения](directionality-and-gravity.md)
+### <a name="directionality-and-gravity"></a>[Направление и сила притяжения](directionality-and-gravity.md)
 Направленные сигналы предоставляют четкую ментальную модель пути, который пользователь проделывает в интерфейсе. Направление движения определяется разными силами, например силой притяжения, что усиливает естественное восприятие движения.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-### <a name="page-transitionspage-transitionsmd"></a>[Смена страниц](page-transitions.md)
+### <a name="page-transitions"></a>[Смена страниц](page-transitions.md)
 Смена страниц — это перемещение пользователей между страницами в приложении с демонстрацией связи между страницами. Это помогает пользователям ориентироваться в навигационной иерархии.
     :::column-end:::
     :::column:::
-### <a name="connected-animationconnected-animationmd"></a>[Подключенная анимация](connected-animation.md)
+### <a name="connected-animation"></a>[Подключенная анимация](connected-animation.md)
 Подключенные анимации позволяют сделать навигацию динамичной и наглядной, анимируя переход элемента от одного представления к другому.
     :::column-end:::
 :::row-end:::

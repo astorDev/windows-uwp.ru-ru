@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63798109"
 ---
 # <a name="data-binding-and-mvvm"></a>Привязка данных и MVVM
@@ -49,7 +49,7 @@ MVVM — это конструктивный шаблон архитектуры
 Дополнительные рекомендации по использованию готовых шаблонов MVVM приведены в [примере базы данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database) на сайте GitHub. Многие из других [примеров приложений UWP](https://github.com/Microsoft?q=windows-appsample
 ) также используют базовую архитектуру MVVM, а [пример приложения для управления трафиком](https://github.com/Microsoft/Windows-appsample-trafficapp) включает в себя версии на основе кода программной части и MVVM с примечаниями, описывающими [преобразование в MVVM](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md). 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 ### <a name="topics"></a>Разделы
 

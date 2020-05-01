@@ -1,4 +1,3 @@
-items:
 - name: Начало работы
   href: ../gaming/getting-started.md
 - name: Руководство по разработке игр для Windows 10
@@ -6,646 +5,642 @@ items:
 - name: Программирование игр
   href: ../gaming/index.md
   items:
-  - name: Планирование
-    href: ../gaming/planning.md
-    items:
-    - name: Игровые технологии
-      href: ../gaming/game-development-platform-guide.md
-    - name: Специальные возможности для игр
-      href: ../gaming/accessibility-for-games.md
-    - name: Облако для игр
-      href: ../gaming/cloud-for-games.md
-    - name: Монетизация для игр
-      href: ../gaming/monetization-for-games.md
-    - name: Утверждение концепций
-      href: ../gaming/concept-approval.md
-    - name: Упаковка игры
-      href: ../gaming/package-your-windows-store-directx-game.md
-  - name: Программирование для UWP
-    href: ../gaming/uwp-programming.md
-    items:
-    - name: Звук для игр
-      href: ../gaming/working-with-audio-in-your-directx-game.md
-    - name: Трансляция и запись игрового процесса
-      href: ../gaming/game-broadcast-and-capture.md
+    - name: Планирование
+      href: ../gaming/planning.md
       items:
-      - name: Управление трансляциями игр
-        href: ../gaming/manage-game-broadcasting.md
-      - name: Запись звука, видео, снимков экрана и метаданных из игры
-        href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
-    - name: Ввод данных в играх
-      href: ../gaming/input-for-games.md
+        - name: Игровые технологии
+          href: ../gaming/game-development-platform-guide.md
+        - name: Специальные возможности для игр
+          href: ../gaming/accessibility-for-games.md
+        - name: Облако для игр
+          href: ../gaming/cloud-for-games.md
+        - name: Монетизация для игр
+          href: ../gaming/monetization-for-games.md
+        - name: Утверждение концепций
+          href: ../gaming/concept-approval.md
+        - name: Упаковка игры
+          href: ../gaming/package-your-windows-store-directx-game.md
+    - name: Программирование для UWP
+      href: ../gaming/uwp-programming.md
       items:
-      - name: Геймпад и вибрации
-        href: ../gaming/gamepad-and-vibration.md
-      - name: Аркадный джойстик
-        href: ../gaming/arcade-stick.md
-      - name: Гоночный руль и принудительная обратная связь
-        href: ../gaming/racing-wheel-and-force-feedback.md
-      - name: Рукоятка управления полетом
-        href: ../gaming/flight-stick.md
-      - name: Исходное игровое устройство управления
-        href: ../gaming/raw-game-controller.md
-      - name: Гарнитура
-        href: ../gaming/headset.md
-      - name: Контроллер навигации по пользовательскому интерфейсу
-        href: ../gaming/ui-navigation-controller.md
-      - name: Способы ввода данных в играх
-        href: ../gaming/input-practices-for-games.md
-      - name: Данные реестра для игровых устройств управления
-        href: ../gaming/registry-data-for-game-controllers.md
-    - name: Отсутствуют интерфейсы API .NET в Unity и UWP
-      href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
-    - name: Поддержка сети в играх
-      href: ../gaming/work-with-networking-in-your-directx-game.md
-  - name: Видео о разработке игр
-    href: ../gaming/game-development-videos.md
+        - name: Звук для игр
+          href: ../gaming/working-with-audio-in-your-directx-game.md
+        - name: Трансляция и запись игрового процесса
+          href: ../gaming/game-broadcast-and-capture.md
+          items:
+            - name: Управление трансляциями игр
+              href: ../gaming/manage-game-broadcasting.md
+            - name: 'Запись звука, видео, снимков экрана и метаданных из игры'
+              href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
+        - name: Ввод данных в играх
+          href: ../gaming/input-for-games.md
+          items:
+            - name: Геймпад и вибрации
+              href: ../gaming/gamepad-and-vibration.md
+            - name: Аркадный джойстик
+              href: ../gaming/arcade-stick.md
+            - name: Гоночный руль и принудительная обратная связь
+              href: ../gaming/racing-wheel-and-force-feedback.md
+            - name: Рукоятка управления полетом
+              href: ../gaming/flight-stick.md
+            - name: Исходное игровое устройство управления
+              href: ../gaming/raw-game-controller.md
+            - name: Headset
+              href: ../gaming/headset.md
+            - name: Контроллер навигации по пользовательскому интерфейсу
+              href: ../gaming/ui-navigation-controller.md
+            - name: Способы ввода данных в играх
+              href: ../gaming/input-practices-for-games.md
+            - name: Данные реестра для игровых устройств управления
+              href: ../gaming/registry-data-for-game-controllers.md
+        - name: Отсутствуют интерфейсы API .NET в Unity и UWP
+          href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
+        - name: Поддержка сети в играх
+          href: ../gaming/work-with-networking-in-your-directx-game.md
+    - name: Видео о разработке игр
+      href: ../gaming/game-development-videos.md
 - name: Программирование для DirectX
   href: ../gaming/directx-programming.md
   items:
-  - name: Начало работы
-    href: ../gaming/directx-getting-started.md
-    items:
-    - name: Объект приложения
-      href: ../gaming/about-the-uwp-user-interface-and-directx.md
-    - name: Шаблоны проектов и инструменты
-      href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
+    - name: Приступая к работе
+      href: ../gaming/directx-getting-started.md
       items:
-      - name: Шаблоны проектов игр
-        href: ../gaming/user-interface.md
-      - name: Инструменты Visual Studio
-        href: ../gaming/set-up-visual-studio-for-game-development.md
-      - name: Средства диагностики графики
-        href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
-    - name: Запуск и возобновление работы приложений
-      href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
-      items:
-      - name: Активация приложения
-        href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
-      - name: Приостановка работы приложения
-        href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
-      - name: Возобновление работы приложения
-        href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
-  - name: Примеры
-    href: ../gaming/directx-samples.md
-    items:
-    - name: Простая игра UWP
-      href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
-      items:
-      - name: Настройка проекта
-        href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-      - name: Платформа UWP
-        href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
-      - name: Управление потоком игры
-        href: ../gaming/tutorial-game-flow-management.md
-      - name: Основной игровой объект
-        href: ../gaming/tutorial--defining-the-main-game-loop.md
-      - name: Платформа отрисовки I
-        href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
-      - name: Платформа отрисовки II
-        href: ../gaming/tutorial-game-rendering.md
-      - name: Добавление пользовательского интерфейса
-        href: ../gaming/tutorial--adding-a-user-interface.md
-      - name: Добавление элементов управления
-        href: ../gaming/tutorial--adding-controls.md
-      - name: Добавление звука
-        href: ../gaming/tutorial--adding-sound.md
-      - name: Расширение игры
-        href: ../gaming/tutorial-resources.md
-    - name: Игра Marble Maze
-      href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
-      items:
-      - name: Основы
-        href: ../gaming/marble-maze-sample-fundamentals.md
-      - name: Структура приложения
-        href: ../gaming/marble-maze-application-structure.md
-      - name: Добавление визуального содержимого
-        href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
-      - name: Добавление средств ввода и взаимодействия
-        href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
-      - name: Добавление звука
-        href: ../gaming/adding-audio-to-the-marble-maze-sample.md
-  - name: Концепции графики Direct3D
-    href: ../graphics-concepts/index.md
-    items:
-    - name: Системы координат и геометрия
-      href: ../graphics-concepts/coordinate-systems-and-geometry.md
-      items:
-      - name: Системы координат
-        href: ../graphics-concepts/coordinate-systems.md
-      - name: Примитивы
-        href: ../graphics-concepts/primitives.md
-        items:
-        - name: Списки точек
-          href: ../graphics-concepts/point-lists.md
-        - name: Списки линий
-          href: ../graphics-concepts/line-lists.md
-        - name: Ломаные
-          href: ../graphics-concepts/line-strips.md
-        - name: Списки треугольников
-          href: ../graphics-concepts/triangle-lists.md
-        - name: Полосы треугольников
-          href: ../graphics-concepts/triangle-strips.md
-      - name: Нормальные векторы поверхностей и вершин
-        href: ../graphics-concepts/face-and-vertex-normal-vectors.md
-      - name: Прямоугольники
-        href: ../graphics-concepts/rectangles.md
-      - name: Интерполяция треугольников
-        href: ../graphics-concepts/triangle-interpolation.md
-      - name: Векторы, вершины и кватернионы
-        href: ../graphics-concepts/vectors--vertices--and-quaternions.md
-      - name: Преобразования
-        href: ../graphics-concepts/transforms.md
-        items:
-        - name: Обзор преобразований
-          href: ../graphics-concepts/transform-overview.md
-        - name: Мировое преобразование
-          href: ../graphics-concepts/world-transform.md
-        - name: Преобразование представления
-          href: ../graphics-concepts/view-transform.md
-        - name: Преобразование проекции
-          href: ../graphics-concepts/projection-transform.md
-      - name: Окна просмотра и обрезка
-        href: ../graphics-concepts/viewports-and-clipping.md
-    - name: Буферы вершин и индексов
-      href: ../graphics-concepts/vertex-and-index-buffers.md
-      items:
-      - name: Вводные сведения о буферах
-        href: ../graphics-concepts/introduction-to-buffers.md
-      - name: Буферы индексов
-        href: ../graphics-concepts/index-buffers.md
-    - name: Устройства
-      href: ../graphics-concepts/devices.md
-      items:
-      - name: Типы устройств
-        href: ../graphics-concepts/device-types.md
-      - name: Оконный или полноэкранный режим
-        href: ../graphics-concepts/windowed-vs--full-screen-mode.md
-      - name: Потерянные устройства
-        href: ../graphics-concepts/lost-devices.md
-      - name: Цепочки буферов
-        href: ../graphics-concepts/swap-chains.md
-      - name: Общие сведения о правилах растеризации
-        href: ../graphics-concepts/introduction-to-rasterization-rules.md
-    - name: Освещение
-      href: ../graphics-concepts/lights-and-materials.md
-      items:
-      - name: Обзор освещения
-        href: ../graphics-concepts/lighting-overview.md
-      - name: Типы света
-        href: ../graphics-concepts/light-types.md
-      - name: Свойства света
-        href: ../graphics-concepts/light-properties.md
-      - name: Математические аспекты освещения
-        href: ../graphics-concepts/mathematics-of-lighting.md
-        items:
-        - name: Внешнее освещение
-          href: ../graphics-concepts/ambient-lighting.md
-        - name: Рассеянное освещения
-          href: ../graphics-concepts/diffuse-lighting.md
-        - name: Отраженное освещение
-          href: ../graphics-concepts/specular-lighting.md
-        - name: Эмиссионное освещение
-          href: ../graphics-concepts/emissive-lighting.md
-        - name: Преобразования пространства камеры
-          href: ../graphics-concepts/camera-space-transformations.md
-        - name: Коэффициент затухания и вспышки
-          href: ../graphics-concepts/attenuation-and-spotlight-factor.md
-    - name: Буферы глубины и трафаретов
-      href: ../graphics-concepts/depth-and-stencil-buffers.md
-      items:
-      - name: Буферы глубины
-        href: ../graphics-concepts/depth-buffers.md
-      - name: Буферы трафаретов
-        href: ../graphics-concepts/stencil-buffers.md
-    - name: Текстуры
-      href: ../graphics-concepts/textures.md
-      items:
-      - name: Вводные сведения о текстурах
-        href: ../graphics-concepts/introduction-to-textures.md
-      - name: Основные принципы создания текстуры
-        href: ../graphics-concepts/basic-texturing-concepts.md
-      - name: Режимы адресации текстур
-        href: ../graphics-concepts/texture-addressing-modes.md
-      - name: Фильтрация текстур
-        href: ../graphics-concepts/texture-filtering.md
-        items:
-        - name: Выборка с ближайших точек
-          href: ../graphics-concepts/nearest-point-sampling.md
-        - name: Билинейная фильтрация текстур
-          href: ../graphics-concepts/bilinear-texture-filtering.md
-        - name: Анизотропная фильтрация текстур
-          href: ../graphics-concepts/anisotropic-texture-filtering.md
-        - name: Фильтрация текстур с использованием MIP-карт
-          href: ../graphics-concepts/texture-filtering-with-mipmaps.md
-      - name: Ресурсы текстуры
-        href: ../graphics-concepts/texture-resources.md
-      - name: Обтекание текстурой
-        href: ../graphics-concepts/texture-wrapping.md
-      - name: Наложение текстуры
-        href: ../graphics-concepts/texture-blending.md
-        items:
-        - name: Этапы наложения
-          href: ../graphics-concepts/blending-stages.md
-        - name: Многопроходное наложение текстуры
-          href: ../graphics-concepts/multipass-texture-blending.md
-      - name: Сопоставление света с текстурами
-        href: ../graphics-concepts/light-mapping-with-textures.md
-        items:
-        - name: Карты монохромного света
-          href: ../graphics-concepts/monochrome-light-maps.md
-        - name: Карты цветного света
-          href: ../graphics-concepts/color-light-maps.md
-        - name: Карты отраженного света
-          href: ../graphics-concepts/specular-light-maps.md
-        - name: Карты рассеянного света
-          href: ../graphics-concepts/diffuse-light-maps.md
-      - name: Ресурсы сжатых текстур
-        href: ../graphics-concepts/compressed-texture-resources.md
-        items:
-        - name: Непрозрачные и 1-разрядные альфа-текстуры
-          href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
-        - name: Текстуры с альфа-каналами
-          href: ../graphics-concepts/textures-with-alpha-channels.md
-        - name: Сжатие блоков
-          href: ../graphics-concepts/block-compression.md
-        - name: Форматы сжатых текстур
-          href: ../graphics-concepts/compressed-texture-formats.md
-    - name: Графический конвейер
-      href: ../graphics-concepts/graphics-pipeline.md
-      items:
-      - name: Этап сборщика входных данных
-        href: ../graphics-concepts/input-assembler-stage--ia-.md
-        items:
-        - name: Топологии примитивов
-          href: ../graphics-concepts/primitive-topologies.md
-        - name: Использование системных значений
-          href: ../graphics-concepts/using-system-generated-values.md
-      - name: Этап шейдера вершин (VS)
-        href: ../graphics-concepts/vertex-shader-stage--vs-.md
-      - name: Этап шейдера поверхностей (HS)
-        href: ../graphics-concepts/hull-shader-stage--hs-.md
-      - name: Этап тесселятора (TS)
-        href: ../graphics-concepts/tessellator-stage--ts-.md
-      - name: Этап шейдера доменов (DS)
-        href: ../graphics-concepts/domain-shader-stage--ds-.md
-      - name: Этап шейдера геометрии (GS)
-        href: ../graphics-concepts/geometry-shader-stage--gs-.md
-      - name: Этап потокового вывода (SO)
-        href: ../graphics-concepts/stream-output-stage--so-.md
-      - name: Этап средства программной прорисовки (RS)
-        href: ../graphics-concepts/rasterizer-stage--rs-.md
-      - name: Этап построителя текстуры (PS)
-        href: ../graphics-concepts/pixel-shader-stage--ps-.md
-      - name: Этап слияния и вывода (OM)
-        href: ../graphics-concepts/output-merger-stage--om-.md
-        items:
-        - name: Настройка функции трафарета глубины
-          href: ../graphics-concepts/configuring-depth-stencil-functionality.md
-      - name: Объекты состояния
-        href: ../graphics-concepts/state-objects.md
-    - name: Представления
-      href: ../graphics-concepts/views.md
-      items:
-      - name: Представление буфер констант (CBV)
-        href: ../graphics-concepts/constant-buffer-view--cbv-.md
-      - name: Представление буфера вершин (VBV) и представление буфера индексов (IBV)
-        href: ../graphics-concepts/vertex-buffer-view--vbv-.md
-      - name: Представление ресурсов шейдера (SRV) и представления неупорядоченного доступа (UAV)
-        href: ../graphics-concepts/shader-resource-view--srv-.md
-      - name: Образец
-        href: ../graphics-concepts/sampler.md
-      - name: Представление целевого объекта отрисовки (RTV)
-        href: ../graphics-concepts/render-target-view--rtv-.md
-      - name: Представления трафарета глубины (DSV)
-        href: ../graphics-concepts/depth-stencil-view--dsv-.md
-      - name: Представление выходного потока (SOV)
-        href: ../graphics-concepts/stream-output-view--sov-.md
-      - name: Упорядоченное представление средства программной прорисовки (ROV)
-        href: ../graphics-concepts/rasterizer-ordered-view--rov-.md
-    - name: Конвейер вычислений
-      href: ../graphics-concepts/compute-pipeline.md
-      items:
-      - name: Этап шейдера вычислений (CS)
-        href: ../graphics-concepts/compute-shader-stage--cs-.md
-    - name: Ресурсы
-      href: ../graphics-concepts/resources.md
-      items:
-      - name: Типы ресурсов
-        href: ../graphics-concepts/resource-types.md
-      - name: Выбор ресурса
-        href: ../graphics-concepts/choosing-a-resource.md
-      - name: Копирования данных ресурса и доступ к ним
-        href: ../graphics-concepts/copying-and-accessing-resource-data.md
-      - name: Представления текстуры
-        href: ../graphics-concepts/texture-views.md
-    - name: Потоковые ресурсы
-      href: ../graphics-concepts/streaming-resources.md
-      items:
-      - name: Потребность в потоковых ресурсах
-        href: ../graphics-concepts/the-need-for-streaming-resources.md
-      - name: Создание потоковых ресурсов
-        href: ../graphics-concepts/creating-streaming-resources.md
-        items:
-        - name: Сопоставления в пуле плиток
-          href: ../graphics-concepts/mappings-are-into-a-tile-pool.md
+        - name: Объект приложения
+          href: ../gaming/about-the-uwp-user-interface-and-directx.md
+        - name: Шаблоны проектов и инструменты
+          href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
           items:
-          - name: Создание пула плиток
-            href: ../graphics-concepts/tile-pool-creation.md
-          - name: Изменение размера пула плиток
-            href: ../graphics-concepts/tile-pool-resizing.md
-          - name: Отслеживание рисков и ресурсы пула плиток
-            href: ../graphics-concepts/hazard-tracking-versus-tile-pool-resources.md
-        - name: Параметры создания потоковых ресурсов
-          href: ../graphics-concepts/streaming-resource-creation-parameters.md
+            - name: Шаблоны проектов игр
+              href: ../gaming/user-interface.md
+            - name: Инструменты Visual Studio
+              href: ../gaming/set-up-visual-studio-for-game-development.md
+            - name: Средства диагностики графики
+              href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
+        - name: Запуск и возобновление работы приложений
+          href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
           items:
-          - name: Адресное пространство, доступное для потоковых ресурсов
-            href: ../graphics-concepts/address-space-available-for-streaming-resources.md
-        - name: Параметры создания пула плиток
-          href: ../graphics-concepts/tile-pool-creation-parameters.md
-        - name: 'Потоковые ресурсы: совместное использование процессов и устройств'
-          href: ../graphics-concepts/streaming-resource-cross-process-and-device-sharing.md
+            - name: Активация приложения
+              href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
+            - name: Приостановка работы приложения
+              href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
+            - name: Возобновление работы приложения
+              href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
+    - name: примеры
+      href: ../gaming/directx-samples.md
+      items:
+        - name: Простая игра UWP
+          href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
           items:
-          - name: Форматы трафаретов не поддерживаются потоковыми ресурсами
-            href: ../graphics-concepts/stencil-formats-not-supported-with-streaming-resources.md
-        - name: Доступные операции с потоковыми ресурсами
-          href: ../graphics-concepts/operations-available-on-streaming-resources.md
-        - name: Доступные операции с пулами плиток
-          href: ../graphics-concepts/operations-available-on-tile-pools.md
-        - name: Размещение плиток в области потокового ресурса
-          href: ../graphics-concepts/how-a-streaming-resource-s-area-is-tiled.md
+            - name: Настройка проекта
+              href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
+            - name: Платформа UWP
+              href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
+            - name: Управление потоком игры
+              href: ../gaming/tutorial-game-flow-management.md
+            - name: Основной игровой объект
+              href: ../gaming/tutorial--defining-the-main-game-loop.md
+            - name: Платформа отрисовки I
+              href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
+            - name: Платформа отрисовки II
+              href: ../gaming/tutorial-game-rendering.md
+            - name: Добавление пользовательского интерфейса
+              href: ../gaming/tutorial--adding-a-user-interface.md
+            - name: Добавление элементов управления
+              href: ../gaming/tutorial--adding-controls.md
+            - name: Добавление звука
+              href: ../gaming/tutorial--adding-sound.md
+            - name: Расширение игры
+              href: ../gaming/tutorial-resources.md
+        - name: Игра Marble Maze
+          href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
           items:
-          - name: Размещение на плитках вложенных ресурсов Texture2D и Texture2DArray
-            href: ../graphics-concepts/texture2d-and-texture2darray-subresource-tiling.md
-          - name: Размещение на плитках вложенного ресурса Texture3D
-            href: ../graphics-concepts/texture3d-subresource-tiling.md
-          - name: Плитки в буфере
-            href: ../graphics-concepts/buffer-tiling.md
-          - name: Упаковка MIP-карт
-            href: ../graphics-concepts/mipmap-packing.md
-      - name: Конвейерный доступ к потоковым ресурсам
-        href: ../graphics-concepts/pipeline-access-to-streaming-resources.md
-        items:
-        - name: Поведение SRV с несопоставленными плитками
-          href: ../graphics-concepts/srv-behavior-with-non-mapped-tiles.md
-        - name: Поведение UAV с несопоставленными плитками
-          href: ../graphics-concepts/uav-behavior-with-non-mapped-tiles.md
-        - name: Поведение средства программной прорисовки с несопоставленными плитками
-          href: ../graphics-concepts/rasterizer-behavior-with-non-mapped-tiles.md
-        - name: Ограничения доступа к плитке с повторяющимися сопоставлениями
-          href: ../graphics-concepts/tile-access-limitations-with-duplicate-mappings.md
-        - name: Функции создания образцов текстур для потоковых ресурсов
-          href: ../graphics-concepts/streaming-resources-texture-sampling-features.md
-        - name: Экспозиция потоковых ресурсов HLSL
-          href: ../graphics-concepts/hlsl-streaming-resources-exposure.md
-      - name: Уровни функций для потоковых ресурсов
-        href: ../graphics-concepts/streaming-resources-features-tiers.md
-        items:
-        - name: Уровень 1
-          href: ../graphics-concepts/tier-1.md
-        - name: Уровень 2
-          href: ../graphics-concepts/tier-2.md
-        - name: Уровень 3
-          href: ../graphics-concepts/tier-3.md
-    - name: Приложения
-      href: ../graphics-concepts/appendix.md
+            - name: Основы
+              href: ../gaming/marble-maze-sample-fundamentals.md
+            - name: Структура приложения
+              href: ../gaming/marble-maze-application-structure.md
+            - name: Добавление визуального содержимого
+              href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
+            - name: Добавление средств ввода и взаимодействия
+              href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
+            - name: Добавление звука
+              href: ../gaming/adding-audio-to-the-marble-maze-sample.md
+    - name: Концепции графики Direct3D
+      href: ../graphics-concepts/index.md
       items:
-      - name: Правила с плавающей запятой
-        href: ../graphics-concepts/floating-point-rules.md
-      - name: Преобразование типа данных
-        href: ../graphics-concepts/data-type-conversion.md
-      - name: Правила растеризации
-        href: ../graphics-concepts/rasterization-rules.md
-      - name: Сжатие блока текстуры
-        href: ../graphics-concepts/texture-block-compression.md
-        items:
-        - name: Формат BC6H
-          href: ../graphics-concepts/bc6h-format.md
-        - name: Формат BC7
-          href: ../graphics-concepts/bc7-format.md
-  - name: Основы
-    href: ../gaming/directx-fundamentals.md
-    items:
-    - name: Двумерная графика
-      href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
-    - name: Простая трехмерная графика
-      href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
+        - name: Системы координат и геометрия
+          href: ../graphics-concepts/coordinate-systems-and-geometry.md
+          items:
+            - name: Системы координат
+              href: ../graphics-concepts/coordinate-systems.md
+            - name: Примитивы
+              href: ../graphics-concepts/primitives.md
+              items:
+                - name: Списки точек
+                  href: ../graphics-concepts/point-lists.md
+                - name: Списки линий
+                  href: ../graphics-concepts/line-lists.md
+                - name: Ломаные
+                  href: ../graphics-concepts/line-strips.md
+                - name: Списки треугольников
+                  href: ../graphics-concepts/triangle-lists.md
+                - name: Полосы треугольников
+                  href: ../graphics-concepts/triangle-strips.md
+            - name: Нормальные векторы поверхностей и вершин
+              href: ../graphics-concepts/face-and-vertex-normal-vectors.md
+            - name: Прямоугольники
+              href: ../graphics-concepts/rectangles.md
+            - name: Интерполяция треугольников
+              href: ../graphics-concepts/triangle-interpolation.md
+            - name: 'Векторы, вершины и кватернионы'
+              href: ../graphics-concepts/vectors--vertices--and-quaternions.md
+            - name: Преобразования
+              href: ../graphics-concepts/transforms.md
+              items:
+                - name: Обзор преобразований
+                  href: ../graphics-concepts/transform-overview.md
+                - name: Мировое преобразование
+                  href: ../graphics-concepts/world-transform.md
+                - name: Преобразование представления
+                  href: ../graphics-concepts/view-transform.md
+                - name: Преобразование проекции
+                  href: ../graphics-concepts/projection-transform.md
+            - name: Окна просмотра и обрезка
+              href: ../graphics-concepts/viewports-and-clipping.md
+        - name: Буферы вершин и индексов
+          href: ../graphics-concepts/vertex-and-index-buffers.md
+          items:
+            - name: Вводные сведения о буферах
+              href: ../graphics-concepts/introduction-to-buffers.md
+            - name: Буферы индексов
+              href: ../graphics-concepts/index-buffers.md
+        - name: .
+          href: ../graphics-concepts/devices.md
+          items:
+            - name: Типы устройств
+              href: ../graphics-concepts/device-types.md
+            - name: Оконный или полноэкранный режим
+              href: ../graphics-concepts/windowed-vs--full-screen-mode.md
+            - name: Потерянные устройства
+              href: ../graphics-concepts/lost-devices.md
+            - name: Цепочки буферов
+              href: ../graphics-concepts/swap-chains.md
+            - name: Общие сведения о правилах растеризации
+              href: ../graphics-concepts/introduction-to-rasterization-rules.md
+        - name: Освещение
+          href: ../graphics-concepts/lights-and-materials.md
+          items:
+            - name: Обзор освещения
+              href: ../graphics-concepts/lighting-overview.md
+            - name: Типы света
+              href: ../graphics-concepts/light-types.md
+            - name: Свойства света
+              href: ../graphics-concepts/light-properties.md
+            - name: Математические аспекты освещения
+              href: ../graphics-concepts/mathematics-of-lighting.md
+              items:
+                - name: Внешнее освещение
+                  href: ../graphics-concepts/ambient-lighting.md
+                - name: Рассеянное освещения
+                  href: ../graphics-concepts/diffuse-lighting.md
+                - name: Отраженное освещение
+                  href: ../graphics-concepts/specular-lighting.md
+                - name: Эмиссионное освещение
+                  href: ../graphics-concepts/emissive-lighting.md
+                - name: Преобразования пространства камеры
+                  href: ../graphics-concepts/camera-space-transformations.md
+                - name: Коэффициент затухания и вспышки
+                  href: ../graphics-concepts/attenuation-and-spotlight-factor.md
+        - name: Буферы глубины и трафаретов
+          href: ../graphics-concepts/depth-and-stencil-buffers.md
+          items:
+            - name: Буферы глубины
+              href: ../graphics-concepts/depth-buffers.md
+            - name: Буферы трафаретов
+              href: ../graphics-concepts/stencil-buffers.md
+        - name: Текстуры
+          href: ../graphics-concepts/textures.md
+          items:
+            - name: Вводные сведения о текстурах
+              href: ../graphics-concepts/introduction-to-textures.md
+            - name: Основные принципы создания текстуры
+              href: ../graphics-concepts/basic-texturing-concepts.md
+            - name: Режимы адресации текстур
+              href: ../graphics-concepts/texture-addressing-modes.md
+            - name: Фильтрация текстур
+              href: ../graphics-concepts/texture-filtering.md
+              items:
+                - name: Выборка с ближайших точек
+                  href: ../graphics-concepts/nearest-point-sampling.md
+                - name: Билинейная фильтрация текстур
+                  href: ../graphics-concepts/bilinear-texture-filtering.md
+                - name: Анизотропная фильтрация текстур
+                  href: ../graphics-concepts/anisotropic-texture-filtering.md
+                - name: Фильтрация текстур с использованием MIP-карт
+                  href: ../graphics-concepts/texture-filtering-with-mipmaps.md
+            - name: Ресурсы текстуры
+              href: ../graphics-concepts/texture-resources.md
+            - name: Обтекание текстурой
+              href: ../graphics-concepts/texture-wrapping.md
+            - name: Наложение текстуры
+              href: ../graphics-concepts/texture-blending.md
+              items:
+                - name: Этапы наложения
+                  href: ../graphics-concepts/blending-stages.md
+                - name: Многопроходное наложение текстуры
+                  href: ../graphics-concepts/multipass-texture-blending.md
+            - name: Сопоставление света с текстурами
+              href: ../graphics-concepts/light-mapping-with-textures.md
+              items:
+                - name: Карты монохромного света
+                  href: ../graphics-concepts/monochrome-light-maps.md
+                - name: Карты цветного света
+                  href: ../graphics-concepts/color-light-maps.md
+                - name: Карты отраженного света
+                  href: ../graphics-concepts/specular-light-maps.md
+                - name: Карты рассеянного света
+                  href: ../graphics-concepts/diffuse-light-maps.md
+            - name: Ресурсы сжатых текстур
+              href: ../graphics-concepts/compressed-texture-resources.md
+              items:
+                - name: Непрозрачные и 1-разрядные альфа-текстуры
+                  href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
+                - name: Текстуры с альфа-каналами
+                  href: ../graphics-concepts/textures-with-alpha-channels.md
+                - name: Сжатие блоков
+                  href: ../graphics-concepts/block-compression.md
+                - name: Форматы сжатых текстур
+                  href: ../graphics-concepts/compressed-texture-formats.md
+        - name: Графический конвейер
+          href: ../graphics-concepts/graphics-pipeline.md
+          items:
+            - name: Этап сборщика входных данных
+              href: ../graphics-concepts/input-assembler-stage--ia-.md
+              items:
+                - name: Топологии примитивов
+                  href: ../graphics-concepts/primitive-topologies.md
+                - name: Использование системных значений
+                  href: ../graphics-concepts/using-system-generated-values.md
+            - name: Этап шейдера вершин (VS)
+              href: ../graphics-concepts/vertex-shader-stage--vs-.md
+            - name: Этап шейдера поверхностей (HS)
+              href: ../graphics-concepts/hull-shader-stage--hs-.md
+            - name: Этап тесселятора (TS)
+              href: ../graphics-concepts/tessellator-stage--ts-.md
+            - name: Этап шейдера доменов (DS)
+              href: ../graphics-concepts/domain-shader-stage--ds-.md
+            - name: Этап шейдера геометрии (GS)
+              href: ../graphics-concepts/geometry-shader-stage--gs-.md
+            - name: Этап потокового вывода (SO)
+              href: ../graphics-concepts/stream-output-stage--so-.md
+            - name: Этап средства программной прорисовки (RS)
+              href: ../graphics-concepts/rasterizer-stage--rs-.md
+            - name: Этап построителя текстуры (PS)
+              href: ../graphics-concepts/pixel-shader-stage--ps-.md
+            - name: Этап слияния и вывода (OM)
+              href: ../graphics-concepts/output-merger-stage--om-.md
+              items:
+                - name: Настройка функции трафарета глубины
+                  href: ../graphics-concepts/configuring-depth-stencil-functionality.md
+            - name: Объекты состояния
+              href: ../graphics-concepts/state-objects.md
+        - name: Представления
+          href: ../graphics-concepts/views.md
+          items:
+            - name: Представление буфер констант (CBV)
+              href: ../graphics-concepts/constant-buffer-view--cbv-.md
+            - name: Представление буфера вершин (VBV) и представление буфера индексов (IBV)
+              href: ../graphics-concepts/vertex-buffer-view--vbv-.md
+            - name: Представление ресурсов шейдера (SRV) и представления неупорядоченного доступа (UAV)
+              href: ../graphics-concepts/shader-resource-view--srv-.md
+            - name: Образец
+              href: ../graphics-concepts/sampler.md
+            - name: Представление целевого объекта отрисовки (RTV)
+              href: ../graphics-concepts/render-target-view--rtv-.md
+            - name: Представления трафарета глубины (DSV)
+              href: ../graphics-concepts/depth-stencil-view--dsv-.md
+            - name: Представление выходного потока (SOV)
+              href: ../graphics-concepts/stream-output-view--sov-.md
+            - name: Упорядоченное представление средства программной прорисовки (ROV)
+              href: ../graphics-concepts/rasterizer-ordered-view--rov-.md
+        - name: Конвейер вычислений
+          href: ../graphics-concepts/compute-pipeline.md
+          items:
+            - name: Этап шейдера вычислений (CS)
+              href: ../graphics-concepts/compute-shader-stage--cs-.md
+        - name: Ресурсы
+          href: ../graphics-concepts/resources.md
+          items:
+            - name: Типы ресурсов
+              href: ../graphics-concepts/resource-types.md
+            - name: Выбор ресурса
+              href: ../graphics-concepts/choosing-a-resource.md
+            - name: Копирования данных ресурса и доступ к ним
+              href: ../graphics-concepts/copying-and-accessing-resource-data.md
+            - name: Представления текстуры
+              href: ../graphics-concepts/texture-views.md
+        - name: Потоковые ресурсы
+          href: ../graphics-concepts/streaming-resources.md
+          items:
+            - name: Потребность в потоковых ресурсах
+              href: ../graphics-concepts/the-need-for-streaming-resources.md
+            - name: Создание потоковых ресурсов
+              href: ../graphics-concepts/creating-streaming-resources.md
+              items:
+                - name: Сопоставления в пуле плиток
+                  href: ../graphics-concepts/mappings-are-into-a-tile-pool.md
+                  items:
+                    - name: Создание пула плиток
+                      href: ../graphics-concepts/tile-pool-creation.md
+                    - name: Изменение размера пула плиток
+                      href: ../graphics-concepts/tile-pool-resizing.md
+                    - name: Отслеживание рисков и ресурсы пула плиток
+                      href: ../graphics-concepts/hazard-tracking-versus-tile-pool-resources.md
+                - name: Параметры создания потоковых ресурсов
+                  href: ../graphics-concepts/streaming-resource-creation-parameters.md
+                  items:
+                    - name: 'Адресное пространство, доступное для потоковых ресурсов'
+                      href: ../graphics-concepts/address-space-available-for-streaming-resources.md
+                - name: Параметры создания пула плиток
+                  href: ../graphics-concepts/tile-pool-creation-parameters.md
+                - name: 'Потоковые ресурсы: совместное использование процессов и устройств'
+                  href: ../graphics-concepts/streaming-resource-cross-process-and-device-sharing.md
+                  items:
+                    - name: Форматы трафаретов не поддерживаются потоковыми ресурсами
+                      href: ../graphics-concepts/stencil-formats-not-supported-with-streaming-resources.md
+                - name: Доступные операции с потоковыми ресурсами
+                  href: ../graphics-concepts/operations-available-on-streaming-resources.md
+                - name: Доступные операции с пулами плиток
+                  href: ../graphics-concepts/operations-available-on-tile-pools.md
+                - name: Размещение плиток в области потокового ресурса
+                  href: ../graphics-concepts/how-a-streaming-resource-s-area-is-tiled.md
+                  items:
+                    - name: Размещение на плитках вложенных ресурсов Texture2D и Texture2DArray
+                      href: ../graphics-concepts/texture2d-and-texture2darray-subresource-tiling.md
+                    - name: Размещение на плитках вложенного ресурса Texture3D
+                      href: ../graphics-concepts/texture3d-subresource-tiling.md
+                    - name: Плитки в буфере
+                      href: ../graphics-concepts/buffer-tiling.md
+                    - name: Упаковка MIP-карт
+                      href: ../graphics-concepts/mipmap-packing.md
+            - name: Конвейерный доступ к потоковым ресурсам
+              href: ../graphics-concepts/pipeline-access-to-streaming-resources.md
+              items:
+                - name: Поведение SRV с несопоставленными плитками
+                  href: ../graphics-concepts/srv-behavior-with-non-mapped-tiles.md
+                - name: Поведение UAV с несопоставленными плитками
+                  href: ../graphics-concepts/uav-behavior-with-non-mapped-tiles.md
+                - name: Поведение средства программной прорисовки с несопоставленными плитками
+                  href: ../graphics-concepts/rasterizer-behavior-with-non-mapped-tiles.md
+                - name: Ограничения доступа к плитке с повторяющимися сопоставлениями
+                  href: ../graphics-concepts/tile-access-limitations-with-duplicate-mappings.md
+                - name: Функции создания образцов текстур для потоковых ресурсов
+                  href: ../graphics-concepts/streaming-resources-texture-sampling-features.md
+                - name: Экспозиция потоковых ресурсов HLSL
+                  href: ../graphics-concepts/hlsl-streaming-resources-exposure.md
+            - name: Уровни функций для потоковых ресурсов
+              href: ../graphics-concepts/streaming-resources-features-tiers.md
+              items:
+                - name: Уровень 1
+                  href: ../graphics-concepts/tier-1.md
+                - name: Уровень 2
+                  href: ../graphics-concepts/tier-2.md
+                - name: Уровень 3
+                  href: ../graphics-concepts/tier-3.md
+        - name: Приложения
+          href: ../graphics-concepts/appendix.md
+          items:
+            - name: Правила с плавающей запятой
+              href: ../graphics-concepts/floating-point-rules.md
+            - name: Преобразование типа данных
+              href: ../graphics-concepts/data-type-conversion.md
+            - name: Правила растеризации
+              href: ../graphics-concepts/rasterization-rules.md
+            - name: Сжатие блока текстуры
+              href: ../graphics-concepts/texture-block-compression.md
+              items:
+                - name: Формат BC6H
+                  href: ../graphics-concepts/bc6h-format.md
+                - name: Формат BC7
+                  href: ../graphics-concepts/bc7-format.md
+    - name: Основы
+      href: ../gaming/directx-fundamentals.md
       items:
-      - name: Настройка ресурсов
-        href: ../gaming/setting-up-directx-resources.md
-      - name: Рисование примитивов
-        href: ../gaming/creating-shaders-and-drawing-primitives.md
-      - name: Использование глубины и эффектов
-        href: ../gaming/using-depth-and-effects-on-primitives.md
-      - name: Применение текстур
-        href: ../gaming/applying-textures-to-primitives.md
-      - name: Создание базовой сетки
-        href: ../gaming/create-a-basic-mesh.md
-    - name: Загрузка ресурсов
-      href: ../gaming/load-a-game-asset.md
+        - name: Двумерная графика
+          href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
+        - name: Простая трехмерная графика
+          href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
+          items:
+            - name: Настройка ресурсов
+              href: ../gaming/setting-up-directx-resources.md
+            - name: Рисование примитивов
+              href: ../gaming/creating-shaders-and-drawing-primitives.md
+            - name: Использование глубины и эффектов
+              href: ../gaming/using-depth-and-effects-on-primitives.md
+            - name: Применение текстур
+              href: ../gaming/applying-textures-to-primitives.md
+            - name: Создание базовой сетки
+              href: ../gaming/create-a-basic-mesh.md
+        - name: Загрузка ресурсов
+          href: ../gaming/load-a-game-asset.md
+          items:
+            - name: BasicLoader
+              href: ../gaming/complete-code-for-basicloader.md
+            - name: BasicReaderWriter
+              href: ../gaming/complete-code-for-basicreaderwriter.md
+            - name: DDSTextureLoader
+              href: ../gaming/complete-code-for-ddstextureloader.md
+    - name: Добавление компонентов
+      href: ../gaming/directx-add-features.md
       items:
-      - name: BasicLoader
-        href: ../gaming/complete-code-for-basicloader.md
-      - name: BasicReaderWriter
-        href: ../gaming/complete-code-for-basicreaderwriter.md
-      - name: DDSTextureLoader
-        href: ../gaming/complete-code-for-ddstextureloader.md
-  - name: Добавление компонентов
-    href: ../gaming/directx-add-features.md
-    items:
-    - name: Взаимодействие DirectX и XAML
-      href: ../gaming/directx-and-xaml-interop.md
-    - name: Входные данные для игры
-      href: ../gaming/directx-game-input.md
+        - name: Взаимодействие DirectX и XAML
+          href: ../gaming/directx-and-xaml-interop.md
+        - name: Входные данные для игры
+          href: ../gaming/directx-game-input.md
+          items:
+            - name: Элементы управления перемещением и обзором
+              href: ../gaming/tutorial--adding-move-look-controls-to-your-directx-game.md
+            - name: Относительное движение мыши
+              href: ../gaming/relative-mouse-movement.md
+            - name: Сенсорные элементы управления
+              href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
+        - name: Поддержка ориентации экрана
+          href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
+    - name: Оптимизация и более сложные темы
+      href: ../gaming/directx-optimization-and-advanced-topics.md
       items:
-      - name: Элементы управления перемещением и обзором
-        href: ../gaming/tutorial--adding-move-look-controls-to-your-directx-game.md
-      - name: Относительное движение мыши
-        href: ../gaming/relative-mouse-movement.md
-      - name: Сенсорные элементы управления
-        href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
-    - name: Поддержка ориентации экрана
-      href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
-  - name: Оптимизация и более сложные темы
-    href: ../gaming/directx-optimization-and-advanced-topics.md
-    items:
-    - name: Асинхронное программирование
-      href: ../gaming/asynchronous-programming-directx-and-cpp.md
-    - name: Сценарии удаления устройства
-      href: ../gaming/handling-device-lost-scenarios.md
-    - name: Множественная дискретизация
-      href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
-    - name: Оптимизация ввода и цикла отрисовки
-      href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
-    - name: Сокращение задержки с помощью цепочек буферов
-      href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
-    - name: Наложения и масштабирование цепочки буферов
-      href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
-  - name: Портирование из DirectX 9 в UWP
-    href: ../gaming/porting-your-directx-9-game-to-windows-store.md
-    items:
-    - name: Переход с DirectX 9 на DirectX 11.1
-      href: ../gaming/porting-considerations.md
+        - name: Асинхронное программирование
+          href: ../gaming/asynchronous-programming-directx-and-cpp.md
+        - name: Сценарии удаления устройства
+          href: ../gaming/handling-device-lost-scenarios.md
+        - name: Множественная дискретизация
+          href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
+        - name: Оптимизация ввода и цикла отрисовки
+          href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
+        - name: Сокращение задержки с помощью цепочек буферов
+          href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
+        - name: Наложения и масштабирование цепочки буферов
+          href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
+    - name: Портирование из DirectX 9 в UWP
+      href: ../gaming/porting-your-directx-9-game-to-windows-store.md
       items:
-      - name: Планирование портирования
-        href: ../gaming/plan-your-directx-port.md
-      - name: Основные различия
-        href: ../gaming/understand-direct3d-11-1-concepts.md
-      - name: Сопоставление функций
-        href: ../gaming/feature-mapping.md
-    - name: Простое пошаговое руководство
-      href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
+        - name: "Переход с DirectX\_9 на DirectX\_11.1"
+          href: ../gaming/porting-considerations.md
+          items:
+            - name: Планирование портирования
+              href: ../gaming/plan-your-directx-port.md
+            - name: Основные различия
+              href: ../gaming/understand-direct3d-11-1-concepts.md
+            - name: Сопоставление функций
+              href: ../gaming/feature-mapping.md
+        - name: Простое пошаговое руководство
+          href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
+          items:
+            - name: Инициализация Direct3D 11
+              href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
+            - name: Преобразование инфраструктуры отрисовки
+              href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
+            - name: Портирование игрового цикла
+              href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
+        - name: Реализация объемных теней
+          href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
+          items:
+            - name: Создание буфера глубины
+              href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
+            - name: Прорисовка карты теней в буфер глубины
+              href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
+            - name: Прорисовка сцены с тестированием глубины
+              href: ../gaming/render-the-scene-with-depth-testing.md
+            - name: Поддержка различного оборудования
+              href: ../gaming/target-a-range-of-hardware.md
+        - name: Вопросы и ответы
+          href: ../gaming/directx-porting-faq.md
+    - name: Портирование из OpenGL в Direct3D
+      href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
       items:
-      - name: Инициализация Direct3D 11
-        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
-      - name: Преобразование инфраструктуры отрисовки
-        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
-      - name: Портирование игрового цикла
-        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
-    - name: Реализация объемных теней
-      href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
-      items:
-      - name: Создание буфера глубины
-        href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
-      - name: Прорисовка карты теней в буфер глубины
-        href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
-      - name: Прорисовка сцены с тестированием глубины
-        href: ../gaming/render-the-scene-with-depth-testing.md
-      - name: Поддержка различного оборудования
-        href: ../gaming/target-a-range-of-hardware.md
-    - name: Вопросы и ответы
-      href: ../gaming/directx-porting-faq.md
-  - name: Портирование из OpenGL в Direct3D
-    href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
-    items:
-    - name: Сопоставление OpenGL с Direct3D
-      href: ../gaming/map-concepts-and-infrastructure.md
-      items:
-      - name: Планирование портирования
-        href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
-      - name: EGL и DXGI
-        href: ../gaming/moving-from-egl-to-dxgi.md
-      - name: Буферы, однородности, вершины
-        href: ../gaming/porting-uniforms-and-attributes.md
-      - name: Конвейер шейдеров
-        href: ../gaming/change-your-shader-loading-code.md
-    - name: Перенос отрисовщика OpenGL в Direct3D
-      href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
-      items:
-      - name: Объекты шейдера
-        href: ../gaming/port-the-shader-config.md
-      - name: Буферы вершин и данные
-        href: ../gaming/port-the-vertex-buffers-and-data-config.md
-      - name: GLSL
-        href: ../gaming/port-the-glsl.md
-      - name: Рисование на экране
-        href: ../gaming/draw-to-the-screen.md
-    - name: Справочник по переходу с OpenGL на Direct3D
-      href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
-      items:
-      - name: Переход с GLSL на HLSL
-        href: ../gaming/glsl-to-hlsl-reference.md
+        - name: Сопоставление OpenGL с Direct3D
+          href: ../gaming/map-concepts-and-infrastructure.md
+          items:
+            - name: Планирование портирования
+              href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
+            - name: EGL и DXGI
+              href: ../gaming/moving-from-egl-to-dxgi.md
+            - name: 'Буферы, однородности, вершины'
+              href: ../gaming/porting-uniforms-and-attributes.md
+            - name: Конвейер шейдеров
+              href: ../gaming/change-your-shader-loading-code.md
+        - name: Перенос отрисовщика OpenGL в Direct3D
+          href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
+          items:
+            - name: Объекты шейдера
+              href: ../gaming/port-the-shader-config.md
+            - name: Буферы вершин и данные
+              href: ../gaming/port-the-vertex-buffers-and-data-config.md
+            - name: GLSL
+              href: ../gaming/port-the-glsl.md
+            - name: Рисование на экране
+              href: ../gaming/draw-to-the-screen.md
+        - name: Справочник по переходу с OpenGL на Direct3D
+          href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
+          items:
+            - name: Переход с GLSL на HLSL
+              href: ../gaming/glsl-to-hlsl-reference.md
 - name: Приложения UWP для Xbox One
   href: ../xbox-apps/index.md
   items:
-  - name: Начало работы
-    href: ../xbox-apps/getting-started.md
-  - name: Что нового
-    href: ../xbox-apps/whats-new.md
-  - name: Активация режима разработчика Xbox One
-    href: ../xbox-apps/devkit-activation.md
-  - name: Отключение режима разработчика в Xbox One
-    href: ../xbox-apps/devkit-deactivation.md
-  - name: Настройка среды разработки
-    href: ../xbox-apps/development-environment-setup.md
-  - name: Примеры
-    href: ../xbox-apps/samples.md
-  - name: Известные проблемы
-    href: ../xbox-apps/known-issues.md
-  - name: Вопросы и ответы
-    href: ../xbox-apps/frequently-asked-questions.md
-  - name: Инструменты
-    href: ../xbox-apps/introduction-to-xbox-tools.md
-    items:
-    - name: Dev Home
-      href: ../xbox-apps/dev-home.md
+    - name: Начало работы
+      href: ../xbox-apps/getting-started.md
+    - name: Новые возможности
+      href: ../xbox-apps/whats-new.md
+    - name: Активация режима разработчика Xbox One
+      href: ../xbox-apps/devkit-activation.md
+    - name: Отключение режима разработчика в Xbox One
+      href: ../xbox-apps/devkit-deactivation.md
+    - name: Настройка среды разработки
+      href: ../xbox-apps/development-environment-setup.md
+    - name: примеры
+      href: ../xbox-apps/samples.md
+    - name: Известные проблемы
+      href: ../xbox-apps/known-issues.md
+    - name: Вопросы и ответы
+      href: ../xbox-apps/frequently-asked-questions.md
+    - name: Инструменты
+      href: ../xbox-apps/introduction-to-xbox-tools.md
       items:
-      - name: Домашняя страница
-        href: ../xbox-apps/devhome-home.md
-      - name: Страница "Xbox Live"
-        href: ../xbox-apps/devhome-live.md
-      - name: Страница параметров
-        href: ../xbox-apps/devhome-settings.md
-      - name: Страница "Запись мультимедиа"
-        href: ../xbox-apps/devhome-capture.md
-      - name: Страница "Сетевое взаимодействие"
-        href: ../xbox-apps/devhome-networking.md
-      - name: Страница "Производительность"
-        href: ../xbox-apps/devhome-performance.md
-    - name: Компаньон режима разработчика Xbox
-      href: ../xbox-apps/xbox-dev-mode-companion.md
-    - name: Fiddler
-      href: ../xbox-apps/uwp-fiddler.md
-  - name: Рекомендации для Xbox
-    href: ../xbox-apps/tailoring-for-xbox.md
-    items:
-    - name: Отключение режима мыши
-      href: ../xbox-apps/how-to-disable-mouse-mode.md
-    - name: Отключение масштабирования
-      href: ../xbox-apps/disable-scaling.md
-    - name: Отключение нерабочей области
-      href: ../xbox-apps/turn-off-overscan.md
-  - name: Распределение системных ресурсов
-    href: ../xbox-apps/system-resource-allocation.md
-  - name: Вводные сведения о многопользовательских приложениях
-    href: ../xbox-apps/multi-user-applications.md
-  - name: Перенос существующих игр на Xbox
-    href: ../xbox-apps/development-lanes-landing.md
-    items:
-    - name: Особая версия C++
-      href: ../xbox-apps/development-lanes-custom-cpp.md
-    - name: Unity
-      href: ../xbox-apps/development-lanes-unity.md
-    - name: HTML/JS
-      href: ../xbox-apps/development-lanes-html.md
-  - name: REST API портала устройств Xbox
-    href: ../xbox-apps/reference.md
-    items:
-    - name: /api/app/packagemanager/register
-      href: ../xbox-apps/wdp-loose-folder-register-api.md
-    - name: /api/app/packagemanager/upload
-      href: ../xbox-apps/wdp-folder-upload.md
-    - name: /ext/app/deployinfo
-      href: ../xbox-apps/uwp-deployinfo-api.md
-    - name: /ext/app/sshpins
-      href: ../xbox-apps/uwp-sshpins-api.md
-    - name: /ext/fiddler
-      href: ../xbox-apps/wdp-fiddler-api.md
-    - name: /ext/httpmonitor/sessions
-      href: ../xbox-apps/wdp-httpMonitor-api.md
-    - name: /ext/networkcredential
-      href: ../xbox-apps/uwp-networkcredentials-api.md
-    - name: /ext/remoteinput
-      href: ../xbox-apps/uwp-remoteinput-api.md
-    - name: /ext/remoteinput/controllers
-      href: ../xbox-apps/uwp-remoteinput-controllers-api.md
-    - name: /ext/screenshot
-      href: ../xbox-apps/wdp-media-capture-api.md
-    - name: /ext/settings
-      href: ../xbox-apps/wdp-xboxsettings-api.md
-    - name: /ext/smb/developerfolder
-      href: ../xbox-apps/wdp-smb-api.md
-    - name: /ext/user
-      href: ../xbox-apps/wdp-user-management.md
-    - name: /ext/xbox/info
-      href: ../xbox-apps/wdp-xboxinfo-api.md
-    - name: /ext/xboxlive/sandbox
-      href: ../xbox-apps/wdp-sandbox-api.md
+        - name: Dev Home
+          href: ../xbox-apps/dev-home.md
+          items:
+            - name: Домашняя страница
+              href: ../xbox-apps/devhome-home.md
+            - name: Страница "Xbox Live"
+              href: ../xbox-apps/devhome-live.md
+            - name: Страница параметров
+              href: ../xbox-apps/devhome-settings.md
+            - name: Страница "Запись мультимедиа"
+              href: ../xbox-apps/devhome-capture.md
+            - name: Страница "Сетевое взаимодействие"
+              href: ../xbox-apps/devhome-networking.md
+            - name: Страница "Производительность"
+              href: ../xbox-apps/devhome-performance.md
+        - name: Компаньон режима разработчика Xbox
+          href: ../xbox-apps/xbox-dev-mode-companion.md
+        - name: Fiddler
+          href: ../xbox-apps/uwp-fiddler.md
+        - name: Портал устройств для Xbox
+          href: ../xbox-apps/device-portal-xbox.md
+    - name: Рекомендации для Xbox
+      href: ../xbox-apps/tailoring-for-xbox.md
+      items:
+        - name: Отключение режима мыши
+          href: ../xbox-apps/how-to-disable-mouse-mode.md
+        - name: Отключение масштабирования
+          href: ../xbox-apps/disable-scaling.md
+        - name: Отключение нерабочей области
+          href: ../xbox-apps/turn-off-overscan.md
+    - name: Распределение системных ресурсов
+      href: ../xbox-apps/system-resource-allocation.md
+    - name: Вводные сведения о многопользовательских приложениях
+      href: ../xbox-apps/multi-user-applications.md
+    - name: Перенос существующих игр на Xbox
+      href: ../xbox-apps/development-lanes-landing.md
+      items:
+        - name: Особая версия C++
+          href: ../xbox-apps/development-lanes-custom-cpp.md
+        - name: Unity
+          href: ../xbox-apps/development-lanes-unity.md
+        - name: HTML/JS
+          href: ../xbox-apps/development-lanes-html.md
+    - name: REST API портала устройств Xbox
+      href: ../xbox-apps/reference.md
+      items:
+        - name: /api/app/packagemanager/register
+          href: ../xbox-apps/wdp-loose-folder-register-api.md
+        - name: /api/app/packagemanager/upload
+          href: ../xbox-apps/wdp-folder-upload.md
+        - name: /ext/app/deployinfo
+          href: ../xbox-apps/uwp-deployinfo-api.md
+        - name: /ext/app/sshpins
+          href: ../xbox-apps/uwp-sshpins-api.md
+        - name: /ext/fiddler
+          href: ../xbox-apps/wdp-fiddler-api.md
+        - name: /ext/httpmonitor/sessions
+          href: ../xbox-apps/wdp-httpMonitor-api.md
+        - name: /ext/networkcredential
+          href: ../xbox-apps/uwp-networkcredentials-api.md
+        - name: /ext/remoteinput
+          href: ../xbox-apps/uwp-remoteinput-api.md
+        - name: /ext/remoteinput/controllers
+          href: ../xbox-apps/uwp-remoteinput-controllers-api.md
+        - name: /ext/screenshot
+          href: ../xbox-apps/wdp-media-capture-api.md
+        - name: /ext/settings
+          href: ../xbox-apps/wdp-xboxsettings-api.md
+        - name: /ext/smb/developerfolder
+          href: ../xbox-apps/wdp-smb-api.md
+        - name: /ext/user
+          href: ../xbox-apps/wdp-user-management.md
+        - name: /ext/xbox/info
+          href: ../xbox-apps/wdp-xboxinfo-api.md
+        - name: /ext/xboxlive/sandbox
+          href: ../xbox-apps/wdp-sandbox-api.md
 - name: Xbox Live
-  href: https://docs.microsoft.com/gaming/xbox-live/index
-ms.openlocfilehash: 59a7df7e7045dd68d70ca8f6b03a218fa00058a0
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162719"
+  href: 'https://docs.microsoft.com/gaming/xbox-live/index'

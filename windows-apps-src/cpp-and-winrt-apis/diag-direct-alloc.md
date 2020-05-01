@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, стандартная, c++, cpp, winrt, проекция, прямой, стек, выделения, проецируемый, реализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fe8ff6653b8655ee25cd9adc0c11acb22d42a11
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68372795"
 ---
 # <a name="diagnosing-direct-allocations"></a>Диагностика прямых выделений
@@ -38,7 +38,7 @@ void Print(IStringable const& stringable)
 }
 ```
 
-Проблема заключается в том, что наш тип **MyStringable** — это *не* **IStringable**.
+Проблема заключается в том, что наш тип **MyStringable** — это *не***IStringable**.
 
 - Наш тип **MyStringable** является реализацией интерфейса **IStringable**.
 - Тип **IStringable** — это проецируемый тип.
@@ -136,6 +136,6 @@ auto stringable{ std::make_unique<MyStringable>() }; // Highly dubious.
 * [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [шаблон функции winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)

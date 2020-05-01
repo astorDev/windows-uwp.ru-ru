@@ -7,10 +7,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867686"
 ---
 # <a name="writing-style"></a>Стиль письма
@@ -212,7 +212,7 @@ ms.locfileid: "68867686"
     :::column:::
 ![Рекомендуется](images/do.svg)
 * Установить сейчас
-* Share
+* Общий ресурс
     :::column-end:::
 :::row-end:::
 

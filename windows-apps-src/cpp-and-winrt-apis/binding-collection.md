@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
 ms.openlocfilehash: a98056190d035910a8ed83d2f37799a98b685ce6
-ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70304518"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
@@ -45,7 +45,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!NOTE]
-> Обратите внимание, что в приведенном выше листинге MIDL 3.0 типом свойства **BookSkus** является [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) **BookSku**. В следующем подразделе этого раздела мы привяжем источник элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) к **BookSkus**. Список — это элемент управления элементами. Чтобы правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), необходимо присвоить значение типа **IObservableVector** (или **IVector**) или типа взаимодействия, например [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> Обратите внимание, что в приведенном выше листинге MIDL 3.0 типом свойства **BookSkus** является [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)**BookSku**. В следующем подразделе этого раздела мы привяжем источник элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) к **BookSkus**. Список — это элемент управления элементами. Чтобы правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), необходимо присвоить значение типа **IObservableVector** (или **IVector**) или типа взаимодействия, например [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
 > [!WARNING]
 > Код, представленный в этом разделе, относится к C++/WinRT 2.0.190530.8 и более поздних версий. Если вы используете более раннюю версию, нужно внести в приведенный код несколько незначительных изменений. В приведенном выше листинге MIDL 3.0 измените значение свойства **BookSkus** на [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) интерфейса [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). А затем также используйте в соей реализации **IInspectable** (а не **BookSku**).
@@ -124,6 +124,6 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)

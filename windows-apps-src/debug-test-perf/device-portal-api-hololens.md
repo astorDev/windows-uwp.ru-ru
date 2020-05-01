@@ -4,13 +4,13 @@ title: Справка по API Портала устройства для HoloLe
 description: Узнайте о портале устройств Windows для интерфейса HoloLens REST API. который можно использовать для доступа к данным и программного контроля вашего устройства.
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, UWP, портал устройств
+keywords: Windows 10, UWP, портал устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801390"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Справка по API Портала устройства для HoloLens
@@ -283,7 +283,7 @@ ms.locfileid: "63801390"
 
 Возможные значения приведены в следующей таблице.
 
-| Применение | Описание |
+| Значение | Описание |
 | --- | --- |
 | 1 | Обычный |
 | 2 | Средний |

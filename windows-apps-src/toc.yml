@@ -1,9 +1,8 @@
-items:
-- name: Что нового
+- name: Новые возможности
   href: whats-new/toc.yml
-- name: Начало работы
+- name: Приступая к работе
   href: get-started/toc.yml
-- name: Оформление и пользовательский интерфейс
+- name: Проектирование и пользовательский интерфейс
   href: design/toc.yml
 - name: Разработка приложений
   href: develop/toc.yml
@@ -13,9 +12,3 @@ items:
   href: publish/toc.yml
 - name: Справочник по API
   href: /uwp/
-ms.openlocfilehash: 694733290f7b44ed6b7c88eaf6bcb9a5e0e71309
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583245"

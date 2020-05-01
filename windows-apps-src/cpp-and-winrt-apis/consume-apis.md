@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c162b7ae9cd588bea1062ed8c953d94d1b691c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70393766"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование интерфейсов API с помощью C++/WinRT
@@ -448,7 +448,7 @@ struct MyPage : Page
 * [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [Структура winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Создание событий в C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
 * [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68270069"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Стандартные типы данных C++ и C++/WinRT
@@ -125,7 +125,7 @@ array_view<byte const> fromRange{ theArray.data(), theArray.data() + 2 }; // jus
 dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteBytes.
 ```
 
-## <a name="winrtarrayview-functions-and-operators"></a>Функции и операторы winrt::array_view
+## <a name="winrtarray_view-functions-and-operators"></a>Функции и операторы winrt::array_view
 Для **winrt::array_view** реализован ряд конструкторов, операторов, функций и итераторов. Тип **winrt::array_view** является диапазоном, поэтому вы можете использовать его с основанным на диапазоне `for` или с **std::for_each**.
 
 Дополнительные примеры и сведения приведены в справочнике по API [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).
@@ -158,5 +158,5 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 * Интерфейс [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
 * [Шаблон структуры winrt::array_view](/uwp/cpp-ref-for-winrt/array-view)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Обработка строк в C++/WinRT](strings.md)

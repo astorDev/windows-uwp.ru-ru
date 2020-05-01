@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66371592"
 ---
 # <a name="porting-apps-to-windows10"></a>Перенос приложений в Windows 10
@@ -31,7 +31,7 @@ ms.locfileid: "66371592"
 | [Переход с Windows Phone Silverlight на UWP](wpsl-to-uwp-root.md) | Если вы — разработчик с приложением Windows Phone Silverlight, вы можете использовать свои навыки и свой исходный код при переходе к Windows 10. В Windows 10 можно создать приложение UWP, включающее один пакет приложения, который покупатели могут установить на любое устройство. |
 | [Преобразование веб-приложения в приложение PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | Теперь можно преобразовать веб-приложение в прогрессивное веб-приложение (PWA), которое будет работать на любой платформе, включая UWP! С помощью инструмента [PWA Builder](https://www.pwabuilder.com) можно создать необходимый манифест. Он заменяет собой мост для размещенных веб-приложений (HWA). |
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 * [Move from WPF and Microsoft Silverlight to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10)) (Переход с WPF и Silverlight на WinRT)
 * [Move from Android to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10)) (Переход с Android на WinRT)

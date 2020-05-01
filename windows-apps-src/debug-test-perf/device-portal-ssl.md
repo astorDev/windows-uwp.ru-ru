@@ -4,14 +4,14 @@ title: Подготовка портала устройств с использ�
 description: Узнайте, как подготовить портал устройств Windows с помощью пользовательского сертификата для использования в обмене данными по протоколу HTTPS.
 ms.date: 04/19/2019
 ms.topic: article
-keywords: Windows 10, UWP, портал устройств
+keywords: Windows 10, UWP, портал устройств
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: ce4e45bc23f4efb636618bb4891b9d6e9d207490
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63774147"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Подготовка портала устройств с использованием пользовательского SSL-сертификата

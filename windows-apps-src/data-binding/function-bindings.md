@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360075"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
@@ -108,7 +108,7 @@ namespace MyNamespace
 - Типы аргументов должны соответствовать передаваемым данным — сужающие преобразования не производятся
 - Возвращаемый тип функции должен соответствовать типу свойства, использующего привязку
 
-Механизм привязки реагирует на уведомления об изменении свойств, активированные по имени функции, и при необходимости повторно оценивает привязки. Например:
+Механизм привязки реагирует на уведомления об изменении свойств, активированные по имени функции, и при необходимости повторно оценивает привязки. Пример:
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
