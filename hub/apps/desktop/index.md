@@ -8,10 +8,10 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74056861"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Создание классических приложений для компьютеров с Windows
@@ -71,7 +71,7 @@ ms.locfileid: "74056861"
 
 * Используйте [MSIX](/windows/msix/) для упаковки и развертывания классических приложений. MSIX — это современный формат пакета приложения для Windows, позволяющий упаковывать любые приложения для Windows. Этот безопасный и надежный формат упаковки сочетает в себе преимущества технологий установки с использованием MSI-файлов, APPX-файлов, App-V и ClickOnce.
 * Интегрируйте возможности Windows 10 в свое классическое приложение с помощью [расширений пакетов](/windows/apps/desktop/modernize/desktop-to-uwp-extensions). Например, закрепите свое приложение в меню "Пуск", предоставьте к нему общий доступ или отправляйте всплывающие уведомления из приложения.
-* Используйте [острова XAML](/windows/apps/desktop/modernize/xaml-islands) для размещения элементов управления XAML UWP в своем классическом приложении. Многие последние функции пользовательского интерфейса Windows 10 доступны только для элементов управления XAML UWP.
+* Используйте [острова XAML](/windows/apps/desktop/modernize/xaml-islands) для размещения элементов управления XAML UWP в своем классическом приложении.  Многие последние функции пользовательского интерфейса Windows 10 доступны только для элементов управления XAML UWP.
 
 Дополнительные сведения доступны в приведенных ниже статьях.
 

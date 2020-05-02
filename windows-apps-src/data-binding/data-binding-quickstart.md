@@ -11,10 +11,10 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 0a967c923d9f8616a3a05af5bb0ebb612251d3b8
-ms.sourcegitcommit: 035b03f1247eae4e9359ee7db66429d4e1c1d09b
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71674547"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных

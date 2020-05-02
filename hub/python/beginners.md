@@ -9,10 +9,10 @@ keywords: Python, Windows 10, Microsoft, изучение Python, Python в Win
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
-ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74881282"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Начало работы с Python в Windows для начинающих

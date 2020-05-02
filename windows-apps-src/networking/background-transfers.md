@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a4c354eff34edb0c97e9d95828d4287f9c4b99
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282487"
 ---
 # <a name="background-transfers"></a>Фоновая передача данных
@@ -44,7 +44,7 @@ ms.locfileid: "72282487"
 
 В следующей таблице показано, когда разрешена фоновая передача данных на телефоне для каждого значения [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) с учетом текущего состояния телефона. Чтобы определить текущее состояние телефона, можно использовать класс [**ConnectionCost**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionCost).
 
-| Состояние устройства                                                                                                                      | UnrestrictedOnly | По умолчанию | Всегда |
+| Состояние устройства                                                                                                                      | UnrestrictedOnly | Значение по умолчанию | Всегда |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | Подключение к WiFi                                                                                                                 | Разрешить            | Разрешить   | Разрешить  |
 | Лимитное подключение, не в роуминге, лимит данных не достигнут, настроен на отслеживание расходов по тарифному плану                                                   | Запретить             | Разрешить   | Разрешить  |

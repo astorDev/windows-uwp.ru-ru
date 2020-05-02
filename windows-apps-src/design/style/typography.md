@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282425"
 ---
 # <a name="typography"></a>Шрифтовое оформление
@@ -19,7 +19,7 @@ ms.locfileid: "72282425"
 
 Основная цель шрифтового оформления как визуального представления языка — передача информации. Стиль шрифтов никогда не должен затмевать эту цель. В этой статье мы обсудим, как использовать шрифтовое оформление в вашем приложении UWP, чтобы помочь пользователям легко понимать содержимое.
 
-## <a name="font"></a>Font
+## <a name="font"></a>Шрифт
 
 Вам следует использовать один шрифт для всего пользовательского интерфейса приложения, и мы рекомендуем выбрать шрифт по умолчанию для приложений UWP **Segoe UI**. Он создан для обеспечения оптимальной четкости для любых размеров и любой плотности пикселей, а также отличается четкой, легкой и открытой эстетикой, которая дополняет содержимое системы.
 
@@ -104,7 +104,7 @@ ms.locfileid: "72282425"
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>Выравнивание
+## <a name="alignment"></a>Соответствие
 
 Значение [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) по умолчанию — "Left", и в большинстве случаев такой подход, в котором содержимое сдвинуто влево и не выравнивается по правому краю, обеспечивает согласованную привязку содержимого и универсальный макет. Сведения о языках RTL см. в разделе [Настройка макета и шрифтов для поддержки глобализации](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
@@ -161,7 +161,7 @@ Segoe UI — это наш шрифт для иврита, английског
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -218,7 +218,7 @@ Segoe UI — это наш шрифт для иврита, английског
 </tbody>
 </table>
 
-## <a name="fonts"></a>Шрифты
+## <a name="fonts"></a>Fonts
 
 ### <a name="sans-serif-fonts"></a>Рубленые шрифты (без засечек)
 
@@ -234,7 +234,7 @@ Segoe UI — это наш шрифт для иврита, английског
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -277,7 +277,7 @@ Segoe UI — это наш шрифт для иврита, английског
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -313,7 +313,7 @@ Segoe UI — это наш шрифт для иврита, английског
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -335,7 +335,7 @@ Segoe UI — это наш шрифт для иврита, английског
 </tbody>
 </table>
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 * [Текстовые элементы управления](../controls-and-patterns/text-controls.md)
 * [Ресурсы темы XAML](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)

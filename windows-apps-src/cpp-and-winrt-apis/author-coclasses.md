@@ -7,10 +7,10 @@ keywords: windows 10, UWP, standard, c++, cpp, winrt, projection, author, COM, 
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
-ms.sourcegitcommit: c5699e74b60c5c7a88658b4ebe30c1475eef5c27
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71344517"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Создание компонентов COM с помощью C++/WinRT
@@ -589,7 +589,7 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [Интерфейс IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
 * [Использование компонентов COM с помощью C++/WinRT](consume-com.md)
 * [Отправка локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

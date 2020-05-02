@@ -6,14 +6,14 @@ label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583386"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63806977"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Плитки, индикаторы событий и уведомления для приложений UWP
  
@@ -33,7 +33,7 @@ ms.locfileid: "57583386"
 <p><em>Push-уведомление</em> или <em>необработанное уведомление</em> – это уведомление, отправляемое приложению из служб push-уведомлений Windows (WNS), или уведомление от фоновой задачи. Ваше приложение может реагировать на эти уведомления, либо сообщая пользователю о том, что произошло какое-то значимое событие (путем обновления индикатора событий, плитки или с помощью всплывающего уведомления), либо другим способом на ваш выбор.</p>
 
  
-## <a name="tiles"></a>Плитки
+## <a name="tiles"></a>Tiles
 | Статья | Описание |
 | --- | --- |
 | [Создание плиток](creating-tiles.md) | Настройте стандартную плитку для своего приложения и предоставьте ресурсы для разных размеров экрана. |

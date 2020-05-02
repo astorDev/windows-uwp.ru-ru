@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
-ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73847606"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
@@ -50,7 +50,7 @@ ms.locfileid: "73847606"
 
     ![Как повторить установку](images/win10-cs-install.png)
 
-4.  Выберите шаблон **Пустое приложение (универсальные приложения для Windows)** и укажите "HelloWorld" в качестве **Имени**. Нажмите кнопку **ОК**.
+4.  Выберите шаблон **Пустое приложение (универсальные приложения для Windows)** и укажите "HelloWorld" в качестве **Имени**. Щелкните **ОК**.
 
     ![Окно "Новый проект"](images/win10-cs-01.png)
 
@@ -168,7 +168,7 @@ ms.locfileid: "73847606"
 
 Приложение откроется в новом окне и сначала отобразится экран-заставка по умолчанию. Экран-заставка определяется изображением (SplashScreen.png) и цветом фона (указанным в манифесте приложения).
 
-После исчезновения экрана-заставки появится ваше приложение. Процесс выглядит следующим образом.
+После исчезновения экрана-заставки появится ваше приложение. Это выглядит следующим образом:
 
 ![Начальный экран приложения](images/win10-cs-08.png)
 

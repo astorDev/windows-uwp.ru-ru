@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, портал устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 4881fe961979243849728d3f835c449e0f71f4b4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683847"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Программирование пользовательского подключаемого модуля для портала устройств

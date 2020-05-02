@@ -7,10 +7,10 @@ keywords: приступая к работе, uwp, windows 10, обучающи�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71340336"
 ---
 # <a name="display-customers-in-a-list"></a>Отображение пользователей в виде списка
@@ -186,5 +186,5 @@ public class Customer : INotifyPropertyChanged
 | Пример кода | Описание |
 |-----------------|---------------|
 | [Руководство по привязке данных](../data-binding/xaml-basics-data-binding.md) | Пошаговое руководство по основам привязки данных. |
-| [ListView и GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | Изучите более сложные элементы ListView с привязкой данных. |
+| [Представления списка и сетки](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | Изучите более сложные элементы ListView с привязкой данных. |
 | [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) | Ознакомьтесь с привязкой данных в действии, включая класс **BindableBase** (в папке "Common"), для стандартной реализации **INotifyPropertyChanged**. |

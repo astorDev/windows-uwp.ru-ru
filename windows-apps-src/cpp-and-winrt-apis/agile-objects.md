@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, agile, object, agility, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360333"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Гибкие объекты в C++/WinRT
@@ -87,7 +87,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 Даже если вы отказались от гибкости, вы можете реализовать интерфейс **IMarshal** самостоятельно. Например, вы можете использовать маркер **winrt::non_agile**, чтобы избежать реализации гибкости по умолчанию и самостоятельно реализовать интерфейс **IMarshal**, например для поддержки семантики маршалирования по значению.
 
-## <a name="agile-references-winrtagileref"></a>Гибкие ссылки (winrt::agile_ref)
+## <a name="agile-references-winrtagile_ref"></a>Гибкие ссылки (winrt::agile_ref)
 
 Если вы используете объект, который не является гибким, но вам необходимо передать его в каком-либо потенциально гибком контексте, то одним из вариантов будет использование шаблона структуры [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) для получения гибкой ссылки на экземпляр негибкого типа или на интерфейс негибкого объекта.
 
@@ -124,6 +124,6 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [Функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [Функция winrt::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 * [Общие сведения о моделях потоков COM и их использовании](/previous-versions/ms809971(v=msdn.10))

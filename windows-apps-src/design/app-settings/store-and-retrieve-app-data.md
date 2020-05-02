@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb7ef49d0ce1876635dc36e84f43432c13e1791
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72690369"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Хранение и извлечение параметров и прочих данных приложения
@@ -25,7 +25,7 @@ ms.locfileid: "72690369"
 
 Существует два типа данных приложений: параметры и файлы.
 
-### <a name="settings"></a>Параметры
+### <a name="settings"></a>Settings
 
 Параметры используются для сохранения настроек пользователя и данных о состоянии приложения. API данных приложения позволяет с легкостью создавать и восстанавливать параметры (мы покажем вам несколько примеров позже в этой статье).
 
@@ -433,7 +433,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 При желании вы можете назначить версию для данных приложения. Это позволит вам создать следующую версию приложения, которая при изменении формата данных не вызовет проблем совместимости с предыдущей версией приложения. Приложение проверит версию данных приложения в хранилище данных и в случае, если версия окажется более ранней, чем ожидалось, обновит данные приложения до нового формата и изменит их версию. Подробнее см. в описании свойства[ **Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) и метода [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync).
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 * [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
 * [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)

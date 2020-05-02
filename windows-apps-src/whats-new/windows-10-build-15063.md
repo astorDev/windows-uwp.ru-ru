@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
 ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258873"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>Новые возможности для разработчиков в Windows 10, сборка 15063
 
-Windows 10 сборки 15063 (также известная как Creators Update или версия 1703), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Windows 10 сборки 15063 (также известная как Creators Update или версия 1703), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 В этой статье приводится подборка новых и улучшенных функций для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в статье [Новые API в Windows 10 (сборка 15063)](windows-10-build-15063-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers). Кроме того, в [списке возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 

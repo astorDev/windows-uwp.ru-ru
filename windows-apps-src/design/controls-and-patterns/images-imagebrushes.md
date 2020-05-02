@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257279"
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
@@ -44,7 +44,7 @@ ms.locfileid: "74257279"
 
 ## <a name="create-an-image"></a>Создание изображения
 
-### <a name="image"></a>Изображение
+### <a name="image"></a>ОС контейнера
 В этом примере показано, как создать изображение с помощью объекта [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image).
 
 
@@ -80,8 +80,8 @@ ms.locfileid: "74257279"
 
 Если не указать значение [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) или [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) для **Image**, то изображение отображается с размерами, задаваемыми **Source**. Определяя значения **Width** и **Height**, вы создаете удерживающую прямоугольную область, в пределах которой отображается изображение. Вы можете выбрать, каким образом изображение будет заполнять удерживающую область, с помощью свойства [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch). Свойство Stretch может принимать следующие значения, определенные в перечислении [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch).
 
--   **Нет**. изображение не растягивается для заполнения отображаемой области. Будьте осторожны при настройке значения Stretch. Если исходное изображение больше заполняемой области, то изображение будет обрезано, а это обычно нежелательно, так как, в отличие от намеренного вырезания [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip), окном просмотра управлять вы не можете.
--   **Uniform**: масштаб изображения изменяется так, чтобы оно соответствовало размеру отображаемой области. но пропорции изображения сохраняются. Это значение используется по умолчанию.
+-   **Нет.** изображение не растягивается для заполнения отображаемой области. Будьте осторожны при настройке значения Stretch. Если исходное изображение больше заполняемой области, то изображение будет обрезано, а это обычно нежелательно, так как, в отличие от намеренного вырезания [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip), окном просмотра управлять вы не можете.
+-   **Uniform**: масштаб изображения изменяется так, чтобы оно соответствовало размеру отображаемой области. но пропорции изображения сохраняются. Это значение по умолчанию.
 -   **UniformToFill**: масштаб изображения изменяется так, чтобы оно полностью заполняло отображаемую область, но исходные пропорции изображения сохраняются.
 -   **Fill**: масштаб изображения изменяется так, чтобы оно соответствовало размеру отображаемой области. Поскольку высота и ширина изображения изменяются независимо друг от друга, его исходные пропорции могут быть нарушены. То есть изображение может быть искажено так, что не сможет полностью заполнить отображаемую область.
 
@@ -160,11 +160,11 @@ ms.locfileid: "74257279"
 > [!NOTE]
 > Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка либо вы можете использовать [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) и [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)).
 
-## <a name="get-the-sample-code"></a>Получить пример кода
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 - [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 -   [Звук, видео и камера](https://docs.microsoft.com/windows/uwp/audio-video-camera/index)
 -   [Класс Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)

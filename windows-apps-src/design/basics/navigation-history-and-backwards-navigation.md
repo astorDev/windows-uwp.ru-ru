@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735029"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
@@ -294,7 +294,7 @@ bool App::On_BackRequested()
 
 Мы рекомендуем реализовать поддержку следующих способов ввода для обратной навигации. (Обратите внимание, что некоторые из этих способов ввода не поддерживаются BackRequested системы и должны обрабатываться отдельными событиями.)
 
-| Input | Событие |
+| Ввод | Событие |
 | --- | --- |
 | Клавиша Backspace в Windows | BackRequested |
 | Аппаратная кнопка "Назад" | BackRequested |
@@ -370,6 +370,6 @@ bool App::On_BackRequested()
 
 Если пользователь переходит к другому приложению, а затем возвращается к вашему приложению, мы рекомендуем открывать при этом последнюю страницу в журнале навигации.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Основы навигации](navigation-basics.md)

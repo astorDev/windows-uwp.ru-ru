@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, ошибка, обработка, исключение
 ms.localizationpriority: medium
 ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68270132"
 ---
 # <a name="error-handling-with-cwinrt"></a>Обработка ошибок в C++/WinRT
@@ -183,6 +183,6 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 * [Функция winrt::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
 * [Функция winrt::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
 * [How to: Design for Exception Safety](/cpp/cpp/how-to-design-for-exception-safety) (Практическое руководство. Разработка с учетом безопасности исключений)

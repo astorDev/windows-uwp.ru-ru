@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68796713"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в текстовых элементах управления
@@ -40,7 +40,7 @@ ms.locfileid: "68796713"
 Вот как ссылки на содержимое выглядят по умолчанию в элементах RichEditBox и TextBlock.
 
 ![ссылка на содержимое в поле с форматом](images/content-link-default-richedit.png)
- ![ссылка на содержимое в текстовом блоке](images/content-link-default-textblock.png)
+![ссылка на содержимое в текстовом блоке](images/content-link-default-textblock.png)
 
 Отличия в использовании, отображении и поведении подробно описаны в следующих разделах. В этой таблице показано краткое сравнение основных различий между ссылкой на содержимое в элементе RichEditBox и текстовом блоке.
 
@@ -154,7 +154,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 - Если значением LinkContentKind не является "Places", происходит попытка открыть приложение **Карты** в указанном расположении. Например, это может произойти, если вы изменили LinkContentKind в обработчике событий ContentLinkChanged.
 - Если не удается открыть URI в приложении "Карты", то карта открывается в браузере по умолчанию. Как правило, это происходит, когда пользовательские параметры раздела _Приложения для веб-сайтов_ запрещают открытие URI с помощью приложения **Карты**.
 
-##### <a name="people"></a>People
+##### <a name="people"></a>Пользователи
 
 Средство выбора People создает ContentLinkInfo с URI, который использует протокол **ms-people**.
 

@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, обучение по nodejs,
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: cf4bf0ab4ea9019c1edc2bb96387ce6cedbe91dd
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75835382"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Настройка среды разработки Node.js в подсистеме Windows для Linux версии 2
@@ -159,7 +159,7 @@ WSL 2 — [это новая версия архитектуры](https://docs
 
 К дополнительным рекомендуемым расширениям относятся следующие:
 
-- [Отладчик для Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code) — после завершения разработки на стороне сервера с помощью Node.js вам нужно будет выполнить разработку и тестирование на стороне клиента. Это расширение интегрирует редактор VS Code со службой отладки браузера Chrome, увеличивая эффективность выполнения операций.
+- [Отладчик для Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code) — после завершения разработки на стороне сервера с помощью Node.js вам нужно будет выполнить разработку и тестирование на стороне клиента. Это расширение интегрирует редактор VS Code со службой отладки браузера Chrome, что увеличивает эффективность выполнения операций.
 - [Раскладки клавиатуры других редакторов](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) — эти расширения позволят использовать необходимую раскладку при переходе в другой текстовый редактор (например, Atom, Sublime, Vim, eMacs, Notepad++ и т. п.).
 - [Расширение синхронизации параметров](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) — позволяет синхронизировать параметры VS Code в разных установках, используя GitHub. Если вы работаете на разных компьютерах, это обеспечит согласованность среды между ними.
 

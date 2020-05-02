@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, стандартная, c++, cpp, winrt, защита, отложенное удаление, безопасные запросы
 ms.localizationpriority: medium
 ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71329559"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>Точки расширения для типов реализации

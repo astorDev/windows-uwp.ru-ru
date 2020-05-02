@@ -9,10 +9,10 @@ keywords: Python, Windows 10, Microsoft, pip, py.exe, пути к файлам,
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74663561"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Часто задаваемые вопросы об использовании Python в Windows
@@ -31,7 +31,7 @@ ms.locfileid: "74663561"
 
 На компьютере может быть установлено несколько версий Python, потому что вы работаете с различными типами проектов Python. Так как все версии применяют команду `python`, может быть неясно, какая версия Python используется. В качестве стандарта рекомендуется использовать команду `python3` (или `python3.7`), чтобы выбрать конкретную версию.
 
-[Средство запуска py.exe](https://docs.python.org/3/using/windows.html#launcher) автоматически выберет последнюю установленную версию Python. Вы также можете выполнить такие команды, как `py -3.7`, чтобы выбрать конкретную версию, или `py --list`, чтобы узнать, какие версии можно использовать. **Но** средство запуска py.exe будет работать только при использовании версии Python, установленной с сайта [python.org](https://www.python.org/downloads/windows/). При установке Python из Microsoft Store команда `py` **не поддерживается**. Для версий Python для Linux, macOS, WSL и Microsoft Store следует использовать команду `python3` (или `python3.7`).
+[Средство запуска py.exe](https://docs.python.org/3/using/windows.html#launcher) автоматически выберет последнюю установленную версию Python. Вы также можете выполнить такие команды, как `py -3.7`, чтобы выбрать конкретную версию, или `py --list`, чтобы узнать, какие версии можно использовать. **Но** средство запуска py.exe будет работать только при использовании версии Python, установленной с сайта [python.org](https://www.python.org/downloads/windows/). При установке Python из Microsoft Store команда `py`**не поддерживается**. Для версий Python для Linux, macOS, WSL и Microsoft Store следует использовать команду `python3` (или `python3.7`).
 
 ## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>Почему при запуске python.exe открывается Microsoft Store?
 

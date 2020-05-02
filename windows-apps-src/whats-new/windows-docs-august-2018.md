@@ -6,21 +6,21 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258835"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Пополнение документации Windows в августе 2018 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В августе появились приведенные ниже обзоры функций, руководства для разработчиков и видео.
+Документация для разработчиков Windows постоянно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В августе появились приведенные ниже обзоры функций, руководства для разработчиков и видео.
 
-[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
-### <a name="design"></a>Оформление
+### <a name="design"></a>Проектирование
 
 В сборки Windows Insider Preview были добавлены указанные ниже возможности, доступные в рамках программы [предварительной оценки Windows](https://insider.windows.com/).
 
