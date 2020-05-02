@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 26e64c286124537eeb20af6c46f16e83edc88414
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081513"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643733"
 ---
 # <a name="text-box"></a>Текстовое поле
 
@@ -294,11 +294,11 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - Для ввода данных особого формата используйте набор коротких однострочных элементов управления фиксированного размера.
 
-    ![Ввод форматированных данных](images/textinput_example_productkey.png)
+    ![Ввод форматированных данных](images/textinput-example-productkey.png)
 
 - Для ввода или правки текста используйте однострочный элемент управления неограниченного размера в сочетании с кнопкой, нажав на которую, пользователь сможет выбрать допустимое значение.
 
-    ![Ввод данных с выбором](images/textinput_example_assisted.png)
+    ![Ввод данных с выбором](images/textinput-example-assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>Элементы управления для ввода многострочного текста
 

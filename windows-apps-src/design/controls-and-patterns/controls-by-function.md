@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
-ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
+ms.openlocfilehash: 32038d6e25ec450dae59d0c1d7e9c8703fdc8018
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80301459"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148714"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -222,7 +222,7 @@ ms.locfileid: "80301459"
 ### <a name="date-picker"></a>Управляющий элемент выбора даты
 Элемент управления, позволяющий пользователю выбрать дату.
 
-![Элемент управления "Выбор даты"](images/controls/date-picker.png)
+![Элемент управления "Выбор даты"](images/controls_datepicker_expand.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
@@ -235,7 +235,7 @@ ms.locfileid: "80301459"
 ### <a name="time-picker"></a>Управляющий элемент выбора времени
 Элемент управления, позволяющий пользователю установить значение времени.
 
-![Элемент управления TimePicker](images/controls/time-picker.png) 
+![Элемент управления TimePicker](images/controls_timepicker_expand.png)
 
 ```xaml
 <TimePicker Header="Arrival Time"/>

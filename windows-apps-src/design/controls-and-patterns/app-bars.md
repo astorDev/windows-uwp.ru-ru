@@ -14,10 +14,10 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 483e5d33f67ad2cd27403d7a1b229edebedfebb9
-ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81123633"
 ---
 # <a name="command-bar"></a>Панель команд

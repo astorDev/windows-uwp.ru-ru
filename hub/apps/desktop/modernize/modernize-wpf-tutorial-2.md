@@ -9,10 +9,10 @@ keywords: Windows 10, UWP, Windows Forms, WPF, объекты XAML Island
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 6bb90fb9cbe7c9f54f60fd1920f0e73e174a3772
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80482583"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Часть 2. Добавление элемента управления InkCanvas универсальной платформы Windows с помощью XAML Islands
@@ -135,13 +135,13 @@ ms.locfileid: "80482583"
 
 10. Найдите конструктор `ExpenseDetail()`.
 
-11. Добавьте следующую строку кода после метода `InitializeComponent()` и сохраните файл кода.
+11. Добавьте приведенную ниже строку кода после метода `InitializeComponent()` и сохраните файл кода.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
     ```
 
-    Вы можете настроить интерфейс рукописного ввода с помощью объекта **InkPresenter**. Этот код использует свойство **InputDeviceTypes** для поддержки мыши в качестве устройства рукописного ввода.
+    Вы можете настроить интерфейс рукописного ввода по умолчанию, используя объект **InkPresenter**. Этот код использует свойство **InputDeviceTypes** для поддержки мыши в качестве устройства рукописного ввода.
 
 12. Снова нажмите клавишу F5, чтобы повторно скомпилировать приложение и открыть его в отладчике. Выберите сотрудника из списка, а затем выберите одну из статей расходов.
 

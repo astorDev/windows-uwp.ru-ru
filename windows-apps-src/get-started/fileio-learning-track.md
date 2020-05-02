@@ -6,12 +6,12 @@ ms.topic: article
 keywords: приступая к работе, uwp, windows 10, обучающий курс, файлы, файловый ввод-вывод, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321134"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166250"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -141,8 +141,8 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 | Пример кода | Описание |
 |-----------------|---------------|
-| [Пример данных приложения](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью интерфейсов API данных приложения. |
+| [Пример данных приложения](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью интерфейсов API данных приложения. |
 | [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создать, считать, скопировать и удалить файл. |
-| [Пример средства выбора файлов](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
+| [Пример средства выбора файлов](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
 | [Пример JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Дополнительные примеры кода](https://developer.microsoft.com/windows/samples) | Выберите **Файлы, папки и библиотеки** из раскрывающегося списка категорий. |

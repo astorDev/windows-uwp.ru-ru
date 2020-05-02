@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4a290da0d67560715f80bf20fc6ae4d44a8f6
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81266962"
 ---
 # <a name="number-box"></a>Поле ввода номера телефона

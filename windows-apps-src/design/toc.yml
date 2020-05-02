@@ -353,11 +353,13 @@
             - name: Схема содержимого всплывающего уведомления
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Отправка локального всплывающего уведомления
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: Приложения UWP
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Классические приложения
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: Обзор
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: 'Приложения C#'
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: Приложения C++/WRL

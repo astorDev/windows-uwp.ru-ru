@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, sample, application, photo, editor
 ms.localizationpriority: medium
 ms.openlocfilehash: dcefe2ad8321ae85fcb814bbaead0bb0e5373300
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81266912"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Пример приложения C++/WinRT — редактор фотографий

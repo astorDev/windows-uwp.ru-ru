@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 36c3aeb7a51c84e92c5bca461aee7efe50740237
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218464"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Использование API размещения XAML платформы UWP в приложении Win32 на C++
@@ -122,6 +122,6 @@ API размещения UWP XAML предусматривает следующ�
 * [Элементы управления UWP XAML в классических приложениях (XAML Islands)](xaml-islands.md)
 * [Размещение стандартного элемента управления UWP в приложении Win32 на C++](host-standard-control-with-xaml-islands-cpp.md)
 * [Размещение настраиваемого элемента управления UWP в приложении Win32 на C++](host-custom-control-with-xaml-islands-cpp.md)
-* [Расширенные сценарии для XAML Islands в приложениях Win32 на C++](advanced-scenarios-xaml-islands-cpp.md)
+* [Расширенные сценарии для XAML Islands в приложениях Win32 на C++](advanced-scenarios-xaml-islands-cpp.md)
 * [Примеры кода XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples)
 * [Пример XAML Islands на C++ для Win32](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 93a4fd98ea1773a67cfe341e63f323c69d0bf79e
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80614116"
 ---
 # <a name="tabview"></a>TabView

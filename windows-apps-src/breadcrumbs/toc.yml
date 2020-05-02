@@ -1,22 +1,22 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Приложения
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
         - name: UWP
           tocHref: /windows/uwp/
           topicHref: /windows/uwp/index
           items:
-            - name: Что нового
+            - name: Новые возможности
               tocHref: /windows/uwp/whats-new/
               topicHref: /windows/uwp/whats-new/windows-10-version-latest
-            - name: Начало работы
+            - name: Приступая к работе
               tocHref: /windows/uwp/get-started/
               topicHref: /windows/uwp/get-started/
-            - name: Оформление и пользовательский интерфейс
+            - name: Проектирование и пользовательский интерфейс
               tocHref: /windows/uwp/design/
               topicHref: /windows/uwp/design/index
               items:
@@ -94,7 +94,7 @@
                 - name: 'Устройства, датчики и питание'
                   tocHref: /windows/uwp/devices-sensors/
                   topicHref: /windows/uwp/devices-sensors/index
-                - name: Функции корпоративного уровня
+                - name: Enterprise
                   tocHref: /windows/uwp/enterprise/
                   topicHref: /windows/uwp/enterprise/index
                 - name: 'Файлы, папки и библиотеки'

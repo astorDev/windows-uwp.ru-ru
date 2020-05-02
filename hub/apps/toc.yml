@@ -1,0 +1,89 @@
+- name: Создание приложений для Windows
+  href: index.yml
+  items:
+    - name: Создание классических приложений
+      items:
+        - name: Обзор
+          href: desktop/index.md
+        - name: Выбор платформы для приложения
+          href: desktop/choose-your-platform.md
+    - name: Модернизация классических приложений
+      items:
+        - name: Обзор
+          href: desktop/modernize/index.md
+        - name: Вызов API UWP
+          items:
+            - name: Обзор
+              href: desktop/modernize/desktop-to-uwp-enhance.md
+            - name: Доступные интерфейсы API UWP
+              href: desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: Добавление элементов управления XAML платформы UWP (XAML Islands)
+          items:
+            - name: Обзор
+              href: desktop/modernize/xaml-islands.md
+            - name: XAML Islands в приложениях WPF и Windows Forms
+              items:
+                - name: Размещение стандартного элемента управления UWP
+                  href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                - name: Размещение настраиваемого элемента управления UWP
+                  href: desktop/modernize/host-custom-control-with-xaml-islands.md
+            - name: XAML Islands в приложениях C++ Win32
+              items:
+                - name: Использование API размещения UWP XAML
+                  href: desktop/modernize/using-the-xaml-hosting-api.md
+                - name: Размещение стандартного элемента управления UWP
+                  href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                - name: Размещение настраиваемого элемента управления UWP
+                  href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                - name: Расширенные сценарии
+                  href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+        - name: Использование визуального уровня (Windows.UI.Composition)
+          items:
+            - name: Обзор
+              href: desktop/modernize/visual-layer-in-desktop-apps.md
+            - name: WPF
+              href: desktop/modernize/using-the-visual-layer-with-wpf.md
+            - name: Windows Forms
+              href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+            - name: Win32
+              href: desktop/modernize/using-the-visual-layer-with-win32.md
+        - name: 'Функции, которым требуется идентификатор пакета'
+          items:
+            - name: Обзор
+              href: desktop/modernize/modernize-packaged-apps.md
+            - name: Интеграция с использованием расширений пакета
+              href: desktop/modernize/desktop-to-uwp-extensions.md
+            - name: Расширение возможностей с помощью компонентов UWP
+              href: desktop/modernize/desktop-to-uwp-extend.md
+            - name: Распространение упакованного приложения
+              href: desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 'Руководство: Модернизация приложения WPF'
+          items:
+            - name: Обзор
+              href: desktop/modernize/modernize-wpf-tutorial.md
+            - name: "Перенос приложения Contoso Expenses в .NET Core\_3"
+              href: desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: Добавление элемента управления InkCanvas универсальной платформы Windows с помощью XAML Islands
+              href: desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: Добавление элемента управления CalendarView универсальной платформы Windows с помощью XAML Islands
+              href: desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: "Добавление действий пользователей и уведомлений для Windows\_10"
+              href: desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: Упаковка и развертывание с помощью MSIX
+              href: desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: Предоставление идентификаторов для неупакованных классических приложений
+          href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: "Разработка для Windows\_10X"
+      items:
+        - name: "Часто задаваемые вопросы о разработке для Windows\_10X"
+          href: 10x/faq.md
+    - name: Система Fluent Design
+      href: fluent-design-system.md
+    - name: Специальные возможности
+      href: accessibility.md
+    - name: Speech
+      href: speech.md
+    - name: Функции и технологии
+      href: features-and-technologies.md
+    - name: Последние обновления документации
+      href: whats-new/latest-doc-updates.md

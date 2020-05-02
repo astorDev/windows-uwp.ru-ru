@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209279"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255268"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание интерфейсов API с помощью C++/WinRT
 
@@ -239,7 +239,7 @@ namespace winrt::MyProject
 Вот несколько примеров.
 
 - Типы параметров можно опускать. Например, если в IDL ваш метод принимает **SomeClass**, вы можете изменить его на **IInspectable** в реализации. Это возможно благодаря тому, что все экземпляры **SomeClass** могут передаваться **IInspectable** (это однонаправленное действие).
-- Вы можете принять параметр, который можно скопировать, по значению, а не по ссылке. Например измените `SomeClass` на `SomeClass const&`. Это нужно сделать, чтобы предотвратить запись ссылки в сопрограмме (см. в руководство по [передаче параметров](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Вы можете принять параметр, который можно скопировать, по значению, а не по ссылке. Например измените `SomeClass const&` на `SomeClass`. Это нужно сделать, чтобы предотвратить запись ссылки в сопрограмме (см. в руководство по [передаче параметров](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - Полученное значение можно опускать. Например, можно изменить **void** на [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget).
 
 Это важно в ситуации, когда вы создаете асинхронный обработчик событий.

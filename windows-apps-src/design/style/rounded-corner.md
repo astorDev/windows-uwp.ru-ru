@@ -5,10 +5,10 @@ ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, радиус угла, скругленный
 ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81001481"
 ---
 # <a name="corner-radius"></a>Радиус угла
