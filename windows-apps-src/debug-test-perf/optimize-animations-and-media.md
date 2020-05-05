@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339895"
 ---
 # <a name="optimize-animations-media-and-images"></a>Оптимизация анимаций, мультимедиа и изображений
@@ -195,7 +195,7 @@ ms.locfileid: "71339895"
 
 В вышеприведенных сценариях единственный способ экономии памяти — задать размер декодирования в явном виде.
 
-Обязательно подключайте [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) к дереву в режиме реального времени до задания источника. Это необходимо делать каждый раз, когда элемент изображения или кисть задается в разметке. Примеры приведены ниже под заголовком "Примеры динамического дерева". Старайтесь как можно меньше использовать [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) и вместо этого использовать [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) при задании источника потока. Кроме того, по возможности лучше не скрывать визуальное содержимое (при помощи нулевой непрозрачности или свернутой видимости) во время ожидания события [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened). Делайте это на свой страх и риск — это помешает выиграть от автоматического определения нужного размера декодирования. Если приложение должно скрывать визуальное содержимое изначально, необходимо по возможности задать размер декодирования в явном виде.
+Обязательно подключайте [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) к дереву в режиме реального времени до задания источника. Это необходимо делать каждый раз, когда элемент изображения или кисть задается в разметке. Примеры приведены ниже под заголовком «Примеры дерева в режиме реального времени». Старайтесь как можно меньше использовать [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) и вместо этого использовать [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) при задании источника потока. Кроме того, по возможности лучше не скрывать визуальное содержимое (при помощи нулевой непрозрачности или свернутой видимости) во время ожидания события [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened). Делайте это на свой страх и риск — это помешает выиграть от автоматического определения нужного размера декодирования. Если приложение должно скрывать визуальное содержимое изначально, необходимо по возможности задать размер декодирования в явном виде.
 
 **Примеры динамического дерева**
 

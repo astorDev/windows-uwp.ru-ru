@@ -1,0 +1,85 @@
+- name: Среда разработки Windows
+  href: index.yml
+  items:
+    - name: Разработка с использованием Python
+      items:
+        - name: Обзор
+          href: ../python/index.yml
+        - name: 'Как приступить к работе: инструкции для начинающих'
+          href: ../python/beginners.md
+        - name: Как приступить к разработке веб-приложений
+          href: ../python/web-frameworks.md
+        - name: Как приступить к автоматизации
+          href: ../python/scripting.md
+        - name: Приступая к работе с базами данных
+          href: ../python/databases.md
+        - name: Частые вопросы
+          href: ../python/faqs.md
+        - name: Ресурсы
+          href: ../python/resources.md
+    - name: Разработка с помощью Node.js
+      items:
+        - name: Обзор
+          href: ../nodejs/index.yml
+        - name: Настройка с использованием WSL2 (Linux)
+          href: ../nodejs/setup-on-wsl2.md
+        - name: Настройка с использованием Windows (для начинающих)
+          href: ../nodejs/setup-on-windows.md
+        - name: 'Как приступить к работе: инструкции для начинающих'
+          href: ../nodejs/beginners.md
+        - name: Приступая к работе с платформами веб-приложений
+          href: ../nodejs/web-frameworks.md
+        - name: Приступая к работе с базами данных
+          href: ../nodejs/databases.md
+        - name: Приступая к работе с контейнерами
+          href: ../nodejs/containers.md
+    - name: Разработка с использованием Android
+      items:
+        - name: Обзор
+          href: ../android/overview.md
+        - name: Начало работы с нативными приложениями для Android
+          href: ../android/native-android.md
+        - name: Начало работы с кроссплатформенными средствами
+          items:
+            - name: Нативные приложения Xamarin
+              href: ../android/xamarin-android.md
+            - name: Xamarin.Forms
+              href: ../android/xamarin-forms.md
+            - name: React Native
+              href: ../android/react-native.md
+            - name: 'PWA (Ionic, PhoneGap, Cordova)'
+              href: ../android/pwa.md
+        - name: Параметры Защитника для повышения производительности
+          href: ../android/defender-settings.md
+        - name: Тестирование на устройстве или в эмуляторе
+          href: ../android/emulator.md
+    - name: Руководство по использованию Mac в Windows
+      items:
+        - name: Изменение среды разработки
+          href: mac-to-windows.md
+        - name: Сочетания клавиш
+          href: 'mac-to-windows.md#keyboard-shortcuts'
+        - name: Команды сенсорной панели
+          href: 'mac-to-windows.md#trackpad-shortcuts'
+        - name: Терминал и оболочка
+          href: 'mac-to-windows.md#terminal-and-shell'
+        - name: Приложения и служебные программы
+          href: 'mac-to-windows.md#apps-and-utilities'
+    - name: Подсистема Windows для Linux
+      items:
+        - name: Общие сведения о WSL
+          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
+        - name: "Общие сведения о WSL\_2"
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
+        - name: Сравнение WSL 1 и WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
+        - name: Учетные записи пользователей и разрешения
+          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
+    - name: Терминал Windows
+      items:
+        - name: Обзор
+          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
+        - name: Руководство пользователя
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
+        - name: Пользовательские параметры
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'

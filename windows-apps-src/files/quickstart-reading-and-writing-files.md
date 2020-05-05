@@ -12,10 +12,10 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258565"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
@@ -31,7 +31,7 @@ ms.locfileid: "74258565"
 > [!NOTE]
 > Полный пример: [пример доступа к файлам](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 

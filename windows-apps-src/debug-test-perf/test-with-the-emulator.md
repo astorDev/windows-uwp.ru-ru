@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257869"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148693"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Тестирование при помощи эмулятора устройства с Windows 10 Mobile (Майкрософт)
 
@@ -54,7 +54,7 @@ ms.locfileid: "74257869"
 ### <a name="installing"></a>Установка
 Эмулятор Microsoft для Windows 10 Mobile поставляется в составе Windows 10 SDK. Пакет SDK для Windows 10 и эмулятор можно установить в процессе установки Visual Studio. См. [страницу скачивания Visual Studio](https://developer.microsoft.com/windows/downloads).
 
-Вы также можете установить эмулятор устройства с Windows 10 Mobile (Майкрософт) с помощью [программы установки эмулятора](https://go.microsoft.com/fwlink/p/?LinkID=615095).
+Вы также можете установить эмулятор устройства с Windows 10 Mobile (Майкрософт) с помощью [программы установки эмулятора](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe).
 
 ### <a name="uninstalling"></a>Удаление
 
@@ -619,7 +619,7 @@ Push-уведомления несложно протестировать без
 
 Ниже представлены известные проблемы с эмулятором, а также рекомендуемые обходные решения.
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Сообщение об ошибке: "Сбой при удалении виртуального коммутатора Ethernet"
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Сообщение об ошибке: «Сбой при удалении виртуального коммутатора Ethernet»
 
 В некоторых ситуациях, в том числе после обновления до новой тестируемой возможности Windows 10, виртуальный сетевой коммутатор, связанный с эмулятором, может перейти в состояние, в котором его невозможно удалить через пользовательский интерфейс.
 
@@ -652,7 +652,7 @@ Push-уведомления несложно протестировать без
 5. Дважды щелкните элемент **DisableRemoteFx**, введите 1 в поле данных **Значение**, выберите параметр **Десятичный**, а затем нажмите кнопку **OK**.
 6. Закройте редактор реестра.
 
-**Примечание**. Установив это значение реестра, необходимо удалить виртуальную машину в диспетчере Hyper-V для конфигурации, запущенной в Visual Studio, а затем повторно запустить эмулятор с графикой с программной отрисовкой.
+**Примечание.** Установив это значение реестра, необходимо удалить виртуальную машину в диспетчере Hyper-V для конфигурации, запущенной в Visual Studio, а затем повторно запустить эмулятор с графикой с программной отрисовкой.
 
 ## <a name="support-resources"></a>Ресурсы поддержки
 

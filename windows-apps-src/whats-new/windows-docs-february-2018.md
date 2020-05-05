@@ -6,17 +6,17 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258813"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Пополнение документации для разработчиков Windows в феврале 2018 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В январе стали доступны следующие обзоры функций, руководства для разработчиков и видео, содержащие новые и обновленные сведения для разработчиков Windows.
+Документация для разработчиков Windows постоянно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В январе стали доступны следующие обзоры функций, руководства для разработчиков и видео, содержащие новые и обновленные сведения для разработчиков Windows.
 
-[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 
 ## <a name="features"></a>Возможности
@@ -41,7 +41,7 @@ ms.locfileid: "74258813"
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>Надстройки с подпиской теперь доступны всем разработчикам
 
-Создавайте и публикуйте надстройки с подпиской, чтобы продавать цифровые продукты в приложениях и играх (функции приложений или цифровое содержимое) с автоматическим периодическим выставлением счетов. Подробные сведения см. в статье [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md) (Включение надстроек с подпиской для вашего приложения).
+Создавайте и публикуйте надстройки с подпиской, чтобы продавать цифровые продукты в приложениях и играх (функции приложений или цифровое содержимое) с автоматическим периодическим выставлением счетов. Дополнительные сведения см. в статье [Включение надстроек с подпиской для приложения](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 

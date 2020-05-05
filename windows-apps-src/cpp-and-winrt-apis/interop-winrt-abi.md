@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209149"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
@@ -143,7 +143,7 @@ int main()
 
 Для преобразований самого низкого уровня, которые копируют только адреса, можно использовать вспомогательные функции [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi) и [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi).
 
-`WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+`WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
     // The code in main() already shown above remains here.
@@ -356,7 +356,7 @@ void GetString(_Out_ HSTRING* value);
 * [IUnknown::AddRef method](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) (Метод IUnknown::AddRef)
 * [IUnknown::QueryInterface method](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (Метод IUnknown::QueryInterface)
 * [winrt::attach_abi function (C++/WinRT)](/uwp/cpp-ref-for-winrt/attach-abi) (Функция winrt::attach_abi (C++/WinRT))
-* [winrt::com_ptr struct template (C++/WinRT)](/uwp/cpp-ref-for-winrt/com-ptr) (Шаблон структуры winrt::com_ptr (C++/WinRT))
+* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi function (C++/WinRT)](/uwp/cpp-ref-for-winrt/copy-from-abi) (Функция winrt::copy_from_abi (C++/WinRT))
 * [winrt::copy_to_abi function (C++/WinRT)](/uwp/cpp-ref-for-winrt/copy-to-abi) (Функция winrt::copy_to_abi (C++/WinRT))
 * [winrt::detach_abi function (C++/WinRT)](/uwp/cpp-ref-for-winrt/detach-abi) (Функция winrt::detach_abi (C++/WinRT))

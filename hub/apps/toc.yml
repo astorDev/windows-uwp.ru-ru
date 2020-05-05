@@ -11,11 +11,11 @@
       items:
         - name: Обзор
           href: desktop/modernize/index.md
-        - name: Вызов API UWP
+        - name: Вызов интерфейсов API среды выполнения Windows
           items:
             - name: Обзор
               href: desktop/modernize/desktop-to-uwp-enhance.md
-            - name: Доступные интерфейсы API UWP
+            - name: Доступные API-интерфейсы среды выполнения Windows
               href: desktop/modernize/desktop-to-uwp-supported-api.md
         - name: Добавление элементов управления XAML платформы UWP (XAML Islands)
           items:

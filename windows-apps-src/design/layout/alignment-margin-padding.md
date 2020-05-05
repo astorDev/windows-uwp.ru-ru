@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0d7f702d145740703b9fbc4ca2e7fd8eba8957cc
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684465"
 ---
 # <a name="alignment-margin-padding"></a>Выравнивание, поля и отбивка
@@ -71,7 +71,7 @@ ms.locfileid: "75684465"
 -   [**Control.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding) наследуется всеми производными классами [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls). Не во всех элементах управления имеется содержимое, и для таких элементов задание свойства ни на что не влияет. Если элемент управления имеет границу, отбивка применяется внутри этой границы.
 -   [**Border.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding) позволяет определить расстояние между линией прямоугольника, созданной с помощью свойства [**BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) и элементом [**Child**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child).
 -   [**ItemsPresenter.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding) отвечает за отображение элементов в элементах управления, размещая указанное заполнение вокруг каждого элемента.
--   [**TextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) и [**RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding) увеличивают ограничивающий прямоугольник вокруг текста текстового элемента. Эти текстовые элементы не имеют параметра **Background**, поэтому их визуально трудно заметить. По этой причине для контейнеров [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block) лучше использовать параметры [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin).
+-   [**TextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) и [**RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding) увеличивают ограничивающий прямоугольник вокруг текста текстового элемента. Эти текстовые элементы не имеют параметра **Background**, поэтому их визуально трудно заметить. По этой причине для контейнеров [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) лучше использовать параметры [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block).
 
 В каждом из этих случаев элементы также имеют свойство Margin. Если свойства Margin и Padding используются одновременно, они дополняют друг друга: очевидное расстояние между внешним контейнером и внутренним содержимым складывается из ширины поля и отбивки.
 

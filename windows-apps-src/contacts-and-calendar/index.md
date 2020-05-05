@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, контакты, календарь, встречи, электронные сообщения
 ms.localizationpriority: medium
 ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255443"
 ---
 # <a name="contacts-my-people-and-calendar"></a>"Контакты", "Близкие люди" и "Календарь"
@@ -33,7 +33,7 @@ ms.locfileid: "74255443"
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 * [Пример API встреч](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
 * [Пример API диспетчера контактов](https://code.msdn.microsoft.com/windowsapps/Contact-manager-API-sample-319bdcef)

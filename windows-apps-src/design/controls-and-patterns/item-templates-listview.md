@@ -6,10 +6,10 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 9328c3f156acd13fd8947e01e924bf0d6849c0a6
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684407"
 ---
 # <a name="item-templates-for-list-view"></a>Шаблоны элементов для представления списка
@@ -129,7 +129,7 @@ ms.locfileid: "75684407"
 ```
 
 ## <a name="related-articles"></a>Похожие статьи
-- [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) (Класс ListView)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
 - [Общие сведения о специальных возможностях](../accessibility/accessibility-overview.md)
 - [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

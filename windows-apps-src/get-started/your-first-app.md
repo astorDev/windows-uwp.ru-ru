@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75685151"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
@@ -69,7 +69,7 @@ ms.locfileid: "75685151"
 * [Преобразование веб-приложения в приложение UWP](../porting/hwa-create-windows.md)
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Приступить к программированию](create-uwp-apps.md)
 * [Что такое приложение UWP?](universal-application-platform-guide.md)

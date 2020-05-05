@@ -1,40 +1,58 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Приложения
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
-        - name: Приложения
-          tocHref: /windows/apps/
-          topicHref: /windows/apps/
+        - name: Создание классических приложений
+          tocHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop/
+        - name: Модернизация классических приложений
+          tocHref: /windows/apps/desktop/modernize/
+          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: Создание классических приложений
-              tocHref: /windows/apps/desktop/
-              topicHref: /windows/apps/desktop/
-            - name: Модернизация классических приложений
-              tocHref: /windows/apps/desktop/modernize/
-              topicHref: /windows/apps/desktop/modernize/
-            - name: .NET TraceProcessing
-              tocHref: /windows/apps/trace-processing/
-              topicHref: /windows/apps/trace-processing/overview
-        - name: Среда разработки
-          tocHref: /windows/dev-environment/
-          topicHref: /windows/dev-environment/
-          items:
-            - name: Python
-              tocHref: /windows/python/
-              topicHref: /windows/python/
-            - name: Node.js
-              tocHref: /windows/nodejs/
-              topicHref: /windows/nodejs/
-            - name: Использование Mac в Windows
-              tocHref: /windows/dev-environment/mac-to-windows/
-              topicHref: /windows/dev-environment/mac-to-windows/
-            - name: Среда разработки
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/about
-            - name: Среда разработки
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/wsl2-about
+            - name: Вызов интерфейсов API среды выполнения Windows
+              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+            - name: XAML Islands
+              topicHref: /windows/apps/desktop/modernize/xaml-islands
+            - name: Визуальный уровень
+              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+            - name: 'Функции, которым требуется идентификатор пакета'
+              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+            - name: 'Руководство: Модернизация приложения WPF'
+              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+        - name: .NET TraceProcessing
+          tocHref: /windows/apps/trace-processing/
+          topicHref: /windows/apps/trace-processing/overview
+        - name: "Разработка для Windows\_10X"
+          topicHref: /windows/apps/10x/faq
+        - name: Система Fluent Design
+          topicHref: /windows/apps/fluent-design-system
+        - name: Специальные возможности
+          topicHref: /windows/apps/accessibility
+        - name: Speech
+          topicHref: /windows/apps/speech
+        - name: Функции и технологии
+          topicHref: /windows/apps/features-and-technologies
+        - name: Последние обновления документации
+          topicHref: /windows/apps/whats-new/latest-doc-updates
+    - name: Среда разработки
+      tocHref: /windows/dev-environment/
+      topicHref: /windows/dev-environment/
+      items:
+        - name: Python
+          tocHref: /windows/python/
+          topicHref: /windows/python
+        - name: Node.js
+          tocHref: /windows/nodejs/
+          topicHref: /windows/nodejs
+        - name: Android
+          tocHref: /windows/android/
+          topicHref: /windows/android/overview
+        - name: Использование Mac в Windows
+          topicHref: /windows/dev-environment/mac-to-windows
+        - name: Подсистема Windows для Linux
+          tocHref: /windows/dev-environment/wsl
+          topicHref: /windows/wsl/about

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ms.openlocfilehash: cb5687c1a6744c34231c9b368da7c691c8e77642
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282441"
 ---
 # <a name="security"></a>Безопасность

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, monetize, engage, promote, Store services
 ms.localizationpriority: medium
 ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259293"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Монетизация, привлечение и службы Store

@@ -5,10 +5,10 @@ ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
 ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
-ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81123607"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях универсальной платформы Windows (UWP) с помощью классов StandardUICommand, XamlUICommand и ICommand
@@ -63,7 +63,7 @@ ms.locfileid: "81123607"
 | Удалить элемент      | Контекстное меню   | Кнопка при наведении      | Клавиша DEL              | Провести, чтобы удалить   |
 | Отметить элемент        | Контекстное меню   | Кнопка при наведении      | CTRL+SHIFT+G         | Провести пальцем, чтобы пометить     |
 | Обновить данные     | Контекстное меню   | Н/Д               | Клавиша F5               | Обновление путем оттягивания   |
-| Добавить элемент в избранное | Контекстное меню   | Кнопка при наведении      | F, CTRL+S            | Провести, чтобы добавить к избранному |
+| Добавить элемент в избранное | Контекстное меню   | Кнопка при наведении      | F, CTRL+S            | Провести, чтобы добавить в избранное |
 
 **Всегда предоставляйте контекстное меню**. Мы рекомендуем включать все соответствующие контекстные команды в традиционное контекстное меню или меню CommandBarFlyout, так как они поддерживают все типы ввода. Например, если команда отображается только во время события наведения указателя, ее нельзя использовать на устройстве, работающем только с помощью сенсорного ввода.
 
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой удаления типа [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)).
+2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой удаления типа [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)).
 
 ```csharp
 /// <summary>
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)).
+2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -1099,7 +1099,7 @@ namespace UICommand1
 
 Полный пример, демонстрирующий реализацию [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), приведен в [коллекции элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 [Элементы управления для приложений UWP](index.md)
 
@@ -1114,4 +1114,4 @@ namespace UICommand1
 #### <a name="other-samples"></a>Другие примеры
 
 - [Примеры для универсальной платформы Windows (C# и C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
-- [Коллекция элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)

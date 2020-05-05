@@ -7,10 +7,10 @@ keywords: соглашение о политиках для microsoft store
 ms.localizationpriority: high
 ms.assetid: 9DA14ADF-B4FB-4EC8-8D63-4B9152476BE0
 ms.openlocfilehash: a58ccb4ae9af163b84cc1f5b05a7b4784ac3749c
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607267"
 ---
 # <a name="store-policies-and-code-of-conduct"></a>Политики и правила поведения для Microsoft Store

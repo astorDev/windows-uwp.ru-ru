@@ -12,10 +12,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73061973"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Ссылки на ресурсы ResourceDictionary и XAML
@@ -81,7 +81,7 @@ ms.locfileid: "73061973"
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) и [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) требуют **TargetType** и будут использовать **TargetType** в качестве ключа, если [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) не задан. В этом случае ключ фактически является объектом Type, а не строкой. (См. приведенные ниже примеры.)
 -   Ресурсы [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) с **TargetType** будут использовать **TargetType** в качестве ключа, если [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) не задан. В этом случае ключ фактически является объектом Type, а не строкой.
--   Вместо [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) можно использовать [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute). Однако x:Name также создает выделенный код поля для ресурса. В результате x:Name менее эффективен по сравнению с x:Key, так как это поле необходимо инициализировать при загрузке страницы.
+-   Вместо [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) можно использовать [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute). Однако x:Name также создает выделенный код поля для ресурса. В результате x:Name менее эффективен по сравнению с x:Key, так как это поле необходимо инициализировать при загрузке страницы.
 
 [Расширение разметки StaticResource](../../xaml-platform/staticresource-markup-extension.md) может получить ресурсы только с именем строки ([x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) или [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)). Но платформа XAML также ищет неявные ресурсы стиля (которые используют **TargetType**, а не x:Key или x:Name), когда принимает решение об использовании стиля и шаблона для элемента управления, для которого не заданы свойства [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) и [ContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) или [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
 
@@ -471,7 +471,7 @@ sealed partial class App : Application
 В сложных сценариях можно реализовать класс, поведение которого будет отличаться от поведения поиска ссылок на ресурсы XAML, описанного в этой теме. Для этого реализуется класс [CustomXamlResourceLoader](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader), после чего можно пользоваться этим поведением, применяя для ссылок на ресурсы [расширение разметки CustomResource](https://docs.microsoft.com/windows/uwp/xaml-platform/customresource-markup-extension) вместо [StaticResource](../../xaml-platform/staticresource-markup-extension.md) или [ThemeResource](../../xaml-platform/themeresource-markup-extension.md). В большинстве приложений не будет сценариев, которым требуется такое поведение. Дополнительные сведения см. в статье [CustomXamlResourceLoader](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader).
 
  
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
 * [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 * [Обзор языка XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)

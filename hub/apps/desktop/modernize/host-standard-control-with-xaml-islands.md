@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80482509"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение стандартного элемента управления UWP в приложении WPF с помощью XAML Islands
@@ -45,14 +45,14 @@ ms.locfileid: "80482509"
 
 1. В Visual Studio 2019 создайте проект **приложения WPF (.NET Framework)** или **приложения WPF (.NET Core)** . Если вы хотите создать проект **приложения WPF (.NET Core)** , сначала необходимо установить последнюю версию [пакета SDK для .NET Core 3](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
-2. Убедитесь, что включены следующие [ссылки на пакеты](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files):
+2. Убедитесь, что [ссылки на пакеты](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) активны:
 
     1. В Visual Studio выберите элементы **Сервис -> Диспетчер пакетов NuGet -> Параметры диспетчера пакетов**.
     2. Убедитесь, что для **формата управления пакетами по умолчанию** установлено значение **PackageReference**.
 
 3. В **обозревателе решений** щелкните правой кнопкой мыши проект WPF и выберите пункт **Manage NuGet Packages** (Управление пакетами NuGet).
 
-4. Убедитесь, что в окне **Диспетчер пакетов NuGet** установлен параметр **Включить предварительные версии**.
+4. Убедитесь, что в окне **Диспетчер пакетов NuGet** выбран параметр **Включить предварительные выпуски**.
 
 5. Откройте вкладку **Обзор**, найдите пакет [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (версии 6.0.0 или более поздней) и установите его. Этот пакет содержит все необходимые компоненты для использования заключенных в оболочку элементов управления UWP для WPF (в том числе элементы управления [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas), [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) и [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
     > [!NOTE]
@@ -144,7 +144,7 @@ ms.locfileid: "80482509"
 
 1. В **обозревателе решений** откройте файл **MainWindow.xaml**.
 
-2. В элемент **Window** в верхней части XAML-файла добавьте следующий атрибут. Он указывает на пространство имен XAML, в котором находятся заключенные в оболочку элементы управления UWP [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) и [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar):
+2. В элементе **Окно** в верхней части XAML-файла добавьте следующий атрибут. Он указывает на пространство имен XAML, в котором находятся заключенные в оболочку элементы управления UWP [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) и [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar):
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -184,7 +184,7 @@ ms.locfileid: "80482509"
 
 4. Сохраните файл **MainWindow.xaml**.
 
-    Если у вас есть устройство, которое поддерживает цифровое перо, например Surface, и вы выполняете инструкции из этого учебника на физическом компьютере, то вы можете создать приложение, запустить его и использовать цифровой рукописный ввод на экране с помощью пера. Если же у вас нет устройства, поддерживающего ввод пером, попытка расписаться с помощью мыши не даст результата. Это связано с тем, что элемент управления **InkCanvas** по умолчанию включен только для цифрового пера. Но пользователь может изменить это поведение.
+    Если у вас есть устройство, которое поддерживает цифровое перо, например Surface, и вы выполняете инструкции из этого учебника на физическом компьютере, то вы можете создать приложение, запустить его и использовать цифровой рукописный ввод на экране с помощью пера. Если же у вас нет устройства, поддерживающего ввод пером, попытка расписаться с помощью мыши не даст результата. Это связано с тем, что элемент управления **InkCanvas** по умолчанию включен только для цифровых перьев. Но пользователь может изменить это поведение.
 
 5. Откройте файл **MainWindow.xaml.cs**.
 
@@ -202,7 +202,7 @@ ms.locfileid: "80482509"
 
     Вы можете настроить интерфейс рукописного ввода по умолчанию, используя объект **InkPresenter**. Этот код использует свойство **InputDeviceTypes** для поддержки мыши в качестве устройства рукописного ввода.
 
-8. Снова нажмите клавишу F5, чтобы перестроить приложение и открыть его в отладчике. Если вы используете компьютер с мышью, убедитесь, что с помощью мыши вы можете нарисовать что-либо в области холста для рукописного ввода.
+8. Снова нажмите клавишу F5, чтобы повторно скомпилировать приложение и открыть его в отладчике. Если вы используете компьютер с мышью, убедитесь, что с помощью мыши вы можете нарисовать что-либо в области холста для рукописного ввода.
 
 ## <a name="host-a-calendarview-by-using-the-host-control"></a>Размещение CalendarView с использованием размещаемого элемента управления
 
@@ -213,7 +213,7 @@ ms.locfileid: "80482509"
 
 1. В **обозревателе решений** откройте файл **MainWindow.xaml**.
 
-2. В элемент **Window** в верхней части XAML-файла добавьте следующий атрибут. Он указывает на пространство имен XAML для элемента управления [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
+2. В элементе **Окно** в верхней части XAML-файла добавьте следующий атрибут. Он указывает на пространство имен XAML для элемента управления [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost).
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
@@ -284,7 +284,7 @@ ms.locfileid: "80482509"
     }
     ```
 
-11. Снова нажмите клавишу F5, чтобы перестроить приложение и открыть его в отладчике. Убедитесь, что элемент управления "Календарь" теперь отображается в нижней части окна.
+11. Снова нажмите клавишу F5, чтобы повторно скомпилировать приложение и открыть его в отладчике. Убедитесь, что элемент управления "Календарь" теперь отображается в нижней части окна.
 
 ## <a name="package-the-app"></a>Создание пакета приложения
 
@@ -312,7 +312,7 @@ ms.locfileid: "80482509"
 ## <a name="related-topics"></a>Связанные темы
 
 * [Элементы управления UWP XAML в классических приложениях (XAML Islands)](xaml-islands.md)
-* [Примеры кода XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples)
+* [Примеры кода для XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples)
 * [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)
 * [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

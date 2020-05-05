@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79208989"
 ---
 # <a name="xaml-styles"></a>Стили XAML
@@ -165,7 +165,7 @@ ms.locfileid: "79208989"
 </Page.Resources>
 ```
 
-Для состояний наподобие PointerOver (наведение мыши на кнопку), **PointerPressed** (кнопка вызвана), или Disabled (кнопка не активна). Эти окончания добавляются к исходным именам облегченного оформления: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled** и т. д. Изменение и этих кистей гарантирует, что ваши элементы управления раскрашены в соответствии с темой приложения.
+Для состояний наподобие PointerOver (наведение мыши на кнопку), **PointerPressed** (кнопка вызвана), или Disabled (кнопка не активна). Эти окончания добавляются к исходным именам облегченного оформления: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**и т. д. Изменение и этих кистей гарантирует, что ваши элементы управления раскрашены в соответствии с темой приложения.
 
 Размещение переопределений этих кистей на уровне **App.Resources** изменяет все кнопки в пределах всего приложения, а не на одной странице.
 

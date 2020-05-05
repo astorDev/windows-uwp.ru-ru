@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73062751"
 ---
 # <a name="app-analysis-overview"></a>Обзор средства анализа приложений
@@ -209,7 +209,7 @@ ResourceDictionaries обычно используются для хранени
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>Элемент управления коллекциями используют невиртуализованную панель
 
-Если вы задали пользовательский шаблон панели элементов (см. ItemsPanel), следует использовать панель виртуализации, например ItemsWrapGrid или ItemsStackPanel. Если вы используете VariableSizedWrapGrid, WrapGrid или StackPanel, то виртуализация не будет выполнена. Кроме того, следующие события ListView происходят только при использовании ItemsWrapGrid или ItemsStackPanel: ChoosingGroupHeaderContainer, ChoosingItemContainer и ContainerContentChanging.
+Если вы задали пользовательский шаблон панели элементов (см. ItemsPanel), следует использовать панель виртуализации, например ItemsWrapGrid или ItemsStackPanel. Если вы используете VariableSizedWrapGrid, WrapGrid или StackPanel, то виртуализация не будет выполнена. Кроме того, следующие события ListView вызываются только при использовании элементов ItemsWrapGrid или ItemsStackPanel: ChoosingGroupHeaderContainer, ChoosingItemContainer и ContainerContentChanging.
 
 Виртуализация пользовательского интерфейса — это самое важное улучшение производительности коллекций. Это означает, что элементы пользовательского интерфейса, представляющие элементы, создаются по запросу. Для элемента управления элементами, привязанного к коллекции из 1000 элементов, создание пользовательского интерфейса одновременно для всех элементов было бы напрасной тратой ресурсов, поскольку они не могут отображаться одновременно. ListView и GridView (и другие стандартные элементы управления, производные от ItemsControl) выполняют виртуализацию пользовательского интерфейса за вас. Если элементы близки к появлению на экране (за несколько страниц), платформа создает пользовательский интерфейс для таких элементов и помещает их в кэш. Если повторное появление элементов маловероятно, платформа освобождает память.
 
@@ -227,7 +227,7 @@ ResourceDictionaries обычно используются для хранени
 
 Используйте панель виртуализации, например ItemsWrapGrid или ItemsStackPanel.
 
-## <a name="accessibility-uia-elements-with-no-name"></a>Специальные возможности: элементы UIA без имени
+## <a name="accessibility-uia-elements-with-no-name"></a>Специальные возможности: элементы автоматизации пользовательского интерфейса без имени
 
 В XAML вы можете указать имя, задав значение AutomationProperties.Name. Многие одноранговые классы автоматизации предоставляют имя по умолчанию, если свойство AutomationProperties.Name не задано. 
 
@@ -245,7 +245,7 @@ ResourceDictionaries обычно используются для хранени
 
 Иногда нужно не указать имя, а удалить элемент модели автоматизации пользовательского интерфейса из всех деревьев, кроме необработанных. Это можно сделать в XAML, установив `AutomationProperties.AccessibilityView = "Raw"`.
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Специальные возможности: имена элементов UIA с одинаковым Controltype не должны совпадать
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Специальные возможности: имена элементов модели автоматизации пользовательского интерфейса с одинаковым Controltype не должны совпадать
 
 Свойства Name и ControlType двух элементов модели автоматизации пользовательского интерфейса с одним родительским элементом не должны совпадать. У двух элементов может быть одинаковое свойство Name, если ControlType различаются. 
 

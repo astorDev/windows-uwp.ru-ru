@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
 ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79448561"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-Но опять же, знать об этом не обязательно благодаря [оператору преобразования **hstring** в **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
+Но опять же, знать об этом не обязательно благодаря **оператору преобразования** hstring[ в **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -192,6 +192,6 @@ myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Функция winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
 * [Функция winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)

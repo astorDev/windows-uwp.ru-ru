@@ -6,17 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76026c4f499a068bab689eadf050e0ec6277bbe8
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 39759bec429bfe7952777d9669b7971a09136116
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393686"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82034138"
 ---
 # <a name="windows-runtime-components"></a>Компоненты среды выполнения Windows
-Компоненты среды выполнения Windows представляют собой автономные объекты, которые позволяют создавать экземпляры и могут быть использованы в любом языке, включая C#, Visual Basic, JavaScript и C++.
 
-Можно создавать компоненты среды выполнения Windows с помощью Visual Studio и C#, Visual Basic или C++, а затем использовать их в приложениях универсальной платформы Windows (UWP).
+Компоненты среды выполнения Windows представляют собой автономные программные модули, на которые можно ссылаться и которые можно использовать в любом языке, включая C#, C++/WinRT, Visual Basic, JavaScript и C++/CX. Вы можете создавать компоненты среды выполнения Windows с помощью Visual Studio, а затем использовать их в своих приложениях универсальной платформы Windows (UWP).
+
+> [!NOTE]
+> Для разработчиков C++ мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным интерфейсам API Windows. Сведения о создании компонента среды выполнения Windows с помощью C++/WinRT см. в статье [Создание событий в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
 | Раздел | Описание |
 |-------|-------------|

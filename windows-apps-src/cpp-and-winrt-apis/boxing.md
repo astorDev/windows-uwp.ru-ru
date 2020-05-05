@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, boxing, scalar, value
 ms.localizationpriority: medium
 ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79038097"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
  
-[**Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Это аналогично тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) находится **System.Object**.
+[**Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Это аналогично тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а в корне каждого класса **Common Type System** находится [System.Object](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
 
 Другими словами, функции, которая ожидает **IInspectable**, можно передать экземпляр любого класса среды выполнения. Но такой функции нельзя напрямую передать скалярное значение, например числовое или текстовое. Для этого скалярное значение необходимо поместить в объект ссылочного класса. Этот процесс называют *упаковкой* значения.
 

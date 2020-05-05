@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80290026"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Взаимодействие между C++/WinRT и C++/CX
@@ -256,8 +256,8 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
-* [Функция QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
-* [Функция winrt::get_abi](/uwp/cpp-ref-for-winrt/get-abi)
+* [IUnknown::QueryInterface method](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) (Метод IUnknown::QueryInterface)
+* [winrt::get_abi function (C++/WinRT)](/uwp/cpp-ref-for-winrt/get-abi) (Функция winrt::get_abi (C++/WinRT))
 * [Функция winrt::put_abi](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>Связанные темы

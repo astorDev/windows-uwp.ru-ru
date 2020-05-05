@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75681985"
 ---
 # <a name="version-adaptive-code"></a>Адаптивный к версии код
@@ -73,7 +73,7 @@ ms.locfileid: "75681985"
 
 ### <a name="example-1-new-enum-value"></a>Пример 1: новое значение перечисления
 
-В Windows 10 версии 1607 добавлено новое значение перечисления [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue): **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
+В Windows 10 версии 1607 добавлено новое значение перечисления [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue): **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
 
 В этом примере показано, как проверить, доступно ли значение перечисления **ChatWithoutEmoji**, и задать свойство [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) элемента **TextBox**, если это так. Если значение отсутствует в системе, где запущено приложение, для **InputScope** задается значение **Chat**. Показанный код можно разместить в конструкторе Page или обработчике событий Page.Loaded.
 

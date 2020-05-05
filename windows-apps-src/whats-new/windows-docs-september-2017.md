@@ -6,10 +6,10 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74734959"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Что нового в документации для разработчиков Windows в сентябре 2017 г.
@@ -18,7 +18,7 @@ ms.locfileid: "74734959"
 
 Конечно, приближается обновление Fall Creators Update, поэтому следите за новостями, чтобы поскорее ознакомиться с дополнительной документацией, которая появится в ближайший месяц!
 
-[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) или использованию [существующего кода приложения в Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -49,7 +49,7 @@ ms.locfileid: "74734959"
 
 Мы добавили новые [рекомендации по стилю и тону в приложениях UWP](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone), где даем советы по написанию текста для вашего приложения. Независимо от того, что вы разрабатываете, важно использовать доступный, понятный и информативный язык.
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 
 ### <a name="photolab-sample"></a>Пример PhotoLab
 
