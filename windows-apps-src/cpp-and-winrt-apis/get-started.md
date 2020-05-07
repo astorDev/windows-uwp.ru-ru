@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255135"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
@@ -125,7 +125,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ### <a name="set-project-properties"></a>Настройка свойств проекта
 
-Перейдите к свойству проекта **Общие** \> **Версия пакета SDK для Windows** и выберите **Все конфигурации** и **Все платформы**. Убедитесь, что для **версии пакета Windows SDK** установлено значение 10.0.17134.0 (Windows 10 версии 1803) или выше.
+Перейдите к свойству проекта **Общие** \> **Версия пакета SDK для Windows** и выберите **Все конфигурации** и **Все платформы**. Убедитесь, что для **версии пакета Windows SDK** установлено значение 10.0.17134.0 (Windows 10 версии 1803) или выше.
 
 Убедитесь, что у вас не возникает ситуация, описанная в разделе [Почему мой новый проект не компилируется?](/windows/uwp/cpp-and-winrt-apis/faq).
 
@@ -149,7 +149,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 Языковая проекция C++/WinRT зависит от определенных свободных функций среды выполнения Windows (не являющихся членами) и точек входа, для которых требуется связывание с библиотекой [WindowsApp.lib](/uwp/win32-and-com/win32-apis). В этом разделе описываются три варианта соответствия компоновщику.
 
-Первый вариант — добавить в ваш проект Visual Studio все свойства и цели C++/WinRT MSBuild. Для этого установите пакет NuGet [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) в проект. В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта.
+Первый вариант — добавить в ваш проект Visual Studio все свойства и цели C++/WinRT MSBuild. Для этого установите пакет NuGet [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) в проект. В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта.
 
 Вы также можете использовать параметры компоновки проекта для явного включения `WindowsApp.lib`. Кроме того, это можно сделать в исходном коде (например, в `pch.h`) следующим образом.
 
@@ -182,10 +182,10 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 ## <a name="important-apis"></a>Важные API
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Свойство SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Структура winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Обработка ошибок в C++/WinRT](error-handling.md)
 * [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)

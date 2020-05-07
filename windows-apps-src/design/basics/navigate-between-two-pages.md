@@ -14,10 +14,10 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
-ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72560809"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
@@ -450,7 +450,7 @@ Page1::Page1()
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 * [Основы проектирования навигации для приложений UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
 * [Сводка](../controls-and-patterns/pivot.md)
 * [Представление навигации](../controls-and-patterns/navigationview.md)

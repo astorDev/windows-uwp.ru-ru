@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция, передача, параметры, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e172fc4dbd5b865add1828a98dc1a030d5dc6f
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844350"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255258"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Передача параметров в границы интерфейса ABI
 
@@ -25,7 +25,7 @@ ms.locfileid: "67844350"
 
 **winrt::param::hstring** упрощает передачу параметров в API, которые принимают **HSTRING**.
 
-|Передаваемые типы|Заметки|
+|Передаваемые типы|Примечания|
 |-|-|
 |`{}`|Передает пустую строку.|
 |**winrt::hstring**||
@@ -45,7 +45,7 @@ ms.locfileid: "67844350"
 
 Коллекции среды выполнения Windows уже являются **IIterable**.
 
-|Передаваемые типы|Sync|Async|Заметки|
+|Передаваемые типы|Sync|Async|Примечания|
 |-|-|-|-|
 | `nullptr` | Да | Да | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IIterable\<T\>** | Да | Да | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -81,7 +81,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 Реализация [**IIterator\<T\>.GetMany(T\[\])** ](/uwp/api/windows.foundation.collections.iiterator-1.getmany) является более эффективной, если итератор представлен `RandomAcessIt`. В противном случае выполняется несколько проходов по диапазону.
 
-|Передаваемые типы|Sync|Async|Заметки|
+|Передаваемые типы|Sync|Async|Примечания|
 |-|-|-|-|
 | `nullptr` | Да | Да | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IIterable\<IKeyValuePair\<K, V\>\>** | Да | Да | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -98,7 +98,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 Можно использовать [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) для получения **IVectorView** из **IVector**.
 
-|Передаваемые типы|Sync|Async|Заметки|
+|Передаваемые типы|Sync|Async|Примечания|
 |-|-|-|-|
 | `nullptr` | Да | Да | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IVectorView\<T\>** | Да | Да | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -115,7 +115,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 Можно использовать **IMap::GetView** для получения **IMapView** из **IMap**.
 
-|Передаваемые типы|Sync|Async|Заметки|
+|Передаваемые типы|Sync|Async|Примечания|
 |-|-|-|-|
 | `nullptr` | Да | Да | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IMapView\<K, V\>** | Да | Да | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -129,7 +129,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 **winrt::param::vector\<T\>** упрощает передачу параметров в API, которые принимают **IVector\<T\>** .
 
-|Передаваемые типы|Заметки|
+|Передаваемые типы|Примечания|
 |-|-|
 | `nullptr` | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IVector\<T\>** | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -142,7 +142,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 **winrt::param::map\<T\>** упрощает передачу параметров в API, которые принимают **IMap\<T\>** .
 
-|Передаваемые типы|Заметки|
+|Передаваемые типы|Примечания|
 |-|-|
 | `nullptr` | Убедитесь, что базовый метод поддерживает `nullptr`.|
 | **IMap\<T\>** | Или что-то, что может быть соответствующим образом преобразовано.|
@@ -154,9 +154,9 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="array-parameters"></a>Параметры массива
 
-**Winrt::array_view\<T\>**  не находится в пространстве имен **winrt::param**, но используется для параметров, которые являются массивами стиля C (*совместимыми массивами*).
+**Winrt::array_view\<T\>** не находится в пространстве имен **winrt::param**, но используется для параметров, которые являются массивами стиля C (*совместимыми массивами*).
 
-|Передаваемые типы|Заметки|
+|Передаваемые типы|Примечания|
 |-|-|
 | `{}` | Пустой массив.|
 | **array** | Соответствующий массив C (то есть `C array[N];`), где **C** можно преобразовать в **T** и `sizeof(C) == sizeof(T)`. |
@@ -164,3 +164,5 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 | **std::vector<C>** | Объект C++ **std::vector** (**C**), где **C** можно преобразовать в **T** и `sizeof(C) == sizeof(T)`. |
 | `{ T*, T* }` | Пара указателей, которые представляют диапазон [begin, end).|
 | **std::initializer_list\<T\>** ||
+
+Кроме того, см. запись блога о [разных шаблонах передачи массивов в стиле языка C через границы среды выполнения Windows ABI](https://devblogs.microsoft.com/oldnewthing/20200205-00/?p=103398).

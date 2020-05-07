@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, файл, свойства
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63799618"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Быстрый доступ к свойствам файлов в UWP 
@@ -17,8 +17,8 @@ ms.locfileid: "63799618"
 Узнайте, как быстро получить список файлов и их свойств из библиотеки для использования этих свойств в приложении.  
 
 Предварительные условия 
-- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**  . Узнайте, как создавать асинхронные приложения на C# или Visual Basic, изучив статью [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
-- **Права доступа к библиотекам**.  Коду в этих примерах требуется возможность **picturesLibrary**. Для вашего расположения файла может потребоваться другая возможность либо вообще не потребоваться никаких возможностей. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
+- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**  . Узнайте, как создавать асинхронные приложения на C# или Visual Basic из руководства по [вызову асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Права доступа к библиотекам**.  Коду в этих примерах требуется возможность **picturesLibrary**, но для вашего расположения файла может потребоваться другая возможность или вообще не потребоваться ни одной. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
 - **Простое перечисление файлов**.   В этом примере [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) используется для настройки нескольких расширенных свойств перечисления. Чтобы узнать больше о том, как получить простой список файлов для небольшого каталога, ознакомьтесь с разделом [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
 ## <a name="usage"></a>Использование  
@@ -114,7 +114,7 @@ while (images.Count != 0 || index < 10000) 
 ## <a name="adding-folders-to-libraries"></a>Добавление папок в библиотеки 
 Приложения могут потребовать от пользователя добавления расположения в индекс, используя метод [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync). Как только расположение будет включено в индекс, оно автоматически проиндексируется, и приложения смогут использовать эту технику для перечисления файлов.
  
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 [Справочные материалы по API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Перечисление и запрос файлов и папок](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  

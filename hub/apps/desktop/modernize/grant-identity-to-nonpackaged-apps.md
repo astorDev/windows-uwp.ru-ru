@@ -1,19 +1,19 @@
 ---
 Description: Сведения о предоставлении идентификатора для неупакованных классических приложений, чтобы в них можно было использовать современные функции Windows 10.
 title: Предоставление идентификаторов для неупакованных классических приложений
-ms.date: 02/28/2020
+ms.date: 04/23/2020
 ms.topic: article
 keywords: windows 10, классическое приложение, пакет, идентификатор, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
-ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
+ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81224277"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82107717"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Предоставление идентификаторов для неупакованных классических приложений
 
@@ -43,9 +43,9 @@ ms.locfileid: "81224277"
 
 ### <a name="package-external-location"></a>Внешнее расположение пакета
 
-Для поддержки разреженных пакетов схема манифеста теперь использует необязательный элемент **\<AllowExternalContent\>** в элементе [ **\<Properties\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Это позволяет манифесту пакета ссылаться на содержимое за пределами пакета в определенном расположении на диске.
+В рамках поддержки разреженных пакетов схема манифеста теперь использует необязательный элемент [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) в элементе [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Это позволяет манифесту пакета ссылаться на содержимое за пределами пакета в определенном расположении на диске.
 
-Например, если у вас есть неупакованное классическое приложение, устанавливающее исполняемый файл и другое содержимое в папке C:\Program Files\MyDesktopApp\,, можно создать разреженный пакет, который размещает элемент **\<AllowExternalContent\>** в манифесте. Во время установки приложения или при первом запуске приложений можно установить разреженный пакет и объявить C:\Program Files\MyDesktopApp\ в качестве внешнего расположения, которое будет использовать приложение.
+Например, если у вас есть неупакованное классическое приложение, устанавливающее исполняемый файл и другое содержимое в папке C:\Program Files\MyDesktopApp\,, можно создать разреженный пакет, который размещает элемент **uap10:AllowExternalContent** в манифесте. Во время установки приложения или при первом запуске приложений можно установить разреженный пакет и объявить C:\Program Files\MyDesktopApp\ в качестве внешнего расположения, которое будет использовать приложение.
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>Создание манифеста пакета для разреженного пакета
 
@@ -53,10 +53,10 @@ ms.locfileid: "81224277"
 
 Убедитесь, что манифест пакета содержит следующие элементы:
 
-* Элемент [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity), описывающий атрибуты идентификатора для классического приложения.
-* Элемент **\<AllowExternalContent\>** в элементе [ **\<Properties\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Этому элементу следует присвоить значение `true`, что позволяет манифесту пакета ссылаться на содержимое вне пакета в определенном расположении на диске. На следующем шаге вы укажете путь к внешнему расположению при регистрации разреженного пакета из кода, который выполняется в установщике или приложении. Любое содержимое, на которое вы ссылаетесь в манифесте и которое не находится в самом пакете, должно быть установлено во внешнем расположении.
-* Для атрибута **MinVersion** элемента [ **\<TargetDeviceFamily\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) следует задать `10.0.19000.0` или более позднюю версию.
-* Атрибуты **TrustLevel=mediumIL** и **RuntimeBehavior=Win32App** элемента [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) объявляют, что классическое приложение, связанное с разреженным пакетом, будет выполняться аналогично стандартному неупакованному классическому приложению без виртуализации реестра и файловой системы, а также других изменений во время выполнения.
+* Элемент [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity), описывающий атрибуты идентификатора для классического приложения.
+* Элемент [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) в элементе [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Этому элементу следует присвоить значение `true`, что позволяет манифесту пакета ссылаться на содержимое вне пакета в определенном расположении на диске. На следующем шаге вы укажете путь к внешнему расположению при регистрации разреженного пакета из кода, который выполняется в установщике или приложении. Любое содержимое, на которое вы ссылаетесь в манифесте и которое не находится в самом пакете, должно быть установлено во внешнем расположении.
+* Для атрибута **MinVersion** элемента [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) следует задать `10.0.19000.0` или более позднюю версию.
+* Атрибуты **TrustLevel=mediumIL** и **RuntimeBehavior=Win32App** элемента [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) объявляют, что классическое приложение, связанное с разреженным пакетом, будет выполняться аналогично стандартному неупакованному классическому приложению без виртуализации реестра и файловой системы, а также других изменений во время выполнения.
 
 В следующем примере показано полное содержимое манифеста разреженного пакета (AppxManifest.xml). Этот манифест содержит расширение `windows.sharetarget`, для которого требуется идентификатор пакета.
 
@@ -132,9 +132,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Добавление метаданных идентификатора пакета в манифест классического приложения
 
-Необходимо также добавить [параллельный манифест приложения](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) для классического приложения, а также элемент [&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) с помощью атрибутов, которые объявляют атрибуты идентификатора приложения. Значения этих атрибутов использует операционная система для определения идентификатора приложения при запуске исполняемого файла.
+Необходимо также добавить [параллельный манифест приложения](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) для классического приложения, а также элемент [**msix**](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) с помощью атрибутов, которые объявляют атрибуты идентификатора приложения. Значения этих атрибутов использует операционная система для определения идентификатора приложения при запуске исполняемого файла.
 
-В следующем примере показан параллельный манифест приложения с элементом **\<msix\>** .
+В следующем примере показан параллельный манифест приложения с элементом **msix**.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -148,16 +148,16 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 </assembly>
 ```
 
-Атрибуты элемента **\<msix\>** должны соответствовать таким значениям в манифесте пакета для разреженного пакета:
+Атрибуты элемента **msix** должны соответствовать таким значениям в манифесте пакета для разреженного пакета:
 
-* Атрибуты **packageName** и **publisher** должны соответствовать атрибутам **Name** и **Publisher** в элементе [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) в манифесте пакета соответственно.
-* Атрибут **applicationId** должен соответствовать атрибуту **Id** элемента [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) в манифесте пакета.
+* Атрибуты **packageName** и **publisher** должны соответствовать атрибутам **Name** и **Publisher** в элементе [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) в манифесте пакета соответственно.
+* Атрибут **applicationId** должен соответствовать атрибуту **Id** элемента [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) в манифесте пакета.
 
 Параллельный манифест приложения должен находиться в том же каталоге, что и исполняемый файл для классического приложения, и по умолчанию его имя должно совпадать с именем исполняемого файла вашего приложения с добавленным к нему расширением `.manifest`. Например, если имя исполняемого файла приложения — `ContosoPhotoStore`, то имя файла манифеста приложения должно быть `ContosoPhotoStore.exe.manifest`.
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Регистрация разреженного пакета во время выполнения
 
-Чтобы предоставить идентификатор пакета для классического приложения, ваше приложение должно зарегистрировать разреженный пакет с использованием метода **AddPackageByUriAsync** класса [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Этот метод доступен в Windows 10 версии 2004 и более поздних. Вы можете добавить код в приложение, чтобы регистрировать разреженный пакет при первом запуске приложения или во время установки классического приложения (например, если вы используете MSI для установки классического приложения, этот код можно запускать по настраиваемому действию).
+Чтобы предоставить идентификатор пакета для классического приложения, ваше приложение должно зарегистрировать разреженный пакет с использованием метода **AddPackageByUriAsync** класса [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Этот метод доступен в Windows 10 версии 2004 и более поздних. Вы можете добавить код в приложение, чтобы регистрировать разреженный пакет при первом запуске приложения или во время установки классического приложения (например, если вы используете MSI для установки классического приложения, этот код можно запускать по настраиваемому действию).
 
 В следующем примере показано, как зарегистрировать разреженный пакет. Этот код создает объект **AddPackageOptions**, содержащий путь к внешнему расположению, на которое манифест пакета может ссылаться, чтобы указать содержимое вне пакета. Затем код передает этот объект в метод **AddPackageByUriAsync** для регистрации разреженного пакета. Этот метод также получает расположение подписанного разреженного пакета в виде универсального кода ресурса (URI). Более полный пример см. в файле кода `StartUp.cs` в связанном [примере](#sample).
 
@@ -191,7 +191,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>Пример
 
-Полнофункциональный пример приложения, демонстрирующий предоставление идентификатора пакета для классического приложения с помощью разреженного пакета, см. в разделе [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Дополнительные сведения о сборке и запуске примера см. в [этой записи блога](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+См. пример [SparesePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages), чтобы ознакомиться с полнофункциональным примером приложения, демонстрирующим предоставление идентификатора пакета для классического приложения с помощью разреженного пакета. Дополнительные сведения о сборке и запуске примера см. в [этой записи блога](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Этот пример содержит следующие компоненты:
 

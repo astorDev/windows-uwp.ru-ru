@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: bbdce669faa73b1db2071173014dec474160affb
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266952"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267497"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT
 
@@ -673,7 +673,7 @@ IAsyncAction Async(HANDLE event)
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
@@ -717,7 +717,7 @@ IAsyncAction SampleCaller()
 
 ## <a name="asynchronous-timeouts-made-easy"></a>Обработка ожиданий для асинхронных объектов
 
-Сопрограммы С++ широко используются в C++/WinRT. Они трансформируют сам процесс написания параллельно выполняемого кода. В этом разделе обсуждаются случаи, когда вам нужно сфокусироваться не на деталях, а на результатах асинхронного выполнения. По этой причине реализация в C++/WinRT асинхронного интерфейса среды выполнения Windows [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) включает функцию **get**, которая соответствует **std::function**.
+Сопрограммы С++ широко используются в C++/WinRT. Они трансформируют сам процесс написания параллельно выполняемого кода. В этом разделе обсуждаются случаи, когда вам нужно сфокусироваться не на деталях, а на результатах асинхронного выполнения. По этой причине реализация в C++/WinRT асинхронного интерфейса среды выполнения Windows [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) включает функцию **get**, которая соответствует функции, предоставляемой **std::future**.
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -731,7 +731,7 @@ int main()
 
 Функция **get** выполняет блокировку на неограниченное время, — пока асинхронный объект не будет выполнен. Асинхронные объекты, как правило, имеют очень короткий срок существования, так что зачастую это все, что вам нужно.
 
-Но бывают случаи, когда этого недостаточно, и вам нужно завершить ожидания через некоторое время. Хотя это всегда можно было сделать с помощью стандартных блоков, предоставляемых средой выполнения Windows, сейчас, благодаря функции **wait_for**, предоставляемой в C++/WinRT, задача значительно упрощается. Она также реализована в **IAsyncAction** и, снова-таки, соответствует **std::function**.
+Но бывают случаи, когда этого недостаточно, и вам нужно завершить ожидания через некоторое время. Хотя это всегда можно было сделать с помощью стандартных блоков, предоставляемых средой выполнения Windows, сейчас, благодаря функции **wait_for**, предоставляемой в C++/WinRT, задача значительно упрощается. Она также реализована в **IAsyncAction** и аналогичным образом соответствует функции, предоставляемой **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;

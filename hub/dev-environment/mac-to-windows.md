@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: с Mac на Windows, сопоставление сочетаний клавиш, переход с Unix на Windows, переход с Mac на Windows, помощь в переходе с MacBook на Surface, как использовать Windows пользователю Macintosh, переход с Macintosh на Windows, помощь в изменении среды разработки, с Mac OS X на Windows, помощь в переходе с Mac на ПК
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218444"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643701"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Инструкции по изменению среды разработки с Mac на Windows
 
@@ -82,11 +82,11 @@ PowerShell [также доступна для Mac](https://docs.microsoft.com/p
 
 3. Подсистема Windows для Linux (WSL)
 
-WSL позволяет запускать оболочку Linux в Windows. Это означает, что вы можете запустить *Bash** или другую оболочку, в зависимости от выбора и установленных дистрибутивов Linux. Использование WSL обеспечит среду, наиболее знакомую пользователям Mac. Например, команда **ls** выводит список файлов в текущем каталоге, а не **dir**, как в командной строке Windows. Дополнительные сведения об установке и использовании WSL см. в статье [Руководство по установке подсистемы Windows для Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+WSL позволяет запускать оболочку Linux в Windows. Это означает, что вы можете запускать **bash** или другую оболочку в зависимости от установленного дистрибутива Linux. Использование WSL обеспечит среду, наиболее знакомую пользователям Mac. Например, команда **ls** выводит список файлов в текущем каталоге, а не **dir**, как в командной строке Windows. Дополнительные сведения об установке и использовании WSL см. в статье [Руководство по установке подсистемы Windows для Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 4. Терминал Windows (предварительная версия)
 
-Терминал Windows — это приложение, которое объединяет средства командной строки и оболочки из различных источников, в том числе традиционную командную строку Windows, PowerShell и подсистему Windows для Linux. Хотя сейчас Терминал Windows все еще предоставляется в предварительной версии, он уже включает в себя несколько полезных возможностей, таких как поддержка нескольких вкладок, разделенных панелей, пользовательских тем и стилей, а также полная поддержка Unicode. Терминал Windows можно установить из [Microsoft Store в Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
+Терминал Windows — это приложение, которое объединяет средства командной строки и оболочки из различных источников, в том числе традиционную командную строку Windows, PowerShell и подсистему Windows для Linux. Хотя сейчас все еще доступна только предварительная версия, это решение уже включает в себя несколько полезных возможностей, таких как поддержка нескольких вкладок, разделенных панелей, пользовательских тем и стилей, а также полная поддержка Юникода. Терминал Windows можно установить из [Microsoft Store в Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab).
 
 ## <a name="apps-and-utilities"></a>Приложения и служебные программы
 

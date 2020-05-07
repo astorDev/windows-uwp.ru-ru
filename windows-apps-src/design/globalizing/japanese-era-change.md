@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, localizability, localization, japanese, era
 ms.localizationpriority: high
 ms.openlocfilehash: 7e8250ccae96ed835aba2a2a993fdde9ae31a884
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67714112"
 ---
 # <a name="prepare-your-application-for-the-japanese-era-change"></a>Подготовка приложения к изменению японского летосчисления
@@ -79,7 +79,7 @@ ms.locfileid: "67714112"
 
 ### <a name="gannen-"></a>*Ганнэн* (元年)
 
-Обычно формат японского календаря следующий: **&lt;Название эры&gt;&lt;Год эры&gt;** . Например, 2018 год — это **Хэйсэй 30** (平成30年).  Тем не менее первый год эры является особенным. Для него вместо **&lt;Название эры&gt; 1** отображается **&lt;Название эры&gt;元年**(*Ганнэн*). Таким образом, первый год эры Хэйсэй будет 平成元年 (*Хэйсэй Ганнэн*). Убедитесь, что приложение правильно обрабатывает первый год в новой эре и правильно выводит знаки 令和元年.
+Обычно формат японского календаря следующий: **&lt;название эры&gt; &lt;год эры&gt;** . Например, 2018 год — это **Хэйсэй 30** (平成30年).  Тем не менее первый год эры является особенным. Для него вместо **&lt;Название эры&gt; 1** отображается **&lt;Название эры&gt;元年**(*Ганнэн*). Таким образом, первый год эры Хэйсэй будет 平成元年 (*Хэйсэй Ганнэн*). Убедитесь, что приложение правильно обрабатывает первый год в новой эре и правильно выводит знаки 令和元年.
 
 ## <a name="related-apis"></a>Связанные API-интерфейсы
 
@@ -140,7 +140,7 @@ ms.locfileid: "67714112"
   * [Функция GetCalendarInfoEx](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)
   * [Функция GetCalendarInfoW](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfow)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Работа с эрами японского календаря](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
 * [Проблема перехода компьютеров на 2000 год в японском календаре](https://blogs.msdn.microsoft.com/shawnste/2018/04/12/the-japanese-calendars-y2k-moment/)

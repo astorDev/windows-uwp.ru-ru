@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: d942fd58619c12192fd8429c0e8aeb5aa070fd4d
-ms.sourcegitcommit: 2a80888843bb53cc1f926dcdfc992cf065539a67
+ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81005454"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81759922"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -82,6 +82,8 @@ ms.locfileid: "81005454"
 - Бывают очень редкие случаи состязания завершения работы или полувзаимной блокировки, в которых следует вызывать метод **IClosable::Close**. К примеру, если вы используете типы **Windows.UI.Composition**, может возникнуть ситуация, в которой вам понадобится удалить объекты в установленной последовательности, а не оставлять задачу их уничтожения программе-оболочке C++/WinRT.
 - Если вы не можете гарантировать, что у вас осталась последняя ссылка на объект (так как она была передана другим API, где может сохраниться), то вызов **IClosable::Close** — хороший вариант.
 - Если возникают сомнения, можно вызвать метод **IClosable::Close** вручную, не дожидаясь, пока оболочка вызовет его при удалении.
+
+Итак, если вы знаете, что у вас есть последняя ссылка, вы можете разрешить деструктору оболочки выполнить свою работу. Чтобы выполнить операцию закрытия, прежде чем последняя ссылка исчезнет, необходимо вызвать **Close**. Чтобы обеспечить защиту от исключений, следует вызвать **Close** в типе resource-acquisition-is-initialization (RAII), чтобы закрытие выполнялось при очистке. В C++/WinRT нет оболочки **unique_close**, но вы можете создать собственную.
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>Можно ли использовать LLVM/Clang для компиляции с C++/WinRT?
 Мы не поддерживаем цепочку инструментов LLVM и Clang для C++/WinRT, но мы используем ее для внутренней проверки соответствия стандартам C++/WinRT. Например, если вы хотите имитировать то, что мы делаем внутри, вы можете поэкспериментировать, как описано ниже.
