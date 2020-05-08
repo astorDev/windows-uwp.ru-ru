@@ -1,17 +1,17 @@
 ---
-description: В этой статье рассказывается, как добавить возможность перетаскивания в приложение универсальной платформы Windows (UWP).
+description: В этой статье объясняется, как добавлять перетаскивание в приложение Windows.
 title: Перетаскивание
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fec8ef45cff07d7a092fd46bd2d960bfcaf0c50a
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: e14ab0d7e6ef8b79ce29addf37ec1fc52b737923
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684513"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970159"
 ---
 # <a name="drag-and-drop"></a>Перетаскивание
 
@@ -50,7 +50,7 @@ ms.locfileid: "75684513"
 ## <a name="construct-a-data-package"></a>Создание пакета данных 
 
 В большинстве случаев система будет создавать пакет данных за вас. Система автоматически обрабатывает:
-* образы,
+* Изображения
 * Текст 
 
 При работе с другим содержимым необходимо обработать события **DragStarted** и **DragCompleted** и использовать их для создания собственного пакета данных [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage).
@@ -100,23 +100,23 @@ ms.locfileid: "75684513"
 
 Класс [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) выполняет большую часть работы по реализации функции перетаскивания за вас. Но при необходимости можно реализовать собственную версию с помощью API-интерфейсов в [пространстве имен Windows. ApplicationModel. Feed. DragDrop. Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
-| Функции | API-интерфейс WinRT |
+| Функциональность | API-интерфейс WinRT |
 | --- | --- |
-|  Включение перетаскивания | [коредрагоператион](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
+|  Включение перетаскивания | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Создание пакета данных | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
-| Передача перетаскивания оболочке  | [Коредрагоператион. Стартасинк](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
-| Получение перетаскивания из оболочки  | [коредрагдропманажер](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[икоредропоператионтаржет](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
+| Передача перетаскивания оболочке  | [CoreDragOperation.StartAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
+| Получение перетаскивания из оболочки  | [CoreDragDropManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
 
 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * [Связь между приложениями](index.md)
 * [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
-* [кандраг](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
+* [CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
 * [DragOver](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
-* [акцептедоператион](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
-* [Асинхрон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
-* [драгуиоверриде](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
-* [Удалить](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
-* [исдрагсаурце](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
+* [AcceptedOperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
+* [DataView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
+* [DragUIOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
+* [Тени](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+* [IsDragSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)

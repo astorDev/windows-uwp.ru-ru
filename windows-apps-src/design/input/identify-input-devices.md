@@ -1,5 +1,5 @@
 ---
-Description: Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
+Description: Укажите устройства ввода, подключенные к устройству приложения Windows, и укажите их возможности и атрибуты.
 title: Определение устройств ввода
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -8,17 +8,17 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 792b2f71408928de0278dd0c623f13923a2165a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257886"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970029"
 ---
 # <a name="identify-input-devices"></a>Определение устройств ввода
 
 
-Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
+Укажите устройства ввода, подключенные к устройству приложения Windows, и укажите их возможности и атрибуты.
 
 > **Важные API-интерфейсы**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
@@ -27,7 +27,7 @@ ms.locfileid: "74257886"
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities), который используется для получения свойств одной подключенной мыши или нескольких. Просто создайте новый объект **MouseCapabilities** и получите необходимые вам свойства.
 
-**Обратите внимание** ,  значения, возвращаемые описанными здесь свойствами, основаны на всех обнаруженных курсорах: логические свойства возвращают ненулевое значение, если хотя бы одна мышь поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое одним щелчком мыши.
+**Обратите внимание**  , что значения, возвращаемые свойствами, обсуждаемыми здесь, основаны на всех обнаруженных курсорах: логические свойства возвращают ненулевое значение, если хотя бы одна мышь поддерживает определенную возможность, а числовые свойства возвращают максимальный размер, предоставленный одним щелчком мыши.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities), используемый для получения данных о том, подключены ли сенсорные дигитайзеры. Просто создайте новый объект **TouchCapabilities** и получите необходимые вам свойства.
 
-**Обратите внимание** ,  значения, возвращаемые описываемыми здесь свойствами, основаны на всех обнаруженных сенсорных дигитайзерах: логические свойства возвращают ненулевое значение, если хотя бы один дигитайзер поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое одним дигитайзером.
+**Обратите внимание**  , что значения, возвращаемые рассматриваемыми здесь свойствами, основаны на всех обнаруженных сенсорных дигитайзерах: логические свойства возвращают ненулевое значение, если хотя бы один дигитайзер поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое одним дигитайзером.
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice), используемый для получения данных о том, поддерживают ли какие-либо из обнаруженных устройств ввод указателем (устройство сенсорного ввода, сенсорная панель, мышь или перо). Просто создайте новый объект **PointerDevice** и получите необходимые вам свойства.
 
-**Обратите внимание** ,  значения, возвращаемые описываемыми здесь свойствами, основаны на всех обнаруженных устройствах-указателях: логические свойства возвращают ненулевое значение, если хотя бы одно устройство поддерживает определенную возможность, а числовые свойства возвращают максимальный размер, предоставляемый любым устройством с одним указателем.
+**Обратите внимание**  , что значения, возвращаемые рассматриваемыми здесь свойствами, основаны на всех обнаруженных устройствах-указателях: логические свойства возвращают ненулевое значение, если хотя бы одно устройство поддерживает определенную возможность, а числовые свойства возвращают максимальное число, предоставляемое любым устройством с указателем.
 
 В следующем коде для отображения свойств и значений для каждого указателя используется таблица.
 
@@ -174,20 +174,14 @@ private void GetPointerDevices()
     }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
+### <a name="samples"></a>Примеры
 
-**Примеры**
-* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Пример ввода с малой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**Примеры из архива**
-* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
- 
+### <a name="archive-samples"></a>Примеры архива
 
- 
-
-
-
-
+- [Ввод: пример возможностей устройства](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))

@@ -1,5 +1,5 @@
 ---
-Description: Узнайте, где и когда следует использовать вспомогательные плитки в приложении UWP.
+Description: Узнайте, когда и где следует использовать дополнительные плитки в приложении Windows.
 title: Руководство по проектированию вторичных плиток
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, вспомогательные плитки, руководство, рекомендации, советы
 ms.localizationpriority: medium
-ms.openlocfilehash: 875513840d8dc752fe336241fa54710aebad6103
-ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
+ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782597"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971029"
 ---
 # <a name="secondary-tile-guidance"></a>Руководство по вспомогательным плиткам
 
@@ -45,10 +45,10 @@ ms.locfileid: "74782597"
 * Вспомогательные плитки, как все другие плитки на начальном экране, являются динамическими источниками информации, содержимое которых часто обновляется. Вспомогательные плитки могут отображать уведомления и обновления, используя те же механизмы, что и любые другие плитки. Дополнительные сведения см. в разделе [Выбор метода доставки уведомлений](choosing-a-notification-delivery-method.md).
 
 
-## <a name="related"></a>Статьи по теме
+## <a name="related"></a>Сопутствующие материалы
 
-* [Обзор дополнительных плиток](secondary-tiles.md)
-* [Закрепление вторичных плиток](secondary-tiles-pinning.md)
-* [Мозаичные активы](app-assets.md)
-* [Документация по содержимому плитки](create-adaptive-tiles.md)
+* [Обзор вспомогательных плиток](secondary-tiles.md)
+* [Закрепление вспомогательных плиток](secondary-tiles-pinning.md)
+* [Ресурсы плиток](app-assets.md)
+* [Документация по содержимому плиток](create-adaptive-tiles.md)
 * [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md)

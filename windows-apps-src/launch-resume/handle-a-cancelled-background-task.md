@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c59982c174909a3fb8ab0b21d5dd792969cfeebc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259475"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606353"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Обработка отмененной фоновой задачи
 
 **Важные API**
 
--   [**баккграундтаскканцеледевенсандлер**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
--   [**ибаккграундтаскинстанце**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData. Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 Узнайте, как создать фоновую задачу, которая распознает запрос на отмену, прекращает работу и сообщает приложению об отмене, используя постоянное хранилище.
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-Добавьте переменную флага с именем **\_канцелрекуестед** в класс фоновой задачи. Она будет использоваться для обозначения того, что был сделан запрос на отмену.
+Добавьте переменную флага с именем ** \_канцелрекуестед** в класс фоновой задачи. Она будет использоваться для обозначения того, что был сделан запрос на отмену.
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-В **методе, который** был создан на шаге 1, задайте для переменной флага **\_канцелрекуестед** **значение true**.
+В **методе, который** был создан на шаге 1, установите для переменной ** \_** флага канцелрекуестед **значение true**.
 
-Метод unbackgroundd [Task]( https://go.microsoft.com/fwlink/p/?linkid=227509) Full задает для **\_канцелрекуестед** **значение true** и записывает потенциально полезные выходные данные отладки.
+В примере **uncanceled** [фоновой задачи]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) Full для ** \_канцелрекуестед** задается **значение true** и записывается потенциально полезные выходные данные отладки.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Обработка отмены путем выхода из фоновой задачи
 
-При получении запроса на отмену метод, который выполняет фоновую работу, должен прекратить работу и выйти, распознающий, когда **\_канцелрекуестед** имеет значение **true**. Для выполняемых в процессе фоновых задач это означает возврат из метода **онбаккграундактиватед** . Для незавершенных фоновых задач это означает возврат из метода **Run** .
+При получении запроса на отмену метод, который выполняет фоновую работу, должен прекратить работу и выйти, выполнив распознавание, если ** \_канцелрекуестед** имеет значение **true**. Для выполняемых в процессе фоновых задач это означает возврат из метода **онбаккграундактиватед** . Для незавершенных фоновых задач это означает возврат из метода **Run** .
 
-Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если **\_канцелрекуестед** принимает значение true, не прекращайте работу.
+Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если ** \_канцелрекуестед** принимает значение true, продолжение работы невозможно.
 
 [Образец фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) включает проверку, которая останавливает периодический обратный вызов таймера при отмене фоновой задачи.
 
@@ -253,7 +253,7 @@ else
 }
 ```
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
 Вы можете скачать [пример фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask), чтобы увидеть эти примеры кода в контексте методов.
 
@@ -400,9 +400,9 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
-- [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
+- [Создание и регистрация внутрипроцессного фонового задания](create-and-register-an-inproc-background-task.md).
 - [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 - [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 - [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 - [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 - [Отладка фоновой задачи](debug-a-background-task.md)
-- [Как активировать события приостановки, возобновления и фоновых событий в приложениях UWP (при отладке)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+- [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, заголовок окна
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 47db0abfa96ae572c20d6bfd7496d7b5d168ab50
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930335"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968419"
 ---
 # <a name="title-bar-customization"></a>Настройка заголовка окна
 
@@ -20,7 +20,7 @@ ms.locfileid: "70930335"
 
 Если приложение выполняется в окне рабочего стола, можно настроить заголовки окон с учетом индивидуальных особенностей приложения. API-интерфейсы для настройки заголовка окна позволяют указать цвета элементов заголовка окна или расширить содержимое приложения до области заголовка окна и получить над ним полный контроль.
 
-> **Важные API**: [Свойство аппликатионвиев. заголовок](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс аппликатионвиевтитлебар](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [класс кореаппликатионвиевтитлебар](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Важные API-интерфейсы**: [свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [класс CoreApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Степень настройки заголовка окна
 
@@ -33,7 +33,7 @@ ms.locfileid: "70930335"
 Выбирая полную настройку, вы отвечаете за размещение содержимого в области заголовка окна и можете определить собственную перетаскиваемую область. Системные кнопки "Назад", "Закрыть", "Свернуть" и "Развернуть" остаются доступными и обрабатываются системой, в отличие от таких элементов, как название приложения. Вам потребуется самостоятельно создать эти элементы с учетом потребностей приложения.
 
 > [!NOTE]
-> С помощью XAML, DirectX и HTML можно выполнить простую настройку цвета в приложениях UWP. Полная настройка доступна только для приложений UWP с использованием XAML.
+> Простая настройка цвета доступна для приложений Windows, использующих XAML, DirectX и HTML. Полная настройка доступна только для приложений Windows, использующих XAML.
 
 ## <a name="simple-color-customization"></a>Простая настройка цвета
 
@@ -103,6 +103,11 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 Ниже показано, как установить сетку с содержимым в качестве перетаскиваемой области заголовка окна. Этот код добавляется в код XAML и код программной части для первой страницы приложения. Полный код см. в разделе [Пример полной настройки](./title-bar.md#full-customization-example).
 
+
+> [!IMPORTANT]
+> По умолчанию некоторые элементы пользовательского интерфейса, такие как Grid, не участвуют в проверке нажатия, если они не имеют фонового набора.
+> Для сетки `AppTitleBar` в примере ниже, чтобы разрешить перетаскивание, необходимо установить для `Transparent`фона значение.
+
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
     <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->
@@ -170,7 +175,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 Можно обработать событие [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged), чтобы отреагировать на изменения размера кнопок заголовка. Например, это может произойти, если системная кнопка "Назад" отображается или скрывается. Обработайте это событие для проверки и обновления позиционирования элементов пользовательского интерфейса, который зависят от размера панели заголовка окна.
 
-В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn` и`RightPaddingColumn` объявляются в коде XAML, показанном ранее.
+В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn`и `RightPaddingColumn` объявляются в коде XAML, показанном ранее.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -279,7 +284,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) — это пользовательская функция на поддерживаемом оборудовании, поэтому пользователь может выбрать Запуск любого приложения в режиме планшета.
+>_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) доступен на поддерживаемом оборудовании, поэтому пользователь может запустить любое приложение в режиме планшета.
 
 ## <a name="full-customization-example"></a>Пример полной настройки
 
@@ -377,13 +382,13 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 }
 ```
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 - Сделайте это очевидным, когда окно активно или неактивно. Как минимум, следует настроить изменение цвета текста, значков и кнопок в заголовке окна.
 - Определите перетаскиваемую область вдоль верхнего края холста приложения. Если ее совместить с системными заголовками окон, пользователям будет легче ее найти.
 - Определите перетаскиваемую область, соответствующую визуальному заголовку окна (если он есть) холста приложения.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Акрил](../style/acrylic.md)
 - [Цвет](../style/color.md)

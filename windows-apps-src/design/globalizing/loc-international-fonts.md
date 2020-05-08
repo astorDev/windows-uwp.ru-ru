@@ -1,23 +1,23 @@
 ---
-Description: В этом разделе перечислены шрифты, доступные для приложений UWP, которые локализованы для языков, отличных от английского (США).
+Description: В этом разделе перечислены шрифты, доступные для приложений Windows, которые локализованы на языках, отличных от английского (США).
 title: Международные шрифты
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: eb12ea0bb7966813413d29908c4974a7c4c97486
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258080"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970909"
 ---
 # <a name="international-fonts"></a>Международные шрифты
 
-В этом разделе перечислены шрифты, доступные для приложений UWP, которые локализованы для языков, отличных от английского (США).
+В этом разделе перечислены шрифты, доступные для приложений Windows, которые локализованы на языках, отличных от английского (США).
 
-В следующей таблице столбец "Тег языка" содержит [тег языка BCP-47](https://tools.ietf.org/html/bcp47) для различных языков. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
+В следующей таблице в столбце "тег языка" содержится [тег языка BCP-47](https://tools.ietf.org/html/bcp47) языка. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
 
 | Язык | Тег языка | Шрифт, используемый в Windows |
 | --------- | ----------- | -------------------- |
@@ -37,7 +37,7 @@ ms.locfileid: "74258080"
 | Каталонский | ca-ES | Segoe UI |
 | Центральнокурдский (арабский) | ku-ARAB-IQ | Segoe UI |
 | Чероки (чероки) | chr-CHER-US | Gadugi |
-| Китайский (упрощенное письмо) | zh-CN | Microsoft YaHei UI |
+| Китайский (упрощенный) | zh-CN | Microsoft YaHei UI |
 | Китайский (традиционное письмо, Гонконг) | zh-HK | Microsoft JhengHei UI |
 | Китайский (традиционное письмо, Тайвань) | zh-TW | Microsoft JhengHei UI |
 | Хорватский | hr-HR | Segoe UI |
@@ -45,7 +45,7 @@ ms.locfileid: "74258080"
 | Датский | da-DK | Segoe UI |
 | Дари | prs-AF | Segoe UI |
 | Нидерландский | nl-NL | Segoe UI |
-| Английский (Соединенное Королевство) | en-GB | Segoe UI |
+| Английский (Великобритания) | en-GB | Segoe UI |
 | Эстонский | et-EE | Segoe UI |
 | Филиппинский | fil-PH | Segoe UI |
 | Финский | fi-FI | Segoe UI |
@@ -54,10 +54,10 @@ ms.locfileid: "74258080"
 | Грузинский | ka-GE | Segoe UI |
 | Немецкий | de-DE | Segoe UI |
 | Греческий | el-GR | Segoe UI |
-| Письменность гуджарати | gu-IN | Nirmala UI |
+| Гуджарати | gu-IN | Nirmala UI |
 | Хауса (латиница) | ha-Latn-NG | Segoe UI |
 | Иврит | he-IL | Segoe UI |
-| Хинди | hi-IN | Nirmala UI |
+| Hindi | hi-IN | Nirmala UI |
 | Венгерский | hu-HU | Segoe UI |
 | Исландский | is-IS | Segoe UI |
 | Игбо | ig-NG | Segoe UI |
@@ -67,8 +67,8 @@ ms.locfileid: "74258080"
 | Зулу | zu-ZA | Segoe UI |
 | Итальянский | it-IT | Segoe UI |
 | Японский | ja-JP | Yu Gothic UI |
-| Письменность каннада | kn-IN | Nirmala UI |
-| казахский; | kk-KZ | Segoe UI |
+| Каннада | kn-IN | Nirmala UI |
+| Казахский | kk-KZ | Segoe UI |
 | Кхмерский | km-KH | Leelawadee UI |
 | Киче | qut-GT | Segoe UI |
 | Киньяруанда | rw-RW | Segoe UI |
@@ -79,9 +79,9 @@ ms.locfileid: "74258080"
 | Латышский | lv-LV | Segoe UI |
 | Литовский | lt-LT | Segoe UI |
 | Люксембургский | lb-LU | Segoe UI |
-| Македонский | mk-MK | Segoe UI |
+| Macedonian | mk-MK | Segoe UI |
 | Малайский | ms-MY | Segoe UI |
-| Письменность малаялам | ml-IN | Nirmala UI |
+| Малаялам | ml-IN | Nirmala UI |
 | Мальтийский | mt-MT | Segoe UI |
 | Маори | mi-NZ | Segoe UI |
 | Маратхи | mr-IN | Nirmala UI |
@@ -89,8 +89,8 @@ ms.locfileid: "74258080"
 | Непальский | ne-NP | Nirmala UI |
 | Норвежский (букмол) | nb-NO | Segoe UI |
 | Норвежский (нюнорск) | nn-NO | Segoe UI |
-| Odia | or-IN | Nirmala UI |
-| Фарси | fa-IR | Segoe UI |
+| Ория | or-IN | Nirmala UI |
+| Персидский | fa-IR | Segoe UI |
 | Польский | pl-PL | Segoe UI |
 | Португальский (Бразилия) | pt-BR | Segoe UI |
 | Португальский (Португалия) | pt-PT | Segoe UI |
@@ -99,7 +99,7 @@ ms.locfileid: "74258080"
 | Кечуа | quz-PE | Segoe UI |
 | Румынский | ro-RO | Segoe UI |
 | Русский | ru-RU | Segoe UI |
-| Шотландский гэльский | gd-GB | Segoe UI |
+| Гэльский | gd-GB | Segoe UI |
 | Сербский (кириллица, Босния и Герцеговина) | sr-Cyrl-BA | Segoe UI |
 | Сербский (кириллица, Сербия) | sr-Cyrl-CS | Segoe UI |
 | Сербский (латиница) | sr-Latn-CS | Segoe UI |
@@ -114,7 +114,7 @@ ms.locfileid: "74258080"
 | Таджикский (кириллица) | tg-Cyrl-TJ | Segoe UI |
 | Тамильский | ta-IN | Nirmala UI |
 | Татарский | tt-RU | Segoe UI |
-| Письменность телугу | te-IN | Nirmala UI |
+| Телугу | te-IN | Nirmala UI |
 | Тайский | th-TH | Leelawadee UI |
 | Тигринья | ti-ET | Ebrima |
 | Турецкий | tr-TR | Segoe UI |
@@ -129,7 +129,7 @@ ms.locfileid: "74258080"
 | Волоф | wo-SN | Segoe UI |
 | Йоруба | yo-NG | Segoe UI |
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Тег языка BCP-47](https://tools.ietf.org/html/bcp47)
 * [Поддерживаемые языки](../../publish/supported-languages.md)

@@ -3,21 +3,21 @@ title: Известные проблемы с программой для раз
 description: Ниже перечислены известные проблемы в программе разработчиков UWP для Xbox.
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: dbf9d40d4dc2cfedaa78cbca5b16c4cc26d2d4e1
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259728"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730077"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Известные проблемы с программой для разработчиков UWP для Xbox
 
 В этом разделе описываются известные проблемы с программой для разработчиков UWP для Xbox One. Дополнительные сведения об этой программе см. в разделе [UWP для Xbox](index.md). 
 
-\[если вы поступили отсюда по ссылке в справочном разделе по API и ищете сведения об API универсального семейства устройств, см. раздел [функции UWP, которые еще не поддерживаются в Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN).\]
+\[Если вы поступили отсюда по ссылке в справочном разделе по API и ищете сведения об API универсального семейства устройств, см. раздел [функции UWP, которые еще не поддерживаются в Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN).\]
 
 В следующем списке приведены некоторые известные проблемы, которые могут возникнуть при работе (список не является исчерпывающим). 
 
@@ -58,9 +58,9 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 
 Приложения для универсальной платформы Windows (UWP) на устройствах Xbox One не могут выполнять привязку к портам в диапазоне [57344, 65535]. Несмотря на то, что во время выполнения кажется, что привязка к таким портам выполнена успешно, сетевой трафик отбрасывается прежде, чем достигнет вашего приложения. По возможности ваше приложение должно осуществлять привязку к порту 0, что позволяет системе выбрать локальный порт. Если требуется использовать определенный порт, номер порта должен лежать в диапазоне [1025, 49151] и необходимо проверять и избегать возможных конфликтов с реестром IANA. Дополнительные сведения см. в разделе [Имя службы и реестр номера порта транспортного протокола](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
-## <a name="uwp-api-coverage"></a>Охват API платформы UWP
+## <a name="windows-runtime-api-coverage"></a>Покрытие среда выполнения Windows API
 
-Не все API UWP поддерживаются на Xbox. Список API, которые, по имеющимся у нас сведениям, не работают, см. в разделе [Функции UWP, которые еще не поддерживаются на Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). При обнаружении проблем с другими API следует сообщить о них на форумах. 
+Не все среда выполнения Windows API поддерживаются в Xbox. Список API, которые, по имеющимся у нас сведениям, не работают, см. в разделе [Функции UWP, которые еще не поддерживаются на Xbox](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). При обнаружении проблем с другими API следует сообщить о них на форумах. 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>Переход к WDP вызывает предупреждение о сертификате
@@ -116,5 +116,5 @@ namespace TestDNLA {
 ```
 
 ## <a name="see-also"></a>См. также
-- [Вопросы и ответы](frequently-asked-questions.md)
+- [Часто задаваемые вопросы](frequently-asked-questions.md)
 - [Приложения UWP для Xbox One](index.md)

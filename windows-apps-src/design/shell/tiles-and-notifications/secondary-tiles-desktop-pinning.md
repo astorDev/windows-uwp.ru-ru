@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, мост для классических приложений, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile, классическое приложение, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209920"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730366"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Закрепление вспомогательных плиток из классических приложений
 
@@ -29,7 +29,7 @@ ms.locfileid: "79209920"
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Создание пакета приложения с помощью моста для классических приложений
 
-Если вы еще не создали пакет приложения с помощью моста для классических приложений, [сделайте это в первую очередь](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root), прежде чем использовать API-интерфейсы UWP.
+Если вы не упакованы в приложение с помощью моста для настольных систем, [необходимо сначала сделать это](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) , прежде чем можно будет использовать любые среда выполнения Windows API.
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Предоставление доступа к интерфейсу IInitializeWithWindow
@@ -46,7 +46,7 @@ public interface IInitializeWithWindow
 }
 ```
 
-Или же, если приложения написано на языке C++, добавьте в код ссылку на файл заголовка **shobjidl.h**. Файл заголовка содержит объявление интерфейса *IInitializeWithWindow*.
+Или же, если приложения написано на языке C++, добавьте в код ссылку на файл заголовка **shobjidl.h**. Этот файл заголовка содержит объявление интерфейса *IInitializeWithWindow*.
 
 
 ## <a name="initialize-the-secondary-tile"></a>Инициализация вспомогательной плитки
@@ -98,7 +98,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="resources"></a>Ресурсы
 
 * [Полный пример кода](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [Обзор дополнительных плиток](secondary-tiles.md)
-* [Закрепить дополнительные плитки (UWP)](secondary-tiles-pinning.md)
-* [Мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop)
-* [Примеры кода для моста рабочего стола](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [Обзор вспомогательных плиток](secondary-tiles.md)
+* [Закрепление вспомогательных плиток (UWP)](secondary-tiles-pinning.md)
+* [Настольный мост](https://developer.microsoft.com/windows/bridges/desktop)
+* [Примеры кода для моста для классических приложений](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

@@ -4,14 +4,14 @@ title: Выбор подхода к разработке приложений iO
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260139"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148585"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Выбор подхода к разработке приложений iOS и UWP
 
@@ -36,7 +36,7 @@ ms.locfileid: "74260139"
 
 -   Игровые модули
 
-    С помощью таких средств, как [Unity3D](https://www.unity3d.com/) и [Unreal Engine](https://www.unrealengine.com/en-US/) вы можете разрабатывать игры высочайшего качества для Windows и многих других платформ, включая iOS. Unity поддерживает скрипты C#, Unreal использует C++.
+    С помощью таких средств, как [Unity3D](https://www.unrealengine.com/en-US/) и [Unreal Engine](https://www.unity3d.com/) вы можете разрабатывать игры высочайшего качества для Windows и многих других платформ, включая iOS. Unity поддерживает скрипты C#, Unreal использует C++.
 
 -   [MonoGame](http://www.monogame.net/)
 
@@ -54,21 +54,21 @@ ms.locfileid: "74260139"
 
     Если ваша основная бизнес-логика написана на C++, а не Objective-C или Swift, зачастую можно использовать этот код, внеся в проект незначительные изменения. Затем можно использовать XAML для определения пользовательского интерфейса, как и в других приложениях для Windows, и при необходимости вызывать код C++.
 
--   [Использование угла для запуска OpenGL ES в Windows](https://github.com/microsoft/angle/wiki)
+-   [Запуск OpenGL ES в Windows с помощью ANGLE](https://github.com/microsoft/angle/wiki)
 
     В качестве промежуточного действия при портировании проекта OpenGL ES 2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Другие средства разработки кроссплатформенных приложений
 
--   [гамесалад](https://gamesalad.com/)
+-   [GameSalad](https://gamesalad.com/)
 
     Среда для разработки игр.
 
--   [Конструкция 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     Среда для разработки игр.
 
--   [Титане Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Кроссплатформенная среда для разработки.
 
@@ -76,23 +76,23 @@ ms.locfileid: "74260139"
 
     Кроссплатформенная библиотека кода для обработки спрайтовой графики и физического моделирования.
 
--   [Воздействие. js](https://impactjs.com/)
+-   [Impact.js](https://impactjs.com/)
 
     Библиотека игр на базе HTML.
 
--   [Дольк](http://madewithmarmalade.com/)
+-   [Marmalade](http://madewithmarmalade.com/)
 
     Кроссплатформенный пакет SDK.
 
--   [опенфл](https://www.openfl.org/)
+-   [OpenFL](https://www.openfl.org/)
 
     Кроссплатформенное средство разработки.
 
--   [гамемакер](https://www.yoyogames.com/gamemaker/studio)
+-   [GameMaker](https://www.yoyogames.com/gamemaker/studio)
 
     Среда разработки, специально созданная для игр.
 
--   [плайканвас](https://playcanvas.com/)
+-   [PlayCanvas](https://playcanvas.com/)
 
     Средство разработки игр на базе HTML.
 

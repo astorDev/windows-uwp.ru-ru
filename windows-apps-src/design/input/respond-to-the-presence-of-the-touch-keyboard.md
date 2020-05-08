@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: клавиатура, специальные возможности, навигация, фокус, текст, ввод, взаимодействия с пользователем
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: e26bbe00bba8b3d91d7ee842cb4d9c984a941f2b
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521365"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970269"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Реакция на наличие сенсорной клавиатуры
 
@@ -23,23 +23,23 @@ ms.locfileid: "77521365"
 - [AutomationPeer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 - [InputPane](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)
 
-![сенсорная клавиатура в режиме раскладки по умолчанию](images/keyboard/default.png)
+![Сенсорная клавиатура в режиме раскладки по умолчанию](images/keyboard/default.png)
 
 <sup>Сенсорная клавиатура в режиме макета по умолчанию</sup>
 
-С помощью сенсорной клавиатуры можно вводить текст на устройствах, поддерживающих сенсорный ввод. В универсальной платформе Windows (UWP) элементы управления для ввода текста по умолчанию вызывают сенсорную клавиатуру, когда пользователь касается редактируемого поля ввода. Обычно сенсорная клавиатура остается видимой, когда пользователь переходит по элементам управления в форме, но это поведение может меняться в зависимости от имеющихся в форме элементов управления других типов.
+С помощью сенсорной клавиатуры можно вводить текст на устройствах, поддерживающих сенсорный ввод. Элементы управления текстовыми входными данными приложения Windows вызывают сенсорную клавиатуру по умолчанию, когда пользователь касается редактируемого поля ввода. Обычно сенсорная клавиатура остается видимой, когда пользователь переходит по элементам управления в форме, но это поведение может меняться в зависимости от имеющихся в форме элементов управления других типов.
 
-Для поддержки соответствующего поведения сенсорной клавиатуры в пользовательском элементе управления вводом текста, который не является производным от стандартного элемента управления вводом текста, необходимо использовать класс <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> для предоставления элементов управления в АВТОМАТИЗАЦИЮ пользовательского интерфейса Майкрософт и реализации правильных шаблонов элементов управления модели автоматизации пользовательского интерфейса. См. статьи [Специальные возможности клавиатуры](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) и [Настраиваемые одноранговые элементы автоматизации](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
+Чтобы поддерживать необходимое поведение сенсорной клавиатуры в пользовательском элементе управления для ввода текста, не являющемся производным от стандартного элемента управления для ввода текста, следует использовать класс <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a>. С помощью этого класса можно предоставить ваши элементы управления модели автоматизации пользовательского интерфейса Microsoft, а также реализовать правильные шаблоны элементов управления для этой модели. См. статьи [Специальные возможности клавиатуры](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) и [Настраиваемые одноранговые элементы автоматизации](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
 После добавления такой поддержки в пользовательский элемент управления приложение сможет правильно реагировать на наличие сенсорной клавиатуры.
 
-**Требований**
+**Предварительные условия.**
 
 В данной статье использованы материалы статьи [Взаимодействие с помощью клавиатуры](keyboard-interactions.md).
 
 Для работы со статьей необходимо иметь базовое представление о стандартных взаимодействиях клавиатуры, обработке событий клавиатуры и данных, вводимых с клавиатуры, а также о модели автоматизации пользовательского интерфейса.
 
-Если вы — начинающий разработчик приложений универсальной платформы Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
+Если вы не знакомы с разработкой приложений для приложений Windows, ознакомьтесь с этими разделами, чтобы ознакомиться с технологиями, обсуждаемыми здесь.
 
 - [Создание первого приложения](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
@@ -60,13 +60,13 @@ ms.locfileid: "77521365"
 
 - Убедитесь, что пользователю всегда видно поле ввода, с которым он взаимодействует.
 
-    Так как сенсорная клавиатура занимает большую часть экрана, UWP делает так, что поле ввода, находящееся в фокусе, всегда будет в поле зрения пользователя, когда тот переходит по элементам управления в форме, включая те элементы управления, которые в данный момент находятся вне поля зрения.
+    Так как сенсорная клавиатура окклудес крупную часть экрана, Windows гарантирует, что поле ввода с фокусом прокручивается в представление по мере того, как пользователь переходит по элементам управления в форме, включая элементы управления, которые в настоящее время не отображаются.
 
-    При настройке пользовательского интерфейса необходимо обеспечить аналогичное поведение на экране сенсорной клавиатуры, обрабатывая [Отображение](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) и [Скрытие](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) событий, предоставляемых объектом [**инпутпане**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) .
+    При настройке пользовательского интерфейса обеспечьте аналогичную реакцию на появление сенсорной клавиатуры путем обработки событий [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) и [Hiding](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding), предоставленных объектом [**InputPane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane).
 
     ![Форма с сенсорной клавиатурой и без нее](images/touch-keyboard-pan1.png)
 
-    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Например:
+    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Пример:
 
     ![Форма, содержащая области, которые всегда должны быть в поле зрения](images/touch-keyboard-pan2.png)
 
@@ -208,19 +208,19 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Взаимодействие с клавиатурой](keyboard-interactions.md)
 - [Специальные возможности клавиатуры](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
-- [Настраиваемые одноранговые классы автоматизации](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
+- [Настраиваемые одноранговые элементы автоматизации](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
-**Примеры**
+### <a name="samples"></a>Примеры
 
 - [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
-**Примеры из архива**
+### <a name="archive-samples"></a>Примеры архива
 
-- [Входные данные: пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-- [Ответ на внешний вид образца экранной клавиатуры](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
-- [Пример редактирования текста XAML](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+- [Ввод: пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [Пример реакции на появление экранной клавиатуры](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample)
+- [Пример редактирования текста на XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 - [Пример специальных возможностей XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

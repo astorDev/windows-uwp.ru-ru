@@ -1,5 +1,5 @@
 ---
-Description: Узнайте, как программно управлять навигацией фокуса с помощью клавиатуры, планшета и специальных возможностей в приложении UWP.
+Description: Узнайте, как программно управлять навигацией фокуса с помощью клавиатуры, планшета и специальных возможностей в приложении Windows.
 title: Перемещение фокуса программным путем с помощью клавиатуры, геймпада и средств специальных возможностей
 label: Programmatic focus navigation
 keywords: клавиатура, игровое устройство управления, пульт дистанционного управления, стратегия навигации, ввод, взаимодействие с пользователем, специальные возможности, удобство использования
@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6b66363588ddad01b05ccc9cc6b3b7912fa21594
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210010"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970149"
 ---
 # <a name="programmatic-focus-navigation"></a>Программное перемещение фокуса
 
 ![Клавиатура, пульт управления и крестовина](images/dpad-remote/dpad-remote-keyboard.png)
 
-Для программного перемещения фокуса в приложении UWP используйте метод [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) или [FocusManager.FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_).
+Для программного перемещения фокуса в приложении Windows можно использовать метод [FocusManager. тримовефокус](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) или метод [финднекстелемент](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) .
 
 Метод [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) пытается переместить фокус с элемента, на котором он установлен, к следующему фокусируемому элементу в указанном направлении, тогда как метод [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) извлекает элемент (как [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)), который будет извлекать фокус в зависимости от указанного направления навигации (только направленная навигация; не может использоваться для эмуляции навигации клавишей TAB).
 
@@ -136,14 +136,14 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 На следующем рисунке показаны некоторые из этих концепций. 
 
-Когда фокус установлен на элементе B, метод FindNextElement определяет элемент I в качестве кандидата для фокуса при перемещении вправо. Причины этого следующие:
+Когда фокус установлен на элементе B, метод FindNextElement определяет элемент I в качестве кандидата для фокуса при перемещении вправо. Это объясняется следующими причинами.
 - Так как [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) находится на элементе A, начальной позицией является элемент A, а не B.
 - Элемент C не является кандидатом, поскольку MyPanel был задан как [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)
 - Элемент F не является кандидатом, так как [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) перекрывает его.
 
 ![Настройка поведения перемещения фокуса с помощью подсказок для навигации](images/keyboard/navigation-hints.png)
 
-*Пользовательское поведение навигации по фокусу с помощью подсказок навигации*
+*Настройка поведения перемещения фокуса с помощью подсказок для навигации*
 
 ## <a name="navigation-focus-events"></a>События перемещения фокуса
 
@@ -205,13 +205,13 @@ private void OnNoFocusCandidateFound (
 1.  [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
 2.  [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
 3.  [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [Фокус](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+4.  [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 На следующем рисунке показано, как при перемещении вправо от элемента A XYFocus выбирает элемент B4 в качестве кандидата. B4 затем запускает событие GettingFocus, в котором у ListView есть возможность для переназначения фокуса на B3.
 
 ![Изменение цели перемещения фокуса при возникновении события GettingFocus](images/keyboard/focus-events.png)
 
-*Изменение целевого объекта навигации фокуса в событии Жеттингфокус*
+*Изменение цели перемещения фокуса при возникновении события GettingFocus*
 
 Здесь мы покажем, как обрабатывать событие [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и перенаправлять фокус.
 
@@ -325,8 +325,8 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Навигация по клавиатуре, планшету, удаленному управлению и специальным возможностям](focus-navigation.md)
+- [Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей](focus-navigation.md)
 - [Взаимодействие с клавиатурой](keyboard-interactions.md)
 - [Специальные возможности клавиатуры](../accessibility/keyboard-accessibility.md)

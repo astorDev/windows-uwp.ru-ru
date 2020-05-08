@@ -9,14 +9,14 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e17b1c18fc8e643ac788e5e13ac78cae49a35ef
-ms.sourcegitcommit: 6d743cf9c3e09f87ea2879b8e1f2dc4a1b1a16fe
+ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166080"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970639"
 ---
-# <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
+# <a name="connected-animation-for-windows-apps"></a>Подключенная анимация для приложений Windows
 
 Подключенные анимации позволяют сделать навигацию динамичной и наглядной, анимируя переход элемента от одного представления к другому. Это помогает пользователю сохранять контекст и обеспечивает преемственность представлений.
 
@@ -25,7 +25,7 @@ ms.locfileid: "74166080"
 > **Важные API**: [класс коннектеданиматион](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [класс коннектеданиматионсервице](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">XAML Controls Gallery<th>
@@ -55,7 +55,7 @@ ms.locfileid: "74166080"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>Подключенная анимация и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Подключенная анимация — это компонент системы проектирования Fluent Design, добавляющий движение в ваше приложение. Дополнительные сведения см. в [обзоре системы Fluent Design для UWP](/windows/apps/fluent-design-system).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Подключенная анимация — это компонент системы проектирования Fluent Design, добавляющий движение в ваше приложение. Дополнительные сведения см. в статье [Общие сведения о проектировании Fluent](/windows/apps/fluent-design-system).
 
 ## <a name="why-connected-animation"></a>Преимущества подключенной анимации
 
@@ -98,11 +98,11 @@ ms.locfileid: "74166080"
 
 Для достижения различных эффектов некоторые конфигурации игнорируют эти свойства в Коннектеданиматионсервице и вместо этого используют собственные значения, как описано в этой таблице.
 
-| Настройка | Учитывает Дефаултдуратион? | Учитывает Дефаултеасингфунктион? |
+| Конфигурация | Учитывает Дефаултдуратион? | Учитывает Дефаултеасингфунктион? |
 | - | - | - |
-| Сила тяготения | "Да", | Да* <br/> **базовый перевод из A в B использует эту функцию плавности, но "сила притяжения" имеет собственную функцию плавности.*  |
-| Направлений | Нет <br/> *Выполняет анимацию по 150ms.*| Нет <br/> *Использует функцию плавности замедления.* |
-| Базовый | "Да", | "Да", |
+| Сила тяготения | Да | Да* <br/> **Базовый перевод с A на B использует эту функцию плавности, но "сила притяжения" имеет собственную функцию плавности.*  |
+| Прямой доступ | нет <br/> *Выполняет анимацию по 150ms.*| нет <br/> *Использует функцию плавности замедления.* |
+| Основные | Да | Да |
 
 ## <a name="how-to-implement-connected-animation"></a>Реализация подключенной анимации
 
@@ -268,7 +268,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-Чтобы запустить анимацию с этим элементом в качестве назначения, например при переходе назад из подробного представления, используйте [тристартконнектеданиматионасинк](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync). Если вы только что загрузили источник данных для ListView, Тристартконнектеданиматионасинк будет ожидать запуска анимации до тех пор, пока не будет создан соответствующий контейнер элементов.
+Чтобы запустить анимацию с этим элементом в качестве назначения, например при переходе назад из подробного представления, используйте [тристартконнектеданиматионасинк](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync). Если вы только что загрузили источник данных для ListView, TryStartConnectedAnimationAsync не запустит анимацию, пока не будет создан соответствующий контейнер элементов.
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -334,10 +334,10 @@ void OnNavigatedTo(NavigationEventArgs e)
 - Не допускайте ожидания запросов к сети или других долгосрочных асинхронных операций в между подготовкой и запуском подключенной анимации. Может потребоваться предварительно загрузить данные, необходимые для выполнения перехода, или использовать изображение-заполнитель с низким разрешением во время загрузки в представлении назначения изображения с высоким разрешением.
 - Используйте [суппресснавигатионтранситионинфо](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) , чтобы предотвратить анимацию перехода в **кадре** , если используется **коннектеданиматионсервице**, так как подключенная анимация не предназначена для одновременного использования с переходами по умолчанию. Дополнительную информацию об использовании переходов навигации см. [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Похожие статьи
 
 [ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
-[коннектеданиматионсервице](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-[навигатионсеметранситион](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)
+[NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)

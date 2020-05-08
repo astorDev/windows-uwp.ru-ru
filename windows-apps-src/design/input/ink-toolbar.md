@@ -1,48 +1,48 @@
 ---
-Description: Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера.
-title: Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
-label: Add an InkToolbar to a Universal Windows Platform (UWP) app
+Description: Добавьте Инктулбар по умолчанию в приложение для рукописного ввода Windows, добавьте пользовательскую кнопку пера в Инктулбар и привяжите пользовательскую кнопку пера к пользовательскому определению пера.
+title: Добавление Инктулбар в приложение приложения Windows
+label: Add an InkToolbar to a Windows app app
 template: detail.hbs
 keywords: Windows Ink, рукописный ввод в Windows, DirectInk, InkPresenter, InkCanvas, InkToolbar, универсальная платформа Windows, UWP, взаимодействие с пользователем, ввод
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 48fea83560655b02909b302225f44fa3e9713f00
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: e8076c9a9022cedbd66991ddf5d5b6bab1d57cc7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684496"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968109"
 ---
-# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
+# <a name="add-an-inktoolbar-to-a-windows-app-app"></a>Добавление Инктулбар в приложение приложения Windows
 
 
 
-В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Существует два разных элемента управления, которые упрощают рукописный ввод в приложения Windows: [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [**инктулбар**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Элемент управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) предоставляет базовую функциональность Windows Ink. Используйте его для отрисовки ввода с помощью пера в качестве росчерка пера (с параметрами цвета и толщины по умолчанию) или росчерка стирания.
 
-> Подробные сведения о реализации элемента управления InkCanvas см. в разделе [Взаимодействие с помощью пера в приложениях UWP](pen-and-stylus-interactions.md).
+> Сведения о реализации InkCanvas см. [в разделе взаимодействие пера и пера в приложениях Windows](pen-and-stylus-interactions.md).
 
 Элемент управления InkCanvas представляет собой полностью прозрачное наложение и не предоставляет никакого встроенного пользовательского интерфейса для настройки свойств росчерка пера. Изменить стандартные настройки рукописного ввода, предоставить пользователям возможность настраивать свойства росчерка пера и обеспечить поддержку других специальных функций рукописного ввода можно двумя способами.
 
 - В коде программной части с помощью объекта [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), привязанного к элементу управления InkCanvas.
 
-  API InkPresenter предоставляют широкие возможности пользовательской настройки рукописного ввода. Подробные сведения см. в разделе [Взаимодействие с помощью пера в приложениях UWP](pen-and-stylus-interactions.md).
+  API InkPresenter предоставляют широкие возможности пользовательской настройки рукописного ввода. Дополнительные сведения см. [в разделе взаимодействие пера и пера в приложениях Windows](pen-and-stylus-interactions.md).
 
 - Привяжите элемент управления [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) к элементу InkCanvas. По умолчанию InkToolbar предоставляет настраиваемую и расширяемую коллекцию кнопок для активации функций рукописного ввода и настройки параметров ввода, таких как размер росчерка, цвет чернил и форма кончика пера.
 
   В этом разделе мы рассмотрим элемент управления InkToolbar.
 
-> **Важные API-интерфейсы**: [**класс InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [**класс InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [**класс InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Важные API**: [**класс InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [**класс инктулбар**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [**Класс InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows. UI. input. рукописный**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking) ввод
 
 ## <a name="default-inktoolbar"></a>InkToolbar по умолчанию
 
 По умолчанию элемент управления [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) содержит кнопки для рисования, стирания, выделения и отображения линейки или транспортира. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
 
 ![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
-*Панель инструментов рукописного ввода Windows по умолчанию*
+*Windows Ink toolbar по умолчанию*
 
 Чтобы добавить [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) по умолчанию в приложение рукописного ввода, просто поместите его на одной странице с вашим [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и свяжите эти два элемента управления.
 
@@ -87,10 +87,10 @@ ms.locfileid: "75684496"
 
 Явным образом задайте место и ориентацию панели инструментов, используя свойства [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) и [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation).
 
-| Default | Задано явным образом |
+| Значение по умолчанию | Явно |
 | --- | --- |
 | ![Расположение и ориентация панели инструментов рукописного ввода по умолчанию](./images/ink/location-default-small.png) | ![Расположение и ориентация панели инструментов рукописного ввода, заданные явно](./images/ink/location-explicit-small.png) |
-| *Расположение и ориентация по умолчанию на панели инструментов рукописного ввода Windows* | *Панель инструментов рукописного ввода Windows — явное расположение и ориентация* |
+| *Расположение и ориентация панели инструментов Windows Ink по умолчанию* | *Расположение и ориентация панели инструментов Windows Ink, заданные явно* |
 
 Следующий код используется, чтобы явным образом задать расположение и ориентацию панели инструментов рукописного ввода в XAML.
 ```xaml
@@ -101,12 +101,12 @@ ms.locfileid: "75684496"
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-**Инициализация на основе настроек пользователя или состояния устройства**
+**Инициализация на основе предпочтений пользователя или состояния устройства**
 
 В некоторых случаях может потребоваться настроить расположение и ориентацию панели инструментов рукописного ввода в зависимости от предпочтений пользователя или состояния устройства. В следующем примере показано, как настроить расположение и ориентацию панели инструментов рукописного ввода на основе параметров письма левой или правой рукой. Для этого перейдите в раздел **Параметры > Устройства > Перо и Windows Ink > Перо > Выберите, какой рукой вы пишете**.
 
-![главными настройками](./images/ink/location-handedness-setting.png)  
-*Параметр доминирующего руки*
+![Параметр доминантной руки](./images/ink/location-handedness-setting.png)  
+*Параметр доминантной руки*
 
 Вы можете отправить запрос этому параметру через свойство HandPreference пространства имен Windows.UI.ViewManagement и задать [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) в соответствии с возвращенным значением. В этом примере мы размещаем панель инструментов в левой части приложения для пользователя-левши и справа — для пользователя-правши.
 
@@ -127,7 +127,7 @@ public MainPage()
 }
 ```
 
-**Динамически корректировать состояние пользователя или устройства**
+**Динамическая подстройка к пользователю или состоянию устройства**
 
 Также можно использовать привязку для отслеживания обновлений пользовательского интерфейса на основе изменений, вносимых в предпочтения пользователя, параметры устройства или состояния устройства. В следующем примере мы подробнее рассмотрим предыдущий пример и покажем, как динамически расположить панель инструментов рукописного ввода в зависимости от ориентации устройства с помощью привязки, объекта ViewMOdel и интерфейса [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged). 
 
@@ -280,7 +280,7 @@ public MainPage()
         ```
 
 1. Теперь откройте файл MainPage.xaml.cs.
-    1. Добавьте `using using locationandorientation.ViewModels` в список пространств имен, чтобы связать ViewModel.
+    1. Добавьте `using using locationandorientation.ViewModels` в список пространств имен, чтобы связать наше значение ViewModel.
     1. Добавьте `using Windows.UI.ViewManagement` в список пространств имен, чтобы включить прослушивание изменений ориентации устройства.
     1. Добавьте код [виндовсизечанжедевенсандлер](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) .
     1. Установите [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) для представления в одноэлементный экземпляр класса инктулбарсниппесоствиевмодел. 
@@ -320,7 +320,7 @@ public MainPage()
     ```
 
 1. Затем откройте файл MainPage. XAML.
-    1. Добавьте `xmlns:converters="using:locationandorientation.Converters"` в элемент `Page` для привязки к нашим преобразователям.
+    1. Добавьте `xmlns:converters="using:locationandorientation.Converters"` в `Page` элемент для привязки к нашим преобразователям.
         ```xaml
         <Page
         x:Class="locationandorientation.MainPage"
@@ -333,7 +333,7 @@ public MainPage()
         mc:Ignorable="d">
         ```
 
-    1. Добавьте элемент `PageResources` и укажите ссылки на наши преобразователи.
+    1. Добавьте `PageResources` элемент и укажите ссылки на наши преобразователи.
         ```xaml
         <Page.Resources>
             <converters:HorizontalAlignmentFromHandednessConverter x:Key="HorizontalAlignmentConverter"/>
@@ -351,7 +351,7 @@ public MainPage()
                     TargetInkCanvas="{x:Bind inkCanvas}" />
         ```
 
-1. Вернитесь к файлу InkToolbarSnippetHostViewModel.cs, чтобы добавить свойства `PortraitLayout` и `LeftHandedLayout` bool в класс `InkToolbarSnippetHostViewModel`, а также поддержку повторной привязки `PortraitLayout` при изменении значения свойства. 
+1. Вернитесь к файлу InkToolbarSnippetHostViewModel.cs, чтобы добавить в `PortraitLayout` `LeftHandedLayout` `InkToolbarSnippetHostViewModel` класс свойства и bool, а также поддержку повторной привязки `PortraitLayout` при изменении значения свойства. 
     ```csharp
     public bool LeftHandedLayout
     {
@@ -401,8 +401,8 @@ public MainPage()
 Теперь у вас должно быть приложение для рукописного ввода, которое адаптируется как к основному пользователю и динамически реагирует на ориентацию устройства пользователя.
 
 ### <a name="specify-the-selected-button"></a>Укажите выделенную кнопку  
-![кнопка карандаша, выбранная при инициализации](./images/ink/ink-tools-default-toolbar.png)  
-*Панель инструментов рукописного ввода Windows с кнопкой карандаша, выбранная при инициализации*
+![Кнопка карандаша, выбранная при инициализации](./images/ink/ink-tools-default-toolbar.png)  
+*Панель инструментов Windows Ink с кнопкой карандаша, выбранной при инициализации*
 
 По умолчанию первая (или крайняя левая) кнопка выбрана, когда запускается приложение и инициируется панель инструментов. На панели инструментов Windows Ink по умолчанию это кнопка шариковой ручки.
 
@@ -452,16 +452,16 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="specify-the-built-in-buttons"></a>Определение встроенных кнопок
 
-![конкретные кнопки, включаемые при инициализации](./images/ink/ink-tools-specific.png)  
-*Конкретные кнопки, включаемые при инициализации*
+![Конкретные кнопки, включенные при инициализации](./images/ink/ink-tools-specific.png)  
+*Конкретные кнопки, включенные при инициализации*
 
 Как уже упоминалось, панель инструментов Windows Ink содержит коллекцию встроенных кнопок по умолчанию. Эти кнопки отображаются в следующем порядке (слева направо):
 
-- [инктулбарбаллпоинтпенбуттон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
-- [инктулбарпенЦилбуттон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton)
-- [инктулбархигхлигхтербуттон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
-- [инктулбарерасербуттон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton)
-- [инктулбаррулербуттон](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton)
+- [InkToolbarBallpointPenButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton)
+- [InkToolbarPencilButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton)
+- [InkToolbarHighlighterButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton)
+- [InkToolbarEraserButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton)
+- [InkToolbarRulerButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton)
 
 В этом примере мы инициализируем панель инструментов только с встроенными кнопками шариковой ручки, карандаша и ластика.
 
@@ -509,7 +509,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 </Grid>
 ```
 
-**Поддерживающий код**
+**Файл с кодом программной части**
 1. Используйте объявление XAML для элементов управления InkCanvas и InkToolbar из первого примера.
 
   ```xaml
@@ -593,10 +593,10 @@ By default, the InkToolbar supports both pen and mouse input, you have to enable
 В элементе управления InkToolbar представлены две группы кнопок разных типов.
 
 1. Группа кнопок-инструментов, которая содержит встроенные кнопки для рисования, стирания и выделения. Сюда добавляются специальные перья и инструменты.
-> **Обратите внимание** ,&nbsp;&nbsp;выбор компонентов является взаимоисключающим.
+> **Note**&nbsp;Примечание&nbsp;. Выбор компонентов является взаимоисключающим.
 
 2. Группа кнопок-переключателей, которая содержит встроенную кнопку линейки. Сюда добавляются специальные переключатели.
-> **Обратите внимание** ,&nbsp;&nbsp;функции не являются взаимоисключающими и могут использоваться одновременно с другими активными инструментами.
+> **Note**&nbsp;Примечание&nbsp;. функции не являются взаимоисключающими и могут использоваться одновременно с другими активными инструментами.
 
 В зависимости от используемого приложения и требуемой функции рукописного ввода в элемент управления InkToolbar можно добавить любые нижеперечисленные кнопки (связанные со специальными функциями пера).
 
@@ -604,18 +604,18 @@ By default, the InkToolbar supports both pen and mouse input, you have to enable
 - Специальный инструмент — отличный от пера инструмент, который определяется соответствующим приложением.
 - Специальный переключатель — включает или выключает определенную приложением функцию. Если функция включена, она действует вместе с активным инструментом.
 
-> **Обратите внимание** ,&nbsp;&nbsp;нельзя изменить порядок показа встроенных кнопок. Они отображаются в следующем порядке: шариковая ручка, карандаш, маркер, ластик и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей — после кнопки линейки (специальные кнопки добавляются в порядке настройки).
+> **Обратите внимание**&nbsp;&nbsp;, что невозможно изменить порядок показа встроенных кнопок. Они отображаются в следующем порядке: шариковая ручка, карандаш, маркер, ластик и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей — после кнопки линейки (специальные кнопки добавляются в порядке настройки).
 
 ### <a name="custom-pen"></a>Специальное перо
 
 Вы можете создать специальное перо (активируется с помощью кнопки специального пера), для которого вы определите цветовую палитру чернил и свойства кончика пера, такие как форму, поворот и размер.
 
-![пользовательской каллиграфической кнопки пера](./images/ink/ink-tools-custompen.png)  
-*Пользовательская кнопка пера*
+![Кнопка специального каллиграфического пера](./images/ink/ink-tools-custompen.png)  
+*Кнопка специального каллиграфического пера*
 
 В этом примере мы определяем специальное перо с широким кончиком, с помощью которого можно делать основные каллиграфические росчерки пера. Кроме того, мы настроим коллекцию кистей в палитре, которая отображается во всплывающем элементе кнопки.
 
-**Поддерживающий код**
+**Файл с кодом программной части**
 
 Сначала мы определим специальное перо и зададим атрибуты рисования в коде программной части. Впоследствии мы будем ссылаться на это специальное перо из XAML.
 
@@ -734,8 +734,8 @@ class CalligraphicPen : InkToolbarCustomPen
 При запуске приложения поддерживается только рукописный ввод с помощью пера, а сенсорный ввод используется для сдвига или масштабирования поверхности рукописного ввода. Когда рукописный сенсорный ввод включен, поверхность рукописного ввода невозможно сдвигать или масштабировать посредством сенсорного ввода.
 
 > [!NOTE]
-> См. раздел [Элементы управления рукописным вводом](../controls-and-patterns/inking-controls.md) для ознакомления с рекомендациями по взаимодействию с пользователем и для [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), и для [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) . Для этого примера подойдут следующие рекомендации.
-> - Элемент управления [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) (и рукописный ввод в целом) удобнее и эффективнее всего использовать с активным пером, однако если этого требует ваше приложение, можно включить поддержку рукописного ввода с помощью мыши и касания. 
+> См. раздел [элементы управления рукописным вводом](../controls-and-patterns/inking-controls.md) для инструкций [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и [**инктулбар**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) UX. Для этого примера подойдут следующие рекомендации.
+> - [**Инктулбар**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)и рукописный ввод в целом лучше с помощью активного пера. однако если этого требует ваше приложение, можно включить поддержку рукописного ввода с помощью мыши и касания. 
 > - Если реализуется поддержка рукописного ввода с помощью касаний, рекомендуется использовать значок "ED5F" шрифта Segoe MLD2 Assets для кнопки переключения с подсказкой «Письмо касанием». 
 
 **XAML**
@@ -805,7 +805,7 @@ class CalligraphicPen : InkToolbarCustomPen
 </Grid>
 ```
 
-**Поддерживающий код**
+**Файл с кодом программной части**
 
 2. В предыдущем фрагменте кода мы объявили прослушиватель событий Click и обработчик (Toggle_Custom) для специальной кнопки переключения для сенсорного рукописного ввода (toggleButton). Этот обработчик просто переключает поддержку CoreInputDeviceTypes.Touch с помощью свойства InputDeviceTypes объекта InkPresenter.
 
@@ -913,13 +913,13 @@ namespace Ink_Basic_InkToolbar
 </Grid>
 ```
 
-**Поддерживающий код**
+**Файл с кодом программной части**
 
 2. Затем мы обрабатываем событие Click для [**InkToolbarCustomToolButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) в файле кода программной части MainPage.xaml.cs.
 
    Этот обработчик настраивает [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) на передачу необработанных входных данных приложению. 
 
-   Более подробное описание этого кода см. в подразделе «Передача входных данных для расширенной обработки» раздела [Взаимодействие с пером и Windows Ink в приложениях UWP](pen-and-stylus-interactions.md).
+   Более подробное пошаговое описание этого кода: см. раздел сквозной вход для расширенной обработки [в диалоговых окнах взаимодействие с пером и Windows Ink в приложениях Windows](pen-and-stylus-interactions.md).
 
    Мы также задаем значок для кнопки с помощью элемента SymbolIcon и расширения разметки {x: Bind}, которая привязывает его к полю, заданному в файле кода программной части (SelectIcon).
 
@@ -1113,26 +1113,26 @@ namespace Ink_Basic_InkToolbar
 
 Платформа рукописного ввода позволяет переопределить это поведение и полностью настроить рукописный ввод за счет пользовательской сушки рукописных данных.
 
-Дополнительные сведения о пользовательской сушке см. в разделе [Взаимодействие с пером и Windows Ink в приложениях UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
+Дополнительные сведения о пользовательском сушки см. [в разделе взаимодействие с пером и Windows Ink в приложениях Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions#custom-ink-rendering).
 
 > [!NOTE]
 > Пользовательская сушка и [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
 > Если ваше приложение переопределяет поведение по умолчанию для отрисовки рукописных данных объекта [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) пользовательской реализацией сушки, отрисованные росчерки пера более недоступны для InkToolbar, а встроенные команды стирания InkToolbar не работают должным образом. Для реализации функции стирания необходимо обрабатывать все события указателя, выполнять проверку нажатия для каждого штриха и переопределить встроенную команду «Удалить все рукописные данные».
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Похожие статьи
 
 - [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
 ### <a name="topic-samples"></a>Примеры в статье
 
-- [Пример расположения и ориентации панели инструментов для рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-- [Пример расположения и ориентации панели инструментов для рукописного ввода (динамический)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+- [Пример расположения и ориентации панели инструментов рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+- [Пример расположения и ориентации панели инструментов рукописного ввода (динамичный)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 
 ### <a name="other-samples"></a>Другие примеры
 
-- [Пример простого рукописногоC#вводаC++(/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-- [Образец сложных рукописныхC++данных ()](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-- [Образец рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Руководство по началу работы. Поддержка рукописного ввода в приложении UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-- [Образец цветовой книги](https://github.com/Microsoft/Windows-appsample-coloringbook)
-- [Образец заметок для семьи](https://github.com/Microsoft/Windows-appsample-familynotes)
+- [Простой пример рукописного ввода (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Сложный пример рукописного ввода (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Пример рукописного ввода (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
+- [Руководство по началу работы. Поддержка рукописного ввода в приложении Windows](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Пример раскраски](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Пример семейных заметок](https://github.com/Microsoft/Windows-appsample-familynotes)

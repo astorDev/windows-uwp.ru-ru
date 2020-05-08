@@ -1,6 +1,6 @@
 ---
-Description: Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
-title: Хранение и извлечение данных движения пера Windows Ink
+Description: Приложения Windows, поддерживающие рукописный ввод Windows, могут сериализовать и десериализовать рукописные штрихи в файл сериализованного формата рукописного ввода (ISF). Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
+title: Хранение и извлечение данных о росчерках пера Windows Ink
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
@@ -8,17 +8,17 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2919a2f61f3185d85b91bdf6fd6be22402eb77d0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 819358fb775444d62cbad414668a779fc5c305ca
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258271"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970249"
 ---
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных движения пера Windows Ink
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных о росчерках пера Windows Ink
 
 
-Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
+Приложения Windows, поддерживающие рукописный ввод Windows, могут сериализовать и десериализовать рукописные штрихи в файл сериализованного формата рукописного ввода (ISF). Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
 
 > [!NOTE]
 > Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
@@ -85,7 +85,7 @@ public MainPage()
 
 3.  Наконец, мы сохраняем рукописный ввод в обработчике событий нажатия кнопки **Сохранить**.
 
-    [  **FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
+    [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
 
     После выбора файла мы открываем поток [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream), для которого установлено значение [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
 
@@ -217,7 +217,7 @@ public MainPage()
 
 3.  Наконец, мы загружаем рукописный ввод в обработчике событий нажатия кнопки **Загрузить**.
 
-    [  **FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
+    [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
 
     После выбора файла мы открываем поток [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream), для которого установлено значение [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
 
@@ -266,7 +266,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | Определяет рукописный ввод, который постоянно использует формат ISF. Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа или помещен непосредственно в буфер обмена.                                                                                                                                                                                                         |
 | Формат Base64InkSerializedFormat | Определяет рукописный ввод, который постоянно кодирует ISF как поток base64. Этот формат предоставляется для того, чтобы рукописный ввод был непосредственно закодирован в XML- или в HTML-файл.                                                                                                                                                                                                                                                |
-| Формат GIF                       | Определяет рукописный ввод, который постоянно использует формат GIF, содержащий ISF как метаданные, встроенные в файл. Это позволяет просматривать рукописные фрагменты в приложениях без соответствующей функции, сохраняя при этом полноценное качество в приложениях с функцией рукописного ввода. Этот формат идеален при перемещении рукописного содержимого в рамках HTML-файла и для обеспечения его использования приложениями с функцией рукописного ввода и приложениями без нее. |
+| Gif                       | Определяет рукописный ввод, который постоянно использует формат GIF, содержащий ISF как метаданные, встроенные в файл. Это позволяет просматривать рукописные фрагменты в приложениях без соответствующей функции, сохраняя при этом полноценное качество в приложениях с функцией рукописного ввода. Этот формат идеален при перемещении рукописного содержимого в рамках HTML-файла и для обеспечения его использования приложениями с функцией рукописного ввода и приложениями без нее. |
 | Формат Base64Gif                 | Определяет рукописный ввод, который постоянно использует формат GIF, закодированный и усиленный форматом base64. Этот формат предоставляется, когда рукописный ввод должен быть закодирован непосредственно в XML- или HTML-файл для дальнейшего преобразования в изображение. Его можно использовать в формате XML, который создается для хранения всей информации о рукописном вводе и используется для создания HTML с помощью XSLT. 
 
 ## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>Копирование и вставка росчерков пера через буфер обмена
@@ -432,21 +432,21 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 * [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
-**Примеры разделов**
-* [Сохранение и загрузка рукописных штрихов из файла сериализованного формата рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [Сохранение и загрузка рукописных штрихов из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+**Примеры в статье**
+* [Сохранение и загрузка росчерков пера из файла Ink Serialized Format (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Сохранение и загрузка росчерков пера из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **Другие примеры**
-* [Пример простого рукописногоC#вводаC++(/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-* [Образец сложных рукописныхC++данных ()](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-* [Образец рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Руководство по началу работы. Поддержка рукописного ввода в приложении UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-* [Образец цветовой книги](https://github.com/Microsoft/Windows-appsample-coloringbook)
-* [Образец заметок для семьи](https://github.com/Microsoft/Windows-appsample-familynotes)
+* [Простой пример рукописного ввода (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [Сложный пример рукописного ввода (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [Пример рукописного ввода (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
+* [Руководство по началу работы. Поддержка рукописного ввода в приложении Windows](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Пример раскраски](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [Пример семейных заметок](https://github.com/Microsoft/Windows-appsample-familynotes)
 
 
 

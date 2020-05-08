@@ -1,5 +1,5 @@
 ---
-Description: В этой статье содержится обзор понятий и технологий, связанных со сценариями использования специальных возможностей для приложений универсальной платформы Windows (UWP).
+Description: В этой статье представлен обзор концепций и технологий, связанных со сценариями специальных возможностей для приложений Windows.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Обзор специальных возможностей
 label: Accessibility overview
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521285"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969659"
 ---
 # <a name="accessibility-overview"></a>Обзор специальных возможностей
 
-В этой статье содержится обзор понятий и технологий, связанных со сценариями использования специальных возможностей для приложений универсальной платформы Windows (UWP).
+В этой статье представлен обзор концепций и технологий, связанных со сценариями специальных возможностей для приложений Windows.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
 
@@ -41,7 +41,7 @@ ms.locfileid: "77521285"
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
 
-## <a name="ui-automation"></a>Модель автоматизации пользовательского интерфейса
+## <a name="ui-automation"></a>Автоматизация пользовательского интерфейса
 
 Поддержка специальных возможностей обеспечивается главным образом за счет встроенной поддержки инфраструктуры автоматизации пользовательского интерфейса Майкрософт. Эта поддержка обеспечивается базовыми классами и встроенным поведением реализации класса для типов элементов управления, а также представлением интерфейса для API поставщика модели автоматизации пользовательского интерфейса. Каждый класс элементов управления использует концепции моделей автоматизации пользовательского интерфейса кэширующих узлов и шаблонов автоматизации, сообщающие о роли и содержимом элемента управления клиентам автоматизации пользовательского интерфейса. Модель автоматизации пользовательского интерфейса воспринимает приложение как окно верхнего уровня, а инфраструктура автоматизации пользовательского интерфейса предоставляет клиенту автоматизации пользовательского интерфейса все содержимое окна приложения, связанное со специальными возможностями. Дополнительные сведения о модели автоматизации пользовательского интерфейса см. в разделе [Общие сведения о модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview).
 
@@ -202,10 +202,10 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) или [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 
 * [**Windows. UI. XAML. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [Разработка для специальных возможностей](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [Рекомендации по специальным возможностям](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [Пример специальных возможностей XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [Специальные возможности](accessibility.md)
 * [Начало работы с экранным диктором](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

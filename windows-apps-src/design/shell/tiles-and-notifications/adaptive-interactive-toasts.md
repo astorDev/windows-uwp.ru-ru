@@ -8,28 +8,28 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209860"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970929"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 
 Создавайте гибкие уведомления с текстом, изображениями и элементами управления с помощью адаптивных и интерактивных всплывающих уведомлений.
 
-> **Важные API-интерфейсы**: [пакет NuGet уведомлений набора средств сообщества UWP](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Важные API**: [пакет NuGet уведомлений набора средств сообщества UWP](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Чтобы просмотреть устаревшие шаблоны из Windows 8.1 и Windows Phone 8,1, см. [Каталог нестандартных шаблонов всплывающих уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
+> Традиционные шаблоны для Windows 8.1 и Windows Phone 8.1 см. в [предыдущем каталоге шаблонов всплывающих уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Начало работы
 
-**Установить библиотеку уведомлений.** Если вы хотите использовать C# вместо XML для создания уведомлений, установите пакет NuGet с именем [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (выполните поиск по критерию "notifications uwp"). В примерах с C# в этой статье используется версия 1.0.0 пакета NuGet.
+**Установите библиотеку уведомлений.** Если вы хотите использовать C# вместо XML для создания уведомлений, установите пакет NuGet с именем [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (выполните поиск по критерию "notifications uwp"). В примерах с C# в этой статье используется версия 1.0.0 пакета NuGet.
 
-**Установка визуализатора уведомлений.** Это бесплатное приложение UWP помогает проектировать интерактивные всплывающие уведомления, мгновенно отображая всплывающее уведомление при изменении, как в представлении редактора или конструирования XAML в Visual Studio. Смотрите в разделе [Визуализатор уведомлений](notifications-visualizer.md) дополнительные сведения или [загрузите Notifications Visualizer из Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Установите Визуализатор уведомлений.** Это бесплатное приложение для Windows помогает проектировать Интерактивные всплывающие уведомления, предоставляя мгновенное визуальное представление уведомления при редактировании, аналогично редактору XAML в Visual Studio или представлению конструктора. Смотрите в разделе [Визуализатор уведомлений](notifications-visualizer.md) дополнительные сведения или [загрузите Notifications Visualizer из Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 
 ## <a name="sending-a-toast-notification"></a>Отправка всплывающего уведомления
@@ -103,7 +103,7 @@ ToastContent content = new ToastContent()
 
 ## <a name="text-elements"></a>Текстовые элементы
 
-У всплывающего уведомления должен быть по крайней мере один текстовый элемент, оно может также содержать два дополнительных текстовых элемента с типом [**AdaptiveText**](toast-schema.md#adaptivetext).
+Каждое всплывающее уведомление должно иметь по крайней мере один текстовый элемент и может содержать два дополнительных элемента текста, все из которых имеют тип [**адаптиветекст**](toast-schema.md#adaptivetext).
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
@@ -144,11 +144,11 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>Переопределение логотипа приложения
 
-По умолчанию во всплывающем уведомлении будет отображаться логотип вашего приложения. Но вы можете показывать другое логотип, указав нужное изображение в [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo). Например если это уведомление от какого-либо человека, мы рекомендуем показывать вместо логотипа приложения изображение этого человека.
+По умолчанию во всплывающем уведомлении будет отображаться логотип вашего приложения. Однако этот логотип можно переопределить с помощью собственного образа [**тоастженерикапплого**](toast-schema.md#toastgenericapplogo) . Например если это уведомление от какого-либо человека, мы рекомендуем показывать вместо логотипа приложения изображение этого человека.
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
-Используйте свойство **HintCrop**, чтобы кадрировать изображение. Например, при значении **Circle** выводится изображение, кадрированное по кругу. В противном случае изображением будет квадратным. Размер изображения — 48x48 пикселей при 100% масштабе.
+Используйте свойство **HintCrop**, чтобы кадрировать изображение. Например, **окружность** приводит к обрезанному изображению. В противном случае изображением будет квадратным. Размер изображения — 48x48 пикселей при 100% масштабе.
 
 ```csharp
 new ToastBindingGeneric()
@@ -173,7 +173,7 @@ new ToastBindingGeneric()
 
 ## <a name="hero-image"></a>Главное изображение
 
-**Новые возможности в юбилейном обновлении**. Во всплывающих уведомлениях может быть главное изображение. Это специальное изображение [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage), которое показывается на видном месте в окне уведомления и в центра уведомлений. Размер изображения — 364x180 пикселей при 100% масштабе.
+**Новые возможности в юбилейном обновлении**: всплывающие уведомления могут отображать изображение Hero, которое представляет собой популярное [**тоастженеричероимаже**](toast-schema.md#toastgenericheroimage) , отображаемое в баннере всплывающего уведомления и в центре поддержки. Размер изображения — 364x180 пикселей при 100% масштабе.
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -238,7 +238,7 @@ new ToastBindingGeneric()
 
 | Обычное подключение | Лимитное подключение | До обновления Fall Creators Update |
 | - | - | - |
-| 3 MБ | 1 MБ | 200 КБ |
+| 3 МБ | 1 МБ | 200 КБ |
 
 Если размер файла изображения превышает ограничение, его не удается загрузить, или истекает время ожидания, то изображение выводиться не будет, но остальная часть уведомления будет показана.
 
@@ -318,7 +318,7 @@ ToastContent toastContent = new ToastContent()
 
 Это дополнительное содержимое задается с помощью адаптивных, которой вы можете больше узнать о чтения [документации адаптивных плиток](create-adaptive-tiles.md).
 
-Помните о том, что все адаптивное содержимое следует размещать внутри [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup). В противном случае оно не будет обработан с помощью адаптивных.
+Обратите внимание, что любое Адаптивное содержимое должно содержаться в [**адаптивеграуп**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup). В противном случае оно не будет обработан с помощью адаптивных.
 
 
 ### <a name="columns-and-text-elements"></a>Текстовые элементы и столбцы
@@ -806,7 +806,7 @@ ToastContent content = new ToastContent()
 
 
 
-## <a name="audio"></a>Звук
+## <a name="audio"></a>звук;
 
 Пользовательские звуковые сигналы всегда поддерживались в мобильной версии и поддерживаются в настольной версии 1511 (сборка 10586) и более поздних. На пользовательские звуковые сигналы можно ссылаться через следующие пути:
 
@@ -877,8 +877,8 @@ ToastContent content = new ToastContent()
 ## <a name="handling-activation"></a>Обработка активации
 Чтобы узнать, как для обработки активации всплывающих уведомлений (нажатия всплывающего уведомления или кнопок на всплывающего уведомления), в разделе [отправить локального всплывающих](send-local-toast.md).
  
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 
-* [Отправка локального всплывающего уведомления и работа с активацией](send-local-toast.md)
-* [Библиотека уведомлений на GitHub (входит в состав набора средств сообщества UWP)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](tile-toast-language-scale-contrast.md)
+* [Отправка локального всплывающего уведомления и обработка активации](send-local-toast.md)
+* [Библиотека уведомлений в GitHub (входит в UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Поддержка различных языков, масштабирования и высокой контрастности в плитках и всплывающих уведомлениях](tile-toast-language-scale-contrast.md)

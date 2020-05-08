@@ -6,14 +6,14 @@ label: Optical zoom and resizing
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fbcb4510a5b3ecca80b388172fe30028ac511452
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0de537ec8b3b1fde0692234f7b4f39350459b7fe
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257990"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82558795"
 ---
 # <a name="optical-zoom-and-resizing"></a>Визуальное масштабирование и изменение размера
 
@@ -21,7 +21,7 @@ ms.locfileid: "74257990"
 
 В этой статье описаны элементы Windows для масштабирования и изменения размеров, а также представлены рекомендации по использованию в приложениях этих механизмов взаимодействия с пользователем.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Input (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **Важные API-интерфейсы**: [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Input (XAML)**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 Визуальное масштабирование позволяет увеличить представление содержимого в рамках соответствующей области (оно применяется к самой области содержимого), тогда как изменение размера позволяет изменить относительный размер одного или нескольких объектов, не изменяя представление самой области (оно применяется к объектам в рамках области содержимого).
 
@@ -37,11 +37,11 @@ ms.locfileid: "74257990"
 
 ![При сближении пальцев объект сжимается, при разведении — увеличивается.](images/objectresize.png)
 
-**Обратите внимание** ,   оптическое видео не следует путать с [семантическим масштабом](../controls-and-patterns/semantic-zoom.md). Хотя для этих двух взаимодействий используются одинаковые жесты, контекстное масштабирование относится к представлению и навигации по упорядоченному содержимому в рамках единого представления (например, по структуре папок компьютера, библиотеке документов или фотоальбому).
+**Примечание**    . оптический масштаб не следует путать с [семантическим масштабом](../controls-and-patterns/semantic-zoom.md). Хотя для этих двух взаимодействий используются одинаковые жесты, контекстное масштабирование относится к представлению и навигации по упорядоченному содержимому в рамках единого представления (например, по структуре папок компьютера, библиотеке документов или фотоальбому).
 
  
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Полезные советы
 
 
 Используйте следующие руководства для приложений, которые поддерживают изменение размеров или визуальное масштабирование.
@@ -49,13 +49,13 @@ ms.locfileid: "74257990"
 -   Если указаны максимальный и минимальный размер или границы, с помощью визуальной обратной связи необходимо показать, когда пользователь достигает этих границ или превышает их.
 -   Точки прикрепления предназначены для управления масштабированием и изменением размера. Они предоставляют логические точки прекращения движения и позволяют отображать в окне просмотра определенную часть содержимого. Предоставив точки прикрепления для общих уровней масштабирования или логических представлений, вы облегчите пользователю выбор этих уровней. Например, приложения для просмотра фотографий могут предоставлять точку прикрепления для изменения размера фотографии 100 %, а в приложениях для работы с картами точки прикрепления могут быть полезны при просмотре на уровне города, региона или страны.
 
-    Благодаря точкам прикрепления пользователи могут переходить к требуемому содержимому, не имея четкого представления о месте его расположения. Для XAML см. свойства точек прикрепления [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). Для JavaScript и HTML используйте [ **-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
+    Благодаря точкам прикрепления пользователи могут переходить к требуемому содержимому, не имея четкого представления о месте его расположения. Для XAML см. свойства точек прикрепления [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). Для JavaScript и HTML используйте [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
 
     Существует два типа точек прикрепления.
 
     -   Приблизительные: точка прикрепления выбирается после завершения контакта, если инерция прекращается в пределах порогового значения расстояния точки прикрепления. "Приблизительные" точки прикрепления допускают завершение масштабирования или изменения размера между точками прикрепления.
     -   Принудительные. Выделенная точка прикрепления располагается непосредственно до или после последней точки прикрепления, пересеченной перед завершением контакта (в зависимости от направления и скорости жеста). На принудительной точке прикрепления движение должно прекратиться.
--   Используйте физические свойства инерции, в том числе следующие:
+-   Используйте физические свойства инерции, В число этих требований входят следующие:
     -   замедление (происходит, когда пользователь прекращает сжатие или растяжение — напоминает торможение на скользкой поверхности);
     -   отскакивание (возникает при пересечении границы или ограничения размера).
 -   Располагайте элементы управления в соответствии с ["Руководством по нацеливанию"](guidelines-for-targeting.md).
@@ -65,32 +65,24 @@ ms.locfileid: "74257990"
     -   Приложения для рисования, в которых элементы, способные изменять размер, могут отображаться на полотне с изменяемым размером.
     -   Веб-страницы со встроенными объектами, например картами.
 
-    **Обратите внимание** ,   во всех случаях размер области содержимого изменяется, если все точки касания не находятся в пределах изменяемого объекта.
+    **Примечание**    . во всех случаях размер области содержимого изменяется, если все точки касания не находятся в пределах объекта с возможностью изменения размера.
 
-     
+## <a name="related-articles"></a>Похожие статьи
 
-## <a name="related-articles"></a>Связанные статьи
+### <a name="samples"></a>Примеры
 
+- [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Пример ввода с малой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Примеры**
-* [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+### <a name="archive-samples"></a>Примеры архива
 
-**Примеры из архива**
-* [Входные данные: пример событий пользовательского ввода XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Входные данные: пример проверки нажатия касания](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [Пример прокрутки XAML, панорамирования и масштабирования](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Входные данные: Пример упрощенного рукописного ввода](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Входные данные: пример использования жестов Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Входные данные: пример манипуляций иC++жестов ()](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [Пример входных данных DirectX Touch](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
- 
-
- 
-
-
-
-
+- [Ввод: пример событий пользовательского ввода на XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Ввод: пример возможностей устройства](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Ввод: пример тестирования сенсорного ввода](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Пример прокрутки XAML, панорамирования и масштабирования](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Ввод: пример упрощенного рукописного ввода](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [Ввод: пример жестов в Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Входные данные: пример манипуляций и жестов](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Пример сенсорного ввода в DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

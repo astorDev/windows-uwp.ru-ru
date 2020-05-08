@@ -4,18 +4,18 @@ title: Обзор анимаций
 description: Используйте анимации из библиотеки среды выполнения Windows, чтобы ваше приложение соответствовало внешнему виду Windows.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e035639709005417084d564145d9de218009a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d6fa8740fba35ae6a50d91846bab79a4858de076
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366687"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970489"
 ---
 # <a name="animations-in-xaml"></a>Анимации в XAML
 
-Анимации UWP могут улучшить ваше приложение, сделав его более динамичным и интерактивным. Воспользовавшись анимациями из библиотеки среды выполнения Windows, вы можете легко привести внешний вид своего приложения в соответствие с внешним видом Windows. В этой статье представлена сводка таких анимаций и даны примеры типичных сценариев использования каждой из них.
+Анимация может улучшить приложение, добавляя перемещение и интерактивность. Воспользовавшись анимациями из библиотеки среды выполнения Windows, вы можете легко привести внешний вид своего приложения в соответствие с внешним видом Windows. В этой статье представлена сводка таких анимаций и даны примеры типичных сценариев использования каждой из них.
 
 > [!TIP]
 > Элементы управления среды выполнения Windows для XAML содержат анимации некоторых типов в виде встроенных событий, которые берутся из библиотеки анимации. Применяя эти элементы управления в приложениях, вы получите внешний вид и удобство анимаций без необходимости программировать их самостоятельно.
@@ -39,7 +39,7 @@ ms.locfileid: "66366687"
 Система анимации в среде выполнения Windows и библиотека анимации служат более масштабной цели — реализации анимации в элементах управления и других компонентах пользовательского интерфейса. Существует несколько различных типов анимации.
 
 -   *Переходы темы* применяются автоматически при изменении определенных условий в пользовательском интерфейсе. В них задействуются элементы управления или элементы типов пользовательского интерфейса на XAML, заранее определенных в среде выполнения Windows. Они называются *переходами темы*, так как анимации поддерживают внешний вид и удобство Windows, а также определяют поведение всех приложений в конкретных сценариях пользовательского интерфейса при переходе от одного режима взаимодействия к другому. Переходы темы входят в библиотеку анимации.
--   *Анимации темы* — это анимации одного или нескольких свойств, относящихся к готовым типам пользовательского интерфейса XAML из среды выполнения Windows. Анимации тем отличаются от переходов темы, так как первые ориентированы на один конкретный элемент и существуют в конкретных визуальных состояниях элемента управления, а переходы темы назначаются свойствам элемента управления, существующим вне визуальных состояний и влияющим на переходы между этими состояниями. Многие элементы управления среды выполнения Windows на XAML содержат анимации тем в раскадровках, входящих в состав шаблона данного элемента управления, причем анимации запускаются визуальными состояниями. Если вы не вносите изменений в шаблоны, то такие встроенные анимации тем доступны для элементов управления пользовательского интерфейса. Однако в случае замены шаблонов происходит удаление и встроенных анимаций тем элементов управления. Чтобы вернуть их, необходимо определить раскадровку, которая включает анимации тем в составе набора визуальных состояний элемента управления. Можно также запускать анимации тем из раскадровок, не относящихся к визуальным состояниям, используя для этого метод [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), однако такой способ применяется редко. Все анимации темы входят в библиотеку анимации.
+-   *Анимации темы* — это анимации одного или нескольких свойств, относящихся к готовым типам пользовательского интерфейса на XAML из среды выполнения Windows. Анимации тем отличаются от переходов темы, так как первые ориентированы на один конкретный элемент и существуют в конкретных визуальных состояниях элемента управления, а переходы темы назначаются свойствам элемента управления, существующим вне визуальных состояний и влияющим на переходы между этими состояниями. Многие элементы управления среды выполнения Windows на XAML содержат анимации тем в раскадровках, входящих в состав шаблона данного элемента управления, причем анимации запускаются визуальными состояниями. Если вы не вносите изменений в шаблоны, то такие встроенные анимации тем доступны для элементов управления пользовательского интерфейса. Однако в случае замены шаблонов происходит удаление и встроенных анимаций тем элементов управления. Чтобы вернуть их, необходимо определить раскадровку, которая включает анимации тем в составе набора визуальных состояний элемента управления. Можно также запускать анимации тем из раскадровок, не относящихся к визуальным состояниям, используя для этого метод [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), однако такой способ применяется редко. Все анимации темы входят в библиотеку анимации.
 -   *Визуальные переходы* применяются, когда элемент управления переходит из одного заданного визуального состояния в другое. Эти анимации создаются пользователем и обычно связываются с настраиваемым шаблоном, который создается для элемента управления, и определениями визуальных состояний в этом шаблоне. Анимация выполняется только во время между состояниями. Обычно это малое время, не более нескольких секунд. Подробнее см. в [подразделе "VisualTransition" раздела "Раскадрованные анимации для визуальных состояний"](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)).
 -   *Раскадрованные анимации* постепенно анимируют значение свойства зависимости в среде выполнения Windows. Раскадровки можно определять как часть визуального перехода или запускать во время выполнения приложения. Подробнее: [Раскадрованные анимации](storyboarded-animations.md). Подробнее о свойствах зависимостей и их размещении см в разделе [Общие сведения о свойствах зависимостей](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview).
 -   *Связанные анимации*, предоставляемые в новом API [**ConnectedAnimationService**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice), позволяют разработчикам создавать эффект анимации элемента при навигации между представлениями. Этот API доступен в Windows 10 начиная с версии 1607. Дополнительные сведения см. в разделе [**ConnectedAnimationService**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice).
@@ -48,15 +48,15 @@ ms.locfileid: "66366687"
 
 В библиотеке анимации доступны следующие анимации. Щелкните название анимации, чтобы узнать подробности об основных сценариях их использования, способах их определения, а также просмотреть пример анимации.
 
--   [Странице перехода](#page-transition): Анимирует переходов страниц в [ **кадра**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
--   [Содержимое и вход перехода](#content-transition-and-entrance-transition): Анимирует один элемент или набор содержимого, в или из представления.
--   [Исчезания ввода-вывода и crossfade](#fade-in-out-and-crossfade): Отображение временных элементы или элементы управления, или обновляет область содержимого.
--   [Указатель вверх/вниз](#pointer-up-down): Предоставляет визуальную обратную связь, коснитесь или щелкните плитку.
--   [Изменить положение](#reposition): Перемещает элемент в новое положение.
--   [Показать/скрыть всплывающее окно](#show-hide-popup): Отображает контекстные пользовательский интерфейс представления.
--   [Показать/Скрыть границу пользовательского интерфейса](#show-hide-edge-ui): Слайды на границе пользовательского интерфейса, включая большого пользовательского интерфейса, такой как панель, в или из представления.
--   [Элемент списка изменений](#list-item-changes): Добавляет или удаляет элемент из списка или изменения порядка элементов.
--   [Перетащите](#drag-drop): Предоставляет визуальную обратную связь во время операции перетаскивания и вставки.
+-   [Переход страницы](#page-transition): анимирует переходы между страницами во [**фрейме**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
+-   [Переход содержимого и входа](#content-transition-and-entrance-transition): анимирует отображение или прекращение отображения одного элемента содержимого или их набора.
+-   [Появление или исчезновение и плавный переход между элементами](#fade-in-out-and-crossfade): отображает переходные элементы или элементы управления либо обновляет область содержимого.
+-   [Касание/отрыв указателя](#pointer-up-down): обеспечивает визуальную реакцию на касание или щелчок плитки.
+-   [Перемещение](#reposition): перемещает элемент на новое место.
+-   [Показ и скрытие всплывающих окон](#show-hide-popup): отображает или скрывает контекстно-зависимые элементы пользовательского интерфейса поверх представления.
+-   [Показ или скрытие элементов пользовательского интерфейса по краям](#show-hide-edge-ui): перемещение элементов пользовательского интерфейса по краям экрана (например, панели) в отображаемую область и из нее.
+-   [Изменения элементов списка](#list-item-changes): добавление и удаление элемента из списка либо переупорядочивание элементов.
+-   [Перетаскивание](#drag-drop): визуальное отображение операции перетаскивания.
 
 ### <a name="page-transition"></a>Переход страницы
 
@@ -68,7 +68,7 @@ ms.locfileid: "66366687"
 
 Используйте анимации перехода между содержимым ([**ContentThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition)) при перемещении элемента или набора элементов содержимого в текущее представление или из него. Например, анимации перехода между содержимым отображают содержимое, которое не было готово к отображению при первом показе страницы или при изменении содержимого раздела страницы.
 
-[**EntranceThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) представляет движение, которое можно применить к содержимому, при первой загрузке страницы или существенная часть пользовательского интерфейса. Таким образом, реакция на первое представление содержимого и на его изменение может быть разной. [**EntranceThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) эквивалентен [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) с параметрами по умолчанию, но может использоваться за пределами [ **Кадра**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
+[**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) представляет собой движение, которое может быть применено к содержимому при первой загрузке страницы или большой части пользовательского интерфейса. Таким образом, реакция на первое представление содержимого и на его изменение может быть разной. Класс [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) аналогичен классу [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) вместе с параметрами по умолчанию, однако может быть использован вне класса [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
  
  
 <span id="fade-in-out-and-crossfade"/>
@@ -93,7 +93,7 @@ ms.locfileid: "66366687"
 
 ### <a name="showhide-popup"></a>Показ или скрытие всплывающих окон
 
-Используйте [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation) и [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation) во время показа и скрытия [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) или аналогичного элемента контекстного пользовательского интерфейса, который находится поверх текущего представления. [**PopupThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition) является переход темы, полезные сведения, если вы хотите свет закрыть всплывающее окно.
+Используйте [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation) и [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation) во время показа и скрытия [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) или аналогичного элемента контекстного пользовательского интерфейса, который находится поверх текущего представления. [**PopupThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition) — это переход темы, который удобно использовать для отображения визуальной реакции во время исчезновения всплывающего окна.
 
 <span id="show-hide-edge-ui"/>
 
@@ -125,14 +125,14 @@ ms.locfileid: "66366687"
 
 | Тип пользовательского интерфейса | Рекомендованная анимация |
 |---------|-----------------------|
-| Диалоговое окно | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) и [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Всплывающий элемент | [**PopInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) и [ **PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Всплывающая подсказка | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) и [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Контекстное меню | [**PopInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) и [ **PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| . | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) и [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Всплывающий элемент | [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) и [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Всплывающая подсказка | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) и [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Контекстное меню | [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) и [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Панель команд | [**EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | Область задач или панель, привязанная к границам экрана | [**PaneThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | Содержимое любого контейнера пользовательского интерфейса | [**ContentThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| Для элементов управления или если другая анимация не применяется | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) и [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Для элементов управления или если другая анимация не применяется | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) и [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
  
 
@@ -349,7 +349,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 В отличие от анимации перехода, анимация темы не имеет встроенного триггера, по которому она запускается. Следует использовать [**раскадровку**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) в качестве контейнера для анимации тем на этапе определения в XAML. Кроме того, можно изменять действия анимации по умолчанию. Например, вы можете замедлить исчезновение, увеличив значение времени [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) объекта [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation).
 
-**Примечание**  для целей отображения простая анимация методики, мы используем код приложения для запуска анимации, вызывая методы класса [ **раскадровки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard). Вы можете управлять как **раскадровки** анимации, выполняются с использованием [ **начать**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), [ **остановить**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop), [ **Пауза**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause), и [ **Resume** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **раскадровки** методы. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)).
+**Примечание**  . в целях отображения основных методов анимации мы используем код приложения для запуска анимации, вызывая методы [**раскадровки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard). Управлять выполнением анимаций **раскадровки** можно с помощью методов [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) и [**Resume** класса ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard**. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)).
 
  
 

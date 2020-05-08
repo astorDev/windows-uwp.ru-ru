@@ -1,25 +1,25 @@
 ---
 Description: В этом разделе описано использование геометрии контакта для цели касания и приводятся рекомендации для целей касания в приложениях среды выполнения Windows.
-title: Нацеливание
+title: Целевая настройка
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1cac04405f18aaf3c8f39f9bfce2b965577807
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 199c120dcc85e5c113d6d4d529699a3f2fb28aa1
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257943"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970089"
 ---
-# <a name="guidelines-for-touch-targets"></a>Рекомендации для мишеней Touch
+# <a name="guidelines-for-touch-targets"></a>Рекомендации для целевых объектов сенсорного ввода
 
-Все интерактивные элементы пользовательского интерфейса в приложении универсальная платформа Windows (UWP) должны быть достаточно большими, чтобы пользователи могли точно получить доступ и использовать, независимо от типа устройства или метода ввода.
+Все интерактивные элементы пользовательского интерфейса в приложении Windows должны быть достаточно большими, чтобы пользователи могли точно получить доступ и использовать, независимо от типа устройства или метода ввода.
 
-Поддержка сенсорного ввода (и относительно неточная природа области сенсорного контакта) требует дополнительной оптимизации с учетом целевого размера и структуры элементов управления, так как более крупный, более сложный набор входных данных, сообщаемый сенсорным дигитайзером, используется для определения предполагаемое (или наиболее вероятное) Назначение пользователя.
+Поддержка сенсорного ввода (и относительно неточная природа области сенсорного контакта) требует дополнительной оптимизации с учетом целевого размера и структуры элементов управления, так как более крупный, более сложный набор входных данных, сообщаемый сенсорным дигитайзером, используется для определения предполагаемого (или наиболее вероятного) целевого объекта пользователя.
 
 Все элементы управления UWP спроектированы с учетом размеров и макетов управляющих объектов по умолчанию, позволяющих создавать визуально сбалансированные и привлекательные приложения, которые удобны, просты в использовании и вдохновить уверенность.
 
@@ -32,7 +32,7 @@ ms.locfileid: "74257943"
 *Размеры Fluent Standard* были разработаны, чтобы обеспечить баланс между плотностью информации и удобством пользователя. Фактически все элементы на экране пропорциональны эталонному размеру 40x40 эффективных пикселей (epx), что позволяет выравнивать элементы пользовательского интерфейса по сетке и правильно их масштабировать на уровне системы.
 
 > [!NOTE]
->Дополнительные сведения об эффективных пикселях и масштабировании см. в разделе [Введение в проектирование приложений UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling).
+> Дополнительные сведения о эффективных пикселях и масштабировании см. в статье [Введение в проектирование приложений Windows](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) .
 >
 > Дополнительные сведения о масштабировании уровня системы см. в разделе [Выравнивание, поле и заполнение](../layout/alignment-margin-padding.md).
 
@@ -44,7 +44,7 @@ ms.locfileid: "74257943"
 
 Компактный размер можно применить на уровне страницы или сетки.
 
-### <a name="page-level"></a>Уровень страницы
+### <a name="page-level"></a>Уровня страниц
 
 ```xaml
 <Page.Resources>
@@ -62,11 +62,11 @@ ms.locfileid: "74257943"
 </Grid>
 ```
 
-## <a name="target-size"></a>Целевой размер
+## <a name="target-size"></a>целевой размер;
 
 В общем случае задайте размер сенсорного объекта в 7,5 мм в квадрате (40x40 пикселей на дисплее 135 на уровне 1,0 x плато). Как правило, элементы управления UWP выводятся с помощью управляющей цели 7,5 мм (это может варьироваться в зависимости от конкретного элемента управления и общих шаблонов использования). Дополнительные сведения см. в разделе [размер и плотность элемента управления](../style/spacing.md) .
 
-Эти рекомендации по размеру цели можно скорректировать для конкретного сценария. Ниже приведены некоторые моменты, которые следует учитывать.
+Эти рекомендации по размеру цели можно скорректировать для конкретного сценария. При этом нужно помнить о следующем:
 
 - Частота касаний. Рассмотрите возможность многократного или частого нажатия целевых объектов, размер которых превышает минимальный размер.
 - Ошибка, результат — целевые объекты, имеющие серьезные последствия при возникновении ошибки, должны иметь больше заполнения и помещать дальше от края области содержимого. Это особенно важно для целей, которых часто касаются.
@@ -75,26 +75,26 @@ ms.locfileid: "74257943"
 - Уровень пальца.
 - Сенсорные визуализации.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Введение в проектирование приложений UWP](../basics/design-and-ui-intro.md)
+- [Введение в проектирование приложений Windows](../basics/design-and-ui-intro.md)
 - [Размер и плотность элемента управления](../style/spacing.md)
 - [Выравнивание, поля и заполнение](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>Примеры
 
 - [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-- [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Пример ввода с малой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 - [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 - [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 ### <a name="archive-samples"></a>Примеры архива
 
-- [Входные данные: пример событий пользовательского ввода XAML](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-- [Входные данные: пример возможностей устройства](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-- [Входные данные: пример проверки нажатия касания](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-- [Пример прокрутки XAML, панорамирования и масштабирования](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-- [Входные данные: Пример упрощенного рукописного ввода](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-- [Входные данные: пример использования жестов Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-- [Входные данные: пример манипуляций иC++жестов ()](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-- [Пример входных данных DirectX Touch](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+- [Ввод: пример событий пользовательского ввода на XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Ввод: пример возможностей устройства](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Ввод: пример тестирования сенсорного ввода](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Пример прокрутки XAML, панорамирования и масштабирования](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Ввод: пример упрощенного рукописного ввода](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [Ввод: пример жестов в Windows 8](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Входные данные: пример манипуляций и жестов](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Пример сенсорного ввода в DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

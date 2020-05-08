@@ -8,16 +8,16 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, служба уведомлений Windows, уведомление, Windows, брандмауэр, устранение неполадок, IP, трафик, предприятие, сеть, IPv4, VIP, полное доменное имя, общедоступный IP-адрес
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
+ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080656"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82868905"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Настройка брандмауэра и прокси-сервера предприятия для поддержки трафика WNS
 
-## <a name="background"></a>Фон
+## <a name="background"></a>Историческая справка
 Многие предприятия используют брандмауэры для блокировки нежелательного сетевого трафика и портов. к сожалению, это также может блокировать такие важные вещи, как связь со службой уведомлений Windows. Это означает, что все уведомления, отправляемые через WNS, будут удалены при определенных конфигурациях сети. Чтобы избежать этого, администраторы сети могут добавить список утвержденных полных доменных имен WNS или виртуальных IP-адресов в их список исключений, чтобы разрешить передачу трафика WNS через брандмауэр. Ниже приведены дополнительные сведения о том, как и что следует добавить, а также о поддержке различных типов прокси.
 
 ## <a name="proxy-support"></a>Поддержка прокси-сервера
@@ -60,6 +60,10 @@ ms.locfileid: "80080656"
         <IpRange Subnet=""/>
         <!-- See the file in Download Center for the complete list of IP ranges -->
     </ClientIPsIPv4>
+    <IdentityServiceDNS>
+        <DNS FQDN="login.microsoftonline.com"/>
+        <DNS FQDN="login.live.com"/>
+    </IdentityServiceDNS>
 </WNSPublicIpAddresses>
 
 ```
@@ -67,7 +71,7 @@ ms.locfileid: "80080656"
 ### <a name="terms-and-notations"></a>Термины и обозначения
 Ниже приведены пояснения к нотациям и элементам, используемым в приведенном выше фрагменте кода XML.
 
-| Термин | Пояснение |
+| Термин | Объяснение |
 |---|---|
 | **Точечная-десятичная нотация (т. е. 64.4.28.0/26)** | Десятичная нотация — это способ описания диапазона IP-адресов. Например, 64.4.28.0/26 означает, что первые 26 бит 64.4.28.0 являются константами, а последние 6 бит — переменными.  В этом случае диапазон IPv4 — 64.4.28.0-64.4.28.63. |
 | **клиентднс** | Это полные фильтры доменных имен (FQDN) для клиентских устройств (компьютеров Windows, настольных компьютеров), получающих уведомления от WNS. Они должны быть разрешены через брандмауэр, чтобы клиенты WNS могли использовать функцию WNS.  Рекомендуется разрешить в список FQDN, а не диапазоны IP/VIP, так как они никогда не изменятся. |
@@ -80,12 +84,12 @@ ms.locfileid: "80080656"
 Если вы используете устаревшую службу уведомлений, то диапазоны IP-адресов, которые необходимо добавить в список разрешений, доступны в центре загрузки: [общедоступные IP-адреса службы push-уведомлений Майкрософт (MPNS)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 
-* [Краткое руководство. Отправка push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [Как запросить, создать и сохранить канал уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [Перехват уведомлений для запуска приложений](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [Краткое руководство: отправка push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Запрос, создание и сохранение канала уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Перехват уведомлений для выполняемых приложений ](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
 * [Проверка подлинности с помощью службы push-уведомлений Windows (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [Заголовки запросов и ответов службы push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [Рекомендации и контрольный список для push-уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Заголовки запроса и ответа службы push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Руководство и контрольный список для push-уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

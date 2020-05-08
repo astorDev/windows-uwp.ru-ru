@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614082"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970499"
 ---
 # <a name="parallax"></a>Параллакс
 
@@ -45,7 +45,7 @@ ms.locfileid: "80614082"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Параллакс и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс — это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Подробные сведения см. в статье [The Fluent Design System for Windows app creators](/windows/apps/fluent-design-system) (Система проектирования Fluent Design для разработчиков приложений Windows).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс — это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Дополнительные сведения см. в статье [Общие сведения о проектировании Fluent](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Как это работает в пользовательском интерфейсе
 
@@ -121,8 +121,8 @@ ms.locfileid: "80614082"
 - Можно использовать эффект параллакса в ListViewItems, если там содержится изображение.
 - Не используйте его везде, что чрезмерно сказывается на его влиянии
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Класс Параллаксвиев](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [Класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design для UWP](/windows/apps/fluent-design-system)
-- [Наука в системе: дизайн и глубина Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Наука системы: система проектирования Fluent Design и глубина](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

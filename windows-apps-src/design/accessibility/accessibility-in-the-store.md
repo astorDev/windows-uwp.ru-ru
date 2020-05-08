@@ -1,25 +1,25 @@
 ---
-Description: В статье описываются требования, которым должно соответствовать приложение универсальной платформы Windows (UWP), чтобы о его специальных возможностях можно было объявить в Microsoft Store.
+Description: Требования к объявлению приложения Windows как доступного в Microsoft Store.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Специальные возможности в Магазине
 label: Accessibility in the Store
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359737"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969679"
 ---
 # <a name="accessibility-in-the-store"></a>Специальные возможности в Магазине  
 
 
 
-В статье описываются требования, которым должно соответствовать приложение универсальной платформы Windows (UWP), чтобы о его специальных возможностях можно было объявить в Microsoft Store.
+Требования к объявлению приложения Windows как доступного в Microsoft Store.
 
 При отправке своей программы в Microsoft Store для сертификации вы можете объявить о ее специальных возможностях. Если вы объявите, что ваше приложение имеет специальные возможности, пользователям, заинтересованным в специальных программах, например людям с нарушениями зрения, будет проще его найти. Пользователи могут искать приложения со специальными возможностями в Microsoft Store при помощи фильтра **Специальные возможности**. При объявлении о специальных возможностях программы в ее описание также добавляется тег **Специальные возможности**.
 
@@ -47,5 +47,5 @@ ms.locfileid: "66359737"
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>См. также    
+## <a name="related-topics"></a>Связанные темы    
 * [Специальные возможности](accessibility.md) 

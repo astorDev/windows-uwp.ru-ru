@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259806"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619348"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
-\[ обновлены для приложений UWP в Windows 10. Статьи по Windows 8. x см. в \] [архива](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) .
+\[Обновлено для приложений UWP в Windows 10. Статьи по Windows 8. x см. в [архиве](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 <b>Важные API</b>
 
@@ -348,11 +348,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 Обратите внимание, что обработчик завершения проверяет, был ли отменен рабочий элемент, перед тем как выполнять обновление пользовательского интерфейса.
 
-## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Дополнительные сведения можно узнать, загрузив код из этого краткого руководства, в [примере создания рабочего элемента ThreadPool](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) , написанном для Windows 8.1, и повторно использовать исходный код в приложении Win\_УНАП Windows 10.
+Дополнительные сведения можно узнать, загрузив код из этого краткого руководства, в [примере создания рабочего элемента ThreadPool](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) , написанного для Windows 8.1, и повторно использовать исходный код в приложении\_Win УНАП Windows 10.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

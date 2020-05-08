@@ -4,14 +4,14 @@ title: Идентификаторы класса службы AEP
 description: Службы конечной точки связи (AEP) предоставляют программный контракт для служб, поддерживаемых устройством по определенному протоколу. У некоторых из этих служб имеются установленные идентификаторы, которые следует использовать при обращении к ним.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 67bba732efd199c5093bb75e9b0a2c41b67e568c
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684864"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148574"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
@@ -34,7 +34,7 @@ ms.locfileid: "75684864"
 
 Протокол Bluetooth поддерживает ряд служб, в которых используется один и тот же базовый формат. Первые четыре цифры GUID меняются в зависимости от службы, но все идентификаторы GUID для Bluetooth заканчиваются на **0000-0000-1000-8000-00805F9B34FB**. Например, для службы RFCOMM используются цифры 0x0003 в начале, поэтому полный идентификатор будет иметь вид **00030000-0000-1000-8000-00805F9B34FB**. В таблице ниже приведены некоторые из основных служб Bluetooth.
 
-| Название службы                         | Код GUID                                     |
+| Имя службы                         | Идентификатор GUID                                     |
 |--------------------------------------|------------------------------------------|
 | RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
 | GATT — Alert notification service (Служба уведомлений)    | **18110000-0000-1000-8000-00805F9B34FB** |
@@ -72,7 +72,7 @@ ms.locfileid: "75684864"
 
  
 
-Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids), чтобы получить доступ к некоторым распространенным службам GATT.
+Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids), чтобы получить доступ к некоторым распространенным службам GATT.
 
 ## <a name="custom-bluetooth-le-services"></a>Настраиваемые службы Bluetooth с низким энергопотреблением
 
@@ -86,9 +86,9 @@ ms.locfileid: "75684864"
 
 Как правило, имена всех служб UPnP хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы UPnP, определенные в Windows.
 
-| Название службы                       | Код GUID                                      |
+| Имя службы                       | Идентификатор GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Connection manager (диспетчер подключений)                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| Диспетчер соединений                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV transport (транспорт аудио/видео)                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Rendering control (управление отрисовкой)                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Layer 3 forwarding (перенаправление уровня 3)                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
@@ -109,10 +109,10 @@ ms.locfileid: "75684864"
 
 Как правило, имена всех служб WSD хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы WSD, определенные в Windows.
 
-| Название службы | Код GUID                                     |
+| Имя службы | Идентификатор GUID                                     |
 |--------------|------------------------------------------|
-| Printer (принтер)      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
-| Scanner (сканер)      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
+| Принтер      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
+| Сканер      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
  
 

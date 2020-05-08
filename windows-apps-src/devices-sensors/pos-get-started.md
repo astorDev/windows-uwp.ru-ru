@@ -1,22 +1,22 @@
 ---
 title: Начало работы с POS-устройствами
-description: Эта статья содержит сведения о начале работы с API UWP точки обслуживания.
+description: Эта статья содержит сведения о начале работы с API-интерфейсами служб среда выполнения Windows.
 ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63772733"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730385"
 ---
 # <a name="getting-started-with-point-of-service"></a>Начало работы с POS-устройствами
 
 POS-устройства (от point of sale, т. е. точка продажи, или point of service, т. е. точка обслуживания) — это периферийные вычислительные устройства, облегчающие транзакции в розничной торговле. В качестве примеров POS-устройств можно назвать электронные кассовые аппараты, сканеры штрихкодов, считыватели магнитных карт и чековые принтеры.
 
-Здесь вы изучите основы взаимодействия с POS-устройствами с использованием API-интерфейсов PointOfService универсальной платформы Windows (UWP). Мы рассмотрим перечисление устройств, проверка возможностей устройства, присвоение устройств и предоставление общего доступа к устройствам. Мы используем сканер штрихкодов в качестве примера, но практически вся информация в этом руководстве применима к любым совместимым с UWP POS-устройствам. (Список поддерживаемых устройств см. в разделе [Поддержка POS-устройств](pos-device-support.md)).
+Здесь вы узнаете об основах взаимодействия с устройствами точки обслуживания с помощью среда выполнения Windows API-интерфейсов службы. Мы рассмотрим перечисление устройств, проверка возможностей устройства, присвоение устройств и предоставление общего доступа к устройствам. Мы используем сканер штрихкодов в качестве примера, но практически вся информация в этом руководстве применима к любым совместимым с UWP POS-устройствам. (Список поддерживаемых устройств см. в разделе [Поддержка POS-устройств](pos-device-support.md)).
 
 ## <a name="finding-and-connecting-to-point-of-service-peripherals"></a>Поиск периферийных POS-устройств и подключение к ним
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>Сохранение устройства
-При использовании POS-устройства по сетевому подключению или подключению Bluetooth может возникнуть необходимость предоставить устройство другим приложениям в сети. (Дополнительные сведения об этом см. в разделе [совместное использование устройств](#sharing-a-device-between-apps).) В других случаях может потребоваться удерживать устройства для длительного использования. В этом примере показано, как сохранить присвоенный сканер штрихкодов после того, как другое приложение пришлет запрос на его освобождение.
+При использовании POS-устройства по сетевому подключению или подключению Bluetooth может возникнуть необходимость предоставить устройство другим приложениям в сети. (Дополнительные сведения об этом см. в разделе [Предоставление общего доступа к устройствам](#sharing-a-device-between-apps).) В других случаях целесообразно сохранить устройство за приложением для длительного использования. В этом примере показано, как сохранить присвоенный сканер штрихкодов после того, как другое приложение пришлет запрос на его освобождение.
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -163,7 +163,7 @@ void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeS
 }
 ```
 
-## <a name="input-and-output"></a>Вход и выход
+## <a name="input-and-output"></a>Ввод и вывод
 
 Присвоив устройство, вы почти готовы его использовать. Чтобы получить входные данные с устройства, необходимо настроить его и включить делегат для получения данных. В приведенном ниже примере мы присваиваем сканер штрихкодов, задаем его свойство декодирования и вызываем метод **EnableAsync**, чтобы включить получение декодированных входных данных с устройства. Этот процесс варьируется в зависимости от классов устройств, поэтому инструкции по настройке делегата для устройств без штрихкода см. в соответствующем [примере приложения UWP](https://github.com/Microsoft/Windows-universal-samples#devices-and-sensors).
 
@@ -209,8 +209,8 @@ if (claimedBarcodeScanner != null)
 
 ## <a name="see-also"></a>См. также
 + [Пример сканера штрихкодов](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Пример панель денежных средств]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Пример отображения строки](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Пример модуля чтения магнитных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [Образец кассового аппарата]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [Пример строкового дисплея](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [Пример считывателя магнитных карт](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [Пример POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, панель задач, диспетчер панели задач, закрепление на панели задач, основная плитка
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa259cd8c5c45ea99d83eaecb8e30fb0438aa8f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 44ef6430398960e13fe5eebb40a52d022df6f0d2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684533"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970659"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Закрепление приложения на панели задач
 
@@ -55,7 +55,7 @@ else
 
 ## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Проверьте, присутствует ли панель задач и допускает ли она закрепление.
 
-Приложения UWP могут работать на различных устройствах, и не все из них поддерживают панель задач. Сейчас ее поддерживают только настольные компьютеры. 
+Приложения Windows могут работать на различных устройствах. не все из них поддерживают панель задач. Сейчас ее поддерживают только настольные компьютеры. 
 
 Даже если панель задач доступна, групповая политика на компьютере пользователя может запрещать закрепление элементов на панели задач. Поэтому прежде чем пытаться закрепить приложение, необходимо проверить, поддерживается ли закрепление на панели задач. [Свойство TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed) возвращает значение true, если панель задач присутствует и разрешает закрепление элементов. 
 
@@ -109,5 +109,5 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 ## <a name="resources"></a>Ресурсы
 
 * [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
-* [Класс Таскбарманажер](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
 * [Закрепление приложения в меню "Пуск"](tiles-and-notifications/primary-tile-apis.md)

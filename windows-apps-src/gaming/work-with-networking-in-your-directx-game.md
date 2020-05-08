@@ -1,25 +1,25 @@
 ---
 title: Поддержка сети в играх
-description: Узнайте, как разрабатывать и включать компоненты для работы в сети в игры DirectX.
+description: Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, работа по сети, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 79a1640964902f1effc08196372128bd38bebe2d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e693016fa6b87f231c1cbbfac4c2e55d44623c9
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258406"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606373"
 ---
 # <a name="networking-for-games"></a>Поддержка сети в играх
 
 
 
-Узнайте, как разрабатывать и включать компоненты для работы в сети в игры DirectX.
+Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 
-## <a name="concepts-at-a-glance"></a>Краткий обзор основных понятий
+## <a name="concepts-at-a-glance"></a>Краткий обзор понятий
 
 
 Разнообразные сетевые компоненты можно использовать в любых играх DirectX — от простых автономных до многопользовательских. Простейший пример использования сети — хранение имен пользователей и игровых результатов на центральном сервере.
@@ -121,7 +121,7 @@ ms.locfileid: "74258406"
 
 Ошибка, обнаруженная в операции [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket), [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) или [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener), может привести к вызову исключения. Причиной исключения является значение ошибки, представленное как значение **HRESULT**. Метод [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) преобразует сетевую ошибку, произошедшую в операции с сокетом, в значение перечисления [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus). Большинство значений перечисления **SocketErrorStatus** соответствуют ошибке, возвращаемой стандартной операцией с сокетами Windows. Приложение может фильтровать полученные данные по определенным значениям перечисления **SocketErrorStatus**, чтобы действовать в зависимости от причины исключения.
 
-Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**.
+Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для большинства ошибок проверки параметров возвращается значение **HRESULT** , равное **E\_INVALIDARG**.
 
 Добавление кода для обработки исключений при попытке подключения через сокет потока
 
@@ -269,11 +269,11 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-В пространстве имен [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http) отсутствует удобная функция. Поэтому приложение, использующее класс [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) и другие классы из этого пространства имен, должно использовать значение **HRESULT**.
+В пространстве имен [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http) отсутствует удобная функция. Таким образом, приложение, использующее [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) и другие классы в этом пространстве имен, должно использовать значение **HRESULT** .
 
-В приложениях на C++ объект [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [**Platform::Exception::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [**Platform::Exception::Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
+В приложениях на C++ объект [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [**Platform:: Exception:: HRESULT**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) возвращает **значение HRESULT** , назначенное конкретному исключению. Свойство [**Platform:: Exception:: Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) Возвращает предоставленную системой строку, связанную со значением **HRESULT** . Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
-Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**. Для некоторых непредусмотренных вызовов методов возвращаемым значением **HRESULT** будет **E\_ILLEGAL\_METHOD\_CALL**.
+Для большинства ошибок проверки параметров возвращается значение **HRESULT** , равное **E\_INVALIDARG**. Для некоторых непредусмотренных вызовов методов возвращаемым значением **HRESULT** будет **E\_ILLEGAL\_METHOD\_CALL**.
 
 Добавление кода для обработки исключений при попытке использовать [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) для подключения к HTTP-серверу
 
@@ -365,20 +365,20 @@ using namespace Windows::Web::Http;
 
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные темы
 
 
 **Другие ресурсы**
 
-* [Соединение с сокетом датаграмм](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
+* [Подключение с помощью сокета датаграмм](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
 * [Подключение к сетевому ресурсу с помощью сокета потока](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
 * [Подключение к сетевым службам](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
 * [Подключение к веб-службам](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 * [Основы работы в сети](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
-* [Настройка возможностей сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Включение замыкания на себя и отладка сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
+* [Настройка характеристик сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Использование интерфейса замыкания на себя и отладка сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
 
-**Reference**
+**Справочные материалы**
 
 * [**датаграмсоккет**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)
 * [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **Примеры**
 
-* [Пример Датаграмсоккет](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
-* [Пример HttpClient]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Пример близости](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [Образец DatagramSocket](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
+* [Пример HttpClient]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
+* [Образец Proximity](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
 * [StreamSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
