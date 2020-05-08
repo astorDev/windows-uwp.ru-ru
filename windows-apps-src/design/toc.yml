@@ -354,7 +354,7 @@
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Отправка локального всплывающего уведомления
               items:
-                - name: Приложения UWP
+                - name: Приложения для Windows
                   href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Классические приложения
                   items:
