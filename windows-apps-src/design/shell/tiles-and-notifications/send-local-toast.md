@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb00ebc029ccbb15640938f01d14382e8fa273a
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: 23a1739b8f5859d128c97ff28350a548b61286d2
+ms.sourcegitcommit: 63597f83f154ce41ebaf69c075093919c430297c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987205"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82034188"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 
@@ -21,7 +21,7 @@ ms.locfileid: "70987205"
 Всплывающее уведомление — это сообщение, которое приложение может создавать и доставлять пользователю, когда он или она в настоящее время не находится в вашем приложении. В этом руководстве описаны действия для создания, доставки и отображения всплывающего уведомления с новыми адаптивными шаблонами и интерактивными действиями Windows 10. Описанные действия демонстрируются на примере локальных уведомлений, которые реализуются проще всего.
 
 > [!IMPORTANT]
-> Для классических приложений (моста для классических приложений и классических приложений Win32) применяются другие действия для отправки уведомлений и обработки активации. См. документацию по [Классическим приложениям](toast-desktop-apps.md), чтобы узнать, как реализовать всплывающие уведомления.
+> Классические приложения (включая Упакованные приложения [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) , приложения, использующие [разреженные пакеты](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) для получения удостоверений пакета и классических приложений Win32) имеют разные шаги для отправки уведомлений и обработки активации. См. документацию по [Классическим приложениям](toast-desktop-apps.md), чтобы узнать, как реализовать всплывающие уведомления.
 
 Рассмотрим следующие действия:
 
@@ -39,10 +39,10 @@ ms.locfileid: "70987205"
 * Обработка активации переднего плана
 * Обработка активации фона
 
-> **Важные API**: Класс [тоастнотификатион](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [класс тоастнотификатионактиватедевентаргс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **Важные API-интерфейсы**: [класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [класс ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы полностью понять этот раздел, изучите инструкции ниже...
 
@@ -54,15 +54,15 @@ ms.locfileid: "70987205"
 > В отличие от Windows 8 или 8.1, вам больше не нужно объявлять в манифесте приложения, что ваше приложение способно отображать всплывающие уведомления. Все приложения способны отправлять и отображать всплывающие уведомления.
 
 > [!NOTE]
-> **Приложения для Windows 8/8.1**: Используйте [архивную документацию](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
+> **Приложения для Windows 8 и 8.1**: этого используйте [документацию архива](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
-## <a name="install-nuget-packages"></a>Установка пакетов NuGet
+## <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
 Рекомендуется установить два следующих пакета NuGet в проект. Эти пакеты будут использовать наш пример кода. В конце статьи мы предоставим фрагменты кода «Ваниль», не используйте пакеты NuGet.
 
-* [Microsoft. Toolkit. UWP. Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Создавайте полезные данные всплывающих уведомлений с помощью объектов вместо необработанного XML.
-* [Querystring.NET](https://www.nuget.org/packages/QueryString.NET/): Создать и проанализировать строки запроса с помощьюC#
+* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): создание всплывающих полезных данных через объекты вместо необработанных XML.
+* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/): создание и анализ строки запроса с помощью C#
 
 
 ## <a name="add-namespace-declarations"></a>Добавление объявлений пространств имен
@@ -193,7 +193,7 @@ ToastActionsCustom actions = new ToastActionsCustom()
 
 ### <a name="combining-the-above-to-construct-the-full-content"></a>Комбинирование указанных выше элементов для создания всего содержимого
 
-Создание содержимого теперь завершено, и мы можем использовать его для создания экземпляра объекта [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
+Создание содержимого теперь завершено, и мы можем использовать его для создания экземпляра объекта [**тоастнотификатион**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) .
 
 **Примечание**. Вы также можете предоставить тип активации внутри корневого элемента, чтобы указать, какой тип активации должен происходить, когда пользователь касается текста всплывающего уведомления. Как правило, коснувшись текста всплывающего уведомления, необходимо запустить приложение на переднем плане, чтобы создать согласованное взаимодействие с пользователем, но можно использовать другие типы активации для размещения вашего конкретного сценария, где это целесообразно для пользователя.
 
@@ -238,9 +238,9 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 Если вы хотите удалить или заменить уведомление, которое вы отправляете программным способом, необходимо использовать свойство Tag (и при необходимости свойство Group) для предоставления первичного ключа для уведомления. Затем можно использовать этот ключ в будущем для удаления или замены уведомления.
 
-Дополнительные сведения о замене и удалении уже доставленных всплывающих уведомлений см. [в разделе Краткое руководство. Управление всплывающими уведомлениями в центре уведомлений (](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))XAML).
+Чтобы просмотреть дополнительные сведения о замене или удалении уже доставленного всплывающего уведомления, см. раздел [краткое руководство: управление всплывающими уведомлениями в центре уведомлений (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Tag и Group объединены в качестве составного первичного ключа. Группа является более универсальным идентификатором, где можно назначать такие группы, как "Валлпостс", "messages", "Фриендрекуестс" и т. д. Затем тег должен однозначно идентифицировать само уведомление из группы. С помощью универсальной группы вы можете удалить все уведомления из группы с помощью [RemoveGroup API ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Tag и Group объединены в качестве составного первичного ключа. Группа — это более общий идентификатор, которой можно назначить группам, например "wallPosts", "сообщения", "friendRequests", и т. д. Выберите тег уникальной идентификации уведомления из группы. С помощью универсальной группы вы можете удалить все уведомления из группы с помощью [RemoveGroup API ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -270,7 +270,7 @@ Windows автоматически удалит уведомление, если
 3. Приложение открывает беседу, а затем удаляет все всплывающие уведомления для этой беседы (с помощью [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) в группе приложения для этой беседы)
 4. Центр уведомлений пользователя теперь правильно отражает состояние уведомления, так как слева в центре уведомлений нет устаревших уведомлений для этой беседы.
 
-Дополнительные сведения об очистке всех уведомлений и об удалении конкретных уведомлений см [. в разделе Краткое руководство. Управление всплывающими уведомлениями в центре уведомлений (](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))XAML).
+Подробные сведения о том, как очистить все уведомления или удалить определенные уведомления, см. в разделе [краткое руководство: управление всплывающими уведомлениями в центре уведомлений (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## <a name="activation-handling"></a>Обработка активации
@@ -418,7 +418,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 ## <a name="plain-vanilla-code-snippets"></a>Фрагменты кода обычного «кода»
 
-Если вы не используете библиотеки уведомления из NuGet, как показано ниже, чтобы создать [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) вручную может создать XML-файлов.
+Если вы не используете библиотеку уведомлений в NuGet, вы можете вручную создать XML-код, как показано ниже, для создания [тоастнотификатион](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
 
 ```csharp
 using Windows.UI.Notifications;
@@ -503,5 +503,5 @@ var toast = new ToastNotification(toastXml);
 
 * [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Документация по содержимому всплывающего уведомления](adaptive-interactive-toasts.md)
-* [Класс Тоастнотификатион](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
-* [Класс Тоастнотификатионактиватедевентаргс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+* [Класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+* [Класс ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

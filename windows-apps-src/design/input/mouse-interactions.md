@@ -6,18 +6,18 @@ label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d54ab79926ef20bb54a83346c12df2ea383167d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258345"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970719"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
-Оптимизируйте свое приложение универсальной платформы Windows (UWP) для сенсорного ввода, и вы получите базовую поддержку мыши по умолчанию. 
+Оптимизируйте структуру приложения Windows для сенсорного ввода и получите по умолчанию обычную поддержку мыши. 
 
 ![Мышь](images/input-patterns/input-mouse.jpg)
 
@@ -59,7 +59,7 @@ ms.locfileid: "74258345"
 <td align="left"><p>Щелчок правой кнопкой мыши для выбора и выполнения команды</p></td>
 <td align="left"><p>Щелчок правой кнопкой мыши для отображения панели навигации (при наличии) и панели приложения с глобальными командами. Щелчок правой кнопкой мыши на элементе для его выделения и отображения контекстных команд для выбранного элемента.</p>
 <div class="alert">
-<strong>Обратите внимание</strong> ,  щелкнуть правой кнопкой мыши, чтобы открыть контекстное меню, если выборка или команды панели приложений не соответствуют поведению пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
+<strong>Примечание</strong>  . Щелкните правой кнопкой мыши, чтобы открыть контекстное меню, если выборка или команды панели приложений не соответствуют поведению пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
 </div>
 <div>
  
@@ -86,13 +86,13 @@ ms.locfileid: "74258345"
 
 ## <a name="mouse-input-events"></a>События ввода мыши
 
-Большая часть ввода мыши может быть обработана с помощью общих перенаправленных событий ввода, поддерживаемых всеми объектами [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . К ним можно отнести следующие.
+Большая часть ввода мыши может быть обработана с помощью общих перенаправленных событий ввода, поддерживаемых всеми объектами [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . К ним относятся следующие объекты.
 
 - [**брингинтовиеврекуестед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**чарактеррецеивед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
 - [**контекстканцелед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
 - [**контекстрекуестед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
-- [**даублетаппед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
 - [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
@@ -100,9 +100,9 @@ ms.locfileid: "74258345"
 - [**Тени**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**дропкомплетед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**жеттингфокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**Фокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Держит**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
-- [**Клавиш**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**лосингфокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
 - [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
@@ -112,18 +112,18 @@ ms.locfileid: "74258345"
 - [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
 - [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
 - [**нофокускандидатефаунд**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
-- [**поинтерканцелед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
-- [**поинтеркаптурелост**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
-- [**поинтерентеред**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
-- [**поинтерекситед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
-- [**поинтермовед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
-- [**поинтерпрессед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
-- [**поинтеррелеасед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
-- [**поинтервхилчанжед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**превиевкэйуп**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**ригхттаппед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Полученные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 Тем не менее можно воспользоваться возможностями каждого устройства (например, события колесика мыши), используя события указателя, жеста и манипуляции в [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
@@ -133,7 +133,7 @@ ms.locfileid: "74258345"
 
 - Обнаружив мышь (при помощи событий перемещения или наведения), отображайте пользовательский интерфейс для мыши, чтобы показать функциональность, которую предоставляет элемент. Если мышь не перемещается в течение определенного времени или если пользователь инициирует взаимодействие касанием, сделайте так, чтобы пользовательский интерфейс для мыши постепенно исчезал с экрана. В этом случае пользовательский интерфейс будет аккуратным, не загроможденным лишними элементами.
 - Не используйте курсор для обратной связи при наведении, для этого достаточно обратной связи от элемента (см. ниже раздел "Курсоры").
-- Не отображайте визуальную обратную связь, если элемент не поддерживает взаимодействия (например, статический текст).
+- Не отображайте визуальную обратную связь, если элемент не поддерживает взаимодействие (например, статический текст).
 - Не используйте прямоугольник фокуса для взаимодействий с помощью мыши. Оставьте их для взаимодействий с использованием клавиатуры.
 - Отображайте визуальную обратную связь одновременно для всех элементов, представляющих одну и ту же цель ввода.
 - Предусмотрите кнопки (например, + и -) для эмуляции манипуляций касания, таких как сдвиг, поворот, масштабирование и пр.
@@ -154,15 +154,15 @@ ms.locfileid: "74258345"
 - Используйте курсоры изменения размеров по горизонтали, вертикали и диагонали (![Курсор изменения размеров по вертикали](images/cursor-vertical.png), ![Курсор изменения размеров по горизонтали](images/cursor-horizontal.png), ![Курсор изменения размеров по диагонали (левый нижний, правый верхний)](images/cursor-diagonal2.png), ![Курсор изменения размеров по диагонали (левый верхний, правый нижний)](images/cursor-diagonal1.png)), если размер объекта можно изменить.
 - Используйте курсоры "хватающая рука" (![Курсор "хватающая рука" (открыта)](images/cursor-pan1.png), ![Курсор "хватающая рука" (сжатая)](images/cursor-pan2.png)) для сдвига содержимого в пределах фиксированного холста, например карты.
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Работа с данными указателя](handle-pointer-input.md)
+- [Работа с входными данными указателя](handle-pointer-input.md)
 - [Распознавание устройств ввода](identify-input-devices.md)
 - [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### <a name="samples"></a>Примеры
 
 - [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-- [Пример ввода с небольшой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Пример ввода с малой задержкой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 - [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 - [Пример визуальных элементов фокуса](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
