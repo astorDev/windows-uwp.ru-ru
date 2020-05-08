@@ -1,17 +1,17 @@
 ---
-description: Научитесь проектировать и писать код для приложения UWP, с которым удобно работать и которое прекрасно выглядит на различных устройствах и экранах разного размера.
-title: Обзор макета для приложений UWP
+description: Научитесь проектировать и писать код приложения для Windows, с которым удобно работать и которое отлично выглядит на различных устройствах и экранах разного размера.
+title: Общие сведения о макете приложений для Windows
 keywords: макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс
 ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab0344acc40103620da5164faa397c081a4a079
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: c3647f6a4c3bbc3951fab45380762de472d13533
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867337"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970779"
 ---
 # <a name="layout"></a>Макет
 
