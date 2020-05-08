@@ -1,21 +1,21 @@
 ---
 Description: Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана.
-title: Элементы анимации пользовательского интерфейса с использованием края в приложениях UWP
+title: Анимации пользовательского интерфейса с использованием края
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd7071092a66f46a81095a5cb6aff8b623a774a5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 02108ad2926fc1514ca94f08d11f565bc342a62d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366627"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970319"
 ---
-# <a name="edge-based-ui-animations"></a>Элементы анимации пользовательского интерфейса с использованием края
+# <a name="edge-based-ui-animations"></a>Анимации пользовательского интерфейса с использованием края
 
 
 
@@ -23,10 +23,10 @@ ms.locfileid: "66366627"
 
 Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана. Действия отображения и скрытия могут вызываться либо пользователем, либо приложением. Пользовательский интерфейс может перекрывать приложение либо становиться частью основной поверхности приложения. Если пользовательский интерфейс становится частью поверхности приложения, возможно, потребуется соответствующим образом изменить размер остальной части приложения.
 
-> **Важные API**: [**Класс EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **Важные API-интерфейсы**: [**класс EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 
 -   Используйте анимации, привязанные к границам экрана, чтобы отобразить или скрыть панель настраиваемых сообщений или ошибок, которая занимает немного места на экране.
@@ -41,17 +41,17 @@ ms.locfileid: "66366627"
 
     ![Демонстрирует, где следует использовать анимации, привязанные к границам экрана, или анимации панелей, а где необходимо использовать изменение положения.](images/edgevsreposition.png)
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 
 **Для разработчиков**
-* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Анимация на границе пользовательского интерфейса](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [Обзор анимаций](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация пользовательского интерфейса по краям экрана](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**Класс EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 * [**Класс PaneThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
-* [Анимация затухание](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [Анимация изменяет положение](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [Анимация появления или исчезания](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [Анимация перемещений](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 

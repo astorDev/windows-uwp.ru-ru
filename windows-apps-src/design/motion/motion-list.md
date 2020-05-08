@@ -1,19 +1,19 @@
 ---
 Description: Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
-title: Анимации добавления и удаления в приложениях UWP
+title: Анимации добавления и удаления
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317094"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970289"
 ---
 # <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
@@ -21,10 +21,10 @@ ms.locfileid: "67317094"
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-> **Важные API**: [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **Важные API-интерфейсы**: [**класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
-## <a name="dos-and-donts"></a>Возможности и ограничения
+## <a name="dos-and-donts"></a>Что рекомендуется и что не рекомендуется делать
 
 
 -   Используйте анимацию списка при добавлении нового элемента к существующему набору элементов. Используйте ее, например, когда приходит новое электронное сообщение или когда новое фото импортируется в существующую коллекцию.
@@ -36,11 +36,11 @@ ms.locfileid: "67317094"
 
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Анимация список добавления и удаления](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [Обзор анимаций](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация добавления и удаления элементов списка](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
