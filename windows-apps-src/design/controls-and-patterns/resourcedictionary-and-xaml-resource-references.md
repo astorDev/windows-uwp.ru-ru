@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73061973"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968139"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Ссылки на ресурсы ResourceDictionary и XAML
 
@@ -81,7 +81,7 @@ ms.locfileid: "73061973"
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) и [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) требуют **TargetType** и будут использовать **TargetType** в качестве ключа, если [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) не задан. В этом случае ключ фактически является объектом Type, а не строкой. (См. приведенные ниже примеры.)
 -   Ресурсы [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) с **TargetType** будут использовать **TargetType** в качестве ключа, если [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) не задан. В этом случае ключ фактически является объектом Type, а не строкой.
--   Вместо [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) можно использовать [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute). Однако x:Name также создает выделенный код поля для ресурса. В результате x:Name менее эффективен по сравнению с x:Key, так как это поле необходимо инициализировать при загрузке страницы.
+-   Вместо [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) можно использовать [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute). Однако x:Name также создает выделенный код поля для ресурса. В результате x:Name менее эффективен по сравнению с x:Key, так как это поле необходимо инициализировать при загрузке страницы.
 
 [Расширение разметки StaticResource](../../xaml-platform/staticresource-markup-extension.md) может получить ресурсы только с именем строки ([x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) или [x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute)). Но платформа XAML также ищет неявные ресурсы стиля (которые используют **TargetType**, а не x:Key или x:Name), когда принимает решение об использовании стиля и шаблона для элемента управления, для которого не заданы свойства [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) и [ContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) или [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
 
@@ -401,7 +401,7 @@ sealed partial class App : Application
 
 Наконец, существует поиск в ресурсах платформы. Ресурсы платформы включают в себя шаблоны элементов управления, определенные для каждой темы пользовательского интерфейса системы, которые задают внешний вид по умолчанию всех элементов управления, используемых в пользовательском интерфейсе приложения среды выполнения Windows. Кроме того, они включают набор именованных ресурсов, относящихся к системным представлениям и темам. С технической точки зрения данные ресурсы образуют элемент [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) и поэтому доступны для поиска из XAML или кода после загрузки приложения. Например, в состав ресурсов темы системы входит ресурс с именем SystemColorWindowTextColor, предоставляющий определение [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color), которое устанавливает соответствие между цветом текста приложения и цветом текста системных окон, задаваемым параметрами операционной системы и настройками пользователя. Другие стили XAML вашего приложения могут ссылаться на этот стиль, или же ваш код может получать поисковое значение ресурса (и преобразовывать его тип в **Color**, как в приведенном примере).
 
-Дополнительную информацию, а также список ресурсов темы и системных ресурсов, которые доступны приложению UWP на XAML, см. в статье [Ресурсы темы XAML](xaml-theme-resources.md).
+См. сведения, а также список ресурсов темы и системных ресурсов, которые доступны для приложений для Windows на XAML, в руководстве по [ресурсам темы XAML](xaml-theme-resources.md).
 
 Если запрошенный ключ не найден ни в одном из этих расположений, возникает исключение (ошибка) анализа XAML. В определенных условиях исключение анализа XAML может быть исключением среды выполнения, не выявленным действием компилирования разметки XAML или средой проектирования XAML.
 

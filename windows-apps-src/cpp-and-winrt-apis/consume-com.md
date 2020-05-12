@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218524"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619328"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование компонентов COM с помощью C++/WinRT
 
@@ -127,7 +127,13 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Функции COM, которые принимают указатель интерфейса типа **IUnknown**
 
-Вы можете вызвать свободную функцию [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), чтобы передать **com_ptr** в функцию, которая принимает указатель интерфейса типа **IUnknown**. Пример кода см. в этом разделе.
+Можно использовать [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function), чтобы передать **com_ptr** в функцию, принимающую указатель интерфейса **IUnknown**.
+
+Вы можете использовать бесплатную функцию [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown), чтобы получить адрес (иными словами, указатель для) базового необработанного объекта [интерфейса IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) проецируемого типа. Затем этот адрес можно передать в функцию, которая принимает указатель интерфейса **IUnknown**.
+
+Сведения о *прогнозируемых типах* см. в разделе [Использование интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+Пример кода **get_unknown** см. в разделе [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) или в [Полный исходный код минимального приложения Direct2D](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) в этой статье.
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>Передача и возврат интеллектуальных указателей COM
 

@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 824476cb098d0ff561fca67497a896586c70b8fb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681965"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968010"
 ---
 # <a name="reveal-focus"></a>Обозначение фокуса
 
@@ -168,7 +168,7 @@ ms.locfileid: "75681965"
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Обозначение фокуса и система проектирования Fluent Design
 
-Обозначение фокуса — это компонент системы проектирования Fluent Design, добавляющий свечение в ваше приложение. Дополнительные сведения о системе проектирования Fluent Design и ее компонентах см. в [обзоре системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
+Обозначение фокуса — это компонент системы проектирования Fluent Design, добавляющий свечение в ваше приложение. См. сведения о [системе проектирования Fluent Design и ее компонентах](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Похожие статьи
 

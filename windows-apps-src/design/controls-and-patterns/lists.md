@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893484"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970399"
 ---
 # <a name="collections-and-lists"></a>Коллекции и списки
 
@@ -41,7 +41,7 @@ ms.locfileid: "80893484"
 
 Один из сценариев, не описанных в этой статье, — отображение коллекций в таблице или в нескольких столбцах. Если вам нужно отобразить коллекцию в таком формате, рекомендуем воспользоваться [элементом управления DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) из [набора средств сообщества Windows](https://docs.microsoft.com/windows/communitytoolkit/). 
 
-> **Windows 10 Fall Creators Update — изменения в поведении**. По умолчанию активное перо вместо выбора теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
+> **Windows 10 Fall Creators Update — изменения в поведении**. По умолчанию активное перо вместо выбора элементов теперь прокручивает или сдвигает список в приложениях для Windows (как сенсорный экран, сенсорная панель и неактивное перо).
 > Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения доступны в разделе справочных материалов по API, посвященном [классу ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Примеры

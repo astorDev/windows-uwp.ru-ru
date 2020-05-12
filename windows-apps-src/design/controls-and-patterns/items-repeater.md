@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5782c6e9ba42fed07c2b1382f2d17b1d311d0a13
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893464"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970409"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ ms.locfileid: "80893464"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ItemsRepeater** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ItemsRepeater** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -774,7 +774,7 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>Включение специальных возможностей
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) не поддерживает стандартные специальные возможности взаимодействия. Документация по [удобству использования приложений UWP](/windows/uwp/design/usability) предоставляет широкий набор сведений, чтобы убедиться, что приложение предоставляет инклюзивное взаимодействие с пользователем. Если вы используете ItemsRepeater, чтобы создать настраиваемый элемент управления, ознакомьтесь с документацией по [настраиваемым одноранговым элементам автоматизации](/windows/uwp/design/accessibility/custom-automation-peers).
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) не поддерживает стандартные специальные возможности взаимодействия. Документация по [удобству использования приложений Windows](/windows/uwp/design/usability) предоставляет широкий набор сведений, которые помогут вам обеспечить инклюзивное взаимодействие с пользователем в приложении. Если вы используете ItemsRepeater, чтобы создать настраиваемый элемент управления, ознакомьтесь с документацией по [настраиваемым одноранговым элементам автоматизации](/windows/uwp/design/accessibility/custom-automation-peers).
 
 ### <a name="keyboarding"></a>Поддержка клавиатуры
 Минимальная поддержка клавиатуры для перемещения фокуса, которую предоставляет ItemsRepeater, основана на [двухмерной направленной навигации для клавиатуры](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard) в XAML.

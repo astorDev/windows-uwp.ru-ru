@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a4fd98ea1773a67cfe341e63f323c69d0bf79e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5ec09f8fdfa0a8b4b8c7161cc6d91a3013230d7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614116"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970689"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,7 +24,7 @@ ms.locfileid: "80614116"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TabView** требует использовать библиотеку пользовательского интерфейса Windows, пакет NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TabView** требует использовать библиотеку пользовательского интерфейса Windows — пакет NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API библиотеки пользовательского интерфейса Windows**: [класс TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [класс TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 

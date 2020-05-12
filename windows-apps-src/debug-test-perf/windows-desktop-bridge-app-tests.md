@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10, uwp, сертификация приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089410"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730295"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Тесты приложения, перенесенного из классического приложения для Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "77089410"
 При выполнении этого теста просматривается реестр пакета и проверяется, зарегистрированы ли в нем команды сопоставления файлов. 
 
 **Сведения о тесте**  
-Можно расширить возможности преобразованных классических приложений с помощью большого числа API универсальной платформы Windows. Этот тест позволяет убедиться, что двоичные файлы UWP в приложении не вызывают интерфейсы API, не относящиеся к UWP. Для двоичных файлов UWP установлен флаг **AppContainer**.
+Вы можете расширить возможности преобразованных классических приложений с помощью разных API среды выполнения Windows. Этот тест позволяет убедиться, что двоичные файлы UWP в приложении не вызывают API, не относящиеся к среде выполнения Windows. Для двоичных файлов UWP установлен флаг **AppContainer**.
 
 **Корректирующие действия**  
 См. статью [Мост для перехода от классических приложений к UWP: расширение приложений](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions), где приводится объяснение этих расширений и их правильного использования. 

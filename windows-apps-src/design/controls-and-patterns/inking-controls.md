@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 848d682b2672e1a397e3ac867ae981c707873e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081729"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970419"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
 
 
-В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Есть два элемента управления, которые упрощают рукописный ввод в приложениях для Windows. [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Элемент управления InkCanvas отображает ввод с помощью пера в виде росчерка пера (используя параметры цвета и толщины штриха по умолчанию) или росчерка стирания. Этот элемент управления представляет собой прозрачное наложение, которое не содержит никаких встроенных элементов пользовательского интерфейса для изменения свойств росчерка пера по умолчанию.
 
@@ -84,7 +84,7 @@ InkCanvas позволяет включить в приложении базов
 ```
 
 > [!NOTE]
-> Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) (Взаимодействие с помощью пера и Windows Ink в приложениях UWP).
+> См. сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter в руководстве по [взаимодействию с помощью пера и Windows Ink в приложениях для Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
@@ -170,6 +170,6 @@ InkCanvas позволяет включить в приложении базов
 
 ## <a name="related-articles"></a>Похожие статьи
 
-- [Взаимодействие с пером и Windows Ink в приложениях UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Взаимодействие с пером и Windows Ink в приложениях для Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
 - [Распознавание росчерков пера Windows Ink как текста и фигур](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
 - [Хранение и извлечение данных движения пера Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

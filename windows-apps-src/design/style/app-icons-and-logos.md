@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684589"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971009"
 ---
 # <a name="app-icons-and-logos"></a>Значки приложений и логотипы 
 
@@ -185,7 +185,7 @@ Visual Studio создает файлы изображений и добавля
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Обратите внимание на то, что Visual Studio не создает логотип по умолчанию. Это потому, что ваш логотип значка уникален и он не должен соответствовать значкам других приложений. Дополнительные сведения см. в статье [Уведомления на индикаторах событий для приложений UWP](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Обратите внимание на то, что Visual Studio не создает логотип по умолчанию. Это потому, что ваш логотип значка уникален и он не должен соответствовать значкам других приложений. См. сведения об [уведомлениях на индикаторах событий для приложений для Windows](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
 
 ## <a name="more-about-app-icon-assets"></a>Подробнее о ресурсах значков приложения
@@ -253,13 +253,13 @@ Visual Studio сгенерирует все ресурсы значков при
 
 
 ## <a name="more-about-splash-screen-assets"></a>Подробнее о ресурсах экрана-заставки
-Дополнительные сведения об экранах-заставки см. в статье об [экранах-заставках UWP](/windows/uwp/launch-resume/splash-screens).
+См. сведения об [экранах-заставках для приложений для Windows](/windows/uwp/launch-resume/splash-screens).
 
 ## <a name="more-about-badge-logo-assets"></a>Подробнее об эмблемах ресурсов
 
 Когда вы используете генератор ресурсов для создания всех необходимых вам ресурсов, есть причина, по которой он не создает эмблемы значков по умолчанию: они сильно отличаются от других ресурсов приложения. Эмблема — это состояние изображения, которое отображается в уведомлениях и на плитках приложений. 
 
-Дополнительные сведения см. в статье [Уведомления на индикаторах событий для приложений UWP](/windows/uwp/design/shell/tiles-and-notifications/badges).
+См. сведения об [уведомлениях на индикаторах событий для приложений для Windows](/windows/uwp/design/shell/tiles-and-notifications/badges).
 
 
 ## <a name="customizing-asset-padding"></a>Настройка заполнения ресурсов

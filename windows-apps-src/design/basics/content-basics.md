@@ -1,6 +1,6 @@
 ---
-Description: Обзор распространенных шаблонов страниц и элементов пользовательского интерфейса для отображения содержимого в приложении UWP.
-title: Основы проектирования содержимого на платформе универсальных приложений для Windows (UWP)
+Description: Обзор распространенных шаблонов страниц и элементов пользовательского интерфейса для отображения содержимого в приложениях для Windows.
+title: Основы проектирования содержимого для приложений для Windows
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -9,14 +9,14 @@ ms.date: 12/01/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fdb4f21c2837fdc201d9e9847541cfd2bf728468
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63796354"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969349"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>Основы проектирования содержимого для приложений UWP
+# <a name="content-design-basics-for-windows-apps"></a>Основы проектирования содержимого для приложений для Windows
 
 Основная цель любого приложения — обеспечить доступ к содержимому. Так как разные приложения используются для разных целей, содержимое может иметь разные формы: в приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д. 
 

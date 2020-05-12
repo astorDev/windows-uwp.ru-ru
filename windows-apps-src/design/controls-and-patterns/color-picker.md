@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081207"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968909"
 ---
 # <a name="color-picker"></a>Палитра
 
@@ -28,7 +28,7 @@ ms.locfileid: "80081207"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ColorPicker** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ColorPicker** является частью библиотеки пользовательского интерфейса Windows — пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [класс ColorPicker](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [свойство Color](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [событие ColorChanged](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -220,7 +220,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>Похожие статьи
 
-- [Взаимодействие с помощью пера в приложениях UWP](../input/pen-and-stylus-interactions.md)
+- [Взаимодействие с помощью пера для приложений для Windows](../input/pen-and-stylus-interactions.md)
 - [Рукописный ввод](inking-controls.md)
 
 <!--

@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081631"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970809"
 ---
 # <a name="progress-controls"></a>Элементы управления «Ход выполнения»
 
@@ -27,14 +27,14 @@ ms.locfileid: "80081631"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ProgressBar** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **ProgressBar** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+> **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [класс ProgressBar](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [класс ProgressRing](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [свойство IsActive](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive).
 >
 > **API платформы:** [класс ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [свойство IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive).
 
 > [!NOTE]
-> Существует две версии элемента управления ProgressBar: одна в платформе, представленная пространством имен Windows.UI.Xaml; другая в библиотеке пользовательского интерфейса Windows, пространство имен — Microsoft.UI.Xaml. Хотя API для ProgressBar один и тот же, внешний вид элемента управления в этих двух версиях отличается. В этом документе будут показаны изображения новой версии библиотеки пользовательского интерфейса Windows.
+> Существует две версии элементов управления ProgressBar и ProgressRing: одна в платформе, представленная пространством имен Windows.UI.Xaml; другая в библиотеке пользовательского интерфейса Windows, пространство имен — Microsoft.UI.Xaml. Хотя интерфейсы API для ProgressRing и ProgressBar одинаковы, внешний вид элементов управления различается в двух версиях. В этом документе будут показаны изображения новой версии библиотеки пользовательского интерфейса Windows.
 В этом документе мы будем использовать в XAML псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили его для нашего элемента [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page):
 
 ```xaml
@@ -195,7 +195,7 @@ progressRing.IsActive = true;
 <muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
-Изменение цвета переднего плана для ProgressRing приведет к изменению цвета точек. Свойство переднего плана ProgressBar изменяет цвет заливки индикатора; для изменения цвета незаполненной его части просто переопределите свойство заднего плана.
+Изменение цвета переднего плана для ProgressRing приведет к изменению цвета заполнения кольца. Свойство переднего плана ProgressBar изменяет цвет заливки индикатора; для изменения цвета незаполненной его части просто переопределите свойство заднего плана.
 
 **Отображение курсора ожидания**
 

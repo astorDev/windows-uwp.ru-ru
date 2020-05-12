@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684378"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970389"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
@@ -24,6 +24,9 @@ ms.locfileid: "75684378"
 > **Важные API**: [класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
+
+> [!TIP]
+> Если вы хотите использовать элемент управления XAML, который реализует этот шаблон, мы рекомендуем выбрать [элемент управления XAML MasterDetailsView](/windows/communitytoolkit/controls/masterdetailsview) из набора средств сообщества Windows.
 
 ## <a name="is-this-the-right-pattern"></a>Подходит ли этот шаблон?
 
@@ -61,7 +64,7 @@ ms.locfileid: "75684378"
 
 На странице с подробными сведениями целесообразнее всего использовать [элемент содержимого](../layout/layout-panels.md). Если есть много отдельных полей, можно использовать макет **Сетка** для размещения элементов в форме.
 
-Сведения о навигации между страницами см. в статье о [журнале навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
+Сведения о навигации между страницами см. в статье о [журнале навигации и навигации в обратном направлении для приложений Windows](../basics/navigation-history-and-backwards-navigation.md).
 
 ## <a name="side-by-side-style"></a>Стиль рядом
 
@@ -98,6 +101,9 @@ ms.locfileid: "75684378"
 - [Пример шаблона основной информации и подробных сведений в Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Пример базы данных Customer Orders)
 - [RSSReader sample](https://github.com/Microsoft/Windows-appsample-rssreader) (Пример средства чтения RSS)
+
+> [!TIP]
+> Если вы хотите использовать элемент управления XAML, который реализует этот шаблон, мы рекомендуем выбрать [элемент управления XAML MasterDetailsView](/windows/communitytoolkit/controls/masterdetailsview) из набора средств сообщества Windows.
 
 ## <a name="related-articles"></a>Похожие статьи
 

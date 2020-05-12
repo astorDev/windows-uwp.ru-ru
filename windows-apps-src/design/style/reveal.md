@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685082"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971079"
 ---
 # <a name="reveal-highlight"></a>Подсвечивание
 
@@ -282,7 +282,7 @@ ms.locfileid: "75685082"
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Эффект подсвечивания и система Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Эффект подсвечивания — это компонент системы проектирования Fluent, добавляющий свет в ваше приложение. Дополнительные сведения см. в [обзоре системы Fluent Design для UWP](/windows/apps/fluent-design-system).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Эффект подсвечивания — это компонент системы проектирования Fluent, добавляющий свет в ваше приложение. См. сведения о [системе проектирования Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Похожие статьи
 

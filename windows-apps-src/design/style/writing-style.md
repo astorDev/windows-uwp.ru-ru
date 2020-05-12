@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867686"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970609"
 ---
 # <a name="writing-style"></a>Стиль письма
 
@@ -103,7 +103,7 @@ ms.locfileid: "68867686"
 
 :::row:::
     :::column:::
-![Рекомендуется](images/do.svg) Руководство по проектированию приложений для универсальной платформы Windows (UWP) — это ресурс, который поможет разрабатывать и создавать прекрасные и тщательно продуманные приложения. С помощью функций, доступных в каждом приложении UWP, вы можете создавать пользовательские интерфейсы, масштабируемые на самых разных устройствах.
+![Рекомендуется](images/do.svg) Руководство по проектированию приложений для Windows — это ресурс, который поможет вам начать разрабатывать и создавать красивые и проработанные приложения. С помощью компонентов для проектирования, доступных в каждом приложении для Windows, вы можете создавать пользовательские интерфейсы, масштабируемые на самых разных устройствах.
     :::column-end:::
     :::column:::
     :::column-end:::

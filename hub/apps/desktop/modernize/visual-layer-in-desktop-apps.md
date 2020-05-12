@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 249291c59a31036fa967ac338209404557b57503
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215175"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730129"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>Использование визуального уровня в классических приложениях
 
-Теперь API UWP можно использовать и в классических приложениях, созданных не на платформе UWP, чтобы улучшить внешний вид и функции этих приложений (WPF, Windows Forms и C++ Win32) и воспользоваться последними функциями пользовательского интерфейса Windows 10, которые доступны только через UWP.
+Теперь API среды выполнения Windows можно использовать в классических приложениях, созданных не на платформе UWP, чтобы улучшить внешний вид и функции этих приложений (WPF, Windows Forms и C++ Win32) и воспользоваться новыми компонентами пользовательского интерфейса Windows 10, которые доступны только через UWP.
 
 Во многих случаях для добавления современных элементов управления XAML в приложение можно использовать [области XAML](xaml-islands.md). Однако, когда нужно создать пользовательские функции, которые невозможно реализовать с помощью встроенных элементов управления, можно воспользоваться интерфейсами API визуального слоя.
 

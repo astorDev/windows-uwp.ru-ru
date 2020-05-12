@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 41674ecb468023ac6e97cc01d1867478e8a3d70d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81643721"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970429"
 ---
 # <a name="treeview"></a>Представление в виде дерева
 
@@ -38,7 +38,7 @@ API **TreeView** поддерживают следующие функции:
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TreeView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TreeView** является частью библиотеки пользовательского интерфейса Windows — пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081242"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968929"
 ---
 # <a name="check-boxes"></a>Флажки
 
@@ -29,7 +29,7 @@ ms.locfileid: "80081242"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Библиотека пользовательского интерфейса Windows 2.2 или более поздних версий содержит новый шаблон для этого элемента управления, который использует закругленные углы. Дополнительные сведения см. в разделе о [радиусе угла](/windows/uwp/design/style/rounded-corner). WinUI — это пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API платформы:** [CheckBox class](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) и [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -89,11 +89,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Привязка к свойству IsChecked
 
-Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен ли флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1), для его привязки к логическому значению вам потребуется преобразователь величин.
+Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен ли флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению.
+Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1), для его привязки к логическому свойству вам потребуется преобразовать величину или привести тип. Это зависит от фактического типа привязки, а примеры для каждого возможного типа можно найти ниже. 
 
 В этом примере свойство **IsChecked** флажка для принятия условий соглашения привязано к свойству [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) кнопки "Отправить". Кнопка "Отправить" включена, только если пользователь принял условия соглашения.
 
-> Примечание&nbsp;&nbsp;Здесь приводится только соответствующий код. Дополнительные сведения о привязке данных и преобразователях величин можно найти в разделе [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
+#### <a name="using-xbind"></a>Использование x:Bind
+
+> Примечание&nbsp;&nbsp;Здесь приводится только соответствующий код. См.сведения о [привязке данных](../../data-binding/data-binding-quickstart.md). Подробные сведения об операции {x:Bind} (например, приведение типа) подробно описаны [здесь](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+Если флажок также может находиться в **неопределенном** состоянии, мы используем свойство привязки [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue), чтобы задать логическое значение, представляющее это состояние. В этом случае также не требуется, чтобы была включена кнопка отправки.
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### <a name="using-xbind-or-binding"></a>Использование x:Bind или Binding
+
+> Примечание&nbsp;&nbsp;Здесь показан только соответствующий код, где используется {x:Bind}. В примере {Binding} мы заменяем {x:Bind} на {Binding}. Дополнительные сведения о привязке данных, преобразователях значений и различиях между расширениями разметки {x:Bind} и {Binding} см. в разделе [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -110,6 +132,7 @@ checkBox1.Content = "I agree to the terms of service.";
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter

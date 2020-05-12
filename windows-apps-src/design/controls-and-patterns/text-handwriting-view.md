@@ -1,5 +1,5 @@
 ---
-Description: Настройте встроенный рукописный ввод для представления рукописного ввода, который поддерживается текстовыми элементами управления UWP, такими как TextBox, RichEditBox (и элементами управления, такими как AutoSuggestBox, которые обеспечивают аналогичные возможности ввода текста).
+Description: Настройте встроенный рукописный ввод для представления рукописного ввода, который поддерживается текстовыми элементами управления Windows, такими как TextBox, RichEditBox (и элементами управления, такими как AutoSuggestBox, которые обеспечивают аналогичные возможности ввода текста).
 title: Ввод текста в представлении рукописного ввода
 label: Text input with the handwriting view
 template: detail.hbs
@@ -11,18 +11,18 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b9d409718a157c55b28fdb3ccaa28caaa295adf
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ccd21481a8488a101ee79ae0b0224651a94461a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684285"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967969"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Ввод текста в представлении рукописного ввода
 
 ![Текстовое поле развертывается при касании пером](images/handwritingview/handwritingview2.gif)
 
-Настройте встроенное представление рукописного ввода для распознавания введенного текста, которое поддерживается текстовыми элементами управления UWP, такими как [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) и элементами управления, производными от них, такими как [ AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Настройте встроенное представление рукописного ввода для распознавания введенного текста, которое поддерживается текстовыми элементами управления Windows, такими как [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) и элементами управления, производными от них, такими как [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## <a name="overview"></a>Обзор
 

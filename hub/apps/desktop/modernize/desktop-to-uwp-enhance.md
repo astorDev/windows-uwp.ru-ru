@@ -1,6 +1,6 @@
 ---
-Description: Расширьте возможности приложения для пользователей Windows 10, применяя API для универсальной платформы Windows (UWP).
-title: Использование API UWP в классических приложениях
+Description: Расширьте возможности приложения для пользователей Windows 10, применяя API для среды выполнения Windows.
+title: Вызов API для среды выполнения Windows в классических приложениях
 ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,24 +8,24 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302608"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729859"
 ---
-# <a name="call-uwp-apis-in-desktop-apps"></a>Вызов API UWP в классических приложениях
+# <a name="call-windows-runtime-apis-in-desktop-apps"></a>Вызов API для среды выполнения Windows в классических приложениях
 
 С помощью API-интерфейсов универсальной платформы Windows (UWP) в классических приложениях вы можете добавить современные возможности, которые привлекут внимание пользователей Windows 10.
 
-Прежде всего настройте в проекте необходимые ссылки. Затем вызовите API UWP из кода приложения, чтобы добавить в него новые возможности Windows 10. Вы можете создавать отдельные версии для пользователей Windows 10 либо распространять одинаковые двоичные файлы для всех пользователей независимо от того, с какой версией Windows они работают.
+Прежде всего настройте в проекте необходимые ссылки. Затем вызовите API среды выполнения Windows из кода приложения, чтобы добавить в него новые возможности Windows 10. Вы можете создавать отдельные версии для пользователей Windows 10 либо распространять одинаковые двоичные файлы для всех пользователей независимо от того, с какой версией Windows они работают.
 
-Некоторые API UWP поддерживают только классические приложения с [идентификатором пакета](modernize-packaged-apps.md). Дополнительные сведения см. в [списке доступных API UWP](desktop-to-uwp-supported-api.md).
+Некоторые API среды выполнения Windows поддерживаются только в классических приложениях с [идентификатором пакета](modernize-packaged-apps.md). Подробнее см. в разделе [Доступные API среды выполнения Windows](desktop-to-uwp-supported-api.md).
 
 ## <a name="set-up-your-project"></a>Настройка проекта
 
-Вам потребуется внести в проект некоторые изменения, чтобы использовать API-интерфейсы UWP.
+Вам потребуется внести в проект некоторые изменения, чтобы использовать API среды выполнения Windows.
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Настройка проекта .NET для использования API среды выполнения Windows
 

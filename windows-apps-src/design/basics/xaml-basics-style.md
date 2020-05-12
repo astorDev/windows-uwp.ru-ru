@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 279a02962693d74c8c9ac037c0e3ee08f44a560b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684129"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969100"
 ---
 # <a name="tutorial-create-custom-styles"></a>Руководство: Создание пользовательских стилей
 
@@ -32,7 +32,7 @@ ms.locfileid: "75684129"
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>Часть 1. Создание необычного элемента управления ползунка  
 
-Универсальная платформа Windows (UWP) предоставляет целый ряд способов настройки внешнего вида приложения. Доступно множество вариантов — от шрифтов и параметров оформления текста до цветов, градиентов и эффектов размытия. 
+Платформа Windows предоставляет разные способы настройки внешнего вида приложения. Доступно множество вариантов — от шрифтов и параметров оформления текста до цветов, градиентов и эффектов размытия. 
 
 В первой части учебника мы оформим некоторые элементы управления для редактирования фотографий. 
 

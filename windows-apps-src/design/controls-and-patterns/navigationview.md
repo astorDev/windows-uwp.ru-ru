@@ -2,7 +2,7 @@
 Description: NavigationView — это адаптивный элемент управления, который реализует шаблоны навигации верхнего уровня для вашего приложения.
 title: Представление навигации
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 05/02/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 85cd58233de0feeded449e55cb1175087a64e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081696"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970369"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -29,13 +29,13 @@ _Представление навигации поддерживает как �
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **NavigationView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **NavigationView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений Windows. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API платформы**: [класс Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview).
 >
 > **API библиотеки пользовательского интерфейса Windows**: [класс Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview).
 >
-> Для некоторых функций NavigationView, таких как _верхняя_ панель навигации, требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Для некоторых функций NavigationView, таких как _верхняя область навигации_ и _иерархическая навигация_, требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -648,6 +648,242 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     }
 }
 ```
+## <a name="hierarchical-navigation"></a>Иерархическая навигация
+Некоторые приложения могут иметь более сложную иерархическую структуру, которая требует больше, чем просто неструктурированный список элементов навигации. Для отображения категорий страниц можно использовать элементы навигации верхнего уровня, при этом дочерние элементы отображают определенные страницы. Это также полезно при наличии сводных страниц, которые связаны только с другими страницами. В подобных случаях следует создать иерархическое представление NavigationView.
+
+Чтобы отобразить иерархический список вложенных элементов навигации на панели, используйте свойство `MenuItems` или свойство `MenuItemsSource` объекта **NavigationViewItem**.
+Каждый объект NavigationViewItem может содержать другие объекты NavigationViewItem и организационные элементы, такие как заголовки элементов и разделители. Чтобы отобразить иерархический список при использовании `MenuItemsSource`, назначьте `ItemTemplate` объектом NavigationViewItem и привяжите его свойство `MenuItemsSource` к следующему уровню иерархии.
+
+Хотя объект NavigationViewItem может содержать любое количество вложенных уровней, рекомендуется не делать иерархию навигации вашего приложения излишне глубокой. Мы считаем, что двухуровневая навигация идеально сочетает удобство использования и понятность.
+
+Представление NavigationView отображает иерархию режимах отображения Top, Left и LeftCompact. Вот как выглядит развернутое поддерево в каждом из режимов отображения панели:
+
+![Представление NavigationView с иерархией](images/navigation-view-hierarchy-labeled.png)
+
+### <a name="adding-a-hierarchy-of-items-in-markup"></a>Добавление иерархии элементов в разметку
+Объявление иерархии навигации по приложению в разметке.
+
+```Xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<muxc:NavigationView>
+    <muxc:NavigationView.MenuItems>
+        <muxc:NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home"/>
+        <muxc:NavigationViewItem Content="Collections" Icon="Keyboard" ToolTipService.ToolTip="Collections">
+            <muxc:NavigationViewItem.MenuItems>
+                <muxc:NavigationViewItem Content="Notes" Icon="Page" ToolTipService.ToolTip="Notes"/>
+                <muxc:NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail"/>
+            </muxc:NavigationViewItem.MenuItems>
+        </muxc:NavigationViewItem>
+    </muxc:NavigationView.MenuItems>
+</muxc:NavigationView>
+```
+
+### <a name="adding-a-hierarchy-of-items-using-data-binding"></a>Добавление иерархии элементов с помощью привязки данных
+
+Добавление иерархии пунктов меню в представления NavigationView с помощью 
+* привязки свойства MenuItemsSource к иерархическим данным
+* определения шаблона элемента как объекта NavigationViewMenuItem, когда его содержимое должно быть меткой элемента меню, а свойство MenuItemsSource привязано к следующему уровню иерархии
+
+В этом примере также демонстрируются события **развертывание** и **свертывание**. Эти события вызываются для пункта меню с дочерними элементами.
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" MenuItemsSource="{x:Bind Children}"/>
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}" 
+    ItemInvoked="{x:Bind OnItemInvoked}" 
+    Expanding="OnItemExpanding" 
+    Collapsed="OnItemCollapsed" 
+    PaneDisplayMode="Left">
+    
+    <StackPanel Margin="10,10,0,0">
+        <TextBlock Margin="0,10,0,0" x:Name="ExpandingItemLabel" Text="Last Expanding: N/A"/>
+        <TextBlock x:Name="CollapsedItemLabel" Text="Last Collapsed: N/A"/>
+    </StackPanel>    
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }  
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+               new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon" },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon" },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon" }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon" }
+    };
+    private void OnItemInvoked(object sender, NavigationViewItemInvokedEventArgs e)
+    {
+        var clickedItem = e.InvokedItem;
+        var clickedItemContainer = e.InvokedItemContainer;
+    }
+    private void OnItemExpanding(object sender, NavigationViewItemExpandingEventArgs e)
+    {
+        var nvib = e.ExpandingItemContainer;
+        var name = "Last Expanding: " + nvib.Content.ToString();
+        ExpandingItemLabel.Text = name;
+    }
+    private void OnItemCollapsed(object sender, NavigationViewItemCollapsedEventArgs e)
+    {
+        var nvib = e.CollapsedItemContainer;
+        var name = "Last Collapsed: " + nvib.Content;
+        CollapsedItemLabel.Text = name;
+    }
+}
+```
+### <a name="selection"></a>Выбор
+По умолчанию любой элемент может содержать дочерние элементы, быть вызванным или выбранным.
+Предоставляя пользователям иерархическое дерево вариантов навигации можно сделать родительские элементы невыбираемыми, например, если у приложения нет конечной страницы, связанной с этим родительским элементом. Если родительские элементы _доступны_ для выбора, рекомендуется использовать режимы представления Left-Expanded или Top. Режим LeftCompact приведет к тому, что пользователь будет переходить к родительскому элементу, чтобы открывать дочернее дерево при каждом вызове элемента.
+
+Индикаторы выбора будут отрисовываться на выбранных элементах вдоль левого края в режиме Left или на нижней границе в режиме Top. Ниже показаны объекты NavigationView в режиме Left и Top, если выбран родительский элемент.
+
+![Представление NavigationView в режиме Left с выбранным родительским элементом](images/navigation-view-selection.png)
+
+![Представление NavigationView в режиме Top с выбранным родительским элементом](images/navigation-view-selection-top.png)
+
+Выбранный элемент может не всегда оставаться видимым. Если выбран дочерний элемент в свернутом или развернутом поддереве, то их первый видимый предок будет показан как выбранный. Индикатор выделения вернется к выбранному элементу при развертывании поддерева.
+
+Например, на рисунке выше пользователь может выбрать элемент Календаря, а затем может свернуть его поддерево. В этом случае индикатор выбора будет отображаться под элементом учетной записи, так как учетная запись является первым видимым предком в Календаре. Индикатор выделения вернется к элементу Календаря, когда пользователь снова развернет поддерево. 
+
+Представление NavigationView будет отображать не более одного индикатора выбора.
+
+В режимах Top и Left при щелчке по стрелкам в объектах NavigationViewItem поддерево разворачивается или сворачивается. Если щелкнуть или коснуться в другом месте _помимо_ NavigationViewItem, будет активировано событие `ItemInvoked`, а также будет свернуто или развернуто поддерево.
+
+Чтобы элемент не отображал индикатор выбора при вызове, установите для свойства [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) значение false, как показано ниже:
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" 
+        MenuItemsSource="{x:Bind Children}"
+        SelectsOnInvoked="{x:Bind IsLeaf}" />
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}">
+   
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+    public bool IsLeaf { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }      
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon", IsLeaf = true },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon", IsLeaf = true }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon", IsLeaf = true },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon", IsLeaf = true }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon", IsLeaf = true }
+    };
+}
+```
+
+### <a name="keyboarding-within-hierarchical-navigationview"></a>Навигация с помощью клавиатуры в иерархическом представлении NavigationView
+Пользователи могут перемещать фокус по представлению навигации с помощью [клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions). Клавиши со стрелками позволяют реализовать "внутреннюю навигацию" по панели и взаимодействуют с объектами в [представлении дерева](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view). Действия клавиш изменяются при навигации по представлению NavigationView или его всплывающем меню, которое отображается в режимах Top и Left представления HierarchicalNavigationView. Ниже приведены действия, которые каждая клавиша может выполнить в иерархическом представлении NavigationView:
+
+| Клавиши      |      В режиме Left      |  В режиме Top | Во всплывающем меню  |
+|----------|------------------------|--------------|------------|
+| Up |Перемещает фокус на элемент непосредственно над элементом, на котором фокус находится сейчас. | Не выполняет никаких действий. |Перемещает фокус на элемент непосредственно над элементом, на котором фокус находится сейчас.|
+| Down|Перемещает фокус на элемент непосредственно под элементом, на котором фокус находится сейчас.* | Не выполняет никаких действий. | Перемещает фокус на элемент непосредственно под элементом, на котором фокус находится сейчас.* |
+| Правый |Не выполняет никаких действий.  |Перемещает фокус на элемент непосредственно справа от элемента, на котором фокус находится сейчас. |Не выполняет никаких действий.|
+| Левый |Не выполняет никаких действий. | Перемещает фокус на элемент непосредственно слева от элемента, на котором фокус находится сейчас.  |Не выполняет никаких действий. |
+| ПРОБЕЛ/ВВОД |Если элемент содержит дочерние элементы, разворачивает или сворачивает элемент и не меняет фокус.   | Если элемент содержит дочерние элементы, разворачивает дочерние элементы во всплывающий элемент и помещает фокус на первый элемент во всплывающем элементе. | Вызывает или выбирает элемент и закрывает всплывающий элемент. |
+| ESC | Не выполняет никаких действий. | Не выполняет никаких действий. | Закрывает всплывающий элемент.|
+
+Пробел или клавиша ВВОД всегда вызывает или выбирает элемент.
+
+*Обратите внимание, что элементы не должны быть визуально смежными, фокус будет перемещен от последнего элемента в списке панели к элементу параметров. 
 
 ## <a name="navigation-view-customization"></a>Настройка представления навигации
 
@@ -744,4 +980,4 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 - [NavigationView Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) (Класс NavigationView)
 - [Основные и подробные данные](master-details.md)
 - [Основы навигации](../basics/navigation-basics.md)
-- [Система Fluent Design для разработчиков приложений для Windows](/windows/apps/fluent-design-system)
+- [Общие сведения о Fluent Design](/windows/apps/fluent-design-system)

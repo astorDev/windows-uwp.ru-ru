@@ -1,16 +1,16 @@
 ---
-Description: Рекомендации по макетам форм в приложениях UWP.
+Description: Рекомендации по макетам форм для приложений для Windows.
 title: Формы
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76520449"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968515"
 ---
 # <a name="forms"></a>Формы
 Форма — это группа элементов управления, которые собирают данные пользователей и отправляют их. Формы обычно используются для страниц параметров, опросов, создания учетных записей и многого другого. 
@@ -62,7 +62,7 @@ ms.locfileid: "76520449"
 
 Чтобы [рекомендовать специальные возможности](../accessibility/accessibility.md), пометьте все отдельные элементы и группы элементов управления для наглядности как для людей, так и для программ чтения с экрана. 
 
-Для стилей шрифта используйте по умолчанию [пандус типа UWP](../style/typography.md). Используйте `TitleTextBlockStyle` для заголовков страниц, `SubtitleTextBlockStyle` для заголовков групп и `BodyTextBlockStyle` для меток элементов управления.
+Для стилей шрифта используйте [пандус типа Windows](../style/typography.md) по умолчанию. Используйте `TitleTextBlockStyle` для заголовков страниц, `SubtitleTextBlockStyle` для заголовков групп и `BodyTextBlockStyle` для меток элементов управления.
 
 <div class="mx-responsive-img">
 <table>
@@ -149,7 +149,7 @@ ms.locfileid: "76520449"
 ### <a name="additional-controls"></a>Дополнительные элементы управления 
 Полный список элементов управления UWP см. в [индексе элементов управления по функции](controls-by-function.md).
 
-Более сложные и настраиваемые элементы управления пользовательским интерфейсом можно найти в ресурсах UWP, которые предлагаются такими компаниями, как [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) и [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
+Более сложные и настраиваемые элементы управления пользовательским интерфейсом можно найти в ресурсах, которые предлагаются такими компаниями, как [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) и [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## <a name="one-column-form-example"></a>Пример формы с одним столбцом
 В этом примере используются [представление списка](lists.md) Acrylic с [основными и подробными сведениями](master-details.md) и элемент управления[NavigationView](navigationview.md).

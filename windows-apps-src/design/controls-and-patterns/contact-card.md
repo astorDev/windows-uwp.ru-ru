@@ -9,16 +9,16 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257695"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968759"
 ---
 # <a name="contact-card"></a>Карточка контакта
 
-Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который платформа UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
+Карта контакта отображает контактные данные, такие как имя, номер телефона и адрес [контакта](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который платформа Windows использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
 
 > **Важные API**: [метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
