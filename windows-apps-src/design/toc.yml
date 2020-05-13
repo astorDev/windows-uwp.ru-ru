@@ -546,6 +546,8 @@
           href: accessibility/basic-accessibility-information.md
         - name: Специальные возможности клавиатуры
           href: accessibility/keyboard-accessibility.md
+        - name: Средства чтения с экрана и аппаратные системные кнопки
+          href: accessibility/system-button-narration.md
         - name: Ориентиры и заголовки
           href: accessibility/landmarks-and-headings.md
         - name: Темы с высокой контрастностью

@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: Трансляция мультимедиа
           href: ../audio-video-camera/media-casting.md
+        - name: 'Включение воспроизведения звука с устройств, подключенных удаленно по Bluetooth'
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:

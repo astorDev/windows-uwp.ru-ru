@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969779"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234467"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Плитки, индикаторы событий и уведомления в приложениях для Windows
  
@@ -51,7 +51,7 @@ ms.locfileid: "82969779"
 | --- | --- |
 | [Всплывающие уведомления](adaptive-interactive-toasts.md) | Функция адаптивных и интерактивных всплывающих уведомлений позволяет создавать удобные всплывающие уведомления с большим объемом содержимого, встроенными изображениями и дополнительными возможностями взаимодействия с пользователем. |
 | [Отправка локального всплывающего уведомления](send-local-toast.md) | Узнайте, как отправлять интерактивное всплывающее уведомление. |
-| [Визуализатор уведомлений](notifications-visualizer.md) | Визуализатор уведомлений — это новое приложение для Windows в [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1), которое помогает разработчикам создавать адаптивные живые плитки для Windows 10. |
+| [Визуализатор уведомлений](notifications-visualizer.md) | Визуализатор уведомлений — это новое приложение для Windows в [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1), которое помогает разработчикам создавать адаптивные живые плитки для Windows 10. |
 | [Выбор способа доставки уведомлений](choosing-a-notification-delivery-method.md) | В этой статье рассматривается четыре варианта уведомлений локальные, запланированные, периодические и push-уведомления для доставки обновлений плиток и индикаторов событий, а также содержимого всплывающих уведомлений. |
 | [Обзор периодических уведомлений](periodic-notification-overview.md) | Периодические, или опросные, уведомления обновляют плитки и индикаторы событий через фиксированные интервалы, скачивая содержимое напрямую из облачной службы. |
 | [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md) | Службы push-уведомлений Windows (WNS) позволяют сторонним разработчикам отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления из своей облачной службы. Это обеспечивает энергоэффективный и надежный механизм передачи пользователям свежих обновлений. |

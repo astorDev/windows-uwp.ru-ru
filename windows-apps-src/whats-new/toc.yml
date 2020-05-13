@@ -1,10 +1,15 @@
-- name: "Что нового для разработчиков в Windows\_10 (сборка\_18362)"
-  href: ../whats-new/windows-10-build-18362.md
+- name: "Новые возможности для разработчиков в Windows\_10 (сборка\_19041)"
+  href: ../whats-new/windows-10-build-19041.md
   items:
-    - name: "Добавления API в Windows\_10 (сборка\_18362)"
-      href: ../whats-new/windows-10-build-18362-api-diff.md
+    - name: "Добавления API в Windows\_10 (сборка\_19041)"
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 - name: "Предыдущие версии Windows\_10"
   items:
+    - name: "Что нового для разработчиков в Windows\_10 (сборка\_18362)"
+      href: ../whats-new/windows-10-build-18362.md
+      items:
+        - name: "Добавления API в Windows\_10 (сборка\_18362)"
+          href: ../whats-new/windows-10-build-18362-api-diff.md
     - name: "Новые возможности для разработчиков в Windows\_10, сборка\_17763"
       href: ../whats-new/windows-10-build-17763.md
       items:

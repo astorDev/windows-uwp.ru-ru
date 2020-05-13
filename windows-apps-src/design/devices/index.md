@@ -8,12 +8,12 @@ keywords: устройство, ввод, взаимодействие
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 37b77e62f14418611047a3af49bd15ed4f8094b4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968210"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234872"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>Соображения по поводу пользовательского интерфейса для устройств с Windows
 
