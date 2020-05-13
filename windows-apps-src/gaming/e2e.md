@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: de18e77137941acfba6e9cb3fb6421de8fe156f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 5f7c124c1d77cbce140cb42cdc07682dad8f78f2
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730252"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280254"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -134,7 +134,7 @@ ms.locfileid: "82730252"
 
 #### <a name="idxbox"></a>ID@Xbox
 
-Программа ID@Xbox помогает квалифицированным разработчикам самостоятельно публиковать свои игры для Windows и Xbox One. Если вы хотите создать игру для Xbox One или добавить в свою игру для Windows 10 функциональные возможности Xbox Live, например счет игрока, достижения или списки лидеров, зарегистрируйтесь в ID@Xbox прямо сейчас. Став разработчиком ID@Xbox, вы получите необходимые средства и поддержку для успешного воплощения своих творческих идей. Перед регистрацией для учетной ID@Xbox записи разработчика в центре партнеров рекомендуется сначала применить к ней.
+Программа ID@Xbox помогает квалифицированным разработчикам самостоятельно публиковать свои игры для Windows и Xbox One. Если вы хотите создать игру для Xbox One или добавить в свою игру для Windows 10 функциональные возможности Xbox Live, например счет игрока, достижения или списки лидеров, зарегистрируйтесь в ID@Xbox прямо сейчас. Став разработчиком ID@Xbox, вы получите необходимые средства и поддержку для успешного воплощения своих творческих идей. ID@XboxПеред регистрацией для учетной записи разработчика в центре партнеров рекомендуется сначала применить к ней.
 
 <table>
     <colgroup>
@@ -218,7 +218,7 @@ ms.locfileid: "82730252"
     </tr>
     <tr>
         <td>Примеры игр для Windows (коллекция исходных кодов MSDN)</td>
-        <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Примеры игр из Microsoft Store</a></td>
+        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Примеры игр из Microsoft Store</a></td>
     </tr>
     <tr>
         <td>Пример 2D-игры на JavaScript</td>
@@ -1078,7 +1078,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Проектирование приложения UWP для Xbox One и телевизоров</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Проектирование для Xbox и телевизора</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Проектирование для Xbox и ТВ</a></td>
     </tr>
     <tr>
         <td>Написание приложений для разных форм-факторов устройств (видео)</td>

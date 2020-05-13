@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969439"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234088"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Проектирование инклюзивного программного обеспечения для Windows 10  
 

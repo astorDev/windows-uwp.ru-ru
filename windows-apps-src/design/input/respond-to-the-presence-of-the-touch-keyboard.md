@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: клавиатура, специальные возможности, навигация, фокус, текст, ввод, взаимодействия с пользователем
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970269"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234887"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Реакция на наличие сенсорной клавиатуры
 
@@ -39,7 +39,7 @@ ms.locfileid: "82970269"
 
 Для работы со статьей необходимо иметь базовое представление о стандартных взаимодействиях клавиатуры, обработке событий клавиатуры и данных, вводимых с клавиатуры, а также о модели автоматизации пользовательского интерфейса.
 
-Если вы не знакомы с разработкой приложений для приложений Windows, ознакомьтесь с этими разделами, чтобы ознакомиться с технологиями, обсуждаемыми здесь.
+Если вы еще не знакомы с разработкой приложений для Windows, ознакомьтесь с этими разделами, чтобы ознакомиться с технологиями, обсуждаемыми здесь.
 
 - [Создание первого приложения](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).

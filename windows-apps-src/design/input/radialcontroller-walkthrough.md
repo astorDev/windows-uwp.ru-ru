@@ -6,12 +6,12 @@ keywords: dial, радиальный, учебник
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bb75fb6bced451daeb6f03fba78636d0998cec
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3972e04c59748efabd51b423f6f24fc22291a6d1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970279"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234894"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Учебник. Поддержка набора поверхностей (и других устройств с колесиком) в приложении Windows
 
@@ -38,7 +38,7 @@ Dial поддерживает три основных жеста.
 - Поверните, чтобы выделить пункт меню (если меню активно) или изменить текущее действие в приложении (если меню не активно).
 - Щелкните, чтобы выбрать выделенный пункт меню (если меню активно) или вызвать команду в приложении (если меню не активно).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер (или виртуальная машина) под управлением Windows 10 Creators Update или более поздней версии
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
@@ -63,7 +63,7 @@ Dial поддерживает три основных жеста.
 > [!NOTE]
 > Устройства с колесиком можно настроить с помощью параметров **колесика**.
 > 1. В меню **Пуск** выберите **Параметры**.
-> 2. Выберите **устройства** > **колесико**.    
+> 2. Выберите **устройства**  >  **колесико**.    
 > ![Экран параметров колесика](images/radialcontroller/wheel-settings.png)
 
 Теперь вы готовы запускать этот учебник. 
@@ -88,7 +88,7 @@ Dial поддерживает три основных жеста.
 | Компонент | Описание |
 | --- | --- |
 | [Класс **RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) и связанные компоненты | Представляет устройство ввода с колесиком или периферийное устройство, например Surface Dial. |
-| [**Ирадиалконтроллерконфигуратионинтероп**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**ирадиалконтроллеринтероп**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Здесь не описаны эти функции. Дополнительные сведения см. в разделе [Пример классического приложения для Windows](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Обеспечивает взаимодействие с приложением Windows. |
+| [**Ирадиалконтроллерконфигуратионинтероп**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  /  [ **Ирадиалконтроллеринтероп**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Здесь не описаны эти функции. Дополнительные сведения см. в разделе [Пример классического приложения для Windows](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Обеспечивает взаимодействие с приложением Windows. |
 
 ## <a name="step-1-run-the-sample"></a>Шаг 1. Запуск примера
 
@@ -98,7 +98,7 @@ Dial поддерживает три основных жеста.
 3. Нажмите клавишу F5, чтобы скомпилировать, развернуть и запустить. 
 
 > [!NOTE]
-> Кроме того, можно выбрать пункт меню **Отладка** > **начать отладку** или нажать кнопку выполнить на **локальном компьютере** , как ![показано на странице Visual Studio Build Project Button.](images/radialcontroller/wheel-vsrun.png)
+> Кроме того, можно выбрать пункт меню **Отладка**  >  **начать отладку** или нажать кнопку выполнить на **локальном компьютере** , как показано на странице ![ Visual Studio Build Project Button.](images/radialcontroller/wheel-vsrun.png)
 
 Откроется окно приложения и после появления экрана-заставки на несколько секунд вы увидите этот начальный экран.
 
@@ -125,7 +125,7 @@ Dial поддерживает три основных жеста.
 Сначала добавим для приложения пользовательский интерфейс.
 
 1. Откройте файл MainPage_Basic.xaml.
-2. Найдите код, помеченный заголовком этого шага ("\<!--шаг 3. Добавление элементов управления для входного колесика-->").
+2. Найдите код, помеченный заголовком этого шага (" \< !--Шаг 3. Добавление элементов управления для входного колесика-->").
 3. Раскомментируйте следующие строки.
 
     ```xaml
@@ -346,7 +346,7 @@ Surface Dial и другие устройства с колесиком могу
 На этом этапе мы покажем, как настроить тактильную обратную связь посредством связывания ползунка и элементов управления переключателя, а также использовать их для динамического указания поведения тактильной обратной связи. В этом примере переключатель должен быть установлен в положение «включено», чтобы обратная связь была включена, а значение ползунка указывало, как часто повторяется обратная связь щелчка. 
 
 > [!NOTE]
-> Хаптик отзыв может быть отключен пользователем на странице " **Параметры** >  "**колесика** **устройства** > .
+> Хаптик отзыв может быть отключен пользователем на странице " **Параметры**"  >   **Devices**  >  **колесика** устройства.
 
 1. Откройте файл App.xaml.cs.
 2. Найдите код с заголовком этого шага («Шаг 6. Настройка тактильной обратной связи устройств»).
@@ -358,7 +358,7 @@ Surface Dial и другие устройства с колесиком могу
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. Откройте файл MainPage_Haptics.xaml.
-5. Найдите код, помеченный заголовком этого шага ("\<!--шаг 6. Настройка устройства хаптикс-->").
+5. Найдите код, помеченный заголовком этого шага (" \< !--Шаг 6. Настройка устройства хаптикс-->").
 6. Раскомментируйте следующие строки. (Этот код пользовательского интерфейса просто показывает, какие функции тактильной обратной связи поддерживаются текущим устройством.)    
 
     ```xaml
@@ -632,7 +632,7 @@ Surface Dial и другие устройства с колесиком могу
 - [Перечисление **радиалконтроллерменукновникон**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
 - [Перечисление **радиалконтроллерсистемменуитемкинд**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
-### <a name="samples"></a>Примеры
+### <a name="samples"></a>примеры
 
 #### <a name="topic-samples"></a>Примеры в статье
 

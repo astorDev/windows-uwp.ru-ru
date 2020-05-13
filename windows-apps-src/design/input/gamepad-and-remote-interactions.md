@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 207ad9cb3008f1a36402e413b7e246aa2135ae26
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970169"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234677"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Взаимодействие с помощью геймпада и пульта дистанционного управления
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970169"
 
 ***Многие взаимодействия между планшетом, удаленным управлением и клавиатурой являются общими.***
 
-Взаимодействие между сборками в приложениях Windows, обеспечивающих возможность использования и доступности приложения с помощью традиционных входных типов ПК, ноутбуков и планшетов (мыши, клавиатуры, сенсорного экрана и т. д.), а также типов входных данных, типичных для телевизора и *10-футового* интерфейса, таких как игровой планшет и пульт дистанционного управления.
+Взаимодействие между сборками в приложениях Windows, обеспечивающих возможность использования и доступности приложения с помощью традиционных входных типов ПК, ноутбуков и планшетов (мыши, клавиатуры, сенсорного экрана и т. д.), а также типов входных данных, типичных для ТВ и Xbox *10* , таких как игровой планшет и пульт дистанционного управления.
 
 Общие рекомендации по проектированию приложений Windows в *10-футовом* интерфейсе см. в статье [Разработка для Xbox и телепередач](../devices/designing-for-tv.md) .
 
@@ -78,16 +78,16 @@ ms.locfileid: "82970169"
 | Крестовина   | Да       | Да               |
 | Кнопка меню               | Да       | Да               |
 | Кнопка просмотра               | Да       | Да               |
-| Кнопки X и Y           | Да       | нет                |
-| Левый джойстик                | Да       | нет                |
-| Правой джойстик               | Да       | нет                |
-| Левый и правый триггеры   | Да       | нет                |
-| Левый и правый бамперы    | Да       | нет                |
-| Кнопка OneGuide           | нет        | Да               |
-| Кнопка громкости             | нет        | Да               |
-| Кнопка канала            | нет        | Да               |
-| Кнопки управления мультимедиа     | нет        | Да               |
-| Кнопка выключения               | нет        | Да               |
+| Кнопки X и Y           | Да       | Нет                |
+| Левый джойстик                | Да       | Нет                |
+| Правой джойстик               | Да       | Нет                |
+| Левый и правый триггеры   | Да       | Нет                |
+| Левый и правый бамперы    | Да       | Нет                |
+| Кнопка OneGuide           | Нет        | Да               |
+| Кнопка громкости             | Нет        | Да               |
+| Кнопка канала            | Нет        | Да               |
+| Кнопки управления мультимедиа     | Нет        | Да               |
+| Кнопка выключения               | Нет        | Да               |
 
 ### <a name="built-in-button-support"></a>Встроенная поддержка кнопок
 
@@ -158,10 +158,10 @@ private bool BackRequested()
 | Взаимодействие   | Клавиатура и мышь   | Геймпад      | Встроенная функция для  | Рекомендуется для |
 |---------------|------------|--------------|----------------|------------------|
 | Страница вверх/вниз  | Страница вверх/вниз | Левый и правый триггеры | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Представления, поддерживающие вертикальную прокрутку
-| Страница влево/вправо | Отсутствуют | Левый и правый бамперы | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Представления, поддерживающие горизонтальную прокрутку
-| Увеличение/уменьшение масштаба        | Ctrl +/- | Левый и правый триггеры | Отсутствуют | `ScrollViewer`, представления, поддерживающие увеличение и уменьшение масштаба |
-| Открыть/закрыть панель навигации | Отсутствуют | Представление | Отсутствуют | Панели навигации |
-| Поиск | Отсутствуют | Кнопка Y | Отсутствуют | Ярлык для функции основного поиска в приложении |
+| Страница влево/вправо | Нет | Левый и правый бамперы | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Представления, поддерживающие горизонтальную прокрутку
+| Увеличение/уменьшение масштаба        | Ctrl +/- | Левый и правый триггеры | Нет | `ScrollViewer`, представления, поддерживающие увеличение и уменьшение масштаба |
+| Открыть/закрыть панель навигации | Нет | Представление | Нет | Панели навигации |
+| Поиск | Нет | Кнопка Y | Нет | Ярлык для функции основного поиска в приложении |
 | [Открыть контекстное меню](#commandbar-and-contextflyout) | Щелкните правой кнопкой мыши | Кнопка меню | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Контекстные меню |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>Перемещение фокуса по осям X и Y и взаимодействие
@@ -546,7 +546,7 @@ public App()
 
 Некоторые элементы управления достаточно часто захватывают фокус, поэтому настройки по умолчанию должны требовать их обязательного включения. Для других элементов управления включение фокуса не является обязательным по умолчанию, однако оно может принести определенные преимущества. В следующей таблице перечислены эти элементы управления и их поведение по умолчанию при включении фокуса.
 
-| Control               | Включение фокуса по умолчанию  |
+| Элемент               | Включение фокуса по умолчанию  |
 |-----------------------|---------------------------|
 | CalendarDatePicker    | С                        |
 | FlipView.              | Выкл.                       |
@@ -557,7 +557,7 @@ public App()
 | SemanticZoom          | Выкл.                       |
 | Ползунок                | С                        |
 
-Все остальные элементы управления Windows не приведут к поведению или визуальным `IsFocusEngagementEnabled="True"`изменениям.
+Все остальные элементы управления Windows не приведут к поведению или визуальным изменениям `IsFocusEngagementEnabled="True"` .
 
 ## <a name="summary"></a>Сводка
 
@@ -565,5 +565,5 @@ public App()
 
 ## <a name="related-articles"></a>Похожие статьи
 
-- [Проектирование для Xbox и телевизора](../devices/designing-for-tv.md)
+- [Проектирование для Xbox и ТВ](../devices/designing-for-tv.md)
 - [Руководство по устройствам для приложений Windows](index.md)

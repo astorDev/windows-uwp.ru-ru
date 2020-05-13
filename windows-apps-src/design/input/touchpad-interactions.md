@@ -8,12 +8,12 @@ keywords: сенсорная панель, PTP, касание, указател
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970239"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234486"
 ---
 # <a name="touchpad-design-guidelines"></a>Рекомендации по проектированию для сенсорной панели
 
@@ -55,11 +55,11 @@ ms.locfileid: "82970239"
 
 ![Параметры стандартной сенсорной панели](images/mouse-touchpad-settings-standard.png)
 
-<sup>Стандартные\\ параметры\\ сенсорной панели</sup>
+<sup>Стандартные \\ параметры сенсорной панели \\</sup>
 
 ![Параметры высокоточной сенсорной панели Windows](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Параметры\\ \\ сенсорной\\ панели Windows</sup>
+<sup>\\ \\ Параметры сенсорной панели Windows \\</sup>
 
 Далее приведены некоторые примеры жестов, оптимизированных для сенсорной панели, которые можно использовать для выполнения общих задач.
 

@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 199c120dcc85e5c113d6d4d529699a3f2fb28aa1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13737e9aeb906e0430b2a18dd75ae1fce3a75956
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970089"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234587"
 ---
 # <a name="guidelines-for-touch-targets"></a>Рекомендации для целевых объектов сенсорного ввода
 
@@ -32,7 +32,7 @@ ms.locfileid: "82970089"
 *Размеры Fluent Standard* были разработаны, чтобы обеспечить баланс между плотностью информации и удобством пользователя. Фактически все элементы на экране пропорциональны эталонному размеру 40x40 эффективных пикселей (epx), что позволяет выравнивать элементы пользовательского интерфейса по сетке и правильно их масштабировать на уровне системы.
 
 > [!NOTE]
-> Дополнительные сведения о эффективных пикселях и масштабировании см. в статье [Введение в проектирование приложений Windows](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) .
+> Дополнительные сведения об эффективных пикселях и масштабировании см. в разделе [Введение в проектирование приложений Windows](../basics/design-and-ui-intro.md#effective-pixels-and-scaling).
 >
 > Дополнительные сведения о масштабировании уровня системы см. в разделе [Выравнивание, поле и заполнение](../layout/alignment-margin-padding.md).
 
@@ -44,7 +44,7 @@ ms.locfileid: "82970089"
 
 Компактный размер можно применить на уровне страницы или сетки.
 
-### <a name="page-level"></a>Уровня страниц
+### <a name="page-level"></a>Уровень страницы
 
 ```xaml
 <Page.Resources>

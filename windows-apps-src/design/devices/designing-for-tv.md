@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970729"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234598"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
-Разработайте приложение Windows для приложения, чтобы оно хорошо выглядело и хорошо работает на экранах Xbox One и телевизора.
+Разработайте приложение Windows, чтобы оно хорошо выглядело и хорошо работает на экранах Xbox One и телевизора.
 
 Рекомендации по взаимодействию в приложениях UWP в *10-футовом* интерфейсе см. в статье [взаимодействие планшетов и дистанционного управления](../input/gamepad-and-remote-interactions.md) .
 
@@ -331,9 +331,9 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> Этот фрагмент кода предназначен специально для `ListView`s; для `GridView` стиля установите атрибут [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) как для [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) , так и для `GridView` [стиля](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) .
+> Этот фрагмент кода предназначен специально для `ListView` s; для `GridView` стиля установите атрибут [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) как для атрибута [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) , так и для [стиля](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) `GridView` .
 
-Для более точного контроля над отображением элементов в представлении, если приложение предназначено для версии 1803 или более поздней, можно использовать [событие UIElement. брингинтовиеврекуестед](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Его можно разместить в [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) для**GridView** **ListView**/, чтобы перехватить его перед внутренним **ScrollViewer** , как показано в следующих фрагментах кода:
+Для более точного контроля над отображением элементов в представлении, если приложение предназначено для версии 1803 или более поздней, можно использовать [событие UIElement. брингинтовиеврекуестед](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Его можно разместить в [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) для **ListView** / **GridView** ListView, чтобы перехватить его перед внутренним **ScrollViewer** , как показано в следующих фрагментах кода:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -394,7 +394,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 Вследствие особенностей устройства Xbox One, которое ориентировано больше на работу с *мультимедиа*, чем с *офисными документами*, по умолчанию используется темная системная тема.
 Если тема приложения основана на системных параметров, будьте готовы, что на Xbox One будет использоваться темная цветовая схема.
 
-### <a name="accent-color"></a>Акцентный цвет
+### <a name="accent-color"></a>Цвет элементов
 
 Платформа UWP предоставляет удобный способ отображения **цвета элементов**, выбранного пользователем в системных параметрах.
 
@@ -462,7 +462,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 Вложенные элементы пользовательского интерфейса предоставляет вложенные активные элементы, заключенные в контейнерном элементе пользовательского интерфейса. При этом вложенный элемент и контейнер могут принимать фокус независимо друг от друга.
 
-Вложенные элементы пользовательского интерфейса подходят для некоторых методов ввода, но не всегда удобны при использовании геймпада и пульта ДУ, где фокус перемещается по осям X и Y. Следуйте рекомендациям в этой статье, чтобы оптимизировать ваш пользовательский интерфейс для просмотра на большом расстоянии и обеспечить пользователю удобство доступа ко всем активным элементам. Одним из распространенных решений является размещение вложенных элементов пользовательского интерфейса `ContextFlyout`в.
+Вложенные элементы пользовательского интерфейса подходят для некоторых методов ввода, но не всегда удобны при использовании геймпада и пульта ДУ, где фокус перемещается по осям X и Y. Следуйте рекомендациям в этой статье, чтобы оптимизировать ваш пользовательский интерфейс для просмотра на большом расстоянии и обеспечить пользователю удобство доступа ко всем активным элементам. Одним из распространенных решений является размещение вложенных элементов пользовательского интерфейса в `ContextFlyout` .
 
 Подробнее о вложенных элементах пользовательского интерфейса см. в разделе [Вложенные элементы пользовательского интерфейса в элементах списка](../controls-and-patterns/nested-ui.md).
 

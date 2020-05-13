@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Настольный, всплывающее уведомление, отправка всплывающего уведомления, отправка локального уведомления, Desktop Bridge, msix, разреженные пакеты, C#, C Sharp, всплывающее уведомление, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: f177660ce6e367caf69de849839a94472f5343fb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968289"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233664"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C#
 
@@ -117,7 +117,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="step-41-wix-installer"></a>Шаг 4,1. установщик WiX
 
-Если вы используете WiX в качестве установщика, измените файл **Product.wxs**, чтобы добавить два свойства ярлыка в ярлык меню "Пуск", как показано ниже. Убедитесь, что идентификатор GUID из шага #3 будет заключен в `{}` , как показано ниже.
+Если вы используете WiX в качестве установщика, измените файл **Product.wxs**, чтобы добавить два свойства ярлыка в ярлык меню "Пуск", как показано ниже. Убедитесь, что идентификатор GUID из шага #3 будет заключен в, `{}` как показано ниже.
 
 **Product.wxs**
 

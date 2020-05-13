@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Настольный, всплывающее уведомление, отправка всплывающего уведомления, отправка локального уведомления, Desktop Bridge, msix, разреженный пакет, C++, CPP, кплусплус, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968299"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234661"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 
@@ -407,7 +407,7 @@ if (SUCCEEDED(hr))
 
 Если вы получаете `HRESULT 0x800401f0 CoInitialize has not been called.`, не забудьте вызвать `CoInitialize(nullptr)` в приложении перед вызовом API-интерфейсов.
 
-`HRESULT 0x8000000e A method was called at an unexpected time.` Если при вызове API-интерфейсов для совместимости возникает ошибка, то это означает, что не удалось вызвать необходимые методы регистрации (или приложение MSIX/sparse пакет, в настоящее время вы не используете приложение в контексте MSIX/sparse).
+Если при `HRESULT 0x8000000e A method was called at an unexpected time.` вызове API-интерфейсов для совместимости возникает ошибка, то это означает, что не удалось вызвать необходимые методы регистрации (или приложение MSIX/sparse пакет, в настоящее время вы не используете приложение в контексте MSIX/sparse).
 
 Если вы получаете множество ошибок компиляции `unresolved external symbol`, вы, скорее всего, забыли добавить `runtimeobject.lib` в раздел **Дополнительные зависимости** на шаге 1 (или добавили его только в конфигурацию отладки, но не выпуска).
 
@@ -420,7 +420,7 @@ if (SUCCEEDED(hr))
 
 | Операционная система | ToastGeneric | Активатор COM | Устаревшие шаблоны всплывающих уведомлений |
 | -- | ------------ | ------------- | ---------------------- |
-| быть под управлением ОС Windows 10; | Поддерживается | Поддерживается | Поддерживается (но не активирует COM-сервер) |
+| Windows 10 | Поддерживается | Поддерживается | Поддерживается (но не активирует COM-сервер) |
 | Windows 8.1 и 8 | Недоступно | Н/Д | Поддерживается |
 | Windows 7 и более ранние версии | Недоступно | Недоступно | Н/Д |
 

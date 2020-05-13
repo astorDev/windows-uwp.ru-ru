@@ -1,17 +1,17 @@
 ---
-description: В этой статье объясняется, как добавлять перетаскивание в приложение Windows.
+description: В этой статье объясняется, как добавить перетаскивание в приложение Windows.
 title: Перетаскивание
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e14ab0d7e6ef8b79ce29addf37ec1fc52b737923
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 52fb9c5d6b9c594be1ad4f1fa1a4421d99cae5fa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970159"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234613"
 ---
 # <a name="drag-and-drop"></a>Перетаскивание
 
@@ -50,8 +50,8 @@ ms.locfileid: "82970159"
 ## <a name="construct-a-data-package"></a>Создание пакета данных 
 
 В большинстве случаев система будет создавать пакет данных за вас. Система автоматически обрабатывает:
-* Изображения
-* Текст 
+* Образы
+* text 
 
 При работе с другим содержимым необходимо обработать события **DragStarted** и **DragCompleted** и использовать их для создания собственного пакета данных [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
@@ -109,7 +109,7 @@ ms.locfileid: "82970159"
 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Связь между приложениями](index.md)
 * [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ff19eea5a2fa57d4e5b2728ddbd87e5d99ff539a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969529"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234131"
 ---
 # <a name="expose-basic-accessibility-information"></a>Предоставление основных сведений о специальных возможностях  
 
@@ -32,7 +32,7 @@ ms.locfileid: "82969529"
 | Тип элемента | Описание |
 |--------------|-------------|
 | Статический текст | Для элементов [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) и [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) специальное имя определяется автоматически на основе видимого (внутреннего) текста. Весь текст в этом элементе используется как имя. См. [Имя на основе внутреннего текста](#name_from_inner_text). |
-| Изображения | Элемент XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) не имеет прямого аналога для атрибута HTML **alt** в **img** и аналогичных элементах. Используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name), чтобы задать имя, или примените метод титров. Подробнее: [Специальные имена изображений](#images). |
+| Образы | Элемент XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) не имеет прямого аналога для атрибута HTML **alt** в **img** и аналогичных элементах. Используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name), чтобы задать имя, или примените метод титров. Подробнее: [Специальные имена изображений](#images). |
 | Элементы формы | Специальное имя для элемента формы должно совпадать с меткой, отображаемой для этого элемента. См. [Метки и LabeledBy](#labels). |
 | Кнопки и ссылки | По умолчанию специальное имя кнопки или ссылки задается на основе видимого текста с помощью правил, аналогичных указанным в статье [Имя на основе внутреннего текста](#name_from_inner_text). Если кнопка содержит только изображение, используйте [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) для предоставления текстового эквивалента предполагаемого действия кнопки. |
 

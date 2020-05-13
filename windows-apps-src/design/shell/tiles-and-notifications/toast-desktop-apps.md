@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, всплывающие уведомления, мост настольных систем, msix, разреженный пакет, параметры отправки всплывающих уведомлений, com-сервер, активатор com, com, имитация com, без com, без com, отправка всплывающего уведомления
 ms.localizationpriority: medium
-ms.openlocfilehash: 020cdeb1aaddac7fe879e91d18e258aea1b387ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b84120a592a1c2f5f18c6b6121568cbf126a582e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970989"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234543"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Всплывающие уведомления из классических приложений
 
