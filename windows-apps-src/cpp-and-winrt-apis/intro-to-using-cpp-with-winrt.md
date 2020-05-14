@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ddf2cd876ac629f4cb3c49e349e43dee8fdb0c7a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662402"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730304"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -29,8 +29,8 @@ C++/WinRT — это рекомендуемая корпорацией Майк
 ## <a name="language-projections"></a>Языковые проекции
 Среда выполнения Windows основывается на API Component Object Model (COM) и предусматривает доступ к ней через *языковые проекции*. Использование проекции позволяет скрывать подробности COM и обеспечить более естественный подход к программированию на используемом языке.
 
-### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>Языковая проекция C++/WinRT в содержимом справочных материалов по API Windows UWP
-При просмотре [API Windows UWP](https://docs.microsoft.com/uwp/api/) щелкните поле со списком **Язык** в правом верхнем углу и выберите пункт **C++/WinRT**, чтобы просмотреть синтаксические блоки API в том виде, в котором они отражаются в языковой проекции C++/WinRT.
+### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>Языковая проекция C++/WinRT в содержимом справочных материалов по API среды выполнения Windows
+При просмотре [API среды выполнения Windows](https://docs.microsoft.com/uwp/api/) щелкните вверху справа поле со списком **Язык** и выберите пункт **C++/WinRT**, чтобы просмотреть синтаксические блоки API в том виде, в котором они отражаются в языковой проекции C++/WinRT.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet
 Для поддержки Visual Studio вам потребуется Visual Studio 2019 или Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не ниже 15.7). С помощью установщика Visual Studio установите рабочую нагрузку **Разработка приложений для универсальной платформы Windows**. В разделе **Сведения об установке** > **Разработка приложений для универсальной платформы Windows** выберите параметры **инструментов универсальной платформы Windows для C++ (версии 14x)** , если вы еще этого не сделали. Кроме того, в разделе Windows **Параметры** > **Обновления\&Безопасность** > **Для разработчиков** выберите параметр **Режим разработчика** вместо параметра **Неопубликованные приложения**.
@@ -151,4 +151,4 @@ Visual Studio предоставляет поддержку компилятор
 * [Начало работы с C++/WinRT](get-started.md)
 * [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md)
 * [Обработка строк в C++/WinRT](strings.md)
-* [API Windows UWP](https://docs.microsoft.com/uwp/api/)
+* [API среды выполнения Windows](https://docs.microsoft.com/uwp/api/)
