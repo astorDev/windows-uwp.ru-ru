@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68729518"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970739"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 
@@ -32,11 +32,11 @@ ms.locfileid: "68729518"
 
 Так как каждый макет приложения уникален, мы рекомендуем добавить кнопку "Новое окно" в предсказуемое расположение, например в правый верхний угол окна содержимого, которое можно открыть в новом окне. Также следует учесть необходимость добавления параметра [контекстного меню](../controls-and-patterns/menus.md) "Открыть в новом окне".
 
-Чтобы создать отдельные экземпляры приложения (а не отдельные окна одного экземпляра), обратитесь к разделу [Создание нескольких экземпляров приложения UWP](../../launch-resume/multi-instance-uwp.md).
+Чтобы создать отдельные экземпляры приложения (а не отдельные окна одного экземпляра), обратитесь к статье [Создание приложения Windows с несколькими экземплярами](../../launch-resume/multi-instance-uwp.md).
 
 ## <a name="windowing-hosts"></a>Окна содержимого
 
-Существует несколько способов размещения содержимого UWP внутри приложения.
+Существует несколько способов размещения содержимого Windows внутри приложения.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -47,7 +47,7 @@ ms.locfileid: "68729518"
     Узнайте, как использовать ApplicationView для отображения дополнительных окон в приложении, ознакомившись с разделом [Использование ApplicationView](application-view.md).
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow упрощает создание многооконных приложений UWP, так как работает в том же потоке пользовательского интерфейса, из которого этот экземпляр создается.
+    AppWindow упрощает создание многооконных приложений Windows, так как работает в том же потоке пользовательского интерфейса, из которого этот экземпляр создается.
 
     Класс AppWindow и другие интерфейсы API в пространстве имен [WindowManagement](/uwp/api/windows.ui.windowmanagement) доступны, начиная с Windows 10 версии 1903 (пакет SDK 18362). Если приложение нацелено на более ранние версии Windows 10, для создания дополнительных окон необходимо использовать ApplicationView.
 

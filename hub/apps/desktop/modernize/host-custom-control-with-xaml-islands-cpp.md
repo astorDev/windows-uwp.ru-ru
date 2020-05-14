@@ -1,19 +1,19 @@
 ---
 description: Эта статья содержит сведения о размещении настраиваемого элемента управления UWP в приложении Win32 на C++ с помощью API размещения XAML.
 title: Размещение настраиваемого элемента управления UWP в приложении Win32 на C++ с помощью API размещения XAML
-ms.date: 03/23/2020
+ms.date: 04/07/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, настраиваемые элементы управления, пользовательские элементы управления, размещение элементов управления
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
-ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
+ms.openlocfilehash: eac2574d48864ba8b8dc907c8a7ec43ef266358b
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986972"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606342"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Размещение настраиваемого элемента управления UWP в приложении Win32 на C++
 
@@ -512,6 +512,72 @@ ms.locfileid: "80986972"
 
 9. Сохраните файл.
 10. Запустите сборку решения и убедитесь, что она проходит успешно.
+
+## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Добавление элемента управления из библиотеки WinUI в настраиваемый элемент управления
+
+В большинстве случаев элементы управления UWP выпущены в составе ОС Windows 10. Разработчики могут использовать их через пакет Windows SDK. В качестве альтернативного варианта можно использовать [библиотеку WinUI](https://docs.microsoft.com/uwp/toolkits/winui/). Здесь обновленные версии элементов управления UWP из пакета Windows SDK распределены в пакете NuGet, который не связан с выпусками пакета Windows SDK. Эта библиотека также содержит новые элементы управления, которые не входят в состав пакета Windows SDK и платформы UWP по умолчанию. Дополнительные сведения см. в [схеме библиотек WinUI](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+
+В этом разделе показано, как добавить элемент управления UWP из библиотеки WinUI в пользовательский элемент управления.
+
+1. В проекте **MyUWPApp** установите последнюю предварительную или окончательную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+
+    > [!NOTE]
+    > Если классическое приложение упаковано в [пакет MSIX](https://docs.microsoft.com/windows/msix), можно использовать последнюю предварительную или окончательную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Если классическое приложение не упаковано с помощью MSIX, необходимо установить последнюю предварительную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+
+2. В файле pch.h в этом проекте добавьте следующие инструкции `#include` и сохраните изменения. Эти инструкции предоставляют необходимый набор заголовков проекции из библиотеки WinUI в проекте. Этот шаг необходим для любого проекта C++/WinRT, использующего библиотеку WinUI. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
+
+    ```cpp
+    #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+    #include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+    #include "winrt/Microsoft.UI.Xaml.Media.h"
+    #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+    ```
+
+3. В файле App.xaml в том же проекте добавьте следующий дочерний элемент в элемент `<xaml:XamlApplication>` и сохраните изменения.
+
+    ```xml
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+    </Application.Resources>
+    ```
+
+    После добавления этого элемента содержимое файла должно выглядеть следующим образом:
+
+    ```xml
+    <Toolkit:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns:Toolkit="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:MyUWPApp">
+        <Application.Resources>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+        </Application.Resources>
+    </Toolkit:XamlApplication>
+    ```
+
+4. В том же проекте откройте файл MyUserControl.xaml и добавьте следующее объявление пространства имен в элемент `<UserControl>`.
+
+    ```xml
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    ```
+
+5. В том же файле добавьте элемент `<winui:RatingControl />` в качестве дочернего элемента `<StackPanel>` и сохраните изменения. Этот элемент добавляет экземпляр класса [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol из библиотеки WinUI. После добавления этого элемента `<StackPanel>` должен выглядеть следующим образом.
+
+    ```xml
+    <StackPanel HorizontalAlignment="Center" Spacing="10" 
+                Padding="20" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
+                       Text="Hello from XAML Islands" FontSize="30" />
+        <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
+                       Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+        <Button HorizontalAlignment="Center" 
+                x:Name="Button" Click="ClickHandler">Click Me</Button>
+        <winui:RatingControl />
+    </StackPanel>
+    ```
+
+6. Запустите сборку решения и убедитесь, что она проходит успешно.
 
 ## <a name="test-the-app"></a>Тестирование приложения
 

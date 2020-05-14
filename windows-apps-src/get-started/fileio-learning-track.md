@@ -6,12 +6,12 @@ ms.topic: article
 keywords: приступая к работе, uwp, windows 10, обучающий курс, файлы, файловый ввод-вывод, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166250"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730056"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -26,7 +26,7 @@ ms.locfileid: "82166250"
 Ниже приведены основные типы, о которых нужно знать для чтения текста и записи текста в файл.
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) представляет файл. Этот класс содержит свойства, которые предоставляют сведения о файле, и методы для создания, открытия, копирования, удаления и переименования файлов.
-Возможно, вы привыкли работать со строковыми путями. Существует ряд интерфейсов API UWP, принимающих строковый путь, однако чаще всего вы будете использовать объект **StorageFile** для представления файла, так как некоторые файлы на платформе UWP могут быть без пути или их путь может быть слишком громоздким. Используйте метод [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) для преобразования строкового пути в объект **StorageFile**. 
+Возможно, вы привыкли работать со строковыми путями. Есть ряд API среды выполнения Windows, принимающих строковый путь, но чаще всего вы будете использовать объект **StorageFile** для представления файла, так как некоторые файлы на платформе UWP могут быть без пути или путь к ним может быть слишком длинным. Используйте метод [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) для преобразования строкового пути в объект **StorageFile**. 
 
 - Класс [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) предоставляет простой способ для чтения и записи текста. Этот класс также может читать и записывать массив байтов или содержимое буфера. Этот класс очень похож на класс [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio). Основное различие заключается в том, что вместо использования строкового пути, как в **PathIO**, он принимает **StorageFile**.
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) представляет папку (каталог). Этот класс содержит методы для создания файлов, запроса содержимого папки, создания, переименования и удаление папок, а также свойства, которые предоставляют сведения о папке. 

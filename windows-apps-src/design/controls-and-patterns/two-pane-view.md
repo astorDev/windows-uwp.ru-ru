@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614128"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970449"
 ---
 # <a name="two-pane-view"></a>Представление с двумя панелями
 
@@ -29,7 +29,7 @@ ms.locfileid: "80614128"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TwoPaneView** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **TwoPaneView** является частью библиотеки пользовательского интерфейса Windows — пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 

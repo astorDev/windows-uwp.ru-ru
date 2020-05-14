@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49058568acccfa32c9c354a7e2570a5734c0c577
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081693"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970379"
 ---
 # <a name="media-player"></a>Проигрыватель мультимедиа
 
@@ -396,5 +396,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>Похожие статьи
 
-- [Основы проектирования команд в приложениях UWP](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [Основы проектирования содержимого для приложений UWP](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [Основы проектирования команд для приложений для Windows](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [Основы проектирования содержимого для приложений для Windows](https://docs.microsoft.com/windows/uwp/layout/content-basics)
