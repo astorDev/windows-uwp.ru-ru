@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4f0814621c67c01d5d1a73235faf02d3d753f2c2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081369"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970059"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -42,7 +42,7 @@ ms.locfileid: "80081369"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** и **ToggleSplitButton** являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** и **ToggleSplitButton** являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 > **API-интерфейсы библиотеки пользовательского интерфейса Windows:** [Класс DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [класс SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [класс ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -550,7 +550,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="back-buttons"></a>Кнопки "Назад"
 
-Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в руководству по [журналу навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
+Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. См. сведения о [журнале навигации и навигации в обратном направлении для приложений для Windows](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## <a name="get-the-sample-code"></a>Получение примера кода
