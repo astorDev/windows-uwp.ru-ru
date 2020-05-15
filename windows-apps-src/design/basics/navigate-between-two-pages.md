@@ -1,5 +1,5 @@
 ---
-Description: Сведения об включении навигации между двумя простыми страницами в приложении Универсальная платформа Windows (UWP).
+Description: Узнайте, как включить одноранговую навигацию между двумя простыми страницами в приложении для Windows.
 title: Одноранговая навигация между двумя страницами
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ef50b2d84ae9785a13d8c8dd13ca5a399dae142d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72560809"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969249"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>Похожие статьи
-* [Основы проектирования навигации для приложений UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Основы проектирования навигации для приложений для Windows](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
 * [Сводка](../controls-and-patterns/pivot.md)
 * [Представление навигации](../controls-and-patterns/navigationview.md)

@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9388df4159d7e9acd68c75163465339183b41314
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081962"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968799"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -36,7 +36,7 @@ ms.locfileid: "80081962"
 
 |  |  |
 | - | - |
-| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **CommandBarFlyout** является частью библиотеки пользовательского интерфейса Windows, пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![Логотип WinUI](images/winui-logo-64x64.png) | Элемент управления **CommandBarFlyout** является частью библиотеки пользовательского интерфейса Windows — пакета NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений для Windows. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 >**API библиотеки пользовательского интерфейса Windows**: [класс CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout).
 >
@@ -417,5 +417,5 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="related-articles"></a>Похожие статьи
 
-- [Основы проектирования команд в приложениях UWP](../basics/commanding-basics.md)
+- [Основы проектирования команд в приложениях для Windows](../basics/commanding-basics.md)
 - [CommandBar class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) (Класс CommandBar)
