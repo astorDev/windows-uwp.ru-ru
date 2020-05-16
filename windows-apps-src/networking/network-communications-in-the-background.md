@@ -6,12 +6,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 29c6609a2e57abede7fe606be8c028e503270d4c
-ms.sourcegitcommit: f910b29d35ac7afd0b759640bcac1d2fee399b3d
+ms.openlocfilehash: 764f5b1d0ab73eea1afe523404958f1714496476
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82973280"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280294"
 ---
 # <a name="network-communications-in-the-background"></a>Передача данных по сети в фоновом режиме
 
@@ -433,7 +433,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-Дополнительные сведения об использовании [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) или [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger StreamWebSocket](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-91f6bed8).
+Дополнительные сведения об использовании [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) или [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger StreamWebSocket](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20StreamSocket%20sample%20(Windows%208)).
 
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger с HttpClient
 При использовании [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) действуют особые условия. Существует ряд специфичных для транспорта шаблонов использования и рекомендаций, которыми следует руководствоваться при использовании [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) с **ControlChannelTrigger**. Кроме того, эти аспекты влияют на способ, которым обрабатываются запросы на получение пакетов в [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx).
@@ -581,7 +581,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-Подробнее об использовании [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger HttpClient](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-HTTP-9d7a6b3d).
+Подробнее об использовании [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger HttpClient](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20XMLHTTPRequest%20sample%20(Windows%208)).
 
 ## <a name="controlchanneltrigger-with-ixmlhttprequest2"></a>ControlChannelTrigger с IXMLHttpRequest2
 При использовании [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) действуют особые условия. Существует ряд специфичных для транспорта шаблонов использования и рекомендаций, которыми следует руководствоваться при использовании **IXMLHTTPRequest2** с **ControlChannelTrigger**. Использование **ControlChannelTrigger** не влияет на способ, которым обрабатываются запросы на отправку или получение HTTP-запросов в **IXMLHTTPRequest2**.
@@ -592,7 +592,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   Возможно, перед вызовом метода [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) приложению придется вызвать методы [**SetProperty**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setproperty) и [**SetRequestHeader**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-setrequestheader) для настройки транспорта HTTP.
 -   Приложению может потребоваться выполнить предварительный запрос [**Send**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nf-msxml6-ixmlhttprequest2-send) для проверки и правильной настройки транспорта, прежде чем оно создаст транспорт для использования с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). После того как приложение подтвердит правильную настройку транспорта, можно настроить объект [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) в качестве транспортного объекта для использования с **ControlChannelTrigger**. Цель этой процедуры — предотвратить сценарии разрыва подключения, установленного по транспорту. Если используется SSL с проверкой сертификата, возможно, приложение должно будет вывести диалоговое окно для ввода ПИН-кода или выбора сертификата, если в системе их несколько. Возможно, возникнет необходимость в проверке подлинности прокси-сервера и сервера. По истечении срока действия кэшированных учетных данных прокси-сервера или сервера подключение может быть разорвано. Один из способов предотвратить проблемы, связанные с истечением срока действия кэшированных учетных данных, — это установка таймера. При необходимости перенаправления HTTP не гарантируется, что второе подключение будет установлено надежно. Предварительный тестовый запрос поможет убедиться в том, что приложение может использовать актуальный URL-адрес перенаправления, до использования объекта **IXMLHTTPRequest2** в качестве транспорта для объекта **ControlChannelTrigger**.
 
-Подробнее об использовании [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger с IXMLHTTPRequest2](https://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-HTTP-9d7a6b3d/).
+Подробнее об использовании [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) с [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) см. в [Примере ControlChannelTrigger с IXMLHTTPRequest2](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20XMLHTTPRequest%20sample%20(Windows%208)).
 
 ## <a name="important-apis"></a>Важные API
 * [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)

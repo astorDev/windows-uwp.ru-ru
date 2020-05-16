@@ -12,18 +12,18 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9388df4159d7e9acd68c75163465339183b41314
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968799"
+ms.locfileid: "82989798"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
 Всплывающее меню панели команд позволяет обеспечить пользователям удобный доступ к распространенным задачам, отображая команды в плавающей панели инструментов, связанной с элементом на холсте пользовательского интерфейса.
 
-![Развернутое всплывающее меню панели команд для работы с текстом](images/command-bar-flyout-header.png)
+![Развернутое всплывающее меню панели команд для работы с текстом](images/command-bar-flyout-text-full.png)
 
 Как и элемент [CommandBar](app-bars.md), CommandBarFlyout содержит свойства **PrimaryCommands** и **SecondaryCommands**, которые можно использовать для добавления команд. Вы можете разместить команды в одной из коллекций или же в обеих. Условие и способ отображения основных и второстепенных команд зависит от режима отображения.
 
