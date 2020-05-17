@@ -14,7 +14,7 @@ ms.locfileid: "79038097"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
  
-[**Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Это аналогично тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а в корне каждого класса **Common Type System** находится [System.Object](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
+[**Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Это аналогично тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) находится **System.Object**.
 
 Другими словами, функции, которая ожидает **IInspectable**, можно передать экземпляр любого класса среды выполнения. Но такой функции нельзя напрямую передать скалярное значение, например числовое или текстовое. Для этого скалярное значение необходимо поместить в объект ссылочного класса. Этот процесс называют *упаковкой* значения.
 
