@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81441869"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606243"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Элементы управления UWP XAML в классических приложениях (XAML Island)
 
@@ -129,6 +129,8 @@ API-интерфейсы, представленные в нижней част�
 
 ### <a name="supported-only-with-workarounds"></a>Поддерживаются только при использовании обходных решений
 
+:heavy_check_mark: В текущем выпуске XAML Islands размещение элементов управления UWP из [библиотеки WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) в XAML Island поддерживается условно. Если классическое приложение использует [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания, можно разместить элементы управления WinUI из предварительной или окончательной версии пакета NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Если классическое приложение не упаковано с помощью MSIX, вы сможете разместить элементы управления WinUI, если только установите последнюю предварительную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+
 :heavy_check_mark: Для доступа к корневому элементу дерева содержимого XAML в области XAML и получения связанных сведений о контексте, в котором он размещен, не используйте классы [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) и [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). Вместо этого используйте класс [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Дополнительные сведения см. в [этом разделе](#window-host-context-for-xaml-islands).
 
 :heavy_check_mark: Чтобы обеспечить поддержку [контракта отправки данных](/windows/uwp/app-to-app/share-data) в приложении WPF, Windows Forms или Win32 на C++, оно должно использовать интерфейс [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) для получения объекта [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) с целью инициировать операцию общего доступа для определенного окна. Использование этого интерфейса в приложении WPF демонстрируется в [примере ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
@@ -150,6 +152,8 @@ API-интерфейсы, представленные в нижней част�
 :no_entry_sign: Текстовые элементы управления, которые используют ссылки на содержимое `@Places` и `@People`. Дополнительные сведения об этой возможности см. в [этой статье](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
 
 :no_entry_sign: XAML Islands не поддерживают размещение класса [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), который содержит элемент управления, который принимает ввод текста, например [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) или [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). В этом случае элемент управления для ввода не будет правильно реагировать на нажатие клавиш. Для реализации подобной функциональности с помощью XAML Island мы рекомендуем разместить класс [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup), содержащий элемент управления для ввода.
+
+:no_entry_sign: Сейчас XAML не поддерживает отображение SVG-файлов в размещенном элементе управления [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) или с помощью объекта [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource). В качестве решения преобразуйте файлы изображений, которые требуется отобразить, в растровые форматы, такие как JPG или PNG.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Контекст узла с окном для объектов XAML Island
 
