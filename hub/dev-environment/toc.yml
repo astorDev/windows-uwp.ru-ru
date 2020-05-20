@@ -1,6 +1,36 @@
 - name: Среда разработки Windows
   href: index.yml
   items:
+    - name: Диспетчер пакетов Windows
+      items:
+        - name: Обзор
+          href: ../package-manager/index.md
+        - name: Использование средства winget
+          items:
+            - name: Обзор
+              href: ../package-manager/winget/index.md
+            - name: Команда hash
+              href: ../package-manager/winget/hash.md
+            - name: Команда help
+              href: ../package-manager/winget/help.md
+            - name: Команда install
+              href: ../package-manager/winget/install.md
+            - name: Команда search
+              href: ../package-manager/winget/search.md
+            - name: Команда show
+              href: ../package-manager/winget/show.md
+            - name: Команда source
+              href: ../package-manager/winget/source.md
+            - name: Команда validate
+              href: ../package-manager/winget/validate.md
+        - name: Отправка пакетов
+          items:
+            - name: Обзор
+              href: ../package-manager/package/index.md
+            - name: Создание манифеста пакета
+              href: ../package-manager/package/manifest.md
+            - name: Отправка манифеста в репозиторий
+              href: ../package-manager/package/repository.md
     - name: Разработка с использованием Python
       items:
         - name: Обзор

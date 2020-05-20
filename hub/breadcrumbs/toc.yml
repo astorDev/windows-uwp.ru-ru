@@ -9,20 +9,72 @@
         - name: Создание классических приложений
           tocHref: /windows/apps/desktop/
           topicHref: /windows/apps/desktop/
-        - name: Модернизация классических приложений
-          tocHref: /windows/apps/desktop/modernize/
-          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: Вызов интерфейсов API среды выполнения Windows
-              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
-            - name: XAML Islands
-              topicHref: /windows/apps/desktop/modernize/xaml-islands
-            - name: Визуальный уровень
-              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
-            - name: 'Функции, которым требуется идентификатор пакета'
-              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
-            - name: 'Руководство: Модернизация приложения WPF'
-              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+            - name: Модернизация классических приложений
+              tocHref: /windows/apps/desktop/modernize/
+              topicHref: /windows/apps/desktop/modernize/
+              items:
+                - name: Вызов интерфейсов API среды выполнения Windows
+                  topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+                  items:
+                    - name: Доступные API-интерфейсы среды выполнения Windows
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+                - name: XAML Islands
+                  topicHref: /windows/apps/desktop/modernize/xaml-islands
+                  items:
+                    - name: Добавление стандартного элемента управления UWP в приложение WPF
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands
+                    - name: Добавление пользовательского элемента управления UWP в приложение WPF
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands
+                    - name: Использование API размещения UWP XAML
+                      topicHref: /windows/apps/desktop/modernize/using-the-xaml-hosting-api
+                    - name: "Размещение стандартного элемента управления\_UWP в приложении\_Win32 на\_C++"
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp
+                    - name: "Размещение настраиваемого элемента управления\_UWP в приложении Win32 на\_C++"
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp
+                    - name: "Расширенные сценарии для XAML Islands в приложениях\_Win32 на\_C++"
+                      topicHref: /windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp
+                - name: Визуальный уровень
+                  topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+                  items:
+                    - name: WPF
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-wpf
+                    - name: Windows Forms
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms
+                    - name: Win32
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-win32
+                - name: 'Функции, которым требуется идентификатор пакета'
+                  topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+                  items:
+                    - name: Интеграция с использованием расширений пакета
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extensions
+                    - name: Расширение возможностей с помощью компонентов UWP
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extend
+                    - name: Распространение упакованного классического приложения
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-distribute
+                - name: 'Руководство: Модернизация приложения WPF'
+                  topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+                  items:
+                    - name: Часть 1
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-1
+                    - name: Часть 2
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-2
+                    - name: Часть 3
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-3
+                    - name: "Часть\_4"
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-4
+                    - name: "Часть\_5"
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-5
+        - name: Библиотека пользовательского интерфейса Windows (WinUI)
+          tocHref: /windows/apps/winui/
+          topicHref: /windows/apps/winui/
+          items:
+            - name: "WinUI\_3"
+              tocHref: /windows/apps/winui/winui3/
+              topicHref: /windows/apps/winui/winui3
+            - name: "WinUI\_2"
+              tocHref: /windows/apps/winui/winui2/
+              topicHref: /windows/apps/winui/winui2
         - name: .NET TraceProcessing
           tocHref: /windows/apps/trace-processing/
           topicHref: /windows/apps/trace-processing/overview
@@ -42,6 +94,9 @@
       tocHref: /windows/dev-environment/
       topicHref: /windows/dev-environment/
       items:
+        - name: Диспетчер пакетов Windows
+          tocHref: /windows/package-manager/
+          topicHref: /windows/package-manager
         - name: Python
           tocHref: /windows/python/
           topicHref: /windows/python

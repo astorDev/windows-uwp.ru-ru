@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 4175fdf2cbb10912c22e0b0058629819c87dbc63
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606243"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579921"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Элементы управления UWP XAML в классических приложениях (XAML Island)
 
@@ -129,7 +129,7 @@ API-интерфейсы, представленные в нижней част�
 
 ### <a name="supported-only-with-workarounds"></a>Поддерживаются только при использовании обходных решений
 
-:heavy_check_mark: В текущем выпуске XAML Islands размещение элементов управления UWP из [библиотеки WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) в XAML Island поддерживается условно. Если классическое приложение использует [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания, можно разместить элементы управления WinUI из предварительной или окончательной версии пакета NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Если классическое приложение не упаковано с помощью MSIX, вы сможете разместить элементы управления WinUI, если только установите последнюю предварительную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+:heavy_check_mark: В текущем выпуске XAML Islands размещение элементов управления из [библиотеки WinUI 2.x](../../winui/index.md) поддерживается условно. Если классическое приложение использует [пакет MSIX](https://docs.microsoft.com/windows/msix) для развертывания, можно разместить элементы управления WinUI из предварительной или окончательной версии пакета NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Если классическое приложение не упаковано с помощью MSIX, вы сможете разместить элементы управления WinUI, если только установите последнюю предварительную версию пакета NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Поддержка размещения элементов управления из [библиотеки WinUI 3.0](../../winui/winui3/index.md) будет реализована в более позднем выпуске.
 
 :heavy_check_mark: Для доступа к корневому элементу дерева содержимого XAML в области XAML и получения связанных сведений о контексте, в котором он размещен, не используйте классы [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) и [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window). Вместо этого используйте класс [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot). Дополнительные сведения см. в [этом разделе](#window-host-context-for-xaml-islands).
 
