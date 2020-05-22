@@ -4,14 +4,14 @@ description: Применение классов XamlUICommand и StandardUIComm
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968769"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233766"
 ---
-# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях Windows с помощью классов StandardUICommand, XamlUICommand и ICommand
+# <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях Windows с помощью классов StandardUICommand, XamlUICommand и ICommand
 
 В этой статье рассматриваются команды в приложениях Windows. В частности, мы обсудим, как с помощью классов [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (вместе с интерфейсом ICommand) можно совместно использовать команды и управлять ими для различных типов элементов управления, независимо от устройства и типа используемого ввода.
 

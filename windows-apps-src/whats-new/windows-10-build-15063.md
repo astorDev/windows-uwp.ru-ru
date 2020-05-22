@@ -1,17 +1,17 @@
 ---
 title: Что нового в Windows 10 (сборка 15063)
 description: Windows 10 (сборка 15063) и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
-keywords: новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, 1703, март, самое новое, 15063
+keywords: Windows 10, 1703, 15063
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ba6eb59cb6b5808f8298e3e0ab3b6c2f889e57ec
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258873"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234637"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>Новые возможности для разработчиков в Windows 10, сборка 15063
 

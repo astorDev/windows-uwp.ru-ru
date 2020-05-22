@@ -1,16 +1,16 @@
 ---
 title: Изменения API Windows 10 (сборка 17134)
 description: Разработчики могут использовать следующий список для определения новых или измененных пространств имен в Windows 10 сборки 17134
-keywords: что нового, новые возможности, обновления, Windows 10, самое новое, api, 17134
+keywords: Windows 10, api, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb3ec9646848f74e4a147a102c0e2bd803073d74
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9f3613793a44222f4612a5ae64514546abb6ca66
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67322013"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234696"
 ---
 # <a name="new-apis-in-windows-10-build-17134"></a>Новые API в Windows 10 (сборка 17134)
 

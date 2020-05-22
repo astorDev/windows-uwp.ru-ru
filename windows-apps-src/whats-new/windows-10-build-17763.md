@@ -1,17 +1,17 @@
 ---
 title: Что нового в Windows 10 (сборка 17763)
 description: Windows 10 (сборка 17763) и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
-keywords: новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, новинки, разработчики, 17763
+keywords: Windows 10, 17763, 1809
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d26d88377aec4306ad0711724760ec13e6568d85
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684758"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234385"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Новые возможности для разработчиков в Windows 10 (сборка 17763)
 

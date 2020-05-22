@@ -1,17 +1,17 @@
 ---
 title: Изменения API Windows 10 (сборка 17763)
 description: Разработчики могут использовать следующий список для определения новых или измененных пространств имен в Windows 10 сборки 17763
-keywords: что нового, новые возможности, обновления, Windows 10, самое новое, api, 17763, октябрь
+keywords: Windows 10, api, 17763, 1809
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8fd6d2c41cd2f632f22819f452b2f203fd8ac309
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0e21cf153cb86571f83b496461a1da383b387158
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780345"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234792"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Новые API в Windows 10 (сборка 17763)
 

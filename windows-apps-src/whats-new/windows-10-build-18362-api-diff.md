@@ -1,17 +1,17 @@
 ---
 title: Изменения API Windows 10 (сборка 18362)
 description: Разработчики могут использовать следующий список для определения новых или измененных пространств имен в Windows 10 сборки 18362
-keywords: что нового, новые возможности, обновления, Windows 10, самое новое, api, 18362, май
+keywords: Windows 10, api, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e230ac2716fc79449197a2f777b9262b2c237fe3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5770ca513f6eb75c6a2c1e9e89aa0b3bc0ffc581
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780359"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233805"
 ---
 # <a name="new-apis-in-windows-10-build-18362"></a>Новые API в Windows 10 (сборка 18362)
 

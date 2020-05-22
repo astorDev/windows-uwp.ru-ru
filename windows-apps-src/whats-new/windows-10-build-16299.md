@@ -1,16 +1,16 @@
 ---
 title: Что нового в Windows 10 (сборка 16299)
 description: Windows 10 (сборка 16299) и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
-keywords: что нового, новые возможности, обновление, обновления, функции, новая, Windows 10, 1709, октябрь, новейшая, разработчики, 16299, Fall Creators
+keywords: Windows 10, 1709, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc4f0a50a70531d9d0591c1153aad1ab23e8250d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258890"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234215"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Новые возможности для разработчиков в Windows 10, сборка 16299
 
