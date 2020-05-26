@@ -5,12 +5,12 @@ keywords: новое, новые возможности, Windows, Windows 10, �
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e5f07e83d7e2e1b96c4bade5a2a6998c11e0559
-ms.sourcegitcommit: dbb368861c85c45f34ea0d5b77eb3af2416be1b2
+ms.openlocfilehash: bb7630afd6cc69497494a2e86e6c5e3544acefec
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83382806"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790988"
 ---
 # <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Новые возможности для разработчиков в Windows 10 (сборка 19041)
 
@@ -36,7 +36,7 @@ Wi-Fi | Добавлено несколько новых собственных 
 Хот-спот Wi-Fi 2 | В статье [Подготовка профиля Wi-Fi с помощью веб-сайта](/windows/win32/nativewifi/prov-wifi-profile-via-website) описаны новые функции для Хот-спота Wi-Fi 2.
 Взаимодействие Windows Holographic | Добавлен заголовок [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) с 17 API-интерфейсами Win32. API-интерфейсы предназначены для взаимодействия между средой выполнения Win32 и Windows. Хотя API-интерфейсы были добавлены в Windows 10 (сборка 18362), заголовок является новым для сборки 19041.
 Сокеты Windows | В содержимое SPI Windows Sockets 2 были добавлены несколько улучшений. Примером одного из многих улучшенных и дополненных разделов является раздел [функции обратного вызова LPWSPEVENTSELECT](/windows/win32/api/ws2spi/nc-ws2spi-lpwspeventselect).
-Основные сведения о XAML Islands | Разместите элементы управления XAMl UWP в классических приложениях Windows с помощью XAML Islands. Узнайте, как [разместить стандартный элемент управления UWP в приложении WPF](/windows/apps/desktop/modernize/host-standard-control-with-xaml-island), а также [разместить стандартный элемент управления UWP в приложении Win32 на C++](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp).
+Основные сведения о XAML Islands | Разместите элементы управления XAMl UWP в классических приложениях Windows с помощью XAML Islands. Узнайте, как [разместить стандартный элемент управления UWP в приложении WPF](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands), а также [разместить стандартный элемент управления UWP в приложении Win32 на C++](/windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp).
 Пользовательские элементы управления XAML Islands | Пакеты NuGet [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) и [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) упрощают размещение пользовательских элементов управления XAML UWP в приложениях .NET и Win32 на C++. </br> Пошаговые руководства см. в статьях [Размещение настраиваемого элемента управления UWP в приложении WPF, использующем XAML Islands](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands) и [Размещение настраиваемого элемента управления UWP в приложении Win32 на C++](/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp). </br> Наконец, рекомендации по более сложным сценариям Win32 на C++ см. в статье [Расширенные сценарии для XAML Islands в приложениях Win32 на C++](/windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp).
 
 ## <a name="build-with-windows"></a>Создание решений с помощью Windows

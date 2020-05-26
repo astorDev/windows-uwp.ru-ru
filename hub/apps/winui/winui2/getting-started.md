@@ -4,12 +4,12 @@ description: Установка и использование библиотек
 ms.topic: reference
 ms.date: 05/08/2020
 keywords: windows 10, uwp, пакет средств разработки
-ms.openlocfilehash: 2205a95dfd342503674662d5cb0e4ed598eda870
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 585475df4138c6a5d4d8b885582137c972a64287
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580411"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775867"
 ---
 # <a name="getting-started-with-the-windows-ui-library"></a>Начало работы с библиотекой пользовательского интерфейса Windows
 
@@ -18,7 +18,7 @@ ms.locfileid: "83580411"
 Эта библиотека доступна в виде пакета NuGet, который можно добавить в любой новый или существующий проект Visual Studio.
 
 > [!NOTE]
-> Дополнительные сведения о возможности ознакомиться с предварительными версиями WinUI 3.0 см. в статье [WinUI 3.0 Alpha](../winui3/index.md).
+> Дополнительные сведения о возможности ознакомиться с предварительными версиями WinUI 3.0 см. в статье [WinUI 3.0, предварительная версия 1](../winui3/index.md).
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Загрузка и установка библиотеки пользовательского интерфейса Windows
 
@@ -39,12 +39,12 @@ ms.locfileid: "83580411"
 
 4. Добавьте ресурсы темы пользовательского интерфейса Windows (WinUI) в ресурсы App.xaml. Это можно сделать двумя способами, в зависимости от наличия дополнительных ресурсов приложения.
 
-    a. Если у вас нет других ресурсов приложения, добавьте `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` в Application.Resources: 
+    a. Если у вас нет других ресурсов приложения, добавьте `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` в Application.Resources:
 
     ``` XAML
     <Application>
         <Application.Resources>
-            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" /> 
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
     </Application>
     ```
@@ -57,7 +57,7 @@ ms.locfileid: "83580411"
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                </ResourceDictionary.MergedDictionaries> 
+                </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
     </Application>
@@ -102,6 +102,6 @@ WinUI — проект с открытым кодом, размещенный �
 
 Мы рады любым сообщениям об ошибках, запросам на добавление функций и вкладам сообщества в создание кода, вносимым в [репозиторий библиотеки пользовательского интерфейса Windows](https://aka.ms/winui).
 
-## <a name="other-resources"></a>Другие ресурсы 
+## <a name="other-resources"></a>Другие ресурсы
 
 Если вы не знакомы с UWP, рекомендуем ознакомится со статьей [Приступая к работе с приложениями для Windows 10](https://developer.microsoft.com/windows/getstarted) на портале разработчика.

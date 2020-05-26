@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2445f1b718532fd0862c276e8fadf12e88fe36ac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0834a905c50b92003c3aa78ff8226d35c25e5dd
+ms.sourcegitcommit: ddc65c170834bcce524b5e1d36e6755eae1e3af2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209079"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83729899"
 ---
 # <a name="item-containers-and-templates"></a>Контейнеры и шаблоны элементов
 
@@ -313,7 +313,7 @@ namespace ColorsListApp
 
 - Наведение. Под шаблоном данных отображается светло-серый прямоугольник.  
 - Выделение. Под шаблоном данных отображается голубой прямоугольник. 
-- Клавиатурная фокусировка. Над шаблоном элемента отображается черно-белая пунктирная рамка. 
+- Фокус клавиатуры. [Визуальный элемент дополнительного выделения](/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals), который отображается поверх шаблона элемента.
 
 ![Визуальные элементы состояний представления списка](images/listview-state-visuals.png)
 

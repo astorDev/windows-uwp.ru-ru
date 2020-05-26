@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa60db28003c4f231cf36b653c5e69b422978c1a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 28dc4a62bf580da41d424c98c186413dc96a8aae
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340065"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775831"
 ---
 # <a name="transforms-overview"></a>Обзор преобразований
 
@@ -37,6 +37,8 @@ ms.locfileid: "71340065"
 В макете XAML преобразования применяются после завершения этапа разметки. Поэтому вычисление доступного пространства и принятие других решений относительно макета выполнялось еще до применения преобразований. Так как сначала создается макет, иногда вы будете получать неожиданные результаты при преобразовании элементов, находящихся в ячейке [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) или похожем контейнере макета, которому в процессе разметки выделяется пространство. Преобразованный элемент может оказаться усеченным или загороженным, поскольку его пытаются переместить в область, для которой при делении пространства родительского контейнера не учитывались размеры после преобразования. Возможно, вам стоит поэкспериментировать с результатами преобразования и скорректировать некоторые параметры. Например, вместо использования адаптивного макета и изменения размера с помощью Star вам, возможно, придется изменить свойства **Center** или объявить фиксированные размеры в пикселях для пространств макета, чтобы гарантировать, что родительский элемент выделяет достаточно места.
 
 **Примечание по переносу**  Windows Presentation Foundation (WPF) содержит свойство **LayoutTransform**, применяющее преобразования перед этапом разметки. Однако XAML среды выполнения Windows не поддерживает свойство **LayoutTransform**. (В Microsoft Silverlight нет этого свойства.)
+
+В качестве альтернативы в наборе средств сообщества Windows предоставляется инструмент [LayoutTransformControl](/windows/communitytoolkit/controls/LayoutTransformControl), который применяет преобразования матрицы к любому элементу FrameworkElement приложения.
 
 ## <a name="span-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanapplying-a-transform-to-a-ui-element"></a><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Применение преобразования к элементу пользовательского интерфейса
 
