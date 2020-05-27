@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 04/15/2020
 keywords: Windows 10, UWP, набор средств в пакете SDK, winui, библиотека пользовательского интерфейса Windows
 ms.custom: RS5
-ms.openlocfilehash: 9396860ac82db92f9a8f3166662b94f2776fed7d
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: c1828405c424ca54dcb70e587479fd5307b1046d
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580251"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775860"
 ---
 # <a name="windows-ui-library-2x"></a>Библиотека пользовательского интерфейса Windows 2.x
 
@@ -21,7 +21,7 @@ ms.locfileid: "83580251"
 Она поддерживает совместимость низкого уровня с предыдущими версиями Windows 10, поэтому ваше приложение будет работать, даже если пользователи применяют не самую последнюю версию ОС.
 
 > [!NOTE]
-> Ознакомьтесь с крупным обновлением [WinUI 3.0 Alpha](../winui3/index.md) для платформы пользовательского интерфейса Windows 10, которое мы планируем выпустить в 2020 году.
+> Ознакомьтесь с крупным обновлением [WinUI 3.0 (предварительная версия 1)](../winui3/index.md) для платформы пользовательского интерфейса Windows 10, которое мы планируем выпустить в 2020 году.
 
 ## <a name="features"></a>Возможности
 

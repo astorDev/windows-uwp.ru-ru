@@ -3,12 +3,12 @@ title: WinUI 3.0, предварительная версия 1 (май 2020 
 description: Обзор платформы WinUI 3.0, предварительная версия
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 9141fe7ff215f28557020c7f76dd35c3560edfe5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
+ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580141"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83688486"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Библиотека пользовательского интерфейса Windows 3.0, предварительная версия 1 (май 2020 г.)
 
@@ -64,12 +64,12 @@ ms.locfileid: "83580141"
 
 При установке Visual Studio Preview необходимо включить следующие рабочие нагрузки:
 
-- .NET Win32 Development (Разработка для .NET Win32);
+- Разработка классических приложений .NET.
 - "Разработка приложений для универсальной платформы Windows".
 
 Для сборки приложений на C++ необходимо также включить следующие рабочие нагрузки:
 
-- Win32 development with C++ (Разработка для Win32 на C++);
+- "Разработка классических приложений на C++";
 - дополнительный компонент *Средства универсальной платформы Windows на C++ (версия 142)* для рабочей нагрузки универсальной платформы Windows.
 
 ### <a name="visual-studio-project-templates"></a>Шаблоны проектов Visual Studio
@@ -133,24 +133,30 @@ ms.locfileid: "83580141"
 - MapControl
 - Иерархическая навигация с помощью представления NavigationView.
 - SwapChainPanel не поддерживает прозрачность.
-- В C# необходимо использовать `WinRT.WeakReference<T>`, а не `System.WeakReference<T>`.
 - При глобальной подсветке используется поведение отката и сплошная кисть.
 - В этом выпуске отсутствует поддержка XAML Islands.
 - Сторонние библиотеки экосистемы поддерживаются не полностью.
 - IME не поддерживаются.
 - Методы в пространстве имен Windows.UI.Text не вызываются.
-  
+
+### <a name="known-issues"></a>Известные проблемы
+
+- В классических приложениях C#:
+   - Для слабых ссылок на объекты Windows (включая объекты XAML) нужно использовать `WinRT.WeakReference<T>`, а не `System.WeakReference<T>`.
+   - В структурах [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) и [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) чаще используются элементы типа Float, чем элементы типа Double.
+
+
 ## <a name="xaml-controls-gallery-winui-30-preview-1-branch"></a>Коллекция элементов управления XAML (ветвь для WinUI 3.0, предварительная версия 1)
 
-См. пример приложения, которое использует все элементы управления и функции WinUI 3.0, предварительная версия 1, в [ветви для WinUI 3.0, предварительная версия 1 коллекции элементов управления XAML](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1).
+См. пример приложения, которое использует все элементы управления и функции WinUI 3.0, предварительная версия 1, в [ветви для WinUI 3.0, предварительная версия 1 коллекции элементов управления XAML](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview).
 
 ![Приложение для WinUI 3.0, предварительная версия 1 из коллекции элементов управления XAML](images/WinUI3XamlControlsGallery.png)<br/>
 *Пример приложения для WinUI 3.0, предварительная версия 1 из коллекции элементов управления XAML*
 
-Чтобы скачать этот пример, клонируйте ветвь **winui3preview1** с помощью следующей команды:
+Чтобы скачать этот пример, клонируйте ветвь **winui3preview** с помощью следующей команды:
 
-> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
+> `git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git`
 
-После клонирования обязательно переключитесь на ветвь **winui3preview1** в локальной среде Git:
+После клонирования обязательно переключитесь на ветвь **winui3preview** в локальной среде Git:
 
-> `git checkout winui3preview1`
+> `git checkout winui3preview`
