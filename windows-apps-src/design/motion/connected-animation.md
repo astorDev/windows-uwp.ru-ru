@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970639"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775909"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Подключенная анимация для приложений Windows
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970639"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>Подключенная анимация и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Подключенная анимация — это компонент системы проектирования Fluent Design, добавляющий движение в ваше приложение. Дополнительные сведения см. в статье [Общие сведения о проектировании Fluent](/windows/apps/fluent-design-system).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Подключенная анимация — это компонент системы проектирования Fluent Design, добавляющий движение в ваше приложение. См. сведения о [системе проектирования Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="why-connected-animation"></a>Преимущества подключенной анимации
 
@@ -101,7 +101,7 @@ ms.locfileid: "82970639"
 | Конфигурация | Учитывает Дефаултдуратион? | Учитывает Дефаултеасингфунктион? |
 | - | - | - |
 | Сила тяготения | Да | Да* <br/> **Базовый перевод с A на B использует эту функцию плавности, но "сила притяжения" имеет собственную функцию плавности.*  |
-| Прямой доступ | нет <br/> *Выполняет анимацию по 150ms.*| нет <br/> *Использует функцию плавности замедления.* |
+| Прямой доступ | Нет <br/> *Выполняет анимацию по 150ms.*| Нет <br/> *Использует функцию плавности замедления.* |
 | Основные | Да | Да |
 
 ## <a name="how-to-implement-connected-animation"></a>Реализация подключенной анимации
@@ -271,7 +271,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 Чтобы запустить анимацию с этим элементом в качестве назначения, например при переходе назад из подробного представления, используйте [тристартконнектеданиматионасинк](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync). Если вы только что загрузили источник данных для ListView, TryStartConnectedAnimationAsync не запустит анимацию, пока не будет создан соответствующий контейнер элементов.
 
 ```csharp
-private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
+private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 {
     ContactsItem item = GetPersistedItem(); // Get persisted item
     if (item != null)

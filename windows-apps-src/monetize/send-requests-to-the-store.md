@@ -1,17 +1,17 @@
 ---
-Description: Метод SendRequestAsync можно использовать для отправки запросов к Microsoft Store для операций, которые еще не доступны в пакете SDK для Windows API.
+Description: Метод Сендрекуестасинк можно использовать для отправки запросов в Microsoft Store для операций, в которых еще нет API, доступных в Windows SDK.
 title: Отправка запросов в Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589799"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867334"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Отправка запросов в Microsoft Store
 
@@ -27,14 +27,14 @@ ms.locfileid: "57589799"
 * Целое число, определяющее запрос, который необходимо отправить в Магазин.
 * Если запрос поддерживает любые аргументы, можно также передавать строку формата JSON, содержащую аргументы, передаваемые вместе с запросом.
 
-В следующем примере показан вызов этого метода. В этом примере требуется использование операторов для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
+В следующем примере показано, как вызывается данный метод. В этом примере требуется использование операторов для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
 
 ```csharp
 public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -72,12 +72,12 @@ public async Task<bool> AddUserToFlightGroup()
 
 Этот запрос извлекает удаленные переменные для группы тестируемой возможности с самым высоким приоритетом для текущего пользователя или устройства. Чтобы отправить этот запрос, передайте указанную ниже информацию в параметры *requestKind* и *parametersAsJson* метода **SendRequestAsync**.
 
-|  Параметр  |  Описание  |
+|  Параметр  |  Описание:  |
 |----------------------|---------------|
 |  *requestKind*                   |  Укажите 7 для возврата группы тестируемой возможности с самым высоким приоритетом для устройства или 8 для возврата группы тестируемой возможности с самым высоким приоритетом для текущего пользователя и устройства. Рекомендуется использовать значение 8 для параметра *requestKind*, поскольку это значение будет возвращать группу тестируемой возможности с самым высоким приоритетом через членство и для текущего пользователя, и для устройства.  |
 |  *parametersAsJson*                   |  Передайте строку формата JSON, содержащую данные, как показано в примере ниже.  |
 
-В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначить *projectId* на идентификатор проекта, в котором определена удаленных переменных в центре партнеров.
+В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначьте поле *PROJECTID* идентификатору проекта, в котором вы определили удаленные переменные в центре партнеров.
 
 ```json
 { 
@@ -90,9 +90,9 @@ public async Task<bool> AddUserToFlightGroup()
 
 |  Поле  |  Описание  |
 |----------------------|---------------|
-|  *Анонимный*                   |  Логическое значение, где **true** указывает, что удостоверение пользователя или устройства не было представлено в запросе, а **false** указывает, что удостоверение пользователя или устройства было представлено в запросе.  |
+|  *anonymous*                   |  Логическое значение, где **true** указывает, что удостоверение пользователя или устройства не было представлено в запросе, а **false** указывает, что удостоверение пользователя или устройства было представлено в запросе.  |
 |  *name*                   |  Строка, содержащая имя группы тестируемой возможности с самым высоким приоритетом, к которой принадлежит устройство или пользователь.  |
-|  *Параметры*                   |  Словарь пар "ключ — значение", содержащий имя и значение удаленных переменных, которые разработчик настроил для группы тестируемой возможности.  |
+|  *параметры*                   |  Словарь пар "ключ — значение", содержащий имя и значение удаленных переменных, которые разработчик настроил для группы тестируемой возможности.  |
 
 В следующем примере показано возвращаемое значение для этого запроса.
 
@@ -115,7 +115,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 Чтобы отправить этот запрос, передайте указанную ниже информацию в параметры *requestKind* и *parametersAsJson* метода **SendRequestAsync**.
 
-|  Параметр  |  Описание  |
+|  Параметр  |  Описание:  |
 |----------------------|---------------|
 |  *requestKind*                   |  Укажите 7, чтобы добавить устройство в группу тестируемой возможности, или 8, чтобы добавить в эту группу пользователя, который в данный момент вошел в Магазин.  |
 |  *parametersAsJson*                   |  Передайте строку формата JSON, содержащую данные, как показано в примере ниже.  |
@@ -138,7 +138,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 Чтобы отправить этот запрос, передайте указанную ниже информацию в параметры *requestKind* и *parametersAsJson* метода **SendRequestAsync**.
 
-|  Параметр  |  Описание  |
+|  Параметр  |  Описание:  |
 |----------------------|---------------|
 |  *requestKind*                   |  Укажите 7, чтобы удалить устройство из группы тестируемой возможности, или 8, чтобы удалить из этой группы пользователя, который в данный момент вошел в Магазин.  |
 |  *parametersAsJson*                   |  Передайте строку формата JSON, содержащую данные, как показано в примере ниже.  |
@@ -154,7 +154,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 Если возникает ошибка с запросом, свойство [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) возвращаемого значения [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) содержит код ответа.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 
-* [Показать оценку и просмотрите диалоговое окно в приложении](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [Показ диалогового окна оценки и отзыва в приложении](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

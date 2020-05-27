@@ -6,35 +6,33 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67bba732efd199c5093bb75e9b0a2c41b67e568c
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 0af0e8b17578c2ef3cd3fb0a466446b06f8e4a00
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148574"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854740"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
-
-
-
-**Важные API**
-
-- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Службы конечной точки связи (AEP) предоставляют программный контракт для служб, поддерживаемых устройством по определенному протоколу. У некоторых из этих служб имеются установленные идентификаторы, которые следует использовать при обращении к ним. Эти контракты определяются с помощью свойства **System.Devices.AepService.ServiceClassId**. В этом разделе перечислены некоторые распространенные идентификаторы класса службы AEP. Идентификаторы класса службы AEP также можно применять к протоколам с настраиваемыми идентификаторами класса.
 
 Разработчикам приложений следует использовать фильтры расширенного синтаксиса запросов (AQS) на основе идентификатора класса, чтобы ограничить количество запросов к службам AEP, которые они планируют использовать. Таким образом, результаты запросов будут поступать только от необходимых служб, что значительно увеличит производительность, время работы от батареи и качество обслуживания устройства. Например, приложение может применять эти идентификаторы класса службы, чтобы использовать устройство в качестве обработчика синхронизации Miracast или мультимедиа DLNA. Дополнительные сведения о взаимодействии устройств и служб см. в разделе [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
+> **Важные API**
+>
+> - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
+
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth и службы Bluetooth с низким энергопотреблением
 
 Службы Bluetooth используют один из двух протоколов — Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
 
--   Идентификатор протокола Bluetooth: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
--   Идентификатор протокола Bluetooth с низким энергопотреблением: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
+- Идентификатор протокола Bluetooth: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+- Идентификатор протокола Bluetooth с низким энергопотреблением: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 Протокол Bluetooth поддерживает ряд служб, в которых используется один и тот же базовый формат. Первые четыре цифры GUID меняются в зависимости от службы, но все идентификаторы GUID для Bluetooth заканчиваются на **0000-0000-1000-8000-00805F9B34FB**. Например, для службы RFCOMM используются цифры 0x0003 в начале, поэтому полный идентификатор будет иметь вид **00030000-0000-1000-8000-00805F9B34FB**. В таблице ниже приведены некоторые из основных служб Bluetooth.
 
-| Имя службы                         | Идентификатор GUID                                     |
+| Имя службы                         | Код GUID                                     |
 |--------------------------------------|------------------------------------------|
 | RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
 | GATT — Alert notification service (Служба уведомлений)    | **18110000-0000-1000-8000-00805F9B34FB** |
@@ -70,9 +68,7 @@ ms.locfileid: "82148574"
 | GATT — User data (Данные пользователя)                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT — Weight scale (Шкала масс)                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
-
-Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids), чтобы получить доступ к некоторым распространенным службам GATT.
+Более полный список доступных служб Bluetooth см. в [спецификации GATT Services](https://www.bluetooth.com/specifications/gatt/services/). Вы также можете использовать API [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids), чтобы получить доступ к некоторым распространенным службам GATT.
 
 ## <a name="custom-bluetooth-le-services"></a>Настраиваемые службы Bluetooth с низким энергопотреблением
 
@@ -86,7 +82,7 @@ ms.locfileid: "82148574"
 
 Как правило, имена всех служб UPnP хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы UPnP, определенные в Windows.
 
-| Имя службы                       | Идентификатор GUID                                      |
+| Имя службы                       | Код GUID                                      |
 |------------------------------------|-------------------------------------------|
 | Диспетчер соединений                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV transport (транспорт аудио/видео)                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
@@ -101,20 +97,16 @@ ms.locfileid: "82148574"
 | Content directory (каталог содержимого)                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
-
 ## <a name="wsd-services"></a>WSD services (службы WSD)
 
 Службы WSD используют следующий идентификатор протокола: {782232aa-a2f9-4993-971b-aedc551346b0}
 
 Как правило, имена всех служб WSD хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы WSD, определенные в Windows.
 
-| Имя службы | Идентификатор GUID                                     |
+| Имя службы | Код GUID                                     |
 |--------------|------------------------------------------|
 | Принтер      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | Сканер      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
-
- 
 
 ## <a name="aqs-sample"></a>Пример AQS
 
@@ -124,7 +116,3 @@ ms.locfileid: "82148574"
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
-
- 
-
- 
