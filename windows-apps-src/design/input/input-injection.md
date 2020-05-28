@@ -7,12 +7,12 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15305fecb562546bdeaf15c501890151c7dd29a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
+ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968039"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84124122"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Имитация ввода данных пользователем с помощью внедрения ввода
 
@@ -51,7 +51,7 @@ ms.locfileid: "82968039"
 
     У нас есть две области сетки (одна для мыши и другая для введенного сенсорного ввода), в каждой из которых по четыре кнопки.
       > [!NOTE] 
-      > Фону сетки должно быть присвоено значение (`Transparent`в данном случае), в противном случае не обнаруживаются события-указатели.
+      > Фону сетки должно быть присвоено значение ( `Transparent` в данном случае), в противном случае не обнаруживаются события-указатели.
 
     При обнаружении щелчков мышью в области ввода соответствующее событие сенсорного ввода добавляется в область внедрения ввода. Нажатия кнопок из внедренного ввода отображаются в области заголовка.
 
@@ -361,7 +361,7 @@ ms.locfileid: "82968039"
 
 4. Наконец, мы обрабатываем все перенаправленные события [щелкните](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) кнопки в области внедрение ввода и отображаем в пользовательском интерфейсе имя нажатой кнопки.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 ### <a name="topic-samples"></a>Примеры в статье
 
