@@ -6,14 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 2f4a76edfe5772665564cb8890ffcdf56205a2f7
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790995"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172596"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
+
+> [!WARNING]
+> Службы онлайн Maps могут быть недоступны в более старых версиях Windows 10. В следующих версиях MapControl может больше не отображать карты и интерфейсы API в пространстве имен Windows. Services. Maps может не возвращать результаты:
+> - Windows 10, версия 1607 и более ранние версии: службы карт будут недоступны по всему миру начиная с 2020 октября
+> - Windows 10, версия 1703 и более ранние версии: службы Map недоступны на [некоторых устройствах, продаваемых в Китае](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10)
 
 Ваше [приложение Universal Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) и службы карт в пространстве имен [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
 
