@@ -5,12 +5,12 @@ keywords: приложение uwp разработка потоки асинх�
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 233666294555c46b5ba8b1e558eb32d6aed84e2a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: f969c1c9ea5bb436ebad8d5e0410b6bf553885c0
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614966"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172606"
 ---
 # <a name="develop-uwp-apps"></a>Разработка приложений UWP
 
@@ -156,7 +156,7 @@ ms.locfileid: "80614966"
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Платформа</h3>
-        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT<</a><br/>
+        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a><br/>
         <a href="/windows/uwp/launch-resume/">Запуск, возобновление и фоновые задачи</a><br/>
         <a href="/windows/uwp/security/">Безопасность</a><br/>
         <a href="/windows/uwp/threading-async/">Потоки и асинхронное программирование</a><br/>
