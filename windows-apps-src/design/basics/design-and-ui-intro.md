@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233952"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151953"
 ---
 # <a name="introduction-to-windows-app-design"></a>Общие сведения о проектировании приложений для Windows
 
@@ -120,7 +120,7 @@ UWP можно использовать на разных устройствах
 
 Плитки отображаются в меню "Пуск" и при запуске приложения. Они позволяют узнать о содержимом приложения. Их ценность — это содержимое, а также то, насколько искусно и умело они были созданы.
 
-Приложения UWP поддерживают плитки четырех размеров (маленькие, средние, широкие и крупные), которые можно настроить, используя значок приложения и его свойства. Узнайте больше о проектировании плиток для приложений UWP в разделе [Руководство по работе с ресурсами плиток и значков](../shell/tiles-and-notifications/app-assets.md).
+Приложения UWP поддерживают плитки четырех размеров (маленькие, средние, широкие и крупные), которые можно настроить, используя значок приложения и его свойства. Узнайте больше о проектировании плиток для приложений UWP в разделе [Руководство по работе с ресурсами плиток и значков](../style/app-icons-and-logos.md).
     :::column-end:::
     :::column:::
 ![Плитки в меню "Пуск"](images/shell.svg)

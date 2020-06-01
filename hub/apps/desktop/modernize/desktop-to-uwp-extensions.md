@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209720"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854729"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Интеграция классического приложения с Windows 10 и UWP
 
@@ -1372,7 +1372,7 @@ ms.locfileid: "79209720"
 
 Это расширение может быть полезным, если требуется создать пользовательский интерфейс универсальной платформы Windows, работающий на всех устройствах, но при этом необходимо, чтобы компоненты вашего приложения Win32 продолжали работать с полным доверием.
 
-Создайте пакет приложения Windows для приложения Win32. Затем добавьте это расширение в файл пакета вашего приложения UWP. Это расширение указывает, что исполняемый файл необходимо запускать в пакете приложения для Windows.  Если вы хотите, чтобы происходил обмен данными между вашими приложениями UWP и Win32, для этого можно настроить одну или несколько [служб приложений](/windows/uwp/launch-resume/app-services.md). Подробнее об этом сценарии см. [здесь](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+Создайте пакет приложения Windows для приложения Win32. Затем добавьте это расширение в файл пакета вашего приложения UWP. Это расширение указывает, что исполняемый файл необходимо запускать в пакете приложения для Windows.  Если вы хотите, чтобы происходил обмен данными между вашими приложениями UWP и Win32, для этого можно настроить одну или несколько [служб приложений](/windows/uwp/launch-resume/app-services). Подробнее об этом сценарии см. [здесь](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
