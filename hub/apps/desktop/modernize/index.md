@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83579931"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257385"
 ---
 # <a name="modernize-your-desktop-apps"></a>Модернизация классических приложений
 
@@ -74,7 +74,7 @@ MSIX — это современный универсальный формат 
 * Упакуйте его в [пакет MSIX](/windows/msix/desktop/desktop-to-uwp-root). MSIX — это современный универсальный формат пакетов для упаковки любых приложений для Windows, WPF, Windows Forms и Win32. Он обеспечивает надежные возможности установки и обновления, управляемую модель безопасности с гибкой системой возможностей, поддержку Microsoft Store, возможности управления предприятием и множество пользовательских моделей распространения. Дополнительные сведения см. в статье об [упаковке классических приложений](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) в документации по MSIX.
 * Если вам не удается внедрить упаковку MSIX для развертывания своего классического приложения, в Windows 10 версии 2004 и выше вы сможете предоставить идентификатор пакета, создав *разреженный пакет MSIX*, который содержит только манифест пакета. Дополнительные сведения см. в разделе [Предоставление идентификаторов для неупакованных классических приложений](grant-identity-to-nonpackaged-apps.md).
 
-<a id="desktop-uwp-controls"/>
+<a id="desktop-uwp-controls"></a>
 
 ## <a name="uwp-controls-optimized-for-desktop-apps"></a>Элементы управления UWP, оптимизированные для классических приложений
 
