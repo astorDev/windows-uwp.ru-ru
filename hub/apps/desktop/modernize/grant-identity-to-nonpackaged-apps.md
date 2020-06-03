@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c90400c577110f326c693a6c06d28582033a86f6
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82107717"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110383"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Предоставление идентификаторов для неупакованных классических приложений
 
@@ -157,9 +157,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Регистрация разреженного пакета во время выполнения
 
-Чтобы предоставить идентификатор пакета для классического приложения, ваше приложение должно зарегистрировать разреженный пакет с использованием метода **AddPackageByUriAsync** класса [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Этот метод доступен в Windows 10 версии 2004 и более поздних. Вы можете добавить код в приложение, чтобы регистрировать разреженный пакет при первом запуске приложения или во время установки классического приложения (например, если вы используете MSI для установки классического приложения, этот код можно запускать по настраиваемому действию).
+Чтобы предоставить идентификатор пакета для классического приложения, ваше приложение должно зарегистрировать разреженный пакет с использованием метода [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) класса [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager). Этот метод доступен в Windows 10 версии 2004 и более поздних. Вы можете добавить код в приложение, чтобы регистрировать разреженный пакет при первом запуске приложения или во время установки классического приложения (например, если вы используете MSI для установки классического приложения, этот код можно запускать по настраиваемому действию).
 
-В следующем примере показано, как зарегистрировать разреженный пакет. Этот код создает объект **AddPackageOptions**, содержащий путь к внешнему расположению, на которое манифест пакета может ссылаться, чтобы указать содержимое вне пакета. Затем код передает этот объект в метод **AddPackageByUriAsync** для регистрации разреженного пакета. Этот метод также получает расположение подписанного разреженного пакета в виде универсального кода ресурса (URI). Более полный пример см. в файле кода `StartUp.cs` в связанном [примере](#sample).
+В следующем примере показано, как зарегистрировать разреженный пакет. Этот код создает объект [**AddPackageOptions**](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackageoptions), содержащий путь к внешнему расположению, на которое манифест пакета может ссылаться, чтобы указать содержимое вне пакета. Затем код передает этот объект в метод **AddPackageByUriAsync** для регистрации разреженного пакета. Этот метод также получает расположение подписанного разреженного пакета в виде универсального кода ресурса (URI). Более полный пример см. в файле кода `StartUp.cs` в связанном [примере](#sample).
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)

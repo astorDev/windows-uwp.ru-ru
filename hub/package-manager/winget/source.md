@@ -6,16 +6,19 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f20021a0fa33da862e2361be60b730b041b49
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824975"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166253"
 ---
 # <a name="source-command-winget"></a>Команда source (winget)
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
+
+> [!NOTE]
+> Команда **source** сейчас предназначена только для внутреннего использования. Дополнительные источники пока не поддерживаются.
 
 Команда **source** средства [winget](index.md) позволяет управлять репозиториями, к которым обращается Диспетчер пакетов Windows. С помощью команды **source** можно **добавить**, **удалить**, **обновить** репозитории или **вывести список** репозиториев.
 
@@ -70,22 +73,24 @@ ms.locfileid: "83824975"
 
 | Type  | Описание |
 |--------------|-------------|
-| **Microsoft.PreIndexed.Package** | Тип источника \<по умолчанию>. |
+| **Microsoft.PreIndexed.Package** | Тип источника \<default>. |
 
 ## <a name="list"></a>list
 
 Вложенная команда **list** перечисляет активные в данный момент источники. Эта вложенная команда также предоставляет подробные сведения об определенном источнике.
 
-Использование: `winget list [-n, --name] \<name>`
+Использование: `winget source list [-n, --name] \<name>`
 
 ### <a name="list-all"></a>list all
 
 Вложенная команда **list** выводит полный список поддерживаемых источников. Например:
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### <a name="list-source-details"></a>list source details
@@ -111,7 +116,7 @@ ms.locfileid: "83824975"
 
 Вложенная команда **update** принудительно начинает обновление отдельного источника или всех источников.
 
-Использование: `winget update [-n, --name] \<name>`
+Использование: `winget source update [-n, --name] \<name>`
 
 ### <a name="update-all"></a>update all
 
@@ -119,7 +124,7 @@ ms.locfileid: "83824975"
 
 ### <a name="update-source"></a>Источник обновления
 
-Вложенная команда **update** с параметром **--name** может обращаться к отдельному источнику и выполнить его обновление. Например: `C:\winget update --name contoso`
+Вложенная команда **update** с параметром **--name** может обращаться к отдельному источнику и выполнить его обновление. Например: `C:\winget source update --name contoso`
 
 ## <a name="remove"></a>удалить
 

@@ -6,12 +6,12 @@ ms.author: denelon
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1a8ab3c6a2cc697729fb5551e686a465bf6a0c
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83825125"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865031"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Отправка манифеста в репозиторий
 
@@ -93,7 +93,7 @@ winget validate \<manifest-file>
 
 3. Чтобы отправить изменения в удаленный репозиторий, используйте команду `push`.
     ```CMD
-    `git push`
+    git push
     ```
 
 ### <a name="step-5-create-a-pull-request"></a>Шаг 5. Создание запроса на включение внесенных изменений
@@ -104,7 +104,7 @@ winget validate \<manifest-file>
 
 ## <a name="validation-process"></a>Процесс проверки
 
-При создании запроса на включение внесенных изменений запускается процесс автоматизации, который проверяет манифест и обрабатывает запрос. Мы добавляем метки к запросу на включение внесенных изменений, чтобы вы могли отслеживать ход его выполнения.
+При создании запроса на включение внесенных изменений запускается процесс автоматизации, который проверяет манифест и обрабатывает запрос. Мы добавляем метки к запросу на вытягивание, чтобы вы могли отслеживать ход его выполнения.
 
 ### <a name="submission-expectations"></a>Ожидаемые характеристики отправки
 
