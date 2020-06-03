@@ -2,18 +2,22 @@
 Description: Ознакомьтесь с ответами на некоторые основные вопросы разработчиков о Windows 10 раз.
 title: Вопросы и ответы для разработчиков Windows 10 раз
 ms.topic: article
-ms.date: 04/1/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: d168faf16bdd8a88e0cd4c52c680781061bfcf0d
-ms.sourcegitcommit: dadbc20564e4b0c0ecbab5fd5649dbf8ab08095a
+ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
+ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80581958"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84318240"
 ---
 # <a name="windows-10x-developer-faq"></a>Вопросы и ответы для разработчиков Windows 10 раз
+
+> [!IMPORTANT]
+> Недавно мы объявили о некоторых изменениях в определении приоритетов для Windows 10 и Windows 10 раз.
+> Эти объявления включают изменения приоритетов форм 10 раз Windows. [Дополнительные сведения см. здесь.](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
 Windows 10 раз — это линейка продуктов в семействе Windows, оптимизированных для использования на устройствах с двумя экранами. Как разработчик, вы можете достичь более широкой аудитории, оптимизируя свое приложение для Windows 10 раз, используя преимущества новых функций, предназначенных для мобильных и двухпроцессорных аудиторий, сохраняя при этом широкие возможности Windows 10 и широкую поддержку настольных систем. [Мы объявили о Windows 10 раз в конце 2019](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97), и мы надеемся выпустить его в конце 2020.
 
