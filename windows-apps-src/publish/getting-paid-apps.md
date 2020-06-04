@@ -2,22 +2,25 @@
 Description: Узнайте о получении платежей для приложений, дополнительных компонентов (продуктов в приложении) и прибыли на рекламу.
 title: Получение платежей
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 03/05/2019
+ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
-ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259997"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334229"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Ниже приведены некоторые важные сведения о получении платежей для приложений, надстроек и заработок в рекламе.
 
 > [!IMPORTANT]
 > Прежде чем вы сможете получить деньги из продаж приложений в Microsoft Store, необходимо [настроить счет выплата и заполнить необходимые налоговые формы](setting-up-your-payout-account-and-tax-forms.md).
+
+> [!NOTE]
+> Если вы ищете поддержку по поводу выплат, включая настройку счетов выплата, отсутствие выпусков, выдача выпусков или что-либо еще, обратитесь в [службу поддержки.](https://developer.microsoft.com/windows/support)
 
 ## <a name="store-fee"></a>Комиссия Магазина
 
@@ -28,7 +31,7 @@ ms.locfileid: "74259997"
 Комиссия Store применяется ко всем продажам, проводимым через Microsoft Store, в том числе к надстройкам.
 
 
-## <a name="price-tiers"></a>Ценовые категории
+## <a name="price-tiers"></a>Ценовые уровни
 
 Ценовые категории, которые вы выбираете, устанавливают [цену продажи](set-and-schedule-app-pricing.md#base-price) во всех странах, где вы хотите распространять приложение. Можно также использовать дополнительные функции ценообразования, например [выбор разных цен для различных рынков](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) или [выставление приложения на продажу](put-apps-and-add-ons-on-sale.md).
 
