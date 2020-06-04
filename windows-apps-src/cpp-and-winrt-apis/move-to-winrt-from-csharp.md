@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 804c22b782dada9c0bde3c379ebfe5a37f1dcff9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
+ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759947"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172835"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Переход на C++/WinRT с C#
 
@@ -27,7 +27,7 @@ ms.locfileid: "81759947"
 - [**Перенос языковой проекции**](#port-the-language-projection). Среда выполнения Windows (WinRT) *проецируется* на различные языки программирования. Каждая из этих языковых проекций разработана так, чтобы быть идиоматической для рассматриваемых языков программирования. Для C# некоторые типы среды выполнения Windows проецируются как типы .NET. Например, вы будете преобразовывать [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) обратно в [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1). Кроме того, в C# некоторые операции среды выполнения Windows проецируются как удобные функции языка C#. В качестве примера в C# для регистрации делегатов обработки событий вы используете синтаксис оператора `+=`. Поэтому вы будете преобразовывать языковые функции, например, обратно в основную выполняемую операцию (в этом примере — регистрация событий).
 - [**Перенос синтаксиса языка**](#port-language-syntax) Многие из этих изменений являются простыми механическими преобразованиями, заменяющими один символ на другой. Например, изменение точки (`.`) на двойное двоеточие (`::`).
 - [**Перенос процедуры языка**](#port-language-procedure). Некоторые из них могут быть простыми и повторяющимися изменениями (например, с `myObject.MyProperty` на `myObject.MyProperty()`). Другие нуждаются в более глубоких изменениях (например, перенос процедуры, которая включает использование **System.Text.StringBuilder**, в процедуру, использующую **std::wostringstream**).
-- [**Перенос задач, относящихся к C++/WinRT**](#porting-tasks-that-are-specific-to-cwinrt). Некоторые сведения среды выполнения Windows обрабатываются с помощью C# в фоновом режиме. В C++/WinRT эти сведения обрабатываются явно. В качестве примера можно использовать файл `.idl` для определения классов среды выполнения.
+- [**Задачи, связанные с переносом в среде C++/WinRT**](#porting-related-tasks-that-are-specific-to-cwinrt). Некоторые сведения среды выполнения Windows обрабатываются с помощью C# в фоновом режиме. В C++/WinRT эти сведения обрабатываются явно. В качестве примера можно использовать файл `.idl` для определения классов среды выполнения.
 
 Оставшаяся часть этого раздела структурирована в соответствии с этой классификацией.
 
@@ -88,6 +88,21 @@ namespace winrt::MyProject::implementation
     }
 };
 ```
+
+Последний сценарий заключается в том, что переносимый проект C# *привязан* к обработчику событий из разметки (дополнительные сведения об этом сценарии см. в статье о [применении функций в x:Bind](/windows/uwp/data-binding/function-bindings)).
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+Можно просто сменить такую разметку на более простой вариант `Click="OpenButton_Click"`. Но если вам это важно, разметку можно сохранить без изменений. Чтобы нормально поддерживать такой вариант, нужно лишь объявить в IDL обработчик событий.
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> Объявите функцию как `void`, даже если она *реализована* по шаблону [выполнил и забыл](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
 
 ## <a name="port-language-syntax"></a>Перенос синтаксиса языка
 
@@ -157,7 +172,7 @@ namespace winrt::MyProject::implementation
 |Преобразование типов (вызов при сбое)|`(MyType)v`|`v.as<MyType>()`|[Перенос метода **Footer_Click**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click)|
 |Преобразование типов (NULL при сбое)|`v as MyType`|`v.try_as<MyType>()`|[Перенос метода **PasteButton_Click**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
 |Элементы XAML с x:Name — это свойства|`MyNamedElement`|`MyNamedElement()`|[Перенос конструктора **Current** и **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|Переключение в поток пользовательского интерфейса|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** или [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Перенос методов **NotifyUser**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser) и [HistoryAndRoaming **** ](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#historyandroaming)|
+|Переключение в поток пользовательского интерфейса|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** или [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Перенос методов **NotifyUser**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser) и [**HistoryAndRoaming**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#historyandroaming)|
 
 В следующих разделах приводятся более подробные сведения о некоторых элементах в таблице.
 
@@ -230,7 +245,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 Смотрите также раздел [Перенос метода **BuildClipboardFormatsOutputString**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring) и [Перенос метода **DisplayChangedFormats**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)
 
-## <a name="porting-tasks-that-are-specific-to-cwinrt"></a>Перенос задач, относящихся к C++/WinRT
+## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>Задачи, связанные с переносом в среде C++/WinRT
 
 ### <a name="define-your-runtime-classes-in-idl"></a>Определение классов среды выполнения в IDL
 
@@ -303,13 +318,13 @@ C# представляет строку среды выполнения Windows
 
 В проекте C# вы можете использовать закрытые члены и именованные элементы из разметки XAML. Но в C++/WinRT все сущности, используемые при применении [**расширения разметки {x:Bind}** ](/windows/uwp/xaml-platform/x-bind-markup-extension), XAML должны быть общедоступными в IDL.
 
-Кроме того, привязка к логическому значению приводит к отображению `true` или `false` в C#, тогда как в C++/WinRT отображается **Windows.Foundation.IReference`1\<логическое_значение\>** .
+Кроме того, привязка к логическому значению приводит к отображению `true` или `false` в C#, тогда как в C++/WinRT отображается **Windows.Foundation.IReference`1\<Boolean\>** .
 
 Дополнительные сведения и примеры кода см. в разделе [Использование объектов из разметки](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
 
 ### <a name="making-a-data-source-available-to-xaml-markup"></a>Предоставление разметке XAML доступа к источнику данных
 
-В C++/WinRT версии 2.0.190530.8 и последующих [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) создает наблюдаемый вектор, который поддерживает как **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** , так и **IObservableVector\<IInspectable\>** . Пример см. в разделе [Перенос свойства **Scenarios**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)
+В C++/WinRT версии 2.0.190530.8 и более поздних [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) создает наблюдаемый вектор, который поддерживает как **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** , так и **IObservableVector\<IInspectable\>** . Пример см. в разделе [Перенос свойства **Scenarios**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)
 
 Вы можете создать **файл Midl (.idl)** аналогичным образом (см. также раздел о [разделении классов среды выполнения на файлы Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)).
 
@@ -368,9 +383,9 @@ private:
 - **IVector\<IInspectable\>**
 - **IBindableIterable** (будет выполнять итерацию и сохранять элементы в закрытую коллекцию)
 
-Универсальный интерфейс, такой как **IVector\<T\>** , не может быть обнаружен во время выполнения. У каждого интерфейса **IVector\<T\>** есть свой идентификатор интерфейса (IID), который является функцией **T**. Разработчики могут расширять набор **T** произвольным образом, поэтому очевидно, что коду привязки XAML будет неизвестен весь набор для выполнения запросов к нему. Это ограничение не является проблемой в C#, так как каждый объект CLR, реализующий **IEnumerable\<T\>** , автоматически реализует **IEnumerable**. На уровне ABI это означает, что каждый объект, реализующий **IObservableVector\<T\>** , автоматически реализует **IObservableVector\<IInspectable\>** .
+Универсальный интерфейс, например **IVector\<T\>** , не может обнаруживаться во время выполнения. У каждого интерфейса **IVector\<T\>** есть свой идентификатор интерфейса (IID), который является функцией **T**. Разработчики могут расширять набор **T** произвольным образом, поэтому очевидно, что коду привязки XAML будет неизвестен весь набор для выполнения запросов к нему. Это ограничение не приносит проблем в C#, так как каждый объект CLR, реализующий **IEnumerable\<T\>** , автоматически реализует и **IEnumerable**. На уровне ABI это означает, что каждый объект, реализующий **IObservableVector\<T\>** , автоматически реализует **IObservableVector\<IInspectable\>** .
 
-В C++/WinRT такая возможность не предусмотрена. Если класс среды выполнения C++/WinRT реализует **IObservableVector\<T\>** , нельзя ожидать предоставления **IObservableVector\<IInspectable\>** .
+В C++/WinRT такая возможность не предусмотрена. Если класс среды выполнения C++/WinRT реализует **IObservableVector\<T\>** , нельзя ожидать предоставления реализации **IObservableVector\<IInspectable\>** .
 
 Следовательно, предыдущий пример должен выглядеть так.
 
