@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970749"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262775"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Размеры экрана и точки останова
 
@@ -98,8 +98,3 @@ ms.locfileid: "82970749"
 - Используйте до трех столбцов или регионов.
 - Отобразите поле поиска.
 - Переведите [панель навигации](../controls-and-patterns/navigationview.md) в режим стыковки, чтобы она всегда отображалась.
-
->[!TIP] 
-> С помощью [**Continuum для телефонов**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN) пользователи могут подключать к совместимым мобильным устройствам с Windows 10 монитор, мышь и клавиатуру, превращая телефон в ноутбук. Помните об этой новой возможности при разработке приложений для конкретных точек прерывания — мобильный телефон не всегда относится к классу небольших размеров.
-
-
