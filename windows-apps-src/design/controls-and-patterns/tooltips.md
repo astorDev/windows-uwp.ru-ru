@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b0ca87e86d487708a55e6aa75bf106c40c384
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 621b687e54cfba55bfd176d4fe0072e47cf79183
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970559"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437156"
 ---
 # <a name="tooltips"></a>Подсказки
 
@@ -76,9 +76,9 @@ ms.locfileid: "82970559"
 </tr>
 </table>
 
-Подсказка в приложении "Карты Bing".
+Подсказка в приложении "Карты Windows".
 
-![Подсказка в приложении "Карты Bing".](images/control-examples/tool-tip-maps.png)
+![Подсказка в приложении "Карты Windows"](images/control-examples/tool-tip-maps.png)
 
 ## <a name="create-a-tooltip"></a>Создание подсказки
 

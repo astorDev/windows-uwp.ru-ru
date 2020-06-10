@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, проекция, перенос, миграция, C#, пример, буфер обмена, пример, исследование
 ms.localizationpriority: medium
-ms.openlocfilehash: de19d4624cbcf6f102b2eb2067c9f0ff9c583f0b
-ms.sourcegitcommit: 29daa3959304d748e4dec4e6f8e774fade65aa8d
+ms.openlocfilehash: 660eac0cb2b0679815d628f60b77bc5ac01d042f
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851608"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334239"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Перенос примера буфера обмена в C++/WinRT из C#&mdash; пример использования
 
@@ -32,10 +32,11 @@ ms.locfileid: "82851608"
 
 ## <a name="download-and-test-the-clipboard-sample"></a>Загрузка и тестирование примера буфера обмена
 
-Перейдите на веб-страницу [примера буфера обмена](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/) и щелкните **Скачать ZIP-файл**. Распакуйте скачанный файл и взгляните на структуру папок.
+Перейдите на веб-страницу [примера буфера обмена](/samples/microsoft/windows-universal-samples/clipboard/) и щелкните **Скачать ZIP-файл**. Распакуйте скачанный файл и взгляните на структуру папок.
 
-- Версия C# исходного кода примера содержится в папке с именем `cs`. Другие файлы, используемые в версии C#, можно найти в папках `shared` и `SharedContent`.
-- Версию C++/WinRT образца исходного кода можно найти в папке [cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) в [репозитории примера](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard) на сайте GitHub.
+- Версия C# исходного кода примера содержится в папке с именем `cs`.
+- Версия C++/WinRT исходного кода примера содержится в папке с именем `cppwinrt`.
+- Другие файлы, которые используются как версией на C#, так и версией на C++/WinRT, можно найти в папках `shared` и `SharedContent`.
 
 Пошаговое руководство в этом разделе показывает, как можно повторно создать версию C++/WinRT примера буфера обмена путем ее переноса из исходного кода C#. Это позволит увидеть, как можно перенести собственные проекты C# в C++/WinRT.
 
@@ -779,7 +780,7 @@ using namespace Windows::UI::Notifications;
 
 Очень распространенная причина ошибок компилятора/компоновщика — забыть включить нужные файлы заголовков пространства имен Windows C++/WinRT. Дополнительные сведения об одной из возможных ошибок см. в разделе [Почему компоновщик отображает сообщение об ошибке "LNK2019: неразрешенный внешний символ?](/windows/uwp/cpp-and-winrt-apis/faq#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
 
-Если вы хотите ознакомиться с пошаговым руководством и перенести **DisplayToast** самостоятельно, вы можете сравнить ваши результаты с кодом в C++/WinRT версии загруженного вами примера исходного кода Clipboard (он в [`Windows-universal-samples/Samples/Clipboard/cppwinrt`](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)`/Clipboard.sln`).
+Если вы хотите ознакомиться с пошаговым руководством и перенести **DisplayToast** самостоятельно, вы можете сравнить ваши результаты с кодом в C++/WinRT версии загруженного вами архива с [примером исходного кода Clipboard](/samples/microsoft/windows-universal-samples/clipboard/).
 
 #### <a name="enableclipboardcontentchangednotifications"></a>**EnableClipboardContentChangedNotifications**
 
@@ -1048,7 +1049,7 @@ void SampleState::DisplayChangedFormats()
 
 Проектирование версии C++/WinRT, описанной выше, может быть неэффективным. Сначала мы создадим **std::wostringstream**. Однако мы также вызываем метод **BuildClipboardFormatsOutputString** (который был перенесен ранее). Этот метод создает собственный **std::wostringstream**. Он превращает свой поток в **winrt::hstring** и возвращает его. Мы вызываем функцию [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function), чтобы она возвратила **hstring** обратно в строку в стиле C, а затем вставила ее в наш поток. Было бы более эффективно создать только один **std::wostringstream** и передать (ссылку на него), чтобы методы могли вставлять строки в него напрямую.
 
-Это то, что мы делаем в версии C++/WinRT примера [исходного кода](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) Clipboard. В этом исходном коде есть новый частный статический метод с именем **SampleState::AddClipboardFormatsOutputString**, который принимает и преобразует ссылку в поток вывода. А затем методы **SampleState::DisplayChangedFormats** и **SampleState::BuildClipboardFormatsOutputString**, чтобы вызвать этот новый метод. Он функционально эквивалентен перечислениям кода в этом разделе, но более эффективен.
+Это то, что мы делаем в версии C++/WinRT примера [исходного кода](/samples/microsoft/windows-universal-samples/clipboard/) Clipboard (в загруженном вами ZIP-архиве). В этом исходном коде есть новый частный статический метод с именем **SampleState::AddClipboardFormatsOutputString**, который принимает и преобразует ссылку в поток вывода. А затем методы **SampleState::DisplayChangedFormats** и **SampleState::BuildClipboardFormatsOutputString**, чтобы вызвать этот новый метод. Он функционально эквивалентен перечислениям кода в этом разделе, но более эффективен.
 
 #### <a name="footer_click"></a>**Footer_Click**
 
@@ -1104,7 +1105,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 
 #### <a name="handleclipboardchanged"></a>**HandleClipboardChanged**
 
-В переносе этого метода нет ничего нового. Вы можете сравнить версии C# и C++/WinRT в образце исходного кода.
+В переносе этого метода нет ничего нового. Вы можете сравнить версии [примера исходного кода Clipboard](/samples/microsoft/windows-universal-samples/clipboard/) на C# и C++/WinRT в соответствующем ZIP-архиве, который вы загрузили.
 
 #### <a name="onclipboardchanged-and-onwindowactivated"></a>**OnClipboardChanged** и **OnWindowActivated**
 

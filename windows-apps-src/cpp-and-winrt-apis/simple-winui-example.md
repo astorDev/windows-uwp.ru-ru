@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8242055e3c448e2720226859f2ea10e1ae54794f
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79200982"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437138"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT
 
@@ -49,26 +49,28 @@ ms.locfileid: "79200982"
 </muxc:NavigationView>
 ```
 
-## <a name="edit-mainpagecpp-and-h-as-necessary"></a>При необходимости измените MainPage.cpp и .h.
+## <a name="edit-pchh-as-necessary"></a>Внесение изменений в файл pch.h
+
+Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) и создаете проект, средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Если вы выполнили инструкции из руководства, теперь у вас должна быть папка `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Чтобы поместить эти файлы с заголовками в свой проект и чтобы ссылки на эти новые типы работали, можно перейти к предварительно откомпилированному файлу заголовка (обычно `pch.h`) и включить их в файл проекта.
+
+Включите только заголовки для типов, которые используете. В примере ниже включены все созданные файлы заголовков для пакета **Microsoft.UI.Xaml**.
+
+```cppwinrt
+// pch.h
+...
+#include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+#include "winrt/Microsoft.UI.Xaml.Controls.h"
+#include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+#include "winrt/Microsoft.UI.Xaml.Media.h"
+#include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+...
+```
+
+## <a name="edit-mainpagecpp"></a>Внесение изменений в файл MainPage.cpp
 
 В `MainPage.cpp` удалите код внутри реализации **MainPage::ClickHandler**, так как *myButton* больше не находится в разметке XAML.
 
-В `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже.
-
-```cppwinrt
-#include "MainPage.g.h"
-#include "winrt/Microsoft.UI.Xaml.Controls.h"
-#include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
-```
-
-Теперь создайте проект.
-
-Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) и создаете проект, средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Если вы выполнили инструкции из руководства, теперь у вас должна быть папка `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. В результате изменений, внесенных в `MainPage.h` выше, эти файлы заголовков проекции для WinUI становятся видимыми для **MainPage**. Это необходимо для разрешения ссылки на тип **Microsoft::UI::Xaml::Controls::NavigationView** в **MainPage**.
-
-> [!IMPORTANT]
-> В реальном приложении необходимо, чтобы файлы заголовков проекции WinUI были видимыми для *всех* страниц XAML в проекте, а не только для **MainPage**. В этом случае необходимо переместить включения двух файлов заголовков проекции WinUI в файл предкомпилированного заголовка (обычно это `pch.h`). Затем в любой части проекта будут разрешены ссылки на типы в пакете NuGet. Для минимального одностраничного приложения, создаваемого в этом пошаговом руководстве, не нужно использовать `pch.h`. Подходящим вариантом является включение заголовков в `MainPage.h`.
-
-Теперь вы можете запустить проект.
+Теперь выполните сборку и запустите проект.
 
 ![Снимок экрана: простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT](images/winui.png)
 
