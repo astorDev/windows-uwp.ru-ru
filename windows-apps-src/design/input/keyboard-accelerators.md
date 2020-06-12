@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2509743bf9e847fb740816e3552f4172cf644c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
+ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970709"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716042"
 ---
 # <a name="keyboard-accelerators"></a>Сочетания клавиш
 
@@ -331,12 +331,12 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Это не всегда возможно из-за различий в возможностях приложений.
 
-| **Изменение** | **Распространенный ускоритель клавиатуры** |
+| **Редактирование** | **Распространенный ускоритель клавиатуры** |
 | ------------- | ----------------------------------- |
 | Открыть режим редактирования | CTRL + E |
 | Выбрать все элементы в элементе управления или окне с фокусом | CTRL+A |
 | Найти и заменить | CTRL+H |
-| Отмена | CTRL+Z |
+| Отменить | CTRL+Z |
 | Повторить | CTRL+Y |
 | Удалить выделение и скопировать его в буфер обмена | CTRL + X |
 | Скопировать выделение в буфер обмена | CTRL+C, CTRL+INSERT |
@@ -347,9 +347,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | Добавить дополнительный элемент | CTRL+SHIFT+N |
 | Удалить выбранный элемент (с возможностью отмены) | DEL, CTRL+D |
 | Удалить выбранный элемент (без возможности отмены) | SHIFT+DEL |
-| Полужирный | CTRL+B |
-| Подчеркнутый | CTRL+U |
-| Italic | CTRL+I |
+| Жирный | CTRL+B |
+| Underline | CTRL+U |
+| Курсив | Ctrl+I |
 
 | **Навигация** | |
 | ------------- | ----------------------------------- |
@@ -358,12 +358,12 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 | **Другие действия** | |
 | ------------- | ----------------------------------- |
-| Добавить избранное | CTRL + D | 
-| Обновление | F5 или CTRL+R | 
+| Добавить избранное | Ctrl+D | 
+| Обновить | F5 или CTRL+R | 
 | Увеличить | CTRL++ | 
 | Мельче | CTRL+- | 
 | Масштаб по умолчанию | CTRL+0 | 
-| Сохранять | CTRL + S | 
+| Сохранить | CTRL + S | 
 | Закрыть | CTRL + W | 
 | Оператор print | CTRL + P | 
 
@@ -371,7 +371,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="usability-affordances-for-keyboard-accelerators"></a>Повышение удобства использования ускорителей клавиатуры
 
-### <a name="tooltips"></a>Всплывающие подсказки
+### <a name="tooltips"></a>Подсказки
 
 Поскольку сочетания клавиш не обычно описаны непосредственно в пользовательском интерфейсе приложения Windows, можно улучшить обнаружение с помощью [подсказок](../controls-and-patterns/tooltips.md), которые отображаются автоматически при перемещении фокуса на, нажатия и удержании или наведении указателя мыши на элемент управления. Всплывающая подсказка помогает определить, есть ли у элемента управления связанные с ним ускорители клавиатуры, и если они есть — указывает, какая для этого используется клавиша ускорителя клавиатуры.
 
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Мы рекомендуем локализовывать все ускорители клавиатуры. Это можно сделать с помощью стандартного файла ресурсов UWP (.resw) и атрибута x:Uid в объявлениях XAML. В этом примере среды выполнения Windows автоматически загружает ресурсы.
 
-![Локализация сочетания клавиш с помощью сочетания клавиш файл](images/accelerators/accelerators_localization.png)
-ресурсов UWP***локализация с помощью файла ресурсов UWP***
+![Локализация сочетания клавиш с помощью сочетания клавиш файл ресурсов UWP ](images/accelerators/accelerators_localization.png)
+ ***локализация с помощью файла ресурсов UWP***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -602,8 +602,8 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    accelerator.Invoked += handler;
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
@@ -633,11 +633,11 @@ public class MyListView : ListView
 }
 ```
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 
-- [Взаимодействие с клавиатурой](keyboard-interactions.md)
+- [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
 - [Ключи доступа](access-keys.md)
 
 ### <a name="samples"></a>Примеры
 
-- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [Коллекция элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
