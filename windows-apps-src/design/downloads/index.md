@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257474"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746784"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Наборы средств для проектирования и примеры приложений для Windows
 
@@ -45,22 +45,6 @@ WinUI 2.4, май 2020 г.<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![изображение имиджевого баннера](images/adobe-illustrator.png)
-<b>Набор средств Adobe Illustrator</b><br>
-Версия 1806, июнь 2018 г.<br>
-<a href="https://aka.ms/adobeillustratortoolkit">Скачать</a>
-    :::column-end:::
-    :::column:::
-![изображение имиджевого баннера](images/adobe-photoshop.png)
-<b>Набор средств Adobe Photoshop</b><br>
-Версия 1705, май 2017 г.<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">Скачать</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## <a name="developer-toolkits-and-libraries"></a>Наборы средств разработчика и библиотеки
 

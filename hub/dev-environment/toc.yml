@@ -1,36 +1,6 @@
 - name: Среда разработки Windows
   href: index.yml
   items:
-    - name: Диспетчер пакетов Windows
-      items:
-        - name: Обзор
-          href: ../package-manager/index.md
-        - name: Использование средства winget
-          items:
-            - name: Обзор
-              href: ../package-manager/winget/index.md
-            - name: Команда hash
-              href: ../package-manager/winget/hash.md
-            - name: Команда help
-              href: ../package-manager/winget/help.md
-            - name: Команда install
-              href: ../package-manager/winget/install.md
-            - name: Команда search
-              href: ../package-manager/winget/search.md
-            - name: Команда show
-              href: ../package-manager/winget/show.md
-            - name: Команда source
-              href: ../package-manager/winget/source.md
-            - name: Команда validate
-              href: ../package-manager/winget/validate.md
-        - name: Отправка пакетов
-          items:
-            - name: Обзор
-              href: ../package-manager/package/index.md
-            - name: Создание манифеста пакета
-              href: ../package-manager/package/manifest.md
-            - name: Отправка манифеста в репозиторий
-              href: ../package-manager/package/repository.md
     - name: Разработка с использованием Python
       items:
         - name: Обзор
@@ -83,6 +53,40 @@
           href: ../android/defender-settings.md
         - name: Тестирование на устройстве или в эмуляторе
           href: ../android/emulator.md
+    - name: Диспетчер пакетов Windows
+      items:
+        - name: Обзор
+          href: ../package-manager/index.md
+        - name: Использование средства winget
+          items:
+            - name: Обзор
+              href: ../package-manager/winget/index.md
+            - name: Команда hash
+              href: ../package-manager/winget/hash.md
+            - name: Команда help
+              href: ../package-manager/winget/help.md
+            - name: Команда install
+              href: ../package-manager/winget/install.md
+            - name: Команда search
+              href: ../package-manager/winget/search.md
+            - name: Команда show
+              href: ../package-manager/winget/show.md
+            - name: Команда source
+              href: ../package-manager/winget/source.md
+            - name: Команда validate
+              href: ../package-manager/winget/validate.md
+        - name: Отправка пакетов
+          items:
+            - name: Обзор
+              href: ../package-manager/package/index.md
+            - name: Создание манифеста пакета
+              href: ../package-manager/package/manifest.md
+            - name: Отправка манифеста в репозиторий
+              href: ../package-manager/package/repository.md
+    - name: Подсистема Windows для Linux
+      href: 'https://docs.microsoft.com/windows/wsl/'
+    - name: Терминал Windows
+      href: 'https://docs.microsoft.com/windows/terminal/'
     - name: Руководство по использованию Mac в Windows
       items:
         - name: Изменение среды разработки
@@ -95,21 +99,3 @@
           href: 'mac-to-windows.md#terminal-and-shell'
         - name: Приложения и служебные программы
           href: 'mac-to-windows.md#apps-and-utilities'
-    - name: Подсистема Windows для Linux
-      items:
-        - name: Общие сведения о WSL
-          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
-        - name: "Общие сведения о WSL\_2"
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
-        - name: Сравнение WSL 1 и WSL 2
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
-        - name: Учетные записи пользователей и разрешения
-          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
-    - name: Терминал Windows
-      items:
-        - name: Обзор
-          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
-        - name: Руководство пользователя
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
-        - name: Пользовательские параметры
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'

@@ -4,26 +4,26 @@ description: Приложение можно зарегистрировать в
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ms.date: 07/05/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 079746d3c1619fe940ba243410f0247b7b850ed9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4377db57b3cd713bae8f9c80a0116d016722be19
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259459"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756540"
 ---
 # <a name="handle-file-activation"></a>Обработка активации файла
 
 **Важные API**
 
--   [**Windows. ApplicationModel. Activation. Филеактиватедевентаргс**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
--   [**Windows. UI. XAML. Application. Онфилеактиватед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 Приложение может зарегистрироваться, чтобы стать обработчиком по умолчанию для определенного типа файлов. Это касается как классических приложений для Windows, так и приложений универсальной платформы Windows (UWP). Если пользователь выбирает ваше приложение в качестве стандартного обработчика для какого-либо типа файлов, оно будет активироваться при запуске файлов этого типа.
 
@@ -31,7 +31,7 @@ ms.locfileid: "74259459"
 
 Далее показано, как зарегистрировать собственный тип файлов (.alsdk) и как активировать приложение при запуске ALSDK-файла пользователем.
 
-> **Примечание** .  в приложениях UWP определенные коды URI и расширения файлов зарезервированы для использования встроенными приложениями и операционной системой. Попытки регистрации приложения с зарезервированным URI или расширением файла будут проигнорированы. Дополнительные сведения об этом см. в статье [Зарезервированные файлы и имена схем URI](reserved-uri-scheme-names.md).
+> **Примечание**    . В приложениях UWP определенные URI и расширения файлов зарезервированы для использования встроенными приложениями и операционной системой. Попытки регистрации приложения с зарезервированным URI или расширением файла будут проигнорированы. Дополнительные сведения об этом см. в статье [Зарезервированные файлы и имена схем URI](reserved-uri-scheme-names.md).
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Шаг 1. Указание точки расширения в манифесте пакета
 
@@ -44,15 +44,15 @@ ms.locfileid: "74259459"
 | Поле | Описание |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Отображаемое имя** | Укажите отображаемое имя для группы типов файлов. Это отображаемое имя используется для определения типа файла в разделе [Выбор программ по умолчанию](https://docs.microsoft.com/windows/desktop/shell/default-programs) на **панели управления**. |
-| **Совместимость** | Укажите логотип, по которому можно будет определить тип файла на рабочем столе и в разделе [Выбор программ по умолчанию](https://docs.microsoft.com/windows/desktop/shell/default-programs) на **панели управления**. Если логотип не указан, используется мелкий логотип приложения. |
-| **Информационный Совет** | Укажите [подсказку](https://docs.microsoft.com/windows/desktop/shell/fa-progids) для группы типов файлов. Эта подсказка отображается, когда пользователь наводит указатель мыши на значок файла этого типа. |
-| **Название** | Выберите имя для группы типов файлов, которые имеют общие отображаемое имя, логотип, подсказку и флаги редактирования. Выберите для группы такое имя, которое будет сохраняться неизменным при обновлении приложения. **Примечание.** Все буквы имени должны быть строчными. |
+| **Логотип** | Укажите логотип, по которому можно будет определить тип файла на рабочем столе и в разделе [Выбор программ по умолчанию](https://docs.microsoft.com/windows/desktop/shell/default-programs) на **панели управления**. Если логотип не указан, используется мелкий логотип приложения. |
+| **Подсказка** | Укажите [подсказку](https://docs.microsoft.com/windows/desktop/shell/fa-progids) для группы типов файлов. Эта подсказка отображается, когда пользователь наводит указатель мыши на значок файла этого типа. |
+| **имя**; | Выберите имя для группы типов файлов, которые имеют общие отображаемое имя, логотип, подсказку и флаги редактирования. Выберите для группы такое имя, которое будет сохраняться неизменным при обновлении приложения. **Примечание.** Все буквы имени должны быть строчными. |
 | **Тип содержимого** | Укажите тип содержимого MIME, например **image/jpeg**, для определенного типа файла. **Важное примечание о допустимых типах содержимого!** Далее приводится список типов содержимого MIME в алфавитном порядке, которые запрещено вводить в манифест пакета, поскольку они либо зарезервированы, либо запрещены: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
 | **Тип файла** | Укажите тип файла для регистрации с точкой в начале имени, например ".jpeg". **Зарезервированные и запрещенные типы файлов.** Алфавитный список типов файлов для встроенных приложений, которые нельзя зарегистрировать для приложений UWP, поскольку они уже зарегистрированы или запрещены, см. в статье [Зарезервированные имена схем URI и типы файлов](reserved-uri-scheme-names.md). |
 
-2.  Введите `alsdk` в поле **Имя**.
+2.  Введите в `alsdk` качестве **имени**.
 3.  Введите `.alsdk` в поле **Тип файла**.
-4.  В качестве эмблемы введите "Images\\Icon. png".
+4.  \\В качестве логотипа введите "imagesIcon.png".
 5.  Нажмите клавиши CTRL+S, чтобы сохранить изменения в файле package.appxmanifest.
 
 Шаги выше добавляют в манифест пакета элемент [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) указанного типа. Категория **windows.fileTypeAssociation** указывает, что приложение обрабатывает файлы с расширением `.alsdk`.
@@ -135,22 +135,22 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 ### <a name="complete-example"></a>Полный пример
 
-* [Пример запуска ассоциации](https://code.msdn.microsoft.com/windowsapps/Association-Launching-535d2cec)
+* [Пример запуска с сопоставлением](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
-### <a name="concepts"></a>Понятия
+### <a name="concepts"></a>Основные понятия
 
 * [Программы по умолчанию](https://docs.microsoft.com/windows/desktop/shell/default-programs)
 * [Модель сопоставления типов файлов и протоколов](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
-### <a name="tasks"></a>Задачи
+### <a name="tasks"></a>Задания
 
 * [Запуск приложения по умолчанию для файла](launch-the-default-app-for-a-file.md)
-* [Активация обработки URI](handle-uri-activation.md)
+* [Обработка активации URI](handle-uri-activation.md)
 
-### <a name="guidelines"></a>Руководство
+### <a name="guidelines"></a>Рекомендации
 
-* [Рекомендации по типам файлов и URI](https://docs.microsoft.com/windows/uwp/files/index)
+* [Руководство по типам файлов и URI](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>Справочные материалы
-* [Windows. ApplicationModel. Activation. Филеактиватедевентаргс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
-* [Windows. UI. XAML. Application. Онфилеактиватед](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
+### <a name="reference"></a>Справочник
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
