@@ -6,32 +6,16 @@ metadata:
   description: Настройте среду разработки Windows с помощью подсистемы Linux для работы с Python, Node.js и т. д.
   manager: jken
   ms.author: mattwoj
-  ms.date: 09/15/2019
+  ms.date: 06/12/2020
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: da9899c3851779853c1f99cb829c98d44f61586f
-  ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+  ms.openlocfilehash: 4d30b505c4ced08a906f443a65d0e7d0a34a5e01
+  ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83579951"
+  ms.lasthandoff: 06/12/2020
+  ms.locfileid: "84746742"
 landingContent:
-- title: Диспетчер пакетов Windows
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Обзор
-      url: ../package-manager/index.md
-  - linkListType: get-started
-    links:
-    - text: Использование средства winget
-      url: ../package-manager/winget/index.md
-    - text: Отправка пакетов
-      url: ../package-manager/package/index.md
-  - linkListType: reference
-    links:
-    - text: Команды winget
-      url: ../package-manager/winget/index.md#commands
 - title: Приступая к работе с Python
   linkLists:
   - linkListType: get-started
@@ -116,6 +100,22 @@ landingContent:
       url: ../android/emulator.md
     - text: Обновление параметров Защитника Windows для повышения производительности
       url: ../android/defender-settings.md
+- title: Диспетчер пакетов Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор
+      url: ../package-manager/index.md
+  - linkListType: get-started
+    links:
+    - text: Использование средства winget
+      url: ../package-manager/winget/index.md
+    - text: Отправка пакетов
+      url: ../package-manager/package/index.md
+  - linkListType: reference
+    links:
+    - text: Команды winget
+      url: ../package-manager/winget/index.md#commands
 - title: Подсистема Windows для Linux (WSL)
   linkLists:
   - linkListType: overview
@@ -123,27 +123,85 @@ landingContent:
     - text: Общие сведения о WSL
       url: https://docs.microsoft.com/windows/wsl/about
     - text: Общие сведения о WSL 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-about
-    - text: Различия между версиями 1 и 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-ux-changes
+      url: https://docs.microsoft.com/windows/wsl/wsl2-index
+    - text: Сравнение WSL 1 и WSL 2
+      url: https://docs.microsoft.com/windows/wsl/wsl2-index
   - linkListType: get-started
     links:
-    - text: Установка WSL
+    - text: Установка WSL и обновление до WSL 2
       url: https://docs.microsoft.com/windows/wsl/install-win10
-    - text: Установка WSL 2
-      url: https://docs.microsoft.com/windows/wsl/wsl2-install
-    - text: Учетные записи пользователей и разрешения
+    - text: Установка в Windows Server
+      url: https://docs.microsoft.com/windows/wsl/install-on-server
+    - text: Создание учетной записи пользователя и пароля
       url: https://docs.microsoft.com/windows/wsl/user-support
+  - linkListType: tutorial
+    links:
+    - text: Начало работы с VS Code
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-vscode
+    - text: Начало работы с Git
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-git
+  - linkListType: concept
+    links:
+    - text: Команды взаимодействия
+      url: https://docs.microsoft.com/windows/wsl/interop
+    - text: Команды запуска и настройки
+      url: https://docs.microsoft.com/windows/wsl/wsl-config
+    - text: Разрешения файлов
+      url: https://docs.microsoft.com/windows/wsl/file-permissions
+    - text: Настройка WSL для предприятия
+      url: https://docs.microsoft.com/windows/wsl/enterprise
+    - text: Создание пользовательских распределений
+      url: https://docs.microsoft.com/windows/wsl/build-custom-distro
   - linkListType: reference
     links:
-    - text: Управление несколькими дистрибутивами
-      url: https://docs.microsoft.com/windows/wsl/wsl-config#managing-multiple-linux-distributions
-    - text: Вопросы и ответы по WSL 1
-      url: https://docs.microsoft.com/windows/wsl/faq
+    - text: Частые вопросы
+      url: https://docs.microsoft.com/windows/wsl/faqaq
     - text: Вопросы и ответы по WSL 2
       url: https://docs.microsoft.com/windows/wsl/wsl2-faq
     - text: Диагностика
       url: https://docs.microsoft.com/windows/wsl/troubleshooting
+    - text: Заметки о выпуске
+      url: https://docs.microsoft.com/windows/wsl/release-notes
+- title: Терминал Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Терминале Windows
+      url: https://docs.microsoft.com/windows/terminal/
+  - linkListType: get-started
+    links:
+    - text: Установка и настройка
+      url: https://docs.microsoft.com/windows/terminal/get-started
+    - text: Настройка терминала (глобальные параметры)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/global-settings
+    - text: Настройка терминала (параметры профиля)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/profile-settings
+    - text: Настройка терминала (цветовые схемы)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/color-schemes
+    - text: Настройка терминала (сочетания клавиш)
+      url: https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings
+  - linkListType: tutorial
+    links:
+    - text: Использование аргументов командной строки
+      url: https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell
+    - text: Как выполнять поиск в терминале
+      url: https://docs.microsoft.com/windows/terminal/search
+    - text: Как использовать области в терминале
+      url: https://docs.microsoft.com/windows/terminal/panes
+    - text: Настройка Powerline
+      url: https://docs.microsoft.com/windows/terminal/tutorials/powerline-setup
+    - text: Настройка SSH
+      url: https://docs.microsoft.com/windows/terminal/tutorials/ssh
+    - text: Настройка заголовка вкладки
+      url: https://docs.microsoft.com/windows/terminal/tutorials/tab-title
+  - linkListType: reference
+    links:
+    - text: Диагностика
+      url: https://docs.microsoft.com/windows/terminal/troubleshooting
+    - text: Подробнее о шрифте Cascadia Code
+      url: https://docs.microsoft.com/windows/terminal/cascadia-code
+    - text: Пользовательская коллекция терминалов
+      url: https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt
 - title: Руководство по использованию Mac в Windows
   linkLists:
   - linkListType: reference
@@ -158,19 +216,3 @@ landingContent:
       url: mac-to-windows.md#terminal-and-shell
     - text: Приложения и служебные программы
       url: mac-to-windows.md#apps-and-utilities
-- title: Терминал Windows
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Общие сведения о консоли и терминале
-      url: https://github.com/microsoft/terminal#terminal--console-overview
-  - linkListType: get-started
-    links:
-    - text: Установка Терминала Windows
-      url: https://github.com/microsoft/terminal#installing--running-windows-terminal
-    - text: Использование Терминала Windows
-      url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md#starting-windows-terminal
-  - linkListType: reference
-    links:
-    - text: Настройка Терминала Windows
-      url: https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md
