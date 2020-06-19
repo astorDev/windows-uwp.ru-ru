@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9d15139d45cce01feb979f18167abee89a1f28
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 73b9ba40eb11d67e82ca3014c2758746d45df40f
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558812"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978396"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Все события клавиатуры используют [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) для указания данных события. Объект **KeyRoutedEventArgs** содержит следующие свойства.
 
--   [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**Клавиши**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**Обработанные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (наследуется от [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Key
+### <a name="key"></a>Клавиши
 
 Событие [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) создается, когда нажата клавиша. Подобным образом событие [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) создается, когда клавиша отпущена. Обычно прослушивание событий выполняется для обработки определенного значения клавиши. Чтобы определить, какая клавиша нажата или отпущена, проверьте значение [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) в данных события. **Key** возвращает значение [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey) value. Перечисление **VirtualKey** содержит все поддерживаемые клавиши.
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler и уже обработанные события клавиатуры
 
-Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот способ использует метод [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) для регистрации обработчика вместо использования атрибутов XAML или синтаксиса, зависящего от языка, для добавления обработчиков, таких как + =\#, в языке C.
+Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот способ использует метод [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) для регистрации обработчика вместо использования атрибутов XAML или синтаксиса, зависящего от языка, для добавления обработчиков, таких как + =, в языке C \# .
 
 Обычным ограничением для этой методики является то, что API **AddHandler** принимает параметр типа [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent), который идентифицирует рассматриваемое перенаправленное событие. Идентификатор **RoutedEvent** предоставляется не всеми перенаправленными событиями, и это соображение влияет на то, какие перенаправленные события все же могут быть обработаны в случае [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). События [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) имеют идентификаторы перенаправленных событий ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) и [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) в [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Однако другие события, например [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), не имеют идентификаторов перенаправленных событий, и поэтому для них нельзя использовать методику **AddHandler**.
 
@@ -365,9 +365,9 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 Например, [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) (базовый класс для [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)) обрабатывает [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) таким образом, что он может проверять клавиши ПРОБЕЛ или ВВОД. **ButtonBase** считает **KeyUp** эквивалентом нажатия левой кнопки мыши в целях инициации события [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Эта обработка события выполняется, когда **ButtonBase** переопределяет виртуальный метод [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). При реализации он устанавливает [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) на **true**. В результате получается, что любой родительский элемент кнопки, прослушивающий событие клавиши, при нажатии клавиши ПРОБЕЛ не получит уже обработанное событие для своих обработчиков.
 
-Еще один пример – [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Некоторые клавиши, такие как клавиши со стрелками, не рассматриваются объектом **TextBox** как текстовые, а относятся к специальным реакциям пользовательского интерфейса элементов управления. **TextBox** отмечает эти случаи событий как обработанные.
+Еще один пример – [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Некоторые клавиши, такие как клавиши со стрелками, не считаются текстовыми по **TextBox** и вместо них считаются специфическими для поведения пользовательского интерфейса элемента управления. **TextBox** отмечает эти случаи событий как обработанные.
 
-Пользовательские элементы управления могут реализовывать собственное аналогичное поведение переопределения для ключевых событий [**путем переопределения**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**онкэйуп**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Если пользовательский элемент управления обрабатывает определенные сочетания клавиш либо реагирует как элемент управления или фокус аналогично сценарию, описанному для [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), следует применить эту логику к собственным переопределениям **OnKeyDown** / **OnKeyUp**.
+Пользовательские элементы управления могут реализовывать собственное аналогичное поведение переопределения для ключевых событий [**путем переопределения**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown)  /  [**онкэйуп**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Если пользовательский элемент управления обрабатывает определенные сочетания клавиш либо реагирует как элемент управления или фокус аналогично сценарию, описанному для [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), следует применить эту логику к собственным переопределениям **OnKeyDown** / **OnKeyUp**.
 
 ## <a name="the-touch-keyboard"></a>Сенсорная клавиатура
 
@@ -381,11 +381,11 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 Пользователи смогут вводить данные в вашем приложении гораздо быстрее и с меньшими усилиями, если вы настроите тип вводимых данных элемента управления текстом в соответствии с типом вводимых данных. Тип вводимых данных предоставляет подсказку о типе ожидаемого текстового ввода с помощью элемента управления, таким образом система может предоставить специальную раскладку сенсорной клавиатуры в соответствии с типом ввода. Например, если текстовое поле используется только для ввода 4-значного ПИН-кода, присвойте свойству [**инпутскопе**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) значение [**Number**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю будет проще вводить ПИН-код. Дополнительную информацию можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 
 ### <a name="developers"></a>Разработчики
 
-- [Взаимодействие с клавиатурой](keyboard-interactions.md)
+- [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
 - [Распознавание устройств ввода](identify-input-devices.md)
 - [Реакция на наличие сенсорной клавиатуры](respond-to-the-presence-of-the-touch-keyboard.md)
 
