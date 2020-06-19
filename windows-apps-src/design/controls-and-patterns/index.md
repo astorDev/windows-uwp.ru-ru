@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218454"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978386"
 ---
 # <a name="controls-for-windows-apps"></a>Элементы управления приложений для Windows
 
@@ -32,7 +32,7 @@ ms.locfileid: "80218454"
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">Добавление элементов управления и обработка событий</a></b> <br/>
-Есть три основных этапа добавления элементов управления в приложение: добавление элемента управления в пользовательский интерфейс приложения, установка свойств элемента управления и добавление кода в обработчики событий элемента управления, чтобы он начал функционировать.</p>
+Три основных действия для добавления элементов управления в приложение: добавление элемента управления в пользовательский интерфейс приложения, установка свойств элемента управления и добавление кода в обработчики событий элемента управления, чтобы он начал функционировать.</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">Настройка стиля элементов управления</a></b> <br/>
@@ -95,8 +95,8 @@ ms.locfileid: "80218454"
 - [Изображение пользователя](person-picture.md) ![Логотип WinUI](images/winui-logo-16x16.png)
 - [Сводка](pivot.md)
 - [Индикатор выполнения](progress-controls.md) ![Логотип WinUI](images/winui-logo-16x16.png)
-- [Кольцевой индикатор выполнения](progress-controls.md)
-- [Переключатель](radio-button.md)
+- [Кольцевой индикатор выполнения](progress-controls.md) ![Логотип WinUI](images/winui-logo-16x16.png)
+- [Переключатель](radio-button.md) ![Логотип WinUI](images/winui-logo-16x16.png)
 - [Элемент управления "Оценка"](rating.md) ![Логотип WinUI](images/winui-logo-16x16.png)
 - [Кнопка повтора](buttons.md#create-a-repeat-button)
 - [Поле форматируемого текста](rich-edit-box.md)
