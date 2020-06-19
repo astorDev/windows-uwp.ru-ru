@@ -4,25 +4,25 @@ title: Bluetooth RFCOMM
 description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1fb1a971e897bc88d090c589b266542c6de2d1c9
-ms.sourcegitcommit: b432a639fb3d15ebd22d429ccee4dbb03e8550ca
+ms.openlocfilehash: 2c48b4bbfb7fb361b598722d070962db32665042
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77778525"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069465"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
 **Важные API**
 
 - [**Windows. Devices. Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows. Devices. Bluetooth. RFCOMM**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 
@@ -38,9 +38,9 @@ API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](
 
 ## <a name="send-a-file-as-a-client"></a>Отправка файла в качестве клиента
 
-Основной сценарий при отправке файла — подключение к парному устройству на базе нужной службы. Этот сценарий включает в себя следующие шаги:
+Основной сценарий при отправке файла — подключение к парному устройству на базе нужной службы. Для этого необходимо выполнить следующие шаги.
 
-- Используйте функции **\*рфкоммдевицесервице. жетдевицеселектор** , чтобы создать запрос АКС, который можно использовать для перечисления парных экземпляров устройств требуемой службы.
+- Используйте функции **рфкоммдевицесервице. жетдевицеселектор \* ** , чтобы создать запрос АКС, который можно использовать для перечисления парных экземпляров устройств требуемой службы.
 - Выберите одно из перечисленных устройств, создайте класс [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) и при необходимости прочитайте атрибуты SDP (с помощью [**установленных средств, облегчающих работу с данными**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) для синтаксического анализа данных атрибута).
 - Создайте сокет и используйте свойства [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) и [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) для запуска асинхронной операции подключения к службе удаленного устройства с помощью метода [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) с соответствующими параметрами.
 - Следуйте установленным шаблонам потоков данных для считывания блоков данных из файла и их отправки с помощью [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) сокета на устройство.
