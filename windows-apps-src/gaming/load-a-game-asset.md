@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, загрузка ресурсов
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a779e0d17cdc3f5a11dd720467e3a0572e3c124
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 56eaebfeb6d644c4c15f14f0613b1e3b1781f637
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606313"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133997"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Загрузка ресурсов в игре DirectX
 
@@ -21,14 +21,14 @@ ms.locfileid: "82606313"
 
 Например, mesh-объекты для полигональных объектов вашей игры можно создать с помощью другого программного средства и экспортировать в определенный формат. То же справедливо и в отношении текстур более того: несмотря на то, что плоские несжатые точечные рисунки могут быть созданы при помощи большинства программных средств и с ними может работать большая часть графических API, их использование в игре является крайне неэффективным. В этом руководстве мы подробно рассмотрим основные этапы загрузки трех разных типов графических ресурсов — mesh-объектов (моделей), текстур (точечных рисунков) и скомпилированных шейдеров — для использования с Direct3D.
 
-## <a name="what-you-need-to-know"></a>Что необходимо знать
+## <a name="what-you-need-to-know"></a>Это важно знать
 
 
 ### <a name="technologies"></a>Технологии
 
 -   Библиотека параллельных шаблонов (ppltasks.h)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 -   Среда выполнения Windows
 -   Асинхронные задачи
@@ -130,7 +130,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 И все же мы не хотим, чтобы можно было использовать все функции игры до завершения асинхронной загрузки всех ресурсов. Создайте метод, который будет сигнализировать о завершении загрузки, например устанавливать флажок для специального поля, и используйте лямбда-функции в методе загрузки для настройки этого сигнала при завершении загрузки. Перед запуском любого компонента, использующего загружаемые ресурсы, необходимо выполнить проверку переменной.
 
-Ниже приводится пример, в котором асинхронные методы, определенные в файле BasicLoader.cpp, используются для загрузки шейдеров, mesh-объектов и текстур при запуске игры. Обратите внимание, что он задает определенное поле для игрового объекта, **m\_лоадингкомплете**, когда все методы загрузки завершаются.
+Ниже приводится пример, в котором асинхронные методы, определенные в файле BasicLoader.cpp, используются для загрузки шейдеров, mesh-объектов и текстур при запуске игры. Обратите внимание, что он задает определенное поле для игрового объекта, **m \_ лоадингкомплете**, когда все методы загрузки завершаются.
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**Креатемеш** интерпретирует байтовые данные, загруженные из файла, и создает буфер вершин и буфер индексов для сетки путем передачи списков вершин и индексов соответственно в [**ID3D11Device:: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) \_и указания либо D3D11 СВЯЗЫВАНИЯ\_буфера вершин\_, либо буфера D3D11\_BIND\_index.\_ Код, который использовался в **BasicLoader**:
+**Креатемеш** интерпретирует байтовые данные, загруженные из файла, и создает буфер вершин и буфер индексов для сетки путем передачи списков вершин и индексов соответственно в [**ID3D11Device:: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) и указания либо D3D11 \_ связывания \_ буфера вершин, \_ либо \_ буфера D3D11 BIND \_ index \_ . Код, который использовался в **BasicLoader**:
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ DDS-файл — это двоичный файл, который содержи
 
 -   Описание данных, содержащихся в файле.
 
-    Данные описаны с описанием заголовка с помощью [**заголовка DDS\_**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header). формат пикселей определяется с помощью [**DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). Обратите внимание, что структуры **\_DDS** и **DDS\_PIXELFORMAT** заменяют нерекомендуемые структуры DDSURFACEDESC2, DDSCAPS2 и ддпикселформат DirectDraw 7. **Заголовок\_DDS** является двоичным эквивалентом DDSURFACEDESC2 и DDSCAPS2. **DDS\_PIXELFORMAT** является двоичным эквивалентом ддпикселформат.
+    Данные описаны с описанием заголовка с помощью [** \_ заголовка DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header). формат пикселей определяется с помощью [**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat). Обратите внимание, что структуры **DDS \_ ** и **DDS \_ PIXELFORMAT** заменяют нерекомендуемые структуры DDSURFACEDESC2, DDSCAPS2 и ддпикселформат DirectDraw 7. **DDS \_ ЗАГОЛОВОК** является двоичным эквивалентом DDSURFACEDESC2 и DDSCAPS2. **DDS \_ PIXELFORMAT** является двоичным эквивалентом ддпикселформат.
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Если значение **dwFlags** в [**DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) задано как\_ДДПФ FourCC, а **двфауркк** имеет значение "содержимым DX10", то для размещения массивов текстуры или форматов DXGI будет использоваться дополнительная структура [**DXT10 заголовков\_\_DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) , которая не может быть выражена в формате RGB-пикселей, например форматах с плавающей запятой, форматах sRGB и т. д. При наличии **структуры\_DXT10\_заголовков DDS** полное описание данных будет выглядеть следующим образом.
+    Если значение **dwFlags** в [**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) задано как ддпф \_ FourCC, а **двфауркк** имеет значение "содержимым DX10", то для размещения массивов текстуры или форматов DXGI будет использоваться дополнительная структура [** \_ \_ DXT10 заголовков DDS**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) , которая не может быть выражена в формате RGB-пикселей, например форматах с плавающей запятой, форматах sRGB и т. д. При наличии **структуры \_ \_ DXT10 заголовков DDS** полное описание данных будет выглядеть следующим образом.
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-В этом примере экземпляр **басикреадервритер** (**m\_басикреадервритер**) используется для чтения в предоставляемом файле скомпилированного объекта шейдера (. cso) в виде потока байтов. После выполнения этой задачи лямбда-функция вызывает метод [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) с байтовыми данными, загруженными из файла. Обратный вызов должен устанавливать какой-либо флажок, указывающий на успешное окончание загрузки, и в коде необходимо предусмотреть проверку этого флажка перед запуском шейдера.
+В этом примере экземпляр **басикреадервритер** (**m \_ басикреадервритер**) используется для чтения в предоставляемом файле скомпилированного объекта шейдера (. cso) в виде потока байтов. После выполнения этой задачи лямбда-функция вызывает метод [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) с байтовыми данными, загруженными из файла. Обратный вызов должен устанавливать какой-либо флажок, указывающий на успешное окончание загрузки, и в коде необходимо предусмотреть проверку этого флажка перед запуском шейдера.
 
 Шейдеры вершин немного сложнее. Для шейдеров вершин необходимо также загрузить отдельный входной макет, который будет определять параметры вершины. Для асинхронной загрузки шейдеров вершин вместе с пользовательским входным макетом для вершины можно использовать следующий код. Убедитесь, что этот входной макет может корректно представить информацию о вершинах, которую вы загружаете из mesh-объектов.
 
@@ -685,20 +685,19 @@ task<void> BasicLoader::LoadShaderAsync(
         }
     });
 }
-
 ```
 
 В этом коде после считывания байтовых данных для CSO-файла шейдера вершин вызовом метода [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) создается шейдер вершин. После этого в той же лямбда-функции вы создаете входной макет для шейдера.
 
-Другие типы шейдеров, например шейдеры геометрии и поверхности, также могут потребовать определенной настройки. Полный код для разных методов загрузки шейдеров представлен в разделах [Полный код модуля BasicLoader](complete-code-for-basicloader.md) и [Образец загрузки ресурсов Direct3D]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148).
+Другие типы шейдеров, например шейдеры геометрии и поверхности, также могут потребовать определенной настройки. Полный код для разных методов загрузки шейдеров представлен в разделах [Полный код модуля BasicLoader](complete-code-for-basicloader.md) и [Образец загрузки ресурсов Direct3D](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B).
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 На данном этапе вы должны понимать и уметь создавать или изменять методы для асинхронной загрузки таких распространенных игровых ресурсов, как mesh-объекты, текстуры и скомпилированные шейдеры.
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>См. также
 
-* [Образец загрузки ресурсов Direct3D]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)
+* [Образец загрузки ресурсов Direct3D](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)
 * [Полный код для BasicLoader](complete-code-for-basicloader.md)
 * [Полный код класса BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Полный код класса DDSTextureLoader](complete-code-for-ddstextureloader.md)
