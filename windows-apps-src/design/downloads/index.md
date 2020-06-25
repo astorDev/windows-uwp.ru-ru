@@ -3,16 +3,16 @@ description: Получите новейшие загружаемые файлы
 keywords: макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp, макет приложения для windows, средства пользовательского интерфейса windows
 title: Наборы средств для проектирования и примеры приложений для Windows
 ms.date: 03/23/2020
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 8336da43767931c439ea79fd9e3824f1a4cc3893
+ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746784"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345488"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Наборы средств для проектирования и примеры приложений для Windows
 

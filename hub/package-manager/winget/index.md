@@ -1,17 +1,15 @@
 ---
 title: Использование программы winget для установки приложений и управления ими
 description: Программа командной строки winget позволяет разработчикам обнаруживать, устанавливать, обновлять, удалять и настраивать приложения на компьютерах с Windows 10.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d6280d725681704c41e0bbdb59c2a08fb75c302
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580051"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334536"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Использование программы winget для установки приложений и управления ими
 

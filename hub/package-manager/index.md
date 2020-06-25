@@ -1,17 +1,15 @@
 ---
 title: Диспетчер пакетов Windows
-description: ''
-author: denelon
-ms.author: denelon
+description: Диспетчер пакетов Windows — это комплексное решение для управления пакетами, которое состоит из программы командной строки и набора служб для установки приложений в Windows 10.
 ms.date: 05/03/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7a6533d3dea9c304e9be7d8e689ab537a46449
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 5b25f2c651e11a5ff97a630bb802b236771f5441
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580101"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334622"
 ---
 # <a name="windows-package-manager-preview"></a>Диспетчер пакетов Windows (предварительная версия)
 
