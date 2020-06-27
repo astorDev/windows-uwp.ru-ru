@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ae87600c49b61e5ee426e8dd7ab33b3d3cf7ea3
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: f265f4051f8b300739a61f089a1bcdc3812f11cf
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256157"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448364"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
-В этой статье рассказывается, как воспроизводить мультимедиа в универсальном приложении для Windows с помощью класса [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer). В Windows 10 версии 1607 внесены значительные улучшения в интерфейсы API воспроизведения мультимедиа, включая упрощенную состоящую из одного процесса методику фонового воспроизведения звука, автоматическую интеграцию с системными элементами управления транспортировкой мультимедиа (SMTC), возможность синхронизации нескольких проигрывателей мультимедиа, возможность использования поверхности Windows.UI.Composition и удобный интерфейс создания и планирования мультимедийных вставок в содержимое. Для реализации этих улучшений рекомендуется использовать класс **MediaPlayer** вместо **MediaElement** для воспроизведения мультимедийного содержимого. Добавлен облегченный элемент управления XAML [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement), предназначенный для отрисовки мультимедийного содержимого на странице XAML. Многие API состояния и управления воспроизведением, предоставляемые классом **MediaElement**, теперь доступны с помощью нового объекта [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession). **MediaElement** продолжает выполнять функцию поддержки обратной совместимости, но дополнительные возможности в этот класс добавляться не будут.
+В этой статье рассказывается, как воспроизводить мультимедиа в универсальном приложении для Windows с помощью класса [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer). В Windows 10 версии 1607 были внесены значительные улучшения в интерфейсы API воспроизведения мультимедиа, включая упрощенную однопроцессную разработку для фонового звука, автоматическую интеграцию с системными элементами управления транспортным носителем (СМТК), возможность синхронизации нескольких проигрывателей мультимедиа, возможность отрисовки видеокадров в Windows. UI. композиция и простой интерфейс для создания и планирования разрывов мультимедиа в содержимом. Для реализации этих улучшений рекомендуется использовать класс **MediaPlayer** вместо **MediaElement** для воспроизведения мультимедийного содержимого. Добавлен облегченный элемент управления XAML [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement), предназначенный для отрисовки мультимедийного содержимого на странице XAML. Многие API состояния и управления воспроизведением, предоставляемые классом **MediaElement**, теперь доступны с помощью нового объекта [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession). **MediaElement** продолжает выполнять функцию поддержки обратной совместимости, но дополнительные возможности в этот класс добавляться не будут.
 
 Эта статья содержит подробный разбор функций **MediaPlayer**, которые обычно используются в приложениях для воспроизведения мультимедиа. Обратите внимание, что **MediaPlayer** использует класс [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) в качестве контейнера для всех элементов мультимедиа. Этот класс позволяет загружать и воспроизводить мультимедиа из множества различных источников, включая локальные файлы, потоки в памяти и сетевые источники, с использованием одного интерфейса. Также существуют классы более высокого уровня, совместимые с **MediaSource**, например [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) и [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList), которые предоставляют расширенные возможности, такие как списки воспроизведения, и обеспечивают способность работать с источниками мультимедиа, содержащими несколько дорожек видео-, аудио- и метаданных. Подробные сведения о классе **MediaSource** и связанных с ним API см. в разделе [Элементы, плей-листы и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "78256157"
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-Вы можете задать экземпляр **MediaPlayer**, к которому привязан элемент управления, путем вызова [**SetMediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer).
+Вы можете задать экземпляр **MediaPlayer**, к которому привязан элемент управления, вызвав метод [**SetMediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer).
 
 [!code-cs[SetMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetMediaPlayer)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "78256157"
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
 
 > [!NOTE] 
-> Если вы отключите [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) в объекте [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer), установив для свойства [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) значение false, это нарушит связь между свойствомTransportControls[**объекта**MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols), предоставляемым классом **MediaPlayerElement**, поэтому встроенные элементы управления транспортом больше не будут автоматически управлять воспроизведением мультимедиа. Вместо этого вам нужно будет реализовать собственные элементы управления для управления воспроизведением **MediaPlayer**.
+> Если вы отключите [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) в объекте [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer), установив для свойства [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) значение false, это нарушит связь между свойством [**TransportControls**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) объекта **MediaPlayer**, предоставляемым классом **MediaPlayerElement**, поэтому встроенные элементы управления транспортом больше не будут автоматически управлять воспроизведением мультимедиа. Вместо этого вам нужно будет реализовать собственные элементы управления для управления воспроизведением **MediaPlayer**.
 
 ## <a name="common-mediaplayer-tasks"></a>Типичные задачи, связанные с MediaPlayer
 В этом разделе рассказывается, как использовать некоторые функции **MediaPlayer**.
@@ -58,7 +58,7 @@ ms.locfileid: "78256157"
 [!code-cs[SetAudioCategory](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioCategory)]
 
 ### <a name="output-to-a-specific-audio-endpoint"></a>Вывод на определенную конечную точку аудио
-По умолчанию вывод звука из **MediaPlayer** направляется на конечную точку системы по умолчанию, но вы можете указать собственную конечную точку аудио, которую **MediaPlayer** будет использовать для вывода. В примере ниже [**MediaDevice.GetAudioRenderSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) возвращает строку, которая уникальным образом идентифицирует категорию обработки аудио для устройств. Далее вызывается метод [**FindAllAsync**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) класса [**DeviceInformation**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync), чтобы получить список всех доступных устройств выбранного типа. Можно программным способом определить, какое устройство требуется использовать, или добавить возвращаемые устройства в [**ComboBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), чтобы пользователь мог выбрать устройство.
+По умолчанию вывод звука из **MediaPlayer** направляется на конечную точку системы по умолчанию, но вы можете указать собственную конечную точку аудио, которую **MediaPlayer** будет использовать для вывода. В примере ниже [**MediaDevice.GetAudioRenderSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) возвращает строку, которая уникальным образом идентифицирует категорию обработки аудио для устройств. Далее вызывается метод [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) класса [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation), чтобы получить список всех доступных устройств выбранного типа. Можно программным способом определить, какое устройство требуется использовать, или добавить возвращаемые устройства в [**ComboBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), чтобы пользователь мог выбрать устройство.
 
 [!code-cs[SetAudioEndpointEnumerate](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpointEnumerate)]
 
@@ -69,7 +69,7 @@ ms.locfileid: "78256157"
 ### <a name="playback-session"></a>Сеанс воспроизведения
 Как описано ранее в этой статье, множество функций, которые предоставляются классом **MediaElement**, перенесены в класс [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession). Сюда относятся сведения о состоянии воспроизведения проигрывателя, такие как текущая позиция воспроизведения, включение режима паузы проигрывателя, а также текущая скорость воспроизведения. **MediaPlaybackSession** также предоставляет ряд событий, предназначенных для уведомления о смене состояния, включая текущую загрузку буфера и процент загрузки воспроизводимого содержимого, а также фактический размер и соотношение сторон воспроизводимого сейчас видео.
 
-В следующем примере показано, как реализовать обработчик нажатия кнопки, который перематывает содержимое на 10 секунд вперед. Сначала с помощью свойстваPlaybackSession[**создается объект**MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) для проигрывателя. Затем свойству [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) задается текущая позиция воспроизведения с добавлением 10 секунд.
+В следующем примере показано, как реализовать обработчик нажатия кнопки, который перематывает содержимое на 10 секунд вперед. Сначала с помощью свойства [**PlaybackSession**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) создается объект **MediaPlaybackSession** для проигрывателя. Затем свойству [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) задается текущая позиция воспроизведения с добавлением 10 секунд.
 
 [!code-cs[SkipForwardClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSkipForwardClick)]
 
@@ -82,13 +82,13 @@ ms.locfileid: "78256157"
 [!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
 
 ### <a name="detect-expected-and-unexpected-buffering"></a>Обнаружение ожидаемой и непредвиденной буферизации
-Объект **MediaPlaybackSession**, описанный в предыдущем разделе предоставляет два события для обнаружения момента начала и окончания буферизации проигрываемого в данный момент файла мультимедиа: **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** и **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)** . Это позволяет показывать в пользовательском интерфейсе состояние буферизации. Момент начала буферизации ожидается при первом открытии файла мультимедиа, а также при включении пользователем нового элемента в списке воспроизведения. Непредвиденная буферизации может произойти при ухудшения скорости сетевой передачи или при возникновении технических сбоев в системе управления содержимым. Начиная с RS3, можно использовать событие **BufferingStarted**, чтобы определить, является событие буферизации ожидаемым или непредвиденным, и прерывает ли оно воспроизведение. Эти сведения можно использовать в качестве данных телеметрии для вашего приложения или службы доставки содержимого. 
+Объект **MediaPlaybackSession**, описанный в предыдущем разделе предоставляет два события для обнаружения момента начала и окончания буферизации проигрываемого в данный момент файла мультимедиа: **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** и **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**. Это позволяет показывать в пользовательском интерфейсе состояние буферизации. Момент начала буферизации ожидается при первом открытии файла мультимедиа, а также при включении пользователем нового элемента в списке воспроизведения. Непредвиденная буферизации может произойти при ухудшения скорости сетевой передачи или при возникновении технических сбоев в системе управления содержимым. Начиная с RS3, можно использовать событие **BufferingStarted**, чтобы определить, является событие буферизации ожидаемым или непредвиденным, и прерывает ли оно воспроизведение. Эти сведения можно использовать в качестве данных телеметрии для вашего приложения или службы доставки содержимого. 
 
 Зарегистрируйте обработчики для событий **BufferingStarted** и **BufferingEnded**, чтобы получать уведомления о состояния буферизации.
 
 [!code-cs[RegisterBufferingHandlers](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterBufferingHandlers)]
 
-В обработчике события **BufferingStarted** приведите аргументы, переданных событию, к типу **[MediaPlaybackSessionBufferingStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)** и проверьте свойство **[IsPlaybackInterruption](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs.IsPlaybackInterruption)** . Если это значение равно true, то буферизация, ставшее причиной события, является непредвиденным и прерывает воспроизведение. В противном случае — это ожидаемая буферизация. 
+В обработчике события **BufferingStarted** приведите аргументы, переданных событию, к типу **[MediaPlaybackSessionBufferingStartedEventArgs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)** и проверьте свойство **[IsPlaybackInterruption](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs.IsPlaybackInterruption)**. Если это значение равно true, то буферизация, ставшее причиной события, является непредвиденным и прерывает воспроизведение. В противном случае — это ожидаемая буферизация. 
 
 [!code-cs[BufferingHandlers](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetBufferingHandlers)]
 
@@ -112,7 +112,7 @@ ms.locfileid: "78256157"
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-В обработчике событий [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) прямоугольник источника возвращается к значениям (0,0,1,1), что влечет отрисовку всего видеокадра.
+В обработчике событий [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) прямоугольник источника возвращается к значениям (0,0,1,1), что приводит к отрисовке всего видеокадра.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
@@ -131,7 +131,7 @@ ms.locfileid: "78256157"
 
 В следующем примере показано, как отрисовывать содержимое видеопроигрывателя на элементе управления [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas). В этом примере используются следующие характерные для проигрывателя мультимедиа вызовы: [**SetSurfaceSize**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.setsurfacesize) и [**GetSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.getsurface). **SetSurfaceSize** сообщает системе размер буфера, который необходимо выделить для отрисовки содержимого. **GetSurface** принимает [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) в качестве аргумента и запрашивает экземпляр класса [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface). Этот класс предоставляет доступ к объектам **MediaPlayer** и **Compositor**, используемым для создания поверхности, и предоставляет саму поверхность с помощью свойства [**CompositionSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayersurface.compositionsurface).
 
-Остаток кода в этом примере создает объект [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual), на котором отрисовывается видео, и устанавливает размер в соответствии с размером элемента холста, который будет отображать визуальный элемент. Затем из [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) создается [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface) и назначается свойству [**Brush**](https://docs.microsoft.com/uwp/api/windows.ui.composition.spritevisual.brush) визуального элемента. Затем создается объект [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual), и **SpriteVisual** вставляется в верхней части его визуального дерева. Наконец, вызывается [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual) для назначения визуального элемента контейнера объекту **Canvas**.
+Остаток кода в этом примере создает объект [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual), на котором отрисовывается видео, и устанавливает размер в соответствии с размером элемента холста, который будет отображать визуальный элемент. Затем из [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface) создается [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) и назначается свойству [**Brush**](https://docs.microsoft.com/uwp/api/windows.ui.composition.spritevisual.brush) визуального элемента. Затем создается объект [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual), и **SpriteVisual** вставляется в верхней части его визуального дерева. Наконец, вызывается [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual) для назначения визуального элемента контейнера объекту **Canvas**.
 
 [!code-cs[Compositor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCompositor)]
         
@@ -145,7 +145,7 @@ ms.locfileid: "78256157"
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**Внимание!** [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) обеспечивает автоматическую интеграцию **MediaPlayer** и системных элементов управления транспортом мультимедиа (SMTC), однако эта автоматическая интеграция не может использоваться с проигрывателями мультимедиа, которыми управляет **MediaTimelineController**. Поэтому перед установкой контроллера временной шкалы проигрывателя необходимо отключить менеджер команд для проигрывателя мультимедиа. Невыполнение этого условия приведет к созданию исключения со следующим сообщением: "Attaching Media Timeline Controller is blocked because of the current state of the object" (Прикрепление контроллера временной шкалы мультимедиа заблокировано в связи с текущим состоянием объекта). Подробные сведения об интеграции проигрывателя с SMTC см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md). Если вы используете **MediaTimelineController**, управление SMTC по-прежнему можно осуществлять вручную. Дополнительные сведения см. в разделе [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md).
+**Внимание!**[**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) обеспечивает автоматическую интеграцию **MediaPlayer** и системных элементов управления транспортом мультимедиа (SMTC), однако эта автоматическая интеграция не может использоваться с проигрывателями мультимедиа, которыми управляет **MediaTimelineController**. Поэтому перед установкой контроллера временной шкалы проигрывателя необходимо отключить менеджер команд для проигрывателя мультимедиа. Невыполнение этого условия приведет к созданию исключения со следующим сообщением: "Attaching Media Timeline Controller is blocked because of the current state of the object" (Прикрепление контроллера временной шкалы мультимедиа заблокировано в связи с текущим состоянием объекта). Подробные сведения об интеграции проигрывателя с SMTC см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md). Если вы используете **MediaTimelineController**, управление SMTC по-прежнему можно осуществлять вручную. Дополнительные сведения см. в разделе [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md).
 
 После прикрепления **MediaTimelineController** к одному или нескольким проигрывателям мультимедиа управлять состоянием воспроизведения можно с помощью методов, предоставляемых контроллером. В следующем примере производится вызов [**Start**](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller.start), чтобы начать воспроизведение с начала мультимедийного содержимого на всех связанных проигрывателях.
 
@@ -182,7 +182,7 @@ ms.locfileid: "78256157"
 
 [!code-cs[OffsetSliders](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOffsetSliders)]
 
-В событии [**ValueChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) для каждого ползунка свойству **TimelineControllerPositionOffset** для каждого проигрывателя задается соответствующее значение.
+В событии [**ValueChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) для каждого ползунка свойству **TimelineControllerPositionOffset** каждого проигрывателя задается соответствующее значение.
 
 [!code-cs[TimelineOffset](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetTimelineOffset)]
 
@@ -230,9 +230,9 @@ ms.locfileid: "78256157"
 
 Дополнительные сведения об использовании Win2D см. в [репозитории Win2D в GitHub](https://github.com/Microsoft/Win2D). Чтобы протестировать приведенный выше пример кода, необходимо добавить в проект пакет Win2D NuGet (см. инструкции ниже).
 
-**Добавление пакета NuGet Win2D в проект Effect**
+**Добавление пакета Win2D NuGet в проект эффекта**
 
-1.  В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
+1.  В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
 3.  В поле поиска введите **Win2D**.
 4.  Выберите **Win2D.uwp**, а затем — **Установить** в области справа.
@@ -258,11 +258,11 @@ ms.locfileid: "78256157"
 
 [!code-cs[ButtonUserClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetButtonUserClick)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Связанные темы
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Элементы мультимедиа, списки воспроизведения и записи](media-playback-with-mediasource.md)
-* [Интеграция с элементами управления транспортного носителя Sytem](integrate-with-systemmediatransportcontrols.md)
-* [Создание, планирование и управление разрывами носителей](create-schedule-and-manage-media-breaks.md)
+* [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md)
+* [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md)
+* [Создание, планирование и управление перерывами при воспроизведении мультимедиа](create-schedule-and-manage-media-breaks.md)
 * [Воспроизведение мультимедиа в фоновом режиме](background-audio.md)
 
 

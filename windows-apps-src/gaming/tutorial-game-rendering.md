@@ -1,26 +1,29 @@
 ---
-title: "\"Настройка\""
+title: Настройка
 description: Узнайте, как собрать конвейер отрисовки для отображения графических объектов. Отрисовка игры, настройка и подготовка данных.
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
-ms.openlocfilehash: 324aff61057103d5aed00e455a7f2a8d0cfe83b4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 1a3f689f86e629ce81946927fa732a3ab692b219
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684936"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409513"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Платформа отрисовки II: отрисовка игры
+
+> [!NOTE]
+> Эта статья является частью серии руководств по [созданию простой универсальная платформа Windows (UWP) с помощью DirectX](tutorial--create-your-first-uwp-directx-game.md) . В разделе этой ссылки задается контекст для ряда.
 
 В разделе [Платформа отрисовки I](tutorial--assembling-the-rendering-pipeline.md) мы рассмотрели, как сведения о сцене и выводятся на экран для отображения. Теперь мы сделаем шаг назад и узнаем, как подготовить данные для отрисовки.
 
 >[!Note]
->Если вы еще не скачали последний код для игры из этого примера, перейдите в раздел [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+>Если вы еще не скачали последний код игры для этого примера, перейдите к разделу [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](/windows/uwp/get-started/get-uwp-app-samples).
 
-## <a name="objective"></a>Цель
+## <a name="objective"></a>Назначение
 
 Краткое обобщение задачи. Требуется понять, как настроить базовую платформу отрисовки для отображения вывода графики для игр UWP на базе DirectX. Мы можем гибко сгруппировать необходимые процедуры в эти три шага.
 
@@ -37,50 +40,45 @@ ms.locfileid: "75684936"
 Обработчик отвечает за создание и поддержание всех объектов D3D11 и D2D, используемых для создания визуальных элементов игры. Класс __GameRenderer__ — обработчик для этого примера игры и он спроектирован с учетом потребностей отрисовки этой игры.
 
 Ниже перечислены некоторые основные понятия, которые можно использовать, чтобы спроектировать обработчик для вашей игры:
-* Так как API Direct3D 11 определены как API-интерфейсы [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model), необходимо предоставить ссылки [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) на объекты, определяемые этими API. Эти объекты автоматически освобождаются, когда последняя ссылка выходит за пределы области при завершении работы приложения. Дополнительные сведения см. в статье [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Пример этих объектов: буферы констант, объекты шейдера — [вершинный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [пиксельный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) и объекты ресурсов шейдеров.
+* Так как API Direct3D 11 определены как API-интерфейсы [COM](/windows/desktop/com/the-component-object-model), необходимо предоставить ссылки [ComPtr](/cpp/windows/comptr-class) на объекты, определяемые этими API. Эти объекты автоматически освобождаются, когда последняя ссылка выходит за пределы области при завершении работы приложения. Дополнительные сведения см. в статье [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Пример этих объектов: буферы констант, объекты шейдера — [вершинный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [пиксельный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) и объекты ресурсов шейдеров.
 * Буферы констант определяются в этом классе для хранения различных данных, необходимых для отрисовки.
     * Используйте несколько буферов констант с различной частотой обновления для уменьшения количества данных, которые необходимо посылать GPU для каждого кадра. В этом примере константы разделяются по разным буферам на основании частоты их обновления. Это лучшая методика программирования в Direct3D. 
     * В этом примере игры определены 4 буфера констант.
-        1. __m\_константбуфферневерчанжес__ содержит параметры освещения. Он задается однократно в методе __FinalizeCreateGameDeviceResources__ и никогда не меняется.
-        2. __m\_константбуфферчанжеонресизе__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
-        3. __m\_константбуфферчанжесеверифраме__ содержит матрицу представления. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в описании метода [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
-        4. __m\_константбуфферчанжесевериприм__ содержит матрицу модели и свойства материала для каждого примитива. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в подразделе [Отрисовка примитивов](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
+        1. __m \_ константбуфферневерчанжес__ содержит параметры освещения. Он задается однократно в методе __FinalizeCreateGameDeviceResources__ и никогда не меняется.
+        2. __m \_ константбуфферчанжеонресизе__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
+        3. __m \_ константбуфферчанжесеверифраме__ содержит матрицу представления. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в описании метода [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+        4. __m \_ константбуфферчанжесевериприм__ содержит матрицу модели и свойства материала для каждого примитива. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в подразделе [Отрисовка примитивов](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * В этом классе также определяются объекты ресурсов шейдеров, которые содержат текстуры для примитивов.
-    * Некоторые текстуры являются предопределенными ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) — это формат файла, который может использоваться для хранения сжатых и несжатых текстур. Текстуры DDS используются для стен и пола мира, а также сферы боеприпасов).
-    * В этом примере игры объекты ресурсов шейдера: __m\_сферетекстуре__, __m\_цилиндертекстуре__, __m\_цеилингтекстуре__, __m\_флуртекстуре__, __m\_валлстекстуре__.
+    * Некоторые текстуры являются предопределенными ([DDS](/windows/desktop/direct3ddds/dx-graphics-dds-pguide) — это формат файла, который может использоваться для хранения сжатых и несжатых текстур. Текстуры DDS используются для стен и пола мира, а также сферы боеприпасов).
+    * В этом примере игры объекты ресурсов шейдера: __m \_ сферетекстуре__, __m \_ цилиндертекстуре__, __m \_ цеилингтекстуре__, __m \_ флуртекстуре__, __m \_ валлстекстуре__.
 * Объекты шейдера определены в этом классе для расчета наших примитивов и текстур. 
-    * В этом примере игры объекты шейдеров имеют уровень __m\_вертексшадер__, __m\_вертексшадерфлат__и __m\_pixelShader__, __m\_пикселшадерфлат__.
+    * В этом примере игры объекты шейдеров — __m \_ вертексшадер__, __m \_ вертексшадерфлат__и __m \_ pixelShader__, __m \_ пикселшадерфлат__.
     * Вершинный шейдер обрабатывает примитивы и базовое освещение, а построитель текстуры (иногда называемый фрагментным шейдером) обрабатывает текстуры и все пиксельные эффекты.
     * Есть две версии этих шейдеров (обычные и плоские) для визуализации различных примитивов. Причина наличия различных версий в том, что плоские версии гораздо проще и не используют световые блики, как и любые попиксельные эффекты освещения. Они используются для текстур стен и ускоряют прорисовку на менее мощных устройствах.
 
 ## <a name="gamerendererh"></a>GameRenderer.h
 
-Теперь рассмотрим код в объекте класса обработчика в нашем примере игры и сравним его с обработчиком __Sample3DSceneRenderer.h__, представленным в шаблоне приложения DirectX 11.
+Теперь давайте взглянем на код в объекте класса средства визуализации примера игры.
 
-```cpp
-// Class object handling the rendering of the game
-ref class GameRenderer
+```cppwinrt
+// Class handling the rendering of the game
+class GameRenderer : public std::enable_shared_from_this<GameRenderer>
 {
-internal:
-    GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceResources);
-    
-    // Compared with Sample3DSceneRenderer.h in the DirectX 11 App template sample. 
-    
-    // These methods are present.
+public:
+    GameRenderer(std::shared_ptr<DX::DeviceResources> const& deviceResources);
+
     void CreateDeviceDependentResources();
     void CreateWindowSizeDependentResources();
     void ReleaseDeviceDependentResources();
     void Render();
-
-    // Added: Async related methods to prepare 3D game objects for rendering
-    concurrency::task<void> CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game);
-    void FinalizeCreateGameDeviceResources();
-    concurrency::task<void> LoadLevelResourcesAsync();
-    void FinalizeLoadLevelResources();
     // --- end of async related methods section
 
-    // Added: Methods for rendering overlay
-    Simple3DGameDX::IGameUIControl^ GameUIControl()  { return m_gameInfoOverlay; };
+    winrt::Windows::Foundation::IAsyncAction CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<Simple3DGame> game);
+    void FinalizeCreateGameDeviceResources();
+    winrt::Windows::Foundation::IAsyncAction LoadLevelResourcesAsync();
+    void FinalizeLoadLevelResources();
+
+    Simple3DGameDX::IGameUIControl* GameUIControl() { return &m_gameInfoOverlay; };
 
     DirectX::XMFLOAT2 GameInfoOverlayUpperLeft()
     {
@@ -90,64 +88,54 @@ internal:
     {
         return DirectX::XMFLOAT2(m_gameInfoOverlayRect.right, m_gameInfoOverlayRect.bottom);
     };
-    bool GameInfoOverlayVisible() { return m_gameInfoOverlay->Visible(); }
+    bool GameInfoOverlayVisible() { return m_gameInfoOverlay.Visible(); }
     // --- end of rendering overlay section
-
-    //...
-    protected private:
+...
+private:
     // Cached pointer to device resources.
-    std::shared_ptr<DX::DeviceResources>                m_deviceResources;
+    std::shared_ptr<DX::DeviceResources>        m_deviceResources;
 
-    // ...
+    ...
 
     // Shader resource objects
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_sphereTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_cylinderTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_ceilingTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_floorTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_wallsTexture;
+    winrt::com_ptr<ID3D11ShaderResourceView>    m_sphereTexture;
+    winrt::com_ptr<ID3D11ShaderResourceView>    m_cylinderTexture;
+    winrt::com_ptr<ID3D11ShaderResourceView>    m_ceilingTexture;
+    winrt::com_ptr<ID3D11ShaderResourceView>    m_floorTexture;
+    winrt::com_ptr<ID3D11ShaderResourceView>    m_wallsTexture;
 
-    // Constant Buffers
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferNeverChanges;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangeOnResize;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryFrame;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryPrim;
+    // Constant buffers
+    winrt::com_ptr<ID3D11Buffer>                m_constantBufferNeverChanges;
+    winrt::com_ptr<ID3D11Buffer>                m_constantBufferChangeOnResize;
+    winrt::com_ptr<ID3D11Buffer>                m_constantBufferChangesEveryFrame;
+    winrt::com_ptr<ID3D11Buffer>                m_constantBufferChangesEveryPrim;
 
     // Texture sampler
-    Microsoft::WRL::ComPtr<ID3D11SamplerState>          m_samplerLinear;
+    winrt::com_ptr<ID3D11SamplerState>          m_samplerLinear;
 
     // Shader objects: Vertex shaders and pixel shaders
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShader;
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11InputLayout>           m_vertexLayout;
+    winrt::com_ptr<ID3D11VertexShader>          m_vertexShader;
+    winrt::com_ptr<ID3D11VertexShader>          m_vertexShaderFlat;
+    winrt::com_ptr<ID3D11PixelShader>           m_pixelShader;
+    winrt::com_ptr<ID3D11PixelShader>           m_pixelShaderFlat;
+    winrt::com_ptr<ID3D11InputLayout>           m_vertexLayout;
 };
 ```
 
 ## <a name="constructor"></a>Конструктор
 
-Далее рассмотрим конструктор __GameRenderer__ в нашем примере игры и сравним его с конструктором __Sample3DSceneRenderer.h__, представленным в шаблоне приложения DirectX 11.
+Далее рассмотрим пример конструктора __гамерендерер__ игры и сравните его с конструктором __Sample3DSceneRenderer__ , который предоставляется в шаблоне приложения DirectX 11.
 
-```cpp
+```cppwinrt
 // Constructor method of the main rendering class object
-GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceResources) : //...
+GameRenderer::GameRenderer(std::shared_ptr<DX::DeviceResources> const& deviceResources) : ...
+    m_gameInfoOverlay(deviceResources),
+    m_gameHud(deviceResources, L"Windows platform samples", L"DirectX first-person game sample")
 {
-    // Compared with Sample3DSceneRenderer::Sample3DSceneRenderer in the DirectX 11 App template sample. 
-    
-    // Added: Create a new GameHud object to rendered text on the top left corner of the screen
-    m_gameHud = ref new GameHud(
-        deviceResources,
-        "Windows platform samples",
-        "DirectX first-person game sample"
-        );
-    //--- end of new GameHud object section
-        
-    // Added: Game info rendered as an overlay on the top right corner of the screen (eg. Hits, Shots, Time)    
-    m_gameInfoOverlay = ref new GameInfoOverlay(deviceResources);
-    //--- end of game info rendered as overlay section
+    // m_gameInfoOverlay is a GameHud object to render text in the top left corner of the screen.
+    // m_gameHud is Game info rendered as an overlay on the top-right corner of the screen,
+    // for example hits, shots, and time.
 
-    // These methods are present.
     CreateDeviceDependentResources();
     CreateWindowSizeDependentResources();
 }
@@ -155,10 +143,10 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 ## <a name="create-and-load-directx-graphic-resources"></a>Создание и загрузка графических ресурсов DirectX
 
-В нашем примере игры (и в шаблоне Visual Studio для __приложения DirectX 11 (Universal Windows)__ ) создание и загрузка ресурсов игры реализуются с помощью этих двух методов, которые вызываются из конструктора __GameRenderer__:
+В примере игры (и в шаблоне приложения Visual Studio __DirectX 11 (Universal Windows)__ ) создание и загрузка игровых ресурсов реализуются с помощью этих двух методов, которые вызываются из конструктора __гамерендерер__ :
 
-* [__креатедевицедепендентресаурцес__](#createdevicedependentresources-method)
-* [__креатевиндовсизедепендентресаурцес__](#createwindowsizedependentresource-method)
+* [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>Метод CreateDeviceDependentResources
 
@@ -166,34 +154,33 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 В нашем примере игры эти операции над объектами сцены вместо этого распределены между методами [__CreateGameDeviceResourcesAsync__](#creategamedeviceresourcesasync-method) и [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). 
 
-Что поступает в этот метод в нашем примере игры?
+Что касается этого примера игры, что происходит с этим методом?
 
-* Экземпляры переменных (__m\_гамересаурцеслоадед__ = false и __m\_левелресаурцеслоадед__ = false), которые указывают, были ли загружены ресурсы перед переходом к просмотру, так как мы загружаем их асинхронно. 
+* Экземпляры переменных (__m \_ гамересаурцеслоадед__ = false и __m \_ левелресаурцеслоадед__ = false), которые указывают, были ли загружены ресурсы перед переходом к просмотру, так как они загружаются асинхронно. 
 * Поскольку отрисовка наложения и элементов HUD производятся в отдельных объектах класса, здесь необходимо вызвать методы __GameHud::CreateDeviceDependentResources__ и __GameInfoOverlay::CreateDeviceDependentResources__.
 
 Ниже представлен код для __GameRenderer::CreateDeviceDependentResources__.
 
-```cpp
+```cppwinrt
 // This method is called in GameRenderer constructor when it's created in GameMain constructor.
 void GameRenderer::CreateDeviceDependentResources()
 {
-    // instantiate variables that indicate if resources were loaded.
+    // instantiate variables that indicate whether resources were loaded.
     m_gameResourcesLoaded = false;
     m_levelResourcesLoaded = false;
 
     // game HUD and overlay are design as separate class objects.
-    m_gameHud->CreateDeviceDependentResources();
-    m_gameInfoOverlay->CreateDeviceDependentResources();
+    m_gameHud.CreateDeviceDependentResources();
+    m_gameInfoOverlay.CreateDeviceDependentResources();
 }
 ```
-В таблице ниже перечислены методы, которые используются для создания и загрузки ресурсов. __CreateGameDeviceResourcesAsync__ и __FinalizeCreateGameDeviceResources__ добавляются в примере игры таким образом, что ресурсы загружаются асинхронно.
 
-|Исходный шаблон приложения DirectX 11           |Пример игры                                                                |
-|-------------------------------------------|---------------------------------------------------------------------------|
-|CreateDeviceDependentResources             |CreateDeviceDependentResources                                             |
-|                                           | - CreateGameDeviceResourcesAsync (добавлено)                                  |
-|                                           | - FinalizeCreateGameDeviceResources (добавлено)                               |
-|CreateWindowSizeDependentResources         |CreateWindowSizeDependentResources                                         |
+Ниже приведен список методов, используемых для создания и загрузки ресурсов.
+
+- CreateDeviceDependentResources
+  - Креатегамедевицересаурцесасинк (Добавлено)
+  - Финализекреатегамедевицересаурцес (Добавлено)
+- CreateWindowSizeDependentResources
 
 Прежде чем углубляться в другие методы, которые используются для создания и загрузки ресурсов, сначала создадим обработчик и посмотрим, какое место он занимает в цикле игры.
 
@@ -201,47 +188,45 @@ void GameRenderer::CreateDeviceDependentResources()
 
 __GameRenderer__ создается в конструкторе __GameMain__. Он также вызывает два других метода, [__CreateGameDeviceResourcesAsync__](#creategamedeviceresourcesasync-method) и [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method), добавляемые поддержки при создании и загрузке ресурсов.
 
-```cpp
-
-GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) : // ...
+```cppwinrt
+GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) : ...
 {
     m_deviceResources->RegisterDeviceNotify(this);
 
-    // These methods are used in the DirectX 11 App template to create the class objects used for rendering. 
-    // But are replaced in this game sample with GameRenderer as shown below.
-    // m_sceneRenderer = std::unique_ptr<Sample3DSceneRenderer>(new Sample3DSceneRenderer(m_deviceResources));
-    // m_fpsTextRenderer = std::unique_ptr<SampleFpsTextRenderer>(new SampleFpsTextRenderer(m_deviceResources));
-    
     // Creation of GameRenderer
-    m_renderer = ref new GameRenderer(m_deviceResources);
-    
-    //...
+    m_renderer = std::make_shared<GameRenderer>(m_deviceResources);
 
-     create_task([this]()
-    {
-        // Asynchronously initialize the game class and load the renderer device resources.
-        // By doing all this asynchronously, the game gets to its main loop more quickly
-        // and in parallel all the necessary resources are loaded on other threads.
-        m_game->Initialize(m_controller, m_renderer);
+    ...
 
-        return m_renderer->CreateGameDeviceResourcesAsync(m_game);
+    ConstructInBackground();
+}
 
-    }).then([this]()
-    {
-        // The finalize code needs to run in the same thread context
-        // as the m_renderer object was created because the D3D device context
-        // can ONLY be accessed on a single thread.
-        m_renderer->FinalizeCreateGameDeviceResources();
+winrt::fire_and_forget GameMain::ConstructInBackground()
+{
+    ...
 
-        InitializeGameState();
-    
-    //...
+    // Asynchronously initialize the game class and load the renderer device resources.
+    // By doing all this asynchronously, the game gets to its main loop more quickly
+    // and in parallel all the necessary resources are loaded on other threads.
+    m_game->Initialize(m_controller, m_renderer);
+
+    co_await m_renderer->CreateGameDeviceResourcesAsync(m_game);
+
+    // The finalize code needs to run in the same thread context
+    // as the m_renderer object was created because the D3D device context
+    // can ONLY be accessed on a single thread.
+    // co_await of an IAsyncAction resumes in the same thread context.
+    m_renderer->FinalizeCreateGameDeviceResources();
+
+    InitializeGameState();
+
+    ...
 }
 ```
 
 ## <a name="creategamedeviceresourcesasync-method"></a>Метод CreateGameDeviceResourcesAsync
 
-__Креатегамедевицересаурцесасинк__ вызывается из метода конструктора __гамемаин__ в цикле __задач Create\___ , так как мы загружаем ресурсы игры асинхронно.
+__Креатегамедевицересаурцесасинк__ вызывается из метода конструктора __гамемаин__ в цикле __Create \_ Task__ , так как мы загружаем ресурсы игры асинхронно.
         
 __CreateDeviceResourcesAsync__ — метод, выполняющийся как отдельный набор асинхронных задач для загрузки ресурсов игры. Так как от него ожидается выполнение в отдельном потоке, у него есть доступ только к методам устройств Direct3D 11 (определенным __ID3D11Device__), но не методам контекста устройств (определенным на __ID3D11DeviceContext__); поэтому он не выполняет никакой визуализации.
 
@@ -254,19 +239,21 @@ __CreateDeviceResourcesAsync__ — метод, выполняющийся как
 * Используйте этот метод для загрузки текстур (например, DDS-файлов) и сведения шейдера (например, CSO-файлы) в [шейдеры](tutorial--assembling-the-rendering-pipeline.md#shaders).
 
 Этот метод используется в следующих целях:
-* Создайте 4 [буфера констант](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_константбуфферневерчанжес__, __m\_константбуфферчанжеонресизе__, __m\_константбуфферчанжесеверифраме__, __m\_constantBufferChangesEveryPrim__
+* Создайте 4 [буфера констант](tutorial--assembling-the-rendering-pipeline.md#buffer): __m \_ константбуфферневерчанжес__, __m \_ константбуфферчанжеонресизе__, __m \_ константбуфферчанжесеверифраме__, __m \_ constantBufferChangesEveryPrim__
 * Создание объекта [состояния дискретизатора](tutorial--assembling-the-rendering-pipeline.md#sampler-state), инкапсулирующего информацию о дискретизации для текстуры
 * Создание группы задач, включающей все асинхронные задачи, созданные методом. Она ожидает завершения всех этих асинхронных задач и вызывает __FinalizeCreateGameDeviceResources__.
-* Создание загрузчика с помощью [Basic Loader](tutorial--assembling-the-rendering-pipeline.md#basicloader). Добавление операций асинхронной загрузки загрузчика в виде задач в ранее созданную группу задач.
+* Создание загрузчика с помощью [Basic Loader](tutorial--assembling-the-rendering-pipeline.md#the-basicloader-class). Добавление операций асинхронной загрузки загрузчика в виде задач в ранее созданную группу задач.
 * Такие методы, как __BasicLoader::LoadShaderAsync__ и __BasicLoader::LoadTextureAsync__, используются для загрузки следующих компонентов:
     * скомпилированные объекты шейдера (VertextShader.cso, VertexShaderFlat.cso, PixelShader.cso и PixelShaderFlat.cso). Дополнительные сведения см. в разделе [Различные форматы файлов шейдера](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats).
-    * текстуры для определенной игры (активы\\сеафлур. DDS, metal_texture. DDS, целлцеилинг. DDS, целлфлур. DDS, целлвалл. DDS).
+    * текстуры для конкретных игр (активы \\ сеафлур. DDS, metal_texture. DDS, целлцеилинг. DDS, целлфлур. DDS, целлвалл. DDS).
 
-```cpp
-task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
+```cppwinrt
+IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<Simple3DGame> game)
 {
+    auto lifetime = shared_from_this();
+
     // Create the device dependent game resources.
-    // Only the d3dDevice is used in this method.  It is expected
+    // Only the d3dDevice is used in this method. It is expected
     // to not run on the same thread as the GameRenderer was created.
     // Create methods on the d3dDevice are free-threaded and are safe while any methods
     // in the d3dContext should only be used on a single thread and handled
@@ -275,79 +262,83 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
 
     auto d3dDevice = m_deviceResources->GetD3DDevice();
 
-    // Define D3D11_BUFFER_DESC.
-    // For API ref, go to: https://msdn.microsoft.com/library/windows/desktop/ff476092.aspx
+    // Define D3D11_BUFFER_DESC. See
+    // https://docs.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_buffer_desc
     D3D11_BUFFER_DESC bd;
     ZeroMemory(&bd, sizeof(bd));
-    
+
+    // Create the constant buffers.
     bd.Usage = D3D11_USAGE_DEFAULT;
-    // ...
-    
+    ...
+
     // Create the constant buffers: m_constantBufferNeverChanges, m_constantBufferChangeOnResize,
     // m_constantBufferChangesEveryFrame, m_constantBufferChangesEveryPrim
     // CreateBuffer is used to create one of these buffers: vertex buffer, index buffer, or 
-    // shader-constant buffer. For CreateBuffer API ref info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476501.aspx
-    
-    DX::ThrowIfFailed(
-        d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferNeverChanges) 
+    // shader-constant buffer. For CreateBuffer API ref info, see
+    // https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11device-createbuffer.
+    winrt::check_hresult(
+        d3dDevice->CreateBuffer(&bd, nullptr, m_constantBufferNeverChanges.put())
         );
-    // ...
-    
-    // Define D3D11_SAMPLER_DESC. For API ref, go to: https://msdn.microsoft.com/library/windows/desktop/ff476207.aspx
+
+    ...
+
+    // Define D3D11_SAMPLER_DESC. For API ref, see
+    // https://docs.microsoft.com/windows/win32/api/d3d11/ns-d3d11-d3d11_sampler_desc.
     D3D11_SAMPLER_DESC sampDesc;
 
-    // ZeroMemory fills a block of memory with zeros. 
-    // For API ref, go to: https://msdn.microsoft.com/library/windows/desktop/aa366920(v=vs.85).aspx
+    // ZeroMemory fills a block of memory with zeros. For API ref, see
+    // https://docs.microsoft.com/previous-versions/windows/desktop/legacy/aa366920(v=vs.85).
     ZeroMemory(&sampDesc, sizeof(sampDesc));
 
     sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
     sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
     sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
-    // ...
-    
+    ...
+
     // Create a sampler-state object that encapsulates sampling information for a texture.
     // The sampler-state interface holds a description for sampler state that you can bind to any 
     // shader stage of the pipeline for reference by texture sample operations.
-    DX::ThrowIfFailed(
-        d3dDevice->CreateSamplerState(&sampDesc, &m_samplerLinear)
+    winrt::check_hresult(
+        d3dDevice->CreateSamplerState(&sampDesc, m_samplerLinear.put())
         );
 
-    // Start the async tasks to load the shaders and textures (resources).
-    
+    // Start the async tasks to load the shaders and textures.
+
     // Load compiled shader objects (VertextShader.cso, VertexShaderFlat.cso, PixelShader.cso, and PixelShaderFlat.cso).
     // The BasicLoader class is used to convert and load common graphics resources, such as meshes, textures, 
-    // and various shader objects into the constant buffers. 
-    // For more info, go to: https://docs.microsoft.com/windows/uwp/gaming/complete-code-for-basicloader
-    BasicLoader^ loader = ref new BasicLoader(d3dDevice);
+    // and various shader objects into the constant buffers. For more info, see
+    // https://docs.microsoft.com/windows/uwp/gaming/complete-code-for-basicloader.
+    BasicLoader loader{ d3dDevice };
 
-    std::vector<task<void>> tasks;
+    std::vector<IAsyncAction> tasks;
 
-    uint32 numElements = ARRAYSIZE(PNTVertexLayout);
+    uint32_t numElements = ARRAYSIZE(PNTVertexLayout);
 
-    // Load shaders asynchronously with the shader and pixel data using the BasicLoader::LoadShaderAsync method
-    // Push these method calls into a list of tasks
-    tasks.push_back(loader->LoadShaderAsync("VertexShader.cso", PNTVertexLayout, numElements, &m_vertexShader, &m_vertexLayout));
-    tasks.push_back(loader->LoadShaderAsync("VertexShaderFlat.cso", nullptr, numElements, &m_vertexShaderFlat, nullptr));
-    tasks.push_back(loader->LoadShaderAsync("PixelShader.cso", &m_pixelShader));
-    tasks.push_back(loader->LoadShaderAsync("PixelShaderFlat.cso", &m_pixelShaderFlat));
+    // Load shaders asynchronously with the shader and pixel data using the
+    // BasicLoader::LoadShaderAsync method. Push these method calls into a list of tasks.
+    tasks.push_back(loader.LoadShaderAsync(L"VertexShader.cso", PNTVertexLayout, numElements, m_vertexShader.put(), m_vertexLayout.put()));
+    tasks.push_back(loader.LoadShaderAsync(L"VertexShaderFlat.cso", nullptr, numElements, m_vertexShaderFlat.put(), nullptr));
+    tasks.push_back(loader.LoadShaderAsync(L"PixelShader.cso", m_pixelShader.put()));
+    tasks.push_back(loader.LoadShaderAsync(L"PixelShaderFlat.cso", m_pixelShaderFlat.put()));
 
-    // Make sure the previous versions are set to NULL before any of the textures are loaded.
+    // Make sure the previous versions if any of the textures are released.
     m_sphereTexture = nullptr;
-    // ...
+    ...
 
-    // Load Game specific textures (Assets\\seafloor.dds, metal_texture.dds, cellceiling.dds, cellfloor.dds, cellwall.dds).
-    // Push these method calls also into a list of tasks
-    tasks.push_back(loader->LoadTextureAsync("Assets\\seafloor.dds", nullptr, &m_sphereTexture));
-    // ...
-    
-    tasks.push_back(create_task([]()
-    {
-        // Simulate loading additional resources by introducing a delay.
-        wait(GameConstants::InitialLoadingDelay);
-    }));
+    // Load Game specific textures (Assets\\seafloor.dds, metal_texture.dds, cellceiling.dds,
+    // cellfloor.dds, cellwall.dds).
+    // Push these method calls also into a list of tasks.
+    tasks.push_back(loader.LoadTextureAsync(L"Assets\\seafloor.dds", nullptr, m_sphereTexture.put()));
+    ...
+
+    // Simulate loading additional resources by introducing a delay.
+    tasks.push_back([]() -> IAsyncAction { co_await winrt::resume_after(GameConstants::InitialLoadingDelay); }());
 
     // Returns when all the async tasks for loading the shader and texture assets have completed.
-    return when_all(tasks.begin(), tasks.end());
+    for (auto&& task : tasks)
+    {
+        co_await task;
+    }
 }
 ```
 
@@ -363,14 +354,12 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
 В __FinalizeCreateGameDeviceResources__ и [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) есть похожие фрагменты кода для следующих элементов:
 * Используйте __SetProjParams__ для обеспечения того, что камера использует верную матрицу проекции. Подробнее см. в статье [Камера и пространство координат](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space).
 * Обрабатывайте поворот экрана путем последующего умножения матрицы 3D-вращения на матрицу проекции камеры. Затем обновите буфер констант __ConstantBufferChangeOnResize__, используя полученную матрицу проекции.
-* Чтобы указать, что ресурсы теперь загружены в буферы, будут готовы к следующему шагу, задайте переменную Гамересаурцеслоадед с __логическим значением__ __m\___ . Помните, что мы инициализировали эту переменную со значением __FALSE__ в методе-конструкторе __GameRenderer__ с помощью метода __GameRenderer::CreateDeviceDependentResources__. 
-* Если это __m\_гамересаурцеслоадед__ имеет __значение true__, может выполняться отрисовка объектов сцены. Это рассматривается в разделе __Платформа отрисовки I: введение в отрисовку__ в описании [__метода GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+* Задайте __логическую__ переменную __ \_ гамересаурцеслоадед m__ , чтобы указать, что ресурсы теперь загружены в буферы, готовые к следующему шагу. Помните, что мы инициализировали эту переменную со значением __FALSE__ в методе-конструкторе __GameRenderer__ с помощью метода __GameRenderer::CreateDeviceDependentResources__. 
+* Когда значение __m \_ Гамересаурцеслоадед__ равно __true__, может выполняться отрисовка объектов сцены. Это рассматривается в разделе __Платформа отрисовки I: введение в отрисовку__ в описании [__метода GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
 
-```cpp
-// When creating this sample game using the DirectX 11 App template, this method needs to be created.
-// This new method is called from GameMain constructor in the .then loop.
-// Make sure the 2D rendering is occurring on the same thread as the main rendering.
-// Note: Helper class .h and .cpp files used in this method are located in the SharedContent/cpp/GameContent folder
+```cppwinrt
+// This method is called from the GameMain constructor.
+// Make sure that 2D rendering is occurring on the same thread as the main rendering.
 void GameRenderer::FinalizeCreateGameDeviceResources()
 {
     // All asynchronously loaded resources have completed loading.
@@ -379,14 +368,15 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // was created. All work will happen behind the "Loading ..." screen after the
     // main loop has been entered.
 
-    // Initialize constantBufferNeverChanges with the light positions and color.
+    // Initialize the Constant buffer with the light positions
     // These are handled here to ensure that the d3dContext is only
     // used in one thread.
 
     auto d3dDevice = m_deviceResources->GetD3DDevice();
+
     ConstantBufferNeverChanges constantBufferNeverChanges;
-    constantBufferNeverChanges.lightPosition[0] = XMFLOAT4( 3.5f, 2.5f,  5.5f, 1.0f);
-    // ...
+    constantBufferNeverChanges.lightPosition[0] = XMFLOAT4(3.5f, 2.5f, 5.5f, 1.0f);
+    ...
     constantBufferNeverChanges.lightColor = XMFLOAT4(0.25f, 0.25f, 0.25f, 1.0f);
 
     // CPU copies data from memory (constantBufferNeverChanges) to a subresource 
@@ -397,7 +387,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // https://msdn.microsoft.com/library/windows/desktop/ff476901.aspx
 
     m_deviceResources->GetD3DDeviceContext()->UpdateSubresource(
-        m_constantBufferNeverChanges.Get(),
+        m_constantBufferNeverChanges.get(),
         0,
         nullptr,
         &constantBufferNeverChanges,
@@ -412,7 +402,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // targets. The class creates the necessary resources to draw the texture into 
     // an off screen resource at initialization time.
 
-    TargetTexture^ textureGenerator = ref new TargetTexture(
+    TargetTexture textureGenerator(
         d3dDevice,
         m_deviceResources->GetD2DFactory(),
         m_deviceResources->GetDWriteFactory(),
@@ -427,98 +417,96 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // CylinderMesh (vertical rods), SphereMesh (balls that the player shoots), 
     // FaceMesh (target objects), and WorldMesh (Floors and ceilings that define the enclosed area)
 
-    MeshObject^ cylinderMesh = ref new CylinderMesh(d3dDevice, 26);
-    // ...
+    auto cylinderMesh = std::make_shared<CylinderMesh>(d3dDevice, (uint16_t)26);
+    ...
 
     // The Material class maintains the properties that represent how an object will
     // look when it is rendered.  This includes the color of the object, the
     // texture used to render the object, and the vertex and pixel shader that
     // should be used for rendering.
 
-    Material^ cylinderMaterial = ref new Material(
+    auto cylinderMaterial = std::make_shared<Material>(
         XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
         XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
         XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
         15.0f,
-        m_cylinderTexture.Get(),
-        m_vertexShader.Get(),
-        m_pixelShader.Get()
+        m_cylinderTexture.get(),
+        m_vertexShader.get(),
+        m_pixelShader.get()
         );
 
-    // ...
-    auto objects = m_game->RenderObjects();
+    ...
 
     // Attach the textures to the appropriate game objects.
     // We'll loop through all the objects that need to be rendered.
-    for (auto object = objects.begin(); object != objects.end(); object++)
+    for (auto&& object : m_game->RenderObjects())
     {
-
-        if ((*object)->TargetId() == GameConstants::WorldFloorId)
+        if (object->TargetId() == GameConstants::WorldFloorId)
         {
             // Assign a normal material for the floor object.
             // This normal material uses the floor texture (cellfloor.dds) that was loaded asynchronously from
             // the Assets folder using BasicLoader::LoadTextureAsync method in the earlier 
             // CreateGameDeviceResourcesAsync loop
 
-            (*object)->NormalMaterial(
-                ref new Material(
+            object->NormalMaterial(
+                std::make_shared<Material>(
                     XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
                     XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
                     XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
                     150.0f,
-                    m_floorTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
+                    m_floorTexture.get(),
+                    m_vertexShaderFlat.get(),
+                    m_pixelShaderFlat.get()
                     )
                 );
             // Creates a mesh object called WorldFloorMesh and assign it to the floor object.
-            (*object)->Mesh(ref new WorldFloorMesh(d3dDevice));
+            object->Mesh(std::make_shared<WorldFloorMesh>(d3dDevice));
         }
-        // ...
-        else if (Cylinder^ cylinder = dynamic_cast<Cylinder^>(*object))
+        ...
+        else if (auto cylinder = dynamic_cast<Cylinder*>(object.get()))
         {
             cylinder->Mesh(cylinderMesh);
             cylinder->NormalMaterial(cylinderMaterial);
         }
-        else if (Face^ target = dynamic_cast<Face^>(*object))
+        else if (auto target = dynamic_cast<Face*>(object.get()))
         {
             const int bufferLength = 16;
-            char16 str[bufferLength];
+            wchar_t str[bufferLength];
             int len = swprintf_s(str, bufferLength, L"%d", target->TargetId());
-            Platform::String^ string = ref new Platform::String(str, len);
+            auto string{ winrt::hstring(str, len) };
 
-            ComPtr<ID3D11ShaderResourceView> texture;
-            textureGenerator->CreateTextureResourceView(string, &texture);
+            winrt::com_ptr<ID3D11ShaderResourceView> texture;
+            textureGenerator.CreateTextureResourceView(string, texture.put());
             target->NormalMaterial(
-                ref new Material(
+                std::make_shared<Material>(
                     XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
                     XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
                     XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
                     5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
+                    texture.get(),
+                    m_vertexShader.get(),
+                    m_pixelShader.get()
                     )
                 );
 
-            textureGenerator->CreateHitTextureResourceView(string, &texture);
+            texture = nullptr;
+            textureGenerator.CreateHitTextureResourceView(string, texture.put());
             target->HitMaterial(
-                ref new Material(
+                std::make_shared<Material>(
                     XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
                     XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
                     XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
                     5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
+                    texture.get(),
+                    m_vertexShader.get(),
+                    m_pixelShader.get()
                     )
                 );
 
             target->Mesh(targetMesh);
         }
-        // ...
+        ...
     }
-
 
     // The SetProjParams method calculates the projection matrix based on input params and
     // ensures that the camera has been initialized with the right projection
@@ -526,7 +514,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // The camera is not created at the time the first window resize event occurs.
 
     auto renderTargetSize = m_deviceResources->GetRenderTargetSize();
-    m_game->GameCamera()->SetProjParams(
+    m_game->GameCamera().SetProjParams(
         XM_PI / 2,
         renderTargetSize.Width / renderTargetSize.Height,
         0.01f,
@@ -556,7 +544,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     XMStoreFloat4x4(
         &changesOnResize.projection,
         XMMatrixMultiply(
-            XMMatrixTranspose(m_game->GameCamera()->Projection()),
+            XMMatrixTranspose(m_game->GameCamera().Projection()),
             XMMatrixTranspose(XMLoadFloat4x4(&orientation))
             )
         );
@@ -566,7 +554,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
     // CreateGameDeviceResourcesAsync method.
 
     m_deviceResources->GetD3DDeviceContext()->UpdateSubresource(
-        m_constantBufferChangeOnResize.Get(),
+        m_constantBufferChangeOnResize.get(),
         0,
         nullptr,
         &changesOnResize,
@@ -588,21 +576,20 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 * Затем главный игровой цикл оповещается об этом событии и вызывает __CreateWindowSizeDependentResources__ на экземпляре основного класса (__GameMain__), который затем вызывает реализацию __CreateWindowSizeDependentResources__ в классе обработчика игры (__GameRenderer__).
 * Основная задача этого метода — гарантировать, что в результате изменения свойств окна визуальные объекты не станут беспорядочными или недействительными.
 
-В этом примере игры количество вызовов метода совпадает с методом [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Пошаговый анализ кода приводится в предыдущем разделе.
+Для этого примера игры ряд вызовов метода совпадает с методом [__финализекреатегамедевицересаурцес__](#finalizecreategamedeviceresources-method) . Пошаговый анализ кода приводится в предыдущем разделе.
 
 Изменение отрисовки размера окна наложения и элементов HUD рассматривается в разделе [Добавление пользовательского интерфейса](tutorial--adding-a-user-interface.md).
 
-```cpp
+```cppwinrt
 // Initializes view parameters when the window size changes.
 void GameRenderer::CreateWindowSizeDependentResources()
 {
-
     // Game HUD and overlay window size rendering adjustments are done here
     // but they'll be covered in the UI section instead.
 
-    m_gameHud->CreateWindowSizeDependentResources();
+    m_gameHud.CreateWindowSizeDependentResources();
 
-    // ...
+    ...
 
     auto d3dContext = m_deviceResources->GetD3DDeviceContext();
     // In Sample3DSceneRenderer::CreateWindowSizeDependentResources, we had:
@@ -610,14 +597,14 @@ void GameRenderer::CreateWindowSizeDependentResources()
 
     auto renderTargetSize = m_deviceResources->GetRenderTargetSize();
 
-    // ...
+    ...
 
-    m_gameInfoOverlay->CreateWindowSizeDependentResources(m_gameInfoOverlaySize);
+    m_gameInfoOverlay.CreateWindowSizeDependentResources(m_gameInfoOverlaySize);
 
     if (m_game != nullptr)
     {
         // Similar operations as the last section of FinalizeCreateGameDeviceResources method
-        m_game->GameCamera()->SetProjParams(
+        m_game->GameCamera().SetProjParams(
             XM_PI / 2, renderTargetSize.Width / renderTargetSize.Height,
             0.01f,
             100.0f
@@ -629,13 +616,13 @@ void GameRenderer::CreateWindowSizeDependentResources()
         XMStoreFloat4x4(
             &changesOnResize.projection,
             XMMatrixMultiply(
-                XMMatrixTranspose(m_game->GameCamera()->Projection()),
+                XMMatrixTranspose(m_game->GameCamera().Projection()),
                 XMMatrixTranspose(XMLoadFloat4x4(&orientation))
                 )
             );
 
         d3dContext->UpdateSubresource(
-            m_constantBufferChangeOnResize.Get(),
+            m_constantBufferChangeOnResize.get(),
             0,
             nullptr,
             &changesOnResize,
@@ -646,6 +633,6 @@ void GameRenderer::CreateWindowSizeDependentResources()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Это базовый процесс реализации графической платформы отрисовки игры. Чем больше ваша игра, тем больше абстракций потребуется применить для обработки иерархии типов объектов и поведения анимации. Потребуется реализовать более сложные методы для загрузки и управления активами, такими как сетки и текстуры. Теперь посмотрим, как [добавить пользовательский интерфейс](tutorial--adding-a-user-interface.md).

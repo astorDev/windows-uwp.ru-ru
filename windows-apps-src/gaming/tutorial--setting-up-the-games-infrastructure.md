@@ -1,168 +1,198 @@
 ---
 title: Настройка проекта игры
-description: Первым шагом сборки вашей игры является настройка проекта в Microsoft Visual Studio, позволяющая свести к минимуму работу по созданию инфраструктуры кода.
+description: Первым шагом в разработке игры является настройка проекта в Microsoft Visual Studio. После настройки проекта, предназначенного специально для разработки игр, его можно использовать в качестве типа шаблона.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.date: 10/24/2017
+ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, игры, настройка, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ca91926ec374015eeb88be6d89d3e1741d8b9c6d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c0c8d82752d9b73a3e3e7ffcec3ced1515564072
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367687"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409593"
 ---
 # <a name="set-up-the-game-project"></a>Настройка проекта игры
 
-В этой статье рассматривается создание простой игры UWP на базе DirectX с использованием шаблонов, имеющихся в Visual Studio. Первым шагом сборки вашей игры является настройка проекта в Microsoft Visual Studio, позволяющая свести к минимуму работу по созданию инфраструктуры кода. Узнайте, как сэкономить время, выбрав правильный шаблон и настроив проект специально для разработки игры.
+> [!NOTE]
+> Эта статья является частью серии руководств по [созданию простой универсальная платформа Windows (UWP) с помощью DirectX](tutorial--create-your-first-uwp-directx-game.md) . В разделе этой ссылки задается контекст для ряда.
 
-## <a name="objectives"></a>Цели
+Первым шагом в разработке игры является создание проекта в Microsoft Visual Studio. После настройки проекта, предназначенного специально для разработки игр, его можно использовать в качестве типа шаблона.
 
-* Создать в Visual Studio проект игры на базе Direct3D с использованием шаблона
-* Определить главную точку входа игры путем изучения исходных файлов **App**
-* Изучить файл **package.appxmanifest** проекта
-* Узнать, какие средства разработки игр и поддержка входят в состав проекта
+## <a name="objectives"></a>Задачи
 
-## <a name="how-to-set-up-the-game-project"></a>Создание проекта игры
+* Создание нового проекта в Visual Studio с помощью шаблона проекта.
+* Изучите точку входа и инициализацию игры, изучив исходный файл для класса **app** .
+* Взгляните на цикл игры.
+* Проверьте файл **Package. appxmanifest** проекта.
 
-Если вы новичок в разработке для универсальной платформы Windows (UWP), мы рекомендуем использовать шаблоны в Visual Studio для создания базовой структуры кода.
+## <a name="create-a-new-project-in-visual-studio"></a>Создание проекта в Visual Studio
 
->[!Note]
->Эта статья входит в серию учебников, основанную на примере игры. Получить последнюю версию кода можно на [странице примера игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+> [!NOTE]
+> Сведения об установке Visual Studio для разработки с использованием C++/WinRT, включая установку и использование расширения C++/WinRT для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки), приведены в разделе [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet](/windows/uwp/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-### <a name="use-directx-template-to-create-a-project"></a>Использование шаблона DirectX для создания проекта
+Сначала установите (или обновите до) последнюю версию расширения C++/WinRT Visual Studio (VSIX). см. примечание выше. Затем в Visual Studio создайте новый проект на основе шаблона проекта **Core App (C++/WinRT)** . В качестве цели выберите последнюю общедоступную (то есть не предварительную) версию Windows SDK.
 
-Шаблон Visual Studio — это набор параметров и файлов кода, которые рассчитаны на определенный тип приложений и основаны на выбранном языке программирования и технологии. В Microsoft Visual Studio 2017 вы найдете несколько шаблонов, которые могут значительно упростить разработки приложений для игр и графики. Без шаблона вам придется самостоятельно разработать большую часть кода для отрисовки основной графики и структуры отображения, что может оказаться слишком сложной задачей для начинающего разработчика игр.
+## <a name="review-the-app-class-to-understand-iframeworkviewsource-and-iframeworkview"></a>Изучите класс **app** , чтобы понять **IFrameworkViewSource** и **IFrameworkView**
 
-В этом учебнике используется шаблон под названием **Приложение DirectX 11 (универсальное приложение Windows)** . 
+В проекте основного приложения откройте файл исходного кода `App.cpp` . В существует реализация класса **приложения** , который представляет приложение и его жизненный цикл. В данном случае, конечно, мы понимаем, что приложение является игрой. Но мы будем называть его как *приложение* для более подробного разговора о том, как инициализируется приложение универсальная платформа Windows (UWP).
 
-Порядок создания игрового проекта DirectX 11 в Visual Studio:
-1.  Выберите **файл...** &gt; **Новый** &gt; **проекта...**
-2.  В левой области выберите **установленные** &gt; **шаблоны** &gt; **Visual C++** &gt; **универсальной Windows**
-3.  На центральной панели выберите **Приложение DirectX 11 (универсальное приложение Windows)** .
-4.  Выберите имя для проекта игры и нажмите **ОК**.
+### <a name="the-wwinmain-function"></a>Функция wWinMain
 
-![Снимок экрана, показывающий, как выбрать шаблон DirectX 11 для создания нового проекта игры](images/simple-dx-game-setup-new-project.png)
+Функция **wWinMain** — это точка входа для приложения. Вот как выглядит **wWinMain** (от `App.cpp` ).
 
-Этот шаблон предоставляет базовую структуру для приложения UWP на языке C++ с использованием DirectX. Нажмите F5, чтобы выполнить сборку и запустить приложение. Посмотрите на этот туманно-синий экран. Шаблон создает несколько файлов кода, содержащих базовые функциональные возможности для приложения UWP на языке C++ c использованием DirectX
-
-## <a name="review-the-apps-main-entry-point-by-understanding-iframeworkview"></a>Определение главной точки входа приложения путем изучения IFrameworkView
-
-Класс **App** наследуется от класса **IFrameworkView**.
-
-### <a name="inspect-apph"></a>Изучите файл **App.h**.
-
-Давайте быстро взглянуть на 5 методы **файле App.h** &mdash; [ **инициализировать**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), [ **SetWindow** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), [ **Нагрузки**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), [ **запуска**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), и [ **отменить инициализацию** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) при реализации [ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run) интерфейс, определяющий поставщик представления. Эти методы запускаются singleton-объектом приложения, который создается при запуске игры, загружает ресурсы приложения, а также подключает соответствующие обработчики событий.
-
-```cpp
-    // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
-    ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
-    {
-    public:
-        App();
-
-        // IFrameworkView Methods.
-        virtual void Initialize(Windows::ApplicationModel::Core::CoreApplicationView^ applicationView);
-        virtual void SetWindow(Windows::UI::Core::CoreWindow^ window);
-        virtual void Load(Platform::String^ entryPoint);
-        virtual void Run();
-        virtual void Uninitialize();
-
-    protected:
-        ...
-    };
-```
-
-### <a name="inspect-appcpp"></a>Изучите файл **App.cpp**
-
-Вот метод **main** в исходном файле **App.cpp**:
-
-```cpp
-//The main function is only used to initialize our IFrameworkView class.
-[Platform::MTAThread]
-int main(Platform::Array<Platform::String^>^)
+```cppwinrt
+int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    auto direct3DApplicationSource = ref new Direct3DApplicationSource();
-    CoreApplication::Run(direct3DApplicationSource);
-    return 0;
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
-Этот метод создает экземпляр поставщика представление Direct3D из фабрики поставщика представление (**Direct3DApplicationSource**, определенный в `App.h`) и передает его единственного экземпляра приложения путем вызова [  **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run). Методы класса представления framework (который является **приложения** в этом примере класс) вызываются в порядке **инициализировать**-**SetWindow** - **Нагрузки**-**OnActivated**-**запуска**-**отменить инициализацию**. Вызов **CoreApplication::Run** запускает этот lifycycle. Основной цикл игры находится в теле реализации [ **IFrameworkView::Run** метод](/uwp/api/windows.applicationmodel.core.iframeworkview.run), и в этом случае он имеет **App::Run**.
+Мы создаем экземпляр класса **app** (только один экземпляр **приложения** , который создан) и передаем его в статический метод [**CoreApplication. Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) . Обратите внимание, что **CoreApplication. Run** принимает интерфейс [**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) . Поэтому классу **приложения** необходимо реализовать этот интерфейс.
 
-Прокрутите вниз, чтобы найти метод **App::Run** в **App.cpp**. Ниже приведен код.
+В следующих двух подразделах этого раздела описываются интерфейсы [**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) и [**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) . Эти интерфейсы (а также **CoreApplication. Run**) представляют собой способ предоставления приложения Windows с помощью *поставщика представления*. Windows использует этого поставщика представления для подключения приложения к оболочке Windows, чтобы можно было управлять событиями жизненного цикла приложения.
 
-```cpp
-//This method is called after the window becomes active.
-void App::Run()
+### <a name="the-iframeworkviewsource-interface"></a>Интерфейс IFrameworkViewSource
+
+Класс **app** действительно реализует [**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource), как можно увидеть в приведенном ниже списке.
+
+```cppwinrt
+struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
+{
+    ...
+    IFrameworkView CreateView()
+    {
+        return *this;
+    }
+    ...
+}
+```
+
+Объект, реализующий **IFrameworkViewSource** , является объектом *фабрики для поставщика представления* . Задача этого объекта — изготовление и возврат объекта *поставщика представления* .
+
+**IFrameworkViewSource** имеет единственный метод [**IFrameworkViewSource:: CreateView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview). Windows вызывает эту функцию для объекта, переданного в **CoreApplication. Run**. Как можно увидеть выше, реализация метода **app:: CreateView** возвращает `*this` . Иными словами, объект **app** возвращает сам себя. Так как **IFrameworkViewSource:: CreateView** имеет тип возвращаемого значения [**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource), следует также убедиться, что класс **приложения** тоже должен реализовать *этот* интерфейс. Как видно из приведенного выше списка.
+
+### <a name="the-iframeworkview-interface"></a>Интерфейс IFrameworkView
+
+Объект, реализующий [**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) , является объектом *поставщика представления* . Теперь мы предоставили Windows с этим поставщиком представления. Это тот же объект **приложения** , который мы создали в **wWinMain**. Таким образом, класс **app** выступает в качестве *фабрики* и *поставщика*представления.
+
+Теперь Windows может вызвать реализации методов **IFrameworkView**класса **app** . В реализациях этих методов приложение может выполнять такие задачи, как инициализация, чтобы начать загрузку необходимых ресурсов, подключить соответствующие обработчики событий и получить [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) , который приложение будет использовать для вывода выходных данных.
+
+Реализации методов **IFrameworkView** вызываются в порядке, показанном ниже.
+
+- [**Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
+- [**SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)
+- [**Загрузить**](/uwp/api/windows.applicationmodel.core.iframeworkview.load)
+- Вызвано событие [**кореаппликатионвиев:: Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) . Поэтому, если вы (необязательно) зарегистрировались для обработки этого события, в настоящее время вызывается обработчик **OnActivated** .
+- [**Выполнить**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)
+- [**Отменить инициализацию**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)
+
+А вот скелет класса **app** (in `App.cpp` ), показывающий сигнатуры этих методов.
+
+```cppwinrt
+struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
+{
+    ...
+    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
+    void Load(winrt::hstring const& entryPoint) { ... }
+    void OnActivated(
+        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
+    void Run() { ... }
+    void Uninitialize() { ... }
+    ...
+}
+```
+
+Это было лишь введением в **IFrameworkView**. Мы подробно рассмотрим эти методы и как их реализовать, в разделе [Определение платформы приложений UWP в игре](tutorial--building-the-games-uwp-app-framework.md).
+
+### <a name="tidy-up-the-project"></a>Очистка проекта
+
+Проект основного приложения, созданный на основе шаблона проекта, содержит функциональные возможности, которые должны быть включены в этот момент. После этого можно использовать проект для повторного создания игры коллекции вариантов (**Simple3DGameDX**). Внесите следующие изменения в класс **app** в `App.cpp` .
+
+- Удалите элементы данных.
+- Удалить **онпоинтерпрессед**, **онпоинтермовед**и **аддвисуал**
+- Удалите код из **сетвиндов**.
+
+Проект будет построен и запущен, но в клиентской области будет отображаться только сплошной цвет.
+
+## <a name="the-game-loop"></a>Игровой цикл
+
+Чтобы понять, как выглядит игровой цикл, просмотрите исходный код для скачанного примера игры [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) .
+
+Класс **app** имеет элемент данных с именем *m_main*типа **гамемаин**. И этот элемент используется в **app:: Run** следующим образом.
+
+```cppwinrt
+void Run()
+{
+    m_main->Run();
+}
+```
+
+В можно найти **гамемаин:: Run** `GameMain.cpp` . Это главный цикл игры, и вот очень грубая структура, в которой показаны наиболее важные функции.
+
+```cppwinrt
+void GameMain::Run()
 {
     while (!m_windowClosed)
     {
-        if (m_windowVisible)
+        if (m_visible)
         {
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
-
-            m_main->Update();
-
-            if (m_main->Render())
-            {
-                m_deviceResources->Present();
-            }
+            CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
+            Update();
+            m_renderer->Render();
+            m_deviceResources->Present();
         }
         else
         {
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
+            CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
         }
     }
 }
 ```
 
-Что делает этот метод: Если окно вашей игры не закрыто, он отправляет все события, обновляет таймер, затем отображает и представлены результаты конвейера графики. Мы рассмотрим это более подробно в [определить платформа приложения UWP](tutorial--building-the-games-uwp-app-framework.md), [платформу для отображения инструкции: Общие сведения о подготовке к просмотру](tutorial--assembling-the-rendering-pipeline.md), и [платформу для отображения II: Отрисовки игр](tutorial-game-rendering.md). На этом этапе вы должны понимать основную структуру кода игры UWP на базе DirectX.
+А вот краткое описание того, что делает этот главный цикл игры.
+
+Если окно для игры не закрыто, отправьте все события, обновите таймер, а затем выполните визуализацию и представление результатов графического конвейера. Есть гораздо больше рассказать об этих проблемах, и мы будем делать это в разделах, которые [определяют платформу приложений UWP в игре](tutorial--building-the-games-uwp-app-framework.md), [платформу визуализации I: введение в подготовку к просмотру](tutorial--assembling-the-rendering-pipeline.md)и [отрисовку инфраструктуры II: Визуализация игр](tutorial-game-rendering.md). Но это базовая структура кода для игры DirectX UWP.
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>Изучение и обновление файла package.appxmanifest
 
+Файл **Package. appxmanifest** содержит метаданные о проекте UWP. Эти метаданные используются для упаковки и запуска игры, а также для отправки в Microsoft Store. Файл также содержит важную информацию, которую система проигрывателя использует для предоставления доступа к системным ресурсам, которые должны быть запущены игрой.
 
-В шаблоне есть не только файлы кода. Файл **package.appxmanifest** содержит метаданные о вашем проекте, которые используются для упаковки и запуска игры, а также для ее отправки в Microsoft Store. Также в нем находится важная информация, используемая системой игрока для предоставления доступа к системным ресурсам, необходимым для выполнения игры.
-
-Запустите **Конструктор манифеста**, дважды щелкнув файл **package.appxmanifest** в **Обозревателе решений**.
+Запустите **конструктор манифеста** , дважды щелкнув файл **Package. appxmanifest** в **Обозреватель решений**.
 
 ![Снимок экрана редактора манифеста package.appx.](images/simple-dx-game-setup-app-manifest.png)
 
-Подробнее о файле **package.appxmanifest** и упаковке см. в разделе [Конструктор манифестов](https://docs.microsoft.com/previous-versions/br230259(v=vs.140)). А теперь откройте вкладку **Возможности** и посмотрите на имеющиеся параметры.
+Подробнее о файле **package.appxmanifest** и упаковке см. в статье [Конструктор манифестов](/previous-versions/br230259(v=vs.140)). Сейчас Взгляните на вкладку **возможности** и просмотрите доступные параметры.
 
 ![Снимок экрана с возможностями по умолчанию для приложения Direct3D.](images/simple-dx-game-setup-capabilities.png)
 
-Если вы не выберете необходимые возможности для игры, например доступ к **Интернету** для использования глобальной таблицы рекордов, вы не сможете получить доступ к соответствующим ресурсам и функциям. При создании новой игры не забудьте выбрать возможности, которые необходимы для ее работы.
+Если вы не выбрали возможности, используемые в игре, например доступ к **Интернету** для глобальной платы высокой оценок, вы не сможете получить доступ к соответствующим ресурсам и функциям. При создании игры убедитесь, что выбраны все возможности, необходимые API-интерфейсам, которые вызывает данная игра.
 
-Теперь посмотрим на остальные файлы в составе шаблона **Приложение DirectX 11 (универсальные приложения для Windows)** .
+Теперь давайте взглянем на остальные файлы, которые поставляются вместе с шаблоном **приложения DirectX 11 (Universal Windows)** .
 
-## <a name="review-the-included-libraries-and-headers"></a>Изучение включенных библиотек и заголовков
+## <a name="review-other-important-libraries-and-source-code-files"></a>Ознакомьтесь с другими важными библиотеками и файлами исходного кода
 
-Есть еще несколько файлов, которые мы до сих пор не рассматривали. Эти файлы предоставляют дополнительные общие инструменты и поддержку для сценариев разработки игр для Direct3D. Полный список файлов, входящих в состав базового игрового проекта с использованием DirectX, см. в статье [Шаблоны проектов игр DirectX](user-interface.md#template-structure).
+Если вы планируете создать тип шаблона игрового проекта для себя, чтобы вы могли использовать его повторно в качестве начальной точки для будущих проектов, вам потребуется скопировать `GameMain.h` и `GameMain.cpp` извлечь загруженный проект [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) и добавить его в новый проект основного приложения. Изучите эти файлы, Узнайте, что они делают, и удалите все, что характерно для **Simple3DGameDX**. Кроме того, закомментируйте все, что зависит от кода, который еще не скопирован. Как и в примере, `GameMain.h` зависит от `GameRenderer.h` . Вы сможете раскомментировать, когда вы скопируйте больше файлов из **Simple3DGameDX**.
 
-| Исходный файл шаблона         | Папка файла            | Описание |
+Ниже приведен краткий обзор некоторых файлов в **Simple3DGameDX** , которые можно использовать в шаблоне, если вы делаете это. В любом случае они важны для понимания того, как работает сам **Simple3DGameDX** .
+
+|Исходный файл|Папка с файлами|Описание:|
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DeviceResources.h/.cpp       | Общие                 | Определяет объект класса, который управляет всеми [ресурсами устройства](tutorial--assembling-the-rendering-pipeline.md#resource) DirectX. Также включает в себя интерфейс для приложения, которому принадлежат DeviceResources для уведомления при потере или создании устройства.                                                |
-| DirectXHelper.h              | Общие                 | Реализует методы, в том числе **DX::ThrowIfFailed**, **ReadDataAsync** и ** ConvertDipsToPixels. **DX::ThrowIfFailed** преобразовывает значения ошибок HRESULT, возвращаемые API Win32 DirectX, в исключения среды выполнения Windows. Используйте этот метод, чтобы устанавливать точки прерывания для отладки ошибок DirectX. Подробнее: [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed). **ReadDataAsync** асинхронно считывает данные из двоичного файла. **ConvertDipsToPixels** преобразовывает длину в аппаратно независимых пикселях (DIP) в длину в физических пикселях. |
-| StepTimer.h                  | Общие                 | Определяет высокоточный таймер для игр или интерактивных приложений с прорисовкой.   |
-| Sample3DSceneRenderer.h/.cpp | Content                | Определяет объект класса для создания экземпляра базового контейнера отрисовки. Создает базовую реализацию отрисовщика, которая соединяет цепочку буферов Direct3D и графический адаптер с вашей игрой UWP с использование DirectX.   |
-| SampleFPSTextRenderer.h/.cpp | Content                | Определяет объект класса для отрисовки текущего значения кадров в нижнем правому углу экрана с помощью Direct2D и DirectWrite.  |
-| SamplePixelShader.hlsl       | Content                | Содержит код высокоуровнего языка шейдера (HLSL) для базового построителя текстуры.                                            |
-| SampleVertexShader.hlsl      | Content                | Содержит код высокоуровнего языка шейдера (HLSL) для базового вершинного шейдера.                                           |
-| ShaderStructures.h           | Content                | Содержит структуры шейдера, которые можно использовать для отправки матриц MVP и повершинных данных в вершинный шейдер.  |
-| pch.h/.cpp                   | Основной блок                   | Содержит все системные включения Windows для интерфейсов API, используемых приложением Direct3D, в том числе API для DirectX 11.| 
+|DeviceResources.h/.cpp|Техническое оборудование|Определяет класс **DeviceResources** , который управляет всеми [ресурсами устройств](tutorial--assembling-the-rendering-pipeline.md#resource)DirectX. Также определяет интерфейс **объект idevicenotify** , используемый для уведомления приложения о том, что устройство графического адаптера было потеряно или повторно создано.|
+|DirectXSample.h|Техническое оборудование|Реализует вспомогательные функции, такие как **конвертдипстопикселс**. **ConvertDipsToPixels** преобразовывает длину в аппаратно независимых пикселях (DIP) в длину в физических пикселях.|
+|Гаметимер. h/. cpp|Техническое оборудование|Определяет высокоточный таймер для игр или интерактивных приложений с отрисовкой.|
+|GameRenderer.h/.cpp|Отрисовка|Определяет класс **гамерендерер** , реализующий базовый конвейер отрисовки.|
+|Гамехуд. h/. cpp|Отрисовка|Определяет класс для отображения заголовков (HUD) для игры с использованием Direct2D и DirectWrite.|
+|Вертексшадер. HLSL и Вертексшадерфлат. HLSL|Шейдеры|Содержит код на высоком уровне шейдера (HLSL) для основных шейдеров вершин.|
+|PixelShader. HLSL и Пикселшадерфлат. HLSL|Шейдеры|Содержит код на высоком уровне шейдера (HLSL) для базовых шейдеров пикселей.|
+|Константбуфферс. hlsli|Шейдеры|Содержит определения структуры данных для буферов констант и структур шейдеров, которые используются для передачи матриц-представлений (MVP) и данных по вершинам в шейдер вершин.|
+|pch.h/.cpp|Недоступно|Содержит общие включаемые в C++/WinRT, Windows и DirectX.| 
 
 ### <a name="next-steps"></a>Следующие шаги
 
-На этом этапе вы знаете, как создать проект игры UWP на базе DirectX с использованием шаблона **Приложение DirectX 11 (универсальное приложение Windows)** , а также ознакомились с некоторыми компонентами и файлами, содержащимися в этом проекте.
+На этом этапе мы увидели, как создать новый проект UWP для игры DirectX, Просмотрели некоторые из его частей и начали думать о том, как превратить этот проект в тип повторно используемого шаблона для игр. Мы также рассмотрели некоторые важные части примера игры **Simple3DGameDX** .
 
-Следующий раздел — это [Определение структуры игры UWP](tutorial--building-the-games-uwp-app-framework.md). Мы рассмотрим, как в этой игре используются и расширяются многие из концепций и компонентов, предусмотренных в шаблоне.
-
- 
-
- 
-
-
-
-
+В следующем разделе определяется [Платформа приложений UWP в игре](tutorial--building-the-games-uwp-app-framework.md). Мы подробнее рассмотрим, как работает **Simple3DGameDX** .

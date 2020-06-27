@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: c90a3257f8a54202e7ac50395e7e73f0538a484a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
+ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259879"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441631"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -24,7 +24,7 @@ ms.locfileid: "74259879"
 
 Сначала создайте новое пустое приложение в Visual Studio. 
 
-Затем необходимо связать приложение с Магазином для подключения к поставщикам удостоверений. Для этого щелкните проект правой кнопкой, выберите **Магазин** > **Связать приложение с Магазином** и следуйте инструкциям мастера. 
+Затем необходимо связать приложение с Магазином для подключения к поставщикам удостоверений. Для этого щелкните проект правой кнопкой мыши, выберите **магазин**  >  **связать приложение с магазином**и следуйте инструкциям мастера. 
 
 Затем создайте простейший пользовательский интерфейс, состоящий из кнопки XAML и двух текстовых полей.
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 Панель пуста, поскольку система предоставляет лишь оболочку пользовательского интерфейса, — разработчику необходимо программно добавить в панель поставщиков удостоверений. 
 
 > [!TIP]
-> При необходимости можно использовать **[шоваддаккаунтасинк](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо команды " **[отобразить](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ", которая возвращает **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** , чтобы запросить состояние операции. 
+> При необходимости можно использовать **[шоваддаккаунтасинк](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо команды " **[отобразить](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**", которая возвращает **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, чтобы запросить состояние операции. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS\://login.microsoft.com". 
+Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS \: //Login.Microsoft.com". 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 Обратите внимание, что мы также передаем строку "consumers" необязательному параметру *authority*. Это связано с тем, что Майкрософт предоставляет два различных типа проверки подлинности: учетные записи Майкрософт (MSA) для "потребителей" и Azure Active Directory (AAD) для "организаций". Значение "consumers" означает, что мы хотим использовать учетную запись Майкрософт. Если вы разрабатываете корпоративное приложение, используйте строку "organizations".
 
-В заключение добавьте поставщика на панель **AccountsSettingsPane**, создав новый экземпляр класса **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** следующим образом: 
+Наконец, добавьте поставщик в **аккаунтссеттингспане** , создав новый **[вебаккаунтпровидеркомманд](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** следующим образом: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -172,7 +172,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-В этом примере мы передаем строку "wl.basic" параметру _scope_. Scope (область) представляет собой тип информации, которую вы запрашиваете у поставщика о конкретном пользователе. Некоторые области предоставляют доступ только к базовой информации пользователя, такой как имя и адрес электронной почты, в то время как другие области могут предоставлять доступ к конфиденциальной информации, например фотографиям пользователя или папке "Входящие". Как правило, приложение должно использовать область с минимальными разрешениями для реализации своих функций. Поставщики услуг предоставляют документацию, описывающую области, которые необходимо указать для получения токенов, используемых соответствующими службами. 
+В этом примере мы передаем строку "WL. Basic" в параметр _области_ . Scope (область) представляет собой тип информации, которую вы запрашиваете у поставщика о конкретном пользователе. Некоторые области предоставляют доступ только к базовой информации пользователя, такой как имя и адрес электронной почты, в то время как другие области могут предоставлять доступ к конфиденциальной информации, например фотографиям пользователя или папке "Входящие". Как правило, приложение должно использовать область с минимальными разрешениями для реализации своих функций. Поставщики услуг предоставляют документацию, описывающую области, которые необходимо указать для получения токенов, используемых соответствующими службами. 
 
 * Сведения об областях Office 365 и Outlook.com см.в разделе [Аутентификация API Office 365 и Outlook.com с использованием конечной точки аутентификации версии 2.0](https://developer.microsoft.com/graph/docs/concepts/auth_overview). 
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
@@ -250,7 +250,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 Маркеры полезны для мгновенного получения сведений о пользователе, но как правило имеют различный срок действия. Маркеры учетной записи Майкрософт, например, действительны в течение всего нескольких часов. К счастью, повторно отображать **AccountsSettingsPane** каждый раз, когда истекает срок действия маркера, не требуется. Пользователю достаточно разрешить доступ вашему приложению лишь однажды, после чего вы сможете хранить сведения об учетной записи для последующего использования. 
 
-Для этого используйте класс **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)** . Класс **WebAccount** возвращается тем же методом, который используется для запроса токена:
+Для этого используйте класс **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)**. Класс **WebAccount** возвращается тем же методом, который используется для запроса токена:
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -351,7 +351,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 
 ## <a name="add-providers-that-dont-support-webaccountmanager"></a>Добавление поставщиков, не поддерживающих WebAccountManager
 
-Если вы хотите включить в ваше приложение проверку подлинности службы, которая не поддерживает WebAccountManager (например Google+ или Twitter), вы можете вручную добавить этого поставщика на **AccountsSettingsPane**. Для этого создайте новый объект WebAccountProvider, укажите собственное имя поставщика и значок с расширением PNG, после чего добавьте объект в список WebAccountProviderCommands. Вот код заглушки: 
+Например, если вы хотите интегрировать проверку подлинности из службы в приложение, но эта служба не поддерживает Вебаккаунтманажер-Google + или Twitter, то вы по-прежнему можете вручную добавить этот поставщик в **аккаунтссеттингспане**. Для этого создайте новый объект WebAccountProvider, укажите собственное имя поставщика и значок с расширением PNG, после чего добавьте объект в список WebAccountProviderCommands. Вот код заглушки: 
 
  ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -373,7 +373,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 ```
 
 > [!NOTE] 
-> Данный код лишь добавляет значок в **AccountsSettingsPane** и при нажатии на значок запускает определенный вами метод (в данном случае — GetTwitterTokenAsync). Вам необходимо написать код, который будет обрабатывать сам процесс проверки подлинности. Дополнительные сведения см. в разделе (Брокер веб-проверки подлинности)[web-authentication-broker], в котором описаны вспомогательные методы проверки подлинности с помощью служб REST. 
+> Данный код лишь добавляет значок в **AccountsSettingsPane** и при нажатии на значок запускает определенный вами метод (в данном случае — GetTwitterTokenAsync). Вам необходимо написать код, который будет обрабатывать сам процесс проверки подлинности. Дополнительные сведения см. в разделе [посредник веб-проверки подлинности](web-authentication-broker.md), который предоставляет вспомогательные методы для проверки подлинности с помощью служб RESTful. 
 
 ## <a name="add-a-custom-header"></a>Добавление настраиваемого заголовка
 
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 На AccountsSettingsPane можно добавлять пользовательские команды, которые отображаются в виде ссылок под списком поддерживаемых WebAccountProviders. Пользовательские команды прекрасно подходят для выполнения простых задач, связанных с учетной записью пользователя, таких как отображение политики конфиденциальности или переход на страницу поддержки пользователей, столкнувшихся с проблемами. 
 
-Пример: 
+Ниже приведен пример: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -422,14 +422,14 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>См. также
 
-[Пространство имен Windows. Security. Authentication. Web. Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Пространство имен Windows.Security.Authentication.Web.Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Пространство имен Windows. Security. Credentials](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Пространство имен Windows.Security.Credentials](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
-[Класс Аккаунтссеттингспане](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
+[Класс AccountsSettingsPane](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
-[Брокер веб-аутентификации](web-authentication-broker.md)
+[Брокер веб-проверки подлинности](web-authentication-broker.md)
 
-[Пример управления учетными записями веб-сайта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+[Пример управления учетной веб-записью](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
-[Приложение планировщика обедов](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[Приложение "Планировщик обедов"](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

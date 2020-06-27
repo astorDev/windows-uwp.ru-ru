@@ -5,15 +5,23 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
-ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
+ms.openlocfilehash: 481d10f2fea076f45124a3c75819dfe6494300bf
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243325"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448404"
 ---
 # <a name="symbologies"></a>Символики
-В этом разделе приводятся образцы штрихкодов для каждого симбологиес, поддерживаемого декодером штрихкодов программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, код 128, чередующиеся 2 из 5, столбчатых всенаправленные, столбчатых с накоплением, QR-код и GS1DWCode.
+
+В этой статье приведены примеры штрихкодов для каждой из символик, поддерживаемых программным декодером штрихкодов в Windows 10, в том числе UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code и GS1DWCode.
+
+Для создания сканера штрихкодов в Windows 10 используется стандартная камера линза вместе с программным декодером. Эта статья относится к симбологиес, поддерживаемому программным декодером. Дополнительные симбологиес могут поддерживаться специальными устройствами со встроенными средствами проверки штрихкодов, имеющими встроенный аппаратный декодер. для получения дополнительных сведений обратитесь к изготовителю сканера штрихкодов. Перечисленные симбологиес поддерживаются во всех выпусках Windows 10 Build 17134 или более поздней версии, если не указано иное.
+
+Используйте [жетсуппортедсимбологиесасинк](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync) , чтобы определить конкретный симбологиес, поддерживаемый сканером штрихкодов.
+
+> [!NOTE]
+> Программный декодер, встроенный в Windows 10, предоставляется [*корпорацией Digimarc*](https://www.digimarc.com/).
 
 ## <a name="1d-symbologies"></a>Одномерные символики
 
@@ -44,7 +52,7 @@ ms.locfileid: "70243325"
 ![Пример штрихкода — UPC E](images/pos/sample-barcode-upce.png)
 
 ## <a name="2d-symbologies"></a>Двухмерные символики
-### <a name="qr-code"></a>QR Code
+### <a name="qr-code"></a>QR-код
 ![Пример штрихкода — QR Code](images/pos/sample-barcode-qrcode.png)
 
 ## <a name="digital-watermark"></a>Digital Watermark
@@ -52,10 +60,7 @@ ms.locfileid: "70243325"
 
 Отсканируйте изображение упаковки ниже с помощью своего приложения со сканером штрихкода на базе камеры, чтобы увидеть GS1DWCode в действии.  Изображение кодировано с использованием UPCA 856107006854.  Подробнее о возможностях GS1DWCode можно узнать на сайте http://www.digimarc.com.
 
-![Пример штрихкода — GS1DWCode](images/pos/rice-box-v7.jpg)
-
-> [!NOTE]
-> Программный декодер, встроенный в Windows 10, любезно предоставлен [*Digimarc Corporation*](https://www.digimarc.com/).
+![Пример штрихкода — GS1DWCode](images/pos/Rice-Box-V7.jpg)
 
 ## <a name="see-also"></a>См. также
 

@@ -1,26 +1,31 @@
 ---
 title: Объявления Bluetooth
 description: Этот раздел содержит статьи о том, как интегрировать объявления Bluetooth с низким энергопотреблением (LE) c приложениями универсальной платформы Windows (UWP) при помощи пользователя API AdvertisementWatcher и AdvertisementPublisher.
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2300871292e08588b0c2124c67a379d403ae53b3
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259690"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469529"
 ---
 # <a name="bluetooth-le-advertisements"></a>Объявления Bluetooth LE
 
 
 **Важные API**
 
--   [**Windows. Devices. Bluetooth. Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 В этой статье приводится обзор маяков объявлений Bluetooth с низким энергопотреблением (LE) для приложений универсальной платформы Windows (UWP).  
+
+> [!Important]
+> В *Package. appxmanifest*необходимо объявить возможность "Bluetooth".
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## <a name="overview"></a>Обзор
 

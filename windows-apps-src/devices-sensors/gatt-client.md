@@ -1,16 +1,16 @@
 ---
 title: Клиент Bluetooth GATT
 description: В этой статье представлен обзор клиента Bluetooth Generic Attribute Profile (GATT) для приложений универсальной платформы Windows (UWP), а также пример кода для распространенных сценариев.
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e894b750ba2119e2cca6f316f9671c51386d800c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 5c17351cf964ffb05dc60dbaf5c6ced1db467f78
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854680"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469539"
 ---
 # <a name="bluetooth-gatt-client"></a>Клиент Bluetooth GATT
 
@@ -21,6 +21,11 @@ ms.locfileid: "83854680"
 - Перечисление поддерживаемых служб и характеристик устройства
 - Чтение и запись в характеристику
 - Подписка на уведомления об изменении значения характеристики
+
+> [!Important]
+> В *Package. appxmanifest*необходимо объявить возможность "Bluetooth".
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **Важные API**
 >
@@ -196,7 +201,7 @@ if (result == GattCommunicationStatus.Success)
 - Запись в дескриптор конфигурации характеристик клиента (Client Characteristic Configuration, CCCD)
 - Обработка события Characteristic.ValueChanged
 
-Запись в CCCD сообщает серверу, что данный клиент должен получать оповещение каждый раз, когда меняется значение определенной характеристики. Для этого выполните следующие действия.
+Запись в CCCD сообщает серверу, что данный клиент должен получать оповещение каждый раз, когда меняется значение определенной характеристики. Для этого:
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
